@@ -20,6 +20,12 @@ class etcfiles {
         source  => "puppet:///files/etc/ssh/sshd_config"
     } 
 
+    service { sshd:
+        ensure => running,
+        subscribe => File["/etc/ssh/sshd_config"],
+        hasrestart => true,
+    }
+
     file { "/etc/resolv.conf":
         owner   => root,
         group   => root,
