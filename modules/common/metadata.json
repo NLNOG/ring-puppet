@@ -1,0 +1,35 @@
+{
+  "name": "DavidSchmitt-common",
+  "dependencies": [
+
+  ],
+  "author": "",
+  "license": "",
+  "version": "1.0.0",
+  "types": [
+
+  ],
+  "checksums": {
+    "lib/puppet/parser/functions/extlookup.rb": "e051ff2d91368f65330b5e621baaaaec",
+    "manifests/classes/lsb_release.pp": "21d2d14496131e11252a0869f3bd5e10",
+    "lib/puppet/parser/functions/concat.rb": "91f49c877bebadec533c38288ca9386d",
+    "manifests/defines/module_file.pp": "4e857f48f1eed5cbde81c5a6deebbad6",
+    "manifests/defines/line.pp": "4a9f3bf39f9e233bf1e2a05520fad380",
+    "lib/puppet/parser/functions/dirname.rb": "95d39c980a76cf3eab6fe4743493ae28",
+    "manifests/defines/append_if_no_such_line.pp": "7f34dbf6ba81a6ea78fa3e443789eb0b",
+    "manifests/defines/config_file.pp": "b8ffd39bcae91002daf25bc4aa028380",
+    "lib/puppet/parser/functions/re_escape.rb": "17bcf48698a87414f18087ecec99d5ed",
+    "lib/puppet/parser/functions/split.rb": "09a357f1211efdda3cdabcdd19f438c6",
+    "README": "d623dce3518a81e46d728169a0db6ac3",
+    "files/modules/README": "54000a2c832d3c13c1b6c5e2d4624644",
+    "lib/puppet/parser/functions/prefix_with.rb": "a846eb9c6b17be6fc793b68689b2fc05",
+    "lib/puppet/parser/functions/basename.rb": "7ac6eb7f00bfc36cc49e63a703fbea4d",
+    "manifests/defines/replace.pp": "06976a1c4e51ad7054bb0fa8272124e8",
+    "manifests/defines/concatenated_file.pp": "dba9e105b8233529d1fd75a14ccbe1fa",
+    "lib/puppet/parser/functions/gsub.rb": "b57dc734e171a9aa3725ec39d4231e99",
+    "manifests/defines/module_dir.pp": "cfbe02c4e2c0a6d717a361f38dcdf162",
+    "manifests/init.pp": "6e8686b9792f0acd4320fafd4ba0750f",
+    "Modulefile": "9b464fcba3fafd2988a115ed51b8b58c"
+  },
+  "source": ""
+}
