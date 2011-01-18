@@ -13,6 +13,13 @@ class etcfiles {
         source  => "puppet:///files/etc/sudoers"
     }
 
+    file { "/etc/ssh/sshd_config":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/ssh/sshd_config"
+    } 
+
     file { "/etc/resolv.conf":
         owner   => root,
         group   => root,
