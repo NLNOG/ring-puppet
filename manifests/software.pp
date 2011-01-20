@@ -63,7 +63,9 @@ class nettools {
     package { "fping": ensure => present }
     package { "update-manager-core": ensure => present }
     package { "man-db": ensure => present }
- 
+    package { "landscape-common": ensure => present }
+    package { "update-notifier-common": ensure => present }
+   
     # packages we don't like
     package { "pppoe": ensure => purged }
     package { "ppp": ensure => purged }

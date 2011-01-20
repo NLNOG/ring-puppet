@@ -41,3 +41,7 @@ ff02::2 ip6-allrouters
 
 80.247.162.185  easyhosting01 easyhosting01.ring.nlnog.net
 2a02:728:e:67::185  easyhosting01 easyhosting01.ring.nlnog.net
+
+84.241.137.18   previder01.ring.nlnog.net
+2001:1690:2:115::18 previder01.ring.nlnog.net
+

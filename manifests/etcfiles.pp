@@ -13,6 +13,14 @@ class etcfiles {
         source  => "puppet:///files/etc/sudoers"
     }
 
+    file { "/etc/default/puppet":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/default/puppet"
+    } 
+
+
     file { "/etc/ssh/sshd_config":
         owner   => root,
         group   => root,
@@ -20,7 +28,7 @@ class etcfiles {
         source  => "puppet:///files/etc/ssh/sshd_config"
     } 
 
-    service { sshd:
+    service { ssh:
         ensure => running,
         subscribe => File["/etc/ssh/sshd_config"],
         hasrestart => true,
