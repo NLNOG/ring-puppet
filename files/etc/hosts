@@ -45,3 +45,6 @@ ff02::2 ip6-allrouters
 84.241.137.18   previder01.ring.nlnog.net
 2001:1690:2:115::18 previder01.ring.nlnog.net
 
+94.75.255.26    leaseweb01.ring.nlnog.net
+2001:1af8:4400:2::20    leaseweb01.ring.nlnog.net
+
