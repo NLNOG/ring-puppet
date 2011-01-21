@@ -13,9 +13,13 @@ class nettools {
     package { "lft": ensure => present }
     file { "/usr/bin/lft":
         ensure => "/usr/sbin/lft",
+        require => [Package["lft"]],
+    }
+    file { "/usr/sbin/lft":
         mode    => "4755",
         require => [Package["lft"]],
     }
+
     package { "openntpd": ensure => present }
     package { "python-setuptools": ensure => present }
     package { "sl": ensure => present }
