@@ -10,6 +10,7 @@ class master_software {
 }
 
 class nettools {
+    package { "lft": ensure => present }
     package { "openntpd": ensure => present }
     package { "python-setuptools": ensure => present }
     package { "sl": ensure => present }
