@@ -121,7 +121,7 @@ class ring_users {
         type    => "ssh-dss"
     }
     add_user { leaseweb:
-        email   => "b.spandaw@leaseweb.com",
+        email   => "noc@leaseweb.com",
         uid     => 5012,
         groups  => ['ring-users']
     }
