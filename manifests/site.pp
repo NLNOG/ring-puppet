@@ -8,7 +8,7 @@ import "ring-users"
 import "ring-admins"
 import "software"
 import "cron"
-import "etcfiles"
+import "various_files"
 
 filebucket { main: server => puppet }
 

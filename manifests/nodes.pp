@@ -7,6 +7,7 @@ node basenode {
     include groups
     include nettools
     include etcfiles
+    include local_binaries
     include munin::client
     $syslog_server = "212.19.220.59"
     include syslog-ng
