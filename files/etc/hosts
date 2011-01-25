@@ -51,3 +51,6 @@ ff02::2 ip6-allrouters
 217.115.195.38	nxs01 nxs01.ring.nlnog.net
 2001:14a0:300:3::22:1	nxs01 nxs01.ring.nlnog.net
 
+178.19.114.34   ic-hosting01    ic-hosting01.ring.nlnog.net
+2001:67c:b0:3::2    ic-hosting01    ic-hosting01.ring.nlnog.net
+
