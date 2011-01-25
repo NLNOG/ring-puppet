@@ -20,6 +20,7 @@ class nettools {
         require => [Package["lft"]],
     }
 
+    package { "python-dnspython": ensure => present }
     package { "openntpd": ensure => present }
     package { "python-setuptools": ensure => present }
     package { "sl": ensure => present }
