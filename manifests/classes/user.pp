@@ -48,9 +48,9 @@ define add_user($email,$uid,$groups) {
     }
 }
 
-define add_ssh_key($key,$type) {
+define add_ssh_key($key,$type,$user) {
 
-    $username       = $title
+    $username       = $user
  
     ssh_authorized_key{ "${username}_${key}":
         ensure  => present,
