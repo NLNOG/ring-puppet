@@ -153,5 +153,16 @@ class ring_users {
         name    => "info@ic-hosting.nl",
         type    => "ssh-dss"
     }
+    
+#    add_user { xs4all:
+#        email   => "noc@xs4all.net",
+#        uid     => 5015,
+#        groups  => ['ring-users']
+#    }
+#    add_ssh_key { xs4all:
+#        key     => "",
+#        name    => "",
+#        type    => "",
+#    }
 }
 

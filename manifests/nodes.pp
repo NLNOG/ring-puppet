@@ -91,6 +91,10 @@ node 'ic-hosting01' inherits ringnode {
     include smokeping::slave
 }
 
+node 'xs4all01' inherits ringnode {
+    include smokeping::slave
+}
+
 node 'master01' inherits ringmaster {
     $sp_owner = "Job Snijders"
     $sp_owner_email = "job@snijders-it.nl"

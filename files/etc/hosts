@@ -54,3 +54,6 @@ ff02::2 ip6-allrouters
 178.19.114.34   ic-hosting01    ic-hosting01.ring.nlnog.net
 2001:67c:b0:3::2    ic-hosting01    ic-hosting01.ring.nlnog.net
 
+82.94.249.162   xs4all01    xs4all01.ring.nlnog.net
+2001:888:2000:3e::1337  xs4all01    xs4all01.ring.nlnog.net
+
