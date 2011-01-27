@@ -168,15 +168,16 @@ class ring_users {
         type    => "ssh-dss"
     }
     
-#    add_user { xs4all:
-#        email   => "noc@xs4all.net",
-#        uid     => 5015,
-#        groups  => ['ring-users']
-#    }
-#    add_ssh_key { xs4all:
-#        key     => "",
-#        name    => "",
-#        type    => "",
-#    }
+    add_user { xs4all:
+        email   => "noc@xs4all.net",
+        uid     => 5015,
+        groups  => ['ring-users']
+    }
+    add_ssh_key { xs4all_arndm:
+        user    => "xs4all",
+        key     => "AAAAB3NzaC1yc2EAAAABIwAAAQEAo8iWoeIUYwU1/k7inCwSJQWNDIkQbIklefwmXG8U94Xr07zdQzvc4WCiPycTKTjEmEtc5KJTrPanwpX7ohPgNcWXiW4LS2ceDnXN+/EbZ4nF4MywfRebAX7Yd0IwdqESIX/hvfV9GzmoaaGo6/U4WDfTUsoRu71CUEuBY2jIygMhupvcrD8CbQD6PjkXAkgFKqXoP5CW2puv+MExGpLjJSwcdgjRi2O1SXyTo1eNSnWY7DqWCF6ptJDxWYeBP1LdmnevYLxSoCcJLNUB3m4+9/u+IhYZCZD2N+rScSfGYho66SJq+giQ/peL28gJ3cBK7gbw7T/ooQq6e/W2AV3Wnw==",
+        name    => "arndm@netadmin.xs4all.net",
+        type    => "ssh-rsa",
+    }
 }
 
