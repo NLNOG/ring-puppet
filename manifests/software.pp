@@ -77,6 +77,7 @@ class nettools {
     package { "update-manager-core": ensure => present }
     package { "man-db": ensure => present }
     package { "landscape-common": ensure => present }
+    package { "unattended-upgrades": ensure => present }
     package { "update-notifier-common": ensure => present }
    
     # packages we don't like

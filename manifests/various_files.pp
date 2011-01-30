@@ -57,6 +57,13 @@ class etcfiles {
 }
 
 class local_binaries {
+    file { "/usr/local/bin/ring-ping":
+        owner   => root,
+        group   => root,
+        mode    => 0755,
+        source  => "puppet:///files/usr/local/bin/ring-ping"
+    }
+ 
     file { "/usr/local/bin/ring-all":
         owner   => root,
         group   => root,
