@@ -179,5 +179,17 @@ class ring_users {
         name    => "arndm@netadmin.xs4all.net",
         type    => "ssh-rsa",
     }
+    
+    add_user { nedzone:
+        email   => "noc@nedzone.nl",
+        uid     => 5016,
+        groups  => ['ring-users'],
+    }
+    add_ssh_key { nedzone_bram:
+        user    => "nedzone",
+        key     => "AAAAB3NzaC1yc2EAAAABJQAAAIEAyGPsnssBFiay3SDIqlwTdhFe40F7FiAPzAZSM6ek9OwRYFt0U5KgjEjjj7UYoge+9421zTTPVfr4Kx5ZDgu9ifN2LvPR9RVekxY0w+uHSZgSsucxJBHiUsY/SfNn1zjGkkfVkznmqKOWJpdLGZ8RIMOLYzthPxjMVKTOyOkdoL0=",
+        name    => "bram-rsa-key-20110131",
+        type    => "ssh-rsa",
+    }
 }
 
