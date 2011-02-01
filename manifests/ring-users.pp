@@ -187,8 +187,8 @@ class ring_users {
     }
     add_ssh_key { nedzone_bram:
         user    => "nedzone",
-        key     => "AAAAB3NzaC1yc2EAAAABJQAAAIEAyGPsnssBFiay3SDIqlwTdhFe40F7FiAPzAZSM6ek9OwRYFt0U5KgjEjjj7UYoge+9421zTTPVfr4Kx5ZDgu9ifN2LvPR9RVekxY0w+uHSZgSsucxJBHiUsY/SfNn1zjGkkfVkznmqKOWJpdLGZ8RIMOLYzthPxjMVKTOyOkdoL0=",
-        name    => "bram-rsa-key-20110131",
+        key     => "AAAAB3NzaC1yc2EAAAABJQAAAIBr1P6kiPiQT+xCJVAmMQtL8VOerIv7epknE3n2ml2rcdlmWIMizGEtRI70rLZmBqyU7EMEU0c+hiq/k/HuzU9FW2Vla1VWi4pUtiqmwQK8u6uHd7tMKF7Vju46U3AWTItDtETIbPkSQyqx9Im1KZGj8FHrDlJ/lujk1olMjNmocw==",
+        name    => "bram-rsa-key-20110201",
         type    => "ssh-rsa",
     }
 }
