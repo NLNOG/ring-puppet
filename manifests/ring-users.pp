@@ -36,10 +36,10 @@ class ring_users {
         type    => "ssh-rsa"
     }
 
-    add_ssh_key { coloclue_nlnogbot:
+    add_ssh_key { coloclue_sten:
         user    => "coloclue",
         key     => "AAAAB3NzaC1yc2EAAAABIwAAAQEA3Cg9Jq+mEZwlwrm44P3swuEOM0VoVVP1Bm5r/+wO2luQWu9hWx3RQrKNL40gcavaW0e+pv1WO2BkLGVk/S7gcH9z9bFf7JRb9AymlYkwjZqHN1EQs5eBYLGrL2o20L8Wsb85LjdcRzAe116kguESzsdpdp/qO1F8UV6w6D7b1UDsP7lGANEJtGYIfJon65gEQjnI5X1cemEcGAcXi1SA0stazNaHGpxGRuaHHpgXc5k+YoU7+WAXLuTi5NR51NjDpptU2CApb/S4HZ3BH0j7kt9W1AuWN7+eaP2u3oJfWZZrnB73Ko/73WAF3uVDVabI7jEv5D0Dl+OrkEUuamCJ9Q==",
-        name    => "nlnogbot-sten@zem.blinkenlights.nl",
+        name    => "sten@zem.blinkenlights.nl",
         type    => "ssh-rsa",
     }
 
