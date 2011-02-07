@@ -205,6 +205,17 @@ class ring_users {
         type    => "ssh-rsa",
     }
 
-
+    add_user { oxilion:
+        email   => "noc@oxilion.nl",
+        uid     => "5018",
+        groups  => ['ring-users'],
+    }
+    
+    add_ssh_key { oxilion_wouterschoot:
+        user    => "oxilion",
+        key     => "AAAAB3NzaC1yc2EAAAABJQAAAIBlZkdBFEeyjt41M+JefGGTz+qZNU0IqH3yQ7bQC6GccJ7OqXsrHIkw6v1wqKxxp7fZgROxTlERQiV8CU9EHRytRw1oB1AXugt+gYd48qS3m7/e7ldUfMQ4bCZ7geyAbDuxCScpmBh5xpe52zALSgw45HTEvL+RM21sGuwOrIgiUw==",
+        name    => "rsa-key-20100201",
+        type    => "ssh-rsa",
+    }
 }
 
