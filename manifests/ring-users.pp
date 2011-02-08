@@ -147,7 +147,7 @@ class ring_users {
     add_ssh_key { leaseweb_gregorz:
         user    => "leaseweb",
         key     => "AAAAB3NzaC1yc2EAAAABJQAAAIEAkCgRUkL3e3vm1UO+mQMYhnxdjOavmZXBeBWQO5X9T0y7uj70M+bX/Z3lhOF4Lq0VX4UL8UEfRy/aYa6zxv+SmUsvrPs4Lgo+yeLAVR+zxnZLjsch6r6zFV6+v4dPfKJUO+58bI69+gIUctuczwQn9nvmp76uPbsTvGXVdbtuwzc=",
-        name    => "GJA_grezorz",
+        name    => "GJA",
         type    => "ssh-rsa",
     }
 
