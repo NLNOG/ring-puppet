@@ -224,5 +224,18 @@ class ring_users {
         name    => "rsa-key-20100201",
         type    => "ssh-rsa",
     }
+    
+    add_user { ebayclassifiedsgroup:
+        email   => "DL-eBay-Classifieds-Networking@ebay.com",
+        uid     => "5019",
+        groups  => ['ring-users'],
+    }
+    
+    add_ssh_key { ebayclassifiedsgroup_maarten:
+        user    => "ebayclassifiedsgroup",
+        key     => "AAAAB3NzaC1yc2EAAAABIwAAAQEAtV0MJYFlw+xm3h3hNKWWC3DKUQFhFDDoMBshhCOG2uS7QH38E26ZMCH0pi10h3ZNIBgVoToyOSXVgSYvhRqOemqL9xt/TbKWW9zvod9WocoYHPqoLymcPQrFK84VqcZ6ymGvjMeR3f5wAyRoVAWuSPocwEMFb49pOeIkjpF90oO0LfkNxrkhfeIxecdkyHHXa+WZmSN8YFGc/6ev8pMoAhx6x3/GC04Fi+7QQLKhcRZoHrklzU9qoK1XiI7VtlLBI9QjGsFObnE27z+XNgtzuj1j3yUXZvjCIZ4I53a+Y7k+rEEYwuV9Z/SYyX/I4esLIUJS936qN+k4o76ivl8XAw==",
+        name    => "mmoerman@l-lwr-00122309.corp.ebay.com",
+        type    => "ssh-rsa",
+    }
 }
 
