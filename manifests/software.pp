@@ -30,6 +30,18 @@ class nettools {
     package { "traceroute": ensure => present }
     package { "fail2ban": ensure => present }
     package { "tcpdump": ensure => present }
+    package { "libcap2-bin": ensure => present }
+    # here we permit ring-users to use tcpdump
+    file { "/usr/sbin/tcpdump":
+        mode    => "0755",
+        owner   => root,
+        group   => ring-users,
+        recurse => false
+    }
+    exec { "setcap cap_net_raw,cap_net_admin=eip /usr/sbin/tcpdump":
+        onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/sbin/tcpdump`\" != \"/usr/sbin/tcpdump = cap_net_admin,cap_net_raw+eip\""
+    }
+
     package { "build-essential": ensure => present }
     package { "dnsutils": ensure => present }
     package { "iputils-tracepath": ensure => present }
