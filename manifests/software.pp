@@ -28,9 +28,7 @@ class nettools {
     package { "openntpd": ensure => present }
     package { "python-setuptools": ensure => present }
     package { "sl": ensure => present }
-# disabled mtr because we need to fix key stuff with apt
-# 25 jan 2010 - JWJS
-#    package { "mtr": ensure => latest }
+    package { "mtr": ensure => latest }
     package { "traceroute": ensure => present }
     package { "fail2ban": ensure => present }
     package { "tcpdump": ensure => present }
