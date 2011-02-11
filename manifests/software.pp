@@ -119,9 +119,9 @@ class nlnogrepokey {
      require => File["/etc/apt/nlnogrepopublic.key"],
      unless  => "/usr/bin/apt-key list | /bin/grep -q 'ring-admins@ring.nlnog.net'";
   }
-  exec { "key-update":
-     command => "/usr/bin/apt-get update",
-     require => Exec["install-key"],
-  }
+#  exec { "key-update":
+#     command => "/usr/bin/apt-get update",
+#     require => Exec["install-key"],
+#  }
 }
 
