@@ -11,6 +11,7 @@ node basenode {
     include munin::client
     $syslog_server = "212.19.220.59"
     include syslog-ng
+    include nlnogrepokey
 }
 
 node ringnode inherits basenode {

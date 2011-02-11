@@ -101,3 +101,25 @@ class nettools {
     package { "pppoeconfig": ensure => purged }
     package { "resolvconf": ensure => purged }
 }
+
+class nlnogrepokey {
+
+  file { "/etc/apt/nlnogrepopublic.key":
+    mode   => 440,
+    owner  => root,
+    group  => root,
+    source => [
+        "puppet:///files/etc/apt/nlnogrepopublic.key"
+        ],
+  }
+  exec { "install-key":
+     command => "/usr/bin/apt-key add /etc/apt/nlnogrepopublic.key",
+     require => File["/etc/apt/nlnogrepopublic.key"],
+     unless  => "/usr/bin/apt-key list | /bin/grep -q 'ring-admins@ring.nlnog.net'";
+  }
+  exec { "key-update":
+     command => "/usr/bin/apt-get update",
+     require => Exec["install-key"],
+  }
+}
+
