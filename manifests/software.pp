@@ -7,6 +7,8 @@ class master_software {
     package { "apache2": ensure => present }
     package { "mysql-server": ensure => present }
     package { "libmysql-ruby": ensure => present }
+    package { "puppetmaster": ensure => latest }
+    package { "puppetmaster-common": ensure => latest }
 }
 
 class nettools {
@@ -20,6 +22,8 @@ class nettools {
         require => [Package["lft"]],
     }
 
+    package { "puppet": ensure => latest }
+    package { "puppet-common": ensure => latest }
     package { "python-dnspython": ensure => present }
     package { "openntpd": ensure => present }
     package { "python-setuptools": ensure => present }
