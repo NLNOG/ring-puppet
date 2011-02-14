@@ -237,5 +237,18 @@ class ring_users {
         name    => "mmoerman@l-lwr-00122309.corp.ebay.com",
         type    => "ssh-rsa",
     }
+
+    add_user { evertjenetworks:
+        email   => "evert@vanharten.nu",
+        uid     => "5020",
+        groups  => ['ring-users'],
+    }
+
+    add_ssh_key { evertjenetworks_evert:
+        user    => "evertjenetworks",
+        key     => "AAAAB3NzaC1kc3MAAACBAMg580Z4SL2KWtPNeicc/Zhiwqrd3iNAeAIl3mXosTEI+CvinILL7+e7VasJhhxi+6gPPu4QPdROeRHwVESMFCjYYU0c9kfU8Da2RnZpZGnzRicGw8QD5jxNTUw7SVLN0zzpFwufHLMW8OM0Yv8fScGjwcepRvmRITyxKNv98mM1AAAAFQCDh0IVU9ta32oQu0d99IH96AeXLQAAAIEAtqGVhCHqezk+aPfW1wYLZzv0OgND6hFjeO73hC09oxBRlgFBxEAyjz//pV4afFBjuXXd7M6HrWdBMs/toTnWpYugHE8fMl156fVw0sjWW2Qsdwtv646Axauo+LPAxBXg6Eb3614015FwMQz3MoKdgphCJXHGNZXW+xtar96GJ3YAAACBALteS4ciNfuvHAN8qIEkvX6fNVgcQVkpfpfX4Ywt70o5m1Wd/6gb855dXw4A/Zy8m0oYadbE0KyGJVZ+XMWxyTVwjrwge3wPJ/M8aKkLI038Hl7TTzzYbJoZ5L1KZmeR6Vzy0u3bw/YpAXSG3f+Zfir3J+KZpFSUIih0K5MrpeBM",
+        type    => "ssh-dss",
+        name    => "evharten@macbook-pro-van-evert-van-harten.local",
+    }
 }
 

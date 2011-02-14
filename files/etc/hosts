@@ -38,7 +38,7 @@ ff02::2 ip6-allrouters
 2a01:1b0:7999:453::50	duocast01	duocast01.ring.nlnog.net
 
 80.247.162.185	easyhosting01	easyhosting01.ring.nlnog.net
-2a02:728:e:67::185	easyhosting01	easyhosting01.ring.nlnog.net
+2a02:728:e:83::185	easyhosting01	easyhosting01.ring.nlnog.net
 
 84.241.137.18	previder01	previder01.ring.nlnog.net
 2001:1690:2:115::18	previder01	previder01.ring.nlnog.net
@@ -61,6 +61,9 @@ ff02::2 ip6-allrouters
 93.186.180.112	oxilion01	oxilion01.ring.nlnog.net
 2a00:d10:101::195:1	oxilion01	oxilion01.ring.nlnog.net
 
-91.211.73.209   ebayclassifiedsgroup01  ebayclassifiedsgroup01.ring.nlnog.net
-2001:67c:2d0:4150::2    ebayclassifiedsgroup01  ebayclassifiedsgroup01.ring.nlnog.net
+91.211.73.209	ebayclassifiedsgroup01	ebayclassifiedsgroup01.ring.nlnog.net
+2001:67c:2d0:4150::2	ebayclassifiedsgroup01	ebayclassifiedsgroup01.ring.nlnog.net
+
+195.43.138.182  evertjenetworks01 evertjenetworks01.ring.nlnog.net
+2001:67c:270:4005::182  evertjenetworks01   evertjenetworks01.ring.nlnog.net
 
