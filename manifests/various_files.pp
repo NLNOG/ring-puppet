@@ -54,6 +54,13 @@ class etcfiles {
         mode    => 644,
         source  => "puppet:///files/etc/apt/apt.conf.d/10periodic"
     }
+
+    file { "/etc/apt/apt.conf.d/50unattended-upgrades":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/apt/apt.conf.d/50unattended-upgrades"
+    }
 }
 
 class local_binaries {
