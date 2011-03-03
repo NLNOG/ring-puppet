@@ -252,7 +252,7 @@ class ring_users {
     }
 
     add_user { is:
-        email   => "noc@is.nl",
+        email   => "netwerk@is.nl",
         uid     => "5021",
         groups  => ['ring-users'],
     }
