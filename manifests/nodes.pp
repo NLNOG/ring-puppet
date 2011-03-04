@@ -116,6 +116,10 @@ node 'is01' inherits ringnode {
     include smokeping::slave
 }
 
+node 'surfnet01' inherits ringnode {
+    include smokeping::slave
+}
+
 
 
 node 'master01' inherits ringmaster {

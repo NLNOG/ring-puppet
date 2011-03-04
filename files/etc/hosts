@@ -70,3 +70,6 @@ ff02::2 ip6-allrouters
 213.197.240.52   is01    is01.ring.nlnog.net
 2001:9a0:2000:a::1:1    is01    is01.ring.nlnog.net
 
+192.42.123.22   surfnet01   surfnet01.ring.nlnog.net
+2001:610:511:123:192:42:123:22  surfnet01   surfnet01.ring.nlnog.net
+
