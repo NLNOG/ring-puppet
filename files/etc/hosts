@@ -73,3 +73,6 @@ ff02::2 ip6-allrouters
 192.42.123.22   surfnet01   surfnet01.ring.nlnog.net
 2001:610:511:123:192:42:123:22  surfnet01   surfnet01.ring.nlnog.net
 
+94.228.136.130  prolocation01   prolocation01.ring.nlnog.net
+2a00:d00:ff:136:94:228:136:130  prolocation01   prolocation01.ring.nlnog.net
+
