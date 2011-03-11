@@ -290,4 +290,16 @@ class ring_users {
         name    => "prolo@prolocation01.ring.nlnog.net",
     }
 
+    add_user { in2ip:
+        email   => "noc@in2ip.nl",
+        uid     => "5024",
+        groups  => ['ring-users'],
+    }
+
+    add_ssh_key { in2ip_dirkjan:
+        user    => "in2ip",
+        type    => "ssh-rsa",
+        key     => "AAAAB3NzaC1yc2EAAAADAQABAAABAQCrDK+oklbpw27vY28Jr8qmxAgiZy386qHSndxCjNdkMh4svm7qde6Caw4pbh4nH8aC5+jB0LoHatCwM5NG64tT8OqG66+VcyXKDD76+nvX24chI/Jv+S1rri+KkFjQ1umWWJ7gu4G2qYvVjVtqcgJU0EpbS2Mr5JxGCSt6sWZSOwGBwfcgVSs0X0+IwCifiTtN2sVphMPvi74qwEx9CeyKcuAm0xm19aB2GyOnpBtLAzc9ZCMU8ne7gY3liH9n4ARw+z0M9U0fAlYr8FG0VuAsR/8I5SxIg1CR4aFQwa4TjVQ30m3OpvszkRj3kUk5bitp98RRTcz2LksbJjZ+mLHH",
+        name    => "dirkjan@nmc",
+    }
 }
