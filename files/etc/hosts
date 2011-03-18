@@ -19,8 +19,8 @@ ff02::2 ip6-allrouters
 178.18.89.144	xlshosting01	xlshosting01.ring.nlnog.net
 2a02:348:5d:5990::1	xlshosting01	xlshosting01.ring.nlnog.net
 
-94.142.241.204	coloclue01	coloclue01.ring.nlnog.net
-2a02:898:52:ffff::50	coloclue01	coloclue01.ring.nlnog.net
+94.142.247.64	coloclue01	coloclue01.ring.nlnog.net
+2a02:898:0:201::2	coloclue01	coloclue01.ring.nlnog.net
 
 213.206.104.156	widexs01	widexs01.ring.nlnog.net
 2001:898:2000:d::4	widexs01	widexs01.ring.nlnog.net
@@ -43,9 +43,6 @@ ff02::2 ip6-allrouters
 84.241.137.18	previder01	previder01.ring.nlnog.net
 2001:1690:2:115::18	previder01	previder01.ring.nlnog.net
 
-94.75.255.26	leaseweb01	leaseweb01.ring.nlnog.net
-2001:1af8:4400:2::20	leaseweb01	leaseweb01.ring.nlnog.net
-
 217.115.195.38	nxs01	nxs01.ring.nlnog.net
 2001:14a0:300:3::22:1	nxs01	nxs01.ring.nlnog.net
 
@@ -64,15 +61,21 @@ ff02::2 ip6-allrouters
 91.211.73.209	ebayclassifiedsgroup01	ebayclassifiedsgroup01.ring.nlnog.net
 2001:67c:2d0:4150::2	ebayclassifiedsgroup01	ebayclassifiedsgroup01.ring.nlnog.net
 
-195.43.138.182  evertjenetworks01 evertjenetworks01.ring.nlnog.net
-2001:67c:270:4005::182  evertjenetworks01   evertjenetworks01.ring.nlnog.net
+195.43.138.182	evertjenetworks01	evertjenetworks01.ring.nlnog.net
+2001:67c:270:4005::182	evertjenetworks01	evertjenetworks01.ring.nlnog.net
 
-213.197.240.52   is01    is01.ring.nlnog.net
-2001:9a0:2000:a::1:1    is01    is01.ring.nlnog.net
+213.197.240.52	is01	is01.ring.nlnog.net
+2001:9a0:2000:a::1:1	is01	is01.ring.nlnog.net
 
-192.42.123.22   surfnet01   surfnet01.ring.nlnog.net
-2001:610:511:123:192:42:123:22  surfnet01   surfnet01.ring.nlnog.net
+192.42.123.22	surfnet01	surfnet01.ring.nlnog.net
+2001:610:511:123:192:42:123:22	surfnet01	surfnet01.ring.nlnog.net
 
-94.228.136.130  prolocation01   prolocation01.ring.nlnog.net
-2a00:d00:ff:136:94:228:136:130  prolocation01   prolocation01.ring.nlnog.net
+94.75.255.26	leaseweb01	leaseweb01.ring.nlnog.net
+2001:1af8:4400:2::20	leaseweb01	leaseweb01.ring.nlnog.net
+
+94.228.136.130	prolocation01	prolocation01.ring.nlnog.net
+2a00:d00:ff:136:94:228:136:130	prolocation01	prolocation01.ring.nlnog.net
+
+217.198.20.135	in2ip01	in2ip01.ring.nlnog.net
+2a02:7d0:3:208:250:56ff:fe9c:1e	in2ip01	in2ip01.ring.nlnog.net
 
