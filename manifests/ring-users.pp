@@ -234,6 +234,13 @@ class ring_users {
         type    => "ssh-rsa",
     }
 
+    add_ssh_key { ebayclassifiedsgroup_koen:
+        user    => "ebayclassifiedsgroup",
+        key     => "AAAAB3NzaC1yc2EAAAABIwAAAQEA2BNYw6ZZI1KSZ/3cL/KqewqF8OVnYiAHTOQjzoUc8wWgEChoyDsGcK22OUN2OnLaI0i5aQftwyNSuyQUtCgrQis0AHtkdfINE2hOmCzjnNsJrb+vR9+6vdV0joz4nn3EVEzrLWvsmYlI6lm/Bi23XzddF31/izaspbp73+cs6gV76mxDBwfkGYyInwU2hxsAZdGHZ5fXime7V3fBwep1sXceFBMEyKuplyhfEZ1InV6Am1MUyRQcTLUj5bdnDq9dD28G2lP5ttGXP1Ve8VuoauNwbLMCMGWPs3HdvYcpMH0jc39Ce8DV3MvRcYaYxuaFeUFRcDdPOTD+/0x/2SAKtw==",
+        name    => "kvdhulst-ebayclassifiedsgroup",
+        type    => "ssh-rsa",
+    }
+
     add_user { evertjenetworks:
         email   => "evert@vanharten.nu",
         uid     => "5020",
