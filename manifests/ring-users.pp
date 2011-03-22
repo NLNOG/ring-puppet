@@ -1,5 +1,7 @@
 class ring_users {
 
+##### BEGIN intouch #####
+
     add_user { intouch:
         email    => "tech@intouch.eu",
         uid      => 5001,
@@ -11,7 +13,11 @@ class ring_users {
         name    => "tt@intouch.eu",
         type    => "ssh-rsa"
     }
-    
+
+##### EINDE intouch ##### 
+
+##### BEGIN bit #####
+
     add_user { bit:
         email    => "teun@teun.tv",
         uid      => 5002,
@@ -23,6 +29,10 @@ class ring_users {
         name    => "teun@moridin",
         type    => "ssh-dss"
     }
+
+##### EINDE bit #####
+
+##### BEGIN coloclue #####
 
     add_user { coloclue:
         email   => "routers@coloclue.net",
@@ -36,6 +46,10 @@ class ring_users {
         type    => "ssh-rsa"
     }
 
+##### EINDE coloclue #####
+
+##### BEGIN widexs #####
+
     add_user { widexs:
         email    => "noc@widexs.nl",
         uid      => 5004,
@@ -47,6 +61,10 @@ class ring_users {
         name    => "wouter@widexs",
         type    => "ssh-rsa"
     }
+
+##### EINDE widexs #####
+
+##### BEGIN xlshosting #####
 
     add_user { xlshosting:
         email    => "peter@xlshosting.nl",
@@ -60,6 +78,10 @@ class ring_users {
         type    => "ssh-rsa"
     }
 
+##### EINDE xlshosting #####
+
+##### BEGIN interconnect #####
+
     add_user { interconnect:
         email    => "noc@interconnect.nl",
         uid      => 5006,
@@ -71,6 +93,10 @@ class ring_users {
         name    => "interconnect@pjotr.interconnect.nl",
         type    => "ssh-dss"
     }
+
+##### EINDE interconnect #####
+
+##### BEGIN cambrium #####
 
     add_user { cambrium:
         email    => "noc@cambrium.nl",
@@ -84,6 +110,11 @@ class ring_users {
         type    => "ssh-dss"
     }
 
+##### EINDE cambrium #####
+
+##### BEGIN zylon #####
+
+
     add_user { zylon:
         email    => "smite@zylon.net",
         uid      => 5008,
@@ -95,7 +126,11 @@ class ring_users {
         name    => "smite@zylon.net",
         type    => "ssh-dss"
     }
-
+    
+##### EINDE zylon #####
+    
+##### BEGIN duocast #####    
+    
     add_user { duocast:
         email   => "noc@duocast.net",
         uid     => 5009,
@@ -107,6 +142,10 @@ class ring_users {
         name    => "fabian@fabian.office.duocast.nl",
         type    => "ssh-rsa"
     }
+
+##### EINDE duocast #####
+    
+##### BEGIN easyhosting #####
 
     add_user { easyhosting:
         email   => "systeembeheer@easyhosting.nl",
@@ -120,6 +159,10 @@ class ring_users {
         type    => "ssh-dss"
     }
 
+##### EINDE easyhosting #####
+    
+##### BEGIN previder #####
+
     add_user { previder:
         email   => "noc@previder.net",
         uid     => 5011,
@@ -132,24 +175,68 @@ class ring_users {
         type    => "ssh-dss"
     }
 
+##### EINDE previder #####
+    
+##### BEGIN leaseweb #####
+
     add_user { leaseweb:
         email   => "noc@leaseweb.com",
         uid     => 5012,
         groups  => ['ring-users']
     }
-    add_ssh_key { leaseweb:
-        user    => "leaseweb",
-        key     => "AAAAB3NzaC1kc3MAAACBAKrXxLnA6hi7ppZZHOwILVmMmG02n8tRGdgHXxuhYgyEoaEAVJrBPvdziYGSc1MLSXlXtmm+XL8uDMQTnqwb3YZiKKW8v65Se35GdWr1Uf3Gk2jF/M7lq6zR2ji/d7iFq5zUHSEWGOYDz73feDNhJu568k5j/WLSxaV0m9Z7lsdTAAAAFQCeSCQTuWFZVtQYezeFDwDpOf0OlwAAAIB/AlZANZgGYBIsruBaYXseU1jfHm4e5xNGJBmFUtrqLgi09xq+kYpCQITCpPd6eE3MLJ2JylW/o3tlREtvDU/oZDnfG8DgVIz2rtjQ7RkeVH0Wh60CrXn9wV01s/5ih9ISO6ECMV4vr3KWX9XgmQFG91YqXTdcnmHwuYZUeQLQ0AAAAIA4h0zTpnycHcmW2Bfwkor0X2mHdNSZad3+wEx3Bf4DE8VpXMNbJcYgyZ0STbvmGwyAnLZ78qe0+Id0ywkTRXtFd7GNoI02qMnQgBfgZDCcwxHxlcG4v9iI/arCCMGibIWf1Fzog/TYGiJIPExB5WE7G0G3U9jKnxQh3zxG2vtUHA==",
-        name    => "bas@louise.frogerstraat.nl",
-        type    => "ssh-dss"
-    }
 
-    add_ssh_key { leaseweb_gregorz:
-        user    => "leaseweb",
-        key     => "AAAAB3NzaC1yc2EAAAABJQAAAIEAkCgRUkL3e3vm1UO+mQMYhnxdjOavmZXBeBWQO5X9T0y7uj70M+bX/Z3lhOF4Lq0VX4UL8UEfRy/aYa6zxv+SmUsvrPs4Lgo+yeLAVR+zxnZLjsch6r6zFV6+v4dPfKJUO+58bI69+gIUctuczwQn9nvmp76uPbsTvGXVdbtuwzc=",
-        name    => "GJA",
-        type    => "ssh-rsa",
-    }
+    add_ssh_key { leaseweb_ssh_1:
+        user => "leaseweb",
+        type => "ssh-dss",
+        key => "AAAAB3NzaC1kc3MAAACBAKrXxLnA6hi7ppZZHOwILVmMmG02n8tRGdgHXxuhYgyEoaEAVJrBPvdziYGSc1MLSXlXtmm+XL8uDMQTnqwb3YZiKKW8v65Se35GdWr1Uf3Gk2jF/M7lq6zR2ji/d7iFq5zUHSEWGOYDz73feDNhJu568k5j/WLSxaV0m9Z7lsdTAAAAFQCeSCQTuWFZVtQYezeFDwDpOf0OlwAAAIB/AlZANZgGYBIsruBaYXseU1jfHm4e5xNGJBmFUtrqLgi09xq+kYpCQITCpPd6eE3MLJ2JylW/o3tlREtvDU/oZDnfG8DgVIz2rtjQ7RkeVH0Wh60CrXn9wV01s/5ih9ISO6ECMV4vr3KWX9XgmQFG91YqXTdcnmHwuYZUeQLQ0AAAAIA4h0zTpnycHcmW2Bfwkor0X2mHdNSZad3+wEx3Bf4DE8VpXMNbJcYgyZ0STbvmGwyAnLZ78qe0+Id0ywkTRXtFd7GNoI02qMnQgBfgZDCcwxHxlcG4v9iI/arCCMGibIWf1Fzog/TYGiJIPExB5WE7G0G3U9jKnxQh3zxG2vtUHA==",
+        name => "bas@louise.frogerstraat.nl",
+    }      
+    add_ssh_key { leaseweb_ssh_2:
+        user => "leaseweb",
+        type => "ssh-rsa",
+        key => "AAAAB3NzaC1yc2EAAAABJQAAAIEAkCgRUkL3e3vm1UO+mQMYhnxdjOavmZXBeBWQO5X9T0y7uj70M+bX/Z3lhOF4Lq0VX4UL8UEfRy/aYa6zxv+SmUsvrPs4Lgo+yeLAVR+zxnZLjsch6r6zFV6+v4dPfKJUO+58bI69+gIUctuczwQn9nvmp76uPbsTvGXVdbtuwzc=",
+        name => "GJA",
+    }      
+    add_ssh_key { leaseweb_ssh_3:
+        user => "leaseweb",
+        type => "ssh-rsa",
+        key => "AAAAB3NzaC1yc2EAAAABIwAAAQEArf+dRrIwktAU/7jF+Cf0vfL8AF57+ybcLmOoboRzmXBaAjlEROWRQpT8Zb4gum3Y1JIodckTcXEJPKSl+GTeAWY8ZM46GITRjkVc/mYLItAP88Vd2l/2qqJA4gUHWx4nsPn5jZE2RbDBHitWnBVF6Jr+uHkkyH4pVTta392aVxoXWoI8gynXvD4NfrnHJsC5zs4RP5U75Oe983E+OJplu//AsSCnFg7DqWlJV7jSHa381hrfVXftrVO7ItewqSj3XNK/LitF6GHoyviAmAq3re4/hENglXzXHk0HmD7kj86r6V6BjrDVHqwOJAIypsPouZ6BNjncNeAJGEAXYblwEQ==",
+        name => "RDB",
+    }      
+    add_ssh_key { leaseweb_ssh_4:
+        user => "leaseweb",
+        type => "ssh-rsa",
+        key => "AAAAB3NzaC1yc2EAAAABIwAAAQEAwSJX5z6hEEp8e+jreaajAjf5dR211J3nJORGBEkJDwGmdadvPs0xEFJKlrmqA3Wng6zNufN/fYaB8RMfXS4sawg+xiHNv4lsCbJRTXziGPS3FBoUvDaAr82tAiStMCk0A67bvVdqnNNQ4NIz4BTWNGiL2nM+ZOm7p8rLNDpbOxLOJPZd/R85nOzIydsnzpL69OxlqRJtlJl/9ZZEW/t3KfaFvymNeeiNMwzwC3TO5LP+C5UJWrFTbx7xuvUfraHq+csHLeV2QsuhFBiUU5P8U3uwCKAlNnYzcywc2Tbzrl4OMn9hPFb/M4YD83tYmoogJmz/l3r8+6yxoCfpyNeKPw==",
+        name => "HIJ",
+    }      
+    add_ssh_key { leaseweb_ssh_5:
+        user => "leaseweb",
+        type => "ssh-rsa",
+        key => "AAAAB3NzaC1yc2EAAAABIwAAAQEAsLvoKmWCqyIrwyP0g3AfXpi1QB0e0VQU7Y5jCAkfb/V8sovrB6daF+XXFH2/lR9T17pVJmJyRfEjtr0EvdGY/o0C3R8CH7yVYoPEPk7GcimB8y6M//jc7vzZ5rwel4tXKQ8jWARDfEGmwx7s6m38/89KIm0DrAI89VS6Z2XNbYhct25POuIVJp5o/kVoyhv0LGZTSH//j2AzMW/ER3/srH+v7e+6IbypHbpw2xu8KJWUwfrvLgujASM/DbCquaQDd+UFJ+ySFmEm6yhz/gRPVbF99ihAmrtY0mN8JseLfwXAAz/vXe2a1y+aNBP4bgU7jMc+Hl6/WgxTkUaLDvJ8xQ==",
+        name => "HBL",
+    }      
+    add_ssh_key { leaseweb_ssh_6:
+        user => "leaseweb",
+        type => "ssh-rsa",
+        key => "AAAAB3NzaC1yc2EAAAABIwAAAQEAzBtWuVoHct4fH+EXBBq+OUNxjP7jIamG9Qomf9cdiUDDiUsvM8umbk1s8zRkT+7gZxUDwX/qyr1066P50/OV76J5clMYGeYPUbJBL8wBi2CmokK2EoWk629FlDoZq9eF82coi0mULJ6Poux45t1dcF8lbJE7SJRG6gVYQbYw78pJ652U4Y1wa3OzdmcWGJcc8vAlbZ6Cg0kDfzTeRscdSbQsd0PTAKHyr1G8uEQEGJTekksJ1SFHcGIvnl3uR/i3V8pNa7s/bY+ftTs+ZuruOOEuhbGaaGfKbwd6Q0Df/YUJ4fG08H2P1uELcnE8FWnEyAV1XwCu3b0F1Xiexsbe0Q==",
+        name => "VLB",
+    }      
+    add_ssh_key { leaseweb_ssh_7:
+        user => "leaseweb",
+        type => "ssh-rsa",
+        key => "AAAAB3NzaC1yc2EAAAABIwAAAQEA6Pvls7HFmqcswuKQI9C6rJWUo18p/vpOINKaGjrt0BgZT4IKK6ArXKUFOSj/Sy+vfRIDR1vt8iUmCNiSLs1dIEQuweFkwzbk13mBGAIqM5sRb/1zFMEToxNeisPdaXW3CnLxTgMqtKXUUEgTU7wGjvnqmqd5k7221Hbm6TtNbVDN8kge/V85sOjl1iySLKbtJHCMmdsE0LpV8dVyYAl+yd6RSgjGoywAto8GA+sei+ogfwrNBqE4IisqIxVSKLyEBmUbWloynYfxRbBh9hB3gngtNiGm+vlbXaylxy0FwEnLYPFE72u3cjat4NsPxCWtLX5k+V0cY95p2ctXBn4ixw==",
+        name => "TOL",
+    }      
+    add_ssh_key { leaseweb_ssh_8:
+        user => "leaseweb",
+        type => "ssh-rsa",
+        key => "AAAAB3NzaC1yc2EAAAABIwAAAQEA2oT8VUGJb2Y0HtFzLBJ5z/mIUftYlQwdlk7/9O1GHCXgKE5cgUI8tH84wfMNMAVBQc+oJbUZkHDQvmc+bmUs+rSSwsUEo/y4obt2TwjpMqZHhX2PWAk+xjFB4GaFxiqriWqk6HYSC9N3DaBjpC6l8MSGpvvrcA7ZBHx+nt7jVA+f1zhd+FMDWelS/+Y6W9VGYzTmOPpvHYx+r9a7zwdsbVzJ/SEGKqyae00/Ke18lbjhSCy2nxbvli+dvZLuiq+XS7XHk7rR7b5LG6z2YjRZ2HnMsViEIomuzDisZ9XeXefAQZtUJbC+rbQ6XTwqlLLl3MW8agjdzplK5+3Y2nnh+Q==",
+        name => "KDE",
+    }    
+
+##### EINDE leaseweb #####
+    
+##### BEGIN nxs #####
 
     add_user { nxs:
         email   => "ralph.smit@nxs.nl",
@@ -163,6 +250,10 @@ class ring_users {
         type    => "ssh-rsa"
     }
 
+##### EINDE nxs #####
+    
+##### BEGIN ic-hosting #####
+
     add_user { ic-hosting:
         email   => "info@ic-hosting.nl",
         uid     => 5014,
@@ -174,6 +265,8 @@ class ring_users {
         name    => "info@ic-hosting.nl",
         type    => "ssh-dss"
     }
+
+##### EINDE ic-hosting #####
 
 ##### BEGIN xs4all ##### 
     
@@ -266,7 +359,9 @@ class ring_users {
 #    import "sshkeys/xs4all"
 
 ##### EINDE xs4all #####
-    
+
+##### BEGIN nedzone #####
+
     add_user { nedzone:
         email   => "noc@nedzone.nl",
         uid     => 5016,
@@ -279,6 +374,10 @@ class ring_users {
         name    => "bram-rsa-key-20110201",
         type    => "ssh-rsa",
     }
+
+##### EINDE nedzone #####
+
+##### BEGIN nlnogbot #####
 
     add_user { nlnogbot:
         email   => "sten@snore.nl",
@@ -293,6 +392,10 @@ class ring_users {
         type    => "ssh-rsa",
     }
 
+##### EINDE nlnogbot #####
+
+##### BEGIN oxilion #####
+
     add_user { oxilion:
         email   => "noc@oxilion.nl",
         uid     => "5018",
@@ -305,7 +408,11 @@ class ring_users {
         name    => "rsa-key-20100201",
         type    => "ssh-rsa",
     }
-    
+
+##### EINDE oxilion #####
+
+##### BEGIN ebayclassifiedsgroup #####
+
     add_user { ebayclassifiedsgroup:
         email   => "DL-eBay-Classifieds-Networking@ebay.com",
         uid     => "5019",
@@ -326,6 +433,10 @@ class ring_users {
         type    => "ssh-rsa",
     }
 
+##### EINDE ebayclassifiedsgroup #####
+
+##### BEGIN evertjenetworks #####
+
     add_user { evertjenetworks:
         email   => "evert@vanharten.nu",
         uid     => "5020",
@@ -338,6 +449,8 @@ class ring_users {
         type    => "ssh-dss",
         name    => "evharten@macbook-pro-van-evert-van-harten.local",
     }
+
+##### EINDE evertjenetworks #####
 
 ##### BEGIN is #####
 
@@ -368,6 +481,8 @@ class ring_users {
 
 ##### EINDE is #####
 
+##### BEGIN surfnet #####
+
     add_user { surfnet:
         email   => "surf-ring@prolocation.eu",
         uid     => "5022",
@@ -380,6 +495,10 @@ class ring_users {
         type    => "ssh-rsa",
         name    => "prolo@surfnet01.ring.nlnog.net",
     }
+
+##### EINDE surfnet #####
+
+##### BEGIN prolocation #####
 
     add_user { prolocation:
         email   => "cedric@prolocation.net",
@@ -394,6 +513,10 @@ class ring_users {
         name    => "prolo@prolocation01.ring.nlnog.net",
     }
 
+##### EINDE prolocation #####
+
+##### BEGIN in2ip #####
+
     add_user { in2ip:
         email   => "noc@in2ip.nl",
         uid     => "5024",
@@ -406,4 +529,7 @@ class ring_users {
         key     => "AAAAB3NzaC1yc2EAAAADAQABAAABAQCrDK+oklbpw27vY28Jr8qmxAgiZy386qHSndxCjNdkMh4svm7qde6Caw4pbh4nH8aC5+jB0LoHatCwM5NG64tT8OqG66+VcyXKDD76+nvX24chI/Jv+S1rri+KkFjQ1umWWJ7gu4G2qYvVjVtqcgJU0EpbS2Mr5JxGCSt6sWZSOwGBwfcgVSs0X0+IwCifiTtN2sVphMPvi74qwEx9CeyKcuAm0xm19aB2GyOnpBtLAzc9ZCMU8ne7gY3liH9n4ARw+z0M9U0fAlYr8FG0VuAsR/8I5SxIg1CR4aFQwa4TjVQ30m3OpvszkRj3kUk5bitp98RRTcz2LksbJjZ+mLHH",
         name    => "dirkjan@nmc",
     }
+
+##### EINDE in2ip #####
+
 }
