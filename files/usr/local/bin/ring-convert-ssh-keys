@@ -5,8 +5,8 @@ if [ $# -lt 2 ]; then
     exit 1
 fi
 
-RING_USER=$1
-cat $2 | nawk '/.*/ { print "\tadd_ssh_key { UNIEKESTRING_ssh_\
+RING_USER=$2
+cat $1 | nawk '/.*/ { print "\tadd_ssh_key { UNIEKESTRING_ssh_\
 "FNR ":\n\t\tuser => \"UNIEKESTRING\",\n\t\ttype => \"" $1 "\",\n\t\tkey => \
 \"" $2 "\",\n\t\tname => \"" $3 "\",\n\t}      " }' | \
 sed "s/UNIEKESTRING/$RING_USER/g"
