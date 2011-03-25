@@ -128,6 +128,9 @@ node 'in2ip01' inherits ringnode {
     include smokeping::slave
 }
 
+node 'netground01' inherits ringnode {
+    include smokeping::slave
+}
 
 node 'master01' inherits ringmaster {
     $sp_owner = "Job Snijders"

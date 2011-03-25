@@ -79,3 +79,6 @@ ff02::2 ip6-allrouters
 217.198.20.135	in2ip01	in2ip01.ring.nlnog.net
 2a02:7d0:3:208:250:56ff:fe9c:1e	in2ip01	in2ip01.ring.nlnog.net
 
+87.250.146.52   netground01     netground01.ring.nlnog.net
+2A02:F18:1:9231:87:250:146:52   netground01     netground01.ring.nlnog.net
+
