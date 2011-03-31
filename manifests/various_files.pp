@@ -99,12 +99,11 @@ class local_binaries {
         source  => "puppet:///files/usr/local/bin/ring-convert-ssh-keys"
     }
     
-    file { "/etc/postfix/main.cf":
-        owner   => root,
-        group   => root,
-        mode    => 0755,
-        source  => "puppet:///files/etc/postfix/main.cf"
-    }
-}
+#    file { "/etc/postfix/main.cf":
+#        owner   => root,
+#        group   => root,
+#        mode    => 0755,
+#        source  => "puppet:///files/etc/postfix/main.cf"
+#    }
 }
 

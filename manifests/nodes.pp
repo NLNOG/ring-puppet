@@ -32,6 +32,10 @@ class apache2 {
         enable => false,
         ensure => stopped,
     }
+    service { "postfix":
+        enable => false,
+        ensure => stopped,
+    }
 }
 
 node 'intouch01' inherits ringnode {
