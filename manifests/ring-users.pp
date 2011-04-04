@@ -23,6 +23,7 @@ class ring_users {
         uid      => 5002,
         groups   => ['ring-users']
     }
+
     add_ssh_key { bit_ssh_1:
         user => "bit",
         type => "ssh-dss",
@@ -71,12 +72,7 @@ class ring_users {
         key => "AAAAB3NzaC1kc3MAAACBAJ5POT9ABrl6phhI1ll/+McBXpK6krOkVVVNgjOAPNCveYqhONi+WLcQxdWOcngtzzJbuSR9Jv5oDobrmLf+KXRdrfzlzy5NByy+J7t/+XXkXGemuxbhl11LW5JnvI21Uh2mePyzFFT5ka2pj2FEYkTC9Cq0+5nW6MBoMIJvMYG7AAAAFQC42hobnTAn5X+AddftucteN4c+IwAAAIAQLUcNd/EFDAQ/OHL0aIA/7f9d4OsxrDGlclpV9bber3pudQRmGnMd27kshjdvUjPlgq/TJ3mRBsUh9ucefpWvh4dAGiCpIsh7K5Z0rRiRBIKOd+zXqREF0w0hDtVcxUg4GvWrGDotC6Lsp7g+TeyvSHGnDCvk8M6D76pZ4O+pqAAAAIBmkLN5yS6iqe43thaN8tWqn/VPqTSV+U9M2mBQU3lO4emLpPyMw8Z+A4Ds8Q17nQjwpnH+QXXbHj/YO6tp9XorGmFQadIUaPaDPJaaqYxWRbK2HAXlViS9MvT1yoJZy9Q3fUPTlFgOzsDl9t7r2jL6fykyR7SKxcteEBY7gbOpdQ==",
         name => "juul@unknown134",
     }      
-    add_ssh_key { bit_ssh_9:
-        user => "bit",
-        type => "",
-        key => "",
-        name => "",
-    }    
+
 ##### EINDE bit #####
 
 ##### BEGIN coloclue #####
@@ -86,13 +82,24 @@ class ring_users {
         uid     => 5003,
         groups  => ['ring-users']
     }
-    add_ssh_key { coloclue:
-        user    => "coloclue",
-        key     => "AAAAB3NzaC1yc2EAAAABIwAAAQEA3gqVHURqyVTzzjUjgMXeCJfUi1VtLnUqIr166az2wNUTgnuxLLLsa1evPz7mfDJwY36UKi5IcUuC9pf1B9q2vD6o1fLrrd4sviGQZsvSrGuJkMEvIhXM8JtKxpwbEgg/3vCPPUV4cfjBqeNJeo2r6vru6oOHOdFuGJO5vDtDG/EmuQVgMirTWvjlONKWqEGxz/5BTnDX8PGZ5dEryAdtXrhvf1wYqWcQCkh+ZSgBqq7Vv4Chfzeo7P2iIPi4SAoz6j3pDRNQDzPu2r1cMDPqZCPeTVR0+P6+NpIVo5xlxops6NsJPEwxYhhMYc9OsNvR58JII6G5Z2T2/0LZFeVmEQ==",
-        name    => "weerd@weirdnet.nl",
-        type    => "ssh-rsa"
-    }
-
+    add_ssh_key { coloclue_ssh_1:
+        user => "coloclue",
+        type => "ssh-rsa",
+        key => "AAAAB3NzaC1yc2EAAAABIwAAAQEA3gqVHURqyVTzzjUjgMXeCJfUi1VtLnUqIr166az2wNUTgnuxLLLsa1evPz7mfDJwY36UKi5IcUuC9pf1B9q2vD6o1fLrrd4sviGQZsvSrGuJkMEvIhXM8JtKxpwbEgg/3vCPPUV4cfjBqeNJeo2r6vru6oOHOdFuGJO5vDtDG/EmuQVgMirTWvjlONKWqEGxz/5BTnDX8PGZ5dEryAdtXrhvf1wYqWcQCkh+ZSgBqq7Vv4Chfzeo7P2iIPi4SAoz6j3pDRNQDzPu2r1cMDPqZCPeTVR0+P6+NpIVo5xlxops6NsJPEwxYhhMYc9OsNvR58JII6G5Z2T2/0LZFeVmEQ==",
+        name => "weerd@weirdnet.nl",
+    }      
+    add_ssh_key { coloclue_ssh_2:
+        user => "coloclue",
+        type => "ssh-rsa",
+        key => "AAAAB3NzaC1yc2EAAAABIwAAAQEAwcJ6MwiRbbWDvydgiuNJRSiI41AE15Mccp31zPEcHv5yfm6aotJZ9XyhLOCRwkA0uUICfjQt+WXkwllO1K/c8HVHDlxYsPnxyu0l3SLB9XmJs29/onx/vSOWgST8olRvoBoMp5kgkoN4blSIvlq6LAF4rZZAbuqyh5BmE6M98ZznnV18x+5YwAhQgazfEWBMs70hO25OcnIqgEHbSoW1wOoZQSnJkaQPODKbnVJlG7W9WT4iW2gauJMG0J/KFG3uiQ69EqCnxMVQQGQoBnQ7fo/GUvQdbYxFKoUZ3pAIBd7sizP8UqijhLCDoSQE6/AwxX5BzxVDx7MWzc4JZjx2WQ==",
+        name => "job@instituut.net",
+    }      
+    add_ssh_key { coloclue_ssh_3:
+        user => "coloclue",
+        type => "ssh-rsa",
+        key => "AAAAB3NzaC1yc2EAAAABIwAAAQEArwx5A1fV4Exd1uAWMXo/TC0tmMqhexSjpiUwJS9iI1+DsVU5MarlvPp12JTc9V7cYGwsIqRCWtXmxiS9yB0Ro70pTMMckyjRtFeyoxhVD9wjEX8o5UHAZ8xWSHShMQKm8TZzDmisCb1KwfrCbRZgBA+Km6TgMeUhTUSuhyELu6h2OBhwvpDAhWmPXOVKD4RnSU+z3hqgEe6R57idvNOQJRVVks05a4gM49gX/JYRzbNPWveb8OkyAvxNjYy15PHDa/5L3fMILxy2AQBo5GaNJUE1obxXhCACiDSYUpI01XfCVBnUELaYepp0++VuZKJp16Yd0sAZ6olpjZhEAcrrkw==",
+        name => "niels@alphix.local",
+    } 
 ##### EINDE coloclue #####
 
 ##### BEGIN widexs #####
