@@ -12,6 +12,7 @@ node basenode {
     $syslog_server = "212.19.220.59"
     include syslog-ng
     include nlnogrepokey
+    include ssh
 }
 
 node ringnode inherits basenode {

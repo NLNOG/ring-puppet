@@ -1,6 +1,20 @@
 #!/usr/bin/env bash
 # Written by Job Snijders <job@snijders-it.nl>
 
+echo "
+This script is deprecated, please follow these instructions: 
+
+To manage your ssh keys: 
+
+    - place all public components of ssh keys from your co-workers on your own machine in the following file: ~/ssh-keys
+    - the file format of ssh-keys is the same as regular authorized_keys files
+    - notify a ring admin (ring-admins@ring.nlnog.net) that you have performed changes. 
+    - the admin will add new keys or remove old ones that are no longer present in ~/ssh-keys in the management system
+    - the changes will be propagated to all current machines
+"
+exit 0
+
+# old script: 
 if [ $# -ne 1 ]
 then
     echo -e "No arguments were given\n
