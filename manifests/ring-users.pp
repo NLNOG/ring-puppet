@@ -499,13 +499,60 @@ class ring_users {
         groups  => ['ring-users'],
     }
     
-    add_ssh_key { oxilion_wouterschoot:
-        user    => "oxilion",
-        key     => "AAAAB3NzaC1yc2EAAAABJQAAAIBlZkdBFEeyjt41M+JefGGTz+qZNU0IqH3yQ7bQC6GccJ7OqXsrHIkw6v1wqKxxp7fZgROxTlERQiV8CU9EHRytRw1oB1AXugt+gYd48qS3m7/e7ldUfMQ4bCZ7geyAbDuxCScpmBh5xpe52zALSgw45HTEvL+RM21sGuwOrIgiUw==",
-        name    => "rsa-key-20100201",
-        type    => "ssh-rsa",
-    }
-
+    add_ssh_key { oxilion_ssh_1:
+        user => "oxilion",
+        type => "ssh-rsa",
+        key => "AAAAB3NzaC1yc2EAAAABJQAAAIBlZkdBFEeyjt41M+JefGGTz+qZNU0IqH3yQ7bQC6GccJ7OqXsrHIkw6v1wqKxxp7fZgROxTlERQiV8CU9EHRytRw1oB1AXugt+gYd48qS3m7/e7ldUfMQ4bCZ7geyAbDuxCScpmBh5xpe52zALSgw45HTEvL+RM21sGuwOrIgiUw==",
+        name => "rsa-key-20100201",
+    }      
+    add_ssh_key { oxilion_ssh_2:
+        user => "oxilion",
+        type => "ssh-rsa",
+        key => "AAAAB3NzaC1yc2EAAAABJQAAAIBR3Y5KY3uInywLRDtdzFelAzO9tMFZ9MVwEIuFCfOx3KtusIz7kArynuS4y4r6K0k/4M9/WlFBkKrr9qcWeoDkwBngn6NZj2a5dw0ImwDUH8CrpoSLFaOh7B46Y4A2aDwEL6Blh5+YgHERcoOVF9ozHYwhxD1SF8FnY8wZST2yzw==",
+        name => "arnoud@oxilion",
+    }      
+    add_ssh_key { oxilion_ssh_3:
+        user => "oxilion",
+        type => "ssh-rsa",
+        key => "AAAAB3NzaC1yc2EAAAADAQABAAABAQCsp/mLeYC+KUWmXd0YE1Wo0XfhhfPih9ICA20dvIZBeloCCEZoKSj3uL0b7wZwvbSjIgA8b3zcSG2YGzHGNPBBjf5ERXj1ZT8qwzc7r+mwzAufNZQUhuQj1Efud0HY0pgF+bBERAhBb8W+AWu6SbaEnwt//2DmFDXeIS5SPA5buAKeofFxvnRkumYrzvcstqMxh3r+qQaRRX91D4y3DblLuFJs0+cABjG6xlZw4UQWc3Xh+Ikv2PQHiZU8N8IucCXUOMY0Sfc22h+N9hWm/SHwzfrj85cCGg19esoGPSBXwozoJW+sJ3C2hgxngR2cBguUNUZs0cl39+8scV3+wxE3",
+        name => "ekohl",
+    }      
+    add_ssh_key { oxilion_ssh_4:
+        user => "oxilion",
+        type => "ssh-rsa",
+        key => "AAAAB3NzaC1yc2EAAAADAQABAAABAQDZgUrS6PMBWjB5z3QkN3Bq3b8bfcapVNEcoZ14PbuedOZzcKo7zVm742r9UfDQV3pYe/gX4tfmU/gOSEthw62uHG8eosbMS27cUCxATMdWxlYLoyiBCUjrpWglH/L/DgLjHfJJafDaZB+N1Ugd9d+8A0Q7L8p0v+tYK7Pn69PIuFMQ+HlJwLp0U2OYPEI/DdE9ahobZGxSrl1lOW/FzYbD85zHQR6y+7ZW/mpbSDwKor81tRcqb5BTJ3XrI7G0B1qrCmrRJlZjXSgdgV7u7WCQvfAdIOQNMq+H+mlbhM5ZqrLBdZm0iCQVRxDNt6j/pSK+oNrVRHaC5jCElbOADGVP",
+        name => "tjikkun@sleptop.hoentjen.local",
+    }      
+    add_ssh_key { oxilion_ssh_5:
+        user => "oxilion",
+        type => "ssh-rsa",
+        key => "AAAAB3NzaC1yc2EAAAABJQAAAIBlZkdBFEeyjt41M+JefGGTz+qZNU0IqH3yQ7bQC6GccJ7OqXsrHIkw6v1wqKxxp7fZgROxTlERQiV8CU9EHRytRw1oB1AXugt+gYd48qS3m7/e7ldUfMQ4bCZ7geyAbDuxCScpmBh5xpe52zALSgw45HTEvL+RM21sGuwOrIgiUw==",
+        name => "wouter@schoot",
+    }      
+    add_ssh_key { oxilion_ssh_6:
+        user => "oxilion",
+        type => "ssh-rsa",
+        key => "AAAAB3NzaC1yc2EAAAABIwAAAQEAsBbZp+Zo8Y/Jw4oqb1KHWONjGxesHSd4g6RYGrWOG1tOOqDerK1ZiFJcleIYXOFyaqyyZaVyChRQU6/U3gojP1a5jOvPX6LUo4WW6z60mi0C7utfHnKBV24wSF2s0I+7e9Saokgsw8ZpULNshD0sJZuzWFN1ep4Sk3jIPokWOrb5UR7ZkpB6PnpHQGpPLsEitbRiu7Fms6piYp10Wvj+U/alu9Ua4zWz5XtDOPm0aY13OqokGGlJCdBVmvMcF6wnk540X2y6Pd/fqrcZvLKwFFJSajW6/aNF3ZeP01M5MHd8xiE+duzL5exI9gAQY4PsV/wpKiMPM7AHgwuwLtj0iQ==",
+        name => "tjikkun@peecee.hoentjen.eu",
+    }      
+    add_ssh_key { oxilion_ssh_7:
+        user => "oxilion",
+        type => "ssh-dss",
+        key => "AAAAB3NzaC1kc3MAAACBAIH4uNqbeod/QUf4DcKCHEFlLm5+8zf8xw3uamyRnJl1z/C1zMW5xMbPysRPNUJDJZzAxu2C4AwMSaOYdTjYKINfZWYD0aBcbgn7Ggz1bG/rxd6JcOLzp6X+Pgz4lP8RgMyt2FsiEO+5KtwcU0EA06uXO5TsFco5Eot1xLvpzi5vAAAAFQDyRQXCVHwVZ2loVneB5+8noD+x9QAAAIAb0ZnMNjefY3Lcd2ZRZKic8Gs8vNJDLuckwgytLY2HfJq4VFWs+oVxIq7C5+JVwroR3cz5wLTaUZ95Vnc4/SlpklQewCDwlL0SWOnh59TwlGkPgusypBy0UQHp/qEQH8TXiqtZLu4QjArCEO71RVqypgqTVV8NXE3cYkL6hv1ncQAAAIA1czSkbdbQfQjtwTYFWpSu1DIaQaeNsUVMnScA7W3RvZOIm+xo8kdqXvCBTyDZyZf04j815k7aZOA3fycouepZHPJNvfQj39eagcDkVmPI/kx7rgpLTFWQO+xZMJN3q9mA1gzxG0b1g5ZClUgkCn7xm4pzk3/YxOMqIqvkvKEnRA==",
+        name => "sander@fedora.jronline.nl",
+    }      
+    add_ssh_key { oxilion_ssh_8:
+        user => "oxilion",
+        type => "ssh-dss",
+        key => "AAAAB3NzaC1kc3MAAAEAU45STvUiUkfYhqTjXXQ+T6LEvyf2iMtxpMm8AgboFB3w1c3rBciveiBEH5+fp0p0OIw5Uz7xkEg2UT9Xut/oT/GuDCGGtHiBtDw+48IaMdGWjvYOvSBxWNgcoVXh2RqAZNGFzMEFWHK//QraK7HEyK2mRrwNT1Is6L4rYZjTDySoxmkPulw6tz0sy5yLHLySz83Qt+CE6HJbJvRHL3ZvfOzB8BEHQwT6wbYy3gI6EucZPHIPwIP4Ng+SC8ydEn1tq3jhQgqBcsuXBs7TZyNkFH7Qnp9Gskhga6EriOqQyQUbvhATi0w7tQQqbVqGeAeBSfeMe1YvrPrNhzit6DSNgwAAABUAn5oAMYC464Ki1cW8movZc4rUx90AAAEAHY0vVpkd4YhURJb9K4GvNc6rXJ2GDcVkvPVaZ+1pYdVuRsDntYi/vEuandm++gLP8nZoLoCE+nP0laRz/Y96keCOcHetxUBdyMPvLaB8lW83Z+Ukxa4rE4YSEOJeHag1rBmg/JWM92KfOWL55jJeJosXwCowybWcMQ3H0QKimOyQBatc31R6kRqrjA11yjWytRSJZo4csKiSNU3F1mCxrrouA/Hhi8nl8H0MPDd3CHA8Xa3n0Ri1jH4Kvpk3daO/JviHpqD/0rlZYcV7Cm/WBtopqU/GsQge7501KgOe6c8OA0LHDvDzMVumijK9mlbeIrdFHRDJYyRqnBIXfWhOzwAAAQAC5WrUj/iMsf/RXYX0IPvHmcN6B2RumNYdv0BjaTmKmtvUhKbA6rf0vvwIWKeEwhi3HR1rL41Nq3fb4QX+KlvmtHa2YQZHRmByRMe21KBXXxpl1rBN6L0W99hb/MqK5R/E1hBuPOdRDgmAKOEfr+my6NRLRMUVQHmvZ2MX3JQFGSor2a6ur0GcSbcQgT0E5jOsLpk/Qi3WCM3ntI/27cnUhmlOIbzNAyoo3B44UQbp99+GuRT+z5y5a7e6jgEsBH9pmhz55KgNG620fd/S2IzEXLPMzQs1/rSJrjqH9O+pq8vZNj1dgQBsr3jts5mq8dYpPAlrcyhH/qd+5v2+QjkS",
+        name => "lj-key-20080618",
+    }      
+    add_ssh_key { oxilion_ssh_9:
+        user => "oxilion",
+        type => "ssh-dss",
+        key => "AAAAB3NzaC1kc3MAAACBAL+naGa4gWrWrzVdGEkw6zlzjtrmkFxw9dBAe3sUimXlQ4iq1MqhYm+PqbH+7XT35uZPqwucz+u0h3daQ1GVy3WsmXmKpIj5sDe71ymJdMILiQmV4k+6wLociMpon8E+d2/Wyn9uVmtkZyxNNBroJuejcvcpi1HtXOP0Vetd8QH3AAAAFQCIda0YLTQGt2xllyBOFpAEj4fS2wAAAIEAr0sgCIhlXbxFLj9awUS/uuCmM13DLOsHxfl9anUyvwN3GqEetpvl9AcazD8JWBXt8x8e9OCKbafF/qy3yQaoy3vjPHU3ofdvvftyJqE6JUaGgIj8z7rIjxqfbdbC8Utld2yMZ68NadTxn+q9LuSyQ7dmQ3uPCPrEwkItNHpgab8AAACAR3xS4OCBNglVwQGf+HMjb1+cb/p2mCtkvpFAgiQT92790y0T45PzSDFQN20LFOfwrpRqigrxpgwHgX6thfOLUck+IPbkMPLa2TMlJYaY/IYhr08Am/hWFoi3TRPRDUPw26CSU5qNYPmfH7suC5EzBgjfoKvL3wY04eNIlSEu5Vk=",
+        name => "tekkel@fedora.jronline.nl",
+    }      
 ##### EINDE oxilion #####
 
 ##### BEGIN ebayclassifiedsgroup #####
