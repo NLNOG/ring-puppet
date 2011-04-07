@@ -523,12 +523,6 @@ class ring_users {
         key => "AAAAB3NzaC1yc2EAAAADAQABAAABAQDZgUrS6PMBWjB5z3QkN3Bq3b8bfcapVNEcoZ14PbuedOZzcKo7zVm742r9UfDQV3pYe/gX4tfmU/gOSEthw62uHG8eosbMS27cUCxATMdWxlYLoyiBCUjrpWglH/L/DgLjHfJJafDaZB+N1Ugd9d+8A0Q7L8p0v+tYK7Pn69PIuFMQ+HlJwLp0U2OYPEI/DdE9ahobZGxSrl1lOW/FzYbD85zHQR6y+7ZW/mpbSDwKor81tRcqb5BTJ3XrI7G0B1qrCmrRJlZjXSgdgV7u7WCQvfAdIOQNMq+H+mlbhM5ZqrLBdZm0iCQVRxDNt6j/pSK+oNrVRHaC5jCElbOADGVP",
         name => "tjikkun@sleptop.hoentjen.local",
     }      
-    add_ssh_key { oxilion_ssh_5:
-        user => "oxilion",
-        type => "ssh-rsa",
-        key => "AAAAB3NzaC1yc2EAAAABJQAAAIBlZkdBFEeyjt41M+JefGGTz+qZNU0IqH3yQ7bQC6GccJ7OqXsrHIkw6v1wqKxxp7fZgROxTlERQiV8CU9EHRytRw1oB1AXugt+gYd48qS3m7/e7ldUfMQ4bCZ7geyAbDuxCScpmBh5xpe52zALSgw45HTEvL+RM21sGuwOrIgiUw==",
-        name => "wouter@schoot",
-    }      
     add_ssh_key { oxilion_ssh_6:
         user => "oxilion",
         type => "ssh-rsa",
