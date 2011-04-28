@@ -29,6 +29,7 @@ class nettools {
     package { "python-setuptools": ensure => present }
     package { "sl": ensure => present }
     package { "mtr": ensure => latest }
+    package { "nmap": ensure => latest }
     package { "traceroute": ensure => present }
     package { "fail2ban": ensure => present }
     package { "tcpdump": ensure => present }
