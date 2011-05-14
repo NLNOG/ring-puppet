@@ -23,56 +23,48 @@ class ring_users {
         uid      => 5002,
         groups   => ['ring-users']
     }
-
     add_ssh_key { bit_ssh_1:
         user => "bit",
         type => "ssh-dss",
         key => "AAAAB3NzaC1kc3MAAACBAP/DdVSOaY3KCBUHdIhTtxIb9Mx5GbR6eGyuKv545Tgs9a8AO6TS3t+mTvwp0/5eMuki6U0H8tPEzmxr3UP5CSAxehFcjoVQBYliJVGF0wTyCW6rYnv+kEF83ZTRhKVqe8PZ4ZWgf4rANFt+r8TVXtons+wzK6ZWJT68mNrN8OnDAAAAFQCrq5iitS1tWPOt7H9peDjsBiWhDwAAAIEA7bhL5rlW6zK87X4AjHvdn4YMAa7/2aUk5mpPYW23702UaQPY2fHzDnlvR/pC5o6Qb+svz5vfx9bRxjRpsGEB6tgJMOYUmaa0zjIISDtcwEhdIOTpxAlBAE9N/Eb7H2N61gQ2qX0QzxZneo9eNg8EAYrj/ZhO4AWI+sVlLY+FENgAAACAKafA/XMtHaxCUJormDQ8z4/QvZ94vn1/RE3u7pE/N2Q7a2yJTljcp0AQx5alpyM6BplhwMlsAeET2WE1MPjeJIjB/MlDNO8u9/WRBn2eFkeZHbFhji3PCGIV/JI/cbWFx5wrhIc/UHohI3mLK7iP6sNyzJTqXDw2Xsad87mn8gA=",
-        name => "alex@manitou.bit.nl",
+        name => "alex@manitou.bit.nl_1",
     }      
     add_ssh_key { bit_ssh_2:
         user => "bit",
         type => "ssh-dss",
-        key => "AAAAB3NzaC1kc3MAAACBAMEAWVU5XUbDMIKlxs4VtkJlvxP6tfZ+vhqI8Vth5/6gZMkzjq3El3xwylURi0m7P5stIaxk5/YPHU7j1wv7oKqo4g2fgSDnCJt0pv4HUNs+JpWUE9joSSg0N7vhHK+1cYvcFdy6ugxZCtKvxxulEnfQtvmVK7GSJPtrzJwsAvCXAAAAFQD0SxQL4KWAThjHv+tGONYXxBQknQAAAIB91XEcmYqdbiu+oOItwMJk9wHFaAFj+VLSOMSqS/uWfY5KoEkesfm25Moz+2Ivf+fCh/BqXI/cz1ae/+aenrb7ULx/cevBx96TM2+oqJUaxtR+UNgUE3Aqhr51DObjVfe94HwIVOm53tAOGiX6muZ/l0YTref6d31vBlVCU4EIogAAAIEAplANZ79mtKfKxHqofafbBgm66m5sF4cKIylEJowWLhux1aMKEjINV2Nlq2Ulvf/qEp5qDx771VcIjr55nGKKVuZqlPg0PKk+wT+AeJBoJKOZDTKQFjTIsydRjPyGGE0MBpRFbGyFgIQgoEDmH/cnXA3JgldZXOeXo43mPb5Z6YU=",
-        name => "daniel@daniel",
+        key => "AAAAB3NzaC1kc3MAAACBALeWM3eDsqvDwBHAjjbvS6lyPlgZrfds+jmsQAQlU3WxXYExIRioozWw/Ynfcr1SzQAmGHVrxQB+F4iDqXpf1rcK3G1Uv+ErkA9iC+IOEhxCf/K+axxEyLcIIVTRMg6nJX5+JeWjCj+kaULhboG7BgzfeMXuBhUzM6A8kBBl1D3FAAAAFQDLpKisze5fNMVSEGBHZ10LRYp1BwAAAIATlCAeDHcxOc6SEdYU2FnyviLKbaUzoWyZHFq8gFjNiKa3KlvuDev15NeYWIiFmVZ1wk4PiEA5CviwRxYTR5Sq1Wz1ECa8oMm17+UXWtnAXIFri4LAfltmfyY0IoU6Lql5hvNEsV3jlVDs93tfdBHrbGJ9PjbzZOb7dOihYimejQAAAIEAjR75ktMQU+g+f8DiDpbExkR/4C8vLCoJm9E8s+Ce8EQYiwgan1AJLpeCxSv0xSPx7caPKhWWjFAp3D29lN1Af8e2Sq1ODH3IVme6qvZWpIpld7ZJ067rIwcYs6jICMDGBA6bPj9HiU1q2o7Iqfgdz9veFu2okpCqHWuEsFJQXWQ=",
+        name => "emil@barabas_2",
     }      
     add_ssh_key { bit_ssh_3:
         user => "bit",
         type => "ssh-dss",
-        key => "AAAAB3NzaC1kc3MAAACBALeWM3eDsqvDwBHAjjbvS6lyPlgZrfds+jmsQAQlU3WxXYExIRioozWw/Ynfcr1SzQAmGHVrxQB+F4iDqXpf1rcK3G1Uv+ErkA9iC+IOEhxCf/K+axxEyLcIIVTRMg6nJX5+JeWjCj+kaULhboG7BgzfeMXuBhUzM6A8kBBl1D3FAAAAFQDLpKisze5fNMVSEGBHZ10LRYp1BwAAAIATlCAeDHcxOc6SEdYU2FnyviLKbaUzoWyZHFq8gFjNiKa3KlvuDev15NeYWIiFmVZ1wk4PiEA5CviwRxYTR5Sq1Wz1ECa8oMm17+UXWtnAXIFri4LAfltmfyY0IoU6Lql5hvNEsV3jlVDs93tfdBHrbGJ9PjbzZOb7dOihYimejQAAAIEAjR75ktMQU+g+f8DiDpbExkR/4C8vLCoJm9E8s+Ce8EQYiwgan1AJLpeCxSv0xSPx7caPKhWWjFAp3D29lN1Af8e2Sq1ODH3IVme6qvZWpIpld7ZJ067rIwcYs6jICMDGBA6bPj9HiU1q2o7Iqfgdz9veFu2okpCqHWuEsFJQXWQ=",
-        name => "emil@barabas",
+        key => "AAAAB3NzaC1kc3MAAACBAPcTjYbzdDV+wEBz3TQ31LCkeuZy49V5r+C+sPKbSY5UZphbxhJtapeYgT1f+hI18l5/XB1JnCUDH1ADCj3E3B7R/yAHoyvLGBiPxxJTUgL5t8X2KiTTGPyBfrvATr41AWYb/WPvZmVWQVkPmu6PgURQPQ1eCN2ADv1WVeDaelhXAAAAFQDhnQQIM+6a4wXhJEdWrSDLAWp/IQAAAIEAsw/RxbeUKW8edJbN8Nu2izcX+Qn5ymBabeqSHUrLxRQwrWukVG2eaDgeOuIJJgfaWIc1TFgzyqhazvc2wyDdRx3nlIukB+DSnbOfAGlJFb7lOK5IZsqyBPtIO5+gs/0+PVKUZfkAceXK6em3BYU6qcSNMMeFYAwjlOS0R96jycAAAACBAJQKS9+S3fuKvQ+XUmZ2gXNtt8HdN+iLd8imL3qjL7fvaOMQRzFEPT38A05Yd57qsPtNgEzfRFsa2LyrOszA8JB21kCiaoZ7i5YqbiycKd06e79iDhoWBNnBf6aAWlcavE5hN1Shzqw4yTNVnTBYKzR7TSxF46aj7Zktm+foKp32",
+        name => "bart@bart-desktop_3",
     }      
     add_ssh_key { bit_ssh_4:
         user => "bit",
         type => "ssh-dss",
-        key => "AAAAB3NzaC1kc3MAAACBAPcTjYbzdDV+wEBz3TQ31LCkeuZy49V5r+C+sPKbSY5UZphbxhJtapeYgT1f+hI18l5/XB1JnCUDH1ADCj3E3B7R/yAHoyvLGBiPxxJTUgL5t8X2KiTTGPyBfrvATr41AWYb/WPvZmVWQVkPmu6PgURQPQ1eCN2ADv1WVeDaelhXAAAAFQDhnQQIM+6a4wXhJEdWrSDLAWp/IQAAAIEAsw/RxbeUKW8edJbN8Nu2izcX+Qn5ymBabeqSHUrLxRQwrWukVG2eaDgeOuIJJgfaWIc1TFgzyqhazvc2wyDdRx3nlIukB+DSnbOfAGlJFb7lOK5IZsqyBPtIO5+gs/0+PVKUZfkAceXK6em3BYU6qcSNMMeFYAwjlOS0R96jycAAAACBAJQKS9+S3fuKvQ+XUmZ2gXNtt8HdN+iLd8imL3qjL7fvaOMQRzFEPT38A05Yd57qsPtNgEzfRFsa2LyrOszA8JB21kCiaoZ7i5YqbiycKd06e79iDhoWBNnBf6aAWlcavE5hN1Shzqw4yTNVnTBYKzR7TSxF46aj7Zktm+foKp32",
-        name => "bart@bart-desktop",
+        key => "AAAAB3NzaC1kc3MAAAEBALy1k8K73RbXIfmdwdPkK4/d5JzLoSDo2kst9vElxK2+2TfiEq2KipYGH1pYwlNsbNWwrjYDzdrIUK92D3h0AoalDySxdOWEA4n2CoLTOIV93+4mCoYkkxMMsD1S1TERSqbSX1m51h2L7O8bLz/8DjpLGzCAH19egMQR6Ca4JzTDKA3lJojAfQ+7rJEkq72oIMXCKBaHrnRaaf+nOuwIG1GPkcnBsCKC/g9L3yNZJuIoB+Wl1lP98iEz+RZDGT5MltVWosBxM2UcmMwiI2oznl/HKwTZbW85mhQzs9OVUib4cFzvS7vYa36khvD19/ZPnfXj2zzK3C2BTb6udBIor7MAAAAVAIDv35RBXwhkIGjxVr5jRUAl6z2pAAAA/zrkj7qv64bKnyDa398/xgEDWEw26vlw2QeJLTo11gJAG4cg0DFqSeJfbclJLPv5C+vSP7es5to8tZLkkmNXpZx1Fv1we+yBUJ6Z1QtZ4hd8rh4mx82Z4oGqh4w6kt1moCk8BAMKifC51diw6xZOgpU7zXmymgCLExhyb/UEL+EUVglnl/YEPqszd/8M7OD/FPMcnLFbh7MvVZJorJfNO0ZKITaZSFCzR9aiHfYyPfg+npxjQrCBLCDyoQ+GxidZPVX86pwUHmwg7tb9EtnFQIYSJLRlw3x5Fl7zSKxLUt6ODieSpkSQAdDY6Y9rf5tk0NahY3vGfTWAxTZrDjdJiQAAAQBurz0Bq43YoAMPRh0aQ54jIEYE9dOdXo4Q9kH4ARaKMiE1cGaytLfeAJcomYsnjn5O26Q8R2JByBU7sSCzVFKZtGpQJWfksO3fY9XLu0KmEtXhxYph1xjDXymb2aoTvci0pOB6XoFDpz4o6JhsjD/MmX91EupWOoPNMG1Q3ROM3t83xSLXDZGUm8E4modjEOayhjEl2jsEpZc1RyTitrOM05uwtnK2VDUgzn6GqE7QnJC7BriQiRX8rzdn5vaT6AAzn9YoHZhl+c9y4xN8nE3OgCToJgGwDM4tKRrmUpNDyBPU5Q2kW853VfdFklgDqA06tNLllHMWMpvsxI7urtfF",
+        name => "teun@moridin_4",
     }      
     add_ssh_key { bit_ssh_5:
         user => "bit",
         type => "ssh-dss",
-        key => "AAAAB3NzaC1kc3MAAAEBALy1k8K73RbXIfmdwdPkK4/d5JzLoSDo2kst9vElxK2+2TfiEq2KipYGH1pYwlNsbNWwrjYDzdrIUK92D3h0AoalDySxdOWEA4n2CoLTOIV93+4mCoYkkxMMsD1S1TERSqbSX1m51h2L7O8bLz/8DjpLGzCAH19egMQR6Ca4JzTDKA3lJojAfQ+7rJEkq72oIMXCKBaHrnRaaf+nOuwIG1GPkcnBsCKC/g9L3yNZJuIoB+Wl1lP98iEz+RZDGT5MltVWosBxM2UcmMwiI2oznl/HKwTZbW85mhQzs9OVUib4cFzvS7vYa36khvD19/ZPnfXj2zzK3C2BTb6udBIor7MAAAAVAIDv35RBXwhkIGjxVr5jRUAl6z2pAAAA/zrkj7qv64bKnyDa398/xgEDWEw26vlw2QeJLTo11gJAG4cg0DFqSeJfbclJLPv5C+vSP7es5to8tZLkkmNXpZx1Fv1we+yBUJ6Z1QtZ4hd8rh4mx82Z4oGqh4w6kt1moCk8BAMKifC51diw6xZOgpU7zXmymgCLExhyb/UEL+EUVglnl/YEPqszd/8M7OD/FPMcnLFbh7MvVZJorJfNO0ZKITaZSFCzR9aiHfYyPfg+npxjQrCBLCDyoQ+GxidZPVX86pwUHmwg7tb9EtnFQIYSJLRlw3x5Fl7zSKxLUt6ODieSpkSQAdDY6Y9rf5tk0NahY3vGfTWAxTZrDjdJiQAAAQBurz0Bq43YoAMPRh0aQ54jIEYE9dOdXo4Q9kH4ARaKMiE1cGaytLfeAJcomYsnjn5O26Q8R2JByBU7sSCzVFKZtGpQJWfksO3fY9XLu0KmEtXhxYph1xjDXymb2aoTvci0pOB6XoFDpz4o6JhsjD/MmX91EupWOoPNMG1Q3ROM3t83xSLXDZGUm8E4modjEOayhjEl2jsEpZc1RyTitrOM05uwtnK2VDUgzn6GqE7QnJC7BriQiRX8rzdn5vaT6AAzn9YoHZhl+c9y4xN8nE3OgCToJgGwDM4tKRrmUpNDyBPU5Q2kW853VfdFklgDqA06tNLllHMWMpvsxI7urtfF",
-        name => "teun@moridin",
+        key => "AAAAB3NzaC1kc3MAAACBAKV0jrPVsZefX2imZ52r2galmgkl0t/AtHJTRKRJ+SSvyGb5YgaVac0cs4oOT577WhLMjxG5O52cMFPP9uPVehVwNgsMzMsF6QfSXDRfx3jIkxNrYJ1OTzdoywHOH/PdIHKOsQCUD7Ss/giFfEV0F7MJ2in+KLlH9cbce6wqvVXVAAAAFQCglrZvghYAiKIEHCmd2kOCI9CWfwAAAIEAnClgYEhrT2gmlOAqHIoqKyf2p2yqnLLdqFkuzouGD96rdIUXltMldyvRKA5UGEhRAb1CUglFuxw59ZZ52h3pm4mpBHsvjECzfE4a1TyZdD9tfA6u+AxbtTYZdNsYt9gv/9sK1Q02bylXuurIucZ1/kBgDIyeLnHPbdps15cD+vAAAACAaPTkYb5TQ8nSCXvAGWKGCs7hCVxYLLN3eZuiHzjvHMKa7z2cGliP5SkFw9alGa2cepWGmOlGRCDOcTDcJ2oGDn+p5xubPhuJ3TO3IIV5aLn7y/lVNWTF+Z7PZa03BtdejdPcP7RV6QOhIOX3Dx0/D2nYbY5Tj5DkD8wbMpOPLEA=",
+        name => "sanders@haze_5",
     }      
     add_ssh_key { bit_ssh_6:
         user => "bit",
         type => "ssh-dss",
-        key => "AAAAB3NzaC1kc3MAAACBAKV0jrPVsZefX2imZ52r2galmgkl0t/AtHJTRKRJ+SSvyGb5YgaVac0cs4oOT577WhLMjxG5O52cMFPP9uPVehVwNgsMzMsF6QfSXDRfx3jIkxNrYJ1OTzdoywHOH/PdIHKOsQCUD7Ss/giFfEV0F7MJ2in+KLlH9cbce6wqvVXVAAAAFQCglrZvghYAiKIEHCmd2kOCI9CWfwAAAIEAnClgYEhrT2gmlOAqHIoqKyf2p2yqnLLdqFkuzouGD96rdIUXltMldyvRKA5UGEhRAb1CUglFuxw59ZZ52h3pm4mpBHsvjECzfE4a1TyZdD9tfA6u+AxbtTYZdNsYt9gv/9sK1Q02bylXuurIucZ1/kBgDIyeLnHPbdps15cD+vAAAACAaPTkYb5TQ8nSCXvAGWKGCs7hCVxYLLN3eZuiHzjvHMKa7z2cGliP5SkFw9alGa2cepWGmOlGRCDOcTDcJ2oGDn+p5xubPhuJ3TO3IIV5aLn7y/lVNWTF+Z7PZa03BtdejdPcP7RV6QOhIOX3Dx0/D2nYbY5Tj5DkD8wbMpOPLEA=",
-        name => "sanders@haze",
+        key => "AAAAB3NzaC1kc3MAAACBAI0nFUuX61Fac+MrlqOCvLrPgEcsvE2eG/bxXs5dxf4gDruaNb2/2qm01YUn3ULM2G+cshDYkFoAUsQcUEphbfNzLXGtkU4UUc6JUMTpwOnMvuCj6qo0AcukTmj9YR0K6q4ecxEaBba9mcloTE66+dqS47/JZED2gtR7N1ElWxEbAAAAFQCIxf2eZKDE+PBwnKgZRqHfO7S+bwAAAIA253FXU5T/cBGkukvPTAUg16LWLE0lE6xzkZu8VLPRfwiwkwZK3DNg6LDl05xSUa2RLXAg728rPs8WqkmLFnBZpjCK1QIyKao9sofzIvVFoFYK7C6BlevZWZEwhsSDh4AEcWp308KkAAXjhnpENm+rfPZXHw5DSC/bfA2jHxYnhQAAAIBVpjEQFOo+0xmn24nPDhOn1rx1CsJ39JXY3HGBQiB7JBrjIVlat6UqO+w9GtJY1IemIcSvxUdJJbvRMLseiu/jp4o7XthhpFRtwzZMhTvzY8LyWIqEp6ip94lh9VsmQvQDjSUjYOdWEIXJATdPgv4PfFfwl9pgAoV0VZIz4JhiNQ==",
+        name => "henkjan@estate_6",
     }      
     add_ssh_key { bit_ssh_7:
         user => "bit",
         type => "ssh-dss",
-        key => "AAAAB3NzaC1kc3MAAACBAI0nFUuX61Fac+MrlqOCvLrPgEcsvE2eG/bxXs5dxf4gDruaNb2/2qm01YUn3ULM2G+cshDYkFoAUsQcUEphbfNzLXGtkU4UUc6JUMTpwOnMvuCj6qo0AcukTmj9YR0K6q4ecxEaBba9mcloTE66+dqS47/JZED2gtR7N1ElWxEbAAAAFQCIxf2eZKDE+PBwnKgZRqHfO7S+bwAAAIA253FXU5T/cBGkukvPTAUg16LWLE0lE6xzkZu8VLPRfwiwkwZK3DNg6LDl05xSUa2RLXAg728rPs8WqkmLFnBZpjCK1QIyKao9sofzIvVFoFYK7C6BlevZWZEwhsSDh4AEcWp308KkAAXjhnpENm+rfPZXHw5DSC/bfA2jHxYnhQAAAIBVpjEQFOo+0xmn24nPDhOn1rx1CsJ39JXY3HGBQiB7JBrjIVlat6UqO+w9GtJY1IemIcSvxUdJJbvRMLseiu/jp4o7XthhpFRtwzZMhTvzY8LyWIqEp6ip94lh9VsmQvQDjSUjYOdWEIXJATdPgv4PfFfwl9pgAoV0VZIz4JhiNQ==",
-        name => "henkjan@estate",
-    }      
-    add_ssh_key { bit_ssh_8:
-        user => "bit",
-        type => "ssh-dss",
         key => "AAAAB3NzaC1kc3MAAACBAJ5POT9ABrl6phhI1ll/+McBXpK6krOkVVVNgjOAPNCveYqhONi+WLcQxdWOcngtzzJbuSR9Jv5oDobrmLf+KXRdrfzlzy5NByy+J7t/+XXkXGemuxbhl11LW5JnvI21Uh2mePyzFFT5ka2pj2FEYkTC9Cq0+5nW6MBoMIJvMYG7AAAAFQC42hobnTAn5X+AddftucteN4c+IwAAAIAQLUcNd/EFDAQ/OHL0aIA/7f9d4OsxrDGlclpV9bber3pudQRmGnMd27kshjdvUjPlgq/TJ3mRBsUh9ucefpWvh4dAGiCpIsh7K5Z0rRiRBIKOd+zXqREF0w0hDtVcxUg4GvWrGDotC6Lsp7g+TeyvSHGnDCvk8M6D76pZ4O+pqAAAAIBmkLN5yS6iqe43thaN8tWqn/VPqTSV+U9M2mBQU3lO4emLpPyMw8Z+A4Ds8Q17nQjwpnH+QXXbHj/YO6tp9XorGmFQadIUaPaDPJaaqYxWRbK2HAXlViS9MvT1yoJZy9Q3fUPTlFgOzsDl9t7r2jL6fykyR7SKxcteEBY7gbOpdQ==",
-        name => "juul@unknown134",
+        name => "juul@unknown134_7",
     }      
-
 ##### EINDE bit #####
 
 ##### BEGIN coloclue #####
@@ -778,5 +770,21 @@ class ring_users {
         name => "adrie@d-Adrie_7",
     }    
 ##### EINDE signet #####
+
+##### BEGIN tripleit #####
+
+    add_user { tripleit:
+       email    => "support@triple-it.nl",
+       uid      => "5028",
+       groups   => ['ring-users'],
+    }
+    add_ssh_key { tripleit_ssh_1:
+        user => "tripleit",
+        type => "ssh-rsa",
+        key => "AAAAB3NzaC1yc2EAAAABIwAAAQEAv8fJBvh7+NWCTUcM4tjQd+6ATsTHgbtkicFjOoqxy+iSXoFGyuNjCrrzxwHC4N98OC0iFmR7mFALlmjQdJf28EwcT1m4rWBhB3KcZ/5iun9l0jD4l7rhm+FLp1/PYgz78H3gXave7UORoT5j6ACGQsnvlC+mWrHzhxMhfW4GEumpCO6zgcq7tYLbx1PCZ5xpM0VeY8g3xvFARGjavtsiGZOulkJD3AFZ9rULLts9eDRo0YWjwhN4oXPOH2Dwmp1YalPoGWyb6/dxPC0hMApbJkbxeVKQkvotzheGEoOlASVsoDmXIWk3QNJijFZeIIUvASDwZpNdDy0GRsjE/jzHOQ==",
+        name => "Triple_1",
+    } 
+
+##### EINDE tripleit #####
 
 }

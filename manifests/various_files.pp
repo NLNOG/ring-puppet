@@ -38,10 +38,45 @@ class etcfiles {
         owner   => root,
         group   => root,
         mode    => 644,
-        source  => "puppet:///files/etc/resolv.conf"
+        source  => "puppet:///files/etc/resolv.conf",
     } 
 
-    file { "/etc/apt/sources.list":
+     file { "/etc/pam.d/atd":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/pam.d/atd",
+    }
+
+     file { "/etc/pam.d/cron":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/pam.d/cron",
+    }
+
+     file { "/etc/pam.d/login":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/pam.d/login",
+    }
+
+     file { "/etc/pam.d/sshd":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/pam.d/sshd",
+    }
+
+     file { "/etc/pam.d/su":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/pam.d/su",
+    } 
+
+   file { "/etc/apt/sources.list":
         owner   => root,
         group   => root,
         mode    => 644,
