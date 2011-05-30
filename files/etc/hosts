@@ -90,3 +90,6 @@ ff02::2 ip6-allrouters
 
 93.187.11.10    tripleit01  tripleit01.ring.nlnog.net
 2a00:1f00:dc06:11::10   tripleit01  tripleit01.ring.nlnog.net
+
+85.31.196.24    jaguarnetwork01 jaguarnetwork01.ring.nlnog.net
+a01:240:101::24 jaguarnetwork01 jaguarnetwork01.ring.nlnog.net
