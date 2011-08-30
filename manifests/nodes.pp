@@ -153,6 +153,21 @@ node 'jaguarnetwork01' inherits ringnode {
     include smokeping::slave
 }
 
+node 'tuxis01' inherits ringnode {
+    include smokeping::slave
+}
+
+node 'tenet01' inherits ringnode {
+    include smokeping::slave
+}
+
+node 'bigwells01' inherits ringnode {
+    include smokeping::slave
+}
+
+node 'atrato01' inherits ringnode {
+    include smokeping::slave
+}
 
 node 'master01' inherits ringmaster {
     $sp_owner = "Job Snijders"
