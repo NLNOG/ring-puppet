@@ -104,4 +104,8 @@ a01:240:101::24 jaguarnetwork01 jaguarnetwork01.ring.nlnog.net
 2620:8b:0:3ed::a    bigwells01  bigwells01.ring.nlnog.net
 
 78.152.62.110   atrato01    atrato01.ring.nlnog.net
+2a02:d28:5580:114:602::2    atrato01    atrato01.ring.nlnog.net
+
+93.94.224.87        cyso01  cyso01.ring.nlnog.net
+2a01:518:1:58:2::2  cyso01  cyso01.ring.nlnog.net
 

@@ -69,6 +69,10 @@ node 'cambrium01' inherits ringnode {
     include smokeping::slave
 }
 
+node 'cyso01' inherits ringnode {
+    include smokeping::slave
+}
+
 node 'zylon01' inherits ringnode {
     include smokeping::slave
 }

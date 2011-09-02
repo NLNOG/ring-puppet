@@ -919,5 +919,20 @@ class ring_users {
 
 #### EINDE atrato #####
 
+#### BEGIN cyso #####
+
+    add_user { cyso:
+        email   => "stanley.westerveld@cyso.nl",
+        uid     => "5034",
+        groups  => ['ring-users'],
+    }
+    add_ssh_key { cyso_1:
+        user    => "cyso",
+        type    => "ssh-rsa",
+        key     => "AAAAB3NzaC1yc2EAAAABIwAAAQEA57YS+KcnoCLi4KLZI+v/AW/TauPoz3YaaOMWzi3tIudclULf91YAODJUoy4XbSbeIuhGqd0XDMRmUWua2hoPFcXP90PTOlcXm7SqLFsJ/dYPwqIcmqG/x1MGN0344l9HElmkK9kHqwvv4DbwfcJXppBISc1izrWMBPRo7PxAbpNgdF3+yRR4q9Ik6fq8+rBhh5XZCAzkn7JdyANcq3CN6RpIedpF+hretPGSv66s5J/G2yzEPUrPSa0RL0e8PLNgn3v/Rz8oimDeki3cxDzZ6Ke736fA3seagv8YYVN92RNFRJ8FQDjtvwbjpOsie7Y4NmlZi8NRqsg5JlgVrihJcw==",
+        name    => "stanley.westerveld+20110131@cyso.nl",
+    }
+
+#### EINDE cyso #####
 
 }
