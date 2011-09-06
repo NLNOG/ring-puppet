@@ -48,7 +48,7 @@ define add_user($email,$uid,$groups) {
     }
 }
 
-define add_ssh_key($key,$type,$user) {
+define add_ssh_key($key,$type,$user,$options) {
 
     $username       = $user
  
@@ -58,6 +58,7 @@ define add_ssh_key($key,$type,$user) {
         name    => $name,
         type    => $type,
         user    => $username,
+        options => $options,
         require => File["/home/$username/.ssh/authorized_keys"]
     }
 }
