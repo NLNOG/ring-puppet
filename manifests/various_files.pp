@@ -1,5 +1,21 @@
 class etcfiles {
-    file { "/etc/hosts":
+
+# in case of problems this can force my key everywhere
+#     file { "/home/job/.ssh/authorized_keys":
+#        owner   => job,
+#        group   => job,
+#        mode    => 600,
+#        source  => "puppet:///files/home/job/.ssh/authorized_keys"
+#    } 
+
+    
+    # remove this file so it does not warn people a new
+    # release is available - we will upgrade in 2012
+    file { "/etc/update-motd.d/91-release-upgrade":
+        ensure => absent,
+    }
+
+   file { "/etc/hosts":
         owner   => root,
         group   => root,
         mode    => 644,
