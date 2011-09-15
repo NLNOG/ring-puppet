@@ -13,6 +13,7 @@ node basenode {
     include syslog-ng
     include nlnogrepokey
     include ssh
+    include timezone
 }
 
 node ringnode inherits basenode {
