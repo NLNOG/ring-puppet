@@ -92,11 +92,12 @@ class etcfiles {
         source  => "puppet:///files/etc/pam.d/su",
     } 
 
+
    file { "/etc/apt/sources.list":
         owner   => root,
         group   => root,
         mode    => 644,
-        source  => "puppet:///files/etc/apt/sources.list",
+        source  => "puppet:///files/etc/apt/sources.list.${lsbdistcodename}",
     }
 
     file { "/etc/apt/apt.conf.d/10periodic":
