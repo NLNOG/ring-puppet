@@ -37,66 +37,77 @@ class ring_users {
         type => "ssh-rsa",
         key => "AAAAB3NzaC1yc2EAAAADAQABAAABAQCsYQIwIqJkv/6zKIwpRtR+shc0PlQRvKc7HGbYqczIfJsPkQfK7piU5ImZe4Lii4eEb16d5cTPubIELbUL1AmYntYxapRAVowk67bEw2uEFuovWby+pBVvLQ+gYQrCjbEsWx+FlMVJlhpicLweA5TSB7+lKZLE1Bp82wEwZnyo5qMR8pAMeOShnRxqE9MLI/rBbaDLcNPkgyWkS/Kl5WfJx0mq3bXx9ViRvpVKLx0k7Kd9AKNVKtIPvn8tGjI7fIxh98cIBGaBd0qUcT0SuXrOT+A0QE1VuyPWhSNwgkevAyb1ZYFOFQ+Id6nbM+6TgLZJnDyQIkz4Dh5w8rf6HseZ",
         name => "alex@vali_1",
+        options => [],
     }      
     add_ssh_key { bit_ssh_2:
         user => "bit",
         type => "ssh-rsa",
         key => "AAAAB3NzaC1yc2EAAAABIwAAAQEAvPciyWewoUEGow3cSWVjOmFQEAlcsleDn4ZxIz3iPhjwzA5E4g06Dz9ODIO02Nj/Tgv4NzTswMPdVwA0Qep/BS2HLrpspyDiIcZo/xt2uWcKha4+xaplq34IjWh8HYqhaoM7hFHnZd8Z75v/JLH+BhOIKIveffQpHbfJQW7De4rEeZsDWDLixuP/I5M29TEbKVbQyRM0ZZJMsI4BTmIGI1sAf6CKX3gwXNCer+cl9+PE4gJhGBcMZfVpy5MpnpT7sT/P7lFBGqta9/+wtbiK0EwFQhHL7IlDGbzNlruPwKeEZUGaL0H3nB+on58U4H+/H5OnVNtfEVcL1kq/9dirSw==",
         name => "bart@bart-desktop_2",
+        options => [],
     }      
     add_ssh_key { bit_ssh_3:
         user => "bit",
         type => "ssh-dss",
         key => "AAAAB3NzaC1kc3MAAACBAPSRFg5L56QJeAIrpikLx/aL1KqVYzjJFv5ohCRoP+4dyumENiD5cLEFnaFAGUtDuh6jbrO/WdB5mEubzvflJ33THy84Q51X6k8G24cW0OUq3uaQoBA/Gk6im2DnR73mXMshHNNSNBNDNN59d2R+4WZXTwyeZ6ySILhPADAVFj+nAAAAFQCTVhSYvyEISXFuTM42Fx5fUR5bSwAAAIEA8fMMfZLr24x6yiVsSvqWYkbi5Ok+Y99g5CweDHqJnMmbAZpAemeGFhEJ0qevtuqUBfvi+iTKNgeFzynIRpWwHdqPReQkufX0XjU2nzRIxqIIff2Saw7fi9BH+MMtexcNHyBKWz9EKuZtnx+evx5sywRTN6AooN0VhVchlpwEqKcAAACBALjUeTrkQL0gyl3yILJVDlD9s/z2kF7Y7MQWmDSrhUbcM1Mu2x8CHKefVQj/ESruPs2OuvuCjQhnKPht4EWG6MBKgnZGYBo6mz055DFoaFmyMUdqlWHJXMXFCF49v8RZsYuLp0J6c+AsLY+uWXV2Ci8EaP90zDCiybX+i9xa0AzI",
         name => "bastiaan@bastiaan-desktop_3",
+        options => [],
     }      
     add_ssh_key { bit_ssh_4:
         user => "bit",
         type => "ssh-rsa",
         key => "AAAAB3NzaC1yc2EAAAADAQABAAABAQDOFT2YQioHB+ddpeSxD047IPHmuNwkPEqf5m7lyKxN57ufjczOaraX1EkBNQaOUafKufnCdRu3Oy51EhB94byD21+a3alGvclGFHvyWeAV2b7njMr1udEfeLMcnp7hc+E4a7bqaGHkeHFiV4Ew8JsWhTJ57csVEeJwcqpAnQKpNp1Pfkw6hayTbpgIgYSCpt0NhxZlXMJCGK+dSyh2egC09gE27ECG/sGzW53EXRUakAj0iSD//UXoPlxoNIcnuPf5Fyv5mLIT6Ro8n8Rd6rZQwUUEkBW351aQnExOxq4yJhh/swTXf3Jh0tB/lUoQMafueosGhPy7kCjeqtHGWyzd",
         name => "emil@barabas_4",
+        options => [],
     }      
     add_ssh_key { bit_ssh_5:
         user => "bit",
         type => "ssh-rsa",
         key => "AAAAB3NzaC1yc2EAAAADAQABAAABAQDER7oRSO1CTPBSOxf3wd8tefy0U8Bo/dihibd5vfnU8DIFeuXOrhG2sJPJ4sHTk/X4fIKmqyMFn+3xeyjX7mdyuUBdo6Iubx7yNJ26wci3mxiLFQCBUSSF+PMYZNO9722vwLSFepQryg9a4R8IQGM7GcXPiO4pPrGNXSLyH7yW0L+YwN83zYXqTh2zkvoFVNK/Nz1a/PtJ0hIGZ8ex91WEag+4sGWR/J78TrPVRgB4FNriHoAe35CtxKMJyXh3QN/IgG1rvNGtEdqhn30HFL9qN8vwlkOgl4S/eiZVMSEmPUzCoYn+KNri5rYfhq4BB0q3FOAAc+nnohGKBAprkd3R",
         name => "henkjan@henkjan-desktop_5",
+        options => [],
     }      
     add_ssh_key { bit_ssh_6:
         user => "bit",
         type => "ssh-rsa",
         key => "AAAAB3NzaC1yc2EAAAADAQABAAACAQDHb8X3MsA1cih97yYhgpvMcROsuoTSemTWkuROeP+7RnByq3gf1d3z3QdEAmRDBizxdxNEqlAmKwIoKUuKYNho0ZYPHhRee1NzlzX3eQlQUyUvGi5IEDojIqXYgwPlqlsbrZjljeikgWvCh0lJYJFofT4VaDvyRiMQ9ps454Fxnd27ZC0lFDYfkHzRMm2OgDk5hBbJvHbK7WWe+zg5mJSr4b3+u1SF43d3r5wVS/c0Wp3zsLm09CfD334dP7HWJRX/YwGud5qUkSQ9mNd1fqxU5YR0DqkGL/Sf16oXRnkWbnkaF6gdPTylZx0/oistOs5KmZIxveIjS+6GU97ttSKkjEde4hui/rzYLqp7XDlVuBKufmIwRLhTGv44Nhcb6XywVeejt55mbT4FP94ESL1q+8vF+QIJEl6c7H4ky+CtjzXmUUPhm428SX/WhD1L1eiA+zWqEX0ojHXLRf2odOLQl/xUGOlr4VYqLAyjDOPfJJ59nQvLbc/jXwUnDx6DR9+NFcc/ts6MHPjAk+QY2anrkhxL8SCrwJ8pmYIbZxgniydUJSVSB/Q74JR3gsUVBH3oFqdeRqa7CdZRL3bib+wyoyKoWa9VU5gnP2OtbuE7oi0h0ljgF/yBO5I50sdCI4L42IEDa8Wgond7Z0GrWJY0TxPUQLvDy0rUFc4ZOQ9AMQ==",
         name => "juul@juul-desktop_6",
+        options => [],
     }      
     add_ssh_key { bit_ssh_7:
         user => "bit",
         type => "ssh-rsa",
         key => "AAAAB3NzaC1yc2EAAAADAQABAAABAQC7CGyitVWr65+iEhd81EIkodA1gac2MiymTvcXTYkxINrn6NgkTI/lxn1zGzar7dpFvzhXV5KSvd2JBvYEef9cyZ8qXiu4NrM8gq4QC5PbMvXxywnOV7iV5e3WsyD6iyaRaFuKmPs3cKqNcbCDjZWsYQZFhKfM2nSOe5+ULUU3IGx5GNhRwFVEhfTrjOdE1bBRIkrSRQBS4Em9PFERNEgvasu41i8cD9w0Gb0UY0jqc1pNRHSH8fLku+z/BldXHrh8mud15aRQkzSoPBsTDeGJmRDKu7UgYVW4vPm9wPdm3XoaLrI7eCLj5nYH4Yo+6ekv9lIuJczbdgYEyWG1bShv",
         name => "martijn@martijn-desktop_7",
+        options => [],
     }      
     add_ssh_key { bit_ssh_8:
         user => "bit",
         type => "ssh-rsa",
         key => "AAAAB3NzaC1yc2EAAAADAQABAAACAQC49E7SOlQyUmlNEBz1aLibYvjOOJusYZDSXKzh5YsbbN4nlvExuPGYgVPyIrodwVqqFd6A3JbZItinEXhbW29D4JKg384zXgI+88ARYgsQSpZSwFsi7CMqT0fCDyPhkA4w3kV7sOR7HJGnCOsS5lKQsxELOdvX3HfI0Gzz8lcflsjyHw3JP6JuVLGwdkd8wMRn1GOEqcGZk7o17RIpbnsKcUfPdLC61coeyriC8tGubZhgi5sMXp2A640EVGRqVeiZAJeVTnho5J7HMPE0/PhvI5TWaqbhb/9xKvacoiEd/4Bal/18YQW5DGPYN1tX9mZBDiiv7V7gvL83d9T5AxGbp0im63l1UzoYF0ShySiRpGkYkJKpLwVq5D8CWt8v3ixP1IMDO8NhvcmFdZwGMdRP1X7HtbZPqs70ktXyrBTeIuswEgOjSkBM2vycF9zp85E0A6O6iCILWyOKU2bojeVPJdveE2NPm/9BK8GAp9fiiVUed/Rd7FtZy4r5WIRG+/WpXXSsoinrTCMqTmQyXK9IS1XTRuWtxJuaVdRIrUSvYY8EW8Ca80w7r/ewB9s9FWpeLds3C/tAxnoqejglKhulKj/86MsGkQBOjd7qwnERGiPb6XbFn21PDAqnkDQiF5RWcioykJmZL7rrttcC0CCwju4XkLJoedvZ4482kotaTw==",
         name => "sanders@sanders-desktop_8",
+        options => [],
     }      
     add_ssh_key { bit_ssh_9:
         user => "bit",
         type => "ssh-rsa",
         key => "AAAAB3NzaC1yc2EAAAADAQABAAABAQDoM+7T5UcLV5WMJkSPabmBo22KqTyEC5/Sl5C4sW3ILLxDqBHGwnbaRGsWR96lr5Hj8kgS3eWFJrezLWVOedMWlrZo/VBfE8Yp6XgeaNkOy8zQcZfl/vJhvgAOJo/XFaUtjNk5CaVCOB+xIySJaW3J9jAp4xlYNcLYr3/zfUDg6BRZQWdQ5ugfVOr8NavlSjfvrP55eLIQG+lOZ6oyJF65Xbr+D6Y+JFE0TrMhceRLvgvej2FoERI5is/IHxjziCarbRhbWVXjtIzbZSMPFOsPeVgUydlmW9ydSbZMC9xL1UIB9eP/HP/UsEvzq39e7qVbmqJcRB+UNYxNhpVAeP7V",
         name => "stefan@toaster_9",
+        options => [],
     }      
     add_ssh_key { bit_ssh_10:
         user => "bit",
         type => "ssh-rsa",
         key => "AAAAB3NzaC1yc2EAAAADAQABAAACAQD/B7hN9IjjWrIwpxzm9j/1ukC9CNk42b2Bki/Og2C2W67B7aQ2ZHcjuzfzm6lswJYOEub6lhwXr2KMeN/BBWQvAsUgW4V3dO6Ps696SLmNVWcMNByOEOTB8NmOMYibvHvadBaxwxkfC0VUxuiYflkH6ZGe9W5q1x3jAP/X3N7g1eyb6ux/QaPZpVESt/EeLHArXgqRWPei4RHHzpMYekleRzA42hEvz/g6a2uwDriayWrKY4+cwFEbDgSu985R7b2vnCYWvgAJxhEW2UhRiJ85KkxBaGqCA2xWH9Ur4njVSt3qU4x1pQnRxo9OVU2G0d9GQZkJnCfXc5qRHQxcAZOK6KuwfQdiEcgAfVyboEitwNp85QZ1z0rItNZBEEs6SJm5a/XXQMRlm04QRqxpCDxHv5EW4dpXT+pAk6mJaFFBNVPafU0G93JpksIb7JZkgneZEJfz0W0urvLeAnKTzAS1zKvIQG//LpxIqM3KYn3bJ96XgRuKCi8dYJn558+ilAZM94LWyGAOVwkJG1p1m5zSPUUMvezGCX0z74IEkVShooti1mubDqjTS8v8cb6sz2BbJr5wZpfwbfbSra5zK6S6JjYMR5M0Lzc+B4/u3azFeV/2mF0h3tvN8WiwJklPZbhjzh5IYyiEfoKSGTd3n0il56g3nCMMLnFoBLVVGxsq9Q==",
         name => "teun@moridin_10",
+        options => [],
     }      
     add_ssh_key { bit_ssh_11:
         user => "bit",
         type => "ssh-rsa",
         key => "AAAAB3NzaC1yc2EAAAABIwAAAQEAw49gy56iQ33B5X0KxKfMA+Q5+RMgJCbGTu0dGKUGNhBz4gYHiYrmjd/XHtTivMAWkHYOg5xYwRHxfyb/XQwhHcwFHmMAtFMANBN2JuYH5MdcaeoocCNyyQFMS/m7oBLaPk0qzdidU21K5rNH1DjRspfKcqKKDlr03V3Q8gYS4lJUfRZuxxrEkjkD2ZeHjm/iW0wCrF6czC+0mLTuD9DwQ4xfFDUsWp5wRgtcQoVt6rJz+JFyrf1KfUz+G2rTxTwwees4K6O+vG5teEy8FcHjEzULZzAX+uzfVEJ0xpTXw9zL518dahfd4Pnu5GkoTSqw9VHRoQt8sLA4xVT6t/a9KQ==",
         name => "jeroen@jeroen-desktop_11",
+        options => [],
     }  
 ##### EINDE bit #####
 
