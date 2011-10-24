@@ -1190,4 +1190,20 @@ class ring_users {
     }   
 #### EINDE cyso #####
 
+#### BEGIN tdc #####
+
+    add_user { tdc:
+        email   => "noc@tdc.fi",
+        uid     => "5035",
+        groups  => ['ring-users'],
+    }
+    add_ssh_key { tdc_1:
+        user    => "tdc",
+        type    => "ssh-rsa",
+        key     => "AAAAB3NzaC1yc2EAAAABIwAABAEAwQAt1/KI7JLdLBUx9Uq8b2ha1XTCYxoRAjEHIcVISChOzvPPvqP9PZ/KmJPjw2WdiwSEtoe3T4bSH6WFfnLCe57JCEMJXZMdHkgBG0AygqXa9FUN+EzndTYXhuWdS3ammuIktww6HyqdwMbpT4+HspXBK29mJzpZEI5qJTaPgoLzRrMuNMPotIJ4PKeFWyHVFgLICXx8VgH3sZWtVO+f0x2Ed76IA39g6xb8XTcWkzKKZipSQaZgURjmzYXG5Mw84nPC789NnhnXOoT1Q/8YpPNKbcXUTIwOotFQR2k6n6vxeH+/POvybk9nsAUVSEI6K/ww1Yndrj3l6+qn2CKf3SSYeS7tJ4oXGNM2PlxXkHf6oFCR/y2jHjs8VyOWHuH6k733cxsxRPNOmUafKZoKC7T3nUfs8Q2LbK4IoN/mnUTdrYMuC+AxRXhuZQOn1UuOASfhmfhneUr1UjFiB3r2zM3CBZ5vdBGYi0BL0jRp++M0KBqtgpzEjV/b8Y33dwyyIBVxPzGvd3YPM5z19jgnXbrFQH3w8YPC8eAjrnYRioMXYEGcYorK2v9ikIXCdYycVHJWYYJ5aUMbys1JYAbyfTpCrBa6OqHhv+fndmHoZHU09uOdvvzQda4PdPoHpPbu/ZF6rmqKrdmL3z+e9D1wiyUECTKif/hj0sSlJVqM4T3xqOIg/2cFvs6zS72bwed8lNysEiqf196OXT2fPPkQf1I17b/immhaTWIhrxv6zfHA+cAxAz4SAz1jxC8ZEebXq4lAUlYRC35h4MyaS7H+6oq4k7Gum4ani5u6I1lc1Sfuo645PVRf/6wvMDUKCHjlJDJ4c070jOY9XxIr81owZBIT1UsdTM3dmYXspHJE8s1i/dT+iYzxrdFuxEt4fkxbpDhoa+8/IATkZ25v+7bF8RjAzsSuZcrAxIEargn/VRSfl+HqbboQUuLsYGAp4Nm/WzMvE3A9GyGSLsKt+IxgY65ttKZm4XtLt1FPgM2jsQU+1zrZAvTelZIZTs6EGlyHdTuhLHKwnoXY0BupkW9xMnt+NiqswZ+3aLWaUhsnRVvHoQ1yxHUJkakYeiMuvsd4TzXX3zcQYdNJEUwhp6Uat0h8zaRHobPjcLVPkSl+hoxzS6RqDwLrguguPu6lt96L0ZPl2mBdTswoYGJGIwdrieL+baJMnJVuAlSiJhtRom0ikMF5L+B4T760fz/OkXi1FxGaL74RnLJwylS/brpZPWvmdj9EMqy1uDXd4z7dRTIobkrZTW3Cktf+dkSHuBoQKE8iyOZWol5b7p5BWPKhJ/4v8d7ThLP68lbIFHQnBLYlT+IYifRxuYiQ9ecCC6uwQJOHVneb0GIUvq3GCmFEAQ==",
+        name    => "ytti@ytti.fi",
+        options => [],
+    }
+#### EINDE tdc #####
+
 }
