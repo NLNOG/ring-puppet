@@ -74,3 +74,4 @@ fi
 connect=$(comm -23 <(echo "${SERVERS}" | sort) \
     <(echo ${results[@]} | tr ' ' '\n' | sort))
 [ -z "${connect[*]}" ] || echo ssh connection failed: ${connect[@]}
+

@@ -1197,13 +1197,37 @@ class ring_users {
         uid     => "5035",
         groups  => ['ring-users'],
     }
-    add_ssh_key { tdc_1:
+    add_ssh_key { tdc_0:
         user    => "tdc",
         type    => "ssh-rsa",
-        key     => "AAAAB3NzaC1yc2EAAAABIwAABAEAwQAt1/KI7JLdLBUx9Uq8b2ha1XTCYxoRAjEHIcVISChOzvPPvqP9PZ/KmJPjw2WdiwSEtoe3T4bSH6WFfnLCe57JCEMJXZMdHkgBG0AygqXa9FUN+EzndTYXhuWdS3ammuIktww6HyqdwMbpT4+HspXBK29mJzpZEI5qJTaPgoLzRrMuNMPotIJ4PKeFWyHVFgLICXx8VgH3sZWtVO+f0x2Ed76IA39g6xb8XTcWkzKKZipSQaZgURjmzYXG5Mw84nPC789NnhnXOoT1Q/8YpPNKbcXUTIwOotFQR2k6n6vxeH+/POvybk9nsAUVSEI6K/ww1Yndrj3l6+qn2CKf3SSYeS7tJ4oXGNM2PlxXkHf6oFCR/y2jHjs8VyOWHuH6k733cxsxRPNOmUafKZoKC7T3nUfs8Q2LbK4IoN/mnUTdrYMuC+AxRXhuZQOn1UuOASfhmfhneUr1UjFiB3r2zM3CBZ5vdBGYi0BL0jRp++M0KBqtgpzEjV/b8Y33dwyyIBVxPzGvd3YPM5z19jgnXbrFQH3w8YPC8eAjrnYRioMXYEGcYorK2v9ikIXCdYycVHJWYYJ5aUMbys1JYAbyfTpCrBa6OqHhv+fndmHoZHU09uOdvvzQda4PdPoHpPbu/ZF6rmqKrdmL3z+e9D1wiyUECTKif/hj0sSlJVqM4T3xqOIg/2cFvs6zS72bwed8lNysEiqf196OXT2fPPkQf1I17b/immhaTWIhrxv6zfHA+cAxAz4SAz1jxC8ZEebXq4lAUlYRC35h4MyaS7H+6oq4k7Gum4ani5u6I1lc1Sfuo645PVRf/6wvMDUKCHjlJDJ4c070jOY9XxIr81owZBIT1UsdTM3dmYXspHJE8s1i/dT+iYzxrdFuxEt4fkxbpDhoa+8/IATkZ25v+7bF8RjAzsSuZcrAxIEargn/VRSfl+HqbboQUuLsYGAp4Nm/WzMvE3A9GyGSLsKt+IxgY65ttKZm4XtLt1FPgM2jsQU+1zrZAvTelZIZTs6EGlyHdTuhLHKwnoXY0BupkW9xMnt+NiqswZ+3aLWaUhsnRVvHoQ1yxHUJkakYeiMuvsd4TzXX3zcQYdNJEUwhp6Uat0h8zaRHobPjcLVPkSl+hoxzS6RqDwLrguguPu6lt96L0ZPl2mBdTswoYGJGIwdrieL+baJMnJVuAlSiJhtRom0ikMF5L+B4T760fz/OkXi1FxGaL74RnLJwylS/brpZPWvmdj9EMqy1uDXd4z7dRTIobkrZTW3Cktf+dkSHuBoQKE8iyOZWol5b7p5BWPKhJ/4v8d7ThLP68lbIFHQnBLYlT+IYifRxuYiQ9ecCC6uwQJOHVneb0GIUvq3GCmFEAQ==",
+        key     => "AAAAB3NzaC1yc2EAAAADAQABAAACAQC4GMHaBV8/XeKNyVLIqsjoFGSjFQYn9psOmzyCAYSOq07kOHcBXsY9SWlU9ytMBd+QUcnKdRlYms6f1AHUWFdTzxAXjsjaxl8E33PzblfOXmvk5iOjm6KVjvjyAz/Mlw/cDOqQB0pQUYnEMnL5pitGX1QedtOGwfw591aYbIGas8DNb6uQ1sBZ7RhAZ/Ifhmt3qiSRzlBXvAsT5bWq+2U8u3VGp/Duq90/4P+juJV1cOqXE+6hwdG+xTIWOxN74B14ztEJrTruYtFHErvClRZ4tx2EtA0UAcV+fXpE4DoeDHWbHeTF7sngR5Db+s4U65zYUbyHItklvol6hkNK5U2EeZ/M3FGSQpqdwhdGwSGTydnlqvuFxbY0tbJAjWOW4FSKeBiUbYGMPt8d/U5bNIK2Utc9ggWZ/Qk3VymFdz2Lk7Am/kZ2Gr6EX3ywWn1cfg108BMktGeMuRAqVH7bCsUcY3lrbmQtDIT1gzfK6kAQzA1EBiiD9thaUSNeZfOJifPaXHcGBShkeG/Tc10kuW6MDbM/QFthz7JHnNaOYqSUU/6NFTlBJj/hQveN1BLww+bIlY1GAFap3aRjxTVNy5Kv6mv/KFX8TYqJBahC0sxbELiT9aTeqg5qJQBwF6JZcgjvudX5UpFUsCh6H8jl0FfHdiulUJpT6laZIuk02NPJBQ==",
         name    => "ytti@ytti.fi",
         options => [],
     }
+    add_ssh_key { tdc_ssh_1:
+        user => "tdc",
+        type => "ssh-dss",
+        key => "AAAAB3NzaC1kc3MAAACBALeqG8B6qbqQ1pWIgHBZWWJoo8O+dfjpcj/8Hl5CfTdJK/7RktzH8GoojCJOhIBYe+QTdjJ1i2j7wx7u0ieCotIMQD+Fc264wK7O/8zlANTcjP+veKKC4WcrDQycyng3Hk95esnNP3FXtlK6ttSDyNnMb8hPI9mSyq6klbqyG/GDAAAAFQCrpu+fO0D3i9zKSbKSKczkZZZrAwAAAIB1Yk/heZb7THxfyrK+8bHwrBPLHV0+CLqkzjvCG54L9fmRmvHs2pX6aOTh4q08dhiENAXANPzzXt0m4k5Cjjr3K2i/sauyvyjlhW3WQ5jFfl90cEQkNxXJS/emljjLOFVaXQ3oU0sQDxqCtDwtz+PYmSDhxhn1pmAKCynUsIS78QAAAIEAlbYtP4gzu55JsM4HlT3h5JQSvYjoY8ojFKRxi9ilpZdJeXAYUTjWSsRuLB4O0VH4IDJV5PrwzBG5D31RwAlVO9xYGkmtARP4272VbkaQD3dw3nP/wd19c5dBRp16xZnNUkO07z7kKS3FH9a7ONH538cxCF9ZC8NRlKAxNkIZxFg=",
+        name => "sonny@unix.dk_1",
+    }      
+    add_ssh_key { tdc_ssh_2:
+        user => "tdc",
+        type => "ssh-rsa",
+        key => "AAAAB3NzaC1yc2EAAAADAQABAAABAQC+qX07Yfz1lFM2hQEmV5DcrS4ZE5em/8sRR8kNJY/cAbITK4UlI+0N+j1OTglmyuL36tVBXZ7DsUoVs8W8zGpRoizMW2RxEgSroMDBFmVHRozignFnS+l4+ee3LVJgTFxXkIhBmo0FcZlK03t2XDyWRmOkjf35n9399y6+tO65xarpWsOncn9kCQT7Mwv1K378KoNO+J1hkmGLOIE3bk40VCy9FjPKgLa/EOBd3cOd60BazzFf529jp6h8q0xuAsctun/nTJgborWBde7uy/2RwB5nSvHbUobbW+oy2n2YD3hkyuReSliCai/ebiNaQnHStj43J/ykgu7P9zFx9cil",
+        name => "nihb@tdc.dk_2",
+    }      
+    add_ssh_key { tdc_ssh_3:
+        user => "tdc",
+        type => "ssh-dss",
+        key => "AAAAB3NzaC1kc3MAAACBAO+rNS6R4E5eSyhVv/6qxpvcibKrebG7OCc08LPiwKoKInHlE9jhRHs68yUE5fbeyaO9mFrQ0psRPR/JMO1nX1+JjJHyKrQ7yJl8Er0YMAm8/NOn7GNwF06vQNHwyt2wf74koXPZx/s7SG9uCFcT0gmt6sg726mC3oAQNzX4TOV3AAAAFQCThbu+Xcje4hX/gVNrW3m2+fMyDQAAAH8fDJYMbSFPtJBknrqdhQcRp6D7TnTqRe7wvqL4b1DkryjWSi2sCdEHceVp35o/BxaGCxE5Hn9UJ8yCQ3yyq12AUJ1TgJr4qjuUlaBXulOX2KbkeuRbveVyN7/csbqgSpa/phRcBb8qPng4xy5rflIniZDVN2E2BwLUvjaUq6zkAAAAgQCQ7j0aWKO3jVyrhVcg7OJe/zJVdCCjvem7iEVgwf9wrsxEuFo8Wz8f9hkgUbjA87VbC1lTjA+PVpkaYNldFu/DbYnhwa7ZyBF5IZQFoQtegXWrgwFvA5NtdIbClC/485UZ59tAlUyCKQjeKytvvDiSZmTKm/UPCfe9sRnLtZ8neg==",
+        name => "anders.kalrsson@tdc.se_3",
+    }      
+    add_ssh_key { tdc_ssh_4:
+        user => "tdc",
+        type => "ssh-dss",
+        key => "AAAAB3NzaC1kc3MAAACBAKa/44RC7jLRymJsWtZ5T9VPkvsH7HPM/gSsMOUDeq0hOLrzPxLXXQZIy1RUEL2GqqBIfZaii1G7cJKdrk7LMFatPfxe8ozvnVylOErvR7x3ur+W1h64s8kIFtCqj6h5Mwq9IFRpBdc5lSlkpUE1PQLtSYQz00fKxB7XJqBocUBFAAAAFQD3m+4Hg/dmD919KlcuomVcTgkM4wAAAIEAit7CIM2oAeBo9CBWejnotYeCn2RGNoagHaXmVpctGYS5ZsfKYth1OKZK+beS5mQHh4AOdKgtBtCDDl07qgFneEE+gDHLhFQeFdyB6JNN6okInF/vVl4VwnlKWrO4SMBLWsxw3Q8AwvplpvcWX0OWRrKBIOjTMUqBVcV/BAxrO8MAAACAJPZucykYaEnjAtRApqtiFxxbsr5tyjHNVdsUhMLantBlkt8hl3y07QSmEIdU8v3C1hOCbCxo8JfoNVpWZVnB0MroY7NG5N+NlvNjIXlJZE43Wokp0afZ5LknmEFGBbDxOtYj4Xbv/aVwusT3/ZUja0Tjokza7C+BGqjCFAHg8oQ=",
+        name => "aki.tuomi@tdc.fi_4",
+    }    
 #### EINDE tdc #####
 
 }

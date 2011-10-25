@@ -14,7 +14,7 @@ SERVERS=${SERVERS//'"'/}
 for host in $SERVERS
 do
     echo "host: $host.ring.nlnog.net"
-    ssh -q -t $host.ring.nlnog.net $@
+    ssh -q -o ConnectTimeout=2 -t $host.ring.nlnog.net $@
     ret=$?
     if [ "$ret" = 255 ]; then
 	echo "ERROR: ssh connection failed"
