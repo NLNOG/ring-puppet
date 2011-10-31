@@ -10,6 +10,42 @@ ff02::2 ip6-allrouters
 212.19.220.59   master01 master01.ring.nlnog.net puppet
 2001:6e0:100:4001::3    master01 master01.ring.nlnog.net puppet
 
+217.198.20.135	in2ip01	in2ip01.ring.nlnog.net
+2a02:7d0:3:208:250:56ff:fe9c:1e	in2ip01	in2ip01.ring.nlnog.net
+
+87.250.146.52	netground01	netground01.ring.nlnog.net
+2a02:f18:1:9231:87:250:146:52	netground01	netground01.ring.nlnog.net
+
+77.95.249.50	totaalnet01	totaalnet01.ring.nlnog.net
+2a00:1478:30::12:27:0:1	totaalnet01	totaalnet01.ring.nlnog.net
+
+81.21.136.3	signet01	signet01.ring.nlnog.net
+2001:4cb8:1:ff03::2	signet01	signet01.ring.nlnog.net
+
+93.187.11.10	tripleit01	tripleit01.ring.nlnog.net
+2a00:1f00:dc06:11::10	tripleit01	tripleit01.ring.nlnog.net
+
+85.31.196.24	jaguarnetwork01	jaguarnetwork01.ring.nlnog.net
+2a01:240:101::24	jaguarnetwork01	jaguarnetwork01.ring.nlnog.net
+
+31.3.104.43	tuxis01	tuxis01.ring.nlnog.net
+2a03:7900:2::31:3:104:43	tuxis01	tuxis01.ring.nlnog.net
+
+155.232.10.18	tenet01	tenet01.ring.nlnog.net
+2001:4200:fffb::20c:29ff:fe7e:8ea4	tenet01	tenet01.ring.nlnog.net
+
+199.30.196.208	bigwells01	bigwells01.ring.nlnog.net
+2620:8b:0:3ed::a	bigwells01	bigwells01.ring.nlnog.net
+
+93.94.224.87	cyso01	cyso01.ring.nlnog.net
+2a01:518:1:58:2::2	cyso01	cyso01.ring.nlnog.net
+
+78.152.62.110	atrato01	atrato01.ring.nlnog.net
+2a02:d28:5580:114:602::2	atrato01	atrato01.ring.nlnog.net
+
+194.100.40.53	tdc01	tdc01.ring.nlnog.net
+2001:6e8:8c0:100::c	tdc01	tdc01.ring.nlnog.net
+
 212.19.220.58	intouch01	intouch01.ring.nlnog.net
 2001:6e0:100:4001::2	intouch01	intouch01.ring.nlnog.net
 
@@ -24,6 +60,9 @@ ff02::2 ip6-allrouters
 
 213.206.104.156	widexs01	widexs01.ring.nlnog.net
 2001:898:2000:d::4	widexs01	widexs01.ring.nlnog.net
+
+82.94.249.162	xs4all01	xs4all01.ring.nlnog.net
+2001:888:2000:3e::1337	xs4all01	xs4all01.ring.nlnog.net
 
 213.136.13.101	bit01	bit01.ring.nlnog.net
 2001:7b8:608::213:136:13:101	bit01	bit01.ring.nlnog.net
@@ -49,9 +88,6 @@ ff02::2 ip6-allrouters
 178.19.114.34	ic-hosting01	ic-hosting01.ring.nlnog.net
 2001:67c:b0:3::2	ic-hosting01	ic-hosting01.ring.nlnog.net
 
-82.94.249.162	xs4all01	xs4all01.ring.nlnog.net
-2001:888:2000:3e::1337	xs4all01	xs4all01.ring.nlnog.net
-
 94.103.152.190	nedzone01	nedzone01.ring.nlnog.net
 2a02:990:2:3::3	nedzone01	nedzone01.ring.nlnog.net
 
@@ -75,37 +111,4 @@ ff02::2 ip6-allrouters
 
 94.228.136.130	prolocation01	prolocation01.ring.nlnog.net
 2a00:d00:ff:136:94:228:136:130	prolocation01	prolocation01.ring.nlnog.net
-
-217.198.20.135	in2ip01	in2ip01.ring.nlnog.net
-2a02:7d0:3:208:250:56ff:fe9c:1e	in2ip01	in2ip01.ring.nlnog.net
-
-87.250.146.52   netground01     netground01.ring.nlnog.net
-2A02:F18:1:9231:87:250:146:52   netground01     netground01.ring.nlnog.net
-
-77.95.249.50    totaalnet01     totaalnet01.ring.nlnog.net
-2a00:1478:30::12:27:0:1 totaalnet01 totaalnet01.ring.nlnog.net
-
-81.21.136.3     signet01    signet01.ring.nlnog.net
-2001:4cb8:1:ff03::2 signet01    signet01.ring.nlnog.net
-
-93.187.11.10    tripleit01  tripleit01.ring.nlnog.net
-2a00:1f00:dc06:11::10   tripleit01  tripleit01.ring.nlnog.net
-
-85.31.196.24    jaguarnetwork01 jaguarnetwork01.ring.nlnog.net
-2a01:240:101::24 jaguarnetwork01 jaguarnetwork01.ring.nlnog.net
-
-31.3.104.43     tuxis01 tuxis01.ring.nlnog.net
-2a03:7900:2:0:31:3:104:43   tuxis01 tuxis01.ring.nlnog.net
-
-155.232.10.18   tenet01 tenet01.ring.nlnog.net
-2001:4200:fffb:0:20c:29ff:fe7e:8ea4 tenet01 tenet01.ring.nlnog.net
-
-199.30.196.208  bigwells01 bigwells01.ring.nlnog.net
-2620:8b:0:3ed::a    bigwells01  bigwells01.ring.nlnog.net
-
-78.152.62.110   atrato01    atrato01.ring.nlnog.net
-2a02:d28:5580:114:602::2    atrato01    atrato01.ring.nlnog.net
-
-93.94.224.87        cyso01  cyso01.ring.nlnog.net
-2a01:518:1:58:2::2  cyso01  cyso01.ring.nlnog.net
 

@@ -1231,7 +1231,51 @@ class ring_users {
         key => "AAAAB3NzaC1kc3MAAACBAKa/44RC7jLRymJsWtZ5T9VPkvsH7HPM/gSsMOUDeq0hOLrzPxLXXQZIy1RUEL2GqqBIfZaii1G7cJKdrk7LMFatPfxe8ozvnVylOErvR7x3ur+W1h64s8kIFtCqj6h5Mwq9IFRpBdc5lSlkpUE1PQLtSYQz00fKxB7XJqBocUBFAAAAFQD3m+4Hg/dmD919KlcuomVcTgkM4wAAAIEAit7CIM2oAeBo9CBWejnotYeCn2RGNoagHaXmVpctGYS5ZsfKYth1OKZK+beS5mQHh4AOdKgtBtCDDl07qgFneEE+gDHLhFQeFdyB6JNN6okInF/vVl4VwnlKWrO4SMBLWsxw3Q8AwvplpvcWX0OWRrKBIOjTMUqBVcV/BAxrO8MAAACAJPZucykYaEnjAtRApqtiFxxbsr5tyjHNVdsUhMLantBlkt8hl3y07QSmEIdU8v3C1hOCbCxo8JfoNVpWZVnB0MroY7NG5N+NlvNjIXlJZE43Wokp0afZ5LknmEFGBbDxOtYj4Xbv/aVwusT3/ZUja0Tjokza7C+BGqjCFAHg8oQ=",
         name => "aki.tuomi@tdc.fi_4",
         options => [],
-    }    
+    }
+    add_ssh_key { tdc_ssh_5:
+        user => "tdc",
+        type => "ssh-dss",
+        key => "AAAAB3NzaC1kc3MAAACBANaLxQg4vf++c7SzO8uKJoriRag8mG+pOrheh29pdD10tAlSDTLW/0Xh0dzrv4127H/+moD8YJwdE2gY5tXe8VOUt5z1ueH2HKivgf6/x9KjX/O8ceLt49EbmyQloJvu1ieXNuAVzs0LJtg8CT43ibMVWiSg3vO3KfczuO+YOJBBAAAAFQDC29ofuMnqnQOPVr+cSDtY/u/6UwAAAIBmhOyZMxfo7VuZ7Bzhnn8eISTpGJRSJaj7k63M8qszp9tX6K3AttnRiJqrUn6DKeWnrhIDLVjeD4vrtP7s2ohUtUpLk6Rp4JYcvnKekfL0vZedEliWkL78V2nqH9dm8e1nFdiIABrH54jkBPVoF7+RaEaUy+7T/TOb/ZJ6RP8NfgAAAIEAgFP/orlRejAMUgnNme1SgWMHa3A+tZERm7Eovq7jokVen2eq++baxDgcACbhJDNadGiOXG8kzTLoCCKathxqgmM8NPF0+aCm4GRaIK7H7SVxqlNl7DnitXWkKn4YJIAhPFEV28mqMx5wyKuA5pw4ITTP6XdiP2Ns9BDrXwRm+10=",
+        name => "Michael Lyngbol",
+        options => [],
+    }
+    add_ssh_key { tdc_ssh_6:
+        user => "tdc",
+        type => "ssh-dss",
+        key => "AAAAB3NzaC1kc3MAAACBAJ1cidxGjT8G4VwTnvBZ9RwVQOW1DIjnEE7taYZg1JYO+VxgHdZEih4Ga1Uuyo36wWRP4L+7RewKFmg/ga83jpqAsgYkbIpg4PXhHAcEDJAxhMRVE/+4oR32qt2+eNvkjHGxuqy3845Y9bMmEkTUXd1NfaeXVCi1k0haVZ1+4QH9AAAAFQCCBkToEfH9G4xAJInJuhszV+OKFwAAAIAVCae8WTUNyHcCYp48hk4qNt2H1lyRXyiPW0sVBY6yjd/LDpDqAj8uMIbgJfHiSlZIPyBpTCJ9SODpMZSt0NA46bqEsK61AU6+PDUmk7P4/VxrhNqNx1jD/zARv9ACHFrMRTKlxl/WmztSid1vp7XkT+xBPgmH0mV69dgBrHGwDgAAAIEAgbIhiwVRdiJjNHQ7iesg18RSmbTZAq+R0avOcTOhYAnqOjGvymFf55/t0FzCgvG4Y8L634HCpA3Dt7cKZpjBtFZhVtjsY5/AmLtX5tP9IGfuqzKil7XzMdKTqnsOyXAEWkK+L1T0IqDGJdCKcEM11OGj8Gq473d0z6wltc1sotI=",
+        name => "lyngbol@freesbee.wheel.dk",
+        options => [],
+    }
+    add_ssh_key { tdc_ssh_7:
+        user => "tdc",
+        type => "ssh-dss",
+        key  => "AAAAB3NzaC1kc3MAAACBAO9Jrw9TWYP154KNqNCQAaWEGNcGxoS06BpJrGu8QPUcKOV67ZbV74DWTDJupxp0k6HGRCJvFwY3/exb6lk87nQHpyAfotEhzPHEIHOEKbquBciO2eybtepUrcQkNdUqRVsNSru4Sx0ynUm8eQxCLnDFzzOHIv4cZmIg9oXlNnt7AAAAFQDMRD+tlPi1Xq2CkLvQUgc5e2O0kwAAAIA/HQ1jdGWHjdtPnLxjXkJEoWCLjBjSt2k8nZCpXTgvhdt6+F1dh0L2Z+0VJ3sLeMDfkkJiPPXPQfmettsWlBk3x+9YSte/6znPRB2oKSDjOE20Jq+OpWjkmoan/Bb4NKwCL4cCxYTwKVc7L+TFu3q9yj3A2nYQSoic+/jq1llKBQAAAIEAyYE39w4/i/YWjFMEOm/tBeNtRpB81ddHm7bsOCBki8g9VuvVQ/bcEq82ngacjsZv+/9Z0CkTFvnjWqjWpVOiYmYngVW4A+WhLG0/baSq+u8O9MTZiihxU0cn9Vvl0jSXLEyy1GhGIbW24jsf3PD6/flQihx0qvIiixmwxYNGfPY=",
+        name => "mikko1",
+        options => [],
+    }
+    add_ssh_key { tdc_ssh_8:
+        user => "tdc",
+        type => "ssh-dss",
+        key => "AAAAB3NzaC1kc3MAAACBAJRpiz8GOgSeyxl3osh84IAubonVRVKeE9Jx+xTxB8XK9BX6Tbk6nDqmd/pAQS9sYB7DllBns8bXpwaW0KiXn9Wmfw8Bkf5WdrG4ESzK1aIWlAPpwfsh5efBM5cs/kWP+YOgRA5eWTpTmjNyIMrXV7J8lKvFt848RNFDBVvvgeQfAAAAFQDRlXlUoblKPU9KiXmJL+k+7XNhLQAAAIB66h6PpvUXFNFaN19Al8QzmYOXuSxFunI5qX8kI0Qmr0XIuk3k/N4XkXdEfbHftGkSZdMFlfLUepM8ITbtaJiY0WXz06E88OueAKcC97zypz1/MxmL74sGhdRJljHSy5GRWo3YWPdkeXwiBXxP2Q4j+cMUyrE49sKfIrvPCrGiJQAAAIBBQ7gMrTAdNfT2l1UqSj3Rmeta7ZfiJU9y6EIclEAYy16dPajJi0bBp+eYLovOcK1Q0iTjeqindUYPQgPrQSmnex/7oOVQgNQo0QtnN7lXIQvmuVGI9PPoHUQzPcJ7e0TiTSAKIprAzNJJamCkC3JzjGwEIbP8m7VTkRqwTZgIng==",
+        name => "nohaneik@umma",
+        options => [],
+    }
+
 #### EINDE tdc #####
 
+#### BEGIN netability #####
+
+    add_user { netability:
+        email   => "nick@netability.ie",
+        uid     => "5036",
+        groups  => ['ring-users'],
+    }
+    add_ssh_key { netability_0:
+        user    => "netability",
+        type    => "ssh-dss",
+        key     => "AAAAB3NzaC1kc3MAAACBAPb3R/3W2SqqWLfx2PHMADzGGB+LH/jskYUYxkO9kRP+raoeQXL+yKKQ4xFHaLpK+wx3RSUptTq9ckqho581cigAJoCktzBsHTM1kMSwb/Z70ljCe1Q4Z6L1Flx5+bSu1YS8Eavyb7JdKJJZKbUBw9BEJudOwFj0Y2sbL/7gU5JjAAAAFQD/W++RuOykpi5XWwuAbxXWRc4/pQAAAIEA71XZxf5hin8bNtpvKTUlBgejhqt3Lso627DCwcxDJilo/oifkXAvmFMC+56arIM/G8zqAWwqGPyX8AnbooHQjJJHpB4/L5kpfK/DZuEjY4XP+vmXuzkMMHbn1TtCeOwXcTjEOSJtDQ1B9qqIzgq3ZgRSxmruyhfLFpML5+MAorwAAACAYshCkOiE08NLqcs+Inq7uBi0AF2cRDYc9gySbL85Fhff6xC/YysJ3ZcsfPk4dXHCadWTZrUfLnwgB1Kyvm82x4CMIMRQ7vWlQdKIeSfErqRB/1E2Xhkj23s923PKxjMFckUoMMcziDSrNsFT09fYm/xq6E3MAFSX4Y7PIAUDPD0=",
+        name    => "nick@pancake.netability.ie",
+        options => [],
+    }
+ 
 }

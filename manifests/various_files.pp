@@ -149,10 +149,7 @@ class local_binaries {
     }
  
      file { "/usr/local/bin/ring-rsync-ssh-keys":
-        owner   => root,
-        group   => root,
-        mode    => 0755,
-        source  => "puppet:///files/usr/local/bin/ring-rsync-ssh-keys"
+        ensure  => absent,
     }
     
     file { "/usr/local/bin/ring-convert-ssh-keys":
