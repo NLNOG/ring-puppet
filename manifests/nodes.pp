@@ -182,6 +182,13 @@ node 'netability01' inherits ringnode {
     include smokeping::slave
 }
 
+node 'unilogicnetworks01' inherits ringnode {
+    include smokeping::slave
+}
+
+node 'maverick01' inherits ringnode {
+    include smokeping::slave
+}
 
 
 node 'master01' inherits ringmaster {

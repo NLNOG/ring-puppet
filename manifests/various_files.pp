@@ -107,6 +107,13 @@ class etcfiles {
         source  => "puppet:///files/etc/apt/apt.conf.d/10periodic"
     }
 
+     file { "/etc/sysctl.d/30-disable-accepting-ipv6-ra.conf":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/sysctl.d/30-disable-accepting-ipv6-ra.conf",
+    }
+
     file { "/etc/apt/apt.conf.d/50unattended-upgrades":
         owner   => root,
         group   => root,
@@ -132,6 +139,12 @@ class local_binaries {
         group   => root,
         mode    => 0755,
         source  => "puppet:///files/usr/local/bin/ring-ping"
+    }
+     file { "/usr/local/bin/ring-all.old":
+        owner   => root,
+        group   => root,
+        mode    => 0755,
+        source  => "puppet:///files/usr/local/bin/ring-all.old"
     }
  
     file { "/usr/local/bin/ring-all":

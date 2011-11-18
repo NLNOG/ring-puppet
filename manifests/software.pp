@@ -94,7 +94,8 @@ class nettools {
     package { "landscape-common": ensure => present }
     package { "unattended-upgrades": ensure => present }
     package { "update-notifier-common": ensure => present }
-   
+    package { "pastebinit": ensure => present }
+
     # packages we don't like
     package { "pppoe": ensure => purged }
     package { "ppp": ensure => purged }

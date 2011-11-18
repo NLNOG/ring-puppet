@@ -106,9 +106,15 @@ ff02::2 ip6-allrouters
 192.42.123.22	surfnet01	surfnet01.ring.nlnog.net
 2001:610:511:123:192:42:123:22	surfnet01	surfnet01.ring.nlnog.net
 
-94.75.255.26	leaseweb01	leaseweb01.ring.nlnog.net
-2001:1af8:4400:2::20	leaseweb01	leaseweb01.ring.nlnog.net
+85.17.150.181   leaseweb01	leaseweb01.ring.nlnog.net
+2001:1af8:4300:a004:8::2    leaseweb01	leaseweb01.ring.nlnog.net
 
 94.228.136.130	prolocation01	prolocation01.ring.nlnog.net
 2a00:d00:ff:136:94:228:136:130	prolocation01	prolocation01.ring.nlnog.net
+
+62.133.200.1    unilogicnetworks01  unilogicnetworks01.ring.nlnog.net
+2001:4128:6135:10:250:56ff:feb6:24  unilogicnetworks01  unilogicnetworks01.ring.nlnog.net
+
+46.250.186.30   maverick01  maverick01.ring.nlnog.net
+2a01:5e00:0:67::2   maverick01  maverick01.ring.nlnog.net
 
