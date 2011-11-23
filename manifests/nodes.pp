@@ -190,6 +190,21 @@ node 'maverick01' inherits ringnode {
     include smokeping::slave
 }
 
+node 'acsystemy01' inherits ringnode {
+    include smokeping::slave
+}
+
+node 'netsign01' inherits ringnode {
+    include smokeping::slave
+}
+
+node 'rrbone01' inherits ringnode {
+    include smokeping::slave
+}
+
+node 'hosteam01' inherits ringnode {
+    include smokeping::slave
+}
 
 node 'master01' inherits ringmaster {
     $sp_owner = "Job Snijders"

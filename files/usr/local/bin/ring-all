@@ -110,7 +110,7 @@ class CLI
 
   def parseOptions cfg
     opts = OptionParser.new do |opt|
-      opt.banner = 'Usage: ' + $0 + ' [options] <cmd>'
+      opt.banner = 'Usage: ' + $0 + " [options] <command>\n    output is valid Markdown syntax\n"
       opt.on('-t', '--timeout [TIMEOUT]', 'set timeout, default is ' + Ring::Timeout.to_s) { |v| cfg[:timeout] = v.to_i }
       opt.on_tail('-h', '--help', 'show this message') { puts opt; exit }
     end

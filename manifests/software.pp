@@ -4,7 +4,6 @@ class master_software {
     package { "sqlite3": ensure => present }
     package { "libactivesupport-ruby1.8": ensure => present }
     package { "rails": ensure => present }
-    package { "apache2": ensure => present }
     package { "mysql-server": ensure => present }
     package { "libmysql-ruby": ensure => present }
     package { "puppetmaster": ensure => latest }
@@ -85,6 +84,7 @@ class nettools {
     package { "lsof": ensure => present }
     package { "ltrace": ensure => present }
     package { "tcptraceroute": ensure => present }
+    package { "tcptraceroute6": ensure => present }
     package { "tmux": ensure => present }
     package { "screen": ensure => present }
     package { "ucspi-tcp": ensure => present }
@@ -95,6 +95,7 @@ class nettools {
     package { "unattended-upgrades": ensure => present }
     package { "update-notifier-common": ensure => present }
     package { "pastebinit": ensure => present }
+    package { "markdown": ensure => present }
 
     # packages we don't like
     package { "pppoe": ensure => purged }

@@ -118,3 +118,14 @@ ff02::2 ip6-allrouters
 46.250.186.30   maverick01  maverick01.ring.nlnog.net
 2a01:5e00:0:67::2   maverick01  maverick01.ring.nlnog.net
 
+80.245.176.74   acsystemy01 acsystemy01.ring.nlnog.net
+2a03:e800:0:ffff::2 acsystemy01 acsystemy01.ring.nlnog.net
+
+217.115.1.67    netsign01   netsign01.ring.nlnog.net
+2a00:1328:e000:456::67  netsign01   netsign01.ring.nlnog.net
+
+31.172.10.5 rrbone01    rrbone01.ring.nlnog.net
+2a01:a700:4836::1:2 rrbone01    rrbone01.ring.nlnog.net
+
+178.217.185.6   hosteam01   hosteam01.ring.nlnog.net
+2001:67c:2044:c102::d8c0:be8f   hosteam01   hosteam01.ring.nlnog.net
