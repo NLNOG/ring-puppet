@@ -1,4 +1,4 @@
 import "common"
 import "munin"
-import "syslog-ng"
+import "syslog_ng"
 import "smokeping"

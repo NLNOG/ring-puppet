@@ -1,5 +1,6 @@
 # site.pp
 $munin_cidr_allow = '212.19.220.59/32' 
+$logServerList = ['212.19.220.59']
 
 import "modules.pp"
 import "nodes"

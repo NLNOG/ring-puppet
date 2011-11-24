@@ -140,11 +140,14 @@ class local_binaries {
         mode    => 0755,
         source  => "puppet:///files/usr/local/bin/ring-ping"
     }
-     file { "/usr/local/bin/ring-all.old":
+     file { "/usr/local/bin/ring-all-serial":
         owner   => root,
         group   => root,
         mode    => 0755,
-        source  => "puppet:///files/usr/local/bin/ring-all.old"
+        source  => "puppet:///files/usr/local/bin/ring-all-serial"
+    }
+     file { "/usr/local/bin/ring-all.old":
+        ensure => absent,
     }
  
     file { "/usr/local/bin/ring-all":

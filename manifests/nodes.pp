@@ -9,8 +9,6 @@ node basenode {
     include etcfiles
     include local_binaries
     include munin::client
-    $syslog_server = "212.19.220.59"
-    include syslog-ng
     include nlnogrepokey
     include ssh
     include timezone
@@ -18,6 +16,7 @@ node basenode {
 
 node ringnode inherits basenode {
     include ring_users
+    include syslog_ng::client
     include ring_admins
     include apache2
 }
@@ -25,7 +24,7 @@ node ringmaster inherits basenode {
     include ring_admins
     include munin::host
     include master_software
-    include syslog-ng::server
+    include syslog_ng::server
 }
 
 # we don't want apache running on regular ringnodes. smokeping installs apache, so we just force it down here. 
@@ -203,6 +202,14 @@ node 'rrbone01' inherits ringnode {
 }
 
 node 'hosteam01' inherits ringnode {
+    include smokeping::slave
+}
+
+node 'msp01' inherits ringnode {
+    include smokeping::slave
+}
+
+node 'inotel01' inherits ringnode {
     include smokeping::slave
 }
 

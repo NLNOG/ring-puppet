@@ -7,6 +7,7 @@ class master_software {
     package { "mysql-server": ensure => present }
     package { "libmysql-ruby": ensure => present }
     package { "puppetmaster": ensure => latest }
+    package { "etckeeper": ensure => present }
     package { "puppetmaster-common": ensure => latest }
 }
 
@@ -41,7 +42,8 @@ class nettools {
         recurse => false
     }
     exec { "setcap cap_net_raw,cap_net_admin=eip /usr/sbin/tcpdump":
-        onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/sbin/tcpdump`\" != \"/usr/sbin/tcpdump = cap_net_admin,cap_net_raw+eip\""
+        onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/sbin/tcpdump`\" != \"/usr/sbin/tcpdump = cap_net_admin,cap_net_raw+eip\"",
+        require => [Package["libcap2-bin"]],
     }
 
     package { "build-essential": ensure => present }
@@ -84,7 +86,7 @@ class nettools {
     package { "lsof": ensure => present }
     package { "ltrace": ensure => present }
     package { "tcptraceroute": ensure => present }
-    package { "tcptraceroute6": ensure => present }
+    package { "ndisc6": ensure => present }
     package { "tmux": ensure => present }
     package { "screen": ensure => present }
     package { "ucspi-tcp": ensure => present }
@@ -96,6 +98,7 @@ class nettools {
     package { "update-notifier-common": ensure => present }
     package { "pastebinit": ensure => present }
     package { "markdown": ensure => present }
+    package { "vim": ensure => present }
 
     # packages we don't like
     package { "pppoe": ensure => purged }
