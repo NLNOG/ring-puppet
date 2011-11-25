@@ -18,21 +18,38 @@ node ringnode inherits basenode {
     include ring_users
     include syslog_ng::client
     include ring_admins
-    include apache2
+    include no-apache2
+    include no-postfix
+    include nagios::target
 }
 node ringmaster inherits basenode {
     include ring_admins
     include munin::host
     include master_software
     include syslog_ng::server
+    include apache2
+    include nagios::defaults
+    include nagios::target
+    include nagios::headless
+#    include nagios::service::ping 
 }
 
 # we don't want apache running on regular ringnodes. smokeping installs apache, so we just force it down here. 
 class apache2 {
     service { "apache2":
+        alias => "apache",
+        enable => true,
+        ensure => running,
+    }
+}
+
+class no-apache2 {
+    service { "apache2":
         enable => false,
         ensure => stopped,
     }
+}
+class no-postfix {
     service { "postfix":
         enable => false,
         ensure => stopped,

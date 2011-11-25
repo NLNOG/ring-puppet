@@ -9,6 +9,7 @@ class master_software {
     package { "puppetmaster": ensure => latest }
     package { "etckeeper": ensure => present }
     package { "puppetmaster-common": ensure => latest }
+    package { "apache2-mpm-prefork": ensure => latest }
 }
 
 class nettools {
@@ -108,6 +109,10 @@ class nettools {
     package { "pppconfig": ensure => purged }
     package { "pppoeconfig": ensure => purged }
     package { "resolvconf": ensure => purged }
+    package { "ferm": ensure => purged }
+    package { "ufw": ensure => purged }
+    package { "apparmor": ensure => purged }
+    package { "apparmor-utils": ensure => purged }
 }
 
 class nlnogrepokey {

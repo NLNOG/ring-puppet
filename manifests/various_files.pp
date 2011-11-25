@@ -29,6 +29,14 @@ class etcfiles {
         source  => "puppet:///files/etc/sudoers"
     }
 
+    file { "/etc/init.d/syslog-ng":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/init.d/syslog-ng"
+    } 
+
+
     file { "/etc/default/puppet":
         owner   => root,
         group   => root,
