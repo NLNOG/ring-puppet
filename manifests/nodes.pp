@@ -12,15 +12,17 @@ node basenode {
     include nlnogrepokey
     include ssh
     include timezone
+    include nagios::target
+    nagios::service::ping { $name: }
+    $postfix_listen = "127.0.0.1"
+    include postfix
 }
 
 node ringnode inherits basenode {
     include ring_users
-    include syslog_ng::client
     include ring_admins
     include no-apache2
-    include no-postfix
-    include nagios::target
+    include syslog_ng::client
 }
 node ringmaster inherits basenode {
     include ring_admins
@@ -28,11 +30,26 @@ node ringmaster inherits basenode {
     include master_software
     include syslog_ng::server
     include apache2
-    include nagios::defaults
-    include nagios::target
-    include nagios::headless
-#    include nagios::service::ping 
 }
+
+node 'master01' inherits ringmaster {
+    $sp_owner = "Job Snijders"
+    $sp_owner_email = "job@snijders-it.nl"
+    $sp_cgi_url = "http://master01.ring.nlnog.net/smokeping/smokeping.cgi"
+    $sp_mailhost = "127.0.0.1"
+    include smokeping::master
+    include nagios::defaults
+    include nagios::headless
+    nagios::service::http { $name:
+        check_domain => "${name}"
+    }
+    $nagios_nsa_server = "irc.xs4all.nl"
+    $nagios_nsa_nickname = "ringmaster"
+    $nagios_nsa_channel = "#ring"
+    $nagios_nsa_realname = "NLNOG RING notifications (http://ring.nlnog.net)"
+    include nagios::irc_bot
+}
+
 
 # we don't want apache running on regular ringnodes. smokeping installs apache, so we just force it down here. 
 class apache2 {
@@ -49,12 +66,19 @@ class no-apache2 {
         ensure => stopped,
     }
 }
-class no-postfix {
-    service { "postfix":
-        enable => false,
-        ensure => stopped,
+
+## define all groups
+
+class groups {
+    add_group { ring-users:
+        gid => 5000
+    }
+    add_group { ring-admins:
+        gid => 6000
     }
 }
+
+#### define all ring nodes ####
 
 node 'intouch01' inherits ringnode {
     $owners = ['job']
@@ -180,9 +204,11 @@ node 'tuxis01' inherits ringnode {
 
 node 'tenet01' inherits ringnode {
     include smokeping::slave
+    $nagios_ping_rate = '!250.0,20%!500.0,60%'
 }
 
 node 'bigwells01' inherits ringnode {
+    $nagios_ping_rate = '!150.0,20%!500.0,60%'
     include smokeping::slave
 }
 
@@ -230,25 +256,10 @@ node 'inotel01' inherits ringnode {
     include smokeping::slave
 }
 
-node 'master01' inherits ringmaster {
-    $sp_owner = "Job Snijders"
-    $sp_owner_email = "job@snijders-it.nl"
-    $sp_cgi_url = "http://master01.ring.nlnog.net/smokeping/smokeping.cgi"
-    $sp_mailhost = "smtp.ring.nlnog.net"
-    include smokeping::master
+node 'fremaks01' inherits ringnode {
+    include smokeping::slave
 }
 
-
-## define all groups
-
-class groups {
-    add_group { ring-users:
-        gid => 5000
-    }
-    add_group { ring-admins:
-        gid => 6000
-    }
-}
 
 
 

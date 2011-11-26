@@ -136,3 +136,6 @@ ff02::2 ip6-allrouters
 2a02:78:d443:8314::1    inotel01    inotel01.ring.nlnog.net
 212.67.131.20   inotel01    inotel01.ring.nlnog.net
 
+46.19.92.60     fremaks01   fremaks01.ring.nlnog.net
+2a02:2918:0:fc00::a6a0:81d6     fremaks01   fremaks01.ring.nlnog.net
+

@@ -68,7 +68,6 @@ class nettools {
     package { "bc": ensure => present }
     package { "dbndns": ensure => present }
     package { "bind9-host": ensure => present }
-    package { "bsd-mailx": ensure => present }
     package { "bzr": ensure => present }
     package { "cvs": ensure => present }
     package { "dsniff": ensure => present }
