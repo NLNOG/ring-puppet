@@ -4,8 +4,9 @@ class ring_users {
 
     add_user { intouch:
         email    => "tech@intouch.eu",
+        company => "InTouch NV",
         uid      => 5001,
-        groups  => ['ring-users']
+        groups  => ['ring-users'],
     }
     add_ssh_key { intouch:
         user    => "intouch",
@@ -29,6 +30,7 @@ class ring_users {
 
     add_user { bit:
         email    => "teun@teun.tv",
+        company => "BIT",
         uid      => 5002,
         groups   => ['ring-users']
     }
@@ -115,6 +117,7 @@ class ring_users {
 
     add_user { coloclue:
         email   => "routers@coloclue.net",
+        company => "Netwerkvereniging Coloclue",
         uid     => 5003,
         groups  => ['ring-users']
     }
@@ -145,6 +148,7 @@ class ring_users {
 
     add_user { widexs:
         email    => "noc@widexs.nl",
+        company => "WideXS",
         uid      => 5004,
         groups   => ['ring-users']
     }
@@ -161,7 +165,8 @@ class ring_users {
 ##### BEGIN xlshosting #####
 
     add_user { xlshosting:
-        email    => "peter@xlshosting.nl",
+        email    => "noc@xlshosting.nl",
+        company => "XLSHostin BV",
         uid      => 5005,
         groups   => ['ring-users']
     }
@@ -179,6 +184,7 @@ class ring_users {
 
     add_user { interconnect:
         email    => "noc@interconnect.nl",
+        company => "Interconnect",
         uid      => 5006,
         groups   => ['ring-users']
     }
@@ -196,6 +202,7 @@ class ring_users {
 
     add_user { cambrium:
         email    => "noc@cambrium.nl",
+        company => "Cambrium",
         uid      => 5007,
         groups   => ['ring-users']
     }
@@ -250,6 +257,7 @@ class ring_users {
 
     add_user { zylon:
         email    => "smite@zylon.net",
+        company => "Zylon",
         uid      => 5008,
         groups   => ['ring-users']
     }
@@ -267,6 +275,7 @@ class ring_users {
     
     add_user { duocast:
         email   => "noc@duocast.net",
+        company => "Duocast",
         uid     => 5009,
         groups  => ['ring-users']
     }
@@ -291,6 +300,7 @@ class ring_users {
 
     add_user { easyhosting:
         email   => "systeembeheer@easyhosting.nl",
+        company => "Easyhosting",
         uid     => 5010,
         groups  => ['ring-users']
     }
@@ -308,6 +318,7 @@ class ring_users {
 
     add_user { previder:
         email   => "noc@previder.net",
+        company => "Previder",
         uid     => 5011,
         groups  => ['ring-users']
     }
@@ -347,6 +358,7 @@ class ring_users {
 
     add_user { leaseweb:
         email   => "noc@leaseweb.com",
+        company => "Leaseweb BV",
         uid     => 5012,
         groups  => ['ring-users']
     }
@@ -414,6 +426,7 @@ class ring_users {
 
     add_user { nxs:
         email   => "ralph.smit@nxs.nl",
+        company => "NXS",
         uid     => 5013,
         groups  => ['ring-users']
     }
@@ -431,6 +444,7 @@ class ring_users {
 
     add_user { ic-hosting:
         email   => "info@ic-hosting.nl",
+        company => "IC Hosting",
         uid     => 5014,
         groups  => ['ring-users']
     }
@@ -448,6 +462,7 @@ class ring_users {
     
     add_user { xs4all:
         email   => "noc@xs4all.net",
+        company => "XS4All",
         uid     => 5015,
         groups  => ['ring-users']
     }
@@ -553,6 +568,7 @@ class ring_users {
 
     add_user { nedzone:
         email   => "noc@nedzone.nl",
+        company => "Nedzone BV",
         uid     => 5016,
         groups  => ['ring-users'],
     }
@@ -571,6 +587,7 @@ class ring_users {
 
     add_user { nlnogbot:
         email   => "sten@snore.nl",
+        company => "Sten Spans limited",
         uid     => "5017",
         groups  => ['ring-users'],
     }
@@ -589,6 +606,7 @@ class ring_users {
 
     add_user { oxilion:
         email   => "noc@oxilion.nl",
+        company => "Oxilion",
         uid     => "5018",
         groups  => ['ring-users'],
     }
@@ -655,6 +673,7 @@ class ring_users {
 
     add_user { ebayclassifiedsgroup:
         email   => "DL-eBay-Classifieds-Networking@ebay.com",
+        company => "eBay Classifieds Group",
         uid     => "5019",
         groups  => ['ring-users'],
     }
@@ -689,6 +708,7 @@ class ring_users {
 
     add_user { evertjenetworks:
         email   => "evert@vanharten.nu",
+        company => "Evertje Networks",
         uid     => "5020",
         groups  => ['ring-users'],
     }
@@ -707,6 +727,7 @@ class ring_users {
 
     add_user { is:
         email   => "netwerk@is.nl",
+        company => "IS",
         uid     => "5021",
         groups  => ['ring-users'],
     }
@@ -739,6 +760,7 @@ class ring_users {
 
     add_user { surfnet:
         email   => "surf-ring@prolocation.eu",
+        company => "SURFNet",
         uid     => "5022",
         groups  => ['ring-users'],
     }
@@ -757,6 +779,7 @@ class ring_users {
 
     add_user { prolocation:
         email   => "cedric@prolocation.net",
+        company => "Prolocation",
         uid     => "5023",
         groups  => ['ring-users'],
     }
@@ -775,6 +798,7 @@ class ring_users {
 
     add_user { in2ip:
         email   => "noc@in2ip.nl",
+        company => "IN2IP",
         uid     => "5024",
         groups  => ['ring-users'],
     }
@@ -793,6 +817,7 @@ class ring_users {
 
     add_user { netground:
         email   => "systeembeheer@netground.nl",
+        company => "NetGround BV",
         uid     => "5025",
         groups  => ['ring-users'],
     }
@@ -811,6 +836,7 @@ class ring_users {
 
     add_user { totaalnet:
         email   => "noc@gl-ix.net",
+        company => "Totaalnet",
         uid     => "5026",
         groups  => ['ring-users'],
     }
@@ -849,6 +875,7 @@ class ring_users {
 
     add_user { signet:
        email    => "noc@signet.nl",
+       company => "SIGNet",
        uid      => "5027",
        groups   => ['ring-users'],
     }
@@ -914,6 +941,7 @@ class ring_users {
 
     add_user { tripleit:
        email    => "support@triple-it.nl",
+       company => "Triple IT BV",
        uid      => "5028",
        groups   => ['ring-users'],
     }
@@ -931,6 +959,7 @@ class ring_users {
 
     add_user { jaguarnetwork:
        email    => "noc@as30781.net",
+       company => "Jaguar Networks",
        uid      => "5029",
        groups   => ['ring-users'],
     }
@@ -976,6 +1005,7 @@ class ring_users {
 
     add_user { tuxis:
        email    => "mark@tuxis.nl",
+       company => "Tuxis Internet Engineering",
        uid      => "5030",
        groups   => ['ring-users'],
     }
@@ -994,6 +1024,7 @@ class ring_users {
 
     add_user { tenet:
        email    => "noc@tenet.ac.za",
+       company => "TENET",
        uid      => "5031",
        groups   => ['ring-users'],
     }
@@ -1011,6 +1042,7 @@ class ring_users {
 
     add_user { bigwells:
         email   => "neteng@bigwells.net",
+        company => "Bigwells",
         uid     => "5032",
         groups  => ['ring-users'],
     }
@@ -1028,6 +1060,7 @@ class ring_users {
 
     add_user { atrato:
         email   => "nmc@atratoip.net",
+        company => "Atrato IP Networks",
         uid     => "5033",
         groups  => ['ring-users'],
     }
@@ -1038,6 +1071,7 @@ class ring_users {
 
     add_user { cyso:
         email   => "noc@cyso.net",
+        company => "Cyso",
         uid     => "5034",
         groups  => ['ring-users'],
     }
@@ -1201,6 +1235,7 @@ class ring_users {
 
     add_user { tdc:
         email   => "noc@tdc.fi",
+        company => "TDC",
         uid     => "5035",
         groups  => ['ring-users'],
     }
@@ -1274,6 +1309,7 @@ class ring_users {
 
     add_user { netability:
         email   => "nick@netability.ie",
+        company => "Netability",
         uid     => "5036",
         groups  => ['ring-users'],
     }
@@ -1292,6 +1328,7 @@ class ring_users {
 
     add_user { unilogicnetworks:
         email   => "noc@unilogicnetworks.net",
+        company => "Unilogic Networks",
         uid     => "5037",
         groups  => ['ring-users'],
     }
@@ -1309,6 +1346,7 @@ class ring_users {
 
     add_user { maverick:
         email   => "noc@maverick.com.pl",
+        company => "Maverick",
         uid     => "5038",
         groups  => ['ring-users'],
     }
@@ -1332,6 +1370,7 @@ class ring_users {
 
     add_user { acsystemy:
         email => "noc@acsystemy.pl",
+        company => "AC Systemy",
         uid => "5039",
         groups => ['ring-users'],
     }
@@ -1356,6 +1395,7 @@ class ring_users {
 
     add_user { netsign:
         email => "noc@netsign.eu",
+        company => "Netsign",
         uid => "5040",
         groups => ['ring-users'],
     }
@@ -1373,6 +1413,7 @@ class ring_users {
 
     add_user { rrbone:
         email => "noc@rrbone.net",
+        company => "rrbone",
         uid => "5041",
         groups => ['ring-users'],
     }
@@ -1439,6 +1480,7 @@ class ring_users {
 
     add_user { hosteam:
         email => "noc@hosteam.pl",
+        company => "HosTeam",
         uid => "5042",
         groups => ['ring-users'],
     }
@@ -1456,6 +1498,7 @@ class ring_users {
 
     add_user { msp:
         email => "noc@mediasp.com",
+        company => "Media Service Provider",
         uid => "5043",
         groups => ['ring-users'],
     }
@@ -1473,6 +1516,7 @@ class ring_users {
 
     add_user { inotel:
         email => "noc@inotel.pl",
+        company => "Inotel",
         uid => "5044",
         groups => ['ring-users'],
     }
@@ -1517,6 +1561,7 @@ class ring_users {
 
     add_user { fremaks:
         email => "noc@fremaks.de",
+        company => "Fremaks GmbH",
         uid => "5045",
         groups => ['ring-users'],
     }

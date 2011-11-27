@@ -1,17 +1,18 @@
-define add_user($email,$uid,$groups) {
+define add_user($email,$company,$uid,$groups) {
 
     $username = $title
     $admingroup = "admin"
-#    $owners = $ring_users::owners
+    $allgroups = $groups
 
-#    if $username in $owners {
-#        $allgroups = $groups, $admingroup
-#    } else {
-        $allgroups = $groups
+#    @@nagios_contact { $username:
+#        alias => $company,
+#        contact_name => $username,
+#        email => $email,
+#        use => "generic-contact",
 #    }
 
     user { $username:
-        comment => "$email",
+        comment => "${company} - ${email}",
         home    => "/home/$username",
         shell   => "/bin/bash",
         uid     => $uid,

@@ -100,6 +100,13 @@ class etcfiles {
         source  => "puppet:///files/etc/apt/sources.list.${lsbdistcodename}",
     }
 
+    file { "/etc/apt/sources.list.d/master.ring.nlnog.net.list":
+        owner => root,
+        group => root,
+        mode  => 644,
+        source => "puppet:///files/etc/apt/sources.list.d/master.ring.nlnog.net.list",
+    }
+
     file { "/etc/apt/apt.conf.d/10periodic":
         owner   => root,
         group   => root,

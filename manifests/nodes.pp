@@ -13,8 +13,8 @@ node basenode {
     include ssh
     include timezone
     include nagios::target
-    nagios::service::ping { $name: }
     $postfix_listen = "127.0.0.1"
+    $root_mail_recipient = "ring-admins@ring.nlnog.net"
     include postfix
 }
 
@@ -40,14 +40,11 @@ node 'master01' inherits ringmaster {
     include smokeping::master
     include nagios::defaults
     include nagios::headless
+    nagios::service::ping { $name:
+    }
     nagios::service::http { $name:
         check_domain => "${name}"
     }
-    $nagios_nsa_server = "irc.xs4all.nl"
-    $nagios_nsa_nickname = "ringmaster"
-    $nagios_nsa_channel = "#ring"
-    $nagios_nsa_realname = "NLNOG RING notifications (http://ring.nlnog.net)"
-    include nagios::irc_bot
 }
 
 
@@ -83,183 +80,226 @@ class groups {
 node 'intouch01' inherits ringnode {
     $owners = ['job']
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'bit01' inherits ringnode {
 #    owner => "bit"
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'coloclue01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'widexs01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'xlshosting01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'interconnect01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'cambrium01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'cyso01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'zylon01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'duocast01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'easyhosting01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'previder01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'leaseweb01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'nxs01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'ic-hosting01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'xs4all01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'nedzone01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'oxilion01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'ebayclassifiedsgroup01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'evertjenetworks01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'is01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'surfnet01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'prolocation01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'in2ip01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'netground01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'totaalnet01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'signet01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'tripleit01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'jaguarnetwork01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'tuxis01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'tenet01' inherits ringnode {
+    $nagios_ping_rate = '!300.0,20%!500.0,60%'
     include smokeping::slave
-    $nagios_ping_rate = '!250.0,20%!500.0,60%'
+    nagios::service::ping { $name: 
+    }
 }
 
 node 'bigwells01' inherits ringnode {
-    $nagios_ping_rate = '!150.0,20%!500.0,60%'
+    $nagios_ping_rate = '!250.0,20%!500.0,60%'
     include smokeping::slave
+    nagios::service::ping { $name: 
+    }
 }
 
 node 'atrato01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'tdc01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'netability01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'unilogicnetworks01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'maverick01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'acsystemy01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'netsign01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'rrbone01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'hosteam01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'msp01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'inotel01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
 
 node 'fremaks01' inherits ringnode {
     include smokeping::slave
+    nagios::service::ping { $name: }
 }
-
-
-
 

@@ -2,6 +2,7 @@ class ring_admins {
 
     add_user { job:
         email    => "job@instituut.net",
+        company  => "Snijders IT",
         uid      => 6001,
         groups   => ['ring-admins', 'ring-users']
     }
@@ -16,6 +17,7 @@ class ring_admins {
 
     add_user { martin:
         email    => "martin@rodecker.nl",
+        company  => "Pels",
         uid      => 6002,
         groups   => ['ring-admins', 'ring-users']
     }
@@ -29,6 +31,7 @@ class ring_admins {
     
     add_user { edwin:
         email    => "edwin@nettech.cx",
+        company  => "NXS",
         uid      => 6003,
         groups   => ['ring-admins', 'ring-users']
     }
@@ -42,6 +45,7 @@ class ring_admins {
     
     add_user { peter:
         email    => "peter@7bits.nl",
+        company  => "van Dijk",
         uid      => 6004,
         groups   => ['ring-admins', 'ring-users']
     }
