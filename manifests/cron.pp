@@ -7,6 +7,7 @@ class cronjobs {
         hour => "3",
         user => "root",
         minute => fqdn_rand(50) + 1,
+        environment => ["PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"],
     }
     
    cron {

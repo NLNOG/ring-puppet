@@ -13,8 +13,9 @@ node basenode {
     include ssh
     include timezone
     include nagios::target
-    $postfix_listen = "127.0.0.1"
+    $postfix_smtp_listen = "127.0.0.1"
     $root_mail_recipient = "ring-admins@ring.nlnog.net"
+    $postfix_myorigin = ""
     include postfix
 }
 
@@ -23,6 +24,7 @@ node ringnode inherits basenode {
     include ring_admins
     include no-apache2
     include syslog_ng::client
+    package{ "munin": ensure => purged, }
 }
 node ringmaster inherits basenode {
     include ring_admins
@@ -74,6 +76,16 @@ class groups {
         gid => 6000
     }
 }
+
+#### staging01 #####
+
+node 'staging01' inherits ringnode {
+    $owners = ['job']
+    include smokeping::slave
+    nagios::service::ping { $name: }
+}
+
+#### einde staging01 #####
 
 #### define all ring nodes ####
 

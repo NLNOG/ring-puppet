@@ -28,6 +28,7 @@ class nettools {
     package { "python-dnspython": ensure => present }
     package { "openntpd": ensure => present }
     package { "python-setuptools": ensure => present }
+    package { "virt-what": ensure => present }
     package { "sl": ensure => present }
     package { "mtr": ensure => latest }
     package { "nmap": ensure => latest }

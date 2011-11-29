@@ -25,6 +25,9 @@ ff02::2 ip6-allrouters
 
 212.19.220.59   master01 master01.ring.nlnog.net puppet
 2001:6e0:100:4001::3    master01 master01.ring.nlnog.net puppet
+
+213.154.236.191 staging01   staging01.ring.nlnog.net
+2001:7b8:625:0:213:154:236:191  staging01 staging01.ring.nlnog.net
 """
 
 for server in all_hosts:

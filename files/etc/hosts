@@ -10,6 +10,9 @@ ff02::2 ip6-allrouters
 2001:6e0:100:4001::3    master01 master01.ring.nlnog.net puppet
 212.19.220.59   master01 master01.ring.nlnog.net puppet
 
+213.154.236.191 staging01   staging01.ring.nlnog.net
+2001:7b8:625:0:213:154:236:191  staging01 staging01.ring.nlnog.net
+
 2a02:7d0:3:208:250:56ff:fe9c:1e	in2ip01	in2ip01.ring.nlnog.net
 217.198.20.135	in2ip01	in2ip01.ring.nlnog.net
 
@@ -139,3 +142,5 @@ ff02::2 ip6-allrouters
 46.19.92.60     fremaks01   fremaks01.ring.nlnog.net
 2a02:2918:0:fc00::a6a0:81d6     fremaks01   fremaks01.ring.nlnog.net
 
+46.182.9.20     netability01    netability01.ring.nlnog.net
+2a03:8900:100:711::20   netability01    netability01.ring.nlnog.net
