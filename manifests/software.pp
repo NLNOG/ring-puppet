@@ -23,6 +23,7 @@ class nettools {
         require => [Package["lft"]],
     }
 
+    package { "libnet-ssh2-ruby1.8": ensure => present }
     package { "puppet": ensure => latest }
     package { "puppet-common": ensure => latest }
     package { "python-dnspython": ensure => present }
