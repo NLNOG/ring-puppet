@@ -76,7 +76,7 @@ class groups {
         gid => 5000
     }
     add_group { ring-admins:
-        gid => 6000
+        gid => 6000 
     }
 }
 
@@ -332,6 +332,11 @@ node 'portlane01' inherits ringnode {
 }
 
 node 'solido01' inherits ringnode {
+    include smokeping::slave
+    nagios::service::ping { $name: }
+}
+
+node 'digmia01' inherits ringnode {
     include smokeping::slave
     nagios::service::ping { $name: }
 }

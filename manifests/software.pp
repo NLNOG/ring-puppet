@@ -27,7 +27,19 @@ class nettools {
     package { "puppet": ensure => latest }
     package { "puppet-common": ensure => latest }
     package { "python-dnspython": ensure => present }
-    package { "openntpd": ensure => present }
+    package { "openntpd": ensure => purged }
+    package { "ntp": ensure => latest }
+    file { "/etc/ntp.conf":
+        require => Package["ntp"],
+        mode   => 644,
+        owner  => root,
+        group  => root,
+        source => "puppet:///files/etc/ntp.conf",
+      }
+    service { "ntp":
+        ensure => running,
+        subscribe => File["/etc/ntp.conf"],
+    }
     package { "python-setuptools": ensure => present }
     package { "virt-what": ensure => present }
     package { "sl": ensure => present }

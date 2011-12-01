@@ -150,3 +150,7 @@ ff02::2 ip6-allrouters
 
 109.238.49.65   solido01    solido01.ring.nlnog.net
 2a02:9d0:3023:1::2  solido01    solido01.ring.nlnog.net
+
+91.210.181.185  digmia01    digmia01.ring.nlnog.net
+2a01:5200:100::7269:6b67:3031   digmia01    digmia01.ring.nlnog.net
+
