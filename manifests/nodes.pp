@@ -330,3 +330,8 @@ node 'portlane01' inherits ringnode {
     include smokeping::slave
     nagios::service::ping { $name: }
 }
+
+node 'solido01' inherits ringnode {
+    include smokeping::slave
+    nagios::service::ping { $name: }
+}
