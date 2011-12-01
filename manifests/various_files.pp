@@ -36,6 +36,12 @@ class etcfiles {
         source  => "puppet:///files/etc/default/puppet"
     } 
 
+    file { "/etc/ssh/ssh_config":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/ssh/ssh_config"
+    } 
 
     file { "/etc/ssh/sshd_config":
         owner   => root,

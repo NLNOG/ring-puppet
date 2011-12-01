@@ -144,3 +144,6 @@ ff02::2 ip6-allrouters
 
 46.182.9.20     netability01    netability01.ring.nlnog.net
 2a03:8900:100:711::20   netability01    netability01.ring.nlnog.net
+
+91.205.185.146  blix01  blix01.ring.nlnog.net
+2a02:20c8:14:0:2e0:81ff:fe33:9766   blix01  blix01.ring.nlnog.net

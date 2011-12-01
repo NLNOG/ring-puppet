@@ -1572,6 +1572,23 @@ class ring_users {
         name => "morpheus@mbp",
         options => [],
     }      
- 
+
+##### BEGIN blix #####
+
+    add_user { blix:
+        email => "support@blixsolutions.eu",
+        company => "Blix Solutions",
+        uid => "5046",
+        groups => ['ring-users'],
+    }
+    add_ssh_key { blix_01:
+        user => "blix",
+        type => "ssh-rsa",
+        key => "AAAAB3NzaC1yc2EAAAABIwAAAQEA4DGMd93hRqdTn5QNWD3RbN9dhslqJvWuKuKHXeAkpymwC58ccLYafDKhe0YoYGYskKUMgtuPXGYuNJlhWYSqpei6RVHlG2OZFVnaXGnYyUm+jBBfetPEXOByvldq45r+0Dha6+VVUyL7YFYs2/RGRv/uTI7Dtxy0PaIYHJo67rqBGG2BdMRP6nwhxZ/6KcCQ8YZq14MHZ9tg/W696onO4qWiK6rV9uNAO3d7d8COG9Ipr8RpRh2k0/329IBT+8ADuVRUH4GxxnDO9vUC+6Mi7dDJanAp6jL0mVGsRCsR/cR03pcQU7Y5LQjrC10a5a8XwYXGO/qcpuTgNzjrXE9q1w==",
+        name => "root@jumpstation.blixbone.net",
+        options => [],
+    }
+
+##### EINDE blix #####
 
 }

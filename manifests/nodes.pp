@@ -47,6 +47,9 @@ node 'master01' inherits ringmaster {
     nagios::service::http { $name:
         check_domain => "${name}"
     }
+    munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
+    }
+
 }
 
 
@@ -302,6 +305,9 @@ node 'hosteam01' inherits ringnode {
 
 node 'msp01' inherits ringnode {
     include smokeping::slave
+    munin::plugin { ["sensors_volt", "sensors_temp", "sensors_fan"]:
+        ensure => "sensors_" 
+    }
     nagios::service::ping { $name: }
 }
 
@@ -315,3 +321,12 @@ node 'fremaks01' inherits ringnode {
     nagios::service::ping { $name: }
 }
 
+node 'blix01' inherits ringnode {
+    include smokeping::slave
+    nagios::service::ping { $name: }
+}
+
+node 'portlane01' inherits ringnode {
+    include smokeping::slave
+    nagios::service::ping { $name: }
+}

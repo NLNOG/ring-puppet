@@ -35,6 +35,7 @@ class nettools {
     package { "nmap": ensure => latest }
     package { "traceroute": ensure => present }
     package { "fail2ban": ensure => present }
+    
     package { "tcpdump": ensure => present }
     package { "libcap2-bin": ensure => present }
     # here we permit ring-users to use tcpdump
@@ -42,11 +43,26 @@ class nettools {
         mode    => "0755",
         owner   => root,
         group   => ring-users,
-        recurse => false
+        recurse => false,
+        require => Package["tcpdump"],
     }
     exec { "setcap cap_net_raw,cap_net_admin=eip /usr/sbin/tcpdump":
         onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/sbin/tcpdump`\" != \"/usr/sbin/tcpdump = cap_net_admin,cap_net_raw+eip\"",
         require => [Package["libcap2-bin"]],
+    }
+    
+    package { "tshark": ensure => present }
+    # here we permit ring-users to use tshark
+    file { "/usr/bin/dumpcap":
+        mode    => "0754",
+        owner   => root,
+        group   => ring-users,
+        recurse => false,
+        require => Package["tshark"],
+    }
+    exec { "setcap cap_net_admin,cap_net_raw+eip /usr/bin/dumpcap":
+        onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/bin/dumpcap`\" != \"/usr/bin/dumpcap = cap_net_admin,cap_net_raw+eip\"",
+        require => Package["tshark"],
     }
 
     package { "build-essential": ensure => present }
