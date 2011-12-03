@@ -24,6 +24,7 @@ class cronjobs {
         weekday => "*",
         hour => "3",
         minute => fqdn_rand(50) + 5,
+        ensure => absent,
     }
 
 # our munin module makes this useless

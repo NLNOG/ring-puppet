@@ -7,8 +7,8 @@ ff00::0 ip6-mcastprefix
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 
-2001:6e0:100:4001::3    master01 master01.ring.nlnog.net puppet
-212.19.220.59   master01 master01.ring.nlnog.net puppet
+2001:6e0:100:4001::3    master01 master01.ring.nlnog.net puppet master master.ring.nlnog.net
+212.19.220.59   master01 master01.ring.nlnog.net puppet master master.ring.nlnog.net
 
 213.154.236.191 staging01   staging01.ring.nlnog.net
 2001:7b8:625:0:213:154:236:191  staging01 staging01.ring.nlnog.net
@@ -151,6 +151,11 @@ ff02::2 ip6-allrouters
 109.238.49.65   solido01    solido01.ring.nlnog.net
 2a02:9d0:3023:1::2  solido01    solido01.ring.nlnog.net
 
+80.67.10.228    portlane01      portlane01.ring.nlnog.net
+2a00:1a28:0:1::10:228   portlane01  portlane01.ring.nlnog.net
+
 91.210.181.185  digmia01    digmia01.ring.nlnog.net
 2a01:5200:100::7269:6b67:3031   digmia01    digmia01.ring.nlnog.net
 
+94.242.192.13   rootlu01  rootlu01.ring.nlnog.net
+2a01:608:f::13  rootlu01  rootlu01.ring.nlnog.net

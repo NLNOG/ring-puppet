@@ -13,6 +13,12 @@ class master_software {
 }
 
 class nettools {
+    package { "iperf":
+        ensure => present,
+    }
+    package { ["iputils-ping", "iputils-tracepath"]:
+        ensure => latest,
+    }
     package { "lft": ensure => present }
     file { "/usr/bin/lft":
         ensure => "/usr/sbin/lft",
@@ -79,7 +85,6 @@ class nettools {
 
     package { "build-essential": ensure => present }
     package { "dnsutils": ensure => present }
-    package { "iputils-tracepath": ensure => present }
     package { "wget": ensure => present }
     # the following package will need some work before it can function
     package { "traceroute-nanog": ensure => present }
