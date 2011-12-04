@@ -159,3 +159,7 @@ ff02::2 ip6-allrouters
 
 94.242.192.13   rootlu01  rootlu01.ring.nlnog.net
 2a01:608:f::13  rootlu01  rootlu01.ring.nlnog.net
+
+176.10.80.10    globalaxs01 globalaxs01.ring.nlnog.net
+2a01:300:666:1::2   globalaxs01 globalaxs01.ring.nlnog.net
+

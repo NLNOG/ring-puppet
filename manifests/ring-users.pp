@@ -1677,4 +1677,23 @@ class ring_users {
 
 ##### EINDE rootlu #####
 
+##### BEGIN globalaxs #####
+
+    add_user { globalaxs:
+        email => "nmc@m247.com",
+        company => "GlobalAXS Communications Ltd",
+        uid => "5051",
+        groups => ['ring-users'],
+    }
+    add_ssh_key { globalaxs_ssh_1:
+        user => "globalaxs",
+        type => "ssh-rsa",
+        key => "AAAAB3NzaC1yc2EAAAABIwAAAQEAyRNgoniiGQbtJ8YOuKfWkK+1x3YELpVhfexNlPQbF7j+tbHIkuSP4RC1vo9XsmGhFN7co8jWAmZPtXx+peyXT8QDl5BPzbzjPlK+C0WTkIl74zqAwb51JHwo/TaRlDsrI6JR9gVO41q+ExtWcNmTVQRXzRJ+oo8DeuWt30r0kPrTGhyuJC5L7X/xW6vCBGVSXso2Ck0yv4xCUtWJYL70vt3qsvoEmgQY70XMHooZj3A7qMEITJ6akAzajLukCAjbhMrk9melANx1B9FxoYUxIAO7SJyn9J/Kh2TzZ3Hg4G8KYy4HJ0wFFOcm2O0WXdghZIK8RoiLPo5S1tkyGll2xQ==", 
+        name => "shafez@jumper.uk.gbxs.net",
+        options => [],
+    }
+
+##### EINDE globalaxs #####
+
+
 }
