@@ -223,6 +223,7 @@ class local_binaries {
         group   => root,
         mode    => 0755,
         source  => "puppet:///files/usr/local/bin/puppet-sync",
+        ensure => absent,
     }
     
 #    file { "/etc/postfix/main.cf":
