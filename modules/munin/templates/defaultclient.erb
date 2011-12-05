@@ -1,0 +1,21 @@
+<%
+	# Downcase all information
+require "resolv"
+
+	dom = domain.downcase
+	host = hostname.downcase
+	fhost = name.downcase
+    v4host = (Resolv::DNS.new.getresource munin_host_real, Resolv::DNS::Resource::IN::A).address.to_s
+
+# v4host = (Resolv::DNS.new.getresource"munin_host_real", Resolv::DNS::Resource::IN::A).address.to_s
+#    v4host = Resolv::Hosts#getaddress(munin_host_real)
+#    v4host = Resolv.getaddress(munin_host_real)
+
+%>
+### This syntax can be extended, it might get better ...
+#+<%= dom %>
+#-<%= host %>=<%= fhost %>:load.load
+[<%= fhost %>] # linux box 
+	address <%= v4host %>
+	port <%= munin_port_real %>
+	use_node_name yes

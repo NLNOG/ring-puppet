@@ -1,0 +1,12 @@
+<%
+	# Downcase all information
+	dom = domain.downcase
+	host = hostname.downcase
+	fhost = name.downcase
+    sp_color = (100000 + scope.function_fqdn_rand(['899999']).to_i)
+
+%>
++ <%= fhost %>
+display_name = <%= host %>
+color = <%= sp_color %>
+
