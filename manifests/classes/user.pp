@@ -49,12 +49,12 @@ define add_user($email,$company,$uid,$groups) {
     }
 }
 
-define add_ssh_key($key,$type,$user,$options) {
+define add_ssh_key($key,$type,$user,$options,$ensure="present") {
 
     $username       = $user
  
     ssh_authorized_key{ "${username}_${key}":
-        ensure  => present,
+        ensure  => $ensure,
         key     => $key,
         name    => $name,
         type    => $type,
