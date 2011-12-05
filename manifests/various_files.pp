@@ -216,7 +216,7 @@ class local_binaries {
         owner   => root,
         group   => root,
         mode    => 0755,
-        source  => "puppet:///files/usr/local/bin/ring-convert-ssh-keys"
+        source  => "puppet:///files/usr/local/bin/ring-convert-ssh-keys",
     }
     file { "/usr/local/bin/puppet-sync":
         owner   => root,
