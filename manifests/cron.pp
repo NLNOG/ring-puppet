@@ -1,7 +1,7 @@
 # this class is only executed on the master
 class mastercronjobs {
     cron { pull_from_repo:
-        command => "bash -c '( msg=`cd /etc/puppet/environments/production && /usr/bin/git pull  origin master  && /usr/bin/git reset  --hard && /usr/bin/git clean  -d -x -f && touch .puppet-sync-stamp 2>&1 > /tmp/logfail.log`; if [ ! -z \"$msg\" ] ; then echo \"$msg\" | /usr/bin/mail -s \"`/bin/uname -n`:$LOGNAME:`/bin/date`: seems that repo copy on master01 failed\" ring-admins@ring.nlnog.net; fi )'",
+        command => "cd /etc/puppet/environments/production && /usr/bin/git pull  origin master  && /usr/bin/git reset  --hard && /usr/bin/git clean  -d -x -f && touch .puppet-sync-stamp 2>&1",
         minute  => "*/5",
         user    => root,
         ensure  => present,
