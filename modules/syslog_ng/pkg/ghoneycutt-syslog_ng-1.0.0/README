@@ -1,0 +1,12 @@
+syslog_ng
+
+Released 20100702 - Garrett Honeycutt - GPLv2
+
+# This module manages syslog-ng
+# 
+# There are two main pices:  client and server
+#   client goes everywhere - syslog_ng::client is included in generic module
+#   server goes on the central logging hosts.
+#
+# syslog_ng is a generic class that is
+# inherited by either client or server
