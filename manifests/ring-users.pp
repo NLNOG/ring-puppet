@@ -24,7 +24,7 @@ class ring_users {
     }
 
 
-##### EINDE intouch ##### 
+##### END intouch ##### 
 
 ##### BEGIN bit #####
 
@@ -111,7 +111,7 @@ class ring_users {
         name => "jeroen@jeroen-desktop_11",
         options => [],
     }  
-##### EINDE bit #####
+##### END bit #####
 
 ##### BEGIN coloclue #####
 
@@ -142,7 +142,7 @@ class ring_users {
         name => "niels@alphix.local",
         options => [],
     } 
-##### EINDE coloclue #####
+##### END coloclue #####
 
 ##### BEGIN widexs #####
 
@@ -160,7 +160,7 @@ class ring_users {
         options => [],
     }
 
-##### EINDE widexs #####
+##### END widexs #####
 
 ##### BEGIN xlshosting #####
 
@@ -178,7 +178,7 @@ class ring_users {
         options => [],
     }
 
-##### EINDE xlshosting #####
+##### END xlshosting #####
 
 ##### BEGIN interconnect #####
 
@@ -196,7 +196,7 @@ class ring_users {
         options => [],
     }
 
-##### EINDE interconnect #####
+##### END interconnect #####
 
 ##### BEGIN cambrium #####
 
@@ -250,7 +250,7 @@ class ring_users {
         options => [],
     }
 
-##### EINDE cambrium #####
+##### END cambrium #####
 
 ##### BEGIN zylon #####
 
@@ -269,7 +269,7 @@ class ring_users {
         type    => "ssh-dss"
     }
     
-##### EINDE zylon #####
+##### END zylon #####
     
 ##### BEGIN duocast #####    
     
@@ -294,7 +294,7 @@ class ring_users {
         options => [],
     }
 
-##### EINDE duocast #####
+##### END duocast #####
     
 ##### BEGIN easyhosting #####
 
@@ -312,7 +312,7 @@ class ring_users {
         type    => "ssh-dss",
     }
 
-##### EINDE easyhosting #####
+##### END easyhosting #####
     
 ##### BEGIN previder #####
 
@@ -352,7 +352,7 @@ class ring_users {
         options => [],
     }  
  
-##### EINDE previder #####
+##### END previder #####
     
 ##### BEGIN leaseweb #####
 
@@ -420,7 +420,7 @@ class ring_users {
         options => [],
     }    
 
-##### EINDE leaseweb #####
+##### END leaseweb #####
     
 ##### BEGIN nxs #####
 
@@ -438,7 +438,7 @@ class ring_users {
         type    => "ssh-rsa",
     }
 
-##### EINDE nxs #####
+##### END nxs #####
     
 ##### BEGIN ic-hosting #####
 
@@ -456,7 +456,7 @@ class ring_users {
         type    => "ssh-dss"
     }
 
-##### EINDE ic-hosting #####
+##### END ic-hosting #####
 
 ##### BEGIN xs4all ##### 
     
@@ -562,7 +562,7 @@ class ring_users {
 # de import werkt blijkbaar niet super goed
 #    import "sshkeys/xs4all"
 
-##### EINDE xs4all #####
+##### END xs4all #####
 
 ##### BEGIN nedzone #####
 
@@ -581,7 +581,7 @@ class ring_users {
         type    => "ssh-rsa",
     }
 
-##### EINDE nedzone #####
+##### END nedzone #####
 
 ##### BEGIN nlnogbot #####
 
@@ -600,7 +600,7 @@ class ring_users {
         type    => "ssh-rsa",
     }
 
-##### EINDE nlnogbot #####
+##### END nlnogbot #####
 
 ##### BEGIN oxilion #####
 
@@ -667,7 +667,7 @@ class ring_users {
         name => "tekkel@fedora.jronline.nl",
         options => [],
     }      
-##### EINDE oxilion #####
+##### END oxilion #####
 
 ##### BEGIN ebayclassifiedsgroup #####
 
@@ -702,7 +702,7 @@ class ring_users {
         type    => "ssh-dss",
     }
 
-##### EINDE ebayclassifiedsgroup #####
+##### END ebayclassifiedsgroup #####
 
 ##### BEGIN evertjenetworks #####
 
@@ -721,7 +721,7 @@ class ring_users {
         options => [],
     }
 
-##### EINDE evertjenetworks #####
+##### END evertjenetworks #####
 
 ##### BEGIN is #####
 
@@ -754,7 +754,7 @@ class ring_users {
         options => [],
     } 
 
-##### EINDE is #####
+##### END is #####
 
 ##### BEGIN surfnet #####
 
@@ -773,7 +773,7 @@ class ring_users {
         options => [],
     }
 
-##### EINDE surfnet #####
+##### END surfnet #####
 
 ##### BEGIN prolocation #####
 
@@ -792,7 +792,7 @@ class ring_users {
         options => [],
     }
 
-##### EINDE prolocation #####
+##### END prolocation #####
 
 ##### BEGIN in2ip #####
 
@@ -811,7 +811,7 @@ class ring_users {
         options => [],
     }
 
-##### EINDE in2ip #####
+##### END in2ip #####
 
 ##### BEGIN netground #####
 
@@ -830,7 +830,7 @@ class ring_users {
         options => [],
     }
 
-##### EINDE netground #####
+##### END netground #####
 
 ##### BEGIN totaalnet #####
 
@@ -869,7 +869,7 @@ class ring_users {
         options => [],
     }  
 
-##### EINDE totaalnet #####
+##### END totaalnet #####
 
 ##### BEGIN signet #####
 
@@ -935,7 +935,7 @@ class ring_users {
         name => "cardno:000500000C32_signet_ssh_8",
         options => [],
     } 
-##### EINDE signet #####
+##### END signet #####
 
 ##### BEGIN tripleit #####
 
@@ -953,7 +953,7 @@ class ring_users {
         options => [],
     } 
 
-##### EINDE tripleit #####
+##### END tripleit #####
 
 ##### BEGIN jaguarnetwork #####
 
@@ -999,7 +999,7 @@ class ring_users {
         options => [],
     } 
 
-##### EINDE jaguarnetwork #####
+##### END jaguarnetwork #####
 
 ##### BEGIN tuxis #####
 
@@ -1018,7 +1018,7 @@ class ring_users {
     }
 
 
-##### EINDE tuxis #####
+##### END tuxis #####
 
 ##### BEGIN tenet #####
 
@@ -1036,7 +1036,7 @@ class ring_users {
         options => [],
     }
 
-##### EINDE tenet #####
+##### END tenet #####
 
 #### BEGIN bigwells #####
 
@@ -1054,7 +1054,7 @@ class ring_users {
         options => [],
     }
 
-#### EINDE bigwells #####
+#### END bigwells #####
 
 #### BEGIN atrato #####
 
@@ -1065,7 +1065,7 @@ class ring_users {
         groups  => ['ring-users'],
     }
 
-#### EINDE atrato #####
+#### END atrato #####
 
 #### BEGIN cyso #####
 
@@ -1229,7 +1229,7 @@ class ring_users {
         key => "AAAAB3NzaC1yc2EAAAABIwAAAQEAqDl38jTxrAql2YmcI70oDob5ZamZUJ0csMsxuje59iNZlMLjMgtyTrhOVfQJJiL4PsC0RzDJ8dj+8zD9lHACDMAxiA4CtV1DFlNfZqlrCN3OuQIbOaPM5hD2K2M6Zc6dty56ky8wJDrkmzouL+WW6Il0WjHEC3ptql9DFjPLckn6K7kS4PCNlPzypZY2xa/0Z71h23dcMFdcyKGN8PhGz2N/jMTNA17eoZ2WMq4C8hV8HcNQKop4ui8CQ8pQkMW2tL/lSJeUZ3NsnHZFhldO3tEOPKz8BgLvjTsB+ONFLhwzajrOISjW3KUIYKfOZhp5eP8UfxXAPfz3C4DfwLdw/Q==",
         name => "backup+20110705@cyso.nl_22",
     }   
-#### EINDE cyso #####
+#### END cyso #####
 
 #### BEGIN tdc #####
 
@@ -1310,7 +1310,7 @@ class ring_users {
         options => [],
     }  
 
-#### EINDE tdc #####
+#### END tdc #####
 
 #### BEGIN netability #####
 
@@ -1328,7 +1328,7 @@ class ring_users {
         options => [],
     }
 
-#### EINDE netablity #####
+#### END netablity #####
 
 
 #### BEGIN unilogicnetworks #####
@@ -1347,7 +1347,7 @@ class ring_users {
         options => [],
     }
 
-##### EINDE unilogicnetworks #####
+##### END unilogicnetworks #####
 
 #### BEGIN maverick #####
 
@@ -1371,7 +1371,7 @@ class ring_users {
         name => "_2",
         options => [],
     } 
-##### EINDE maverick #####
+##### END maverick #####
 
 #### BEGIN acsystemy #####
 
@@ -1396,7 +1396,7 @@ class ring_users {
         options => [],
     } 
 
-#### EINDE acsystemy #####
+#### END acsystemy #####
 
 #### BEGIN netsign #####
 
@@ -1423,7 +1423,7 @@ class ring_users {
         name => "kre@netsign.eu_2",
         options => [],
     }
-##### EINDE netsign #####
+##### END netsign #####
 
 #### BEGIN rrbone #####
 
@@ -1490,7 +1490,7 @@ class ring_users {
         options => [],
     }      
 
-##### EINDE rrbone #####
+##### END rrbone #####
 
 ##### BEGIN hosteam #####
 
@@ -1508,7 +1508,7 @@ class ring_users {
         options => [],
     }
 
-##### EINDE hosteam #####
+##### END hosteam #####
 
 ##### BEGIN msp #####
 
@@ -1526,7 +1526,7 @@ class ring_users {
         options => [],
     }
 
-##### EINDE msp #####
+##### END msp #####
 
 ##### BEGIN inotel #####
 
@@ -1571,7 +1571,7 @@ class ring_users {
         name => "rozie@pluto_5",
         options => [],
     }  
-##### EINDE inotel #####
+##### END inotel #####
 
 ##### BEGIN fremaks ##### 
 
@@ -1605,7 +1605,7 @@ class ring_users {
         options => [],
     }
 
-##### EINDE blix #####
+##### END blix #####
 
 ##### BEGIN portlane #####
 
@@ -1623,7 +1623,7 @@ class ring_users {
         options => [],
     }
 
-##### EINDE portlane #####
+##### END portlane #####
 
 ##### BEGIN solido #####
 
@@ -1662,7 +1662,7 @@ class ring_users {
         options => [],
     }
 
-##### EINDE solido #####
+##### END solido #####
 
 ##### BEGIN digmia #####
 
@@ -1686,7 +1686,7 @@ class ring_users {
         name => "digmia@100929_1",
         options => [],
     }
-##### EINDE digmia #####
+##### END digmia #####
 
 ##### BEGIN rootlu #####
 
@@ -1711,7 +1711,7 @@ class ring_users {
         options => [],
     }
 
-##### EINDE rootlu #####
+##### END rootlu #####
 
 ##### BEGIN globalaxs #####
 
@@ -1736,8 +1736,6 @@ class ring_users {
         options => [],
     }
 
-
-##### EINDE globalaxs #####
-
+##### END globalaxs #####
 
 }
