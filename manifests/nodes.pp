@@ -32,6 +32,7 @@ node ringmaster inherits basenode {
     include master_software
     include syslog_ng::server
     include apache2
+    include mastercronjobs
 }
 
 node 'master01' inherits ringmaster {
