@@ -11,6 +11,10 @@ Warning
 -------
 
 Keep in mind, the master branch is 'production' in puppet world.
+Do not edit files in master01.ring.nlnog.net:/etc/puppet/ !
+
+About the RING
+--------------
 
 The RING is a streamlined way for network operators to cooperate in
 troubleshooting and debugging the internet as a whole. For more
