@@ -1406,14 +1406,23 @@ class ring_users {
         uid => "5040",
         groups => ['ring-users'],
     }
+
+    # removed this key per request of frapzzt
         add_ssh_key { netsign_ssh_1:
         user => "netsign",
         type => "ssh-rsa",
         key => "AAAAB3NzaC1yc2EAAAABIwAAAgEAumkR2a0XOw6bLIosqMQGgqdXzjcrEHMMulgG8a8oRIY677WK86Us4wH0NAdWbb3LKuqqjDf9vS3YrFXiH9sqSH6ny524SL1h5jlaNer3cPGxSYHPVmGLhrsO93GljWaLmemauJCBdHoqEn5dx940h6E75UYqNvjxw7sPwTfsFtrTkgh44GHdCcgAS5HqgPxkUT8yePgsBiG8NRpYN14Zwc/yMhtn7wOTEHqrOzcbLVEMD69ojk5NJP+8jR0HMZOVZ67M6BEPE5aWNmk0QfXMeApXwAeH3EvZ7wKhDFIpwPpiS483Gw9VQVm9/5Wgw4W7FKGVSvr6elw35ABujoRuuo5DUMTmGtMTY8DGO4dVPksqOXw3loQC+3pz/l/dFSfIbKMNHuIKLhvtz7mfil/JmMBYai5meN9HXx5LaN+cw9LEit7F3QG9rMAYNF7kZ0WSIeMi1k/ql0ZQ0CjbcavUCqW6wO40UEyG6+1f+defjXFMHBzeO1tL/Cmx+iYltKDoEJdswNTxGD3RDcfb3ALg1N2SnVJrmpB+9z0LsSx9BZVvEFYrkHpN/MKNVu/yaaau4ZX5ZN77TUfGM6lgM3k2avJmJC3GaySfCPfQr6Af+/LGGDbaeSKj1fQQC5j8hrgAtDclIprriHb40djZueA14rlOpWrUfFzXqddzW6kHpzk=",
         name => "kre@netsign.eu_1",
         options => [],
+        ensure => absent,
     }
-
+    add_ssh_key { netsign_ssh_2:
+        user => "netsign",
+        type => "ssh-rsa",
+        key => "AAAAB3NzaC1yc2EAAAABIwAAAQEA0MgFgdVHuY8T7ceFo9QGT9bjVguAjYAXMqDEaK+OgCk6+8SBACyZvDLnWOOxu7fMT5kyHXwu3vmdpkE4B7A/3mmQRzBy1lffZFYRIvzQ2g+5C/lSkFMq46xJt0Gqm8hZASmNXQhCiDP9t1dLYIaWh8ecr/kFNO/T6pW6dD2d8vP8EQi+dwVylpaNK25mAZQbKPEQOPldbN5DyGWRqgcI53Rxv5hSFi1FjSoJiXYIpqSC+2Hfu29spEi/Z1ypUxOFVWHbZuMFGw9nSNtLmYY9/tb8N+DNAlWdasdEFnUtXeinzy7B5zUPIxDlJEz7KODkpvJv/VR+VLUure9UKiIkuw==",
+        name => "kre@netsign.eu_1",
+        options => [],
+    }
 ##### EINDE netsign #####
 
 #### BEGIN rrbone #####
