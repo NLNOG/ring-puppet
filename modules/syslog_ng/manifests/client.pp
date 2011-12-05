@@ -12,6 +12,9 @@ class syslog_ng::client inherits syslog_ng {
             notify  => Service["syslog-ng"],
             content => template("syslog_ng/syslog-ng.conf.client.erb");
         "/etc/logrotate.d/syslog-ng":
+        owner   => root,
+        group   => root,
+        mode    => 0755,
             source => "puppet:///modules/syslog_ng/syslog-logrotate";
     } # file
 
