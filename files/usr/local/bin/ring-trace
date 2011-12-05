@@ -1,0 +1,409 @@
+#! /usr/bin/env python
+"""
+ ring-trace     perform a series of mtr's towards one destination
+                and visualise the results by generating an image
+
+ Author:        Teun Vink  - teun@teun.tv
+ Requirements:  dnspython, graphviz, argparse
+"""
+
+import sys, os, threading, tempfile, time, random, re, operator, itertools
+
+try:
+    from dns.resolver import query
+    from dns import name, reversename
+    from dns.exception import DNSException
+except:
+    print "dnspython seems to be missing. Please install it.\n"
+    sys.exit(1)
+
+try:
+    import argparse
+except:
+    print"argparse module for python is missing. Please install it.\n"
+    sys.exit(1)
+
+
+VERSION="1.2.0 - written by Teun Vink <teun@teun.tv>"
+DEBUG=0
+
+colors = []
+
+class TraceThread(threading.Thread):
+
+    def __init__(self, host, destination, user, proto, udp, timeout):
+        self.starttime = time.time()
+        self.host = host
+        self.dest = destination
+        self.user = user
+        self.proto = proto
+        self.udp = udp
+        self.timeout = timeout
+        self.result  = ""
+        threading.Thread.__init__(self)
+
+    
+    def run(self):
+        # run the mtr command
+        cmd = "ssh %s -o ConnectTimeout=%d %s %s.ring.nlnog.net \"mtr %s -c1 -r -n %s %s\"" % (
+            "-v" if DEBUG > 1 else "",
+            self.timeout,
+            "-l %s" % self.user if self.user != "" else "",
+            self.host, self.proto, 
+            "-u" if self.udp else "",
+            self.dest,
+        )
+        f = os.popen(cmd)
+        lines = [l.strip() for l in f.readlines()][1:]
+        f.close()
+
+        # lookup the IP for the host
+        qstr = "%s.ring.nlnog.net" % self.host
+        qtype = "A"
+
+        # IPv6 literal or forced IPv6
+        if (":" in self.dest) or (self.proto == "-6"):
+            qtype="AAAA"
+
+        # check if the host has an AAAA record
+        if qtype == "A":
+            try:
+                query(self.dest, "AAAA")
+                qtype = "AAAA"
+            except:
+                qtype = "A"
+
+        try:
+            qres = query(qstr, qtype)
+        except:
+            qres = [qstr]
+
+        # add the host as first hop so the graphs are easier to understand
+        lines.insert(0, "0. %s" % qres[0]) 
+
+        self.result = lines
+
+        debug("host %s done in %.1f seconds." % (self.host, time.time() - self.starttime))
+
+
+    def get_result(self):
+        return self.result
+
+
+def fix_dest(dest, ipv4, ipv6):
+    """Determine the appopriate IP for the destination
+    """
+
+    # no preference -> return label so we allow resolving at the nodes
+    if not ipv4 and not ipv6:
+        return dest
+
+    try:
+        qres = query(dest, "A" if ipv4 else "AAAA")
+        return str(qres.rrset[0])
+    except DNSException:
+        # failed to do a lookup, return the original label instead
+        # could be triggered by -4 or -6 flag on an IP address
+        return dest
+
+
+def get_hostlist():
+    """Get a list of all ring hosts.
+    """
+    hosts = []
+    try:
+        # TCP query required due to the large TXT record
+        qres = query("ring.nlnog.net", "TXT", tcp=True)
+        for rr in qres:
+            for s in rr.strings:
+                for srv in s.split(' '):
+                    hosts.append(srv)
+    except DNSException, e:
+        return []
+
+    return hosts
+
+
+def traceroutes(hosts, destination, user, proto, udp, timeout):
+    """Perform all traceroutes.
+    """
+
+    result = {}
+    threads = {}
+    
+    # launch all threads
+    for host in hosts:
+        threads[host] = TraceThread(host, destination, user, proto, udp, timeout)
+        threads[host].start()
+
+    # wait for all threads to end
+    for host in hosts:
+        threads[host].join()
+
+    # gather all results
+    for host in hosts:
+        result[host] = threads[host].get_result()
+
+    return result
+
+
+def resolve(traceroutes, resolve):
+    """Lookup ASNs and FQDNs.
+    """
+
+    aslist = {}
+    fqdnlist = {} 
+
+    for host in traceroutes.keys():
+
+        ips = [x.split(" ")[1] for x in traceroutes[host]]
+        for ip in ips:
+                if (ip != '???' and aslist.get(ip, 'unknown') == 'unknown'):
+                    try:
+                        r = reversename.from_address(ip)
+                        qstr = "%s.origin%s.asn.cymru.com" % (
+                            ".".join(r.to_text().split('.')[:-3]),
+                            "6" if ":" in ip else "",
+                        )
+                        qres = query(qstr, "TXT")
+                        asn = qres[0].strings[0].split(' ')[0]
+                        aslist[ip] = asn
+                    except:
+                        aslist[ip] = 'unknown'
+
+        if resolve or len(ips) == 0:
+            lookups = ips
+        else:
+            lookups = [ips[0], ips[-1]]
+            
+        for ip in lookups:
+           if (ip != '???' and fqdnlist.get(ip, 'unknown') == 'unknown'):
+               try:
+                   qres = query(reversename.from_address(ip).to_text(), 'PTR')
+                   fqdn = qres[0].to_text()
+                   fqdnlist[ip] = fqdn
+               except:
+                   fqdnlist[ip] = 'unknown'
+
+    asnames = {}
+    # make list of asnames
+    for a in aslist.values():
+        try:
+            if not a in asnames.keys():
+                qres = query("as%s.asn.cymru.com" % a, "TXT")
+                asnames[a] = qres[0].strings[0].split('|')[4].strip().split(' ')[0]
+        except:
+            pass
+
+    return (aslist, asnames, fqdnlist)
+
+
+def graph(traces, destination, aslist, asnames, fqdnlist, resolve, asn):
+    """Generate the entire graph.
+    """
+
+    result = "digraph G {"
+    count = 0
+    for host in traces.keys():
+        ips = [x.split(" ")[1] for x in traces[host]]
+        
+        nodes = ""
+        edges = ""
+
+        if asn:
+            # asns instead of ips
+            a = [aslist.get(ip, 'unknown') for ip in ips]
+            # remove unkown entries
+            while 'unknown' in a:
+                a.remove('unknown')
+            # make a list of the asns, showing each asn only once
+            asns = [key for key,i in itertools.groupby(a)]
+
+            for index in range(0, len(asns)):
+                nodes = "%s node%s [shape=rectangle color=\"%s\" fontsize=8 label=\"%sAS %s\\n(%s)\" %s]" % (
+                    nodes,
+                    asns[index],
+                    colors[count % len(colors)] if (index ==0) else "black",
+                    "%s\\n" % host if index == 0 else "",
+                    asns[index],
+                    asnames.get(asns[index], 'unknown'),
+                    "style=filled fillcolor=\"#eeeeee\" " if index ==len(asns)-1 else "white",
+                )
+
+                if index < len(asns)-1:
+                    edges = "%s node%s -> node%s [color=\"%s\"] " % (
+                        edges, 
+                        asns[index],
+                        asns[index + 1],
+                        colors[count % len(colors)]
+                    )
+        else:
+            for index in range(0, len(ips)):
+                nodes = "%s node%s [shape=rectangle color=\"%s\" fontsize=8 label=\"%s%s\\n(AS %s)\"]" % (
+                    nodes,
+                    ips[index].replace(':','_').replace('?', 'X').replace('.', '_'),
+                    colors[count % len(colors)] if (index ==0) else "black",
+                    ips[index],
+                    "\\n%s" % fqdnlist.get(ips[index], "unknown") if (index == 0 or resolve) else "",
+                    aslist.get(ips[index], 'unknown')
+                )
+
+                if index < len(ips)-1:
+                    edges = "%s node%s -> node%s [color=\"%s\"] " % (
+                        edges, 
+                        ips[index].replace(':','_').replace('?','X').replace('.','_'),
+                        ips[index + 1].replace(':','_').replace('?','X').replace('.','_'),
+                        colors[count % len(colors)]
+                    )
+        result = "%s %s %s " % (result, nodes, edges)
+        count += 1
+    result = "%s }" % result
+
+    return result
+
+
+def make_image(dot, outfile, outtype):
+    """Make the actual image by running 'dot' on the generated graphviz code
+    """
+    fh, fname = tempfile.mkstemp(prefix='trace_')
+    try:
+        f = os.fdopen(fh, 'w')
+        f.write(dot + "\n")
+        f.close()
+    except:
+        print "failed to create temporary file: %s" % fname
+        sys.exit(1)
+       
+    try:
+        f = os.popen("/usr/bin/dot -T%s -o%s %s" % (outtype, outfile, fname))
+        f.close()
+    except:
+        print "failed to exec 'dot': /usr/bin/dot -T%s -o%s %s" % (outtype, outfile, fname)
+        sys.exit(1)
+
+    try:
+        os.unlink(fname)
+    except:
+        print "failed to clean up temporary file: %s" % fname
+
+
+def debug(msg):
+    """Print a string only if debugging is enabled.
+    """
+    if DEBUG:
+        print "[%s] %s" % (time.strftime('%H:%M:%S'), msg)
+
+
+if __name__ == "__main__":
+    start = time.time()
+    
+    print "ring-trace v%s" % VERSION
+    
+    debug('gathering list of hosts to query.')
+    hosts = get_hostlist() 
+    hosts.sort()
+    debug("%d hosts available" % len(hosts))
+
+    parser = argparse.ArgumentParser(description="Perform a series of mtr's using the nlnog ring and visualise the results.\n\nAvailable hosts (%d): %s" % (len(hosts), " ".join(hosts)), epilog="Visit http://ring.nlnog.net for more information.", formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("destination", help="destination of the traces")
+    parser.add_argument("-a", "--asn", action="store_const", dest="asn", help="group by ASN", default=False, const=True)
+    parser.add_argument("-e", "--exclude", action="append", dest="exclude", help="exclude this host", default=[], metavar="HOST")
+    parser.add_argument("-i", "--include", action="append", dest="include", help="include this host", default=[], metavar="HOST")
+    parser.add_argument('-n', '--random', action='store', dest='random', default=0, type=int,  help='pick a given number of hosts at random')
+    parser.add_argument("-o", "--output", action="store", dest="outfile", help="output filename (trace-DESTINATION.type by default)", default="")
+    parser.add_argument("-p", "--hops", action="store", dest="hops", metavar="N", type=int, help="pick top N and bottom N hosts based on hopcount", default=0)
+    parser.add_argument('-r', '--resolve', action='store_const', dest='resolve', default=False, const=True,  help='try to resolve all addresses (WARNING: can take long!)')
+    parser.add_argument('-t', '--type', action='store', dest='outtype', choices=('gif', 'pdf', 'png', 'jpg', 'ps', 'svg'), default='jpg', help='output filetype (jpg by default)')
+    parser.add_argument("-T", "--timeout", action='store', dest='timeout', default=10, type=int, help="SSH connection timeout in seconds (10 by default)")
+    parser.add_argument("-u", "--user", action="store", dest="user", help="username for SSH logins", default="")
+    parser.add_argument("-U", "--udp", action="store_const", dest="udp", help="use UDP instead of ICMP ECHO", const=True, default=False)
+    parser.add_argument("-v", "--verbose", action="store_const", dest="debug", help="verbose mode", const=1, default=0)
+    parser.add_argument("-vv", "--extra-verbose", action="store_const", dest="debug2", help="extra verbose mode (SSH debugging)", const=2, default=0)
+    proto = parser.add_mutually_exclusive_group()
+    proto.add_argument("-4", "--ipv4", action="store_const", dest="ipv4", help="enforce IPv4", const=True, default=False)
+    proto.add_argument("-6", "--ipv6", action="store_const", dest="ipv6", help="enforce IPv6", const=True, default=False)
+    ns = parser.parse_args()
+    DEBUG=max(ns.debug, ns.debug2)
+
+    debug("debugging enabled, level %d." % DEBUG)
+    proto = ""
+    if (ns.ipv4):
+        debug('Enforcing IPv4')
+        proto="-4"
+    elif (ns.ipv6):
+        debug('Enforcing IPv6')
+        proto="-6"
+    destination = fix_dest(ns.destination, ns.ipv4, ns.ipv6)
+
+    traces = {}
+
+    if (ns.random):
+        newlist = []
+        if (ns.random >0 and ns.random < len(hosts)):
+            for x in range(ns.random):
+                i = random.randint(0, len(hosts) - 1)
+                newlist.append(hosts[i])
+                hosts.remove(hosts[i])
+        hosts = newlist
+        print "picked %d host%s at random: %s" % (len(hosts), "s" if (ns.random > 1) else "", " ".join(hosts))
+
+    if len(ns.exclude) > 0:
+        for host in ns.exclude:
+            if host in hosts:
+                hosts.remove(host)
+        print "Excluding %d hosts: %s" % (len(ns.exclude), " ".join(ns.exclude))
+
+    if len(ns.include) > 0:
+        for host in ns.include:
+            if host not in hosts:
+                hosts.append(host)
+        print "Including %d hosts: %s" % (len(ns.include), " ".join(ns.include))
+
+    if len(hosts) == 0:
+        print "WARNING: The list of hosts is empty. Are you blocking TCP-based DNS request by any chance?"
+        print "A TCP-based DNS query is required to retrieve the list of servers."
+        print "Please specify hosts manually using the -i flag."
+        sys.exit(1)
+
+    print "Performing %s traceroutes towards %s from %d ring hosts, ssh-timeout is %d seconds." % (
+        "UDP" if ns.udp else "ICMP",
+        ns.destination, len(hosts), ns.timeout)
+    debug('performing traces.')
+    traces = traceroutes(hosts, destination, ns.user, proto, ns.udp, ns.timeout)
+
+    if (ns.hops > 0) and (ns.hops * 2 < len(traces)):
+        print "Picking top and bottom %d hosts based on hop count." % ns.hops
+        # sort based on trace length
+        tracelength = {}
+        for trace in traces:
+            tracelength[trace] = len(traces[trace])
+        tsorted = sorted(tracelength.iteritems(), key=operator.itemgetter(1))
+        ts = tsorted[:ns.hops] + tsorted[0-ns.hops:]
+        debug("Top %d nodes based on hop length: %s" % (ns.hops, " ".join(["%s(%d)" % t for t in tsorted[:ns.hops]])))
+        debug("Bottom %d nodes based on hop length: %s" % (ns.hops, " ".join(["%s(%d)" % t for t in tsorted[0-ns.hops:]])))
+
+        newtraces = {}
+        for t in ts:
+            newtraces[t[0]] = traces[t[0]]
+        traces = newtraces
+    
+    debug('generating color table')
+    for c in range(0x333333, 0xdddddd, 0xaaaaaa/len(hosts)):
+        colors.append("#%x" % c)
+
+    debug('looking up hostnames and ASNs.')
+    if ns.resolve:
+        print "Looking up all IP addresses and ASNs, this may take quite a while."
+    (aslist, asnames, fqdnlist) = resolve(traces, ns.resolve)
+
+    debug('generating graphs.')
+    dot = graph(traces, destination, aslist, asnames, fqdnlist, ns.resolve, ns.asn)
+
+    debug('generating output file.')
+    outfile = ns.outfile
+
+    if outfile == "":
+        outfile = "trace-%s.%s" % (ns.destination, ns.outtype)
+    make_image(dot, outfile, ns.outtype)
+
+    print "Created %s in %.1f seconds." % (outfile, time.time() - start)
