@@ -1,0 +1,257 @@
+#!/usr/bin/env ruby
+#
+# Copyright 2010, Stefan Schlesinger <sts@ono.at>
+#
+#
+# Puppet-Sync  
+#
+# This script may be used to sync a git branch from your repository
+# to puppet master.
+#
+# Source code: http://www.github.com/sts/puppet-sync
+# 
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+
+require 'optparse'
+require 'ostruct'
+require 'tmpdir'
+
+class PuppetSync
+
+    class UpdateBranchDestinationDoesntExist < StandardError
+    end
+
+    VERSION = "1.2"
+
+    def initialize(arguments)
+        @arguments = arguments
+
+        @options = OpenStruct.new
+
+        # Default Options
+        @options.gitcmd = "/usr/bin/git"
+        @options.tmp = "/var/tmp"
+        @options.branch = "master"
+        @options.verbose = "-q"
+        @options.passenger = false
+        @options.repository = "git+ssh://psync@git/srv/git/puppet.git"
+        @options.destination = "/etc/puppet/environments"
+    end
+
+    def run
+        if parsed_options? && arguments_valid?
+            puts "----------------------------------------------------------------- Puppet-Sync"
+            puts " Branch      : #{@options.branch}"
+            puts " Destination : #{@options.destination}"
+            puts " Repository  : #{@options.repository}"
+            puts "-----------------------------------------------------------------------------\n"
+
+	    begin
+		cmd = self.update_branch
+                execute(cmd)
+            rescue UpdateBranchDestinationDoesntExist
+                cmd = self.sync_branch
+                execute(cmd)
+            end
+
+            cmd = self.finalize
+            execute(cmd)
+
+        else
+            puts "---------------------------------------------------------------- Puppet-Sync"
+            puts " ERROR: Invalid options set for puppet-sync."
+            puts "----------------------------------------------------------------------------"
+        end
+    end
+
+    def execute(cmd)
+        puts "Executing: #{cmd}" if @options.verbose == ""
+        %x{#{cmd}}
+    end
+
+    def sync_branch
+        git     = @options.gitcmd
+        branch  = @options.branch
+        @tmp    = gen_tmp_dir
+        destination = translate_branch_to_dest_dir(@options.branch)
+
+        execute = []
+
+        execute << "cd #{@options.tmp}"
+
+        execute << "#{git} clone #{@options.verbose} #{@options.repository} #{@tmp}"
+
+        execute << "cd #{@tmp}"
+
+        # configure a username and email address - some git cmd might fail otherwise
+        execute << "#{git} config --add user.name  \"Puppet-Sync-Script\""
+        execute << "#{git} config --add user.email \"root@puppet\""
+
+        # checkout into a local branch rather than a detached HEAD
+        if branch == "master"
+            execute << "#{git} checkout #{@options.verbose} -b deploy"
+        else
+            execute << "#{git} checkout #{@options.verbose} -b deploy origin/#{branch}"
+        end
+
+        execute << "touch .puppet-sync-stamp"
+
+        execute << "cd #{@options.tmp}"
+
+        # do some sanity checks and remove the the existing
+        # manifest dir if it still exists
+        if File.directory?(destination)
+            if File.writable?(destination)
+                if File.exists?("#{destination}/.puppet-sync-stamp")
+                    execute << "rm -rf #{destination}"
+                else
+                    raise "ERROR: Manifest dir is not a copy managed by puppet-sync in: #{destination}. Try to remove it manually."
+                end
+
+            else
+                raise "ERROR: Manifest dir is not writeable."
+            end
+        end
+
+        # move the new copy to destination
+        execute << "mv #{@tmp} #{destination}"
+
+        execute.join(" && ")
+    end
+
+    def update_branch
+        git    = @options.gitcmd
+        branch = @options.branch
+        destination = translate_branch_to_dest_dir(@options.branch)
+
+        unless File.exists?("#{destination}/.puppet-sync-stamp")
+	    raise UpdateBranchDestinationDoesntExist, "Cannot update branch."
+        end
+
+        execute = []
+
+        execute << "cd #{destination}"
+
+        execute << "#{git} pull #{@options.verbose} origin #{branch}  && #{git} reset #{@options.verbose} --hard"
+
+        execute << "#{git} clean #{@options.verbose} -d -x -f"
+
+        execute << "touch .puppet-sync-stamp"
+
+        execute.join(" && ")
+    end
+
+
+    def finalize
+        execute = []
+
+        if @options.passenger
+            # touch the restart.txt to restart passenger workers
+            execute << "sudo touch /usr/share/puppet/rack/puppetmasterd/tmp/restart.txt"
+        else
+            # restart the puppet master daemon
+            execute << "sudo /etc/init.d/puppetmaster restart"
+        end
+
+        execute.join(" && ")
+    end
+
+    #
+    # gen_tmp_dir 
+    #
+    # Generate a temporary directory, relative to @options.tmp.
+    #
+    # @return [string] - The path to the directory created.
+    #
+    def gen_tmp_dir
+        name = "#{@options.tmp}/puppetconf."
+        10.times{name << ((rand(2)==1?65:97) + rand(25)).chr}
+
+        puts "| Temp: #{name}" if @options.verbose == ""
+
+        unless File.directory?(name)
+            return name
+        else
+          puts "Error: temporary directory already exists: #{name}"
+        end
+    end
+
+    #
+    # translate_branch_to_dest_dir
+    #
+    # Magic hook to deploy a branch to a different directory.
+    #
+    # @return [string] - The name of the directory to create.
+    #
+    def translate_branch_to_dest_dir(branch)
+        if branch == "master"
+            return "#{@options.destination}/production"
+        else
+            return "#{@options.destination}/#{branch}"
+        end
+    end
+
+
+    def parsed_options?
+        opts = OptionParser.new
+
+        opts.banner = "Usage: puppet-sync -b BRANCH [options]"
+
+        opts.on('-b', '--branch BRANCH', 'Mandatory, specify the git branch to clone.') do |branch|
+            @options.branch = branch
+        end
+
+        opts.on('-t', '--tmp DIR', 'Specify the temporary directory.') do |tmp|
+            @options.tmp = tmp
+        end
+
+        opts.on('-d', '--destination DIR', 'Specify the directory which will be deploy to.') do |dest|
+            @options.destination = dest
+        end
+
+        opts.on('-r', '--repository URL', 'Git url to the repository.') do |repo|
+            @options.repository = repo
+        end
+
+        opts.on("-p", "--passenger", "Restart apache/passenger instead of puppetmaster.") { 
+            @options.passenger = true
+        }
+
+        opts.separator "Common options:"
+        opts.on('-V', '--version', 'Display the script version.') { output_version ; exit 0; }
+        opts.on('-v', '--verbose', 'Be more verbose.')  { @options.verbose = ""  }
+        opts.on_tail("-h", "--help", "Show this message") do
+            puts opts
+            exit
+        end
+
+        opts.parse!(@arguments) rescue return false
+        true
+    end
+
+    def arguments_valid?
+        return false unless @options.branch
+        true
+    end
+
+    def output_version
+        puts VERSION
+    end
+
+end
+
+app = PuppetSync.new(ARGV)
+app.run
