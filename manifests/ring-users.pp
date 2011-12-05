@@ -1633,13 +1633,13 @@ class ring_users {
         uid => "5048",
         groups => ['ring-users'],
     }
-    add_ssh_key { solido_01:
+    add_ssh_key { solido_ssh_1:
         user => "solido",
         type => "ssh-dss",
-        key => "AAAAB3NzaC1kc3MAAACBAMzGjfcnofM9W8WAAZ03O+gX/susUi1prJYRpomsnHMwICiiqLL1R5J/FUb/E79hhcVtyXLh833YeEQlCm25Jw4gmYABfRGyvcWYDs2zQd7Li1kBXlXnRoxd1pxDTZ4trUSSklosKCZYHqOhFNntc0789xLkjuZWe/IzYVJCW8wrAAAAFQCQiVrdhQWLXzogUR+mRL5WmWYPtwAAAIBvRrUEsjLMvl+EZRGnX/UtOaNyFjKvGh0dzLddjJ03H9dkAVeJDkLx9LSyUEvGDMYSY+gbBoakHCWVDnF1109y2m2UQ23NkJdgkXyWBkf4M4VKGe+Yl9M1FaR2Lvr8o5qW4hZJf8XfC7MXWTiyPxuonc7xufBj1ibU53nQVcEzlAAAAIB5cgVBZTVGKznH0/65JyhJmcMNMimtX7EV/VjnCK+JK3s8sJnNo2fu297IR+XQKlVO8oyw7n/9peYEMkksWrOPW/jvdK9ce1nLGJ81T36Ppiui8G/4GsSkSd6x3igLCxGgB+fEv0tyOyEsIbKVVZ8ySTRg+LvtNlfjA/+faAw2DA==", 
-        name => "hlk@solido.net",
+        key => "AAAAB3NzaC1kc3MAAACBAMzGjfcnofM9W8WAAZ03O+gX/susUi1prJYRpomsnHMwICiiqLL1R5J/FUb/E79hhcVtyXLh833YeEQlCm25Jw4gmYABfRGyvcWYDs2zQd7Li1kBXlXnRoxd1pxDTZ4trUSSklosKCZYHqOhFNntc0789xLkjuZWe/IzYVJCW8wrAAAAFQCQiVrdhQWLXzogUR+mRL5WmWYPtwAAAIBvRrUEsjLMvl+EZRGnX/UtOaNyFjKvGh0dzLddjJ03H9dkAVeJDkLx9LSyUEvGDMYSY+gbBoakHCWVDnF1109y2m2UQ23NkJdgkXyWBkf4M4VKGe+Yl9M1FaR2Lvr8o5qW4hZJf8XfC7MXWTiyPxuonc7xufBj1ibU53nQVcEzlAAAAIB5cgVBZTVGKznH0/65JyhJmcMNMimtX7EV/VjnCK+JK3s8sJnNo2fu297IR+XQKlVO8oyw7n/9peYEMkksWrOPW/jvdK9ce1nLGJ81T36Ppiui8G/4GsSkSd6x3igLCxGgB+fEv0tyOyEsIbKVVZ8ySTRg+LvtNlfjA/+faAw2DA==",
+        name => "hlk@solido.net_1",
         options => [],
-    }
+    }      
     add_ssh_key { solido_ssh_2:
         user => "solido",
         type => "ssh-rsa",
@@ -1653,7 +1653,14 @@ class ring_users {
         key => "AAAAB3NzaC1yc2EAAAABJQAAAIEAiTxKsttTlWM3Tts99pmIm30BtBWf9bDHvY7DzH2WQAQR64CMhmNdQBVda3GHCOzc36jKt7+lmcgGlUJ/1omlKixm+URXiuUzMdvdhgvkmWd/EQ/1d5izHfx9xzDK4Rsqho0dqroC0jNBw1wDjJ9k6O5CqgwRSnYC1V/yxtpfAYs=",
         name => "jkr-solido_3",
         options => [],
-    }   
+    }      
+    add_ssh_key { solido_ssh_4:
+        user => "solido",
+        type => "ssh-dss",
+        key => "AAAAB3NzaC1kc3MAAACBAP7j3vrJ3kZwSFF07RtUtGg6xPtdcBryfqYgeYhLWaYHBOzuEDpx7pK7EvGM+tzluEndeqIGU1y2KTve8+/MNMh29zTSzsb4m/BSLzHMdgVW7Hbg7vOy99cgYc+9/qjHeyHsHbcSa0yVCExT+Y5cEyB7RfQlVX7pIvyQrtKU2iMhAAAAFQCySf8W7g9rTCkvau+Ca7HHXSi/swAAAIBbqjWseGXJWPgnRMyfiIjOWhodXa0kTnCqJRxSuHbAeDt5m9Dy6sGtQkbyLmi3Ldhlcr+VHENCEoNy8EMovY8+gk6J6mshxL/VI7+xfhpx6r8OZzrhMpE5B/R44JTo2MgZ+w6KvmQtmnVJZNCPPJoSkOAtYqLcK+UHgFufXi7WCAAAAIBcUtjYrbPfJqU7Hfj6Zpk2vmCWR0Mu6A8cbCAuFpMh9783NRWLsNbudPJ9pq3ZAslvz7+pYeIoyOWc6nGM6WBB3mFZcviyUTnuHQc5Zfgap4JUACPRJqHvkgyTFHSqMb+4MAvqqtNs4iLts+ZZu+XC0Dbxtz+Al/3cDCIh34yfzw==",
+        name => "tko@solido.net_4",
+        options => [],
+    }
 
 ##### EINDE solido #####
 
