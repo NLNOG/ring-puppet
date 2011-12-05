@@ -8,7 +8,7 @@ class mastercronjobs {
     }
 }
 
-# this class is executed on all ring-nodes including the master
+# this class is executed on all ring-nodes including the master 
 class cronjobs {
     $first = fqdn_rand(30)
     $second = fqdn_rand(30) + 30
