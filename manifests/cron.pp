@@ -1,3 +1,12 @@
+class mastercronjobs {
+    cron { pull_from_repo:
+        command => "cd /etc/puppet/environments/production && /usr/bin/git pull  origin master  && /usr/bin/git reset  --hard && /usr/bin/git clean  -d -x -f && touch .puppet-sync-stamp",
+        minute  => "*/5",
+        user    => root,
+        ensure  => present,
+    }
+}
+
 class cronjobs {
     $first = fqdn_rand(30)
     $second = fqdn_rand(30) + 30
