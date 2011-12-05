@@ -35,6 +35,7 @@ class nettools {
     package { "python-dnspython": ensure => present }
     package { "python-argparse": ensure => present }
     package { "graphviz": ensure => present }
+    package { "hping3": ensure => present }
     package { "openntpd": ensure => purged }
     package { "ntp": ensure => latest }
     file { "/etc/ntp.conf":

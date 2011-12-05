@@ -15,6 +15,14 @@ class etcfiles {
         ensure => absent,
     }
 
+    file { "/etc/bash.bashrc":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/bash.bashrc"
+    }
+
+
    file { "/etc/hosts":
         owner   => root,
         group   => root,
@@ -152,6 +160,18 @@ class timezone {
 }
 
 class local_binaries {
+    file { "/usr/local/lib/site_ruby/ring.rb":
+        owner   => root,
+        group   => root,
+        mode    => 0755,
+        source  => "puppet:///files/usr/local/lib/site_ruby/ring.rb"
+    }
+    file { "/usr/local/bin/ring-uping":
+        owner   => root,
+        group   => root,
+        mode    => 0755,
+        source  => "puppet:///files/usr/local/bin/ring-uping"
+    }
     file { "/usr/local/bin/ring-ping":
         owner   => root,
         group   => root,

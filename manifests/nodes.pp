@@ -39,7 +39,7 @@ node 'master01' inherits ringmaster {
     $sp_owner_email = "job@snijders-it.nl"
     $sp_cgi_url = "http://master01.ring.nlnog.net/smokeping/smokeping.cgi"
     $sp_mailhost = "127.0.0.1"
-    include smokeping::master
+#    include smokeping::master
     include nagios::defaults
     include nagios::headless
     nagios::service::ping { $name:
@@ -84,7 +84,7 @@ class groups {
 
 node 'staging01' inherits ringnode {
     $owners = ['job']
-    include smokeping::slave
+#    include smokeping::slave
     nagios::service::ping { $name: }
 }
 
