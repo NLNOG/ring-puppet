@@ -1,8 +1,14 @@
 NLNOG RING Puppet configurations
 ================================
 
+Purpose
+-------
+
 This repository contains the puppet configurations as they are to be
 deployed on the master servers. 
+
+Warning
+-------
 
 Keep in mind, the master branch is 'production' in puppet world.
 
