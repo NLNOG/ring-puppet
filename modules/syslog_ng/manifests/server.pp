@@ -15,7 +15,7 @@ class syslog_ng::server inherits syslog_ng {
     } # file
 
     cron { "compress-logfiles":
-        command => "/usr/bin/find /var/log/HOSTS -type f -! -name '*bz2' -mtime +3 -print0 | /usr/bin/xargs -0 /usr/bin/bzip2 -9 &",
+        command => "/usr/bin/find /var/log/HOSTS -type f -! -name '*bz2' -mtime +3 -print0 | /usr/bin/xargs -0 /bin/bzip2 -9 &",
         user    => "root",
         hour    => "0",
         minute  => "0";

@@ -13,6 +13,11 @@ Warning
 Keep in mind, the master branch is 'production' in puppet world.
 Do not edit files in master01.ring.nlnog.net:/etc/puppet/ !
 
+Git-helpers
+-----------
+
+See git-helpers/README.md for a script to do a simple syntax check before allowing a commit. 
+
 About the RING
 --------------
 
