@@ -1,0 +1,59 @@
+#!/bin/sh
+
+# Create a new Puppet module.
+
+. $(dirname $0)/functions.sh || {
+	echo "ERROR: Failed to load function library." >&2
+	exit 1
+}
+
+cd_repo_root
+
+mkdir -p modules/$1/{files,manifests,templates}
+
+cat > modules/$1/manifests/packages.pp <<-EOF
+# $1::packages
+#
+# This module installs packages for $1.
+class $1::packages {
+  \$packages = []
+
+  package { \$packages: ensure => install }
+}
+EOF
+
+cat > modules/$1/manifests/config.pp <<-EOF
+# $1::config
+#
+# This module installs configuration for $1.
+class $1::config {
+  require("$1::packages")
+}
+EOF
+
+cat > modules/$1/manifests/services.pp <<-EOF
+# $1::services
+#
+# This module manages services for $1.
+class $1::services {
+  require("$1::packages")
+  require("$1::config")
+}
+EOF
+
+cat > modules/$1/manifests/init.pp <<EOF
+class $1 {
+	include $1::packages
+	include $1::services
+	include $1::config
+}
+EOF
+
+cat > modules/$1/README <<EOF
+= DEFAULT MODULE README
+
+Provide a summary of this module here.  You may use RDoc markup
+(http://rdoc.rubyforge.org/RDoc/Markup.html) both here and in
+module comments.
+EOF
+
