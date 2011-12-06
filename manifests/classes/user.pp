@@ -11,6 +11,17 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
 #        use => "generic-contact",
 #    }
 
+    case $ensure {
+        present: {
+            $home_owner = $username
+            $home_group = $username
+        }
+        default: {
+            $home_owner = "root"
+            $group_owner = "root"
+        }
+    }
+
     user { $username:
         comment => "${company} - ${email}",
         home    => "/home/$username",
@@ -26,27 +37,25 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
         ensure  => $present,
     }
 
-    if $ensure == 'present' {
-        file { "/home/$username/":
-            ensure  => directory,
-            owner   => $username,
-            group   => $username,
-            mode    => 700,
-            require => [ User[$username], Group[$username] ],
-        }
+    file { "/home/$username/":
+        ensure  => directory,
+        owner   => $home_owner,
+        group   => $home_owner,
+        mode    => 700,
+        require => [ User[$username], Group[$username] ],
     }     
 
     file { "/home/$username/.ssh":
         ensure  => directory,
-        owner   => $username,
-        group   => $username,
+        owner   => $home_owner,
+        group   => $home_owner,
         mode    => 700,
         require => File["/home/$username/"],
     }
  
     file { "/home/$username/.ssh/authorized_keys":
-        owner   => $username,
-        group   => $username,
+        owner   => $home_owner,
+        group   => $home_owner,
         mode    => 600,
         require => File["/home/$username/"],
         ensure  => $ensure,
