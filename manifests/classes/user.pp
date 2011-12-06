@@ -26,7 +26,7 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
         ensure  => $present,
     }
 
-    if $ensure == 'present {
+    if $ensure == 'present' {
         file { "/home/$username/":
             ensure  => directory,
             owner   => $username,
