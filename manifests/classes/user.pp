@@ -4,13 +4,6 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
     $admingroup = "admin"
     $allgroups = $groups
 
-#    @@nagios_contact { $username::
-#        alias => $company,
-#        contact_name => $username,
-#        email => $email,
-#        use => "generic-contact",
-#    }
-
     case $ensure {
         present: {
             $home_owner = $username
@@ -82,6 +75,27 @@ define add_ssh_key($key,$type,$user,$options,$ensure="present") {
 #        purge => true, 
 #    }
 
+}
+
+define authorized_keys ($sshkeys, $ensure = "present", $home = '') {
+    # This line allows default homedir based on $title variable.
+    # If $home is empty, the default is used.
+    $homedir = $home ? {'' => "/home/${title}", default => $home}
+    file {
+        "${homedir}/.ssh":
+            ensure  => "directory",
+            owner   => $title,
+            group   => $title,
+            mode    => 700,
+            require => User[$title];
+        "${homedir}/.ssh/authorized_keys":
+            ensure  => $ensure,
+            owner   => $ensure ? {'present' => $title, default => undef },
+            group   => $ensure ? {'present' => $title, default => undef },
+            mode    => 600,
+            require => File["${homedir}/.ssh"],
+            content => template("authorized_keys.erb");
+    }
 }
 
 define add_group($gid) {
