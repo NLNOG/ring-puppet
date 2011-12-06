@@ -1,3 +1,6 @@
+# this class creates the users
+# it should be converted to a virtual user setup
+
 define add_user($email,$company,$uid,$groups,$ensure="present") {
 
     $username = $title
@@ -45,36 +48,6 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
         mode    => 700,
         require => File["/home/$username/"],
     }
- 
-#    file { "/home/$username/.ssh/authorized_keys":
-#        owner   => $home_owner,
-#        group   => $home_owner,
-#        mode    => 600,
-#        require => File["/home/$username/"],
-#        ensure  => $ensure,
-#    }
-}
-
-define add_ssh_key($key,$type,$user,$options,$ensure="present") {
-
-    $username       = $user
- 
-    ssh_authorized_key{ "${username}_${key}":
-        ensure  => $ensure,
-        key     => $key,
-        name    => $name,
-        type    => $type,
-        user    => $username,
-        options => $options,
-#        require => File["/home/$username/.ssh/authorized_keys"],
-    }
-
-#   because of http://projects.reductivelabs.com/issues/1581 this doesnt work
-#    resources { "ssh_authorized_key":
-#        noop => true,
-#        purge => true, 
-#    }
-
 }
 
 define authorized_keys ($sshkeys, $ensure = "present", $home = '') {
@@ -82,12 +55,6 @@ define authorized_keys ($sshkeys, $ensure = "present", $home = '') {
     # If $home is empty, the default is used.
     $homedir = $home ? {'' => "/home/${title}", default => $home}
     file {
-#        "${homedir}/.ssh":
-#            ensure  => "directory",
-#            owner   => $title,
-#            group   => $title,
-#            mode    => 700,
-#            require => User[$title];
         "${homedir}/.ssh/authorized_keys":
             ensure  => $ensure,
             owner   => $ensure ? {'present' => $title, default => undef },
