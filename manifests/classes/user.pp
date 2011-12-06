@@ -46,13 +46,13 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
         require => File["/home/$username/"],
     }
  
-    file { "/home/$username/.ssh/authorized_keys":
-        owner   => $home_owner,
-        group   => $home_owner,
-        mode    => 600,
-        require => File["/home/$username/"],
-        ensure  => $ensure,
-    }
+#    file { "/home/$username/.ssh/authorized_keys":
+#        owner   => $home_owner,
+#        group   => $home_owner,
+#        mode    => 600,
+#        require => File["/home/$username/"],
+#        ensure  => $ensure,
+#    }
 }
 
 define add_ssh_key($key,$type,$user,$options,$ensure="present") {
@@ -82,12 +82,12 @@ define authorized_keys ($sshkeys, $ensure = "present", $home = '') {
     # If $home is empty, the default is used.
     $homedir = $home ? {'' => "/home/${title}", default => $home}
     file {
-        "${homedir}/.ssh":
-            ensure  => "directory",
-            owner   => $title,
-            group   => $title,
-            mode    => 700,
-            require => User[$title];
+#        "${homedir}/.ssh":
+#            ensure  => "directory",
+#            owner   => $title,
+#            group   => $title,
+#            mode    => 700,
+#            require => User[$title];
         "${homedir}/.ssh/authorized_keys":
             ensure  => $ensure,
             owner   => $ensure ? {'present' => $title, default => undef },
