@@ -192,7 +192,9 @@ node 'ebayclassifiedsgroup01' inherits ringnode {
 
 node 'evertjenetworks01' inherits ringnode {
 #    include smokeping::slave
-    nagios::service::ping { $name: }
+    nagios::service::ping { $name: 
+    ensure => absent
+    }
 }
 
 node 'is01' inherits ringnode {
