@@ -41,7 +41,11 @@ node 'master01' inherits ringmaster {
     $sp_cgi_url = "http://master01.ring.nlnog.net/smokeping/smokeping.cgi"
     $sp_mailhost = "127.0.0.1"
 #    include smokeping::master
-    include nagios::defaults
+     @nagios_host{ "evertjenetworks01.ring.nlnog.net":
+        ensure => absent
+    }
+
+   include nagios::defaults
     include nagios::headless
     nagios::service::ping { $name:
     }
@@ -92,12 +96,6 @@ node 'staging01' inherits ringnode {
 #### einde staging01 #####
 
 #### define all ring nodes ####
-
-node evertjenetworks01 inherits ringnode {
-    @nagios_host{ $fqdn:
-        ensure => absent
-    }
-}
 
 node 'intouch01' inherits ringnode {
     $owners = ['job']
