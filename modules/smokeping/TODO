@@ -1,5 +1,0 @@
-
-    - look for other hardcoded stuff
-
-    - add Slaves = $FQDN1 $FQDN2 $FQDN3 to top of Targets File
-

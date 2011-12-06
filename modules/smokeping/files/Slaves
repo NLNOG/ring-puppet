@@ -1,5 +1,0 @@
-*** Slaves ***
-# 
-## make sure this is not world-readable!
-secrets=/etc/smokeping/master_secrets
-
