@@ -41,7 +41,7 @@ node 'master01' inherits ringmaster {
     $sp_cgi_url = "http://master01.ring.nlnog.net/smokeping/smokeping.cgi"
     $sp_mailhost = "127.0.0.1"
 #    include smokeping::master
-     @nagios_host{ "evertjenetworks01.ring.nlnog.net":
+     nagios_host{ "evertjenetworks01.ring.nlnog.net":
         ensure => absent
     }
 
