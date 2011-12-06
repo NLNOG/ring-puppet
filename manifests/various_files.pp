@@ -1,3 +1,5 @@
+# Class: etcfiles
+#
 class etcfiles {
 
 # in case of problems this can force my key everywhere
@@ -218,12 +220,12 @@ class local_binaries {
         mode    => 0755,
         source  => "puppet:///files/usr/local/bin/ring-convert-ssh-keys",
     }
-    file { "/usr/local/bin/puppet-sync":
+    file { "/usr/local/bin/ring-puppet-repo-sync":
         owner   => root,
         group   => root,
         mode    => 0755,
-        source  => "puppet:///files/usr/local/bin/puppet-sync",
-        ensure => absent,
+        source  => "puppet:///files/usr/local/bin/ring-puppet-repo-sync",
+        ensure => present,
     }
     
 #    file { "/etc/postfix/main.cf":

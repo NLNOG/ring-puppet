@@ -1,0 +1,12 @@
+#/usr/bin/env bash
+
+echo "Checking for new puppet manifets..."
+
+if [ $HOSTNAME ?? 'master' ] then;
+    cd /etc/puppet/environments/production && \
+    /usr/bin/git pull  origin master  && \
+    /usr/bin/git reset  --hard && \
+    /usr/bin/git clean  -d -x -f && \
+    git submodule update --init && \
+    touch .puppet-sync-stamp 
+fi;
