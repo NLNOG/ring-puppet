@@ -118,12 +118,6 @@ class etcfiles {
         mode    => 644,
         source  => "puppet:///files/etc/apt/sources.list.${lsbdistcodename}",
     }
-   file { "/etc/apt/trusted.gpg":
-        owner   => root,
-        group   => root,
-        mode    => 644,
-        source  => "puppet:///files/etc/apt/trusted.gpg",
-    }
 
     file { "/etc/apt/sources.list.d/master.ring.nlnog.net.list":
         owner => root,

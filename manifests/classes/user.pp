@@ -25,16 +25,17 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
         require => User[$username],
         ensure  => $present,
     }
-    
-    file { "/home/$username/":
-        ensure  => directory,
-        owner   => $username,
-        group   => $username,
-        mode    => 700,
-#       maybe this require is not needed at all
-#        require => [ User[$username], Group[$username] ],
-    }
-             
+
+    if $ensure == 'present {
+        file { "/home/$username/":
+            ensure  => directory,
+            owner   => $username,
+            group   => $username,
+            mode    => 700,
+            require => [ User[$username], Group[$username] ],
+        }
+    }     
+
     file { "/home/$username/.ssh":
         ensure  => directory,
         owner   => $username,
@@ -63,7 +64,8 @@ define add_ssh_key($key,$type,$user,$options,$ensure="present") {
         type    => $type,
         user    => $username,
         options => $options,
-        require => File["/home/$username/.ssh/authorized_keys"]
+        require => File["/home/$username/.ssh/authorized_keys"],
+        purge   => true,
     }
 }
 
