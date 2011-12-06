@@ -100,9 +100,6 @@ ff02::2 ip6-allrouters
 2001:67c:2d0:4150::2	ebayclassifiedsgroup01	ebayclassifiedsgroup01.ring.nlnog.net
 91.211.73.209	ebayclassifiedsgroup01	ebayclassifiedsgroup01.ring.nlnog.net
 
-2001:67c:270:4005::182	evertjenetworks01	evertjenetworks01.ring.nlnog.net
-195.43.138.182	evertjenetworks01	evertjenetworks01.ring.nlnog.net
-
 2001:9a0:2000:a::1:1	is01	is01.ring.nlnog.net
 213.197.240.52	is01	is01.ring.nlnog.net
 
