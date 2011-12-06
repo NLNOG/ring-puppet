@@ -1,0 +1,3 @@
+[submodule "modules/smokeping"]
+	path = modules/smokeping
+	url = git@github.com:SnijdersIT/puppet-smokeping.git
