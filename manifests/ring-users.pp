@@ -1,5 +1,9 @@
 class ring_users {
 
+# This is the file that manages all users and sshkeys
+# if you want to remove a user add 'ensure => absent' to the add_user block
+# if you want to remove or add a key, just add it to the appropiate array under the correct user
+
 ##### BEGIN intouch #####
 
     add_user { intouch:
