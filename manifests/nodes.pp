@@ -94,9 +94,9 @@ node 'staging01' inherits ringnode {
 #### define all ring nodes ####
 
 node evertjenetworks01 inherits ringnode {
-    nagios::target { $name:
+    nagios_host{ $name:
         ensure => absent
-    }    
+    }
 }
 
 node 'intouch01' inherits ringnode {
