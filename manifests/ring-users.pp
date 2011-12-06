@@ -12,7 +12,7 @@
 # Requires:
 #   - add_user from classes/user.pp
 #   - authorized_keys from classes/user.pp
-
+#
 class ring_users {
 
 
