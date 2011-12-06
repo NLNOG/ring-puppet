@@ -228,11 +228,5 @@ class local_binaries {
         ensure => present,
     }
     
-#    file { "/etc/postfix/main.cf":
-#        owner   => root,
-#        group   => root,
-#        mode    => 0755,
-#        source  => "puppet:///files/etc/postfix/main.cf"
-#    }
 }
 
