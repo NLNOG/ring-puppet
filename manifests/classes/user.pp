@@ -4,7 +4,7 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
     $admingroup = "admin"
     $allgroups = $groups
 
-#    @@nagios_contact { $username:
+#    @@nagios_contact { $username::
 #        alias => $company,
 #        contact_name => $username,
 #        email => $email,
@@ -22,7 +22,7 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
  
     group { $username:
         gid     => $uid,
-        require => User[$username]
+        require => User[$username],
     }
     
     file { "/home/$username/":
@@ -30,7 +30,7 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
         owner   => $username,
         group   => $username,
         mode    => 700,
-        require => [ User[$username], Group[$username] ]
+        require => [ User[$username], Group[$username] ],
         ensure  => $ensure,
     }
              
@@ -39,7 +39,7 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
         owner   => $username,
         group   => $username,
         mode    => 700,
-        require => File["/home/$username/"]
+        require => File["/home/$username/"],
         ensure  => $ensure,
     }
  
@@ -48,7 +48,7 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
         owner   => $username,
         group   => $username,
         mode    => 600,
-        require => File["/home/$username/"]
+        require => File["/home/$username/"],
         ensure  => $ensure,
     }
 }
