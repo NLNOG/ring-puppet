@@ -11,13 +11,13 @@ class mastercronjobs {
 # this class is executed on all ring-nodes including the master 
 class cronjobs {
     $first = fqdn_rand(30)
-    $second = fqdn_rand(30) + 30
+    $second = (fqdn_rand(30) + 30)
 
     cron { aptupdate:
         command => "apt-get update 2>&1 >>/dev/null",
         hour => "3",
         user => "root",
-        minute => fqdn_rand(50) + 1,
+        minute => (fqdn_rand(50) + 1),
         environment => ["PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"],
     }
     
@@ -34,7 +34,7 @@ class cronjobs {
         user => root,
         weekday => "*",
         hour => "3",
-        minute => fqdn_rand(50) + 5,
+        minute => (fqdn_rand(50) + 5),
         ensure => absent,
     }
 
@@ -45,7 +45,7 @@ class cronjobs {
         user => root,
         hour => "3",
         weekday => "1",
-        minute => fqdn_rand(50) + 3,
+        minute => (fqdn_rand(50) + 3),
         ensure => absent,
     }
 
