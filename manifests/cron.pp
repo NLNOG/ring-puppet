@@ -1,7 +1,7 @@
 # this class is only executed on the master
 class mastercronjobs {
     cron { pull_from_repo:
-        command => "(cd /etc/puppet/environments/production && /usr/bin/git pull  origin master  && /usr/bin/git reset  --hard && /usr/bin/git clean  -d -x -f && git submodule update --init && touch .puppet-sync-stamp) >/dev/null 2>&1",
+        command => "/usr/local/bin/ring-puppet-repo-sync >/dev/null 2>&1",
         minute  => "*/5",
         user    => root,
         ensure  => present,
