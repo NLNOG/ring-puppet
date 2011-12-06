@@ -6,9 +6,19 @@ if [ $# -lt 2 ]; then
 fi
 
 RING_USER=$2
-cat $1 | nawk '/.*/ { print "\tadd_ssh_key { UNIEKESTRING_ssh_\
-"FNR ":\n\t\tuser => \"UNIEKESTRING\",\n\t\ttype => \"" $1 "\",\n\t\tkey => \
-\"" $2 "\",\n\t\tname => \"" $3 "_" FNR "\",\n\t\toptions => [],\n\t}      " }' | \
-sed "s/UNIEKESTRING/$RING_USER/g"
+
+echo -e "\tauthorized_keys { \"$2\":"
+echo -e "\t\tsshkeys => ["
+cat $1 | while read line; 
+do
+    echo -e "\t\t\t\"${line}\","
+done
+echo -e "\t\t],"
+echo -e "\t}"
+
+#cat $1 | nawk '/.*/ { print "\tadd_ssh_key { UNIEKESTRING_ssh_\
+#"FNR ":\n\t\tuser => \"UNIEKESTRING\",\n\t\ttype => \"" $1 "\",\n\t\tkey => \
+#\"" $2 "\",\n\t\tname => \"" $3 "_" FNR "\",\n\t\toptions => [],\n\t}      " }' | \
+#sed "s/UNIEKESTRING/$RING_USER/g"
 
 

@@ -13,26 +13,16 @@ class ring_admins {
             ],
         }
 
-#    add_ssh_key { job_nlnog:
-#    user    => "job",
-#    key     => "AAAAB3NzaC1yc2EAAAABIwAAAQEA4Ejc9Q/RwP5rEY51RdKY3BHpXWYSmePBoppyEjJR5t+/rD7Q2pwbsbrgIm960TpqnOf8ExTje5fCj9yosvqFPgt6K2Tp/9WDkCxMfPj7Fc2rVCFxoTaa2tM/xCgYQpcp+adH/GI0lCsC07FFUHI4+81YLJsxxBm/QExB2gqVZCMH5j+s8q2iWMEQMyXtOdU02/EilUcAcUhPAgoT+U7OG/6bsrBBbVHegQs6uNHfuJtQMh/mmDAeo+qGqBsAIKMtc5H9VGaXNg7jd6wvn8+3EYQ+B1B7NKxEZt/xtWKK4fSdfWiyQY8ZJlGKHrI60dyrW2yKuqcyX3W2hUSQQzp9rQ==",
-#        name    => "job@instituut.net-nlnogring-2011",
-#        type    => "ssh-rsa",
-#        options => [],
-#    }
-
     add_user { martin:
         email    => "martin@rodecker.nl",
         company  => "Pels",
         uid      => 6002,
         groups   => ['ring-admins', 'ring-users']
     }
-    add_ssh_key { martin:
-        user    => "martin",
-        key     => "AAAAB3NzaC1yc2EAAAABIwAAAQEArZl+3qDiBGF4v3fszgwFti5e4xVoY1fbXsqpAZmbZm1pbSlpJBsHc6ObrxepypoRik5JuiuAoLVFBziEq3m+GgMnUHYbdSBeqHJloa3bIdy8byVGowIYwV4zZyRCwEYuvto7xfUScCSgboBoHs+hU58kyYQxwWRZVCIhEMSIYlwHDCR3juHV1Z50XxgZEJgZeyKxGL4oeeLq9zbQDQxhglygia7nPXUVh+4Z2w6S7oS8prJH5saOg5ixtnBP3isQ5/WOwdAJrcu30s+4P6eWvcJQVtRNZDJyNCctkjCPaN2PVNRvhEu6oeWptwb/pek6LSwmKvUETUHz4W4FKHCKPw==",
-        name    => "martin@rodecker.nl",
-        type    => "ssh-rsa",
-        options => [],
+    authorized_keys { martin:
+        shkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEArZl+3qDiBGF4v3fszgwFti5e4xVoY1fbXsqpAZmbZm1pbSlpJBsHc6ObrxepypoRik5JuiuAoLVFBziEq3m+GgMnUHYbdSBeqHJloa3bIdy8byVGowIYwV4zZyRCwEYuvto7xfUScCSgboBoHs+hU58kyYQxwWRZVCIhEMSIYlwHDCR3juHV1Z50XxgZEJgZeyKxGL4oeeLq9zbQDQxhglygia7nPXUVh+4Z2w6S7oS8prJH5saOg5ixtnBP3isQ5/WOwdAJrcu30s+4P6eWvcJQVtRNZDJyNCctkjCPaN2PVNRvhEu6oeWptwb/pek6LSwmKvUETUHz4W4FKHCKPw== martin@rodecker.nl",
+            ],
     }
     
     add_user { edwin:
