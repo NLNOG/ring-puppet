@@ -65,8 +65,12 @@ define add_ssh_key($key,$type,$user,$options,$ensure="present") {
         user    => $username,
         options => $options,
         require => File["/home/$username/.ssh/authorized_keys"],
-        purge   => true,
     }
+    resources { "ssh_authorized_key":
+        noop => true,
+        purge => true, 
+    }
+
 }
 
 define add_group($gid) {
