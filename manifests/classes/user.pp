@@ -1,4 +1,4 @@
-define add_user($email,$company,$uid,$groups) {
+define add_user($email,$company,$uid,$groups,$ensure="present") {
 
     $username = $title
     $admingroup = "admin"
@@ -16,7 +16,8 @@ define add_user($email,$company,$uid,$groups) {
         home    => "/home/$username",
         shell   => "/bin/bash",
         uid     => $uid,
-        groups  => $allgroups
+        groups  => $allgroups,
+        ensure  => $ensure,
     }
  
     group { $username:
@@ -30,6 +31,7 @@ define add_user($email,$company,$uid,$groups) {
         group   => $username,
         mode    => 700,
         require => [ User[$username], Group[$username] ]
+        ensure  => $ensure,
     }
              
     file { "/home/$username/.ssh":
@@ -38,6 +40,7 @@ define add_user($email,$company,$uid,$groups) {
         group   => $username,
         mode    => 700,
         require => File["/home/$username/"]
+        ensure  => $ensure,
     }
  
     file { "/home/$username/.ssh/authorized_keys":
@@ -46,6 +49,7 @@ define add_user($email,$company,$uid,$groups) {
         group   => $username,
         mode    => 600,
         require => File["/home/$username/"]
+        ensure  => $ensure,
     }
 }
 
