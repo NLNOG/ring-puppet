@@ -93,6 +93,12 @@ node 'staging01' inherits ringnode {
 
 #### define all ring nodes ####
 
+node evertjenetworks01 inherits ringnode {
+    nagios::target { $name:
+        ensure => absent
+    }    
+}
+
 node 'intouch01' inherits ringnode {
     $owners = ['job']
 #    include smokeping::slave
