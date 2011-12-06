@@ -2,7 +2,7 @@
 
 echo "Checking for new puppet manifets..."
 
-if [ $HOSTNAME ?? 'master' ]; then
+if [ $HOSTNAME =~ 'master' ]; then
     cd /etc/puppet/environments/production && \
     /usr/bin/git pull  origin master  && \
     /usr/bin/git reset  --hard && \
