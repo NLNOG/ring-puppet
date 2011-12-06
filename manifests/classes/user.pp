@@ -66,7 +66,7 @@ define add_ssh_key($key,$type,$user,$options,$ensure="present") {
         type    => $type,
         user    => $username,
         options => $options,
-        require => File["/home/$username/.ssh/authorized_keys"],
+#        require => File["/home/$username/.ssh/authorized_keys"],
     }
 
 #   because of http://projects.reductivelabs.com/issues/1581 this doesnt work
