@@ -7,6 +7,8 @@
 	exit 1
 }
 
+cd_repo_root 
+
 mkdir -p modules/$1/{files,manifests,templates}
 
 cat > modules/$1/manifests/packages.pp <<-EOF
