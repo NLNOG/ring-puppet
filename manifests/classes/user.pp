@@ -66,10 +66,12 @@ define add_ssh_key($key,$type,$user,$options,$ensure="present") {
         options => $options,
         require => File["/home/$username/.ssh/authorized_keys"],
     }
-    resources { "ssh_authorized_key":
-        noop => true,
-        purge => true, 
-    }
+
+#   because of http://projects.reductivelabs.com/issues/1581 this doesnt work
+#    resources { "ssh_authorized_key":
+#        noop => true,
+#        purge => true, 
+#    }
 
 }
 
