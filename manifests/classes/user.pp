@@ -31,7 +31,9 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
         owner   => $username,
         group   => $username,
         mode    => 700,
-        require => [ User[$username], Group[$username] ],
+        if $ensure =='present' {
+            require => [ User[$username], Group[$username] ],
+        }
     }
              
     file { "/home/$username/.ssh":
