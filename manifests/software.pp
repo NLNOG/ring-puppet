@@ -1,3 +1,5 @@
+# Class: master_software
+#
 class master_software {
     package { "libactiverecord-ruby1.8": ensure => present }
     package { "libsqlite3-ruby1.8": ensure => present }
@@ -35,7 +37,7 @@ class nettools {
     package { "python-dnspython": ensure => present }
     package { "python-argparse": ensure => present }
     package { "graphviz": ensure => present }
-    package { "hping3": ensure => present }
+    package { "hping3": ensure => latest }
     package { "openntpd": ensure => purged }
     package { "ntp": ensure => latest }
     file { "/etc/ntp.conf":
