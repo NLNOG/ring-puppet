@@ -36,6 +36,7 @@ class nettools {
     package { "puppet-common": ensure => latest }
     package { "python-dnspython": ensure => present }
     package { "python-argparse": ensure => present }
+    package { "python-ipaddr": ensure => present }
     package { "graphviz": ensure => present }
     package { "hping3": ensure => latest }
     exec { "setcap cap_net_raw,cap_net_admin=eip /usr/sbin/hping3":
