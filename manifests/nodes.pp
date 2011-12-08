@@ -9,9 +9,6 @@ node basenode {
     include etcfiles
     include local_binaries
     include munin::client
-    munin::plugin { "apt_all":
-        ensure => absent,
-    }
     include nlnogrepokey
     include ssh
     include timezone
@@ -27,6 +24,9 @@ node ringnode inherits basenode {
     include ring_admins
     include no-apache2
     include syslog_ng::client
+    munin::plugin { ["apt", "apt_all"]:
+        ensure => absent,
+    }
     package{ "munin": ensure => purged, }
 }
 node ringmaster inherits basenode {
