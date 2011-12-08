@@ -17,6 +17,13 @@ class cronjobs {
     $cron2 = (fqdn_rand(50) + 5)
     $cron3 = (fqdn_rand(50) + 3)
 
+    cron { weeklyreboot:
+        command => "/sbin/reboot",
+        weekday => "sunday",
+        hour => "4",
+        user => "root",
+    }
+
     cron { aptupdate:
         command => "apt-get update 2>&1 >>/dev/null",
         hour => "3",
