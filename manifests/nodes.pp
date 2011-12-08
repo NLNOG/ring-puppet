@@ -26,18 +26,15 @@ node ringnode inherits basenode {
     include syslog_ng::client
     package{ "munin": ensure => purged, }
 }
-node ringmaster inherits basenode {
+
+node 'master01' inherits basenode {
     include ring_admins
     include munin::host
     include master_software
     include syslog_ng::server
     include apache2
     include mastercronjobs
-}
-
-node 'master01' inherits ringmaster {
-
-   include nagios::defaults
+    include nagios::defaults
     include nagios::headless
     nagios::service::ping { $name:
     }
@@ -49,15 +46,19 @@ node 'master01' inherits ringmaster {
 
 }
 
-node 'master02' inherits ringmaster {
+node 'master02' inherits basenode {
+    include ring_admins
+    include master_software
+    include syslog_ng::server
+    include apache2
+    include mastercronjobs
+
     $sp_owner = "Job Snijders"
     $sp_owner_email = "job@snijders-it.nl"
     $sp_cgi_url = "http://master02.ring.nlnog.net/smokeping/smokeping.cgi"
     $sp_mailhost = "127.0.0.1"
     include smokeping::master
 
-   include nagios::defaults
-    include nagios::headless
     nagios::service::ping { $name:
     }
     nagios::service::http { $name:
