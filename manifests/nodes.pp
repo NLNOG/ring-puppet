@@ -9,7 +9,7 @@ node basenode {
     include etcfiles
     include local_binaries
     include munin::client
-    munin::plugin { "apt":
+    munin::plugin { [ "apt", "apt_all" ] :
         ensure => absent
     }
     include nlnogrepokey
