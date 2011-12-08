@@ -24,9 +24,6 @@ node ringnode inherits basenode {
     include ring_admins
     include no-apache2
     include syslog_ng::client
-    munin::plugin { ["apt", "apt_all"]:
-        ensure => absent,
-    }
     package{ "munin": ensure => purged, }
 }
 node ringmaster inherits basenode {
