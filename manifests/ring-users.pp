@@ -927,4 +927,20 @@ class ring_users {
     }
 ##### END globalaxs #####
 
+##### BEGIN nebula #####
+
+    add_user { nebula:
+        email => "net-core@nebula.fi",
+        company => "Nebula Oy",
+        uid => "5052",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "nebula":
+        sshkeys => [
+            "ssh-dss AAAAB3NzaC1kc3MAAACBAOVg7OTgsR5xq8GXHYXckONI8WHR1tCmAIigHDi50YYuKoUfW5GNsuK2PNmEf7iPmj/IJWV64+pGNKvfc65fKVFcYztRQtuibwGphp5G0GASE4L/Ls4uMN7LaUycDZ8/NPYe2prVtmrWr0rmrYAKECLGxu9d9iakwMaTghpjo1ujAAAAFQCIpTW9QsLxjU+UIrXBN77x3DuY6wAAAIEAje2ztwnynuEoZ2ftYkCgDO/pFVc7dqEMdxG9rXxTnwrem56qgvHAexxMhxtIqFlA9jHSPtGO1+7HA11rcvvBv02XA6th8cNtSeTKrdkx20zi7EGj1FYHmnfyTH8L26E3nDn7tx4BYvZ5fVFFTxXMdCOPVLKfN1BEcWx0ZNrlyXsAAACBAJ+zyncijegX8TNwGyvKTJ0NADaazivjSvK/UBrp4inkveDFafNC3p9hUZ0NzpbczUquN75VHIrZMcCIc/BvWaiub5VFHWag6ZqWn0YYMKypPLcwevSE3cXg0sOuJestAVueQfBvz6oj5x5lAOWceGe0q40sE4CxHIkAtqze+ZEA hcg@netstat.nebula.fi",
+        ],
+    }
+##### END nebula #####
+
+
 }
