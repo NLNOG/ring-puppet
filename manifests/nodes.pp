@@ -36,11 +36,6 @@ node ringmaster inherits basenode {
 }
 
 node 'master01' inherits ringmaster {
-    $sp_owner = "Job Snijders"
-    $sp_owner_email = "job@snijders-it.nl"
-    $sp_cgi_url = "http://master01.ring.nlnog.net/smokeping/smokeping.cgi"
-    $sp_mailhost = "127.0.0.1"
-#    include smokeping::master
 
    include nagios::defaults
     include nagios::headless
@@ -53,6 +48,26 @@ node 'master01' inherits ringmaster {
     }
 
 }
+
+node 'master02' inherits ringmaster {
+    $sp_owner = "Job Snijders"
+    $sp_owner_email = "job@snijders-it.nl"
+    $sp_cgi_url = "http://master02.ring.nlnog.net/smokeping/smokeping.cgi"
+    $sp_mailhost = "127.0.0.1"
+    include smokeping::master
+
+   include nagios::defaults
+    include nagios::headless
+    nagios::service::ping { $name:
+    }
+    nagios::service::http { $name:
+        check_domain => "${name}"
+    }
+    munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
+    }
+
+}
+
 
 
 # we don't want apache running on regular ringnodes. smokeping installs apache, so we just force it down here. 
