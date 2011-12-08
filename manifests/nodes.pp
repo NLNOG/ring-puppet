@@ -48,7 +48,8 @@ node 'master01' inherits basenode {
 
 node 'master02' inherits basenode {
     include ring_admins
-    include master_software
+# this is not a puppetmaster for now
+#    include master_software
     include syslog_ng::server
     include apache2
     include mastercronjobs
