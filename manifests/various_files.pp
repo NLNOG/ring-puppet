@@ -80,6 +80,13 @@ class etcfiles {
         source  => "puppet:///files/etc/pam.d/atd",
     }
 
+    file { "/etc/cron.d/munin-node":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/cron.d/munin-node",
+    }
+
      file { "/etc/pam.d/cron":
         owner   => root,
         group   => root,
