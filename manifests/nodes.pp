@@ -9,8 +9,8 @@ node basenode {
     include etcfiles
     include local_binaries
     include munin::client
-    munin::plugin { [ "apt", "apt_all" ] :
-        ensure => absent
+    munin::plugin { "apt_all":
+        ensure => absent,
     }
     include nlnogrepokey
     include ssh
