@@ -50,9 +50,9 @@ node 'master02' inherits basenode {
     include ring_admins
 # this is not a puppetmaster for now
 #    include master_software
+#    include mastercronjobs
     include syslog_ng::server
     include apache2
-    include mastercronjobs
 
     $sp_owner = "Job Snijders"
     $sp_owner_email = "job@snijders-it.nl"
