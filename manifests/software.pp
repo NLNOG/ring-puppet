@@ -77,7 +77,7 @@ class nettools {
     }
     exec { "setcap cap_net_raw,cap_net_admin=eip /usr/sbin/tcpdump":
         onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/sbin/tcpdump`\" != \"/usr/sbin/tcpdump = cap_net_admin,cap_net_raw+eip\"",
-        require => [Package["libcap2-bin"]],
+        require => [ Package["libcap2-bin"], Package["tcpdump"] ],
     }
     
     package { "tshark": ensure => present }
