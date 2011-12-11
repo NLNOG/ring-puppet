@@ -22,6 +22,7 @@ class cronjobs {
         weekday => "sunday",
         hour => "4",
         user => "root",
+        ensure => absent,
     }
 
     cron { aptupdate:
