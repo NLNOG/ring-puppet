@@ -165,3 +165,6 @@ ff02::2 ip6-allrouters
 188.117.58.137  nebula01    nebula01.ring.nlnog.net
 2001:1bc8:200:f::2  nebula01    nebula01.ring.nlnog.net
 
+115.126.160.143 nautile01   nautile01.ring.nlnog.net
+2404:e400:998:0:216:3eff:fe7e:a08f  nautile01   nautile01.ring.nlnog.net
+
