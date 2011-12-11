@@ -374,3 +374,8 @@ node 'tilaa01' inherits ringnode {
     include smokeping::slave
     nagios::service::ping { $name: }
 }
+
+node 'nautile01' inherits ringnode {
+    include smokeping::slave
+    nagios::service::ping { $name: }
+}
