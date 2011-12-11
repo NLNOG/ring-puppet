@@ -169,6 +169,8 @@ ff02::2 ip6-allrouters
 2404:e400:998:0:216:3eff:fe7e:a08f  nautile01   nautile01.ring.nlnog.net
 
 107.6.72.19 voxel01 voxel01.ring.nlnog.net
+2001:48c8:3:2::2    voxel01 voxel01.ring.nlnog.net
 
 103.22.129.2    voxel02 voxel02.ring.nlnog.net
+2404:1200:0:5::2    voxel02 voxel02.ring.nlnog.net
 
