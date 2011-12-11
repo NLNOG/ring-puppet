@@ -380,3 +380,15 @@ node 'nautile01' inherits ringnode {
     include smokeping::slave
     nagios::service::ping { $name: }
 }
+
+node 'voxel01' inherits ringnode {
+    $nagios_ping_rate = '!250.0,20%!500.0,60%'
+    include smokeping::slave
+    nagios::service::ping { $name: }
+}
+
+node 'voxel02' inherits ringnode {
+    $nagios_ping_rate = '!450.0,20%!700.0,60%'
+    include smokeping::slave
+    nagios::service::ping { $name: }
+}
