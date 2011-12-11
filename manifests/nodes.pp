@@ -376,6 +376,7 @@ node 'tilaa01' inherits ringnode {
 }
 
 node 'nautile01' inherits ringnode {
+    $nagios_ping_rate = '!450.0,20%!700.0,60%'
     include smokeping::slave
     nagios::service::ping { $name: }
 }
