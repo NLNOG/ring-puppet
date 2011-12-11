@@ -962,5 +962,21 @@ class ring_users {
     }
 ##### END tilaa #####
 
+##### BEGIN nautile #####
+
+    add_user { nautile:
+        email => "network@nautile.nc",
+        company => "Nautile",
+        uid => "5054",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "nautile":
+        sshkeys => [
+            "ssh-dss AAAAB3NzaC1kc3MAAACBAM1QHeEXtvN4YVfDX8fFitHUOb+oBJWrDoXrkH9xYgNG3D66XXJgO7k+wqaV/qkYQfirFiCiQmfAkGyLVOHCq5ivdU3ittw0b2e8w+HkHuqEJ01zIiWu/g3yWYytGi/IVeeteeFlr8F45kUiMX3J9I3zvupj5DoySnYjtCEARraxAAAAFQDe5zH58ku+x4LlX7OAwZNEyLZ5TQAAAIA9r4qDmi5akAU9qQBZKNv9/wfyz8xjjx+PyeyxbRlNgk8v3PtzueEdo488OpzdlXpdqk+0A7ZMyq7DdDhXqCUzgUMg5lgAp67X2U9hv6WmE2YFAuOmMVzZAladPHaBGGflM2VI9dmrhx3Gue1eqgPj1ppEz4x0xzvUh3ce5z9jDgAAAIEAlUKmuU//6KlOiumSBm/B55DEbdFQRN4a1r9gCNWeW2MySgKIjkIl2Mbf8qLcE97fRrbsHqsLBDMrMu8il8EMR/eQasDGS27gQmzn6+bCrzXjkn+OMIoqP6P5TDXFE2ALm7DI6HIT8AwPzkXWwXjSuap8m+6m7rkI7IXZJGHgK14= Nicolas Aupetit - nicolas.aupetit@nautile.nc",
+            ],
+    }
+
+##### END nautile #####
+
 
 }
