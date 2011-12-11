@@ -977,6 +977,21 @@ class ring_users {
         ],
     }
 ##### END nautile #####
+##### BEGIN voxel #####
+
+    add_user { voxel:
+        email => "asr@voxel.net",
+        company => "asr@voxel.net",
+        uid => "5055",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "voxel":
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDc5lgQnH9tU8sRCl5jZnBfJHi+Z+kLXmJIaYMa4CNpctS7k9sUihx/jugEt8h5cCPzK3rU13M3dMPGDwu7NPyTJa4PVTKGYicBgeXSQ8Z3rw+H7Hlsi7/W/D1B2FeGDXqyzJlXsiL8+7yEkHUNeKHaDrpMaJ8B1b20Ze6bLS9ws2fFjjqL8jRXrtcNO/ZuJgqQWWENpaQbAUDpnyuB0uqqLDa2r9u4cf7eeFNiQff/SURMBowOwX/cY8jW71yaRpbvRMSXxwrPK6ZSGHm/2mEpaT5cwCXkO8VTTGUlSzW+xWCnvIi7CafoYmsTyB2jHfM6mZrEhu6/UgSFeLaqgUTF asr@new-og.latency.net",
+        ],
+    }
+##### END voxel #####
+
 
 
 }
