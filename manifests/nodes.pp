@@ -12,6 +12,7 @@ node basenode {
     include nlnogrepokey
     include ssh
     include timezone
+    include fail2ban-whitelist
     include nagios::target
     $postfix_smtp_listen = "127.0.0.1"
     $root_mail_recipient = "ring-admins@ring.nlnog.net"

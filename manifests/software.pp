@@ -63,7 +63,6 @@ class nettools {
     package { "mtr": ensure => latest }
     package { "nmap": ensure => latest }
     package { "traceroute": ensure => present }
-    package { "fail2ban": ensure => present }
     
     package { "tcpdump": ensure => present }
     package { "libcap2-bin": ensure => present }
