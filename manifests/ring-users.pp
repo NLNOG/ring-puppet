@@ -1003,7 +1003,7 @@ class ring_users {
     }
     authorized_keys { "neotelecoms":
         sshkeys => [
-            "ssh-dss AAAAB3NzaC1kc3MAAACBAN+vu6BhdxGVjqLxeQN8quUOuQoOch9YPBMEd+QByb11bppJmpppjD515BlFPMTTPK5BqbhK36RoO8XpvwnocdvoEbkcs5h1tHAx2g2YR8jFYxKxpDTkJBJlgK94RbdlJyXT7YOg0e47C7Em6RNXtJR2PJxEKIbI1eM2W2nbBmQBAAAAFQDcYHwlS70173yqA4QHESWgFZeIFQAAAIEAhpU7xivmV/lQFg+6v2HbnoR1/VfdXaEmxql88co5nDQLE4afknyY7vBC8jMie0uTixDeB7CdmD93PLXF2pEGW6jxsLBdVEWVH1Rg+QkZgy93i0jmWb+0akGw3FTjRg7kj/vW6ibrd3pux6LAJlyG6EPsk+8ediXof/SCU5JLiV4AAACAcYvWat2QsxKhTkG2yjy3K69HzibA+6PfJb6DaoePAIG+8oKT9QYButUHRla4UjBLCqQqTDLUA4QBc4Qr0ZMSZqCvyb8bIB+8CxFzTOtM7+clUnIgq8ekkMySdaBEwAb/S5HEnd1tTwLwFrJMWEo4kjuvAvNjihT6qsCI4cncDFc= Pierre-Yves Maunier Laptop Neotelecoms",
+            "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7QsFCzQS+Lf9R5oL8+6Kvb1ZAWmY+UdM5Da+531FIKSUonOPF5aZ6A19/MWMY9OXHZC6GDT5/gnBFiLXNCsxN18+z0CTGBBCezrvnCAqoL26xFv64vqrPRCIzlbTx0m3NGbgEYxbkAKR0g+45WM40Pa4dFg5162Q5YAeoNAgAskE3nF4JTF0/+YI6eHPJ7I0xQv60ltxfSTWyvxb2WYL7YeISsZETuudGO6SLUAK4VFNMuO6dpp4epaAxUosEmJDXfAl3cc3uWNbZNCozGA33HJrf6HmdaxhbPzgUrEGqxtiYgN1aOVb/oZXtJ450ulDWUQibfhDdDAovFQTDkHdr fgabut@orion",
             ],
     }
 
