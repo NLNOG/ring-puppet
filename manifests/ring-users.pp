@@ -977,6 +977,7 @@ class ring_users {
         ],
     }
 ##### END nautile #####
+
 ##### BEGIN voxel #####
 
     add_user { voxel:
@@ -991,6 +992,22 @@ class ring_users {
         ],
     }
 ##### END voxel #####
+
+##### BEGIN neotelecoms #####
+
+    add_user { neotelecoms:
+        email => "eng@neotelecoms.com",
+        company => "Neotelecoms",
+        uid => "5056",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "neotelecoms":
+        sshkeys => [
+            "ssh-dss AAAAB3NzaC1kc3MAAACBAN+vu6BhdxGVjqLxeQN8quUOuQoOch9YPBMEd+QByb11bppJmpppjD515BlFPMTTPK5BqbhK36RoO8XpvwnocdvoEbkcs5h1tHAx2g2YR8jFYxKxpDTkJBJlgK94RbdlJyXT7YOg0e47C7Em6RNXtJR2PJxEKIbI1eM2W2nbBmQBAAAAFQDcYHwlS70173yqA4QHESWgFZeIFQAAAIEAhpU7xivmV/lQFg+6v2HbnoR1/VfdXaEmxql88co5nDQLE4afknyY7vBC8jMie0uTixDeB7CdmD93PLXF2pEGW6jxsLBdVEWVH1Rg+QkZgy93i0jmWb+0akGw3FTjRg7kj/vW6ibrd3pux6LAJlyG6EPsk+8ediXof/SCU5JLiV4AAACAcYvWat2QsxKhTkG2yjy3K69HzibA+6PfJb6DaoePAIG+8oKT9QYButUHRla4UjBLCqQqTDLUA4QBc4Qr0ZMSZqCvyb8bIB+8CxFzTOtM7+clUnIgq8ekkMySdaBEwAb/S5HEnd1tTwLwFrJMWEo4kjuvAvNjihT6qsCI4cncDFc= Pierre-Yves Maunier Laptop Neotelecoms",
+            ],
+    }
+
+##### END neotelecoms #####
 
 
 
