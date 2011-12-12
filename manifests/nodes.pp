@@ -394,3 +394,8 @@ node 'voxel02' inherits ringnode {
     include smokeping::slave
     nagios::service::ping { $name: }
 }
+
+node 'neotelecoms01' inherits ringnode {
+    include smokeping::slave
+    nagios::service::ping { $name: }
+}
