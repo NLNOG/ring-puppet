@@ -174,3 +174,6 @@ ff02::2 ip6-allrouters
 103.22.129.2    voxel02 voxel02.ring.nlnog.net
 2404:1200:0:5::2    voxel02 voxel02.ring.nlnog.net
 
+83.167.57.42    neotelecoms01   neotelecoms01.ring.nlnog.net
+2001:1b48:100:1::8218:42    neotelecoms01   neotelecoms01.ring.nlnog.net
+
