@@ -981,7 +981,7 @@ class ring_users {
 
     add_user { voxel:
         email => "asr@voxel.net",
-        company => "asr@voxel.net",
+        company => "Voxel dot Net, Inc.",
         uid => "5055",
         groups => ['ring-users'],
     }
