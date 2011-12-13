@@ -10,14 +10,18 @@ class ssh {
             host_aliases => ["${fqdn}"],
             type => ssh-dss,
             key => "${sshdsakey}",
-            require => File["/etc/ssh/ssh_known_hosts"];
+            require => File["/etc/ssh/ssh_known_hosts"],
+    }
 
 # we don't need both DSA and RSA hostkeys
 #        "${hostname}-rsa": 
 #            host_aliases => ["${fqdn}","${hostname}"], 
 #            type => ssh-rsa,
 #            key => "${sshrsakey}";
-    } 
 
-    Sshkey <<| |>>    
+    Sshkey <<| |>>
+
+    resource { sshkey:
+        purge => true,
+    }
 }
