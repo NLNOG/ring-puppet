@@ -94,7 +94,7 @@ class ring_users {
 
     add_user { xlshosting:
         email    => "noc@xlshosting.nl",
-        company => "XLSHostin BV",
+        company => "XLSHosting BV",
         uid      => 5005,
         groups   => ['ring-users']
     }

@@ -67,3 +67,11 @@ if [ -x /usr/lib/command-not-found -o -x /usr/share/command-not-found ]; then
 		fi
 	}
 fi
+
+_ringhosts() {
+    local cur
+    cur=${COMP_WORDS[COMP_CWORD]}
+    COMPREPLY=( $(compgen -W "$(awk '{print $2}' /etc/hosts|sort|uniq|grep '[0-9][1-9]$'|tr '\n' ' ')" -- $cur ) )
+}
+complete -F _ringhosts ping mtr traceroute ssh
+
