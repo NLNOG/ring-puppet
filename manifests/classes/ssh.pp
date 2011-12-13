@@ -17,7 +17,7 @@ class ssh {
 #            host_aliases => ["${fqdn}","${hostname}"], 
 #            type => ssh-rsa,
 #            key => "${sshrsakey}";
-#    } 
+    } 
 
     Sshkey <<| |>>    
 }
