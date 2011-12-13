@@ -21,7 +21,7 @@ class ssh {
 
     Sshkey <<| |>>
 
-    resource { sshkey:
+    resources { sshkey:
         purge => true,
     }
 }
