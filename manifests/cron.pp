@@ -1,10 +1,22 @@
-# this class is only executed on the master
+# Class cronjobs
+# Provides: mastercronjobs, nodesonlycron, cronjobs
+#
 class mastercronjobs {
     cron { pull_from_repo:
         command => "/usr/local/bin/ring-puppet-repo-sync >/dev/null 2>&1",
         minute  => "*/5",
         user    => root,
         ensure  => present,
+    }
+
+}
+
+class nodesonlycron {
+    cron { "restartsmokeping":
+        command => "/etc/init.d/smokeping restart",
+        minute => fqdn_rand(60),
+        hour => fqdn_rand(12),
+        user => "root",
     }
 }
 
