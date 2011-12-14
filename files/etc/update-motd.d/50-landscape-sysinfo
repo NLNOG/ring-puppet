@@ -7,7 +7,7 @@ if [ $(echo "`cut -f1 -d ' ' /proc/loadavg` < $threshold" | bc) -eq 1 ]; then
     echo -n "  System information as of "
     /bin/date
     echo
-    /usr/bin/landscape-sysinfo | head -n -1
+    /usr/bin/landscape-sysinfo | head -n -2
 else
     echo
     echo " System information disabled due to load higher than $threshold"

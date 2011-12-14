@@ -11,12 +11,6 @@ class etcfiles {
 #    } 
 
     
-    # remove this file so it does not warn people a new
-    # release is available - we will upgrade in 2012
-    file { "/etc/update-motd.d/91-release-upgrade":
-        ensure => absent,
-    }
-
     file { "/etc/bash.bashrc":
         owner   => root,
         group   => root,

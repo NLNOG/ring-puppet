@@ -1,9 +1,25 @@
 class set_local_settings {                                                      
-    exec { "add_owner_to_admingroup":                                           
-    command => "adduser ${owner} admin",                                        
-    onlyif => [                                                                 
+
+# since i don't see any way to solve this without an exec in puppet we have
+# to do it the 'dirty' way
+# the problem is that you cannot overwrite/redefine a element at a later stage
+# Users that have the samen problem:
+# - http://groups.google.com/group/puppet-users/browse_thread/thread/46ba2f43858735ba
+# - http://www.mail-archive.com/puppet-users@googlegroups.com/msg15641.html
+# - http://www.mailinglistarchive.com/html/puppet-users@googlegroups.com/2011-03/msg00073.html
+# i've spend many hours trying to figure this out and will give up for at 
+# least the next 12 months
+# signing off
+# - job (dec 2011)
+#
+    exec { "add_owner_to_admingroup": 
+    command => "adduser ${owner} admin",
+    onlyif => [
         "/usr/bin/test `/usr/bin/groups ${owner} | /bin/grep -w admin | /usr/bin/wc -l` -eq 0",
-        "test -d /home/${owner}/" ],                                            
-    }                                                                           
+        "test -d /home/${owner}/" ],
+    }
+
+# in motd.pp we describe how the motd should be handled
+# we include it here since its a local thing
     include motd
 } 

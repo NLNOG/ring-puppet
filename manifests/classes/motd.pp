@@ -9,4 +9,7 @@ class motd {
         source => "puppet:///files/etc/update-motd.d/50-landscape-sysinfo",
         require => Package["update-motd"],
     }
+    file { "/etc/update-motd.d/91-release-upgrade":                             
+        ensure => absent,                                                       
+    }
 }
