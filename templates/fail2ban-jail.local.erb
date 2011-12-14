@@ -1,1 +1,1 @@
-<%= ` ` %>
+<%= `echo -e "[DEFAULT]\nignoreip = $(/bin/grep ^[0-9] /etc/hosts | /usr/bin/cut -d' ' -f1 | /usr/bin/cut -f1 | /usr/bin/sort -n | /bin/grep -v : | /usr/bin/tr '\n' ' ')"` %>
