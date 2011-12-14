@@ -10,7 +10,7 @@ class smokeping::master {
         ensure => latest,
     }
 
-    package { "libapache2-mod-fcgid":
+    package { ["libapache2-mod-fcgid", "apache2.2-common"]:
         ensure => latest,
     }
 
