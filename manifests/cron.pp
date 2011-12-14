@@ -19,7 +19,7 @@ class nodesonlycron {
 # for local configuration, but we have master/slave setup
 
     cron { "restartsmokeping":
-        command => "/etc/init.d/smokeping restart 2>&1",
+        command => "/etc/init.d/smokeping restart 2>&1 >>/dev/null",
         minute => fqdn_rand(60),
         hour => fqdn_rand(23),
         user => "root",
