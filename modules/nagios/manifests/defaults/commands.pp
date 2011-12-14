@@ -31,8 +31,6 @@ class nagios::defaults::commands {
             command_line => '$USER1$/check_jabber -H $ARG1$';
           check_ping6:
             command_line => '$USER1$/check_ping -6 -H $HOSTNAME$ -w $ARG1$ -c $ARG2$';
-          check_ssh_4:
-            command_line => '$USER1$/check_ssh -4 $HOSTNAME$';
           check_ssh_6:
             command_line => '$USER1$/check_ssh -6 $HOSTNAME$';
         }
