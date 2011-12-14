@@ -107,7 +107,7 @@ class groups {
 }
 
 class realise_ringusers {
-    User <| group == ring-users |>
+    User <| groups == ring-users |>
 }
 #### staging01 #####
 
