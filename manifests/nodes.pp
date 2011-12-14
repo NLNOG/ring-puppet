@@ -103,7 +103,7 @@ class groups {
         gid => 5000
     }
     add_group { admin:
-        gid => 111
+        gid => 99
     }
     add_group { ring-admins:
         gid => 6000 
