@@ -21,6 +21,8 @@ class smokeping::master {
             content => template("smokeping/targetsheader.erb"),
             mode => 0644, owner => root, group => root,
             before => File["/etc/smokeping/config.d/Targets"];
+            require => File["/etc/hosts"],
+            subscribe => File["/etc/hosts"],
         }
  
     # this is dirty as hell - need to find a better solution - i'm sorry
