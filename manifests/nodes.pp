@@ -14,7 +14,7 @@ node basenode {
     include nlnogrepokey
     include ssh
     include timezone
-#    include fail2ban-whitelist
+    include fail2ban-whitelist
     include nagios::target
     $postfix_smtp_listen = "127.0.0.1"
     $root_mail_recipient = "ring-admins@ring.nlnog.net"
@@ -40,8 +40,7 @@ node 'master01' inherits basenode {
     include mastercronjobs
     include nagios::defaults
     include nagios::headless
-    nagios::service::ping { $name: }
-    nagios::service::ssh { $name: }
+    include nagios_services
     nagios::service::http { $name:
         check_domain => "${name}"
     }
@@ -64,17 +63,16 @@ node 'master02' inherits basenode {
     $sp_mailhost = "127.0.0.1"
     include smokeping::master
 
-    nagios::service::ping { $name: }
-    nagios::service::ssh { $name: }  
+    include nagios_services
+    
     nagios::service::http { $name:
         check_domain => "${name}"
     }
+    
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
 
 }
-
-
 
 # we don't want apache running on regular ringnodes. smokeping installs apache, so we just force it down here. 
 class apache2 {
@@ -114,7 +112,6 @@ class groups {
 node 'staging01' inherits ringnode {
     $owners = ['job']
     include smokeping::slave
-    include fail2ban-whitelist
     include nagios_services
 }
 
