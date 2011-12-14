@@ -97,14 +97,14 @@ class nagios_services {
 
 ## define all groups
 
-#class groups {
-#    add_group { ring-users:
-#        gid => 5000
-#    }
-#    add_group { ring-admins:
-#        gid => 6000 
-#    }
-#}
+class groups {
+    add_group { ring-users:
+        gid => 5000
+    }
+    add_group { ring-admins:
+        gid => 6000 
+    }
+}
 
 class realise_ringusers {
 #    User <| group == ring-users |>
