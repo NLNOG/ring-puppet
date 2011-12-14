@@ -51,7 +51,7 @@ class smokeping::master {
     file {
         "/etc/init.d/smokeping":
             source => "puppet:///smokeping/init.d-smokeping",
-            mode => 0644, owner => root, group => root,
+            mode => 0755, owner => root, group => root,
             require => Package["smokeping"],
     }
 
