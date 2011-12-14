@@ -1,4 +1,4 @@
-# nodes.pp
+ nodes.pp
 #
 ## Hosts
 
@@ -107,7 +107,8 @@ class groups {
 }
 
 class realise_ringusers {
-    User <| group == ring-users |>
+#    User <| group == ring-users |>
+    realize(test::add_user["intouch"],)
 }
 #### staging01 #####
 

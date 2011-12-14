@@ -14,7 +14,7 @@
 #   - @authorized_keys from classes/user.pp
 #
 class ring_users {
-
+include test
 
 ##### BEGIN intouch #####
 

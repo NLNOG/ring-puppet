@@ -1,6 +1,6 @@
 # this class creates the users
 # it should be converted to a virtual user setup
-
+class test {
 define add_user($email,$company,$uid,$groups,$ensure="present") {
 
     $username = $title
@@ -78,4 +78,5 @@ define add_group($gid) {
     group { $groupname:
         gid     => $gid,
     }
+}
 }
