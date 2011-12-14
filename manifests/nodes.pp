@@ -23,7 +23,7 @@ node basenode {
 }
 
 node ringnode inherits basenode {
-    include ring_admins
+#    include ring_admins
     include no-apache2
     include syslog_ng::client
     include nodesonlycron
@@ -31,7 +31,7 @@ node ringnode inherits basenode {
 }
 
 node 'master01' inherits basenode {
-    include ring_admins
+#    include ring_admins
     include munin::host
     include master_software
     include syslog_ng::server
@@ -97,14 +97,14 @@ class nagios_services {
 
 ## define all groups
 
-class groups {
-    add_group { ring-users:
-        gid => 5000
-    }
-    add_group { ring-admins:
-        gid => 6000 
-    }
-}
+#class groups {
+#    add_group { ring-users:
+#        gid => 5000
+#    }
+#    add_group { ring-admins:
+#        gid => 6000 
+#    }
+#}
 
 class realise_ringusers {
 #    User <| group == ring-users |>
