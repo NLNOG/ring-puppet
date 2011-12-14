@@ -15,6 +15,9 @@ class master_software {
 }
 
 class nettools {
+    package { "update-motd":
+        ensure => present,
+    }
     package { "iperf":
         ensure => present,
     }
