@@ -6,7 +6,11 @@ class smokeping::master {
  
     module_dir { [ "smokeping", "smokeping/nodes" ]: }
 
-    package { [ "smokeping" ]: 
+    package { "smokeping": 
+        ensure => latest,
+    }
+
+    package { "libapache2-mod-fcgid":
         ensure => latest,
     }
 
@@ -28,30 +32,47 @@ class smokeping::master {
     concatenated_file { "/etc/smokeping/config.d/Targets":
         dir => $SP_NODESDIR,
         header => "/etc/smokeping/config.d/Targets.header",
+        require => File["/etc/smokeping/config.d/Targets.header"],
     }
-    
+
     file {
-        "/etc/smokeping/config.d/Slaves.header":
-            source => "puppet:///smokeping/Slaves",
+        "/etc/apache2/conf.d/smokeping":
+            source => "puppet:///smokeping/apache-config-smokeping",
             mode => 0644, owner => root, group => root,
-            before => File["/etc/smokeping/config.d/Slaves"];
+            require => Package["smokeping", "apache2.2-common"],
+    }
+    file {
+        "/usr/lib/cgi-bin/smokeping.fcgi":
+            source => "puppet:///smokeping/smokeping.fcgi",
+            mode => 0755, owner => root, group => root,
+            require => Package["smokeping"],
+    }
+   
+    file {
+        "/etc/init.d/smokeping":
+            source => "puppet:///smokeping/init.d-smokeping",
+            mode => 0644, owner => root, group => root,
+            require => Package["smokeping"],
     }
 
     concatenated_file { "/etc/smokeping/config.d/Slaves":
         dir => $SP_SLAVES_DIR,
         header => "/etc/smokeping/config.d/Slaves.header",
+        require => Package["smokeping"],
     }
 
-        file {
+    file {
         "/etc/smokeping/master_secrets":
-            mode => 0640, owner => www-data, group => root,
-            ensure => present,
+        mode => 0640, owner => www-data, group => root,
+        ensure => present,
+        require => Package["smokeping"],
     }
     
     file {
         "/etc/smokeping/config.d/General":
             mode => 0644, owner => root, group => root,
             content => template("smokeping/general-info.erb"),
+            require => Package["smokeping"],
     }
 
     service { "smokeping":

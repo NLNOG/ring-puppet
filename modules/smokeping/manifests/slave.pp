@@ -50,6 +50,7 @@ class smokeping::slave::install {
 
     service { "smokeping":
           ensure => running, 
+          require => Package["smokeping"],
     }
     
     # this could use some improvement
