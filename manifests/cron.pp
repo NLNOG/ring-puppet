@@ -13,7 +13,7 @@ class mastercronjobs {
 
 class nodesonlycron {
     cron { "restartsmokeping":
-        command => "/etc/init.d/smokeping restart",
+        command => "/etc/init.d/smokeping restart 2>&1",
         minute => fqdn_rand(60),
         hour => fqdn_rand(12),
         user => "root",
