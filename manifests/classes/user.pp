@@ -7,12 +7,6 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
     $admingroup = "admin"
     $allgroups = $groups
 
-#    @@nagios_contact { $username:
-#        alias   => "${company}",
-#        email   => "${email}",
-#        use     => "generic-contact",
-#    }
-
     case $ensure {
         present: {
             $home_owner = $username

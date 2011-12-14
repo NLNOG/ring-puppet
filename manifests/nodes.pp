@@ -23,6 +23,7 @@ node basenode {
 }
 
 node ringnode inherits basenode {
+    include ring_users
     include ring_admins
     include no-apache2
     include syslog_ng::client
@@ -106,17 +107,12 @@ class groups {
     }
 }
 
-class realise_ringusers {
-    User <| groups == ring-users |>
-}
 #### staging01 #####
 
 node 'staging01' inherits ringnode {
     $owners = ['job']
     include smokeping::slave
     include nagios_services
-    include ring_users
-    include realise_ringusers
 }
 
 #### einde staging01 #####
