@@ -18,8 +18,7 @@ class smokeping::master {
  
     file {
         "/etc/smokeping/config.d/Targets.header":
-            source => "/etc/smokeping/config.d/Targets",
-            replace => no, # only initialise
+            content => template("smokeping/targetsheader.erb"),
             mode => 0644, owner => root, group => root,
             before => File["/etc/smokeping/config.d/Targets"];
         }

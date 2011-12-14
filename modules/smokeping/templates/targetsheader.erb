@@ -1,0 +1,27 @@
+*** Targets ***
+
+<% `echo -e "slaves = $(grep nlnog.net$ /etc/hosts | grep -v master |  nawk '{print $3}' | sort -u |tr '\n' ' ')"` %>
+
+probe = FPing
+
+## You have to edit and uncomment all what you want below this.
+# Please, refer to smokeping_config man page for more info
+# The given adresses aren't real to avoid DoS.
+
+menu = Top
+title = Network Latency Grapher
+remark = Welcome to the SmokePing website of the NLNOG RING Servers
+
++ General
+menu = General
+title = General
+
+++ froot
+host = f.root-servers.net
+menu = f.root-servers.net
+title = f.root-servers.net
+
+++ lroot
+host = l.root-servers.net
+menu = l.root-servers.net
+title = l.root-servers.net
