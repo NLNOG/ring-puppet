@@ -106,6 +106,9 @@ class groups {
     }
 }
 
+class realise_ringusers {
+    User <| group == ring-users |>
+}
 #### staging01 #####
 
 node 'staging01' inherits ringnode {
@@ -113,7 +116,7 @@ node 'staging01' inherits ringnode {
     include smokeping::slave
     include nagios_services
     include ring_users
-    User <| group == ring-users |>
+    include realise_ringusers
 }
 
 #### einde staging01 #####
