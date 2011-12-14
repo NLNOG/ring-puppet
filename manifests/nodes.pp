@@ -60,7 +60,7 @@ node 'master02' inherits basenode {
 
     $sp_owner = "Job Snijders"
     $sp_owner_email = "job@snijders-it.nl"
-    $sp_cgi_url = "http://master02.ring.nlnog.net/smokeping/smokeping.cgi"
+    $sp_cgi_url = "http://master02.ring.nlnog.net/smokeping/smokeping.fcgi"
     $sp_mailhost = "127.0.0.1"
     include smokeping::master
 
