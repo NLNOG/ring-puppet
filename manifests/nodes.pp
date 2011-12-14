@@ -42,6 +42,8 @@ node 'master01' inherits basenode {
     include nagios::headless
     nagios::service::ping { $name:
     }
+    nagios::service::ssh { $name:
+    }
     nagios::service::http { $name:
         check_domain => "${name}"
     }
