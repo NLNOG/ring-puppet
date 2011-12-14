@@ -108,7 +108,7 @@ class groups {
 
 class realise_ringusers {
 #    User <| group == ring-users |>
-    realize(Ring_users::add_user["intouch"],)
+    realize(ring_users::add_user["intouch"],)
 }
 #### staging01 #####
 
