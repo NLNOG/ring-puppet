@@ -3,7 +3,7 @@
 #
 class mastercronjobs {
     cron { pull_from_repo:
-        command => "/usr/local/bin/ring-puppet-repo-sync >/dev/null 2>&1",
+        command => "/usr/local/bin/ring-puppet-repo-sync > /dev/null 2>&1",
         minute  => "*/5",
         user    => root,
         ensure  => present,
@@ -19,7 +19,7 @@ class nodesonlycron {
 # for local configuration, but we have master/slave setup
 
     cron { "restartsmokeping":
-        command => "/etc/init.d/smokeping restart 2>&1 >>/dev/null",
+        command => "/etc/init.d/smokeping restart > /dev/null 2>&1",
         minute => fqdn_rand(60),
         hour => fqdn_rand(23),
         user => "root",
@@ -45,7 +45,7 @@ class cronjobs {
     }
 
     cron { aptupdate:
-        command => "apt-get update 2>&1 >>/dev/null",
+        command => "apt-get update > /dev/null 2>&1",
         hour => "3",
         user => "root",
         minute => $cron1,
@@ -54,14 +54,14 @@ class cronjobs {
     
    cron {
         "puppetagent":
-        command => "/usr/sbin/puppetd --test 2>&1 >>/dev/null",
+        command => "/usr/sbin/puppetd --test > /dev/null 2>&1",
         user => root,
         minute => [ $first, $second ],
     }
     
     cron {
         "reload-smokeping":
-        command => "/usr/sbin/service smokeping restart 2>&1 >/dev/null",
+        command => "/usr/sbin/service smokeping restart > /dev/null 2>&1",
         user => root,
         weekday => "*",
         hour => "3",
@@ -72,7 +72,7 @@ class cronjobs {
 # our munin module makes this useless
 # see msp01 example in nodes.pp if you want to enable specific plugins on a host
     cron { "munin-configure":
-        command => "/usr/sbin/munin-node-configure --shell | bash 2>&1 >>/dev/null",
+        command => "/usr/sbin/munin-node-configure --shell | bash > /dev/null 2>&1",
         user => root,
         hour => "3",
         weekday => "1",
