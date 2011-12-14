@@ -9,7 +9,7 @@ node basenode {
     include etcfiles
     include local_binaries
     include munin::client
-    munin::plugin { ["users"],
+    munin::plugin { ["users"]:
     }
     include nlnogrepokey
     include ssh
