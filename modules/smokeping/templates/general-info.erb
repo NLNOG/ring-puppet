@@ -1,0 +1,14 @@
+*** General ***
+
+@include /etc/smokeping/config.d/pathnames
+
+# Please edit this to suit your installation
+owner    = <%= sp_owner %>
+contact  = <%= sp_owner_email %>
+cgiurl   = <%= sp_cgi_url %>
+mailhost = <%= sp_mailhost %>
+# specify this to get syslog logging
+syslogfacility = local0
+# each probe is now run in its own process
+# disable this to revert to the old behaviour
+# concurrentprobes = no
