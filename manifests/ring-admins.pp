@@ -1,5 +1,5 @@
 class ring_admins {
-
+    include test
     add_user { job:
         email    => "job@instituut.net",
         company  => "Snijders IT",
