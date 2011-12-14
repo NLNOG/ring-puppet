@@ -9,7 +9,7 @@ MODE=slave
 # see smokeping(1)
 #
 # Mandatory configuration
-MASTER_URL=http://master02.ring.nlnog.net/cgi-bin/smokeping.cgi
+MASTER_URL=http://master02.ring.nlnog.net/cgi-bin/smokeping.fcgi
 SHARED_SECRET=/etc/smokeping/slave-secret
 #
 # Optional configuration
