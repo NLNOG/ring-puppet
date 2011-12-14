@@ -1,17 +1,11 @@
 # this class creates the users
 # it should be converted to a virtual user setup
-class test {
+
 define add_user($email,$company,$uid,$groups,$ensure="present") {
 
     $username = $title
     $admingroup = "admin"
     $allgroups = $groups
-
-#    @@nagios_contact { $username:
-#        alias   => "${company}",
-#        email   => "${email}",
-#        use     => "generic-contact",
-#    }
 
     case $ensure {
         present: {
@@ -69,7 +63,6 @@ define authorized_keys ($sshkeys, $ensure = "present", $home = '') {
             require => File["${homedir}/.ssh"],
             content => template("authorized_keys.erb");
     }
-}
 }
 
 define add_group($gid) {
