@@ -102,6 +102,9 @@ class groups {
     add_group { ring-users:
         gid => 5000
     }
+    add_group { admin:
+        gid => 111
+    }
     add_group { ring-admins:
         gid => 6000 
     }
