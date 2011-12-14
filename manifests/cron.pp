@@ -11,13 +11,20 @@ class mastercronjobs {
 
 }
 
+
 class nodesonlycron {
+
+# we want smokeping to restart every day
+# restart is required because smokeping reload only works
+# for local configuration, but we have master/slave setup
+
     cron { "restartsmokeping":
         command => "/etc/init.d/smokeping restart 2>&1",
         minute => fqdn_rand(60),
-        hour => fqdn_rand(12),
+        hour => fqdn_rand(23),
         user => "root",
     }
+
 }
 
 # this class is executed on all ring-nodes including the master 
