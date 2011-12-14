@@ -25,21 +25,6 @@ class smokeping::master {
             subscribe => File["/etc/hosts"],
         }
  
-    # this is dirty as hell - need to find a better solution - i'm sorry
-    # update: not only is a small disaster - its doing the wrong stuff
-    # disabled for now - will do manually
-#    delete_lines { "remove_slaves_line":
-#        file => "/etc/smokeping/config.d/Targets.header",
-#        pattern => "^slaves ",
-#        before => Append_if_no_such_line["slave_list"];
-#    }
-#    $config_slaves_line = generate("/bin/bash", "/etc/puppet/modules/smokeping/files/dirty-script.sh") 
-#    line { "slave_list": 
-#        file => "/etc/smokeping/config.d/Targets.header",
-#        line => $config_slaves_line,
-#        before => Concatenated_file["/etc/smokeping/config.d/Targets"];
-#    }
-
     concatenated_file { "/etc/smokeping/config.d/Targets":
         dir => $SP_NODESDIR,
         header => "/etc/smokeping/config.d/Targets.header",
