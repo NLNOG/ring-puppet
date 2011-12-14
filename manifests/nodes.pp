@@ -113,6 +113,7 @@ node 'staging01' inherits ringnode {
     $owners = ['job']
     include smokeping::slave
     include nagios_services
+    User <| group == ring-users |>
 }
 
 #### einde staging01 #####
