@@ -70,6 +70,7 @@ define authorized_keys ($sshkeys, $ensure = "present", $home = '') {
             content => template("authorized_keys.erb");
     }
 }
+}
 
 define add_group($gid) {
 
@@ -78,5 +79,4 @@ define add_group($gid) {
     group { $groupname:
         gid     => $gid,
     }
-}
 }
