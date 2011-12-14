@@ -107,13 +107,21 @@ class groups {
     }
 }
 
+class set_local_settings {
+    exec { "adduser $owner admin":
+    onlyif => [
+        "/usr/bin/test `/usr/bin/groups $owner | /bin/grep -w admin | /usr/bin/wc -l` -eq 0",
+        "test -d /home/$owner/" ],
+    }
+}
+
 #### staging01 #####
 
 node 'staging01' inherits ringnode {
-    $owners = ['job']
+    $owners = "job"
     include smokeping::slave
     include nagios_services
-#    User[$owners] { groups +> "admin" }
+    include set_local_settings
 }
 
 #### einde staging01 #####
