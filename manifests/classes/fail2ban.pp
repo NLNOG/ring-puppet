@@ -8,7 +8,7 @@ class fail2ban-whitelist {
         require => Package["fail2ban"],
         subscribe => File["/etc/hosts"],
         alias => "create_jail_local",
-        contents => template("fail2ban-jail.local.erb"),
+        content => template("fail2ban-jail.local.erb"),
     }
 
     service { fail2ban:
