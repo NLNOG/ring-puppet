@@ -9,6 +9,19 @@ class motd {
         source => "puppet:///files/etc/update-motd.d/50-landscape-sysinfo",
         require => Package["update-motd"],
     }
+     file { "/etc/update-motd.d/60-node-information":
+        ensure => present,
+        mode => 0755,
+        source => "puppet:///files/etc/update-motd.d/60-node-information",
+        require => Package["update-motd"],
+    }
+     file { "/etc/update-motd.d/nlnog-ring-logo":
+        ensure => present,
+        mode => 0755,
+        source => "puppet:///files/etc/update-motd.d/nlnog-ring-logo",
+        require => Package["update-motd"],
+    }
+ 
     file { "/etc/update-motd.d/91-release-upgrade":                             
         ensure => absent,                                                       
     }
