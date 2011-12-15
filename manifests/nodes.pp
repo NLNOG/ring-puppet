@@ -15,7 +15,6 @@ node basenode {
     include ssh
     include timezone
     include fail2ban-whitelist
-    include nagios::target
     $postfix_smtp_listen = "127.0.0.1"
     $root_mail_recipient = "ring-admins@ring.nlnog.net"
     $postfix_myorigin = ""
@@ -44,6 +43,7 @@ node 'master01' inherits basenode {
     nagios::service::http { $name:
         check_domain => "${name}"
     }
+    include nagios::target
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
 
@@ -64,6 +64,7 @@ node 'master02' inherits basenode {
     include smokeping::master
 
     include nagios_services
+    include nagios::target
     
     nagios::service::http { $name:
         check_domain => "${name}"
@@ -115,6 +116,7 @@ class groups {
 node 'staging01' inherits ringnode {
     $owner = "job"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -125,7 +127,9 @@ node 'staging01' inherits ringnode {
 
 node 'intouch01' inherits ringnode {
     $owner = "intouch"
+    
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -133,6 +137,7 @@ node 'intouch01' inherits ringnode {
 node 'bit01' inherits ringnode {
     $owner = "bit"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -140,6 +145,7 @@ node 'bit01' inherits ringnode {
 node 'coloclue01' inherits ringnode {
     $owner = "coloclue"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -147,6 +153,7 @@ node 'coloclue01' inherits ringnode {
 node 'widexs01' inherits ringnode {
     $owner = "widexs"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -154,6 +161,7 @@ node 'widexs01' inherits ringnode {
 node 'xlshosting01' inherits ringnode {
     $owner = "xlshosting"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -161,6 +169,7 @@ node 'xlshosting01' inherits ringnode {
 node 'interconnect01' inherits ringnode {
     $owner = "interconnect"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -168,6 +177,7 @@ node 'interconnect01' inherits ringnode {
 node 'cambrium01' inherits ringnode {
     $owner = "cambrium"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -175,6 +185,7 @@ node 'cambrium01' inherits ringnode {
 node 'cyso01' inherits ringnode {
     $owner = "cyso"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -182,6 +193,7 @@ node 'cyso01' inherits ringnode {
 node 'zylon01' inherits ringnode {
     $owner = "zylon"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -189,6 +201,7 @@ node 'zylon01' inherits ringnode {
 node 'duocast01' inherits ringnode {
     $owner = "duocast"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -196,6 +209,7 @@ node 'duocast01' inherits ringnode {
 node 'easyhosting01' inherits ringnode {
     $owner = "easyhosting"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -203,6 +217,7 @@ node 'easyhosting01' inherits ringnode {
 node 'previder01' inherits ringnode {
     $owner = "previder"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -210,6 +225,7 @@ node 'previder01' inherits ringnode {
 node 'leaseweb01' inherits ringnode {
     $owner = "leaseweb"
     include smokeping::slave
+    include nagios::target
     include nagios_servicesn
     include set_local_settings
 }
@@ -217,6 +233,7 @@ node 'leaseweb01' inherits ringnode {
 node 'nxs01' inherits ringnode {
     $owner = "nxs"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -224,6 +241,7 @@ node 'nxs01' inherits ringnode {
 node 'ic-hosting01' inherits ringnode {
     $owner = "ic-hosting"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -231,6 +249,7 @@ node 'ic-hosting01' inherits ringnode {
 node 'xs4all01' inherits ringnode {
     $owner = "xs4all"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -238,6 +257,7 @@ node 'xs4all01' inherits ringnode {
 node 'nedzone01' inherits ringnode {
     $owner = "nedzone"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -245,6 +265,7 @@ node 'nedzone01' inherits ringnode {
 node 'oxilion01' inherits ringnode {
     $owner = "oxilion"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -252,6 +273,7 @@ node 'oxilion01' inherits ringnode {
 node 'ebayclassifiedsgroup01' inherits ringnode {
     $owner = "ebayclassifiedsgroup"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -259,6 +281,7 @@ node 'ebayclassifiedsgroup01' inherits ringnode {
 node 'is01' inherits ringnode {
     $owner = "is"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -266,6 +289,7 @@ node 'is01' inherits ringnode {
 node 'surfnet01' inherits ringnode {
     $owner = "surfnet"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -273,6 +297,7 @@ node 'surfnet01' inherits ringnode {
 node 'prolocation01' inherits ringnode {
     $owner = "prolocation"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -280,6 +305,7 @@ node 'prolocation01' inherits ringnode {
 node 'in2ip01' inherits ringnode {
     $owner = "in2ip"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -287,6 +313,7 @@ node 'in2ip01' inherits ringnode {
 node 'netground01' inherits ringnode {
     $owner = "netground"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -294,6 +321,7 @@ node 'netground01' inherits ringnode {
 node 'totaalnet01' inherits ringnode {
     $owner = "totaalnet"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -301,6 +329,7 @@ node 'totaalnet01' inherits ringnode {
 node 'signet01' inherits ringnode {
     $owner = "signet"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -308,6 +337,7 @@ node 'signet01' inherits ringnode {
 node 'tripleit01' inherits ringnode {
     $owner = "tripleit"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -315,6 +345,7 @@ node 'tripleit01' inherits ringnode {
 node 'jaguarnetwork01' inherits ringnode {
     $owner = "jaguarnetwork"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -322,6 +353,7 @@ node 'jaguarnetwork01' inherits ringnode {
 node 'tuxis01' inherits ringnode {
     $owner = "tuxis"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -330,6 +362,7 @@ node 'tenet01' inherits ringnode {
     $owner = "tenet"
     $nagios_ping_rate = '!300.0,20%!500.0,60%'
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -338,6 +371,7 @@ node 'bigwells01' inherits ringnode {
     $owner = "bigwells"
     $nagios_ping_rate = '!250.0,20%!500.0,60%'
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -345,6 +379,7 @@ node 'bigwells01' inherits ringnode {
 node 'atrato01' inherits ringnode {
     $owner = "atrato"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -352,6 +387,7 @@ node 'atrato01' inherits ringnode {
 node 'tdc01' inherits ringnode {
     $owner = "tdc"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -359,6 +395,7 @@ node 'tdc01' inherits ringnode {
 node 'netability01' inherits ringnode {
     $owner = "netability"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -366,6 +403,7 @@ node 'netability01' inherits ringnode {
 node 'unilogicnetworks01' inherits ringnode {
     $owner = "unilogicnetworks"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -373,6 +411,7 @@ node 'unilogicnetworks01' inherits ringnode {
 node 'maverick01' inherits ringnode {
     $owner = "maverick"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -381,6 +420,7 @@ node 'acsystemy01' inherits ringnode {
     $owner = "acsystemy"
     $location = "14.247578,53.910034"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -388,6 +428,7 @@ node 'acsystemy01' inherits ringnode {
 node 'netsign01' inherits ringnode {
     $owner = "netsign"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -395,6 +436,7 @@ node 'netsign01' inherits ringnode {
 node 'rrbone01' inherits ringnode {
     $owner = "rrbone"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -402,6 +444,7 @@ node 'rrbone01' inherits ringnode {
 node 'hosteam01' inherits ringnode {
     $owner = "hosteam"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -412,6 +455,7 @@ node 'msp01' inherits ringnode {
     munin::plugin { ["sensors_volt", "sensors_temp", "sensors_fan"]:
         ensure => "sensors_" 
     }
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -419,6 +463,7 @@ node 'msp01' inherits ringnode {
 node 'inotel01' inherits ringnode {
     $owner = "inotel"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -426,6 +471,7 @@ node 'inotel01' inherits ringnode {
 node 'fremaks01' inherits ringnode {
     $owner = "fremaks"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -433,6 +479,7 @@ node 'fremaks01' inherits ringnode {
 node 'blix01' inherits ringnode {
     $owner = "blix"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -440,6 +487,7 @@ node 'blix01' inherits ringnode {
 node 'portlane01' inherits ringnode {
     $owner = "portlane"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -447,6 +495,7 @@ node 'portlane01' inherits ringnode {
 node 'solido01' inherits ringnode {
     $owner = "solido"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -454,6 +503,7 @@ node 'solido01' inherits ringnode {
 node 'digmia01' inherits ringnode {
     $owner = "digmia"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -461,6 +511,7 @@ node 'digmia01' inherits ringnode {
 node 'rootlu01' inherits ringnode {
     $owner = "rootlu"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -468,6 +519,7 @@ node 'rootlu01' inherits ringnode {
 node 'globalaxs01' inherits ringnode {
     $owner = "globalaxs"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -475,6 +527,7 @@ node 'globalaxs01' inherits ringnode {
 node 'nebula01' inherits ringnode {
     $owner = "nebula"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -482,6 +535,7 @@ node 'nebula01' inherits ringnode {
 node 'tilaa01' inherits ringnode {
     $owner = "tilaa"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -490,6 +544,7 @@ node 'nautile01' inherits ringnode {
     $owner = "nautile"
     $nagios_ping_rate = '!450.0,20%!700.0,60%'
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -498,6 +553,7 @@ node 'voxel01' inherits ringnode {
     $owner = "voxel"
     $nagios_ping_rate = '!250.0,20%!500.0,60%'
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -506,6 +562,7 @@ node 'voxel02' inherits ringnode {
     $owner = "voxel"
     $nagios_ping_rate = '!450.0,20%!700.0,60%'
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -513,6 +570,7 @@ node 'voxel02' inherits ringnode {
 node 'neotelecoms01' inherits ringnode {
     $owner = "neotelecoms"
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
@@ -521,6 +579,7 @@ node 'apnic01' inherits ringnode {
     $owner = "apnic"
     $nagios_ping_rate = '!500.0,20%!800.0,60%'
     include smokeping::slave
+    include nagios::target
     include nagios_services
     include set_local_settings
 }
