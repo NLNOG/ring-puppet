@@ -451,6 +451,7 @@ node 'hosteam01' inherits ringnode {
 
 node 'msp01' inherits ringnode {
     $owner = "msp"
+    $location = "51.525089,-0.072224"
     include smokeping::slave
     munin::plugin { ["sensors_volt", "sensors_temp", "sensors_fan"]:
         ensure => "sensors_" 
