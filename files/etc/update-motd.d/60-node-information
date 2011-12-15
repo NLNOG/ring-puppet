@@ -26,7 +26,7 @@ echo "  Location: $LOCATION, $REGION - AS$ASN ($ASINFO)"
 
 echo 
 echo "  Smokeping: http://ring.nlnog.net/smokeping/$NODE"
-echo "  Nagios:    http://ring.nlnog.net/cgi-bin/nagios3/status.cgi?navbarsearch=1&host=$NODEFQDN"
+echo "  Nagios:    http://ring.nlnog.net/cgi-bin/nagios3/status.cgi?host=$NODEFQDN"
 echo "  Munin:     http://ring.nlnog.net/munin/ring.nlnog.net/$NODEFQDN"
 
 echo
