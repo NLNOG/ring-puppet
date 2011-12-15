@@ -19,14 +19,15 @@ cat /etc/update-motd.d/ring.nlnog.net-logo
 
 echo
 echo "  Welcome on $NODEFQDN, an NLNOG RING Node!"
-echo "  System operated by $LOCALADMIN - $LOCATION, $REGION - AS$ASN ($ASINFO)"
+echo "  System operated by $LOCALADMIN"
+echo "  Location: $LOCATION, $REGION - AS$ASN ($ASINFO)"
 
 # Munin / Nagios / Smokeping
 
 echo 
-echo "  Munin:     http://ring.nlnog.net/munin/ring.nlnog.net/$NODEFQDN"
-echo "  Nagios:    http://ring.nlnog.net/cgi-bin/nagios3/status.cgi?navbarsearch=1&host=$NODEFQDN"
 echo "  Smokeping: http://master02.ring.nlnog.net/smokeping/smokeping.fcgi?target=$NODE"
+echo "  Nagios:    http://ring.nlnog.net/cgi-bin/nagios3/status.cgi?navbarsearch=1&host=$NODEFQDN"
+echo "  Munin:     http://ring.nlnog.net/munin/ring.nlnog.net/$NODEFQDN"
 
 echo
 echo "  For more information, please visit http://ring.nlnog.net/"
