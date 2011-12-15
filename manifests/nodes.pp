@@ -379,6 +379,7 @@ node 'maverick01' inherits ringnode {
 
 node 'acsystemy01' inherits ringnode {
     $owner = "acsystemy"
+    $location = "14.247578,53.910034"
     include smokeping::slave
     include nagios_services
     include set_local_settings

@@ -7,6 +7,11 @@ class nagios::target {
         alias => $hostname,
         use => 'generic-host',
     }
+    if ($location != '') {
+        Nagios_host["${fqdn}"] {
+            notes => "latlng: ${location}",
+        }
+    }
 
     if ($nagios_parents != '') {
         Nagios_host["${fqdn}"] { parents => $nagios_parents }
