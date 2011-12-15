@@ -1022,6 +1022,17 @@ class ring_users {
 
 ##### END apnic #####
 
+##### BEGIN man-da #####
+
+    add_user { man-da:
+        email => "noc@man-da.de",
+        company => "man-da.de GmbH",
+        uid => "5058",
+        groups => ['ring-users'],
+    }
+
+##### END man-da #####
+
 
 
 }
