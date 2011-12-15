@@ -77,11 +77,15 @@ class smokeping::master {
 
     service { "smokeping":
         ensure => running, 
-        subscribe => File["/etc/smokeping/config.d/Slaves"],
+    }
+
+    exec { "/usr/bin/killall -HUP /usr/bin/perl":
+        alias   => "hup_fcgi_stuff",
     }
 
     exec { "/etc/init.d/smokeping reload":
-        subscribe => File["/etc/smokeping/config.d/Targets"],
+        subscribe => File["/etc/smokeping/config.d/Targets", "/etc/smokeping/config.d/Slaves"],
         refreshonly => true
+        require => Exec["hup_fcgi_stuff"],
     }
 }
