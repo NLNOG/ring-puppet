@@ -180,3 +180,6 @@ ff02::2 ip6-allrouters
 83.167.57.42    neotelecoms01   neotelecoms01.ring.nlnog.net
 2001:1b48:100:1::8218:42    neotelecoms01   neotelecoms01.ring.nlnog.net
 
+203.133.248.14  apnic01 apnic01.ring.nlnog.net
+2401:2000:6660::14  apnic01 apnic01.ring.nlnog.net
+
