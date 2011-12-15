@@ -81,11 +81,11 @@ class smokeping::master {
 
     exec { "/usr/bin/killall -HUP /usr/bin/perl":
         alias   => "hup_fcgi_stuff",
+        subscribe => File["/etc/smokeping/config.d/Targets", "/etc/smokeping/config.d/Slaves"],
     }
 
     exec { "/etc/init.d/smokeping reload":
         subscribe => File["/etc/smokeping/config.d/Targets", "/etc/smokeping/config.d/Slaves"],
         refreshonly => true,
-        require => Exec["hup_fcgi_stuff"],
     }
 }
