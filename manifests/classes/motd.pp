@@ -17,7 +17,7 @@ class motd {
     }
      file { "/etc/update-motd.d/ring.nlnog.net-logo":
         ensure => present,
-        mode => 0755,
+        mode => 0644,
         source => "puppet:///files/etc/update-motd.d/ring.nlnog.net-logo",
         require => Package["update-motd"],
     }
