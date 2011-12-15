@@ -80,7 +80,7 @@ class smokeping::master {
         subscribe => File["/etc/smokeping/config.d/Slaves"],
     }
 
-    exec { "/etc/init.d/smokeping restart":
+    exec { "/etc/init.d/smokeping reload":
         subscribe => File["/etc/smokeping/config.d/Targets"],
         refreshonly => true
     }
