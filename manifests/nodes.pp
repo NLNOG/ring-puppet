@@ -650,6 +650,7 @@ node 'atrato02' inherits ringnode {
 
 node 'man-da01' inherits ringnode {
     $owner = "man-da"
+    $location = "49.86170,8.68210"
     include smokeping::slave
     include nagios::target
     include nagios_services
