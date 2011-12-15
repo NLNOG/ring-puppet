@@ -518,6 +518,7 @@ node 'neotelecoms01' inherits ringnode {
 
 node 'apnic01' inherits ringnode {
     $owner = "apnic"
+    $nagios_ping_rate = '!500.0,20%!800.0,60%'
     include smokeping::slave
     include nagios_services
     include set_local_settings
