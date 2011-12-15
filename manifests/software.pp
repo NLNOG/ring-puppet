@@ -15,6 +15,9 @@ class master_software {
 }
 
 class nettools {
+    package { "bash-completion":
+        ensure => latest,
+    }
     package { "update-motd":
         ensure => present,
     }
