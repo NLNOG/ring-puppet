@@ -20,4 +20,13 @@ class syslog_ng::server inherits syslog_ng {
         hour    => "0",
         minute  => "0";
     } # cron
+
+    file {                                                                      
+        "/etc/init.d/syslog-ng":                                                
+        owner   => root,                                                        
+        group   => root,                                                        
+        mode    => 0755,                                                        
+        source  => "puppet:///files/etc/init.d/syslog-ng",                      
+    }
+
 } # class::syslog_ng::server
