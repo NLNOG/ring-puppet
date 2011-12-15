@@ -64,7 +64,6 @@ class smokeping::slave::install {
         "/etc/smokeping/slave-secret":
             mode => 0600, owner => smokeping, group => smokeping,
             content =>  $random_value,
-            before => Package["smokeping"],
             require => File["/etc/smokeping"],
     }
 
