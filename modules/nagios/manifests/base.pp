@@ -76,7 +76,7 @@ class nagios::base {
         purge => true,
         recurse => true,
         notify => Service['nagios'],
-        mode => '0750', owner => root, group => nagios;
+        mode => '0751', owner => root, group => nagios;
     }
     Package <<| tag == 'nagios::plugin::deploy::package' |>>
     File <<| tag == 'nagios::plugin::deploy::file' |>>
