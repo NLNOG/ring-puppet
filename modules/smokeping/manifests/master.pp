@@ -85,7 +85,7 @@ class smokeping::master {
 
     exec { "/etc/init.d/smokeping reload":
         subscribe => File["/etc/smokeping/config.d/Targets", "/etc/smokeping/config.d/Slaves"],
-        refreshonly => true
+        refreshonly => true,
         require => Exec["hup_fcgi_stuff"],
     }
 }
