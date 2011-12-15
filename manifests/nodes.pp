@@ -515,3 +515,10 @@ node 'neotelecoms01' inherits ringnode {
     include nagios_services
     include set_local_settings
 }
+
+node 'apnic01' inherits ringnode {
+    $owner = "apnic"
+    include smokeping::slave
+    include nagios_services
+    include set_local_settings
+}
