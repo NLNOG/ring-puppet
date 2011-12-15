@@ -39,13 +39,13 @@ class smokeping::slave::install {
     package { "smokeping": 
         ensure => latest,
         before => Service["smokeping"],
-        require => Package["apache2"],
     }
 
     file {
         "/etc/default/smokeping":
             mode => 0644, owner => root, group => root,
             source => "puppet:///smokeping/defaults-smokeping",
+            before => Package["smokeping"]
     }
 
     service { "smokeping":
@@ -55,12 +55,17 @@ class smokeping::slave::install {
     
     # this could use some improvement
     $random_value = fqdn_rand(1000000)
-    
+
+    file { "/etc/smokeping":
+        ensure => directory,
+        mode => 0644, owner => root, group => root,
+    }
     file {
         "/etc/smokeping/slave-secret":
             mode => 0600, owner => smokeping, group => smokeping,
             content =>  $random_value,
-            require => Package["smokeping"],
+            before => Package["smokeping"],
+            require => File["/etc/smokeping"],
     }
 
    smokeping::register { $fqdn: }
