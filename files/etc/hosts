@@ -183,3 +183,6 @@ ff02::2 ip6-allrouters
 203.133.248.14  apnic01 apnic01.ring.nlnog.net
 2401:2000:6660::14  apnic01 apnic01.ring.nlnog.net
 
+78.152.36.10    atrato02    atrato02.ring.nlnog.net
+2a02:d28:5580:a::52 atrato02    atrato02.ring.nlnog.net
+

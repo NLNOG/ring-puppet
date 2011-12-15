@@ -637,3 +637,13 @@ node 'apnic01' inherits ringnode {
     include nagios_services
     include set_local_settings
 }
+
+node 'atrato02' inherits ringnode {
+    $owner = "atrato"
+    $location = "40.717884,-74.008938"
+    $nagios_ping_rate = '!200.0,20%!400.0,60%'
+    include smokeping::slave
+    include nagios::target
+    include nagios_services
+    include set_local_settings
+}
