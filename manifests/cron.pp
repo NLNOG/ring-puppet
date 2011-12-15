@@ -44,6 +44,12 @@ class cronjobs {
         ensure => absent,
     }
 
+    cron { update_motd:
+        command => "run-parts --lsbsysinit /etc/update-motd.d > /var/run/motd",
+        hour => "7",
+        minute => "15",
+        user => "root",
+    }
     cron { aptupdate:
         command => "apt-get update > /dev/null 2>&1",
         hour => "3",
