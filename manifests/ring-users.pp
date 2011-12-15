@@ -1030,7 +1030,12 @@ class ring_users {
         uid => "5058",
         groups => ['ring-users'],
     }
-
+    authorized_keys { "man-da":
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEA9g8CEQtrvAp25l6x3b0i/h9M+ZgJYz1DdKgwtXoSQ8Uc8w/wUH9Jkf02uscuZ/SGFNm1gPt0Fx1UVFMcXgfVfBmM8bfQdoFFAGftIpHjGBWXlVlbTJh91wOQtk/pF32eLtgf2iaB5huFrxLv2coA3ms6aZ0orzENanSOcx8r1k5lPPoBUC5FwPTZQ7jmmb9V5kKkOTHGw2f5GaMSOSvKbIGM3VjOrg7pJR/Smxz+0ath9KQifLS+II5yYen2UyL+kSGGvD/b1uOeYQn4a0qycuFM3C2PDsI0NB04kNOiIwq9Kzuh3/EkAGKUTLh5sfbaGnVvrVi6ubGLAdSpT00cbxJ36oG1jN4cGBmOgNS12QzO4nnl0ziMoH5IbxY4CvqFe6s7QfSB7F5I6lgknxnnTiONVDownI4v4rIs97N5DB3RERKYzhEM8WNUdD+2b5Ndt6N5KI67P6YwTZSVbgd/FLiReII8w3+00YMt7Gx3Y2GK7QxAwKsZ+PnCtZ05XHX7m9qw3h4ufq7W+Qzah2iNR/NgGaUsBNYjI7ppF0HzVGtCNH1mspZMPQmzJGJLDxxY+wCPxUJna87X91Y1CV7JNkabR3pWYABx8KgBxZXPYSpui346wbEXRsag/Ndo61mQttrHhJvXvFvq6hpgievg00sK5LQtHnsDLcoRFtLUfnc= lysis@sparkles.man-da.de 2009-07-31",
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEA8WX9IBwhptxxIXYwP24tjNGayBJy8/N6L7OLJnU2v8ce9TMj5v6wj1ATlztKxSxX6aSmXjlHWsMjBQjuFxzS6iO0Ok5waPDHVToH68gcPOJ4dbpPakDdiBMgfUYzF6oSAp1Yz6m4uzyelOVmVfYW1pU5BcK0YZ4vhY/5p3YIOsJiSPSwaipg0GkBYDg8hxRyqBzTYbzbS8vQQ21mwf6Bf3/z4lEtpeoschR3Zwt0oVdoeA9nTVqJl6HAcsp3uWLE+0TLnELh3XvyaNj7DlRRG895yi3WyJHHAcCx3LVfCXMy43b55UfXCU7XWVJH5JknxU18HFgxfM8Ad5bv0VM3aJQKU9Xbf9q691S82B7lQAYRI+mYz548MMyBbHQM2U00qzURDhOm7E3Vy5ombBIlmSPJSWQERjVzsGwcYIziBJEfUntbzuP7Ai/jQLydGFia2p4QAXZQchMFL0rn6WocD1xzt4xVCHUp4QYrTHpC0pMYjKNrX6kFQtapnpJxhAKCVW5T2sHefHcXdC7pBKcbHkTjIh8jKjzC9EBfIorrMlCMozNqI90/utfQXnjJ/t6Kuag0wpDFILcCW1Xdhv3N7EjCaP43skDsA6DQcp+9deJSgeyO7X6niH7nyugYdcc7Flj1fs9v5S6H2CnBtKOfb1g9jKz5aRcdHA3c+l+cPR8= lysis@twinkles.man-da.de 2011-05-23",
+        ],
+    }
 ##### END man-da #####
 
 
