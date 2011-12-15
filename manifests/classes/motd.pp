@@ -15,10 +15,10 @@ class motd {
         source => "puppet:///files/etc/update-motd.d/60-node-information",
         require => Package["update-motd"],
     }
-     file { "/etc/update-motd.d/nlnog-ring-logo":
+     file { "/etc/update-motd.d/ring.nlnog.net-logo":
         ensure => present,
         mode => 0755,
-        source => "puppet:///files/etc/update-motd.d/nlnog-ring-logo",
+        source => "puppet:///files/etc/update-motd.d/ring.nlnog.net-logo",
         require => Package["update-motd"],
     }
  
