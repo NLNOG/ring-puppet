@@ -1,0 +1,32 @@
+#!/bin/sh
+
+NODEFQDN=$(hostname)
+NODE=$(hostname -s)
+ORG=$(echo $NODE |sed 's/..$//')
+LOCALADMIN=$(getent passwd $ORG | cut -d : -f 5)
+
+# ASN Info
+IPV4ADDR=$(ip -4 route get 255.255.255.255 | grep src | sed 's/.*src //' | sed 's/ $//')
+#IPV4ADDR=$(dig +short A $NODEFQDN | grep -v '\.$')
+ASN=$(dig +short TXT $(echo $IPV4ADDR | awk -F . '{print $4"."$3"."$2"."$1".asn.routeviews.org"}') | awk '{print $1}' | sed 's/"//g')
+CYMRUASINFO=$(dig +short TXT AS$ASN.asn.cymru.com | sed 's/"//g')
+LOCATION=$(echo $CYMRUASINFO | cut -d \| -f 2 | sed 's/^ //' | sed 's/ $//')
+REGION=$(echo $CYMRUASINFO | cut -d \| -f 3 | sed 's/^ //' | sed 's/ $//')
+ASINFO=$(echo $CYMRUASINFO | cut -d \| -f 5 | sed 's/^ //' | sed 's/ $//')
+
+# NLNOG RING Logo - can be disabled :)
+cat /etc/update-motd.d/ring.nlnog.net-logo
+
+echo
+echo "  Welcome on $NODEFQDN, an NLNOG RING Node!"
+echo "  System operated by $LOCALADMIN - $LOCATION, $REGION - AS$ASN ($ASINFO)"
+
+# Munin / Nagios / Smokeping
+
+echo 
+echo "  Munin:     http://ring.nlnog.net/munin/ring.nlnog.net/$NODEFQDN"
+echo "  Nagios:    http://ring.nlnog.net/cgi-bin/nagios3/status.cgi?navbarsearch=1&host=$NODEFQDN"
+echo "  Smokeping: http://master02.ring.nlnog.net/smokeping/smokeping.fcgi?target=$NODE"
+
+echo
+echo "  For more information, please visit http://ring.nlnog.net/"
