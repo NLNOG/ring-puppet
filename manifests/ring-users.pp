@@ -265,7 +265,7 @@ class ring_users {
     
     add_user { xs4all:
         email   => "noc@xs4all.net",
-        company => "XS4All",
+        company => "XS4ALL",
         uid     => 5015,
         groups  => ['ring-users']
     }
