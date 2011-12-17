@@ -75,7 +75,8 @@ node 'master02' inherits basenode {
 
 }
 
-# we don't want apache running on regular ringnodes. smokeping installs apache, so we just force it down here. 
+# we don't want apache running on regular ringnodes. smokeping installs 
+# apache, so we just force it down here. 
 class apache2 {
     service { "apache2":
         alias => "apache",
@@ -88,6 +89,7 @@ class no-apache2 {
     service { "apache2":
         enable => false,
         ensure => stopped,
+        require => Package["apache2"],
     }
 }
 
