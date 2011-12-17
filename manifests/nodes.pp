@@ -652,6 +652,7 @@ node 'atrato02' inherits ringnode {
 
 node 'webair01' inherits ringnode {
     $owner = "webair"
+    $location = "40.7276,-73.6344"
     include smokeping::slave
     include nagios::target
     include nagios_services
