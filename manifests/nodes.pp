@@ -648,11 +648,11 @@ node 'atrato02' inherits ringnode {
     include set_local_settings
 }
 
-node 'man-da01' inherits ringnode {
-    $owner = "man-da"
-    $location = "49.86170,8.68210"
+node 'webair01' inherits ringnode {
+    $owner = "webair"
     include smokeping::slave
     include nagios::target
     include nagios_services
     include set_local_settings
 }
+

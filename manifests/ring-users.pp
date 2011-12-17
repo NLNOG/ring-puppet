@@ -1038,6 +1038,22 @@ class ring_users {
     }
 ##### END man-da #####
 
+##### BEGIN webair #####
+
+    add_user { webair:
+        email => "ipadmin@webair.com",
+        company => "Webair Internet Development Inc",
+        uid => "5059",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "webair":
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA3w8QoEnKfDg/TapwoJwszf+kNQiTdryZY1OV7OmexU8vzDeW0CEUuQx7T/jX4tqnZ52tHcfIiUWZR9XJmYImraHb1Bvq3Z0jce/LYXBGCe5b5QZoN9XPu4MFYl2sTiZePhbztqmz5TZDdbT5rRTb/dqFlrRqU1HA83C/BOx8Tq1SxCM1gf6ctHOGdEX+DuRl6RFVPVgcfRW5K5ZeUNac4Fy1i9tZxaE3974P4zNmk9x0NwLnM5EByCAU2YzTb+wTd4g0wWT8JGUzoVL8AIg8AyCMnLy6dRGXc2FgSx0vzCMuqvW5Q/FJj8aYZCnpBwqnc/v0/ADsXGeQK9dFBLtoow== sagibrody@leroy.webair.com",
+            ],
+    }
+##### END webair #####
+
+
 
 
 }
