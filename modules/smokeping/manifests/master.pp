@@ -67,7 +67,13 @@ class smokeping::master {
         ensure => present,
         require => Package["smokeping"],
     }
-    
+
+    file {
+        "/var/lib/smokeping":
+        mode => 0775, owner => "www-data", group => "smokeping",
+        ensure => directory,
+        require => Package["smokeping"],
+    }
     file {
         "/etc/smokeping/config.d/General":
             mode => 0644, owner => root, group => root,

@@ -9,7 +9,7 @@ node basenode {
     include etcfiles
     include local_binaries
     include munin::client
-    munin::plugin { ["users", "tcp"]:
+    munin::plugin { ["users", "tcp", "ntp_offset"]:
     }
     include nlnogrepokey
     include ssh
@@ -652,7 +652,7 @@ node 'atrato02' inherits ringnode {
 
 node 'webair01' inherits ringnode {
     $owner = "webair"
-    $location = "40.7276,-73.6344"
+    $location = "40.722529,-73.632961"
     include smokeping::slave
     include nagios::target
     include nagios_services
