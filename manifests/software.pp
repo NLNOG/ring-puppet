@@ -24,6 +24,9 @@ class nettools {
     package { "iperf":
         ensure => present,
     }
+    package { "scamper":
+        ensure => latest,
+    }
     package { ["iputils-ping", "iputils-tracepath"]:
         ensure => latest,
     }
