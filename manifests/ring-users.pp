@@ -1085,7 +1085,7 @@ class ring_users {
     add_user { concepts-ict:
         email => "noc@concepts.nl",
         company => "Concepts ICT",
-        uid => "5057",
+        uid => "5060",
         groups => ['ring-users'],
     }
     authorized_keys { "concepts-ict":
