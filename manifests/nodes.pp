@@ -614,7 +614,7 @@ node 'voxel01' inherits ringnode {
 node 'voxel02' inherits ringnode {
     $owner = "voxel"
     $location = "1.295461,103.789787"
-    $nagios_ping_rate = '!450.0,20%!700.0,60%'
+    $nagios_ping_rate = '!550.0,20%!900.0,60%'
     include smokeping::slave
     include nagios::target
     include nagios_services
