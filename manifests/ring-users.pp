@@ -1080,7 +1080,21 @@ class ring_users {
 
 ##### END webair #####
 
+##### BEGIN concepts-ict #####
 
+    add_user { concepts-ict:
+        email => "noc@concepts.nl",
+        company => "Concepts ICT",
+        uid => "5057",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "concepts-ict":
+        sshkeys => [
+            "ssh-dss AAAAB3NzaC1kc3MAAACBAK0QLpVtmgMtbAZqyS/Ts/QXWil5OEC+/S5sJ8lp5NFPS2Mb6RN8jowrbckVb0vIH8l99uKbZ8KXE62u/ummMHpwU78iIJDBmSYc2c3zSMFgNHpc39gPzMpybJPvNGBrymY9pnD4dgsXiSnvhdXpkv2OXIK+zmislBxp6VPPcQdzAAAAFQCwagLER1xTBZUjqOjUSgqZRbhBQQAAAIBfr//KC96RQ9R7/xbHf5oMyuBQt37ty+cCtizj7YDuCmk5lQfTDFQTE6TKOF5JgOXR5WYyNj+wIP7Lajhk/aNf1sdFHS02Py92mmrI2tgUsPKmoKOWXkeYClHsdxlFB37TTRV/HzzY+tqUoO5Py2WOyknW21bXUomnmklaGUljoQAAAIARZE6j3HkaXHYa7uuMfsDHbalgnyTkRRDhL6phiXUhzNG7AxoXQe5Zb+ePqAHmrxIIWRl4LeVpR00Af+04L69xMeDtpWjSQa8LSRTcDuCkxoYb3kH3YOXRl/1CXQaKXkEraoMuaY7yD5ooViUuDOtTbdVgWKOLEWYG/J7k+Lab7g== richard@paradise",
+            ],
+    }
+
+##### END concepts-ict #####
 
 
 }

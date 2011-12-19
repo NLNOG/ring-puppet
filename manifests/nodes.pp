@@ -659,3 +659,12 @@ node 'webair01' inherits ringnode {
     include set_local_settings
 }
 
+node 'concepts-ict01' inherits ringnode {
+    $owner = "concepts-ict"
+    $location = "51.592992,4.802703"
+    include smokeping::slave
+    include nagios::target
+    include nagios_services
+    include set_local_settings
+}
+
