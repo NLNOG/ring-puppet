@@ -198,3 +198,5 @@ ff02::2 ip6-allrouters
 95.141.83.106   dataoppdrag01   dataoppdrag01.ring.nlnog.net
 2a02:f58:5:5::2 dataoppdrag01   dataoppdrag01.ring.nlnog.net
 
+91.224.149.112  tetaneutral01   tetaneutral01.ring.nlnog.net
+2a01:6600:8081:7000::1  tetaneutral01   tetaneutral01.ring.nlnog.net

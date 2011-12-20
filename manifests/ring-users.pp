@@ -1094,5 +1094,22 @@ class ring_users {
 
 ##### END dataoppdrag #####
 
+##### BEGIN tetaneutral #####
+
+    add_user { tetaneutral:
+        email => "noc@tetaneutral.net",
+        company => "Association tetaneutral.net",
+        uid => "5062",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "tetaneutral":
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEAm6PG/dmzT1tmS4UKHnH2iNSrWrIi+QfDHv9UXI1kMqulRDfb61nyR+jgC8lBQFyTSinFtL7jzkh31kx7fIK/4adYGRmPLuXkOY2lT/rhhO9PJA5PVZJbM4kggJ/e+nSlXt3mbwsCv6qyzHaavdaQK1IKNgkY3OW4Ru5LDCJ6UfM= guerby"
+            ],
+    }
+
+##### END tetaneutral #####
+
+
 
 }

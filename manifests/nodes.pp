@@ -677,3 +677,12 @@ node 'dataoppdrag01' inherits ringnode {
     include set_local_settings
 }
 
+node 'tetaneutral01' inherits ringnode {
+    $owner = "tetaneutral"
+    $location = "43.61847,1.42075"
+    include smokeping::slave
+    include nagios::target
+    include nagios_services
+    include set_local_settings
+}
+
