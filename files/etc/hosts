@@ -194,3 +194,7 @@ ff02::2 ip6-allrouters
 
 85.113.233.194  concepts-ict01  concepts-ict01.ring.nlnog.net
 2001:838:76:20::2  concepts-ict01  concepts-ict01.ring.nlnog.net
+
+95.141.83.106   dataoppdrag01   dataoppdrag01.ring.nlnog.net
+2a02:f58:5:5::2 dataoppdrag01   dataoppdrag01.ring.nlnog.net
+
