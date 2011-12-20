@@ -1112,21 +1112,18 @@ class ring_users {
 
 ##### BEGIN jumpnetworks #####
 
-    add_user { jumpnetworks:
+    add_user { jump:
         email => "admins@jump.net.uk",
         company => "Jump Networks Ltd",
         uid => "5063",
         groups => ['ring-users'],
     }
-    authorized_keys { "jumpnetworks":
+    authorized_keys { "jump":
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAnV76xJg0IH0nuQ+W3ZRRrfXtK0Vn9eVHghl0zBxant4lx974NRZ3RsVzAaaa8CjX0Sn3dEjd9yMFaoWximMMt0pGQX1abth6qfxdskyyRtf5QVsZoojPOfrgNDx0MJn+VKoqI1J6XTzHdGjPlgqa9kwlUPhs8ejc9pLhCljVUJFD1nzM+pqvRE16ocWv6lPAWaFVkEL4EYB61WARjLve/9+bHTscNw9nLWjVpGDe1HN7wiztQ7Nd5CoGJumLCU6wInd0hx+mznNbTsn9PV107aU8aEBQgRYH9Kux9ey4k0ebDK1ggyYN4ALFwTlngDj0Do8mOUHxATgPXpDnOBDmbw== jamesr@Airbus-MA.local"
             ],
     }
 
 ##### END jumpnetworks #####
-
-
-
 
 }

@@ -201,6 +201,6 @@ ff02::2 ip6-allrouters
 91.224.149.112  tetaneutral01   tetaneutral01.ring.nlnog.net
 2a01:6600:8081:7000::1  tetaneutral01   tetaneutral01.ring.nlnog.net
 
-212.13.217.117  jumpnetworks01  jumpnetworks01.ring.nlnog.net
-2001:ba8:0:1d5:216:3eff:fe81:d970   jumpnetworks01  jumpnetworks01.ring.nlnog.net
+212.13.217.117  jump01  jump01.ring.nlnog.net
+2001:ba8:0:1d5:216:3eff:fe81:d970   jump01  jump01.ring.nlnog.net
 

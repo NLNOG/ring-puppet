@@ -686,8 +686,8 @@ node 'tetaneutral01' inherits ringnode {
     include set_local_settings
 }
 
-node 'jumpnetworks01' inherits ringnode {
-    $owner = "jumpnetworks"
+node 'jump01' inherits ringnode {
+    $owner = "jump01"
     include smokeping::slave
     include nagios::target
     include nagios_services
