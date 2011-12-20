@@ -668,3 +668,12 @@ node 'concepts-ict01' inherits ringnode {
     include set_local_settings
 }
 
+node 'dataoppdrag01' inherits ringnode {
+    $owner = "dataoppdrag"
+    $location = "60.295349,5.255753"
+    include smokeping::slave
+    include nagios::target
+    include nagios_services
+    include set_local_settings
+}
+

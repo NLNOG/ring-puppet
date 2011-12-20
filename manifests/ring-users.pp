@@ -1076,5 +1076,21 @@ class ring_users {
 
 ##### END concepts-ict #####
 
+##### BEGIN dataoppdrag #####
+
+    add_user { dataoppdrag:
+        email => "noc@dataoppdrag.no",
+        company => "DataOppdrag AS",
+        uid => "5061",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "dataoppdrag":
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCcKfBd/eaZRcn9l9Ng+5vCT45xOcXZ8Wy2KbgFaLoc9uM47BNIRLODvg/VcqZ9UtR0rCMtYhlMNXr9iXGLQYUsyIY8ijlAY1Zj3M1Xb3HMZ+G+SwDYYhNchvNfEuzqHerXN4Hgx2GJbxd7wC0jW0/Xb2CT++eEVmI0nXDJuOljXW4cBGXZ8QgdGVMfbMkOKpPt8CP1pjtWH033TeWQ1wNtqSF/fVVcSnp7pjRabWsMOFJJsvuIZ7ZiANoJy6qdYYMt4xQOhFbuTbaMKOCwJkL53cq9XritMAxSmjLvMyqRs0gbMWHaVmbBWqt+0/VfRGBtwZRBcUGqbj8UHk2xhv2F ole@dataoppdrag.no"
+            ],
+    }
+
+##### END dataoppdrag #####
+
 
 }
