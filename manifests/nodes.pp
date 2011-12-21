@@ -240,7 +240,7 @@ node 'leaseweb01' inherits ringnode {
     $location = "52.391224,4.665155"
     include smokeping::slave
     include nagios::target
-    include nagios_servicesn
+    include nagios_services
     include set_local_settings
 }
 
@@ -644,6 +644,15 @@ node 'atrato02' inherits ringnode {
     $owner = "atrato"
     $location = "40.717884,-74.008938"
     $nagios_ping_rate = '!200.0,20%!400.0,60%'
+    include smokeping::slave
+    include nagios::target
+    include nagios_services
+    include set_local_settings
+}
+
+node 'man-da01' inherits ringnode {
+    $owner = "man-da"
+    $location = "49.86170,8.68210"
     include smokeping::slave
     include nagios::target
     include nagios_services
