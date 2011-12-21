@@ -1105,9 +1105,10 @@ class ring_users {
     authorized_keys { "tetaneutral":
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEAm6PG/dmzT1tmS4UKHnH2iNSrWrIi+QfDHv9UXI1kMqulRDfb61nyR+jgC8lBQFyTSinFtL7jzkh31kx7fIK/4adYGRmPLuXkOY2lT/rhhO9PJA5PVZJbM4kggJ/e+nSlXt3mbwsCv6qyzHaavdaQK1IKNgkY3OW4Ru5LDCJ6UfM= guerby"
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAzDfBSCVqDCL6n+fZCXmTBL7Jq142isO2pQSuDa+nFCfpIUUnQI4caSc9WheOV4XVkJLslHH+qUyTQTus6KRJWlKMQc8XY240mibedD9CAarvnRshX83uTmHhkGGRp8sSvzbPWJno+elTCh1QGMy1aPSUDut8wC4LeTRYbc5uEA/Qrw95CEQTjK+1ePR6IE+QrPpaHbbi75+B+Yvd/hO+kT9vlIk7HIV59kDPoboYKjVmbzLJnxrX4IOaIsAuHgqB2SNPD1qGC2kQ4DOW538b3/2sn3Dq+daED7ZIqBIkDi7GGyzju6zJG4+VM4lLG15+z/ysG57WsJ5VM9Dm4Ippsw== jerome@ceriz.fr",
+            "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEOwsmePYd24yVNykGofhuYEqI9i0aCeRZe+g8PEs2z/9Xi6+apFuycD2oPZZqoX1Laz2FHh4BVQA9O96LYUjlR1WiV2COijofkr6Gx6nMRWQmkMqA1Gaqib7FeO+0WWj4wie3etWB23LW3M6GdcNOMoSuSsj2uKoipqE6Xv9FtwqY2UUvCrl1eOYXzFh7VTBgJLZ9koG1fCTuQpXkY9Nnjc2L4zs4TrDKLk6A4Z9tqReRTAOlPvekAQqMlRBypNMhahzeaRG3ozvwt+YvgTSqbfX1Lc92r0BvgEAUQ4Mioa9+gGB+rujuXi1OiTedo77cDv0E+RxjzMHgVyYwxaU1 sileht@sileht.net",
             ],
-    }
-
+}
 ##### END tetaneutral #####
 
 ##### BEGIN jumpnetworks #####
