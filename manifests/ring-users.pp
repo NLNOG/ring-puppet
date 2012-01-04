@@ -1153,7 +1153,6 @@ class ring_users {
         groups => ['ring-users'],
     }
     authorized_keys { "timico":
-        authorized_keys { "timico":
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA8/ANW4MXT3ttfXDfMIZlnseXEDuGHINtEYFlDl1a79pecZ6UKj1hF54RKmXLU/M2g9/qlCv+5PYFN6mkNkuTatMldXxZ6zCiZAFOyVRhRsfbBp0MsyAMI1ZXNQEiOmpwuJd43L/kSopVYfL/DOc4cKbHbVv2Fmw63FwfYVR+cvpKnrDIwptOi2tlfIBnXqnQP73oDPwltD+Mvx9nN2qIG/16Rd+CRuMOufKdSfceWJcYoxtmZEFJvuuZicKFiuhALc/xDAs/Ur89mPHdKOIRBZsnFk0lgPBQBagLYqm7EbEax9z6XSgtG43l49KyVZ8RDhjH6y+wC+5g0v8aplzJAQ== paul@frodo",
             "ssh-dss AAAAB3NzaC1kc3MAAACBAJ+FP0Pk9dIVgVizdPVghKiBTKjFr0wikAHx4Che02LTdRGuW8CnJVFq/sBdNbiVlBV82y8SrT3UBcQ6E6KAN3iA9fLuIyF1eiJj25ekuG2EaOsCwhRvG3KHky4HdT23a7KckBuJ3GuH2lablgiRWYI1gnJ39hJE6UVtunybIrT3AAAAFQD5NL5ONTj5LVF+43k6DgfIAeHFSQAAAIA6EjCtSZwBQ6qCV9pLnSPqElTFMQaotUt2vMsbTsZ4hB0q7L2//C60TddkFz5qSZVwyC1sUveXqEgtCV69igdME+I2Zq3WunKo9qzYKJKM5KVIWPVDRLQ+yKwoCHINral+Ay4/Pida17FrrWTO7uxfNUue8EijqI0+yyAGIshQhwAAAIAePMkZTy2AhkG7xY+GP+Rv9xlFSYaHaZ87pofE8DoEcB9fsERchHetH59jRHFZaIA82Y2HdLUa7HI2L1jGK8RXRXf30JXz7JLkA0hy7QTP0roqLgtBlBTH8QwChs0MNgNAN7yLSvWFMLdLv4c0kngpaekNfTh3KOoxBGGK+Ru3pQ== ben@didge",
