@@ -1139,6 +1139,7 @@ class ring_users {
         sshkeys => [
             "ssh-dss AAAAB3NzaC1kc3MAAACBANy11H0NQYAPvKHLWuSyOlKWPD2aATF/9VnJXK/epUJWXCrLRF0WvKETJjYTLHafBb4WAPIi3h8l1jDITvfl+Hcc6Yf7zv17kkDIAgY0MNk0CMNEiQdziK0nte9D+2zQu+A0EootUHa1tPVIUgL2wtM6GyDvVL76v10xyVMMKKKXAAAAFQCc1Od0oqMW0/WUUHIg5wSVGFZyqwAAAIB14CTuwKua7tfKL/V6hRS2q6k1GSL+VMj43jVGb5u4LMyoqhtsqlo1fTzys6lRxbZFbsdrRCbeWG7uy6kB6iLkZv3U6yXDn9+C1EOopM3eYwBDhzO0KCF0LOjvbJozanDjSl+/hg2qiRNIZiamcn0qshxh/x7RLiw6DsSxfwlz9QAAAIEApMdsi2B+ehuVSQjl3Oy1WsvCeBY49w2IHNzEQyZJzVX5Hkq2tFlM91cPFSh/+TbGwmBuP8HI6JZkqVsKuS3nTdStCJgoav6clfgufOPhI6NWFVj0rEZO39Tet6ElCuLUDXaJkjxOEPNCF+0i6wuYxMP/M0NWVF6KlB0nkQMNMJo= cramer@fiji.dolphins.ch",
             "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAoBNp3xgryWm1ZMcEy1aI64EPLJb61o8AL8q+GZ9qw5wvhvutwgY9gvdocJqqOHmvHNRmgLHKt6Nk4EfuDW1kn+iWH8JwAeophk02/PULGxbOSzTJGZcdA66R3vMWsB1CL9Rm7fvutDuVb4o9qjgR5lYdbwriiUGbqEDkXSY66Yc= christoph@brigitte.interway.ch",
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAgPqTawM0PMf0EhqIW0H/FZlBPMe3qE2Cu4enZWoarH6ezsfQ6mreUnNvR40n5hGQmc99S8rUGDOlJevaeGR9T28tGq59Lu3zCMLBQMBCkx/Dy6VihIhs6A+8V6Y2Z5QKGk9KoOz64n+saB8XpX2mk9qMznqQialvhqBfA5uNzTc= renner@iway.ch",
             ],
     }
 
