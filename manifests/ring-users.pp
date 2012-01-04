@@ -1144,5 +1144,21 @@ class ring_users {
 
 ##### END iway #####
 
+##### BEGIN timico  #####
+
+    add_user { timico:
+        email => "networks@timico.net",
+        company => "Timico Ltd.",
+        uid => "5065",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "timico":
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAzcPytCU1GGndyH0eZ3tYGQMwh0CT9+lNzjdMpeu0qqpzEMDflo7okFr4p8uiJAOOXTm9tLzZy5OwYy2U8jrl/SDlzmCJJhovPGwOrbSBIP2vTHtj3Pa/UCdZYeXK3KiqvAgDZnhwZ2OdFXDUVokSGrIxOPxiqR8/mmD6f1AjlA9LjmqmwQTGzoNb92CWl9ik2j8xNBzwpFXbEsnrqG2QPUHXKlY14gP+SpP7FRmPF1r/FSzIuSsxy4vaYAkFmooBmcqr0L2lvCemZPI6mYbrJRKz/GYRkd+4eJGWL/NV5MBoWfCBJYBE5u524zbf7E9u5fC92+BCl0wo+LszbZ/Gj7Z3MXSr9343ztSm+y+nxvSeoW9XhK33hzyNyIZkh8k5MPLIla8LmkJ30RMRxixKFyhqEYXIDAOkA+vDd+ZGYi3YtJVF34qXUxSURF7ty4XmmJv68vLD9kCPg/2+lvxGh4Rt1SRboAN2qEQqv7Tma/kXclrGDJf5njXKy5VcPcT+l1aORZ4BA5q4EGXt09cIT14Um7GMvPwZ7lSb1iUSL9FxM9pPxTL/ghPVfpQEdZRqPdd+PIHHuHXI1s1eh4rKUiklI0z3ykQ5CqkmrxpJsYWvr4yLZr7oF6Y+Nur1L2FNTwqGTuo+Vbb/Mp7wb6KGzzkDaycrt1HKkDkq6HA160c= paul@nitrogen",
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA8/ANW4MXT3ttfXDfMIZlnseXEDuGHINtEYFlDl1a79pecZ6UKj1hF54RKmXLU/M2g9/qlCv+5PYFN6mkNkuTatMldXxZ6zCiZAFOyVRhRsfbBp0MsyAMI1ZXNQEiOmpwuJd43L/kSopVYfL/DOc4cKbHbVv2Fmw63FwfYVR+cvpKnrDIwptOi2tlfIBnXqnQP73oDPwltD+Mvx9nN2qIG/16Rd+CRuMOufKdSfceWJcYoxtmZEFJvuuZicKFiuhALc/xDAs/Ur89mPHdKOIRBZsnFk0lgPBQBagLYqm7EbEax9z6XSgtG43l49KyVZ8RDhjH6y+wC+5g0v8aplzJAQ== paul@frodo",
+        ],
+    }
+
+##### END timico #####
 
 }

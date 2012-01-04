@@ -712,3 +712,12 @@ node 'iway01' inherits ringnode {
     include nagios_services
     include set_local_settings
 }
+
+node 'timico01' inherits ringnode {
+    $owner = "timico"
+    $location = "53.07897,-0.792212"
+    include smokeping::slave
+    include nagios::target
+    include nagios_services
+    include set_local_settings
+}
