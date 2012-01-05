@@ -730,3 +730,12 @@ node 'yacast01' inherits ringnode {
     include nagios_services
     include set_local_settings
 }
+
+node 'rezopole01' inherits ringnode {
+    $owner = "rezopole"
+    $location = "45.72289,4.861422"
+    include smokeping::slave
+    include nagios::target
+    include nagios_services
+    include set_local_settings
+}

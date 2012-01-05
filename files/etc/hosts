@@ -212,3 +212,7 @@ ff02::2 ip6-allrouters
 
 213.205.109.22 yacast01 yacast01.ring.nlnog.net
 2a02:3e8:ffff:198::cafe yacast01 yacast01.ring.nlnog.net
+
+77.95.64.5  rezopole01  rezopole01.ring.nlnog.net
+2001:7f8:47:41::5   rezopole01  rezopole01.ring.nlnog.net
+
