@@ -210,3 +210,5 @@ ff02::2 ip6-allrouters
 62.121.13.4 timico01    timico01.ring.nlnog.net
 2001:40a0:41:1000::4   timico01    timico01.ring.nlnog.net
 
+213.205.109.22 yacast01 yacast01.ring.nlnog.net
+2a02:3e8:ffff:198::cafe yacast01 yacast01.ring.nlnog.net
