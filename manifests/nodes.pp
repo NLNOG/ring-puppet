@@ -724,7 +724,7 @@ node 'timico01' inherits ringnode {
 
 node 'yacast01' inherits ringnode {
     $owner = "yacast"
-    $location = "48.90581,2.370783"
+    $location = "48.90541,2.369790"
     include smokeping::slave
     include nagios::target
     include nagios_services
