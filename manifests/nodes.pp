@@ -739,3 +739,12 @@ node 'rezopole01' inherits ringnode {
     include nagios_services
     include set_local_settings
 }
+
+node 'globalaxs02' inherits ringnode {
+    $owner = "globalaxs"
+    $location = "51.511526923,-0.0011855363845825195"
+    include smokeping::slave
+    include nagios::target
+    include nagios_services
+    include set_local_settings
+}
