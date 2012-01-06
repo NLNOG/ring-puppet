@@ -219,3 +219,6 @@ ff02::2 ip6-allrouters
 77.243.177.134  globalaxs02 globalaxs02.ring.nlnog.net
 2a01:300:2::4   globalaxs02 globalaxs02.ring.nlnog.net
 
+82.220.3.51 solnet01    solnet01.ring.nlnog.net
+2001:1680:2:100:3:51:0:10   solnet01    solnet01.ring.nlnog.net
+

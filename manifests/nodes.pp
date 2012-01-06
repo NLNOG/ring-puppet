@@ -748,3 +748,12 @@ node 'globalaxs02' inherits ringnode {
     include nagios_services
     include set_local_settings
 }
+
+node 'solnet01' inherits ringnode {
+    $owner = "solnet"
+    $location = "47.20182,7.52878"
+    include smokeping::slave
+    include nagios::target
+    include nagios_services
+    include set_local_settings
+}
