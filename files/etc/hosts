@@ -216,3 +216,6 @@ ff02::2 ip6-allrouters
 77.95.64.5  rezopole01  rezopole01.ring.nlnog.net
 2001:7f8:47:41::5   rezopole01  rezopole01.ring.nlnog.net
 
+77.243.177.134  globalaxs02 globalaxs02.ring.nlnog.net
+2a01:300:2::4   globalaxs02 globalaxs02.ring.nlnog.net
+
