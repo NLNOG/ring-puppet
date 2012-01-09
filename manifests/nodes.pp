@@ -757,3 +757,12 @@ node 'solnet01' inherits ringnode {
     include nagios_services
     include set_local_settings
 }
+
+node 'boxed-it01' inherits ringnode {
+    $owner = "boxed-it"
+    $location = "50.881431,4.454129"
+    include smokeping::slave
+    include nagios::target
+    include nagios_services
+    include set_local_settings
+}
