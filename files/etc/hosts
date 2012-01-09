@@ -222,3 +222,5 @@ ff02::2 ip6-allrouters
 82.220.3.51 solnet01    solnet01.ring.nlnog.net
 2001:1680:2:100:3:51:0:10   solnet01    solnet01.ring.nlnog.net
 
+195.200.224.123 boxed-it01  boxed-it01.ring.nlnog.net
+2001:67c:344:1010:5054:ff:feca:6f60 boxed-it01  boxed-it01.ring.nlnog.net
