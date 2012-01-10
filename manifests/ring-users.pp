@@ -1232,5 +1232,21 @@ class ring_users {
 
 ##### END boxed-it #####
 
+##### BEGIN spacenet #####
+
+    add_user { spacenet:
+        email => "netmaster-dist@space.net",
+        company => "Spacenet AG"
+        uid => "5070",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "spacenet":
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA2HkaeILiO0zPNCeOxzvLBupjqtZ6bjKna7rpEnpk2wj8U5/m6AEkl7E5vLhytrgo5B3D1zxgR5a81oYlUaXMSSnr7y8l0+3tdS5wSrNlTPcuFM6OeMJ2gx+kOXHkgWUar1xIiEIBpTMgcCGVodEJkv9fhXdABrZZCVDzHU52i/tVZ0OycIHuoXeIPpS88wDZgref/DrZuvz3KjKvctxqOyt+SNGWsFygLKEi475W8qaOt8QIuExoRXxUPabKN7q8CWCRlV2FKLv8AxCJngOjwSkZ6VLXF7+Gl72UAzhjLDo8d2N8l/Be3XQBPw8tfRoYHyXlG3hx118oP4qmD1LMRQ== gert@moebius3.space.net",
+            ],
+    }
+
+##### END spacenet #####
+
 
 }

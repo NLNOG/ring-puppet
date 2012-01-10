@@ -766,3 +766,12 @@ node 'boxed-it01' inherits ringnode {
     include nagios_services
     include set_local_settings
 }
+
+node 'spacenet01' inherits ringnode {
+    $owner = "spacenet"
+    $location = "48.133333,11.566667"
+    include smokeping::slave
+    include nagios::target
+    include nagios_services
+    include set_local_settings
+}
