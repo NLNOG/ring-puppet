@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Written by Sten Spans <sten@snore.nl> 
+# Written by Sten Spans <sten@blinkenlights.nl>
 
 ping="ping"
 
@@ -28,16 +28,20 @@ fi
 host=$(echo "$1" | sed -re 's/[^[:alnum:]:.-]+//g')
 [ -n "${host//[^:]}" ] && ping="ping6"
 
-if ! getent hosts "${host}" >/dev/null; then
+if echo "${host}" | grep -qE "^([0-9]{1,3}\.){3}[0-9]{1,3}$"; then
+    :
+elif echo "${host}" | grep -qE "^([0-9a-fA-F]*\:)+"; then
+    :
+elif ! getent hosts "${host}" >/dev/null; then
     echo Invalid hostname "$host"
     exit 1
 fi
 
 
-ping_cmd="echo '\$(hostname -s)': '\$(${ping} -c1 -W1 $host | grep ^rtt)'"
-ssh_cmd="ssh -q -o ConnectTimeout=2 {}.ring.nlnog.net ${ping_cmd}" 
+ping_cmd="echo '\$(hostname -s)': '\$(${ping} -c1 -W1 \"$host\" | grep ^rtt)'"
+ssh_cmd="ssh -q -o ConnectTimeout=4 {}.ring.nlnog.net ${ping_cmd}" 
 
-SERVERS=$(dig -t txt +short ring.nlnog.net | grep -v '^;' | tr -d '"' | tr ' ' '\n')
+SERVERS=$(dig -t txt +tcp +short ring.nlnog.net | tr -d '"' | tr ' ' '\n')
 
 declare -a results
 declare -a replies
