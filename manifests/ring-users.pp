@@ -1284,7 +1284,7 @@ class ring_users {
 
     add_user { networkdesign:
         email => "noc@ndnet.ch",
-        company => "Network Design GmbH"
+        company => "Network Design GmbH",
         uid => "5073",
         groups => ['ring-users'],
     }
