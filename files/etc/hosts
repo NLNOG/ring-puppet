@@ -231,3 +231,6 @@ ff02::2 ip6-allrouters
 109.71.100.21   mironet01   mironet01.ring.nlnog.net
 2a00:17e0:0:322:250:56ff:fe01:f0    mironet01   mironet01.ring.nlnog.net
 
+85.94.202.10    seeweb01    seeweb01.ring.nlnog.net
+2001:4b78:2100:3::1 seeweb01    seeweb01.ring.nlnog.net
+

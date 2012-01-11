@@ -1264,5 +1264,21 @@ class ring_users {
 
 ##### END mironet #####
 
+##### BEGIN seeweb #####
+
+    add_user { seeweb:
+        email => "noc@seeweb.it",
+        company => "Seeweb s.r.l.",
+        uid => "5072",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "seeweb":
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEAxlcb96uJhrNAstsPI/OLjfeSlv7ha+hcr+zPe623k7RxpxpOxtiWYRlnt7O1LNGkNuuMS1zKQtWbQLKtjBys6xZkieQpt/AlbaHzqxyVA9PiiMUiHvjH6+jbYa0N7w8+f0kllWLcafdyfuTER8Lj55sjAvL6/WON1UYr+8famx8= md@wonderland.linux.it",
+            ],
+    }
+
+##### END seeweb #####
+
 
 }
