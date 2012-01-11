@@ -793,3 +793,12 @@ node 'seeweb01' inherits ringnode {
     include nagios_services
     include set_local_settings
 }
+
+node 'networkdesign01' inherits ringnode {
+    $owner = "networkdesign"
+    $location = "47.38339,8.49560"
+    include smokeping::slave
+    include nagios::target
+    include nagios_services
+    include set_local_settings
+}
