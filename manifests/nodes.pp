@@ -775,3 +775,12 @@ node 'spacenet01' inherits ringnode {
     include nagios_services
     include set_local_settings
 }
+
+node 'mironet01' inherits ringnode {
+    $owner = "mironet"
+    $location = "47.5143,7.616726"
+    include smokeping::slave
+    include nagios::target
+    include nagios_services
+    include set_local_settings
+}

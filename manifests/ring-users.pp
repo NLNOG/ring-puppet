@@ -1248,5 +1248,21 @@ class ring_users {
 
 ##### END spacenet #####
 
+##### BEGIN mironet #####
+
+    add_user { mironet:
+        email => "noc@mironet.ch",
+        company => "MiroNet GmbH",
+        uid => "5071",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "mironet":
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAyzRI4GmVcOvOm1j6JjMQV/+H1cnP7VSBMsP+einHp9F+M+r8XTjGezNlzguM9FkdP4heffYJbMBcoVqNpxaTc4jvRuLGQKF9/bY4FTrBvBEfIOjIQPnTgHucgQO39y+SRt+3k5fxu+HMLk4aSBaMdKcixUY/n2qwHa/tnMBerV66a/SDrdr91kLDXHFFVvofreFB0lmSIqLGqzmH9tT0B0WNDjBiP/R+QN2xGuET7XsL5PvwAOAQLnEij1PE0nllgRiHA7fLGgpaaFt0BuPN/p4MfRB+/PZxIIvlX6gOiLAywCFQDXPLoiq5i2thjKREZgRqII+GvtADfStkbNVDSw== nano@macbook.home",
+            ],
+    }
+
+##### END mironet #####
+
 
 }
