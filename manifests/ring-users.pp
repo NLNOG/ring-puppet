@@ -1236,7 +1236,7 @@ class ring_users {
 
     add_user { spacenet:
         email => "netmaster-dist@space.net",
-        company => "Spacenet AG",
+        company => "SpaceNet AG",
         uid => "5070",
         groups => ['ring-users'],
     }
