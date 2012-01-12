@@ -1243,6 +1243,7 @@ class ring_users {
     authorized_keys { "spacenet":
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA2HkaeILiO0zPNCeOxzvLBupjqtZ6bjKna7rpEnpk2wj8U5/m6AEkl7E5vLhytrgo5B3D1zxgR5a81oYlUaXMSSnr7y8l0+3tdS5wSrNlTPcuFM6OeMJ2gx+kOXHkgWUar1xIiEIBpTMgcCGVodEJkv9fhXdABrZZCVDzHU52i/tVZ0OycIHuoXeIPpS88wDZgref/DrZuvz3KjKvctxqOyt+SNGWsFygLKEi475W8qaOt8QIuExoRXxUPabKN7q8CWCRlV2FKLv8AxCJngOjwSkZ6VLXF7+Gl72UAzhjLDo8d2N8l/Be3XQBPw8tfRoYHyXlG3hx118oP4qmD1LMRQ== gert@moebius3.space.net",
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA5eRCNyQxIgO30YfSdwWOmY3dw5JrrHBSbo6X+kcubJoYRRgDE0nhydPBKmDvhWYgIxzpYZrY7X5ZjeoELE22+pxRq/ubX3PkTf0l8bvLZn/JrOXFrZkucRU1/YPeAa62XvsIPj09oMClJCTJlVFst+b+T4DMJDbkrdr1RqbuttJaZ/xPKizr9gwlkvSp9GqCSUcgw9O9vpgSXd7ogfgmg+eR6Nj0jPMmKeV3ai/5l15xfaLivuLaA0sT9Ozi1JoBjG4nJve86ooXv7jEs1WoGux5xa76KIJn+Kv3ADV7m8mwv+pMlPGzi8uFbu0Yt/IXPj/jiim3AjbecSXhSsrXVw== jpd@moebius3.space.net",
             ],
     }
 
