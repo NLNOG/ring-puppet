@@ -25,6 +25,11 @@ if [ $# -lt 1 ]; then
     exit 1
 fi
 
+if ! ssh-add -l &>/dev/null && ! find ~/.ssh/id_* &>/dev/null; then
+   echo $(basename $0) requires an ssh-agent with a valid key
+   exit 1
+fi
+
 host=$(echo "$1" | sed -re 's/[^[:alnum:]:.-]+//g')
 [ -n "${host//[^:]}" ] && ping="ping6"
 
@@ -39,7 +44,7 @@ fi
 
 
 ping_cmd="echo '\$(hostname -s)': '\$(${ping} -c1 -W1 \"$host\" | grep ^rtt)'"
-ssh_cmd="ssh -q -o ConnectTimeout=4 {}.ring.nlnog.net ${ping_cmd}" 
+ssh_cmd="ssh -q -o ConnectTimeout=4 -o StrictHostKeyChecking=yes {}.ring.nlnog.net ${ping_cmd}" 
 
 SERVERS=$(dig -t txt +tcp +short ring.nlnog.net | tr -d '"' | tr ' ' '\n')
 
