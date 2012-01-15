@@ -15,6 +15,9 @@ ff02::2 ip6-allrouters
 213.154.236.191 staging01   staging01.ring.nlnog.net
 2001:7b8:625:0:213:154:236:191  staging01 staging01.ring.nlnog.net
 
+84.241.136.51   staging02   staging02.ring.nlnog.net
+2001:1690:4:115::51 staging02   staging02.ring.nlnog.net
+
 2a02:7d0:3:208:250:56ff:fe9c:1e in2ip01 in2ip01.ring.nlnog.net
 217.198.20.135  in2ip01 in2ip01.ring.nlnog.net
 
@@ -236,4 +239,5 @@ ff02::2 ip6-allrouters
 
 95.143.48.140   networkdesign01 networkdesign01.ring.nlnog.net
 2a00:10c0:0:1004::140:1 networkdesign01 networkdesign01.ring.nlnog.net
+
 

@@ -113,7 +113,7 @@ class groups {
     }
 }
 
-#### staging01 #####
+#### staging #####
 
 node 'staging01' inherits ringnode {
     $owner = "job"
@@ -123,7 +123,15 @@ node 'staging01' inherits ringnode {
     include set_local_settings
 }
 
-#### einde staging01 #####
+node 'staging02' inherits ringnode {
+    $owner = "job"
+    include smokeping::slave
+    include nagios::target
+    include nagios_services
+    include set_local_settings
+}
+
+#### einde staging #####
 
 #### define all ring nodes ####
 
