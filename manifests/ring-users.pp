@@ -1245,7 +1245,8 @@ class ring_users {
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA2HkaeILiO0zPNCeOxzvLBupjqtZ6bjKna7rpEnpk2wj8U5/m6AEkl7E5vLhytrgo5B3D1zxgR5a81oYlUaXMSSnr7y8l0+3tdS5wSrNlTPcuFM6OeMJ2gx+kOXHkgWUar1xIiEIBpTMgcCGVodEJkv9fhXdABrZZCVDzHU52i/tVZ0OycIHuoXeIPpS88wDZgref/DrZuvz3KjKvctxqOyt+SNGWsFygLKEi475W8qaOt8QIuExoRXxUPabKN7q8CWCRlV2FKLv8AxCJngOjwSkZ6VLXF7+Gl72UAzhjLDo8d2N8l/Be3XQBPw8tfRoYHyXlG3hx118oP4qmD1LMRQ== gert@moebius3.space.net",
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA5eRCNyQxIgO30YfSdwWOmY3dw5JrrHBSbo6X+kcubJoYRRgDE0nhydPBKmDvhWYgIxzpYZrY7X5ZjeoELE22+pxRq/ubX3PkTf0l8bvLZn/JrOXFrZkucRU1/YPeAa62XvsIPj09oMClJCTJlVFst+b+T4DMJDbkrdr1RqbuttJaZ/xPKizr9gwlkvSp9GqCSUcgw9O9vpgSXd7ogfgmg+eR6Nj0jPMmKeV3ai/5l15xfaLivuLaA0sT9Ozi1JoBjG4nJve86ooXv7jEs1WoGux5xa76KIJn+Kv3ADV7m8mwv+pMlPGzi8uFbu0Yt/IXPj/jiim3AjbecSXhSsrXVw== jpd@moebius3.space.net",
-            ],
+            "ssh-dss AAAAB3NzaC1kc3MAAACBAKJoXsxc+n742aWryZlgLlSbrUUb1WqXXcwNOexAEAkPRPfZN8NA8aRFrXX/t02+XNE6KsC75C9BCaDBfzTZNGhyq7S10N0le0atQvzdwQEJS3SjLCqncIfFtDRwPS/C3QoTUUkfAm+BJf5gW8wXr6F3/yZ+oeBwgs/6N1LuOTRtAAAAFQC/sR+szr64pNObeWTFhBHMvpQKMQAAAIAx1LIzWYI7AZVoSmMyGQgKrCdR3z2M0ocVV9e/nRagrW8pxi8drsSbNXolswce5lB1oh39PqMQEFPvGugFxgStTfYm+uHN2Nl+Pb6B4Pt2LkG8pHeX2LfVctS4b9tzyIgN/Mef2trf8tc9MW8CgyFcxyYwTuGsnaPgBq8rmH262gAAAIAb0EEEVG2i9pZJb61bn6yPyYzuJu36PANDieRo3LxlJiNjrmLO0K+w+gt76RjHw05jtru36XH2K5O5Vzf8GhvStfhYoBrZvxvRhDWMlzf+V+yf1veKTrcL3I5hX+m994NFimZKSGir2DPKGpCmT4mkDWQ3xVeNY6Z5FHG8d2KdFg== kts@moebius2.space.net",
+        ],
     }
 
 ##### END spacenet #####
