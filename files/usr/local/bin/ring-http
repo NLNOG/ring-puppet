@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Written by Sten Spans <sten@blinkenlights.nl>
+# Written by Job Snijders <job@snijders-it.nl>
+# based on ring-ping by Sten Spans <sten@blinkenlights.nl>
 
 curl="curl -4"
 
