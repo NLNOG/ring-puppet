@@ -4,6 +4,8 @@
 #
 # TODO
 # - fix that it understands full URLs like http://ring.nlnog.net/bla
+# - fix that it understands 2a02:898:52:ffff::48 as a valid url
+# - fix that it understands http://[2a02:898:52:ffff::48]:80/ as valid
 # - make sure nobody can slip in dirty commands by shell escaping 
 # - since http is less black/white then ping, maybe differenciate 
 #   between various things that could happen: 302, 404, 200, connection refused
