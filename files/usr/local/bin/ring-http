@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 # Written by Job Snijders <job@snijders-it.nl>
 # based on ring-ping by Sten Spans <sten@blinkenlights.nl>
+#
+# TODO
+# - fix that it understands full URLs like http://ring.nlnog.net/bla
+# - make sure nobody can slip in dirty commands by shell escaping 
+# - since http is less black/white then ping, maybe differenciate 
+#   between various things that could happen: 302, 404, 200, connection refused
+
+
 
 curl="curl -4"
 
