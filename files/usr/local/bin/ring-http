@@ -54,7 +54,7 @@ while read line; do
     results=( ${results[@]} ${server} )
 
     if [[ ${output} =~ .*OK$ ]]; then
-	    replies=( ${replies[@]} ${time} )
+	    replies=( ${replies[@]} $server )
 	    [ -n "${verbose}" ] && printf "%-30s %s\n" ${server}: ${output}
     else
 	    timeouts=( ${timeouts[@]} $server )
@@ -63,7 +63,7 @@ while read line; do
 
 done < <(echo "$SERVERS" | xargs -P10 -n1 -I{} sh -c "${ssh_cmd}||:")
 
-if [ -n "${replies[*]}" ]; then
+if [ "${replies[*]}" ]; then
     total=0
     for t in ${replies[@]}; do
     	total=$(echo $total + $t | bc)
