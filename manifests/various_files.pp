@@ -181,6 +181,12 @@ class local_binaries {
         mode    => 0755,
         source  => "puppet:///files/usr/local/bin/ring-ping"
     }
+     file { "/usr/local/bin/ring-http":
+        owner   => root,
+        group   => root,
+        mode    => 0755,
+        source  => "puppet:///files/usr/local/bin/ring-http"
+    }
      file { "/usr/local/bin/ring-all-serial":
         owner   => root,
         group   => root,
