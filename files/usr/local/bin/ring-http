@@ -35,8 +35,20 @@ if ! which curl &>/dev/null ; then
    exit 1
 fi
 
+
+# I am very unsure whether this sanity filter is compliant with what we what
+# it to accept
+
 host=$(echo "$1" | sed -re 's/[^[:alnum:]:.-]+//g')
-[ -n "${host//[^:]}" ] && curl="curl -6"
+
+if ! dig +short $host &> /dev/null; then
+    echo invalid hostname
+    exit 1
+fi
+
+echo ${host} | egrep -q ':.*:' && curl="curl -6"
+
+### end of garbage ###
 
 curl_cmd="echo '\$(hostname -s)': '\$(${curl} -m 3 -f -s -S -o /dev/zero \"$host\" 2>&1 && echo OK)'"
 ssh_cmd="ssh -q -o ConnectTimeout=4 -o StrictHostKeyChecking=yes {}.ring.nlnog.net ${curl_cmd}" 
