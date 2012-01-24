@@ -1301,4 +1301,20 @@ class ring_users {
 
 ##### END networkdesign #####
 
+##### BEGIN zensystems #####
+
+    add_user { zensystems:
+        email => "noc@zensystems.dk",
+        company => "Zen Systems",
+        uid => "5074",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "zensystems":
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAoqUkQbD6a+rapnErF0y3Wj9UDYc392E66qEeULBK90Fdk+b8aRsskBPm1ygp1dAI2kNUVC3EdZ9McRBB1JYl/zTZ4vuWOaPwm9hR7fzjTFNczwuW3BKMcK8iYWl3dfWNNUsqXOkdtQrdhy72ok4+iGaMFO70ms8WoLkMailUOsnSsVfvusnXDfFc6+qQleA/wM2kJoq8vcVTsYlPajY/vVErXrfhVqR5FKNCf3jw5uBDnsFNRfeA300bZQlkpFY5Y/ZufbqwbgT7OQFNpVedsfrvYlKH7pazmXWzDobbf6JEtgn3QwcRdtGwxgK16i53ZcdnHRNxLCGQEi6puFzzEQ== hein@gavey.zensystems.dk",
+            ],
+    }
+
+##### END networkdesign #####
+
 }

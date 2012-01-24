@@ -240,4 +240,5 @@ ff02::2 ip6-allrouters
 95.143.48.140   networkdesign01 networkdesign01.ring.nlnog.net
 2a00:10c0:0:1004::140:1 networkdesign01 networkdesign01.ring.nlnog.net
 
-
+109.202.131.110 zensystems01 zensystems01.ring.nlnog.net
+2a01:4f0:3:8::2 zensystems01 zensystems01.ring.nlnog.net
