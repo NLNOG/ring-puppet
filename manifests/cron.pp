@@ -75,6 +75,7 @@ class cronjobs {
         ensure => absent,
     }
 
+    # for UvA researchers
     cron {
         "collect_scamper":
         command => "/home/job/scmpr/collect-data.sh > /dev/null 2>&1",
@@ -82,6 +83,7 @@ class cronjobs {
         weekday => "*",
         hour => "*",
         minute => "*/5",
+        require => File["/home/job/scmpr/collect-data.sh"],
     }
 
 
