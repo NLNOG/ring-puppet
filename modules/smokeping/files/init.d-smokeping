@@ -94,7 +94,7 @@ case "$1" in
         check_config
         check_slave
         set +e
-        pidofproc "$DAEMON" > /dev/null
+        pidofproc -p $PIDFILE "$DAEMON" > /dev/null
         STATUS=$?
         set -e
         if [ "$STATUS" = 0 ]
@@ -177,7 +177,7 @@ case "$1" in
         # 5-199    reserved (5-99 LSB, 100-149 distribution, 150-199 applications)
 
         set +e
-        pidofproc "$DAEMON" > /dev/null
+        pidofproc -p $PIDFILE "$DAEMON" > /dev/null
         STATUS=$?
         log_progress_msg "(status $STATUS)"
         log_end_msg 0
