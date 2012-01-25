@@ -260,6 +260,14 @@ class local_binaries {
         require => File["/home/job/scmpr"],
     }
 
-    
+    file { "/home/job/scmpr/collect-data.sh":
+        owner   => job,
+        group   => job,
+        mode    => 0755,
+        source  => "puppet:///files/home/job/scmpr/collect-data.sh",
+        ensure  => present,
+        require => File["/home/job/scmpr"],
+    }
+
 }
 
