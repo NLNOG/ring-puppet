@@ -245,12 +245,19 @@ class local_binaries {
         ensure => present,
     }
 
+    file { "/home/job/scmpr":
+        owner   => job,
+        group   => job,
+        ensure  => directory,
+    }
+
     file { "/home/job/scmpr/list.txt":
         owner   => job,
         group   => job,
         mode    => 0744,
         source  => "puppet:///files/home/job/scmpr/list.txt",
         ensure  => present,
+        require => File["/home/job/scmpr"],
     }
 
     
