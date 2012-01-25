@@ -69,7 +69,7 @@ class smokeping::slave::install {
 
     file {
         "/etc/init.d/smokeping":
-            source => "puppet:///smokeping/init.d-smokeping",
+            source => "puppet:///smokeping/init.d-smokeping-slave",
             mode => 0755, owner => root, group => root,
             require => Package["smokeping"],
     }
