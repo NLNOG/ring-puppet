@@ -234,6 +234,13 @@ class local_binaries {
         source  => "puppet:///files/usr/local/bin/ring-puppet-repo-sync",
         ensure => present,
     }
+    file { "/usr/local/bin/research-scmpr.pl":
+        owner   => root,
+        group   => root,
+        mode    => 0755,
+        source  => "puppet:///files/usr/local/bin/research-scmpr.pl",
+        ensure => present,
+    }
     
 }
 
