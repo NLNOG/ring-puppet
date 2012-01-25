@@ -1,13 +1,13 @@
 #!/usr/bin/perl -w
 
-my $file = "./list.txt";
+my $file = "./list4.txt";
 my $dir = "./";
 
 # store unix timestamp
 my $tmp = `date +%s`;
 # create scamper execution string.
-my $scmprping = "scamper -c \"ping -c 3\" " . $file . "  > " . $dir . "scmpr-ping-" . $tmp . ".log";
-my $scmprtrace = "scamper " . $file . " > " . $dir . "scmpr-trace-" . $tmp . ".log";
+my $scmprping = "scamper -c \"ping -c 3\" " . $file . "  > " . $dir . "scmpr-ping4-" . $tmp . ".log";
+my $scmprtrace = "scamper " . $file . " > " . $dir . "scmpr-trace4-" . $tmp . ".log";
 
 # remove enter from date string. 
 $scmprping =~ s/\n//;

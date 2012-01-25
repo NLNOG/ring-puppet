@@ -27,6 +27,7 @@ node ringnode inherits basenode {
     include no-apache2
     include syslog_ng::client
     include nodesonlycron
+    include uva
     package{ "munin": ensure => purged, }
 }
 

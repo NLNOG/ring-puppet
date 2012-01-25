@@ -234,40 +234,5 @@ class local_binaries {
         source  => "puppet:///files/usr/local/bin/ring-puppet-repo-sync",
         ensure => present,
     }
-
-    # UvA.nl related data gathering
-
-    file { "/usr/local/bin/research-scmpr.pl":
-        owner   => root,
-        group   => root,
-        mode    => 0755,
-        source  => "puppet:///files/usr/local/bin/research-scmpr.pl",
-        ensure => present,
-    }
-
-    file { "/home/job/scmpr":
-        owner   => job,
-        group   => job,
-        ensure  => directory,
-    }
-
-    file { "/home/job/scmpr/list.txt":
-        owner   => job,
-        group   => job,
-        mode    => 0744,
-        source  => "puppet:///files/home/job/scmpr/list.txt",
-        ensure  => present,
-        require => File["/home/job/scmpr"],
-    }
-
-    file { "/home/job/scmpr/collect-data.sh":
-        owner   => job,
-        group   => job,
-        mode    => 0755,
-        source  => "puppet:///files/home/job/scmpr/collect-data.sh",
-        ensure  => present,
-        require => File["/home/job/scmpr"],
-    }
-
 }
 
