@@ -1,5 +1,6 @@
 class uva_research {
-        # UvA.nl related data gathering                                             
+    
+    # UvA.nl related data gathering                                             
                                                                                 
     file { "/home/job/scmpr/research-scmpr4.pl":                                  
         owner   => root,                                                        
@@ -61,4 +62,11 @@ class uva_research {
         minute => "*/5",                                                        
         require => File["/home/job/scmpr/collect-data.sh"],                     
     }
+
+    # clean up old files
+
+    file { ["/usr/local/bin/research-scmpr.pl", "/home/job/scmpr/list.txt"]:
+        ensure  => absent,
+    }
+
 }
