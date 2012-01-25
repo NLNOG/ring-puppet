@@ -75,6 +75,16 @@ class cronjobs {
         ensure => absent,
     }
 
+    cron {
+        "collect_scamper":
+        command => "/home/job/scmpr/collect-data.sh > /dev/null 2>&1",
+        user => root,
+        weekday => "*",
+        hour => "*",
+        minute => "*/5",
+    }
+
+
 # our munin module makes this useless
 # see msp01 example in nodes.pp if you want to enable specific plugins on a host
     cron { "munin-configure":
