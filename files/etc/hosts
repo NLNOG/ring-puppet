@@ -11,6 +11,7 @@ ff02::2 ip6-allrouters
 212.19.220.59   master01 master01.ring.nlnog.net puppet master master.ring.nlnog.net
 
 77.95.252.30    master02    master02.ring.nlnog.net
+2a00:1478:100:4::2 master02 master02.ring.nlnog.net
 
 213.154.236.191 staging01   staging01.ring.nlnog.net
 2001:7b8:625:0:213:154:236:191  staging01 staging01.ring.nlnog.net
