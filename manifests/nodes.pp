@@ -820,3 +820,12 @@ node 'zensystems01' inherits ringnode {
     include nagios_services
     include set_local_settings
 }
+
+node 'westnet01' inherits ringnode {
+    $owner = "westnet"
+    $location = "53.858024,-9.279904"
+    include smokeping::slave
+    include nagios::target
+    include nagios_services
+    include set_local_settings
+}

@@ -1317,4 +1317,20 @@ class ring_users {
 
 ##### END networkdesign #####
 
+##### BEGIN westnet #####
+
+    add_user { westnet:
+        email => "noc@westnet.ie",
+        company => "Westnet",
+        uid => "39093",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "westnet":
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDFFNxG+31F+No3tqzmNuqfzORzSj37GjY1hLNNvHdRBN1IyDwYqDvfHCZ8l+tGRJOCuWT/ttgl3GfULCgsFjfFtNJBGcFKf/r1rsOcVp8PyeXqAULU3A3+fzE3wAUPibOAXEo/a/LnmzaZD+dm+mSuHQiB+v9D2QjUSfhjHQZ5O06DQZ7vtfCeUMJA+aEe+naW8LTAybDeqiwGOksb5yb0pbOfo4qUFMyi3+ywOeka9gYgpDKRwDDb6nwYERUUlxx1kFqutlMc//ESNTtg1HhIFI7/gx0BtEYyKlBTYEc0KOfKw5QmRuPBEU4Ho81eFEwOxnHVVkXviZvIbzTjPQ+Z bminish@redbox.lan",
+            ],
+    }
+
+##### END westnet #####
+
 }

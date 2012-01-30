@@ -243,3 +243,7 @@ ff02::2 ip6-allrouters
 
 109.202.131.110 zensystems01 zensystems01.ring.nlnog.net
 2a01:4f0:3:8::2 zensystems01 zensystems01.ring.nlnog.net
+
+88.81.98.3  westnet01 westnet01.ring.nlnog.net
+2a02:3d8:0:ffff::3  westnet01 westnet01.ring.nlnog.net
+
