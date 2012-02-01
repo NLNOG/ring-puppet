@@ -829,3 +829,14 @@ node 'westnet01' inherits ringnode {
     include nagios_services
     include set_local_settings
 }
+
+node 'kantonsschulezug01' inherits ringnode {
+    $owner = "kantonsschulezug"
+    $location = "47.1744,8.5233"
+    include smokeping::slave
+    include nagios::target
+    include nagios_services
+    include set_local_settings
+}
+
+

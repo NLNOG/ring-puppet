@@ -247,3 +247,6 @@ ff02::2 ip6-allrouters
 88.81.98.3  westnet01 westnet01.ring.nlnog.net
 2a02:3d8:0:ffff::3  westnet01 westnet01.ring.nlnog.net
 
+46.234.32.56     kantonsschulezug01  kantonsschulezug01.ring.nlnog.net
+2001:4b20:c001::1000    kantonsschulezug01  kantonsschulezug01.ring.nlnog.net
+
