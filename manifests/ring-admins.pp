@@ -26,7 +26,7 @@ class ring_admins {
     }
     
     add_user { edwin:
-        email    => "edwin@nettech.cx",
+        email    => "edwin@madtech.cx",
         company  => "NXS",
         uid      => 6003,
         groups   => ['ring-admins', 'ring-users']
