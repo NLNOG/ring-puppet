@@ -839,4 +839,13 @@ node 'kantonsschulezug01' inherits ringnode {
     include set_local_settings
 }
 
+node 'filoo01' inherits ringnode {
+    $owner = "filoo"
+    $location = "50.09676,8.628393"
+    include smokeping::slave
+    include nagios::target
+    include nagios_services
+    include set_local_settings
+}
+
 
