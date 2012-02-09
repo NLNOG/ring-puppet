@@ -118,6 +118,7 @@ class groups {
 
 node 'staging01' inherits ringnode {
     $owner = "job"
+    include resolving
     include smokeping::slave
     include nagios::target
     include nagios_services

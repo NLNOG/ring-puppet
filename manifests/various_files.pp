@@ -60,13 +60,6 @@ class etcfiles {
         hasrestart => true,
     }
 
-    file { "/etc/resolv.conf":
-        owner   => root,
-        group   => root,
-        mode    => 644,
-        source  => "puppet:///files/etc/resolv.conf",
-    } 
-
      file { "/etc/pam.d/atd":
         owner   => root,
         group   => root,
