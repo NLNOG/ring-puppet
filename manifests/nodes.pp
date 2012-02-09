@@ -19,6 +19,7 @@ node basenode {
     $root_mail_recipient = "ring-admins@ring.nlnog.net"
     $postfix_myorigin = ""
     include postfix
+    include resolving
 }
 
 node ringnode inherits basenode {
@@ -118,7 +119,6 @@ class groups {
 
 node 'staging01' inherits ringnode {
     $owner = "job"
-    include resolving
     include smokeping::slave
     include nagios::target
     include nagios_services
