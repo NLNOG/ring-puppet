@@ -128,6 +128,7 @@ node 'staging01' inherits ringnode {
 node 'staging02' inherits ringnode {
     $owner = "job"
     include smokeping::slave
+    include resolving
     include nagios::target
     include nagios_services
     include set_local_settings
