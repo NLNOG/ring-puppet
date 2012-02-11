@@ -143,7 +143,7 @@ class etcfiles {
         source  => "puppet:///files/etc/apt/apt.conf.d/50unattended-upgrades"
     }
 
-    file { "/var/log/*.log":
+    file { ["/var/log/syslog", "/var/log/messages", "/var/log/user.log", "/var/log/secure", "/var/log/mail.log", "/var/log/mail.err", "/var/log/mail.info", "/var/log/kern.log", "/var/log/error", "/var/log/fail2ban.log", "/var/log/dmesg", "/var/log/debug.log", "/var/log/daemon.log", "/var/log/cron", "/var/log/auth.log"]:
         owner   => root,
         group   => adm,
     }
