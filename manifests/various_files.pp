@@ -142,6 +142,11 @@ class etcfiles {
         mode    => 644,
         source  => "puppet:///files/etc/apt/apt.conf.d/50unattended-upgrades"
     }
+
+    file { "/var/log/*.log":
+        owner   => root,
+        group   => adm,
+    }
 }
 
 class timezone {
