@@ -99,13 +99,13 @@ class no-apache2 {
 class nagios_services {
     nagios::service::ping { $name: }
     nagios::service::ssh { $name: }
-    @@nagios_servicedependency { "${title}_${name}_ssh_6":
+    @@nagios_servicedependency { "${name}_ssh_6":
         service_description             => "check_ping6",
         dependent_service_description   => "check_ssh_6",
         host_name                       => "${name}",
         dependent_host_name             => "${name}",
     }
-    @@nagios_servicedependency { "${title}_${name}_ssh_4":
+    @@nagios_servicedependency { "${name}_ssh_4":
         service_description             => "check_ping",
         dependent_service_description   => "check_ssh_4",
         host_name                       => "${name}",
