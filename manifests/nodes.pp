@@ -33,6 +33,7 @@ node ringnode inherits basenode {
 }
 
 node 'master01' inherits basenode {
+    include users
     include munin::host
     include master_software
     include syslog_ng::server
@@ -51,6 +52,7 @@ node 'master01' inherits basenode {
 }
 
 node 'master02' inherits basenode {
+    include users
 # this is not a puppetmaster for now
 #    include master_software
 #    include mastercronjobs
