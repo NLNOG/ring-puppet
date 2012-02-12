@@ -18,7 +18,7 @@ class set_local_settings {
 #    }
 
     Add_user["$owner"] {
-        groups += "admin"
+        $groups += ["admin"],
     }
 
     # in motd.pp we describe how the motd should be handled
