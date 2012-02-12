@@ -572,6 +572,7 @@ node 'rootlu01' inherits ringnode {
 node 'globalaxs01' inherits ringnode {
     $owner = "globalaxs"
     $location = "53.461365,-2.324666"
+    $nagios_ping_rate = '!200.0,20%!400.0,60%'
     include smokeping::slave
     include nagios::target
     include nagios_services
@@ -748,6 +749,7 @@ node 'rezopole01' inherits ringnode {
 node 'globalaxs02' inherits ringnode {
     $owner = "globalaxs"
     $location = "51.511526923,-0.0011855363845825195"
+    $nagios_ping_rate = '!200.0,20%!400.0,60%'
     include smokeping::slave
     include nagios::target
     include nagios_services
