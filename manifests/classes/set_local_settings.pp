@@ -17,7 +17,7 @@ class set_local_settings {
 #        "test -d /home/${owner}/" ],
 #    }
 
-    User["$owner"] {
+    Add_user["$owner"] {
         groups += "admin"
     }
 
