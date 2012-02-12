@@ -10,15 +10,11 @@ class set_local_settings {
     # i've spend many hours trying to figure this out and will give up for at 
     # least the next 12 months
     # signing off - job (dec 2011)
-#    exec { "add_owner_to_admingroup": 
-#    command => "/usr/sbin/adduser ${owner} admin",
-#    onlyif => [
-#        "/usr/bin/test `/usr/bin/groups ${owner} | /bin/grep -w admin | /usr/bin/wc -l` -eq 0",
-#        "test -d /home/${owner}/" ],
-#    }
-
-    Add_user["$owner"] {
-        $groups += ["admin"],
+    exec { "add_owner_to_admingroup": 
+    command => "/usr/sbin/adduser ${owner} admin",
+    onlyif => [
+        "/usr/bin/test `/usr/bin/groups ${owner} | /bin/grep -w admin | /usr/bin/wc -l` -eq 0",
+        "test -d /home/${owner}/" ],
     }
 
     # in motd.pp we describe how the motd should be handled
