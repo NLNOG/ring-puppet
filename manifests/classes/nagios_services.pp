@@ -19,7 +19,7 @@ class nagios_services {
         dependent_service_description   => "check_ssh4",
         host_name                       => "${fqdn}",
         dependent_host_name             => "${fqdn}",
-        notification_failure_criteria       => "w,u,c,r",
+        notification_failure_criteria       => "w,u,c",
     }
 
     # these virtual exported resources will create a dependeny between
