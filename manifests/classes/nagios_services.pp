@@ -14,7 +14,7 @@ class nagios_services {
     # these virtual exported resources will create a dependeny between
     # the IPv4 ping check and the IPv4 SSH check
     # thus not alerting for ssh if ping fails first
-    @@nagios_servicedependency { "${fqdn}_dep_ssh_4": 
+    @@nagios_servicedependency { "${fqdn}_dep_ssh4_on_ping": 
         service_description             => "check_ping",
         dependent_service_description   => "check_ssh4",
         host_name                       => "${fqdn}",
@@ -25,7 +25,7 @@ class nagios_services {
     # these virtual exported resources will create a dependeny between
     # the IPv6 ping check and the IPv6 SSH check
     # thus not alerting for ssh if ping fails first
-    @@nagios_servicedependency { "${fqdn}_dep_ssh_6":
+    @@nagios_servicedependency { "${fqdn}_dep_ssh6_on_ping6":
         service_description             => "check_ping6",
         dependent_service_description   => "check_ssh6",
         host_name                       => "${fqdn}",
