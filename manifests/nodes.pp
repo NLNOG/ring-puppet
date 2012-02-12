@@ -107,6 +107,12 @@ class groups {
     }
 }
 
+### provide class to realise users
+
+class users {
+    Add_user <| groups == "ring-admins" or groups == "ring-users" |>
+}
+
 #### staging #####
 
 node 'staging01' inherits ringnode {
@@ -115,7 +121,7 @@ node 'staging01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
-    Add_user <| groups == "ring-admins" or groups == "ring-users" |>
+	include users
 }
 
 node 'staging02' inherits ringnode {
@@ -124,6 +130,7 @@ node 'staging02' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 #### einde staging #####
@@ -137,6 +144,7 @@ node 'intouch01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'bit01' inherits ringnode {
@@ -146,6 +154,7 @@ node 'bit01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'coloclue01' inherits ringnode {
@@ -155,6 +164,7 @@ node 'coloclue01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'widexs01' inherits ringnode {
@@ -164,6 +174,7 @@ node 'widexs01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'xlshosting01' inherits ringnode {
@@ -173,6 +184,7 @@ node 'xlshosting01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'interconnect01' inherits ringnode {
@@ -182,6 +194,7 @@ node 'interconnect01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'cambrium01' inherits ringnode {
@@ -191,6 +204,7 @@ node 'cambrium01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'cyso01' inherits ringnode {
@@ -200,6 +214,7 @@ node 'cyso01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'zylon01' inherits ringnode {
@@ -209,6 +224,7 @@ node 'zylon01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'duocast01' inherits ringnode {
@@ -218,6 +234,7 @@ node 'duocast01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'easyhosting01' inherits ringnode {
@@ -227,6 +244,7 @@ node 'easyhosting01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'previder01' inherits ringnode {
@@ -236,6 +254,7 @@ node 'previder01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'leaseweb01' inherits ringnode {
@@ -245,6 +264,7 @@ node 'leaseweb01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'nxs01' inherits ringnode {
@@ -254,6 +274,7 @@ node 'nxs01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'ic-hosting01' inherits ringnode {
@@ -263,6 +284,7 @@ node 'ic-hosting01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'xs4all01' inherits ringnode {
@@ -272,6 +294,7 @@ node 'xs4all01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'nedzone01' inherits ringnode {
@@ -281,6 +304,7 @@ node 'nedzone01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'oxilion01' inherits ringnode {
@@ -290,6 +314,7 @@ node 'oxilion01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'ebayclassifiedsgroup01' inherits ringnode {
@@ -299,6 +324,7 @@ node 'ebayclassifiedsgroup01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'is01' inherits ringnode {
@@ -308,6 +334,7 @@ node 'is01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'surfnet01' inherits ringnode {
@@ -317,6 +344,7 @@ node 'surfnet01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'prolocation01' inherits ringnode {
@@ -326,6 +354,7 @@ node 'prolocation01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'in2ip01' inherits ringnode {
@@ -335,6 +364,7 @@ node 'in2ip01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'netground01' inherits ringnode {
@@ -344,6 +374,7 @@ node 'netground01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'totaalnet01' inherits ringnode {
@@ -353,6 +384,7 @@ node 'totaalnet01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'signet01' inherits ringnode {
@@ -362,6 +394,7 @@ node 'signet01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'tripleit01' inherits ringnode {
@@ -371,6 +404,7 @@ node 'tripleit01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'jaguarnetwork01' inherits ringnode {
@@ -380,6 +414,7 @@ node 'jaguarnetwork01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'tuxis01' inherits ringnode {
@@ -389,6 +424,7 @@ node 'tuxis01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'tenet01' inherits ringnode {
@@ -399,6 +435,7 @@ node 'tenet01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'bigwells01' inherits ringnode {
@@ -409,6 +446,7 @@ node 'bigwells01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'atrato01' inherits ringnode {
@@ -418,6 +456,7 @@ node 'atrato01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'tdc01' inherits ringnode {
@@ -427,6 +466,7 @@ node 'tdc01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'netability01' inherits ringnode {
@@ -436,6 +476,7 @@ node 'netability01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'unilogicnetworks01' inherits ringnode {
@@ -445,6 +486,7 @@ node 'unilogicnetworks01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'maverick01' inherits ringnode {
@@ -454,6 +496,7 @@ node 'maverick01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'acsystemy01' inherits ringnode {
@@ -463,6 +506,7 @@ node 'acsystemy01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'netsign01' inherits ringnode {
@@ -472,6 +516,7 @@ node 'netsign01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'rrbone01' inherits ringnode {
@@ -481,6 +526,7 @@ node 'rrbone01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'hosteam01' inherits ringnode {
@@ -490,6 +536,7 @@ node 'hosteam01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'msp01' inherits ringnode {
@@ -502,6 +549,7 @@ node 'msp01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'inotel01' inherits ringnode {
@@ -511,6 +559,7 @@ node 'inotel01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'fremaks01' inherits ringnode {
@@ -520,6 +569,7 @@ node 'fremaks01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'blix01' inherits ringnode {
@@ -529,6 +579,7 @@ node 'blix01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'portlane01' inherits ringnode {
@@ -538,6 +589,7 @@ node 'portlane01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'solido01' inherits ringnode {
@@ -547,6 +599,7 @@ node 'solido01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'digmia01' inherits ringnode {
@@ -556,6 +609,7 @@ node 'digmia01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'rootlu01' inherits ringnode {
@@ -565,6 +619,7 @@ node 'rootlu01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'globalaxs01' inherits ringnode {
@@ -575,6 +630,7 @@ node 'globalaxs01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'nebula01' inherits ringnode {
@@ -584,6 +640,7 @@ node 'nebula01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'tilaa01' inherits ringnode {
@@ -593,6 +650,7 @@ node 'tilaa01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'nautile01' inherits ringnode {
@@ -603,6 +661,7 @@ node 'nautile01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'voxel01' inherits ringnode {
@@ -613,6 +672,7 @@ node 'voxel01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'voxel02' inherits ringnode {
@@ -623,6 +683,7 @@ node 'voxel02' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'neotelecoms01' inherits ringnode {
@@ -632,6 +693,7 @@ node 'neotelecoms01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'apnic01' inherits ringnode {
@@ -642,6 +704,7 @@ node 'apnic01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'atrato02' inherits ringnode {
@@ -652,6 +715,7 @@ node 'atrato02' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'man-da01' inherits ringnode {
@@ -661,6 +725,7 @@ node 'man-da01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'webair01' inherits ringnode {
@@ -670,6 +735,7 @@ node 'webair01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'concepts-ict01' inherits ringnode {
@@ -679,6 +745,7 @@ node 'concepts-ict01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'dataoppdrag01' inherits ringnode {
@@ -688,6 +755,7 @@ node 'dataoppdrag01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'tetaneutral01' inherits ringnode {
@@ -697,6 +765,7 @@ node 'tetaneutral01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'jump01' inherits ringnode {
@@ -706,6 +775,7 @@ node 'jump01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'iway01' inherits ringnode {
@@ -715,6 +785,7 @@ node 'iway01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'timico01' inherits ringnode {
@@ -724,6 +795,7 @@ node 'timico01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'yacast01' inherits ringnode {
@@ -733,6 +805,7 @@ node 'yacast01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'rezopole01' inherits ringnode {
@@ -742,6 +815,7 @@ node 'rezopole01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'globalaxs02' inherits ringnode {
@@ -752,6 +826,7 @@ node 'globalaxs02' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'solnet01' inherits ringnode {
@@ -761,6 +836,7 @@ node 'solnet01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'boxed-it01' inherits ringnode {
@@ -770,6 +846,7 @@ node 'boxed-it01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'spacenet01' inherits ringnode {
@@ -779,6 +856,7 @@ node 'spacenet01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'mironet01' inherits ringnode {
@@ -788,6 +866,7 @@ node 'mironet01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'seeweb01' inherits ringnode {
@@ -797,6 +876,7 @@ node 'seeweb01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'networkdesign01' inherits ringnode {
@@ -806,6 +886,7 @@ node 'networkdesign01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'zensystems01' inherits ringnode {
@@ -815,6 +896,7 @@ node 'zensystems01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'westnet01' inherits ringnode {
@@ -824,6 +906,7 @@ node 'westnet01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'kantonsschulezug01' inherits ringnode {
@@ -833,6 +916,7 @@ node 'kantonsschulezug01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 node 'filoo01' inherits ringnode {
@@ -842,6 +926,7 @@ node 'filoo01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+	include users
 }
 
 

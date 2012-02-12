@@ -10,9 +10,10 @@
 # Actions:
 #   Configures or removes all normal users on a ringnode
 # Requires:
-#   - @add_user from classes/user.pp
-#   - @authorized_keys from classes/user.pp
+#   - add_user from classes/user.pp
+#   - authorized_keys from classes/user.pp
 #
+
 class users::virtual::ring_users {
 
 
