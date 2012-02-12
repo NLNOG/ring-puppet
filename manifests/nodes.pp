@@ -115,7 +115,7 @@ node 'staging01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
-    User <| group == ring-admins or group == ring-users |>
+    User <| group == "ring-admins" or group == "ring-users" |>
 }
 
 node 'staging02' inherits ringnode {
