@@ -3,6 +3,7 @@
 ## Hosts
 
 node basenode {
+    include users::virtual::ring_admins
     include cronjobs
     include groups
     include nettools
@@ -23,8 +24,7 @@ node basenode {
 }
 
 node ringnode inherits basenode {
-    include ring_users
-    include ring_admins
+    include users::virtual::ring_users
     include no-apache2
     include syslog_ng::client
     include nodesonlycron
@@ -33,7 +33,6 @@ node ringnode inherits basenode {
 }
 
 node 'master01' inherits basenode {
-    include ring_admins
     include munin::host
     include master_software
     include syslog_ng::server
@@ -52,7 +51,6 @@ node 'master01' inherits basenode {
 }
 
 node 'master02' inherits basenode {
-    include ring_admins
 # this is not a puppetmaster for now
 #    include master_software
 #    include mastercronjobs
@@ -117,12 +115,12 @@ node 'staging01' inherits ringnode {
     include nagios::target
     include nagios_services
     include set_local_settings
+    User <| group == ring-admins or group == ring-users |>
 }
 
 node 'staging02' inherits ringnode {
     $owner = "job"
     include smokeping::slave
-    include resolving
     include nagios::target
     include nagios_services
     include set_local_settings
