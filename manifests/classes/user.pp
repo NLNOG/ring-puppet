@@ -48,6 +48,8 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
         mode    => 700,
         require => File["/home/$username/"],
     }
+
+    Authorized_keys <| title == "${title}" |>
 }
 
 define authorized_keys ($sshkeys, $ensure = "present", $home = '') {
