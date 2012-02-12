@@ -18,13 +18,6 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
         }
     }
 
-    @@nagios_contact { "${username}_nagios":
-        contact_name    => "$username",
-        use             => "generic-contact",
-        alias           => "$company",
-        email           => "$email",
-    }
-
     user { $username:
         comment => "${company} - ${email}",
         home    => "/home/$username",
