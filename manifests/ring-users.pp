@@ -1370,5 +1370,20 @@ class users::virtual::ring_users {
 
 ##### END filoo #####
 
+##### BEGIN nessus #####
+
+    @add_user { nessus:
+        email => "td@nessus.at",
+        company => "Nessus GmbH",
+        uid => "5078",
+        groups => ['ring-users'],
+    }
+    @authorized_keys { "nessus":
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJeX1saUzvOdltwTegyOUOAO41GYFtEBS7rJIjXSK9b8yjw2uxyWJ6WmOv5RBnUnuo3CmVdFNVTUhVGy5IBtVriP4ccUJSBEivWOvsaJRizz86Ojp8Yy6QiDztMh9qSr/pgvK8Iz5VpXHYmhRZsMreYA48TWgczFtORKMWaJWSmgTs9H0nehyD5IYAfGhh3ZO9tJIA26DU35ct69EhGB5ovOoXYPTAWEO63nYijy1/1nDzTczMFqt3RWB+V7sr3tKiJLT9WtLCtMkLVUpJz+6AZMYBwbojm9QBbJCPjdBF9mqkLN4wrRLOjXmlLqeJTL4oaXnKmzvMF9XxUl+LtmUV space@space-macpro",
+        ],
+    }
+
+##### END nessus #####
 
 }

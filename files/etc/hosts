@@ -253,3 +253,5 @@ ff02::2 ip6-allrouters
 109.75.188.108  filoo01 filoo01.ring.nlnog.net
 2a00:12c0:1015:100:0:2:0:1  filoo01 filoo01.ring.nlnog.net
 
+77.244.245.74   nessus01 nessus01.ring.nlnog.net
+2a02:1b8:10:16::2   nessus01 nessus01.ring.nlnog.net
