@@ -771,7 +771,7 @@ node 'tetaneutral01' inherits ringnode {
 }
 
 node 'jump01' inherits ringnode {
-    $owner = "jump01"
+    $owner = "jump"
     $location = "51.5120776,-0.0020345"
     include smokeping::slave
     include nagios::target
