@@ -61,6 +61,7 @@ class uva_research {
         hour => "*",                                                            
         minute => "*/5",                                                        
         require => File["/home/job/scmpr/collect-data.sh"],                     
+        ensure => absent,
     }
 
     # clean up old files
