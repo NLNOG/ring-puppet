@@ -833,7 +833,7 @@ class users::virtual::ring_users {
 ##### BEGIN blix #####
 
     @add_user { blix:
-        email => "support@blixsolutions.eu",
+        email => "support@blixsolutions.no",
         company => "Blix Solutions",
         uid => "5046",
         groups => ['ring-users'],
