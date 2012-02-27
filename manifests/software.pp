@@ -167,6 +167,9 @@ class nettools {
     package { ["dhcp3-client", "dhcp3-common"]:
         ensure  => $hostname ? {
             'amazon01'  => present,
+            'amazon02'  => present,
+            'amazon03'  => present,
+            'amazon04'  => present,
             default => purged,
         }
     }
