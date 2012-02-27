@@ -949,6 +949,16 @@ node 'amazon01' inherits ringnode {
     include nagios_services
     include set_local_settings
 	include users
+
+    # hopefully a temp fix because of:
+    # https://bugs.launchpad.net/ubuntu/+source/linux/+bug/613273
+    file { "/usr/share/initramfs-tools/scripts/init-bottom/udev":
+        ensure  => present
+        mode    => 0755,
+        owner   => root,
+        group   => root,
+        source  => "puppet:///files/usr/share/initramfs-tools/scripts/init-bottom/udev",
+    }
 }
 
 
