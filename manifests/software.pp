@@ -164,9 +164,12 @@ class nettools {
     package { "ufw": ensure => purged }
     package { "apparmor": ensure => purged }
     package { "apparmor-utils": ensure => purged }
-    package ( $present = "purged" ) { ["dhcp3-client", "dhcp3-common"]:                             
-            ensure  => $present,                                                
-    }                                                                       
+    package { ["dhcp3-client", "dhcp3-common"]:
+        ensure  => $hostname ? {
+            'amazon01'  => present,
+            default => purged,
+        }
+    }
 }
 
 class nlnogrepokey {
