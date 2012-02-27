@@ -157,8 +157,6 @@ class nettools {
     # packages we don't like
     package { "pppoe": ensure => purged }
     package { "ppp": ensure => purged }
-    package { "dhcp3-client": ensure => purged }
-    package { "dhcp3-common": ensure => purged }
     package { "pppconfig": ensure => purged }
     package { "pppoeconfig": ensure => purged }
     package { "resolvconf": ensure => purged }
