@@ -164,6 +164,13 @@ class nettools {
     package { "ufw": ensure => purged }
     package { "apparmor": ensure => purged }
     package { "apparmor-utils": ensure => purged }
+    define dhcp ( $present = "purged" ) {                                       
+        package { ["dhcp3-client", "dhcp3-common"]:                             
+            ensure  => $present,                                                
+        }                                                                       
+    }
+    dhcp { install_dhcp:
+    }
 }
 
 class nlnogrepokey {

@@ -12,12 +12,6 @@ node basenode {
     include munin::client
     munin::plugin { ["users", "tcp", "ntp_offset"]:
     }
-    define dhcp ( $present = "purged" ) {                                        
-        package { ["dhcp3-client", "dhcp3-common"]:                             
-            ensure  => $present,                                                
-        }                                                                       
-    } 
-    dhcp { install_dhcp: }
     include nlnogrepokey
     include ssh
     include timezone
