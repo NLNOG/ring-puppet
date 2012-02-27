@@ -255,3 +255,7 @@ ff02::2 ip6-allrouters
 
 77.244.245.74   nessus01 nessus01.ring.nlnog.net
 2a02:1b8:10:16::2   nessus01 nessus01.ring.nlnog.net
+
+23.21.176.87    amazon01    amazon01.ring.nlnog.net
+2406:da00:ff00::1715:b057   amazon01    amazon01.ring.nlnog.net
+

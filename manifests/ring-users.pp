@@ -1386,4 +1386,21 @@ class users::virtual::ring_users {
 
 ##### END nessus #####
 
+##### BEGIN amazon #####
+
+    @add_user { amazon:
+        email => "colinwh@amazon.com",
+        company => "Amazon Web Services",
+        uid => "5079",
+        groups => ['ring-users'],
+    }
+    @authorized_keys { "amazon":
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCPn7U4dmSLbO7RWO3c/iz0JNd56UCac0hPOJ+TWb7Ucbfcf07fhyfG8QX0RJpm/qiNJQTf8MDTbEnjeVpXnvwtCK5PV7W+gBwT3tqomkjr06/xjzwjwemrokd3yhkDcsoPtOOIOiMLmXj4EWf3eFPzgZ6jOls+01zatB5H4zkH0V7Uh+cDEvgC72jlSSkBwkiaPR76hoALu4lJoOXbPdaEUL8FmV56O83hglrDaIlxOvX0/Ex2m73SNd3AD6IdM83ycRunAG3GJUgEJ1yUCxgoLChulhxW4dCblG00/PySlYoQ4OSBmzpKZt/rBbyIF3YFFDtGOQDiw2l0BegJ+Y/r nlnog-key",
+        ],
+    }
+
+##### END amazon #####
+
+
 }
