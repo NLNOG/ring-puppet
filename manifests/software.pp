@@ -164,7 +164,7 @@ class nettools {
     package { "ufw": ensure => purged }
     package { "apparmor": ensure => purged }
     package { "apparmor-utils": ensure => purged }
-    package ($present = purged) { ["dhcp3-client", "dhcp3-common"]:                             
+    package ( $present = "purged" ) { ["dhcp3-client", "dhcp3-common"]:                             
             ensure  => $present,                                                
     }                                                                       
 }
