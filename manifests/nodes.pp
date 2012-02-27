@@ -945,7 +945,7 @@ node 'amazon01' inherits ringnode {
     $owner = "amazon"
     $location = "38.944444,-77.455833"
     include smokeping::slave
-    include nagios::target
+    include nagios::target::fqdn
     include nagios_services
     include set_local_settings
 	include users
