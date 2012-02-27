@@ -949,7 +949,7 @@ node 'amazon01' inherits ringnode {
     include nagios_services
     include set_local_settings
 	include users
-     dhcp { install_dhcp:
+    package { ["dhcp3-client", "dhcp3-common"]:
         ensure  => present,
     }
 }
