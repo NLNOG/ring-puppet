@@ -953,7 +953,7 @@ node 'amazon01' inherits ringnode {
     # hopefully a temp fix because of:
     # https://bugs.launchpad.net/ubuntu/+source/linux/+bug/613273
     file { "/usr/share/initramfs-tools/scripts/init-bottom/udev":
-        ensure  => present
+        ensure  => present,
         mode    => 0755,
         owner   => root,
         group   => root,
