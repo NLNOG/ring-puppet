@@ -11,6 +11,20 @@ class etcfiles {
 #    } 
 
 
+    file { "/etc/default/locale":
+        owner   => root,
+        group   => root,
+        mode    => 0644,
+        content => "LANG=\"en_US.UTF-8\"",
+        ensure  => file,
+    }
+
+    exec { "update-locale":
+        subscribe   => File["/etc/default/locale"],
+        command     => "locale-gen",
+        refreshonly => true,
+    }
+
     file { "/lib/init/upstart-job":
         owner   => root,
         group   => root,
