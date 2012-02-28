@@ -98,7 +98,7 @@ class munin::client::debian
 {
 
 	package { ["munin-node", "munin-common", "munin-plugins-core", "munin-plugins-extra"]:
-        ensure => installed,
+        ensure => latest,
     }
     package { "munin-plugins":
         ensure  => purged,
