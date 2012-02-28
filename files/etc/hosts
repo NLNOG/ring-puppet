@@ -259,3 +259,11 @@ ff02::2 ip6-allrouters
 23.21.176.87    amazon01    amazon01.ring.nlnog.net
 2406:da00:ff00::1715:b057   amazon01    amazon01.ring.nlnog.net
 
+176.34.122.81   amazon02    amazon02.ring.nlnog.net
+2a01:578:3::b022:7a51   amazon02    amazon02.ring.nlnog.net
+
+46.137.244.41   amazon03    amazon03.ring.nlnog.net
+2400:6500:ff00::2e89:f429   amazon03    amazon03.ring.nlnog.net
+
+176.34.57.117   amazon04    amazon04.ring.nlnog.net
+2400:6700:ff00::b022:3975   amazon04    amazon04.ring.nlnog.net
