@@ -97,7 +97,7 @@ class munin::client::darwin
 class munin::client::debian 
 {
 
-	package { "munin-node": ensure => installed }
+	package { ["munin-node", "munin-common", "munin-plugins-core", "munin-plugins-extra"]: ensure => installed }
 
 	file {
 		"/etc/munin/":

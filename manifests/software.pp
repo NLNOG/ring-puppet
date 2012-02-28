@@ -170,6 +170,8 @@ class nettools {
             'amazon02'  => present,
             'amazon03'  => present,
             'amazon04'  => present,
+            'amazon05'  => present,
+            'amazon06'  => present,
             default => purged,
         }
     }
