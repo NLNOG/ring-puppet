@@ -1028,3 +1028,44 @@ node 'amazon04' inherits ringnode {
     }
 }
 
+node 'amazon05' inherits ringnode {
+    $owner = "amazon"
+    $location = "45.588611, -122.5975"
+    include smokeping::slave
+    include nagios::target::fqdn
+    include nagios_services
+    $nagios_ping_rate = '!300.0,20%!500.0,60%'
+    include set_local_settings
+	include users
+
+    # hopefully a temp fix because of:
+    # https://bugs.launchpad.net/ubuntu/+source/linux/+bug/613273
+    file { "/usr/share/initramfs-tools/scripts/init-bottom/udev":
+        ensure  => present,
+        mode    => 0755,
+        owner   => root,
+        group   => root,
+        source  => "puppet:///files/usr/share/initramfs-tools/scripts/init-bottom/udev",
+    }
+}
+ode 'amazon06' inherits ringnode {
+    $owner = "amazon"
+    $location = "37.618889, -122.375"
+    include smokeping::slave
+    include nagios::target::fqdn
+    include nagios_services
+    $nagios_ping_rate = '!300.0,20%!500.0,60%'
+    include set_local_settings
+	include users
+
+    # hopefully a temp fix because of:
+    # https://bugs.launchpad.net/ubuntu/+source/linux/+bug/613273
+    file { "/usr/share/initramfs-tools/scripts/init-bottom/udev":
+        ensure  => present,
+        mode    => 0755,
+        owner   => root,
+        group   => root,
+        source  => "puppet:///files/usr/share/initramfs-tools/scripts/init-bottom/udev",
+    }
+}
+
