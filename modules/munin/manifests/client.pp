@@ -106,7 +106,7 @@ class munin::client::debian
     }
 
     file { "/etc/init.d/munin-node":
-        ensure  => present,
+        ensure  => file,
         source  => "puppet:///modules/munin/init-script",
         mode    => 0755,
         group   => root,
