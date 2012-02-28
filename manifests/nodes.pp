@@ -991,6 +991,7 @@ node 'amazon03' inherits ringnode {
     include smokeping::slave
     include nagios::target::fqdn
     include nagios_services
+    $nagios_ping_rate = '!550.0,20%!900.0,60%'
     include set_local_settings
 	include users
 
@@ -1011,6 +1012,7 @@ node 'amazon04' inherits ringnode {
     include smokeping::slave
     include nagios::target::fqdn
     include nagios_services
+    $nagios_ping_rate = '!550.0,20%!900.0,60%'
     include set_local_settings
 	include users
 
