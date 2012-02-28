@@ -26,15 +26,18 @@ class etcfiles {
         source  => "puppet:///files/var/lib/locales/supported.d/local",
         ensure  => file,
     }
-
        
     exec { "update-locale":
         subscribe   => [ File["/etc/default/locale"], File["/var/lib/locales/supported.d/local"] ],
         command     => "locale-gen",
         refreshonly => true,
         environment => "LANG=\"en_US.UTF-8\"",
+        require     => Package["locales"],
     }
-    
+   
+    package { "locales":
+        ensure  => latest,
+    }
 
     file { "/lib/init/upstart-job":
         owner   => root,
