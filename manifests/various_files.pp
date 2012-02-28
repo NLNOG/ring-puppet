@@ -23,6 +23,7 @@ class etcfiles {
         subscribe   => File["/etc/default/locale"],
         command     => "locale-gen",
         refreshonly => true,
+        environment => "LANG=\"en_US.UTF-8\"",
     }
 
     file { "/lib/init/upstart-job":
