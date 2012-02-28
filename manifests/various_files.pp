@@ -23,7 +23,7 @@ class etcfiles {
         owner   => root,
         group   => root,
         mode    => 0644,
-        content => "puppet:///files/var/lib/locales/supported.d/local",
+        source  => "puppet:///files/var/lib/locales/supported.d/local",
         ensure  => file,
     }
 
