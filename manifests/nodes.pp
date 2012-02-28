@@ -964,4 +964,64 @@ node 'amazon01' inherits ringnode {
     }
 }
 
+node 'amazon02' inherits ringnode {
+    $owner = "amazon"
+    $location = "53.43333,-6.25000"
+    include smokeping::slave
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+	include users
+
+    # hopefully a temp fix because of:
+    # https://bugs.launchpad.net/ubuntu/+source/linux/+bug/613273
+    file { "/usr/share/initramfs-tools/scripts/init-bottom/udev":
+        ensure  => present,
+        mode    => 0755,
+        owner   => root,
+        group   => root,
+        source  => "puppet:///files/usr/share/initramfs-tools/scripts/init-bottom/udev",
+    }
+}
+
+
+node 'amazon03' inherits ringnode {
+    $owner = "amazon"
+    $location = "1.358816,103.9891"
+    include smokeping::slave
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+	include users
+
+    # hopefully a temp fix because of:
+    # https://bugs.launchpad.net/ubuntu/+source/linux/+bug/613273
+    file { "/usr/share/initramfs-tools/scripts/init-bottom/udev":
+        ensure  => present,
+        mode    => 0755,
+        owner   => root,
+        group   => root,
+        source  => "puppet:///files/usr/share/initramfs-tools/scripts/init-bottom/udev",
+    }
+}
+
+node 'amazon04' inherits ringnode {
+    $owner = "amazon"
+    $location = "35.765278, 140.385556"
+    include smokeping::slave
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+	include users
+
+    # hopefully a temp fix because of:
+    # https://bugs.launchpad.net/ubuntu/+source/linux/+bug/613273
+    file { "/usr/share/initramfs-tools/scripts/init-bottom/udev":
+        ensure  => present,
+        mode    => 0755,
+        owner   => root,
+        group   => root,
+        source  => "puppet:///files/usr/share/initramfs-tools/scripts/init-bottom/udev",
+    }
+}
 
