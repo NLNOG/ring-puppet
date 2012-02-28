@@ -12,7 +12,9 @@ node basenode {
     include munin::client
     munin::plugin { ["users", "tcp", "ntp_offset", "uptime", "threads", "ntp_kernel_pll_off", "diskstats", "proc_pri", "iostat_ios"]:
     }
-    include nlnogrepokey
+    munin::plugin { ["eth0"]:
+        ensure => "if_err_" 
+    }
     include ssh
     include timezone
     include fail2ban-whitelist
