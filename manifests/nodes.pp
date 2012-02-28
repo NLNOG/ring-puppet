@@ -10,7 +10,7 @@ node basenode {
     include etcfiles
     include local_binaries
     include munin::client
-    munin::plugin { ["users", "tcp", "ntp_offset"]:
+    munin::plugin { ["users", "tcp", "ntp_offset", "uptime", "threads", "ntp_kernel_pll_off", "diskstats", "proc_pri", "iostat_ios"]:
     }
     include nlnogrepokey
     include ssh
