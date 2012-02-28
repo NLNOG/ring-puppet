@@ -15,7 +15,10 @@ class etcfiles {
         owner   => root,
         group   => root,
         mode    => 0755,
-        source  => "puppet:///files/lib/init/upstart-job"
+        source  => $lsbdistcodename ? {
+            maverick    => "puppet:///files/lib/init/upstart-job.maverick",
+            precise     => "puppet:///files/lib/init/upstart-job.precise",
+        }
     }
 
 
