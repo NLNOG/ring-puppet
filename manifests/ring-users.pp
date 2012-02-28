@@ -377,18 +377,6 @@ class users::virtual::ring_users {
     }  
 ##### END ebayclassifiedsgroup #####
 
-##### BEGIN evertjenetworks #####
-
-    @add_user { evertjenetworks:
-        email   => "evert@vanharten.nu",
-        company => "Evertje Networks",
-        uid     => "5020",
-        groups  => ['ring-users'],
-        ensure  => absent,
-    }
-
-##### END evertjenetworks #####
-
 ##### BEGIN is #####
 
     @add_user { is:
