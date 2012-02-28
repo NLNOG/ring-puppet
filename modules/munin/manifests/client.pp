@@ -105,16 +105,6 @@ class munin::client::debian
         before  => Package["munin-node"],
     }
 
-    file { "/etc/init.d/munin-node":
-        ensure  => file,
-        source  => "puppet:///modules/munin/init-script",
-        mode    => 0755,
-        group   => root,
-        owner   => root,
-        before  => Package["munin-node"],
-    }
-
-
 	file {
 		"/etc/munin/":
 			ensure => directory,
