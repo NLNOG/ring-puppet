@@ -97,7 +97,7 @@ class munin::client::darwin
 class munin::client::debian 
 {
 
-	package { ["munin-node", "munin-common", "munin-plugins-core", "munin-plugins-extra"]:
+	package { ["munin-node", "munin-common", "munin-plugins-extra"]:
         ensure => latest,
     }
     package { "munin-plugins":
