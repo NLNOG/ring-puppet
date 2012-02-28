@@ -10,7 +10,15 @@ class etcfiles {
 #        source  => "puppet:///files/home/job/.ssh/authorized_keys"
 #    } 
 
-    
+
+    file { "/lib/init/upstart-job":
+        owner   => root,
+        group   => root,
+        mode    => 0755,
+        source  => "puppet:///files/lib/init/upstart-job"
+    }
+
+
     file { "/etc/bash.bashrc":
         owner   => root,
         group   => root,
