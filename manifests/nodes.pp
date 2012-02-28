@@ -1048,7 +1048,8 @@ node 'amazon05' inherits ringnode {
         source  => "puppet:///files/usr/share/initramfs-tools/scripts/init-bottom/udev",
     }
 }
-ode 'amazon06' inherits ringnode {
+
+node 'amazon06' inherits ringnode {
     $owner = "amazon"
     $location = "37.618889, -122.375"
     include smokeping::slave
