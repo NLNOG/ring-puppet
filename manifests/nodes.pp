@@ -1070,3 +1070,13 @@ node 'amazon06' inherits ringnode {
     }
 }
 
+node 'equinixnl01' inherits ringnode {
+    $owner = "equinixnl"
+    $location = "52.2373, 6.8496"
+    include smokeping::slave
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+	include users
+}
+
