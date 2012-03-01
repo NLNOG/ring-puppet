@@ -1390,5 +1390,22 @@ class users::virtual::ring_users {
 
 ##### END amazon #####
 
+##### BEGIN equinixnl #####
+
+    @add_user { equinixnl:
+        email => "servicedesk.nl@eu.equinix.com",
+        company => "Equinix NL",
+        uid => "5080",
+        groups => ['ring-users'],
+    }
+    @authorized_keys { "equinixnl":
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCM8n4yposdFemLg3NUvd6xMmY9wVxo0rmMkGpUwnhKZ0XQP7UBNsBu90jkesK9jTQ49zTgYq03CkHVdCZJDEyZRVbF2G2skeuN5JKnfdYgzFBthndzR/B+ePvkHTz+v+IMxsocvOCYt4ovISwW88SyHGwxrc34UUDCUfHr8F3Hjwj9EUNKu8SwMmAiO4qP3UHtbbSYZXUtwWs+4rtpjAuA3j/8LlEXMp8bmhoJvb643BDw4I7K3r0LlJukOVwnJtL7ycaID7VIUew4Q6KDb1YA72rdCodaGlYiTH7PshEHc8aDwV0/RjpUUqv3UK5SOpszpXXECSdQyC4LrO0oz3Q7 jorik_equinix_nl",
+        ],
+    }
+
+##### END equinixnl #####
+
+
 
 }
