@@ -1,0 +1,12 @@
+<%
+    # Downcase all information
+    dom = domain.downcase
+    host = hostname.downcase
+    fhost = name.downcase
+%>
+++ <%= host %>
+    menu = <%= fhost %> (v6)
+    title = <%= fhost %> (IPv6)
+    host = <%= fhost %>
+    probe = FPing6
+    nomasterpoll = yes
