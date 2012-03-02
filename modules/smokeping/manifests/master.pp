@@ -40,11 +40,11 @@ class smokeping::master {
         dir => "$SP_NODESDIR/v4",
     }
 
-    concatenated_file { "/etc/smokeping/config.d/Targets_v6":
-        dir => "$SP_NODESDIR/v6",
-        require => File["/etc/smokeping/config.d/Targets_header_v6"],
-            ensure  => absent,
-    }
+# uncomment to enable ipv6 support agian
+#    concatenated_file { "/etc/smokeping/config.d/Targets_v6":
+#        dir => "$SP_NODESDIR/v6",
+#       require => File["/etc/smokeping/config.d/Targets_header_v6"],
+#    }
 
     file {
         "/etc/apache2/conf.d/smokeping":
