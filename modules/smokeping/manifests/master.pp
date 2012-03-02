@@ -23,7 +23,7 @@ class smokeping::master {
 
     file {
         "/etc/smokeping/config.d/Targets_header":
-            content => template("smokeping/targetsheader.erb"),
+            content => template("smokeping/targetsheader_v4.erb"),
             mode => 0644, owner => root, group => root,
             require => File["/etc/hosts"],
             subscribe => File["/etc/hosts"],
