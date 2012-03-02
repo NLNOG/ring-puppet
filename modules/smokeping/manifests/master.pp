@@ -94,7 +94,7 @@ class smokeping::master {
     file {
         "/etc/smokeping/config.d/Probes":
             mode => 0644, owner => root, group => root,
-            source  => "puppet:///smokeping/files/Probes",
+            source  => "puppet:///smokeping/Probes",
             require => Package["smokeping"],
     }
 
