@@ -1,5 +1,6 @@
 + IPv6
 probe = FPing6
+nomasterpoll = yes
 
 ++ Root-Servers 
 menu = Root-Servers 
@@ -9,75 +10,74 @@ title = DNS Root-Servers
 host = a.root-servers.net
 menu = a.root-servers.net
 title = a.root-servers.net
-nomasterpoll = yes
 
 +++ broot                                                                        
 host = b.root-servers.net                                                       
 menu = b.root-servers.net                                                       
-nomasterpoll = yes
 
 +++ croot                                                                        
 host = c.root-servers.net                                                       
 menu = c.root-servers.net                                                       
 title = c.root-servers.net
-nomasterpoll = yes
 
 +++ droot                                                                        
 host = d.root-servers.net                                                       
 menu = d.root-servers.net                                                       
 title = d.root-servers.net
-nomasterpoll = yes
 
 +++ eroot                                                                        
 host = e.root-servers.net                                                       
 menu = e.root-servers.net                                                       
 title = e.root-servers.net
-nomasterpoll = yes
 
 +++ froot
 host = f.root-servers.net
 menu = f.root-servers.net
 title = f.root-servers.net
-nomasterpoll = yes
 
 +++ groot                                                                        
 host = g.root-servers.net                                                       
 menu = g.root-servers.net                                                       
 title = g.root-servers.net
-nomasterpoll = yes
 
 +++ hroot                                                           
 host = h.root-servers.net                                                       
 menu = h.root-servers.net                                                       
 title = h.root-servers.net
-nomasterpoll = yes
 
 +++ iroot                                                                        
 host = i.root-servers.net                                                       
 menu = i.root-servers.net                                                       
 title = i.root-servers.net
-nomasterpoll = yes
 
 +++ jroot                                                                        
 host = j.root-servers.net                                                       
 menu = j.root-servers.net                                                       
 title = j.root-servers.net
-nomasterpoll = yes
 
 +++ kroot                                                                        
 host = k.root-servers.net                                                       
 menu = k.root-servers.net                                                       
 title = k.root-servers.net
-nomasterpoll = yes
 
 +++ lroot
 host = l.root-servers.net
 menu = l.root-servers.net
 title = l.root-servers.net
-nomasterpoll = yes
 
 +++ mroot                                                                        
 host = m.root-servers.net                                                       
 menu = m.root-servers.net                                                       
 title = m.root-servers.net
-nomasterpoll = yes
+
++ dual
+
+++ Root-Servers 
+menu = Root-Servers 
+title = DNS Root-Servers
+
++++ aroot
+host = /Root-Servers/aroot /IPv6/Root-Servers/aroot
+menu = a.root-servers.net
+title = a.root-servers.net (dual)
+
