@@ -33,6 +33,7 @@ class smokeping::master {
         "/etc/smokeping/config.d/Targets_header_v6":
             content => template("smokeping/targetsheader_v6.erb"),
             mode => 0644, owner => root, group => root,
+            ensure  => absent,
         }
  
     concatenated_file { "/etc/smokeping/config.d/Targets_v4":
@@ -42,6 +43,7 @@ class smokeping::master {
     concatenated_file { "/etc/smokeping/config.d/Targets_v6":
         dir => "$SP_NODESDIR/v6",
         require => File["/etc/smokeping/config.d/Targets_header_v6"],
+            ensure  => absent,
     }
 
     file {
