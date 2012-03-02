@@ -98,6 +98,13 @@ class smokeping::master {
             require => Package["smokeping"],
     }
 
+    file {
+        "/etc/smokeping/config":
+            mode => 0644, owner => root, group => root,
+            source  => "puppet:///smokeping/config",
+            require => Package["smokeping"],
+    }
+
 
     service { "smokeping":
         ensure => running, 
