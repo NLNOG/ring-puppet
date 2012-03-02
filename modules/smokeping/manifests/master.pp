@@ -4,7 +4,7 @@
 
 class smokeping::master {
  
-    module_dir { [ "smokeping", "smokeping/nodes/v4", "smokeping/nodes/v6"]: }
+    module_dir { [ "smokeping", "smokeping/v4", "smokeping/v6"]: }
 
     package { "smokeping": 
         ensure => latest,
