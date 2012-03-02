@@ -3,7 +3,7 @@
 # See LICENSE for the full license granted to you
 
 # Define where the individual nodes' configs are stored
-$SP_NODESDIR="/var/lib/puppet/modules/smokeping/nodes"
+$SP_NODESDIR="/var/lib/puppet/modules/smokeping"
 $SP_SLAVES_DIR="/var/lib/puppet/modules/smokeping/slaves"
 
 import "master.pp"
