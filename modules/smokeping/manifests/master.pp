@@ -4,7 +4,7 @@
 
 class smokeping::master {
  
-    module_dir { [ "smokeping", "smokeping/v4", "smokeping/v6"]: }
+    module_dir { [ "smokeping", "smokeping/v4", "smokeping/v6", "smokeping/slaves"]: }
 
     package { "smokeping": 
         ensure => latest,
@@ -17,7 +17,7 @@ class smokeping::master {
     File <<| tag == smokeping_v4 |>> 
     File <<| tag == smokeping_v6 |>> 
 
-    File <<| tag == smokeping-slaves |>>
+    File <<| tag == smokeping_slaves |>>
 
     Line <<| tag == smokeping-msecret |>>
 
