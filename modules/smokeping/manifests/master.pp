@@ -41,8 +41,7 @@ class smokeping::master {
 
     concatenated_file { "/etc/smokeping/config.d/Targets_v6":
         dir => "$SP_NODESDIR/v6",
-        header => "/etc/smokeping/config.d/Targets.header_v6",
-        require => File["/etc/smokeping/config.d/Targets.header_v6"],
+        require => File["/etc/smokeping/config.d/Targets_header_v6"],
     }
 
     file {
