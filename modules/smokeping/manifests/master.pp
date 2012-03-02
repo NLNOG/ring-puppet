@@ -4,7 +4,7 @@
 
 class smokeping::master {
  
-    module_dir { [ "smokeping", "smokeping/nodes" ]: }
+    module_dir { [ "smokeping", "smokeping/nodes/v4", "smokeping/nodes/v6"]: }
 
     package { "smokeping": 
         ensure => latest,
@@ -14,25 +14,41 @@ class smokeping::master {
         ensure => latest,
     }
 
-    File <<| tag == smokeping |>> 
+    File <<| tag == smokeping_v4 |>> 
+    File <<| tag == smokeping_v6 |>> 
 
     File <<| tag == smokeping-slaves |>>
 
     Line <<| tag == smokeping-msecret |>>
- 
+
     file {
-        "/etc/smokeping/config.d/Targets.header":
-            content => template("smokeping/targetsheader.erb"),
+        "/etc/smokeping/config.d/Targets.header_v4":
+            content => template("smokeping/targetsheader_v4.erb"),
             mode => 0644, owner => root, group => root,
-            before => File["/etc/smokeping/config.d/Targets"],
+            before => File["/etc/smokeping/config.d/Targets_v4"],
             require => File["/etc/hosts"],
             subscribe => File["/etc/hosts"],
         }
  
-    concatenated_file { "/etc/smokeping/config.d/Targets":
-        dir => $SP_NODESDIR,
-        header => "/etc/smokeping/config.d/Targets.header",
-        require => File["/etc/smokeping/config.d/Targets.header"],
+    file {
+        "/etc/smokeping/config.d/Targets.header_v6":
+            content => template("smokeping/targetsheader_v6.erb"),
+            mode => 0644, owner => root, group => root,
+            before => File["/etc/smokeping/config.d/Targets_v6"],
+            require => File["/etc/hosts"],
+            subscribe => File["/etc/hosts"],
+        }
+ 
+    concatenated_file { "/etc/smokeping/config.d/Targets_v4":
+        dir => "$SP_NODESDIR/v4",
+        header => "/etc/smokeping/config.d/Targets.header_v4",
+        require => File["/etc/smokeping/config.d/Targets.header_v4"],
+    }
+
+    concatenated_file { "/etc/smokeping/config.d/Targets_v6":
+        dir => "$SP_NODESDIR/v6",
+        header => "/etc/smokeping/config.d/Targets.header_v6",
+        require => File["/etc/smokeping/config.d/Targets.header_v6"],
     }
 
     file {
@@ -74,12 +90,21 @@ class smokeping::master {
         ensure => directory,
         require => Package["smokeping"],
     }
+
     file {
         "/etc/smokeping/config.d/General":
             mode => 0644, owner => root, group => root,
             content => template("smokeping/general-info.erb"),
             require => Package["smokeping"],
     }
+
+    file {
+        "/etc/smokeping/config.d/Probes":
+            mode => 0644, owner => root, group => root,
+            source  => "puppet:///smokeping/files/Probes",
+            require => Package["smokeping"],
+    }
+
 
     service { "smokeping":
         ensure => running, 

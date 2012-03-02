@@ -9,10 +9,16 @@ class smokeping::slave {
 
 define smokeping::register()
 {
-    @@file { "${SP_NODESDIR}/${name}":
+    @@file { "${SP_NODESDIR}/v4/${name}":
         ensure => present,
-        content => template("smokeping/defaulttarget.erb"),
-        tag => 'smokeping',
+        content => template("smokeping/targets_v4.erb"),
+        tag => 'smokeping_v4',
+    }
+
+    @@file { "${SP_NODESDIR}/v6/${name}":
+        ensure => present,
+        content => template("smokeping/targets_v6.erb"),
+        tag => 'smokeping_v6',
     }
         
     @@line { "secret_${name}":

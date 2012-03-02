@@ -1,0 +1,9 @@
+*** Probes ***
+
++ FPing
+
+binary = /usr/bin/fping
+
++ FPing6
+binary = /usr/bin/fping6
+
