@@ -1,114 +1,82 @@
-*** Targets ***
++ IPv6
+probe = FPing6
 
-<%= `/bin/echo -e "slaves = $(/bin/grep nlnog.net$ /etc/hosts | /bin/grep -v master | /usr/bin/nawk '{print $3}' | /usr/bin/sort -u | /usr/bin/tr '\n' ' ')"` %>
-
-probe = FPing
-
-## You have to edit and uncomment all what you want below this.
-# Please, refer to smokeping_config man page for more info
-# The given adresses aren't real to avoid DoS.
-
-menu = Top
-title = Network Latency Grapher
-remark = Welcome to the SmokePing website of the NLNOG RING Servers
-
-+ Research
-menu = Research
-title = Research
-
-++ LISP
-menu = LISP
-title = LISP Beta Network
-
-+++ jobs-mn
-host = 153.16.21.202
-menu = jobs-mn
-title = jobs-mn
-nomasterpoll = yes
-
-+++ fabio-mn
-host = 153.16.21.136
-menu = fabio-mn
-title = fabio-mn
-nomasterpoll = yes
-
-+ Root-Servers 
+++ Root-Servers 
 menu = Root-Servers 
 title = DNS Root-Servers
 
-++ aroot
++++ aroot
 host = a.root-servers.net
 menu = a.root-servers.net
 title = a.root-servers.net
 nomasterpoll = yes
 
-++ broot                                                                        
++++ broot                                                                        
 host = b.root-servers.net                                                       
 menu = b.root-servers.net                                                       
-title = b.root-servers.net
 nomasterpoll = yes
 
-++ croot                                                                        
++++ croot                                                                        
 host = c.root-servers.net                                                       
 menu = c.root-servers.net                                                       
 title = c.root-servers.net
 nomasterpoll = yes
 
-++ droot                                                                        
++++ droot                                                                        
 host = d.root-servers.net                                                       
 menu = d.root-servers.net                                                       
 title = d.root-servers.net
 nomasterpoll = yes
 
-++ eroot                                                                        
++++ eroot                                                                        
 host = e.root-servers.net                                                       
 menu = e.root-servers.net                                                       
 title = e.root-servers.net
 nomasterpoll = yes
 
-++ froot
++++ froot
 host = f.root-servers.net
 menu = f.root-servers.net
 title = f.root-servers.net
 nomasterpoll = yes
 
-++ groot                                                                        
++++ groot                                                                        
 host = g.root-servers.net                                                       
 menu = g.root-servers.net                                                       
 title = g.root-servers.net
 nomasterpoll = yes
 
-++ hroot                                                           
++++ hroot                                                           
 host = h.root-servers.net                                                       
 menu = h.root-servers.net                                                       
 title = h.root-servers.net
 nomasterpoll = yes
 
-++ iroot                                                                        
++++ iroot                                                                        
 host = i.root-servers.net                                                       
 menu = i.root-servers.net                                                       
 title = i.root-servers.net
 nomasterpoll = yes
 
-++ jroot                                                                        
++++ jroot                                                                        
 host = j.root-servers.net                                                       
 menu = j.root-servers.net                                                       
 title = j.root-servers.net
 nomasterpoll = yes
 
-++ kroot                                                                        
++++ kroot                                                                        
 host = k.root-servers.net                                                       
 menu = k.root-servers.net                                                       
 title = k.root-servers.net
 nomasterpoll = yes
 
-++ lroot
++++ lroot
 host = l.root-servers.net
 menu = l.root-servers.net
 title = l.root-servers.net
 nomasterpoll = yes
 
-++ mroot                                                                        
++++ mroot                                                                        
 host = m.root-servers.net                                                       
 menu = m.root-servers.net                                                       
 title = m.root-servers.net

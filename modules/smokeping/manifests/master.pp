@@ -22,27 +22,21 @@ class smokeping::master {
     Line <<| tag == smokeping-msecret |>>
 
     file {
-        "/etc/smokeping/config.d/Targets.header_v4":
-            content => template("smokeping/targetsheader_v4.erb"),
+        "/etc/smokeping/config.d/Targets_header":
+            content => template("smokeping/targetsheader.erb"),
             mode => 0644, owner => root, group => root,
-            before => File["/etc/smokeping/config.d/Targets_v4"],
             require => File["/etc/hosts"],
             subscribe => File["/etc/hosts"],
         }
  
     file {
-        "/etc/smokeping/config.d/Targets.header_v6":
+        "/etc/smokeping/config.d/Targets_header_v6":
             content => template("smokeping/targetsheader_v6.erb"),
             mode => 0644, owner => root, group => root,
-            before => File["/etc/smokeping/config.d/Targets_v6"],
-            require => File["/etc/hosts"],
-            subscribe => File["/etc/hosts"],
         }
  
     concatenated_file { "/etc/smokeping/config.d/Targets_v4":
         dir => "$SP_NODESDIR/v4",
-        header => "/etc/smokeping/config.d/Targets.header_v4",
-        require => File["/etc/smokeping/config.d/Targets.header_v4"],
     }
 
     concatenated_file { "/etc/smokeping/config.d/Targets_v6":
