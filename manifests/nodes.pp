@@ -950,6 +950,7 @@ node 'amazon01' inherits ringnode {
     $location = "38.944444,-77.455833"
     include smokeping::slave
     include nagios::target::fqdn
+    $nagios_ping_rate = '!200.0,20%!300.0,60%'
     include nagios_services
     include set_local_settings
 	include users
