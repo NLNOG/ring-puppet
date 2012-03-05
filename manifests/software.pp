@@ -48,6 +48,7 @@ class nettools {
     package { "python-ipaddr": ensure => present }
     package { "graphviz": ensure => present }
     package { "hping3": ensure => latest }
+    package { "gnutls-bin": ensure => latest }
     exec { "setcap cap_net_raw,cap_net_admin=eip /usr/sbin/hping3":
         onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/sbin/hping3`\" != \"/usr/sbin/hping3 = cap_net_admin,cap_net_raw+eip\"",
         require => Package["hping3"],
