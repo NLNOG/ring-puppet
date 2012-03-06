@@ -40,7 +40,7 @@ class nagios::defaults::commands {
           check_dummy:
             command_line => '$USER1$/check_dummy $ARG1$';
          check_ping:
-            command_line => '$USER1$/check_ping -H $HOSTADDRESS$ -w $ARG1$ -c $ARG2$';
+            command_line => '$USER1$/check_ping -4 -H $HOSTADDRESS$ -w $ARG1$ -c $ARG2$';
           check-host-alive:
             command_line => '$USER1$/check_ping -H $HOSTADDRESS$ -w 5000,100% -c 5000,100% -p 1';
           check_tcp:
