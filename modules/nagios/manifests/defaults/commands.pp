@@ -29,9 +29,7 @@ class nagios::defaults::commands {
             command_line => '$USER1$/check_tcp -H $ARG1$ -p $ARG2$';
           check_jabber:
             command_line => '$USER1$/check_jabber -H $ARG1$';
-           check_ping:
-            command_line => '$USER1$/check_ping -4 -H $HOSTADDRESS$ -w $ARG1$ -c $ARG2$';
-         check_ping6:
+        check_ping6:
             command_line => '$USER1$/check_ping -6 -H $HOSTNAME$ -w $ARG1$ -c $ARG2$';
           check_ssh_6:
             command_line => '$USER1$/check_ssh -6 $HOSTNAME$';
@@ -39,6 +37,8 @@ class nagios::defaults::commands {
       }
       default: {
         nagios_command {
+          check_ping:
+            command_line => '$USER1$/check_ping -4 -H $HOSTADDRESS$ -w $ARG1$ -c $ARG2$';
           check_dummy:
             command_line => '$USER1$/check_dummy $ARG1$';
          check-host-alive:
