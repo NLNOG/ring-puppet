@@ -75,10 +75,10 @@ if [ -n "${replies[*]}" ]; then
 	total=$(echo $total + $t | bc)
     done
     avg=$(echo $total / ${#replies[@]} | bc)
-    echo ${#replies[@]} servers: ${avg}ms average
+    echo ${host} - ${#replies[@]} servers: ${avg}ms average
 fi
 
-[ -z "${timeouts[*]}" ] || echo unreachable via: ${timeouts[@]}
+[ -z "${timeouts[*]}" ] || echo ${host} - unreachable via: ${timeouts[@]}
 
 connect=$(comm -23 <(echo "${SERVERS}" | sort) \
     <(echo ${results[@]} | tr ' ' '\n' | sort))
