@@ -1409,6 +1409,20 @@ class users::virtual::ring_users {
     }
 ##### END equinixnl #####
 
+##### BEGIN lchost #####
+
+    @add_user { lchost:
+        email => "phil@lchost.co.uk",
+        company => "LCHost",
+        uid => "5081",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "lchost":
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIBO+f37Egb/S+yvWF5YzXXacaOhGK9WXbgTc8hOxKxkfLbIEyQL4Li+xG48aLUJfU1ombW6jhrB5SUUf2MefdSQoLw/0ycWGExB1voCIxH9LcgnZCT86LguoRd4+fNsR28RpikirjZIcOO7SL33NfVNn2mofXvMa6OFYxaz8rbX8Q== phil@lchost.co.uk",
+        ],
+    }
+##### END lchost #####
 
 
 }

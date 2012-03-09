@@ -276,3 +276,7 @@ ff02::2 ip6-allrouters
 
 217.114.111.202 equinixnl01 equinixnl01.ring.nlnog.net
 2001:1540:801:19:20c:29ff:fe8f:8feb equinixnl01 equinixnl01.ring.nlnog.net
+
+213.230.217.125 lchost01    lchost01.ring.nlnog.net
+2a01:70:1:217:2::125    lchost01    lchost01.ring.nlnog.net
+
