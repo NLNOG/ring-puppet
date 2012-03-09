@@ -1429,7 +1429,7 @@ class users::virtual::ring_users {
     @add_user { hostway:
         email => "noc@netnation.com",
         company => "Hostway",
-        uid => "5081",
+        uid => "5082",
         groups => ['ring-users'],
     }
     authorized_keys { "hostway":
