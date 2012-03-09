@@ -280,3 +280,5 @@ ff02::2 ip6-allrouters
 213.230.217.125 lchost01    lchost01.ring.nlnog.net
 2a01:70:1:217:2::125    lchost01    lchost01.ring.nlnog.net
 
+64.40.105.244   hostway01   hostway01.ring.nlnog.net
+2606:6a00::a:c   hostway01   hostway01.ring.nlnog.net

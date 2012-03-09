@@ -1424,5 +1424,20 @@ class users::virtual::ring_users {
     }
 ##### END lchost #####
 
+##### BEGIN hostway #####
+
+    @add_user { hostway:
+        email => "noc@netnation.com",
+        company => "Hostway",
+        uid => "5081",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "hostway":
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEAvs/X3YfKkCsnjTIfdGW7NoKm20C0WmArRsHw3E/EJ7r3sbYfsxWNwDc5FTXLoN2tqJrAUKS9PihYFZF335KiwxSkjXiJo3sbrVqlhGFsCc+B5C+tu+qhqOCj1jgW0VQB3j6X6rtml/FLSoxlnl+qz1xgo9UByyw9vHtMfPaXuxwAoV20pzHPXVnHJjIIArxbnVXU4zv7YD9TAYolTWtVD/ZUx7O/YkmckZast775HdBzZOTRKtc9fMRT1ywRA9DkgHjvOnr4g3oTtvHo+KbektnDT9MMC03sJ3/qJiYdAIHB+J4Y85UC482IeyiR2tu8K2jgwu9rDZZNmIXTvFAysW/RgI7JfcApGTNWd//zg1nFRTmgFrRe6Fhd7x77tqMJZJE+bAM+ky8ZHHIjzIxHNiW2TNGn6glv4yD6ECCQhp7s0uV6Alxc2bKIaduGpOBW/DhzirR6lgyklR0tlhxQs1SR5YxGfkeR10dbjaMSJB1G7GiRMRI4qrqwfghYgClT2J2jDZHxMOyeZ8/9lXLNuTKXIrft1Lwr1R1RGhN3h9ft17gNY0XeyUH0TcIqdNn6E+fYZfFdtZa91kXQBR+po8PEim1CgCpVhfZP9FEAj7Ti4698Gl2LxdlwDOhgCr61hitJJ3k4LHAEecsKIrHb0U1xNPJhP+CLZioF/br3z4c= ryanm@ryanm",
+        ],
+    }
+##### END hostway #####
+
 
 }

@@ -1091,3 +1091,13 @@ node 'lchost01' inherits ringnode {
 	include users
 }
 
+node 'hostway01' inherits ringnode {
+    $owner = "hostway"
+    $location = "49.288462,-123.118197"
+    include smokeping::slave
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+	include users
+}
+
