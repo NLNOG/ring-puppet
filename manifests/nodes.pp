@@ -1094,6 +1094,7 @@ node 'lchost01' inherits ringnode {
 node 'hostway01' inherits ringnode {
     $owner = "hostway"
     $location = "49.288462,-123.118197"
+    $nagios_ping_rate = '!300.0,20%!500.0,60%'
     include smokeping::slave
     include nagios::target::fqdn
     include nagios_services
