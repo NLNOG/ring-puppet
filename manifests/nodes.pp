@@ -1083,7 +1083,7 @@ node 'equinixnl01' inherits ringnode {
 
 node 'lchost01' inherits ringnode {
     $owner = "lchost"
-    $location = "51.52248,-0.122468"
+    $location = "51.496716,-0.017987"
     include smokeping::slave
     include nagios::target::fqdn
     include nagios_services
