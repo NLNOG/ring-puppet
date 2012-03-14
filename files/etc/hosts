@@ -282,3 +282,6 @@ ff02::2 ip6-allrouters
 
 64.40.105.244   hostway01   hostway01.ring.nlnog.net
 2606:6a00::a:c   hostway01   hostway01.ring.nlnog.net
+
+109.72.80.176   pcextreme01 pcextreme01.ring.nlnog.net
+2a00:0f10:0105:0020:0000:0000:0000:0000 pcextreme01 pcextreme01.ring.nlnog.net

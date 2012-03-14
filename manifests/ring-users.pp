@@ -1443,5 +1443,21 @@ class users::virtual::ring_users {
 
 ##### END hostway #####
 
+##### BEGIN pcextreme #####
+
+    @add_user { pcextreme:
+        email => "noc@pcextreme.nl",
+        company => "PCextreme",
+        uid => "5083",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "pcextreme":
+        sshkeys => [
+        ],
+    }
+
+##### END pcextreme #####
+
+
 
 }

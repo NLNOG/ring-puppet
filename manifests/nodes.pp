@@ -1102,3 +1102,13 @@ node 'hostway01' inherits ringnode {
 	include users
 }
 
+node 'pcextreme01' inherits ringnode {
+    $owner = "pcextreme"
+    $location = "52.469397,5.509644"
+    include smokeping::slave
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+	include users
+}
+
