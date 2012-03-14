@@ -1104,7 +1104,7 @@ node 'hostway01' inherits ringnode {
 
 node 'pcextreme01' inherits ringnode {
     $owner = "pcextreme"
-    $location = "52.469397,5.509644"
+    $location = "52.400483,4.842865"
     include smokeping::slave
     include nagios::target::fqdn
     include nagios_services
