@@ -1446,7 +1446,7 @@ class users::virtual::ring_users {
 ##### BEGIN pcextreme #####
 
     @add_user { pcextreme:
-        email => "noc@pcextreme.nl",
+        email => "network@pcextreme.nl",
         company => "PCextreme",
         uid => "5083",
         groups => ['ring-users'],
