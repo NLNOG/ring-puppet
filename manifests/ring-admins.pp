@@ -38,7 +38,7 @@ class users::virtual::ring_admins {
     } 
     
     @add_user { peter:
-        email    => "peter@7bits.nl",
+        email    => "peter+ring@7bits.nl",
         company  => "van Dijk",
         uid      => 6004,
         groups   => ['ring-admins', 'ring-users']
