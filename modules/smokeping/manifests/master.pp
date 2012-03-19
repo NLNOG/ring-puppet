@@ -112,12 +112,12 @@ class smokeping::master {
 
     exec { "/usr/bin/killall -HUP /usr/bin/perl":
         alias   => "hup_fcgi_stuff",
-        subscribe => File["/etc/smokeping/config.d/Targets_v4", "/etc/smokeping/config.d/Slaves"],
+        subscribe => File["/etc/smokeping/config.d/Targets_v4", "/etc/smokeping/config.d/Slaves", "/etc/smokeping/config.d/Targets_header"],
         refreshonly => true,
     }
 
     exec { "/etc/init.d/smokeping reload":
-        subscribe => File["/etc/smokeping/config.d/Targets_v4", "/etc/smokeping/config.d/Slaves"],
+        subscribe => File["/etc/smokeping/config.d/Targets_v4", "/etc/smokeping/config.d/Slaves", "/etc/smokeping/config.d/Targets_header"],
         refreshonly => true,
     }
 }
