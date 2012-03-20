@@ -285,3 +285,6 @@ ff02::2 ip6-allrouters
 
 109.72.80.176   pcextreme01 pcextreme01.ring.nlnog.net
 2a00:0f10:0105:0020:0000:0000:0000:0000 pcextreme01 pcextreme01.ring.nlnog.net
+
+195.211.72.12   antagonist01    antagonist01.ring.nlnog.net
+2a03:3c00:a001:4::2 antagonist01    antagonist01.ring.nlnog.net
