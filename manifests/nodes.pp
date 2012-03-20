@@ -14,6 +14,9 @@ node basenode {
     include lang
     munin::plugin { ["users", "tcp", "ntp_offset", "uptime", "threads", "ntp_kernel_pll_off", "diskstats", "proc_pri", "iostat_ios"]:
     }
+    munin::plugin { ["if_eth0"]:
+        ensure => "if_" 
+    }
     munin::plugin { ["if_err_eth0"]:
         ensure => "if_err_" 
     }
