@@ -506,7 +506,7 @@ class users::virtual::ring_users {
     }
     @authorized_keys { "tripleit":
         sshkeys => [
-            "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAv8fJBvh7+NWCTUcM4tjQd+6ATsTHgbtkicFjOoqxy+iSXoFGyuNjCrrzxwHC4N98OC0iFmR7mFALlmjQdJf28EwcT1m4rWBhB3KcZ/5iun9l0jD4l7rhm+FLp1/PYgz78H3gXave7UORoT5j6ACGQsnvlC+mWrHzhxMhfW4GEumpCO6zgcq7tYLbx1PCZ5xpM0VeY8g3xvFARGjavtsiGZOulkJD3AFZ9rULLts9eDRo0YWjwhN4oXPOH2Dwmp1YalPoGWyb6/dxPC0hMApbJkbxeVKQkvotzheGEoOlASVsoDmXIWk3QNJijFZeIIUvASDwZpNdDy0GRsjE/jzHOQ== Triple_1",
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAv9gYOuwjTzYY9OoB6FCUvDfV/iRohP0T+IbtMyiZu238oVtYGjCl5t1PRjkk8z5wMC7xBBhHD2NPOLQMqT/aYnoKwbM0uYEyzvHjplyRdPqwpSW9wDwaMYUXLoK+7ECaVm2ltZGbIuLZ72F9a2tDHxlt5VnNuFKLNPlduKeyHIA2XZVw/b/X+snNX8fOh1Y4iZ2es4UKQbjye3cQo7AmxBhoPv6PMjOswI/35Pudb0J4O0m9nAEzBgMHHLdhuIdv0xujqhUYe2tZuQU6KUuWs+suI0icjvz4XvGkV6yF0uuwnrWQOp1dDFjzMnHI13SsoapwdeY/7s/Ztvfvn7ZUww== triple_admin@newton.triple.lan",
         ],
     }
 ##### END tripleit #####
