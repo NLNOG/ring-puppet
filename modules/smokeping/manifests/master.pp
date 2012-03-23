@@ -51,6 +51,12 @@ class smokeping::master {
             require => Package["smokeping", "apache2.2-common"],
     }
     file {
+        "/etc/apache2/mods-available/fcgid.conf":
+            source => "puppet:///smokeping/apache-config-fcgid",
+            mode => 0644, owner => root, group => root,
+            require => Package["smokeping", "apache2.2-common", "libapache2-mod-fcgid"],
+    }
+    file {
         "/usr/lib/cgi-bin/smokeping.fcgi":
             source => "puppet:///smokeping/smokeping.fcgi",
             mode => 0755, owner => root, group => root,
