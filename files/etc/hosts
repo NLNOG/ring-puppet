@@ -288,3 +288,6 @@ ff02::2 ip6-allrouters
 
 195.211.72.12   antagonist01    antagonist01.ring.nlnog.net
 2a03:3c00:a001:4::2 antagonist01    antagonist01.ring.nlnog.net
+
+212.103.89.211  nts01   nts01.ring.nlnog.net.
+2a00:c38:2::5   nts01   nts01.ring.nlnog.net.

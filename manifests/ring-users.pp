@@ -1478,4 +1478,22 @@ class users::virtual::ring_users {
 
 ##### END antagonist #####
 
+##### BEGIN nts #####
+
+    @add_user { nts:
+        email => "noc@nts.ch",
+        company => "NTS Workspace AG",
+        uid => "5085",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "nts":
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAsJkZohQUX+GmWjNoJElbD1vDA/ReuLif81IWB2BW1iIvGz7LFaDZB3ippLzJVBTsb0cUGCqDVJDGiIshf0NZJSGr62kFzr7hkiD9gAxekvo2YEie5u/no7hjh27EP8MVdzc64Zh1CxC+SvzlIxJv46MqtfZauwN3TPPr0C+p33u2afpb6RBQa2+tyBDFqb23IJEs/F7A8nHFwGbHBHzaSHF3uckBH7pCGoTN4Uno/mA2356FUA7tlZ3ZCS7+5Gt7UiPwbV0IftVu6yhKoj93aqzQfUkvAquP66y6g2wwDXmStA97L/spL6e7mSiS3zVgiw33RvyoljzAGseUeVi26Q== dhi@dhi-laptop",
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIB+w3GvFYNs19gxq5SrtqZ9lGPi0DhiTpRB8Vde0ASNzlXeXdGugMoykxUtM7JmIm/rXqzTRaGdeinkMUm7l8PgPABOiR3wx9mfc7Vfo7CbVKIZuU/Wm+ihYC+soDP0+p7xhVkuQoxmwM3XH1CfrGKT7SwCbo3uZxOh42CQFatxdQ== rsa-key-20100917",
+            "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDXY/gjTCXLeJhO3nIhiHVomWD1sVriKHciAyRLxQ2d+wWXt+TSX68Agdh+RYlP9xD+hxhaBylfnlbdfI0gLSrIGB1NW9wyfb78BlAIbsrwAQGRhv2jkFRrxw0PTMnWOJbKc92KUEsFrAW1eZVjD1DXV2sF/K82Q7Hzwuavlrhmi3W24oXS1oP/+FU4eb3lXhFUvtd/7L6EoWy8hr8z/8+CRWBmV+jdyVXeK3r6Jx22nxTxJnBNn3WnJGSr+PXwnYxuVHz0vpbMAE2zswT02fgRYx61SKlpzcnDwzIXE3M35hT3YikenHkoeyR+FkEqB6chTIWDLwcC45ht3nLXzDdF obi@dhcp-153.be.nts.ch",
+        ],
+    }
+
+##### END nts #####
+
 }
