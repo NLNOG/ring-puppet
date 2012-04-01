@@ -1134,3 +1134,13 @@ node 'nts01' inherits ringnode {
     include set_local_settings
 	include users
 }
+
+node 'multiplay01' inherits ringnode {
+    $owner = "multiplay"
+    $location = "51.520493,-0.073546"
+    include smokeping::slave                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}

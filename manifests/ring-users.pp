@@ -1498,4 +1498,21 @@ class users::virtual::ring_users {
 
 ##### END nts #####
 
+##### BEGIN multiplay #####
+
+    @add_user { multiplay:
+        email => "noc@multiplay.co.uk",
+        company => "Multiplay",
+        uid => "5086",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "multiplay":
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDDV04ViUEQkX6kARmy7B2LYkLwDjIFhAE4UVI+VLZl5QtRd67cpV6DAA3yBFZwdn2fCJaQN4LaVi/ByWmfyAhPmwans9KXfTmVhn8mTyzuVAzmLvSESPuWnxDxbC+RuPvE6PBW/HKoDpn1SBX22zYc1s2AVPQ0W0zJxJY4G/5UCC40/NR07FZ3Slx+F4BAPvYUPaxTXQo5jEoLYRywO+ugf2pi6mhwp9NOaRGMRZ6inpYLpH8A2YNDhselyzkEp7kCEJFfQMFR9Kusnx3j5YNbVijjrUX6yqn642969tlTVB1j4k9mYR7i7TlRobY3q/6nrKLt4LrxoZHfDpadQCSB DavidGroves@eve",
+        ],
+    }
+
+##### END multiplay #####
+
+
 }
