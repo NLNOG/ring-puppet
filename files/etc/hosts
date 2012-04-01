@@ -293,7 +293,7 @@ ff02::2 ip6-allrouters
 2a00:c38:2::5   nts01   nts01.ring.nlnog.net
 
 85.236.110.143  multiplay01 multiplay01.ring.nlnog.net
-2001:4db0:10:7:20c:29ff:feb6:af2c   multiplay01 multiplay01.ring.nlnog.net
+2001:4DB0:10:7::12  multiplay01 multiplay01.ring.nlnog.net
 
 
 
