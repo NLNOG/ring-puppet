@@ -295,5 +295,7 @@ ff02::2 ip6-allrouters
 85.236.110.143  multiplay01 multiplay01.ring.nlnog.net
 2001:4DB0:10:7::12  multiplay01 multiplay01.ring.nlnog.net
 
+174.36.33.50    softlayer01 softlayer01.ring.nlnog.net
+2607:f0d0:1004:d3::2    softlayer01 softlayer01.ring.nlnog.net
 
 

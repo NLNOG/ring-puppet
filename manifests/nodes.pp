@@ -1144,3 +1144,15 @@ node 'multiplay01' inherits ringnode {
     include set_local_settings                                                  
     include users
 }
+
+node 'softlayer01' inherits ringnode {
+    $owner = "softlayer"
+    $location = "32.782778, -96.803889"
+    include smokeping::slave                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
+
+
