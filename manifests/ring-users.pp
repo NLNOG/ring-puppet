@@ -1145,7 +1145,6 @@ class users::virtual::ring_users {
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAw9V5CEtAyU0zDrQrfFAy4nq0030dyNyK8gzxRdbXPpl6DLTG4UWwAfGX4r/tHgDdnGvNkRo2e31GNadCDtZhWzy0nAaO5HFAGdv9Pgr9OvdB+qtfV1qD/TN1NViIx3JrttebUmULWMdKk5maKcBpsp4vusQ9BbdGeCd5AREIktuJGXJlw7O/tmYFwNevaibfFfHChYpnDA98mCb8yJR5DDEJkP0n3Rp4PuiBLmcoSQj2uCgi7Iy2NcnWBYeJhiuLOWE6sUwu19cAF/HhtAJThKdapSiOA3foF029fMG5FtmGJyvUFaNUYG3r3nE8My5cSDRYF+a/elrS3V/OZf8wYQ== n00dles@atsuko.keme.net",
             "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDVQZpXLggBbc/1X5AiBKiE5kbwaDrjBwopHXDk7/RV7Qrb+Mbb3DljFbHTTBgOodPkh9UsE4cQXrwxPoqdGZ7aouWJWrrxlCzyxuHQFkd3mYnQUREhleVj3E2dpCIG/2mvuytlKR01xNKVwykC6vYXU7mEYzpUaUuZ0DBEr8ukkt6tbcui8H7M9NhwebNv0zWg8q11glp5DQ1wUfu6/xMmMoRN6nQodn/9YZYAnMcALgGA/Wo4dKevGJhRk68Mi+U7f/vGW/6VjDlHKr4atOEDT031qZMtqt5umSrvLdbMTnow3+iwCrMXxWYNCI/8RXCZDnl/QcA20015+Rf7/rrj nick@didge",
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAw4TS7hm8xsJRbv+5XIJ85YC64jR+KwzmJPYKLRmCAdWuuwkAXVonNWwIooWbh/eui6GiXv/chnDfAg54uNHbdwVyw5+YnETq+hjenkBK5Z02XOt5vbOuoMKg5pmeEswhCygzXFhHIYcvdhKPVbCGHB2H/PKaos5x8qf2Oruesj1YRG2dKWKvzVb7zYd/JeVMecoavSwhWm5ngCk92eDUaewPGeG7Q10kgYavg/Bwkj1IeXI/fAFYCyVqBPZ4CR6zX5KO4zkd23AZ1SSle0XRt/ZDqeZLPU/EFD2v6NAlzv/Gvb+4dCVcfG//O/Z8sRsYBdPrj7Kyf48vgKy07JDg7Q== gareth@goliath",
-            "",
         ],
     }
 
