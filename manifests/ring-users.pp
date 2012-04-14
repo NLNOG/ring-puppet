@@ -1521,4 +1521,20 @@ class users::virtual::ring_users {
 
 ##### END softlayer #####
 
+##### BEGIN imagine #####
+
+    @add_user { imagine:
+        email => "noc@imaginegroup.ie",
+        company => "Imagine Communications Ltd.",
+        uid => "25441",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "imagine":
+        sshkeys => [
+            "ssh-dss AAAAB3NzaC1kc3MAAAEBAK2RDYFHiyDr2iFQZTjzgtSgIQZFr32TjapxoSAMN1ti/8FU5tWkVAG/jiRPnR9bP1AfZVTPTqPfa+c6qO/Srb7xLHf93dMdpGwZy2MYBv4V7pJr7fMS2rxYq/Q4LBSZqrU4Hs13emcdsiVbx1LOIitvMFEnh6phcWROYd/q5GwWm39qGWdUE8eqCJ40xcmf/9o9yLQv7wqjjrxGEzQsGnyVjNYEZ7N0jL6fcOhpHY8RiDo6LTGBe1/Smb7TaA1A27Rj9HiJmv7pQ4JdZdGnbnQV/Q8SF+v9yDYPtfCHotY7nN12zZ75uxrFlh3ZVG60ZF4LUVuGl2jszN0ZBqqMlu8AAAAVAIVIGTjZeLjpg9aoLn2ehi+LGaUTAAABAHKAMGWv9PtSQOqNTA4IL6y1/KADgHlaeRjrwZrVDbuvyWGyLZS1XkkbtMIIM+N8DrcdM+y3YSxtrPc6eLJpu1bm2SbDW9yma1d14LI0YpeU1+UXV2jukx1SSkJ0vguman2KKMsHhuJecB8ahGY15soH2YXHw+PcqiXwc3ycpF0aY6Dxd8Lvm/5s1cfTtxT774DFlGR6nhc7D8ewv/Rk+5kZrUr1j4Pdy1gjVPrW5705aRKtsUFBe7/pfS01AjOjc/M1ChkbLSkAVgTAWswJPrui56ZKdGWUjffOBwh4KSMEr7whTHLsF81ijQXQZC029C4f9/6tnsljuND9PK0AoJIAAAEAbsxVU2mCXd9ixu/+Ci6uNSrn1XN2m/12qOm64Vib24Mg4Fh0A50SJkxfMQgrt6fdXi2zggYnNc/oRo0HwFWbkSjLszj5suaHaBe9HToLVFCeeijQ+A2TBU1dVms51ugcagv6R20f1Fx29REil84c5c5lIItJJzT3L7hzvoXajhtiMTFgfPDo0d2V18wTfoLAD6hDD2Al4Ztc3wfyN3SHnL1Uwp6xXSkJaAVzgY1Nf8DZsgjHG6CGO0N2jOtgUf4dRrefLHiwV9J8xodoaMG4MsErcFGIyZJAGy+pEsQGSWfIkd5h+SsZyKzfWb5u97of2bdZ3wrA/Ix+d/uS3GwuPA== dermot@forkboy",
+        ],
+    }
+
+##### END imagine #####
+
 }

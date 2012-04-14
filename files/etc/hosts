@@ -298,4 +298,5 @@ ff02::2 ip6-allrouters
 174.36.33.50    softlayer01 softlayer01.ring.nlnog.net
 2607:f0d0:1004:d3::2    softlayer01 softlayer01.ring.nlnog.net
 
-
+89.127.199.164  imagine01   imagine01.ring.nlnog.net
+2001:4d68:4::a  imagine01   imagine01.ring.nlnog.net
