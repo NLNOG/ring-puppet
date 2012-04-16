@@ -1525,7 +1525,7 @@ class users::virtual::ring_users {
 ##### BEGIN imagine #####
 
     @add_user { imagine:
-        email => "noc@imaginegroup.ie",
+        email => "networkoperations@imaginegroup.ie",
         company => "Imagine Communications Ltd.",
         uid => "25441",
         groups => ['ring-users'],
