@@ -303,3 +303,7 @@ ff02::2 ip6-allrouters
 
 91.184.33.38    speedpartner01  speedpartner01.ring.nlnog.net
 2a01:198:0:3::38    speedpartner01  speedpartner01.ring.nlnog.net
+
+208.70.247.50   gossamerthreads01   gossamerthreads01.ring.nlnog.net
+2607:fcc0:2:1:208:70:247:50 gossamerthreads01   gossamerthreads01.ring.nlnog.net
+

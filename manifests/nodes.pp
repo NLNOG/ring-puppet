@@ -1178,3 +1178,14 @@ node 'speedpartner01' inherits ringnode {
     include users
 }
 
+node 'gossamerthreads01' inherits ringnode {
+    $owner = "gossamerthreads"
+    $location = "49.28496,-123.114411"
+    $nagios_ping_rate = '!250.0,20%!400.0,60%'
+    include smokeping::slave                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
+

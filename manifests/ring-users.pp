@@ -1526,7 +1526,7 @@ class users::virtual::ring_users {
     @add_user { imagine:
         email => "networkoperations@imaginegroup.ie",
         company => "Imagine Communications Ltd.",
-        uid => "25441",
+        uid => "5088",
         groups => ['ring-users'],
     }
     authorized_keys { "imagine":
@@ -1542,7 +1542,7 @@ class users::virtual::ring_users {
     @add_user { speedpartner:
         email => "info@speedpartner.de",
         company => "SpeedPartner GmbH",
-        uid => "34225",
+        uid => "5089",
         groups => ['ring-users'],
     }
     authorized_keys { "speedpartner":
@@ -1553,5 +1553,22 @@ class users::virtual::ring_users {
     }
 
 ##### END speedpartner #####
+
+##### BEGIN gossamerthreads #####
+
+    @add_user { gossamerthreads:
+        email => "noc-nlnog@gt.net",
+        company => "Gossamer Threads Inc.",
+        uid => "5090",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "gossamerthreads":
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAs10PxWLa2VN8PHigtzt3XMUDNubKSOZ40LRdSGvyCQmLInXgthbmY4SoqcLozn0ae8gcekseRdOPqVjp6g8LhivKBjcEF6kvaRTIGs3kkc/6IkRgylc1iqFSTDodjfAwnWFYhX31GMkOUGBKrKwTWP5fps0cSlEetbHYccu6Y5sAvu/pUH6OlBQaB841H3BbqpJHEKflMDwiCilriic7ZbVY5yQ6V8lC0jPkF0HBj7kkgoN22EYA3Tj8Gx5/Vo1kSG/T6JzF/8trcEbCzY5ai3ncjxjdhsu24OCCWl3KheY1k38RnUpAWUXZ/As+luy5lEKriT9yYpGoAUwPPpMuZw== alex@alex",
+        ],
+    }
+
+##### END gossamerthreads #####
+
 
 }
