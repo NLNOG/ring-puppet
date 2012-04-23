@@ -1565,6 +1565,7 @@ class users::virtual::ring_users {
     authorized_keys { "gossamerthreads":
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAs10PxWLa2VN8PHigtzt3XMUDNubKSOZ40LRdSGvyCQmLInXgthbmY4SoqcLozn0ae8gcekseRdOPqVjp6g8LhivKBjcEF6kvaRTIGs3kkc/6IkRgylc1iqFSTDodjfAwnWFYhX31GMkOUGBKrKwTWP5fps0cSlEetbHYccu6Y5sAvu/pUH6OlBQaB841H3BbqpJHEKflMDwiCilriic7ZbVY5yQ6V8lC0jPkF0HBj7kkgoN22EYA3Tj8Gx5/Vo1kSG/T6JzF/8trcEbCzY5ai3ncjxjdhsu24OCCWl3KheY1k38RnUpAWUXZ/As+luy5lEKriT9yYpGoAUwPPpMuZw== alex@alex",
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6Qijk6/PBiO7zCtLOWEgY5LCMJmuMvBgfvml9oxjsHTd8NZGOpPz8/Ad0q+Afi+L+wXqWNu4HMfDNZiEaYa/3FT250rxpnC5JBzVHTLZemtgm3nBXR4cjMTZV+9x0OLFZGujh8wjcSo59HfmGxltW7cQ2TspPPuk1el2McldVlovq6KagoNfque2B/RGK6Y/OOYwYcpOwA7g56R6pQzotlgmnr8OvANZXUKs70dWiavS2a4dsOu7z/b8vCDetwjZ0Av2sMPUAan7M6u67GalY3Lx+47HTb9DH6YISl+3hKhDUdNxv5CKwQARSyW6kwgW2lLNQaTgIgCKYdZb5xvteQ== root@ns1",
         ],
     }
 
