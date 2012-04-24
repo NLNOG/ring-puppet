@@ -1571,5 +1571,21 @@ class users::virtual::ring_users {
 
 ##### END gossamerthreads #####
 
+##### BEGIN towardex #####
+
+    @add_user { towardex:
+        email => "ip-admin@twdx.net",
+        company => "TowardEX Carrier Services",
+        uid => "5091",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "towardex":
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCTZfGsKq33sb1pw9OO/bHAY0MuVZtKuuP84xRE1MdxkRBYxHr5w1A1hu1+O6V1fievcWxyji3yie3AvCO7QFyl3wNZ7ZVcY1iNOEj9le8gTq29WhqalRqdFUN1Dm2Z83JenNhx35uspARZ+VnfeLtVvhXujCUl+o/WEO/wl/rN3xKV8+K+uJsHKq5J6G1Lyg90y3/isIcUCcWYHAhrI6HeKQZyQFNRmv/IrNxtK+NPq6ztlre8LmerglyNn+EdVV5t02do0/LpE8sWx1ib1dAaOCSQSv5nDbtTd29wbff4i4F2nLiEx0VptEH3lb9cAEQL6iEcBvlo7aFiH686srrp lee@towardex",
+            ],
+    }
+
+##### END towardex #####
+
 
 }

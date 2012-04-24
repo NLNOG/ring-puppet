@@ -307,3 +307,6 @@ ff02::2 ip6-allrouters
 208.70.247.50   gossamerthreads01   gossamerthreads01.ring.nlnog.net
 2607:fcc0:2:1:208:70:247:50 gossamerthreads01   gossamerthreads01.ring.nlnog.net
 
+216.93.240.179  towardex01  towardex01.ring.nlnog.net
+2001:4830:123:1::d85d:f0b3  towardex01  towardex01.ring.nlnog.net
+
