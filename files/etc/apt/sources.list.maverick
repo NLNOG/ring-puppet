@@ -1,28 +1,28 @@
-deb mirror://mirrors.ubuntu.com/mirrors.txt maverick main restricted
-deb-src mirror://mirrors.ubuntu.com/mirrors.txt maverick main restricted
+deb http://old-releases.ubuntu.com/ubuntu/ maverick main restricted
+deb-src http://old-releases.ubuntu.com/ubuntu/ maverick main restricted
 
 ## Major bug fix updates produced after the final release of the
 ## distribution.
-deb mirror://mirrors.ubuntu.com/mirrors.txt maverick-updates main restricted
-deb-src mirror://mirrors.ubuntu.com/mirrors.txt maverick-updates main restricted
+deb http://old-releases.ubuntu.com/ubuntu/ maverick-updates main restricted
+deb-src http://old-releases.ubuntu.com/ubuntu/ maverick-updates main restricted
 
 ## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
 ## team. Also, please note that software in universe WILL NOT receive any
 ## review or updates from the Ubuntu security team.
-deb mirror://mirrors.ubuntu.com/mirrors.txt maverick universe
-deb-src mirror://mirrors.ubuntu.com/mirrors.txt maverick universe
-deb mirror://mirrors.ubuntu.com/mirrors.txt maverick-updates universe
-deb-src mirror://mirrors.ubuntu.com/mirrors.txt maverick-updates universe
+deb http://old-releases.ubuntu.com/ubuntu/ maverick universe
+deb-src http://old-releases.ubuntu.com/ubuntu/ maverick universe
+deb http://old-releases.ubuntu.com/ubuntu/ maverick-updates universe
+deb-src http://old-releases.ubuntu.com/ubuntu/ maverick-updates universe
 
 ## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu 
 ## team, and may not be under a free licence. Please satisfy yourself as to 
 ## your rights to use the software. Also, please note that software in 
 ## multiverse WILL NOT receive any review or updates from the Ubuntu
 ## security team.
-deb mirror://mirrors.ubuntu.com/mirrors.txt maverick multiverse
-deb-src mirror://mirrors.ubuntu.com/mirrors.txt maverick multiverse
-deb mirror://mirrors.ubuntu.com/mirrors.txt maverick-updates multiverse
-deb-src mirror://mirrors.ubuntu.com/mirrors.txt maverick-updates multiverse
+deb http://old-releases.ubuntu.com/ubuntu/ maverick multiverse
+deb-src http://old-releases.ubuntu.com/ubuntu/ maverick multiverse
+deb http://old-releases.ubuntu.com/ubuntu/ maverick-updates multiverse
+deb-src http://old-releases.ubuntu.com/ubuntu/ maverick-updates multiverse
 
 ## Uncomment the following two lines to add software from the 'backports'
 ## repository.
@@ -31,8 +31,8 @@ deb-src mirror://mirrors.ubuntu.com/mirrors.txt maverick-updates multiverse
 ## newer versions of some applications which may provide useful features.
 ## Also, please note that software in backports WILL NOT receive any review
 ## or updates from the Ubuntu security team.
-# deb mirror://mirrors.ubuntu.com/mirrors.txt lucid-backports main restricted universe multiverse
-# deb-src mirror://mirrors.ubuntu.com/mirrors.txt lucid-backports main restricted universe multiverse
+# deb http://old-releases.ubuntu.com/ubuntu/ lucid-backports main restricted universe multiverse
+# deb-src http://old-releases.ubuntu.com/ubuntu/ lucid-backports main restricted universe multiverse
 
 ## Uncomment the following two lines to add software from Canonical's
 ## 'partner' repository.
