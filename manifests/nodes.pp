@@ -1200,3 +1200,13 @@ node 'towardex01' inherits ringnode {
     include users
 }
 
+node 'simplytransit01' inherits ringnode {
+    $owner = "simplytransit"
+    $location = "51.500544,-0.708647"
+    include smokeping::slave                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
+

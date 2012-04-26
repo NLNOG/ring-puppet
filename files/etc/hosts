@@ -310,3 +310,6 @@ ff02::2 ip6-allrouters
 216.93.240.179  towardex01  towardex01.ring.nlnog.net
 2001:4830:123:1::d85d:f0b3  towardex01  towardex01.ring.nlnog.net
 
+94.76.229.133   simplytransit01 simplytransit01.ring.nlnog.net
+2a02:af8:1:4400::4481   simplytransit01 simplytransit01.ring.nlnog.net
+

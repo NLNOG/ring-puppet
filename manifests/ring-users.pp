@@ -1588,5 +1588,21 @@ class users::virtual::ring_users {
 
 ##### END towardex #####
 
+##### BEGIN simplytransit #####
+
+    @add_user { simplytransit:
+        email => "nt@names.co.uk"
+        company => "Simply Transit",
+        uid => "5092",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "simplytransit":
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDOJORQCQ1n5xEEpzf8JDeBcXgS6m0AkrxQOnJd6L8OU2fNSuP77rkUxlzBDY0d/mViiKwHNjXwwQOIK5mZG8oA824sLIlFNuDs6mb2/eESgNzW+wwhDsCZIqsos4hAomT7mM2ueROGexBmMgwhANU3zg+iGM42MoVl5C7it5bSuCQGKraFxAV3vSMVWAQZRtPXOnKfil0+5Wr+ULJrRm/cxkJLxYwr6oiZ5hbxWzsJLBXMk2s0PFb1iLffZkK51gve2zEum1/21v0wrt83NPq+pz7OJhtIQyZ81R5xW6m8eKjoORuJxf2nzBYBu4Rxu6IV56QFgvEi39pVLxu6wlQrbnYn7ToXzDm1nIFqP5gtf9N9V4Rlajgx2cU0VevKOqHQ1f8CuU29mTLv4TREqBdNrq2f4DQ3Pfvc+3icRbVOzv/UpX8SRlcw03Sy3qVtSSQHfFrbQQQldlmQr6YZ4BLs5eXc/3tz1IcJizw7xHl7dzPw5kmzvU45AcV//008E2WjEbOaZ9KfURxAmmVOOx7CCaweuhZAtxOyqNQzbl2+luqeJWobzArHmkO0SLXDMl2pYtIMEJ31op1omgByRBiYKxVtxJiNjyhlXx63pqraT/lovSboaQih68B1uRfBkPLosOA5UaVtWdoUIRdyocqbtmmprlZAWQlNvHogyPB7jQ== rlazzurs@church",
+            ],
+    }
+
+##### END simplytransit #####
+
 
 }
