@@ -1590,7 +1590,7 @@ class users::virtual::ring_users {
 ##### BEGIN simplytransit #####
 
     @add_user { simplytransit:
-        email => "nt@names.co.uk"
+        email => "nt@names.co.uk",
         company => "Simply Transit",
         uid => "5092",
         groups => ['ring-users'],
