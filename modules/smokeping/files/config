@@ -7,4 +7,4 @@
 @include /etc/smokeping/config.d/Targets_header
 @include /etc/smokeping/config.d/Targets_v4
 @include /etc/smokeping/config.d/Targets_header_v6
-# @include /etc/smokeping/config.d/Targets_v6
+@include /etc/smokeping/config.d/Targets_v6

@@ -1,6 +1,6 @@
 <IfModule mod_fcgid.c>
   AddHandler    fcgid-script .fcgi
   FcgidConnectTimeout 20
-  FcgidMaxProcesses 5
+  FcgidMaxProcesses 16
 </IfModule>
 
