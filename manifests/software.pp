@@ -106,13 +106,6 @@ class nettools {
     package { "build-essential": ensure => present }
     package { "dnsutils": ensure => present }
     package { "wget": ensure => present }
-    # the following package will need some work before it can function
-    package { "traceroute-nanog": ensure => present }
-    # here we set the suid bit for the nanog traceroute program
-    file { "/usr/bin/traceroute-nanog.genuine":
-        mode    => "4755",
-        recurse => false
-    }
     package { "netcat-openbsd": ensure => present }
     package { "ngrep": ensure => present }
     package { "netsed": ensure => present }
