@@ -58,41 +58,15 @@ node 'master01' inherits basenode {
 
 }
 
-node 'master02' inherits basenode {
-    include users
-# this is not a puppetmaster for now
-#    include master_software
-#    include mastercronjobs
-    include syslog_ng::server
-    include apache2
-
-    $sp_owner = "Job Snijders"
-    $sp_owner_email = "job@snijders-it.nl"
-    $sp_cgi_url = "http://master02.ring.nlnog.net/smokeping/smokeping.fcgi"
-    $sp_mailhost = "127.0.0.1"
-    include smokeping::master
-
-    include nagios_services
-    include nagios::target::fqdn
-    
-    nagios::service::http { $name:
-        check_domain => "${name}"
-    }
-    
-    munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
-    }
-
-}
-
 node 'worker01' inherits basenode {
     include users
     include syslog_ng::server
     include apache2
     include nagios_services
     include nagios::target::fqdn
-    $sp_owner = "Job Snijders"
-    $sp_owner_email = "job@snijders-it.nl"
-    $sp_cgi_url = "http://master02.ring.nlnog.net/smokeping/smokeping.fcgi"
+    $sp_owner = "NLNOG RING"
+    $sp_owner_email = "ring-admins@ring.nlnog.net"
+    $sp_cgi_url = "http://worker01.ring.nlnog.net/smokeping/smokeping.fcgi"
     $sp_mailhost = "127.0.0.1"
     include smokeping::master
 
