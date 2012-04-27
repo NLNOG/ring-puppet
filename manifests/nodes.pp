@@ -90,7 +90,13 @@ node 'worker01' inherits basenode {
     include apache2
     include nagios_services
     include nagios::target::fqdn
-    nagios::service::http { $name:
+    $sp_owner = "Job Snijders"
+    $sp_owner_email = "job@snijders-it.nl"
+    $sp_cgi_url = "http://master02.ring.nlnog.net/smokeping/smokeping.fcgi"
+    $sp_mailhost = "127.0.0.1"
+    include smokeping::master
+
+   nagios::service::http { $name:
         check_domain => "${name}"
     }
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
