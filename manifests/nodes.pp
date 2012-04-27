@@ -84,6 +84,32 @@ node 'master02' inherits basenode {
 
 }
 
+node 'worker01' inherits basenode {
+    include users
+    include syslog_ng::server
+    include apache2
+    include nagios_services
+    include nagios::target::fqdn
+    nagios::service::http { $name:
+        check_domain => "${name}"
+    }
+    munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
+    }
+}
+
+node 'worker02' inherits basenode {
+    include users
+    include syslog_ng::server
+    include apache2
+    include nagios_services
+    include nagios::target::fqdn
+    nagios::service::http { $name:
+        check_domain => "${name}"
+    }
+    munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
+    }
+}
+
 # we don't want apache running on regular ringnodes. smokeping installs 
 # apache, so we just force it down here. 
 class apache2 {

@@ -13,6 +13,12 @@ ff02::2 ip6-allrouters
 77.95.252.30    master02    master02.ring.nlnog.net
 2a00:1478:100:4::2 master02 master02.ring.nlnog.net
 
+46.51.191.254   worker01    worker01.ring.nlnog.net
+2a01:578:3::2e33:bffe   worker01    worker01.ring.nlnog.net
+
+54.247.167.176  worker02    worker02.ring.nlnog.net
+2a01:578:3::36f7:a7b0   worker02    worker02.ring.nlnog.net
+
 213.154.236.191 staging01   staging01.ring.nlnog.net
 2001:7b8:625:0:213:154:236:191  staging01 staging01.ring.nlnog.net
 
@@ -312,4 +318,5 @@ ff02::2 ip6-allrouters
 
 94.76.229.133   simplytransit01 simplytransit01.ring.nlnog.net
 2a02:af8:1:4400::4481   simplytransit01 simplytransit01.ring.nlnog.net
+
 
