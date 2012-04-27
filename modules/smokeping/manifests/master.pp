@@ -70,6 +70,11 @@ class smokeping::master {
             require => Package["smokeping"],
     }
 
+    file {
+        "/etc/smokeping/config.d/":
+        ensure  => directory,
+    }
+
     concatenated_file { "/etc/smokeping/config.d/Slaves":
         dir => $SP_SLAVES_DIR,
         header => "/etc/smokeping/config.d/Slaves.header",
