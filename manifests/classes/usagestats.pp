@@ -19,7 +19,7 @@ class usage_statistics {
     
     cron {                                                                      
         "collect_usagestats":
-        command => "/home/martin/bin/usagestats --last-month --print | mail -s "NLNOG Ring usage statistics report" ring-admins@ring.nlnog.net 2>/dev/null",
+        command => "/home/martin/bin/usagestats --last-month --print | mail -s \"NLNOG Ring usage statistics report\" ring-admins@ring.nlnog.net 2>/dev/null",
         user => root,
         hour => "4",
         minute => "42",
