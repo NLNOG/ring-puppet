@@ -46,6 +46,7 @@ node 'master01' inherits basenode {
     include syslog_ng::server
     include apache2
     include mastercronjobs
+    include usage_statistics
     include nagios::defaults
     include nagios::headless
     include nagios_services

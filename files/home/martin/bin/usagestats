@@ -1,0 +1,235 @@
+#!/usr/bin/perl -w
+#
+# NLNOG RING usage statistics
+#
+# Author: Martin Pels <martin@rodecker.nl>
+#
+
+use strict;
+use warnings;
+use File::Basename;
+use File::Find;
+use Getopt::Long;
+use IO::Uncompress::Bunzip2 qw(bunzip2 $Bunzip2Error) ;
+use Time::Local;
+
+#my $basedir = "/home/pels/projects/ring/usagestats/HOSTS";
+my $basedir = "/var/log/HOSTS";
+
+# This info should come from the database at some point
+my @ignore_user = ('root', 'edwin','job','martin','peter','nlnogbot');
+my @ignore_org = ('master','staging','worker');
+
+################################################################################
+# Process options
+my %opt;
+&Getopt::Long::GetOptions(
+    'help'          => \$opt{'help'},
+    'month=s'       => \$opt{'month'},
+    'year=s'        => \$opt{'year'},
+    'last-month'    => \$opt{'last-month'},
+    'print'         => \$opt{'print'},
+);
+
+unless (($opt{'month'} && $opt{'year'}) || $opt{'last-month'}) {
+    die "$0 --month <mm> --year <yyyy>\n$0 --last-month\n";
+}
+
+if ($opt{'last-month'}) {
+    ($opt{'month'},$opt{'year'}) = last_month();
+}
+if (length($opt{'month'}) eq 1) {
+    $opt{'month'} = "0".$opt{'month'};
+}
+
+################################################################################
+# Retrieve session data and print statistics
+
+our %STATS;
+die "Directory does not exist" unless (-d $basedir);
+find({wanted => \&add_file,no_chdir => 1 },
+     $basedir."/".$opt{'year'}."/".$opt{'month'});
+
+#use Data::Dumper;
+#print Dumper(%STATS);
+
+if ($opt{'print'}) {
+    print_stats(\%STATS);
+}
+
+################################################################################
+# Subroutines
+
+# Print statistics
+sub print_stats {
+    my $stats = shift;
+
+    print "NLNOG RING Usage statistics for ".$opt{'year'}."/".$opt{'month'}."\n";
+    print "---------------------------------------\n\n";
+
+    print "Nodes:\t".keys(%{$stats->{'nodes'}})."\n";;
+    print "Orgs:\t".keys(%{$stats->{'orgs'}})."\n";
+    print "\n";
+
+    print "Logins:\t".$stats->{'logins'}->{'total'}.
+      " (".value2percentage($stats->{'logins'}->{'proto'}->{'4'},
+           $stats->{'logins'}->{'total'})."% IPv4".
+      ", ".value2percentage($stats->{'logins'}->{'proto'}->{'6'},
+           $stats->{'logins'}->{'total'})."% IPv6)\n";
+    print " Orgs:\t".keys(%{$stats->{'logins'}->{'user'}})."\n";
+    print " Keys:\t".keys(%{$stats->{'logins'}->{'key'}}).
+          " (avg: ".subhash_average($stats->{'keys'})." per org)\n";
+    print " IPs:\t".keys(%{$stats->{'logins'}->{'ip'}}).
+          " (avg: ".subhash_average($stats->{'ips'})." per org)\n";
+    print "\n";
+}
+
+# Retrieve log lines from auth files 
+sub add_file {
+    if (-f $_) {
+        my $basename = basename($_);
+        my $dirname  = dirname($_);
+        my $nodename = dirname2node($dirname);
+        my $orgname  = dirname2org($dirname);
+
+        return if $nodename !~ m/[a-z]+[0-9]{2}$/;
+        return if (grep(/^$orgname/, @ignore_org));
+
+        $STATS{'nodes'}{$nodename} = 1;
+        $STATS{'orgs'}{$orgname} = 1;
+
+        if ($basename eq "auth") {
+            open(FILE,$_) or die("Unable to open file");
+            my @data = <FILE>;
+            close(FILE);
+            add_logins(\@data);
+            @data = undef;
+        } elsif ($basename eq "auth.bz2") {
+            my $bzoutput;
+            bunzip2 $_ => \$bzoutput or die "bunzip2 failed: $Bunzip2Error\n";
+            my @data = split(/\n/,$bzoutput);
+            add_logins(\@data);
+            @data = undef;
+        }
+    }
+}
+
+# Process log lines looking for logins
+sub add_logins {
+    my $log_entries = shift;
+
+    my %stored_params;
+    LINE: foreach my $log_line (@$log_entries) {
+        $log_line =~ s/\n$//;
+        next LINE if ($log_line =~ m/^ *$/);
+
+        my $action = undef;
+        my $session = undef;
+
+        my ($m,$d,$time,$host,$sshd,@rest) = split(/ +/,$log_line);
+        my $event = join(" ",@rest);
+
+        my $pid = $sshd;
+        $pid =~ s/sshd\[//;
+        $pid =~ s/\]://;
+
+        # Store key to match later with user and IP
+        if ($event =~ m/Found matching.+key:/) {
+            $event =~ s/.*Found matching.+key: //;
+            $event =~ s/ +$//;
+            $stored_params{$pid}{'key'} = $event;
+            next LINE;
+        }
+
+        # Login - store Statistics
+        if ($event =~ m/Accepted publickey/) {
+            $event =~ s/Accepted publickey for //;
+            my ($user,$f,$login_ip,$p,$port,$ssh) = split(/ /,$event);
+
+            # Ignore system users and admins
+            next if (grep(/^$user$/, @ignore_user));
+       
+            # Total logins
+            $STATS{'logins'}{'total'}++;
+            
+            # Logins per node
+            $STATS{'logins'}{'node'}{$host}++;
+            
+            # Logins per user
+            $STATS{'logins'}{'user'}{$user}++;
+        
+            # Logins per key, keys per user
+            if ($stored_params{$pid}{'key'}) {
+                $STATS{'logins'}{'key'}{$stored_params{$pid}{'key'}}++;
+                $STATS{'keys'}{$user}{$stored_params{$pid}{'key'}}++;
+            }
+
+            # Logins per IP, IPs per user
+            $STATS{'logins'}{'ip'}{$login_ip}++;
+            $STATS{'ips'}{$user}{$login_ip}++;
+
+            # Logins per protocol
+            my $proto = ip2proto($login_ip);
+            $STATS{'logins'}{'proto'}{$proto}++ if ($proto);
+            
+            delete $stored_params{$pid} if ($stored_params{$pid});
+            next LINE;
+        }
+    }
+}
+
+# Convert filename to a nodename
+sub dirname2node {
+    my $dirname = shift;
+    my @segments = split(/\//,$dirname);
+    return $segments[$#segments];;
+}
+
+# Convert filnename to an organisation name
+sub dirname2org {
+    my $dirname = shift;
+    my $nodename = dirname2node($dirname);
+    $nodename =~ s/..$//;
+    return $nodename;
+}
+
+# Return month and year of last month
+sub last_month {
+    my (@now) = localtime;
+    my $month = $now[4];
+    my $year  = $now[5] +1900;
+    $year-- unless ($month);
+    return ($month,$year);
+}
+
+# Return protocol version for IP address
+sub ip2proto {
+    my $addr = shift;
+    return 4 if ($addr =~ m/[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}/);
+    return 6 if ($addr =~ m/[0-9a-f]+[:]+/);
+    return undef;
+}
+
+# Get average of hash keys per hash key
+sub subhash_average {
+    my $hash = shift;
+
+    my $total_sub;
+    foreach my $sub (keys %{$hash}) {
+        $total_sub += keys %{$hash->{$sub}};
+    }
+    return sprintf("%.2f", $total_sub / keys %{$hash});
+}
+
+# Convert value to percentage of second value
+sub value2percentage {
+    my $value = shift;
+    my $total = shift;
+
+    my $percentage = 0;
+    if ($value && $total) {
+        $percentage = $value / ($total / 100);
+    }
+    return sprintf("%.2f", $percentage);
+}
+
