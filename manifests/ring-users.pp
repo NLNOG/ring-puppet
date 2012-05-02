@@ -1604,5 +1604,21 @@ class users::virtual::ring_users {
 
 ##### END simplytransit #####
 
+##### BEGIN isarnet #####
+
+    @add_user { isarnet:
+        email => "noc@isarnet.de",
+        company => "IsarNet AG",
+        uid => "5093",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "isarnet":
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEAyA9qjUkDy6LPyyPjXCeCknjRhQ297XI/jbeI5VH0pnwLOiqKa5l1jXK/CAgVxHjS4kZrsonqVINWk4/1Q54Hu7vdn4dN/J8VxDLER2Pzb6pXd68L72IFjgN1tc9d9Y7YRyHwDrB9Hu9NtFWC4UWrttOg2WmWZc2B6pE7QBuH8r0= stefan@django",
+            ],
+    }
+
+##### END isarnet #####
+
 
 }

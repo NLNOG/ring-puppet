@@ -319,4 +319,6 @@ ff02::2 ip6-allrouters
 94.76.229.133   simplytransit01 simplytransit01.ring.nlnog.net
 2a02:af8:1:4400::4481   simplytransit01 simplytransit01.ring.nlnog.net
 
+192.162.230.35  isarnet01   isarnet01.ring.nlnog.net
+2001:67c:2274:4021::101 isarnet01   isarnet01.ring.nlnog.net
 
