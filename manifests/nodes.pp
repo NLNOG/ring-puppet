@@ -1219,7 +1219,7 @@ node 'simplytransit01' inherits ringnode {
 
 node 'isarnet01' inherits ringnode {
     $owner = "isarnet"
-    $location = "52.469397,5.509644"
+    $location = "48.32839,11.74318"
     include smokeping::slave                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
