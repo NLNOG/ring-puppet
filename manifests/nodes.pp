@@ -1227,3 +1227,13 @@ node 'isarnet01' inherits ringnode {
     include users
 }
 
+node 'strato01' inherits ringnode {
+    $owner = "strato"
+    $location = "52.465907,13.369467"
+    include smokeping::slave                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
+

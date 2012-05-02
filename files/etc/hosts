@@ -322,3 +322,6 @@ ff02::2 ip6-allrouters
 192.162.230.35  isarnet01   isarnet01.ring.nlnog.net
 2001:67c:2274:4021::101 isarnet01   isarnet01.ring.nlnog.net
 
+85.214.1.147    strato01    strato01.ring.nlnog.net
+2a01:238:bd:3002::2 strato01    strato01.ring.nlnog.net
+
