@@ -15,6 +15,10 @@ class master_software {
 }
 
 class nettools {
+    # requested by teun
+    package { "python-beautifulsoup":
+        ensure => latest,
+    }
     package { "bash-completion":
         ensure => latest,
     }
