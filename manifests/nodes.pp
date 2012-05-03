@@ -795,7 +795,7 @@ node 'jump01' inherits ringnode {
 
 node 'iway01' inherits ringnode {
     $owner = "iway"
-    $location = "47.387639, 8.519944"
+    $location = "47.387639,8.519944"
     include smokeping::slave
     include nagios::target::fqdn
     include nagios_services
@@ -1019,7 +1019,7 @@ node 'amazon03' inherits ringnode {
 
 node 'amazon04' inherits ringnode {
     $owner = "amazon"
-    $location = "35.765278, 140.385556"
+    $location = "35.765278,140.385556"
     include smokeping::slave
     include nagios::target::fqdn
     include nagios_services
@@ -1040,7 +1040,7 @@ node 'amazon04' inherits ringnode {
 
 node 'amazon05' inherits ringnode {
     $owner = "amazon"
-    $location = "45.588611, -122.5975"
+    $location = "45.588611,-122.5975"
     include smokeping::slave
     include nagios::target::fqdn
     include nagios_services
@@ -1061,7 +1061,7 @@ node 'amazon05' inherits ringnode {
 
 node 'amazon06' inherits ringnode {
     $owner = "amazon"
-    $location = "37.618889, -122.375"
+    $location = "37.618889,-122.375"
     include smokeping::slave
     include nagios::target::fqdn
     include nagios_services
@@ -1082,7 +1082,7 @@ node 'amazon06' inherits ringnode {
 
 node 'equinixnl01' inherits ringnode {
     $owner = "equinixnl"
-    $location = "52.2373, 6.8496"
+    $location = "52.2373,6.8496"
     include smokeping::slave
     include nagios::target::fqdn
     include nagios_services
@@ -1153,7 +1153,7 @@ node 'multiplay01' inherits ringnode {
 
 node 'softlayer01' inherits ringnode {
     $owner = "softlayer"
-    $location = "32.782778, -96.803889"
+    $location = "32.782778,-96.803889"
     $nagios_ping_rate = '!250.0,20%!400.0,60%'
     include smokeping::slave                                                    
     include nagios::target::fqdn                                                
@@ -1164,7 +1164,7 @@ node 'softlayer01' inherits ringnode {
 
 node 'imagine01' inherits ringnode {
     $owner = "imagine"
-    $location = "53.334224, -6.365538"
+    $location = "53.334224,-6.365538"
     $nagios_ping_rate = '!250.0,20%!400.0,60%'
     include smokeping::slave                                                    
     include nagios::target::fqdn                                                
