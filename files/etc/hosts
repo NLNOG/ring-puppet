@@ -325,3 +325,5 @@ ff02::2 ip6-allrouters
 85.214.1.147    strato01    strato01.ring.nlnog.net
 2a01:238:bd:3002::2 strato01    strato01.ring.nlnog.net
 
+88.159.8.253    edutel01    edutel01.ring.nlnog.net
+2a01:670:300:2::253 edutel01    edutel01.ring.nlnog.net

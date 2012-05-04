@@ -1642,5 +1642,21 @@ class users::virtual::ring_users {
 
 ##### END strato #####
 
+##### BEGIN edutel #####
+
+    @add_user { edutel:
+        email => "noc@edutel.nl",
+        company => "Edutel B.V.",
+        uid => "5095",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "edutel":
+        sshkeys => [
+                "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/jRHty3IEv6J1dMEzBO3Gm//8jbFc7+4vOfecIzWsBi/MxdyfyOn9jyH1+nNTBxdr+DNo3Cv2/7CwfzmuEeo31Gzwpm+xMTCFRvQly76UAuJ8bxEjlymaW+bvb2EZ07E4cw+Nk2ZTq7rlXp34JiPgY7Up4GjBVhyT1Azx6O5cXmBtZNuArv8frk1vZMuf27ESMlQMdhs6rE1C0nAu4zcxf4/ZekCCn9vdLLPS2kmR3xSvmj7UTfSMICd6z+Y8YwOVEZK8eHu24elQZ7wPrUyOVkYgmxzFsxwcxRvlGpza/yzt5icpeeCr3Lsbsi1ZzjyEDu/omkGZXhgCiNFSMeMd m.piscaer@edutel.nl",
+                "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAs5SqaWAF5MOYVqjsqAv8KOTt3cH397EirAmyrtlZeIw47lrahEhVonDzz5rVPQQ52c0hxzz1IuuoxwzGSrsqQEnyA1/iMGDLe2DWFuDOzGLCJCFu+L9ExLawMVDAE61IjoSKTll0D3JGzPx/CNVc3JsqPuWdpRSAGJBBE56RTxxfJhGnJjU8fQhmTP6Ze13LG4j91AkU1EeMhMGEy8n5BJaD/hjquwhgi2ujp+MdsNDQ5bO18lywf96BTyt8voSdE4jwpLY2RJQX9rZoC7fk5r1NEfiQ2z69f2P0YWHrXmEZY8IzsNX81b+z0OHDdeOSA3+UZm06P1FkHFm8YWVmmQ== Jeroen van Duuren",
+            ],
+    }
+
+##### END edutel #####
 
 }
