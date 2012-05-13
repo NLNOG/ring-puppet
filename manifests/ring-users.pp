@@ -637,6 +637,7 @@ class users::virtual::ring_users {
             "ssh-dss AAAAB3NzaC1kc3MAAACBAIacsvqd5XowdIBhuk9Wp2UDMdXbEBv+m8dkOtP49rvKcEfNfrwOkFQql46YeIh4yLNPoDzuhoo+cFvaaQg61NRAiAzkTJptZZ7XmuinS6HFdLYLTW7RFeJcNbT6G/pIYmXcNbjklm+/++f5xMY9weYd79wcq7MNhBEfULiyEIjnAAAAFQC8QZnAK9EmD/JyG+tCE2k99rzelwAAAIB4gZBWMQRw5U1k0KteUtYb2xtRgEdf516hW4BswPgwXzr/kzX8dO/zWGDGCCe4Fn7wegDU4395RNi580DfK8FM8ZiyvRbt/b3P2aFvsIkJf0U8IX7ls4gVhntxhn6zAzRneLl3Ii//UQh94xU2ET9rNJD/T5wZ4a+P45AKJuTPMQAAAIBmqUWdJK/RPS9XK6eTpuf92oCANBozxd6mmIawNlMpIsyXak3VdfAeNXph4FiTl5VwhzIWFC560nvG7GTauQKxCtG4CB0sLvNrrw0p51Pn4y6Thtb7H7Ee1AF3W108O+QZNnDa1ld6QNjx5/F64IeK42SJ2zcDQbD8WqfsVre04Q== jepl@login1.nms.tele.dk",
             "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDABAiWdBlWGSlnpDW/1zSVHVPElA6c0Alw/ampPJ82wK1YfvV2dUufr+0B4N05b6G9BxlW7YwIZ3pJjc9haJv/6riBSrTorU2PjEtPyhRnL5s6eXHGs5oODCN3eydOQb3wZbeizei6Zt8w+svMxuKe02a7Yc9CN2akY9wbIvCaHkQGYGYqncwDfIHelU93D+b/M8icva/TVyE48yV+HhamhKuIviwiHPuOy89Plt3DfgqI/Yt+eLcu3UfMLvn3CD61zAB1u4iENXTBNaHV++EZ5wyxj/BQE2UgcQj6BatrGkYkkP20dV8WmDia0q4M3g0Ka1s1K473nDoZ/30Z34Ul lyngbol@wheel.dk",
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEA7pqIvq2ISsVnlT/isbgwyZxkWvd2u6QE5ZJoG73snDvasWeYaOhUDqcOM9DpSYkNxIxrgwkawwuKf2dp637BfRWT9m7esB4RaDYwZ/dpo1OMWBVPEhDETCREDde3Vfi4ZmL5QVOlfSnFKjV2NTl7zKnFpZNGS7rzVS+XADdrhwk= ssger@tdc.dk",
+            "ssh-dss AAAAB3NzaC1kc3MAAACBAOjpahyea3ZBNyZI88M0aGxqXwHDa++KBYXN9OZLLWhinHc1lH6yJg7AJJBrGJcp6iAOuO/7EfRqjwh2WDJA4kMiaW9/3njYIZAT8S5RsdV6l+J/i6I/2xrNnYaejV9TyVWtrZTO9viB4+ArevWcXf3ajZ/l3zZUaZvcgjwStrkLAAAAFQC28OHiJeGZOdbAsobsHRrsAT5vOQAAAIAo+KHH2jwajb5luL1s1zmo7jr91n5PnXiBRk1umUGeYSxUaWu6HKa/dJsgeciWROhAa99473fmvNmGybUeZZivR+vmE2CyU6q9MoCk3VlrlT4giQYM6iNsxUOeTSiLtTe2lD9OapaMym0HyWJQgmiyBnYBiXh++qGpG/jg2WNDUgAAAIEAyYc+FlQnMBY01dqgjLMxaKEF/+jlukJ0WBVFUgkflMTwIDX7k4kTjRUngZDMZCM74iWH1Gt8xFtm1Fs36HxOEZjppL5oe6vuXTyjTQRLN7MB+6KlQa6l1+6YIqgU1WnV1vD0+Td3XMC2TanxjAxF4ggcMYB+IDbqupZhUpIE8xc= fitomsjo@login1",
         ],
     }
 #### END tdc #####
@@ -1671,9 +1672,13 @@ class users::virtual::ring_users {
     }
     authorized_keys { "edutel":
         sshkeys => [
-                "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/jRHty3IEv6J1dMEzBO3Gm//8jbFc7+4vOfecIzWsBi/MxdyfyOn9jyH1+nNTBxdr+DNo3Cv2/7CwfzmuEeo31Gzwpm+xMTCFRvQly76UAuJ8bxEjlymaW+bvb2EZ07E4cw+Nk2ZTq7rlXp34JiPgY7Up4GjBVhyT1Azx6O5cXmBtZNuArv8frk1vZMuf27ESMlQMdhs6rE1C0nAu4zcxf4/ZekCCn9vdLLPS2kmR3xSvmj7UTfSMICd6z+Y8YwOVEZK8eHu24elQZ7wPrUyOVkYgmxzFsxwcxRvlGpza/yzt5icpeeCr3Lsbsi1ZzjyEDu/omkGZXhgCiNFSMeMd m.piscaer@edutel.nl",
-                "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAs5SqaWAF5MOYVqjsqAv8KOTt3cH397EirAmyrtlZeIw47lrahEhVonDzz5rVPQQ52c0hxzz1IuuoxwzGSrsqQEnyA1/iMGDLe2DWFuDOzGLCJCFu+L9ExLawMVDAE61IjoSKTll0D3JGzPx/CNVc3JsqPuWdpRSAGJBBE56RTxxfJhGnJjU8fQhmTP6Ze13LG4j91AkU1EeMhMGEy8n5BJaD/hjquwhgi2ujp+MdsNDQ5bO18lywf96BTyt8voSdE4jwpLY2RJQX9rZoC7fk5r1NEfiQ2z69f2P0YWHrXmEZY8IzsNX81b+z0OHDdeOSA3+UZm06P1FkHFm8YWVmmQ== Jeroen van Duuren",
-            ],
+            "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOPaS0VBK0qRV+OpjS7p8qYRfPtjk6tseNWVx8pWh5m6jXC3m0egSjdtOXKa1pJBSac4wXsNWBh+Va8DwO8OxodR8E3nSyEbNO0PHrIWxEbd4npGAM7cToh48kpsodX2lOebyOU0H7dVoM5j/gHItnJHycKg2IuXslITArFwymMiat95ahUav2RRHCfmVlFaLSCGGg8oN4sIKOQlc25lANPKilX0MeCJkLN2bxnkdFap0CQ3aNjv+ZkVbmrAhvGgZOtrHc4SOeBqhbVpR49I/0D/QAuvRurlKaG2fv66WF6NrX0zcBcksllFKdObFSj6cNaxGq6Y8/xJnW6t7PBckJ adriand@edutel.nl",
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAhnoCUpccWOJcIvg75rgGJ9c3I29CnykoSK+3fGGPWfWMNhd7CrUwQPJ4AXOmkN/Od4n1VOKjvlWdV04NNFcF6zvGxtF4uaAgtUggVZbCU+EDhKTatx5D5c5iNz/gh4C0Z+/7g/2NC4zzMg4MY8Mpx8S9ll7Zl9EfK8MUpaOdad8= Bas van Koert",
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAyvv8t3ZeOmxDGY7gKTJEBuCmoaUB6sAZ789rBwCCDUD1DX8+M/mGLm/VrpzzIg7X3SKFB2pHVCzrdXOn+r820QVYgS24Q8o4YUetnwLFJesHSud1KahhPrkYMf58OeVV1cnyn53pgp+QOt7sORmexl0N+wfJ52t3uMrsKZ0bS1U= Hans Goossens",
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAu5sZPDJqRztHlsLpQnr2MvfpOgcorHE5DRpfRTytuh+wQ30dnVpbaYl6+WR0UkN2k3EBWN2AoJghVK4J/O7HqzK2c5gBrA2A6Wwt7qxhM3kzfMD6mxwlHopw2mNtccOOVf2t47fmkOtW+uOoApOI2VTtiJ/aFEByswBpO8cKeNE= Joris Haest",
+            "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/jRHty3IEv6J1dMEzBO3Gm//8jbFc7+4vOfecIzWsBi/MxdyfyOn9jyH1+nNTBxdr+DNo3Cv2/7CwfzmuEeo31Gzwpm+xMTCFRvQly76UAuJ8bxEjlymaW+bvb2EZ07E4cw+Nk2ZTq7rlXp34JiPgY7Up4GjBVhyT1Azx6O5cXmBtZNuArv8frk1vZMuf27ESMlQMdhs6rE1C0nAu4zcxf4/ZekCCn9vdLLPS2kmR3xSvmj7UTfSMICd6z+Y8YwOVEZK8eHu24elQZ7wPrUyOVkYgmxzFsxwcxRvlGpza/yzt5icpeeCr3Lsbsi1ZzjyEDu/omkGZXhgCiNFSMeMd m.piscaer@edutel.nl",
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAs5SqaWAF5MOYVqjsqAv8KOTt3cH397EirAmyrtlZeIw47lrahEhVonDzz5rVPQQ52c0hxzz1IuuoxwzGSrsqQEnyA1/iMGDLe2DWFuDOzGLCJCFu+L9ExLawMVDAE61IjoSKTll0D3JGzPx/CNVc3JsqPuWdpRSAGJBBE56RTxxfJhGnJjU8fQhmTP6Ze13LG4j91AkU1EeMhMGEy8n5BJaD/hjquwhgi2ujp+MdsNDQ5bO18lywf96BTyt8voSdE4jwpLY2RJQX9rZoC7fk5r1NEfiQ2z69f2P0YWHrXmEZY8IzsNX81b+z0OHDdeOSA3+UZm06P1FkHFm8YWVmmQ== Jeroen van Duuren",
+        ],
     }
 
 ##### END edutel #####
