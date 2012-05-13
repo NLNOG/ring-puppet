@@ -327,3 +327,6 @@ ff02::2 ip6-allrouters
 
 88.159.8.253    edutel01    edutel01.ring.nlnog.net
 2a01:670:300:2::253 edutel01    edutel01.ring.nlnog.net
+
+82.147.0.14     sixdegrees01    sixdegrees01.ring.nlnog.net
+2a02:298:80:1337::14    sixdegrees01    sixdegrees01.ring.nlnog.net

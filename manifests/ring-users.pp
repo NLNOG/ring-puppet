@@ -1678,4 +1678,22 @@ class users::virtual::ring_users {
 
 ##### END edutel #####
 
+##### BEGIN sixdegrees #####
+
+    @add_user { sixdegrees:
+        email => "noc@6dg.co.uk",
+        company => "Six Degrees Group",
+        uid => "5096",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "sixdegrees":
+        sshkeys => [
+                "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQBQjS8FcxX/ea74STVvPkPOI7xxQ3/6/fPCTzRFnV4IRFndl6HUH3hNcAWWxGovPh9x6dJWDDp+VpfWzKeCeSAcmIFAiCSZ/iY+ZrtNT3Mx84c6cnqP6mIc8ZoPko8uC3ZWm+9LFOIdqwdYNC6LKmobdmomvOmM8B2HL92c2r5QpMnSylKRoCZorPBM2ieRdEFZziObaNGiECTROPV2lkw0yt3IqQJMiKBbgFYwm2Vc7YOGVOrIGJgNz8Us/gYShQ7E1knIhHkEDkxODWAiPx5zHMlgXnL/9T80UyShjHl6nzpDbfqSmiYVa0ghS++HGK2uATwxlO06+mGkfZDhHunT Luke Batchelor",
+                "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5ymVy2mbml5acWpDL0FBnyV0EHXtqgeO23XbzMBz8dQx55INOg9gL7FZp8rjGx0xHRgj3u6vvC91djcdj84SkgUkUuX/q9svtgBRS3bdrdOptAArP/gzAuyDleQt4asL1XsEruryGgMqYgcid35b2IehfiXBnrond535LkB0LBfOasGy2ke2c35bUl9imXyazu6SYDR/2bvTedNdV8tBXuIlNgd4cOzekwwks1JWs9LZHcQ9w5J1LYh5lxLew1JNq7r2wqlZ2KkTEqOsShnJifT5HxUqGQZgLb8cuABU2FhtFVAA4njGmYGi7PPZXeeubDqz34TxFgD10y83ylVOf Ben White",
+                "ssh-dss AAAAB3NzaC1kc3MAAACBAKkuQmGRCHzJuEeFhv5reF2qMeSnd8QWDg44W9ilQhM0HWuAQV3KbYlb38aKERnHKKKj7oVWtu52kN/xh8lAsgsA4/CBG0NK6l16YMOh9mTMGbAgWD5BVjhWebL4QaHwa28i7oQXEV7CJ7+ofFJm04tzYcE2LL1DCVH20WY7/CllAAAAFQDfxE9w8ORdNGcwZ2lwnKeMM0IIawAAAIAubj7sD2Bhv1SFbs7UZYaojmPhWcDZnJMvZqI3QXm+dGfQy0h4hrNyl0SMuBKFVELIff+arYlS13p9NdptqimsEWukmRZM/rq+GzJVwSBm7AZWJWVYFCW/1lIwwcgfSITANnm/0quxV/lia2gGnXc5TOJ1j2ZP8a+GBikk4GhFYAAAAIBboW2SM892d4uxtO5Mp7E/q2Gg5MO2GAsFVxqoa8HT1xmJLcYQgnthAoW4lu/RaXgH1G1qiL8wcYqy7cVcWw1BSlH0HN1HsgBrXAdCl81hKpt1IArAmgxoqtSy+cGm+fWTvoTA6Qx6vzTVj3lFxi2id3KmO3aF6QNpdqh1rQ5nGQ== Ben Ryall",
+            ],
+    }
+
+##### END edutel #####
+
 }

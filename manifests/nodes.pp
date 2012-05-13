@@ -1246,3 +1246,13 @@ node 'edutel01' inherits ringnode {
     include users
 }
 
+node 'sixdegrees01' inherits ringnode {
+    $owner = "sixdegrees"
+    $location = "52.278551,-1.895770"
+    include smokeping::slave                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
+
