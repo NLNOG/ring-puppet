@@ -60,7 +60,7 @@ node 'master01' inherits basenode {
 
 node 'worker01' inherits basenode {
     include users
-    include syslog_ng::server
+    include syslog_ng::client
     include apache2
     include nagios_services
     include nagios::target::fqdn
@@ -79,7 +79,7 @@ node 'worker01' inherits basenode {
 
 node 'worker02' inherits basenode {
     include users
-    include syslog_ng::server
+    include syslog_ng::client
     include apache2
     include nagios_services
     include nagios::target::fqdn
