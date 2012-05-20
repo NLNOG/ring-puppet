@@ -766,6 +766,7 @@ node 'concepts-ict01' inherits ringnode {
 node 'dataoppdrag01' inherits ringnode {
     $owner = "dataoppdrag"
     $location = "60.295349,5.255753"
+    $nagios_ping_rate = '!250.0,20%!400.0,60%'
     include smokeping::slave
     include nagios::target::fqdn
     include nagios_services
@@ -897,6 +898,7 @@ node 'seeweb01' inherits ringnode {
 node 'networkdesign01' inherits ringnode {
     $owner = "networkdesign"
     $location = "47.38339,8.49560"
+    $nagios_ping_rate = '!200.0,20%!300.0,60%'
     include smokeping::slave
     include nagios::target::fqdn
     include nagios_services
