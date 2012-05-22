@@ -330,3 +330,7 @@ ff02::2 ip6-allrouters
 
 82.147.0.14     sixdegrees01    sixdegrees01.ring.nlnog.net
 2a02:298:80:1337::14    sixdegrees01    sixdegrees01.ring.nlnog.net
+
+212.63.210.241  spacedump01 spacedump01.ring.nlnog.net
+2a01:298:f0::f  spacedump01 spacedump01.ring.nlnog.net
+
