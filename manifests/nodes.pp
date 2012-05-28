@@ -1259,7 +1259,7 @@ node 'sixdegrees01' inherits ringnode {
 }
 
 node 'spacedump01' inherits ringnode {
-    $owner = "spacedump01"
+    $owner = "spacedump"
     $location = "59.34803,18.03916"
     include smokeping::slave                                                    
     include nagios::target::fqdn                                                
