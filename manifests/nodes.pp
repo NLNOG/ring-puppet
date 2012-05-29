@@ -1267,3 +1267,13 @@ node 'spacedump01' inherits ringnode {
     include set_local_settings                                                  
     include users
 }
+
+node 'rbnetwork01' inherits ringnode {
+    $owner = "rbnetwork"
+    $location = "47.209726,9.529854"
+    include smokeping::slave                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}

@@ -1729,5 +1729,20 @@ class users::virtual::ring_users {
 
 ##### END spacedump #####
 
+##### BEGIN rbnetwork #####
+
+    @add_user { rbnetwork:
+        email => "noc@rbnetwork.ch",
+        company => "RBNetwork",
+        uid => "5098",
+        groups => ['ring-users'],
+    }
+    authorized_keys { "rbnetwork":
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAuBcwLlZ1Sq2ytj067uVxUW5bW0qi9KIQEsbdjZ4SzszDWO6d2sL30gLCkteUvLYlNuyqZdWTsPhCPLf94ozhb+CkdIJyeqPszMjhsAlD0wwlRrPnuaIp/jvhU7vNtapbzbNnAfIjT/ditOJ9Zs3I1U2HVvYEICn3pNYyFiycz0I0YlowsGQbEECraciU+MdLeEK1CuenpxPrdi+y6R+yqrVkwEvlUWy6jnuONr0vhGazeCY0r+ExODQknF2RvPLB0P8tzlIbXftgixE9+63DEiaOQvF9QTFGOxItwXmZQoOzllEpqdSjpK1A45u7YppHesMWkHOCdJo5wA38lsgcKw== ak@rbnetwork.ch",
+        ],
+    }
+
+##### END rbnetwork #####
 
 }

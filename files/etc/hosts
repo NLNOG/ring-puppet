@@ -334,3 +334,5 @@ ff02::2 ip6-allrouters
 212.63.210.241  spacedump01 spacedump01.ring.nlnog.net
 2a01:298:f0::f  spacedump01 spacedump01.ring.nlnog.net
 
+91.238.144.6    rbnetwork01 rbnetwork01.ring.nlnog.net
+2001:67c:2814::6:1 rbnetwork01 rbnetwork01.ring.nlnog.net
