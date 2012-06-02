@@ -1277,3 +1277,14 @@ node 'rbnetwork01' inherits ringnode {
     include set_local_settings                                                  
     include users
 }
+
+node 'yourorg01' inherits ringnode {
+    $owner = "yourorg"
+    $location = "42.003056,-87.996389"
+    include smokeping::slave                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    $nagios_ping_rate = '!250.0,20%!400.0,60%'
+    include set_local_settings                                                  
+    include users
+}

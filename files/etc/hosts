@@ -336,3 +336,7 @@ ff02::2 ip6-allrouters
 
 91.238.144.6    rbnetwork01 rbnetwork01.ring.nlnog.net
 2001:67c:2814::6:1 rbnetwork01 rbnetwork01.ring.nlnog.net
+
+204.9.55.77     yourorg01   yourorg01.ring.nlnog.net
+2001:4978:1:420::cc09:374d  yourorg01   yourorg01.ring.nlnog.net
+
