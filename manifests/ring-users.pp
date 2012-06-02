@@ -1756,7 +1756,7 @@ class users::virtual::ring_users {
     }
     authorized_keys { "yourorg":
         sshkeys => [
-            "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEAv40ibgOIkJmJGGNAWYkNn3eVhfjxEDZXIvetmmUOplIrRuCaK/oMrzLEbkg6bYrFGnYRi36TLhYG60X0hrUd8iFPH8yydMT5FyixwhPhkDbxzZen+OD3b3Z7a0TX5hb9udVSkkihAftM78mwYcZOJhggH3Nd7y+YMCVAbemec4M= toasty@pool045.dhcp.your.org",
+            "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDD3RbIiRjR51RXizorCvK1iFVjQkXKV8/G2AKBFu90AqjhR5toc7ivZQpyrUXCeB9uBnQ0Ch5Lm00lHHjWl6YR2ZnsFj5jgKRmk8dxq25GqhGhCpVA19JHkuY3A9RWWlnCEmHkdoAD7AKiTNMavwa/zMO9TCWKcBPbCzY/WjFZQh3rfQsOAUUZRcL+/VxTNBorQrlh8CLvHn+yaeVei10M9Cx1hUQDNzZxYZ7Wxop4bfl9JIUVI85KvmMt9jxRf9yrYYwlESGRx4UOV0XZctitu4lTgFNLBWD8+wGdJEgRYzLxGGtHtgSg2G+wZztrVhPpNGKsLpfbSKPqscmTHFRp toasty@mb4.your.org",
         ],
     }
 
