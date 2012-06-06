@@ -1288,3 +1288,14 @@ node 'yourorg01' inherits ringnode {
     include set_local_settings                                                  
     include users
 }
+
+node 'occaid01' inherits ringnode {
+    $owner = "occaid"
+    $location = "47.619428,-122.348535"
+    include smokeping::slave                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    $nagios_ping_rate = '!250.0,20%!400.0,60%'
+    include set_local_settings                                                  
+    include users
+}
