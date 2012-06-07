@@ -617,6 +617,16 @@ node 'solido01' inherits ringnode {
 	include users
 }
 
+node 'solido02' inherits ringnode {
+    $owner = "solido"
+    $location = "49.50481,6.11237"
+    include smokeping::slave
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+	include users
+}
+
 node 'digmia01' inherits ringnode {
     $owner = "digmia"
     $location = "48.119209,17.095844"

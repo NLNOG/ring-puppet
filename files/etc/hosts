@@ -341,3 +341,7 @@ ff02::2 ip6-allrouters
 2001:4978:1:420::cc09:374d  yourorg01   yourorg01.ring.nlnog.net
 
 2001:4830:ed::2 occaid01    occaid01.ring.nlnog.net
+
+109.238.63.65   solido02    solido02.ring.nlnog.net
+2a02:9d0:ff00:63::2 solido02    solido02.ring.nlnog.net
+
