@@ -345,3 +345,6 @@ ff02::2 ip6-allrouters
 109.238.63.65   solido02    solido02.ring.nlnog.net
 2a02:9d0:ff00:63::2 solido02    solido02.ring.nlnog.net
 
+194.150.168.19  as250net01  as250net01.ring.nlnog.net
+2001:4ce8:c134:1019::1  as250net01  as250net01.ring.nlnog.net
+

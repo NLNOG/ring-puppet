@@ -1343,3 +1343,14 @@ node 'occaid01' {
     include set_local_settings                                                  
     include users
 }
+
+node 'as250net01' inherits ringnode {
+    $owner = "as250net"
+    $location = "52.50200,13.37000"
+    include smokeping::slave                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
+
