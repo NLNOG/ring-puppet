@@ -131,6 +131,6 @@
    compress
    delaycompress
    postrotate
-      /usr/sbin/invoke-rc.d syslog-ng reload 3>&1 1>/dev/null 2>&3 | grep -v CAP_SYSLOG 3>&1 1>&2 2>&3
+      /usr/sbin/invoke-rc.d syslog-ng reload 3>&1 1>/dev/null 2>&3 | grep -v CAP_SYSLOG 3>&1 1>&2 2>&3 || true
    endscript
 }
