@@ -218,7 +218,7 @@ class users::virtual::ring_users {
         uid     => 5012,
         groups  => ['ring-users']
     }
-    authorized_keys { "leasweb":
+    @authorized_keys { "leasweb":
         sshkeys => [
             "ssh-dss AAAAB3NzaC1kc3MAAACBAKrXxLnA6hi7ppZZHOwILVmMmG02n8tRGdgHXxuhYgyEoaEAVJrBPvdziYGSc1MLSXlXtmm+XL8uDMQTnqwb3YZiKKW8v65Se35GdWr1Uf3Gk2jF/M7lq6zR2ji/d7iFq5zUHSEWGOYDz73feDNhJu568k5j/WLSxaV0m9Z7lsdTAAAAFQCeSCQTuWFZVtQYezeFDwDpOf0OlwAAAIB/AlZANZgGYBIsruBaYXseU1jfHm4e5xNGJBmFUtrqLgi09xq+kYpCQITCpPd6eE3MLJ2JylW/o3tlREtvDU/oZDnfG8DgVIz2rtjQ7RkeVH0Wh60CrXn9wV01s/5ih9ISO6ECMV4vr3KWX9XgmQFG91YqXTdcnmHwuYZUeQLQ0AAAAIA4h0zTpnycHcmW2Bfwkor0X2mHdNSZad3+wEx3Bf4DE8VpXMNbJcYgyZ0STbvmGwyAnLZ78qe0+Id0ywkTRXtFd7GNoI02qMnQgBfgZDCcwxHxlcG4v9iI/arCCMGibIWf1Fzog/TYGiJIPExB5WE7G0G3U9jKnxQh3zxG2vtUHA== bas@louise.frogerstraat.nl",
             "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAkCgRUkL3e3vm1UO+mQMYhnxdjOavmZXBeBWQO5X9T0y7uj70M+bX/Z3lhOF4Lq0VX4UL8UEfRy/aYa6zxv+SmUsvrPs4Lgo+yeLAVR+zxnZLjsch6r6zFV6+v4dPfKJUO+58bI69+gIUctuczwQn9nvmp76uPbsTvGXVdbtuwzc= GJA",
@@ -275,7 +275,7 @@ class users::virtual::ring_users {
         uid     => 5015,
         groups  => ['ring-users']
     }
-    authorized_keys { "xs4all":
+    @authorized_keys { "xs4all":
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEAzq+/8IJputPveyQKOFufRTZREZ0uE/P7u0iYbdmMZFsdy56Wt6/Qvkzny/f9AKcHqFuwkDgvYIWtVeZNKa1aL1iWqyjbC9EQkVq37vEzmnWLJRk968W9owoFV8C1JE/iQd5/ZfoNUzcolxd2jTbuvdQ8LiDfEivfbOroi7KwfMs= maarten@macbook.carels.info",
             "ssh-dss AAAAB3NzaC1kc3MAAACBAMROwonJ92paPJQkJEIVz0f/Kn7+U+Cp0o8cGmK0t3IUzOdks6z6QMmtvYpZCJBZKJP9PHiydUq17DE0NJmuzTHxrZKzAcklf3vOuViiG2OtphvrYjYMO9DljK+qY/5t7w/sLSjGRp/CobghcBr/TA/7vtS61s4uOQZkQ0+IcMKnAAAAFQCrxVJRkWcVx98y0uXA6UAYUIoylQAAAIBlJdVfbolpA2uzskZoAJt6DGEJh6jr9jFeVuuO6cYC0WkRJskGi9ZazwtDf49VBwa2/FUFahLoInxuaX8kaI6IozB0yLF6XzuTCeoAUBCRLXl0W28gfUebpMjANj5b662N7f77fxwrQV9dkx94CJJqOweD5f6MhmbxNFudaTFVVQAAAIBRLEAP5UCWsZJ03KE/soTLkU2LxC5Hk5ryQVHl+jiXhqSvTezUaKf8dIrmR+Aa8zsTzccQPDYwGnushk04fV4ASsSrSIYqn8WlPrcghH9XuzzK7cNGMs4/1F1h35ZchXkXBtIdKrZVdPjrmwf93LnVSolLSEBQc9oy39Pbf5YpKw== mikevs@xs4all.net",
@@ -1122,7 +1122,7 @@ class users::virtual::ring_users {
         uid => "5064",
         groups => ['ring-users'],
     }
-    authorized_keys { "iway":
+    @authorized_keys { "iway":
         sshkeys => [
             "ssh-dss AAAAB3NzaC1kc3MAAACBANy11H0NQYAPvKHLWuSyOlKWPD2aATF/9VnJXK/epUJWXCrLRF0WvKETJjYTLHafBb4WAPIi3h8l1jDITvfl+Hcc6Yf7zv17kkDIAgY0MNk0CMNEiQdziK0nte9D+2zQu+A0EootUHa1tPVIUgL2wtM6GyDvVL76v10xyVMMKKKXAAAAFQCc1Od0oqMW0/WUUHIg5wSVGFZyqwAAAIB14CTuwKua7tfKL/V6hRS2q6k1GSL+VMj43jVGb5u4LMyoqhtsqlo1fTzys6lRxbZFbsdrRCbeWG7uy6kB6iLkZv3U6yXDn9+C1EOopM3eYwBDhzO0KCF0LOjvbJozanDjSl+/hg2qiRNIZiamcn0qshxh/x7RLiw6DsSxfwlz9QAAAIEApMdsi2B+ehuVSQjl3Oy1WsvCeBY49w2IHNzEQyZJzVX5Hkq2tFlM91cPFSh/+TbGwmBuP8HI6JZkqVsKuS3nTdStCJgoav6clfgufOPhI6NWFVj0rEZO39Tet6ElCuLUDXaJkjxOEPNCF+0i6wuYxMP/M0NWVF6KlB0nkQMNMJo= cramer@fiji.dolphins.ch",
             "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAoBNp3xgryWm1ZMcEy1aI64EPLJb61o8AL8q+GZ9qw5wvhvutwgY9gvdocJqqOHmvHNRmgLHKt6Nk4EfuDW1kn+iWH8JwAeophk02/PULGxbOSzTJGZcdA66R3vMWsB1CL9Rm7fvutDuVb4o9qjgR5lYdbwriiUGbqEDkXSY66Yc= christoph@brigitte.interway.ch",
@@ -1141,7 +1141,7 @@ class users::virtual::ring_users {
         uid => "5065",
         groups => ['ring-users'],
     }
-    authorized_keys { "timico":
+    @authorized_keys { "timico":
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA8/ANW4MXT3ttfXDfMIZlnseXEDuGHINtEYFlDl1a79pecZ6UKj1hF54RKmXLU/M2g9/qlCv+5PYFN6mkNkuTatMldXxZ6zCiZAFOyVRhRsfbBp0MsyAMI1ZXNQEiOmpwuJd43L/kSopVYfL/DOc4cKbHbVv2Fmw63FwfYVR+cvpKnrDIwptOi2tlfIBnXqnQP73oDPwltD+Mvx9nN2qIG/16Rd+CRuMOufKdSfceWJcYoxtmZEFJvuuZicKFiuhALc/xDAs/Ur89mPHdKOIRBZsnFk0lgPBQBagLYqm7EbEax9z6XSgtG43l49KyVZ8RDhjH6y+wC+5g0v8aplzJAQ== paul@frodo",
             "ssh-dss AAAAB3NzaC1kc3MAAACBAJ+FP0Pk9dIVgVizdPVghKiBTKjFr0wikAHx4Che02LTdRGuW8CnJVFq/sBdNbiVlBV82y8SrT3UBcQ6E6KAN3iA9fLuIyF1eiJj25ekuG2EaOsCwhRvG3KHky4HdT23a7KckBuJ3GuH2lablgiRWYI1gnJ39hJE6UVtunybIrT3AAAAFQD5NL5ONTj5LVF+43k6DgfIAeHFSQAAAIA6EjCtSZwBQ6qCV9pLnSPqElTFMQaotUt2vMsbTsZ4hB0q7L2//C60TddkFz5qSZVwyC1sUveXqEgtCV69igdME+I2Zq3WunKo9qzYKJKM5KVIWPVDRLQ+yKwoCHINral+Ay4/Pida17FrrWTO7uxfNUue8EijqI0+yyAGIshQhwAAAIAePMkZTy2AhkG7xY+GP+Rv9xlFSYaHaZ87pofE8DoEcB9fsERchHetH59jRHFZaIA82Y2HdLUa7HI2L1jGK8RXRXf30JXz7JLkA0hy7QTP0roqLgtBlBTH8QwChs0MNgNAN7yLSvWFMLdLv4c0kngpaekNfTh3KOoxBGGK+Ru3pQ== ben@didge",
@@ -1391,7 +1391,7 @@ class users::virtual::ring_users {
         uid => "5080",
         groups => ['ring-users'],
     }
-    authorized_keys { "equinixnl":
+    @authorized_keys { "equinixnl":
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCM8n4yposdFemLg3NUvd6xMmY9wVxo0rmMkGpUwnhKZ0XQP7UBNsBu90jkesK9jTQ49zTgYq03CkHVdCZJDEyZRVbF2G2skeuN5JKnfdYgzFBthndzR/B+ePvkHTz+v+IMxsocvOCYt4ovISwW88SyHGwxrc34UUDCUfHr8F3Hjwj9EUNKu8SwMmAiO4qP3UHtbbSYZXUtwWs+4rtpjAuA3j/8LlEXMp8bmhoJvb643BDw4I7K3r0LlJukOVwnJtL7ycaID7VIUew4Q6KDb1YA72rdCodaGlYiTH7PshEHc8aDwV0/RjpUUqv3UK5SOpszpXXECSdQyC4LrO0oz3Q7 jorik",
             "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDDphzEkcizgKMYkzat5bqKqemp9CoBSBzxuyR6HqofAFxsLICafmHv5UFgE6OPjrBeQQwGmLS1hVDnfuJ5gysdCnjUTUi4TkEKP1Eg2f5U7HupCekQop66WYyIT5P5PWGij0MxaXVlIA4c2G5Y+pQ+YCg4tpeGWI6MRcNpLGR1pmHp0rA2KWoH1TuqzBsNrh6ttHFxKrP/xm3jF9JZzdNnDY7qMg1dabAf9Ayf46cKy7+T1sWwMvWkv7wtMGYqK7JjfrM84t1qxUdUwtWQj2ac/9BGleom++m4eyECSSncKtyg0MyEkeAEGtd9b82F/7zj5YPPTHj1bqu+oejOOTL9 tjerkjan",
@@ -1410,7 +1410,7 @@ class users::virtual::ring_users {
         uid => "5081",
         groups => ['ring-users'],
     }
-    authorized_keys { "lchost":
+    @authorized_keys { "lchost":
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIBO+f37Egb/S+yvWF5YzXXacaOhGK9WXbgTc8hOxKxkfLbIEyQL4Li+xG48aLUJfU1ombW6jhrB5SUUf2MefdSQoLw/0ycWGExB1voCIxH9LcgnZCT86LguoRd4+fNsR28RpikirjZIcOO7SL33NfVNn2mofXvMa6OFYxaz8rbX8Q== phil@lchost.co.uk",
         ],
@@ -1425,7 +1425,7 @@ class users::virtual::ring_users {
         uid => "5082",
         groups => ['ring-users'],
     }
-    authorized_keys { "hostway":
+    @authorized_keys { "hostway":
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEAvs/X3YfKkCsnjTIfdGW7NoKm20C0WmArRsHw3E/EJ7r3sbYfsxWNwDc5FTXLoN2tqJrAUKS9PihYFZF335KiwxSkjXiJo3sbrVqlhGFsCc+B5C+tu+qhqOCj1jgW0VQB3j6X6rtml/FLSoxlnl+qz1xgo9UByyw9vHtMfPaXuxwAoV20pzHPXVnHJjIIArxbnVXU4zv7YD9TAYolTWtVD/ZUx7O/YkmckZast775HdBzZOTRKtc9fMRT1ywRA9DkgHjvOnr4g3oTtvHo+KbektnDT9MMC03sJ3/qJiYdAIHB+J4Y85UC482IeyiR2tu8K2jgwu9rDZZNmIXTvFAysW/RgI7JfcApGTNWd//zg1nFRTmgFrRe6Fhd7x77tqMJZJE+bAM+ky8ZHHIjzIxHNiW2TNGn6glv4yD6ECCQhp7s0uV6Alxc2bKIaduGpOBW/DhzirR6lgyklR0tlhxQs1SR5YxGfkeR10dbjaMSJB1G7GiRMRI4qrqwfghYgClT2J2jDZHxMOyeZ8/9lXLNuTKXIrft1Lwr1R1RGhN3h9ft17gNY0XeyUH0TcIqdNn6E+fYZfFdtZa91kXQBR+po8PEim1CgCpVhfZP9FEAj7Ti4698Gl2LxdlwDOhgCr61hitJJ3k4LHAEecsKIrHb0U1xNPJhP+CLZioF/br3z4c= ryanm@ryanm",
             "ssh-dss AAAAB3NzaC1kc3MAAAEBANTZvQHaSkqWJOQcpETgL0q/PWdvQHdAyuMUEbtv6Bbmi75Lkqr+Rr6a9tJ8dOnZcReBuSKQHFOVA0I6fUW64lbFvMYnB9rSNeHSThKm6EzBUeRXWnkgaAsyPOzOzYLPdGyiBt2IGgUjidza58TJQGpMZKbE+/gkIro6iTc/ZNwkAmIKy3/AKPZYOAqMicHSykMHPPXrQd2Di63q7bY38zKF0JxJbymr64VyTmSiA1KoRsMdoEtuet4s8CKu+pkQ1a1MwHSuh6uBgQljmPCOJ5PrcbAZRCJH6yo9NZGZd9hfauRl4Vwrm3+wFz98JKkf7sF4Uca7vQIfjyFzBnXo4xcAAAAVAOdUDi/PUlsY+SaTSKpHUlMqOiIvAAABAGzH/RWeT0K51O8Eq/sPalnFu8cWT5oABoWcQYiG4nbVGswlC1k11HXm4dsgv5oipxNYDyi3E3E3OrD4UlcXyXcIeOtq29f79nztO1SECzth6jD8IfQWYji9/ZM2Tg3LIrRPyRQKz/OnbKSesrlk+0DKaUHExcOl6Z0VAhi1fE6L64raxotR5F7w7VUGPReRG8HfMagQAbONE4Ccdm5ahY66q7eDf3qOjwEmSlDnYb3OWWVR1EIDKkkIRXGV2NrQXIOJf+YSRtPDgM+2zMsuaKa8VN+9+UcGnnM8AbCKmHfHK4FpB3/sdnnlKhZAnZtXt9e3gfpgQIqhZZ4ViqWh2eAAAAEAN3/U288YBuzLqoZOEjniY+0eV+Dsr3JvKrNXSIxKLhxZVtfqyki5+SWMjrGBflcUcf9aQ3ZExf+jbwpl1/KJLYwiP16iPEJAsg3WcxPN3Vr3cNkpqbZyizCGJVhcoBgWl39phrBfvEBahBvyyZp1veoLu3z53PXo1kopzjlZAyYicGf8fd8zze3m2iXAVUywWEHMiyW8LnCkXI9lIYyQ+cAtGV5CV/TBfg+KLEhb/T5S63dhN5kEtqZO3zAoNIVDkygpb6yFpfFC05B7sbnmfflipVWj2DNjFV13aiGX4eDheba4in7+9bugXaHPxc6bZMd4y08SmTthI6tiu9D5HQ== sim@simonk",
@@ -1444,7 +1444,7 @@ class users::virtual::ring_users {
         uid => "5083",
         groups => ['ring-users'],
     }
-    authorized_keys { "pcextreme":
+    @authorized_keys { "pcextreme":
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA3WYuprfKF4Cx10KZbR9hpgKy89MRkT1yWCty8PUHVTIwFcwYRFNaBRncb0LZ8MJUWm8GcohYEJMDduNbFRiU1VxMYuxYEyD5gQTS9+8u1PlLo+ZgKOHMhl+d4aDDRqec8i+qMbYbcsOzhWTtXhT0HutQ559DqxAj602kmFqGad8ZT49U20GmCkSFWdQZR1s8jZrnU+NQO73+YMU0qQ2y7qNOfMFdnWK975FBRD73SXiv+N9t6kMLUD3+nEPMQKn4+mxpVhsBQzuX2O0smgvmjWY3WHHZDmN7D7EQI+D9AZQfmuQLVyNbiv/uHOaHNQbrI1IyJOJGa5AcLx9ga2k3/w== thomas@pcextreme.nl",
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAyrHMWelsBMdJW2O+Vs/WGD/3Pf89rW72tqcYnFp6Xs+XWhEiWqoyQls55CyttAUO0gU/HrneV69Ts9Bnh+hVgXNZXHRepVbBTIYBvN3RH4lLHBfbL0rVH0SbmgTJBI+O48b0lsLpm+FQ3HLUGN77QWUyoRaRrtF88n9VXXCZDwNVNwZ3vPBDpi82Dou1Cwt5XAIVOXwwetHXo96lmruIJQcGdnZzn3hj+10R5FAkq88bY2+4ZGpG/W4dqvmBXc41+fmoSF0M68fwrUqqhCBS5sdgRyvbEkBcaoV/R5l5BU++Xk+2lKMkiH7vedhbkSZIQeSFCsWxSfae+OlnRrRAJw== root@crew.pcextreme.nl",
@@ -1461,7 +1461,7 @@ class users::virtual::ring_users {
         uid => "5084",
         groups => ['ring-users'],
     }
-    authorized_keys { "antagonist":
+    @authorized_keys { "antagonist":
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6rv0fYmFDSeFwSowAUN7XcagzRrlxLeiAuYlgHws9zU9/uRZ8xUnkYPrAigwbwVfUHX1I3yQcsSjm1uEfu6QEuaHpiq88TNCMzkI+bbS1xOMwFQL4sIJfupZ6NeF4aD9h1odrmxcrei70ajLBU3fy17gzLU+zTrcZuuu2vXuaYgu1BeUGNFLbV9+VsnGqC7TTh9WGFrntkFszjP230j02FR8wtXpu8eBOiugdFIEVBmVca8DhXMQZlvSiiur1nkdnGCuB+5cAZUjWTzbvWhUi00UFor1vphV4MgW6pKTAaUBXqDTNqseNFsi52kncVh+Ylu5XIt/8lO4f5IhKL4hMQ== mail@wwdevries.net",
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA0db7IR7DqTd1w17G6cZFQHHEwruJhOUje6YHRPwbKH7ueOyujsXaiBan3n5q5HG/nFmZQr6tyIbwoaqOBiA2d0/ZVeaxQWQveLYJO+ZbyHNlGB8fb7BvP20F/PdQrphfveWPOVrwgi4OZ9juCBbxPFmJUsQyC1LZ+OfusDQWAe0deY2ocWaXkJGF4//ZNeFhsrBCXTyAC6krLEm13gLuDvg+Ex46kZHs41lfeeYb26mf0s6smCdrZDL3QPo7xJGj0lEjdeUB1Djugu/+FNUu2+UPdcCP/f+nl7T3FQUiPUcUCdQPNys/uuzra+KSfvIsY7jd+u1dT5tz4cdnP+8nXQ== erikjan@erikjan-desktop",
@@ -1479,7 +1479,7 @@ class users::virtual::ring_users {
         uid => "5085",
         groups => ['ring-users'],
     }
-    authorized_keys { "nts":
+    @authorized_keys { "nts":
         sshkeys => [
             "ssh-dss AAAAB3NzaC1kc3MAAACBAJHXyuAmrEAf0kAD1Sx4JJHUY1Y94XD86gPITXhrYWb6uSEr98+MDo9w7ivxD9dFpwu3jplUkSwKWBqmDOFCFw3th5Xdno524kQ87U/T6q49ff5cIjPDjioli2EV2N1j/tZ1Q9uH69TFeFjrDMOm2n6wGeqFvchmojzWOzSG8aI5AAAAFQDhsSMBIluMe/zC2CSlIuux/PwNMQAAAIBaSKgjguWYAfws0RYoRQ6e2A0tIwgkVVKDF4gKt+ydOqn0WIw4s/SrLbVXRBa6bhhxCx+qBd6Ssd4PBTAOggfDffuipRBkCs3H8VH/8waJRND1KOpzYeVQ9IUuQW60h4cu2Cxyq/0W/KrZrByplOEzt1WCP/I3Myy5odNVHewAtgAAAIBcgfRBAHOTgPb767XuLi00fBuT4X5b8ZIQIOUpRhT1DFpOWDs8xP6Rw3T2mA970+5L8IHng1NCDHR/prxr/JhYHSII1tbIT1ptVRwry0Ff/qUdhik00Jxue3sS3T8sNXamtDjRKGvq82NpsLEJsNm86wHNrCBAYDfozUaQ6eD6jQ== imported-openssh-key",
             "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDA+PAnWYjzg4xcyhjC/DE7f6rdmEjBVjkzKrn7kn5BTYUjDXA3JlKSNO4QOIZvutfqBcbQcdSnhgRKU395uQhteMhw17E4cNKI5RDKpBH4pZKvT0QzJB1Hi00PASyfI1KoTb2ZiB30GIQRMB8wkxYh6OxKjTfyf3vwCbrdH+PGZG4ylz8fQOJsp2OEEW4nY39a3/5KLMgqxFWYbl/f/Hvo/r1j/wmp0FenFMjMbk1U1oDsop/9edtkRT5f34HA56kIf+sSEetSbsVFfLhYrp/D/De5SXN9NAJuPUGTWUzUP4zA+SujUJMdUVcxc6Y31OimSj4/zmKYmCFGU4ZZ42UL nts@ring-client",
@@ -1499,7 +1499,7 @@ class users::virtual::ring_users {
         uid => "5086",
         groups => ['ring-users'],
     }
-    authorized_keys { "multiplay":
+    @authorized_keys { "multiplay":
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIBstcIqCoFrphfMD4C3r7da2OwiTyGrkJh4zf4IAINvF6KzFdvi0JdaojRDg6JpJ1g6P40ffTEYbqBlVHMyfW12e4ATi3krh5SdUW47ENrpyWacZJuNFQea79O2GmUACyqAVKCtK4Yj2YWQ8NyOhjdFzUNsVRNZnSorPBr+FTyYJw== giles",
             "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAoB4gKVwPnsAox4fkh/tUgXZLlPwQUtVyA3+/qNzZUaqkJkA/MfrHsqkvljvFB9jGWR6E4AwGus8mDeyGUUhIl6VH/N5UXCmRuoGhZbiF6KJhC8Z4346rPQj5YKtGPUp0aViQXnyBAA16cgqF4TO8mTi8Zr3hDZwCb1MxjIs8/8k= Dan Offord",
@@ -1517,7 +1517,7 @@ class users::virtual::ring_users {
         uid => "5087",
         groups => ['ring-users'],
     }
-    authorized_keys { "softlayer":
+    @authorized_keys { "softlayer":
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAg566CmYYJF34jLrYduI2hsdSzGbpfV+D8t9VqI1RNKUMWzZ1ipnyV24LWYwQTDU6mGrrHdFdBVaFK0Qprxl+ZbBziferA8zESEFJ6d9nQNmL0jjXCaAGsZpB4PaderoDQYV7BDqW68wZjmrgUUg2zaxGFUOZzZAqfZVHa/FbLAbGsT2RJUcbKYtolqqiWTklvZRm6AMI3/VDJ5cT5F7yG3DMpNG0WUUZF8SzrgcjUR1JubYejszF1XFk755IXsLQ0trcCdeMleRLExiheOMYSJFDJx5gXm5s0rknEfKV5iq7IgE98yTdSeiSK8zaxvRgxYhQaWXHDLquJ2ZEzePsZw== softlayer-nlnog",
         ],
@@ -1533,7 +1533,7 @@ class users::virtual::ring_users {
         uid => "5088",
         groups => ['ring-users'],
     }
-    authorized_keys { "imagine":
+    @authorized_keys { "imagine":
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA2b38xyQjXQpigh0pXu0qRNTueER10GghGMTX6CrkRMtSZgfx3aU2Ji4FQvlRxh9fXGLqHomhS5wjSqaLmTyXiluDXrncMNHYRGM433h7NYE+gkmstnZwVjdDJK+s7xgYFmp1JQ0Hr+9PVWdWBNZ1yIY1HLYn4sbkTeVIm0eLQG2jWzVvSUtG0DNK7Dzg/SJpG13vsrX7Se+HXge3eTSK1W47q5fYqpdt5pH2DkkiY897hNRkdDy4FK2NZBq1o9lQtJHPNZtN2a5S0FvepiAqNXx9e9Ey8sKME57qlnHLPA0NQ/6psq+937TboQmoQpcmVax1PGgX/pPX08jhsxmcuw== dermot@mon2.internal.nw",
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAv0jQZjkUIwDxutbbkMqD1WgbGSG3zmvIQWvZxTsk/sd9J7WttGnMyVzz2aUsJ5dUavHxvt9axmJr4k7aEaYwZRFsFEsnJuizqbXbJCNF3y2rpoTZRadcxKHyh6gySyCll7thLHLgvJsW3jPHnTfGAsxncfsWFO9MdGLUfGu+ebV9poiIiVM/MpHlAX01PJtkP51xaXFNZQjRu9uN/IJmEQbwCtjzhXEBCF1A4emfTVIwnBUMjnxiMDkL07pATrfOlKHwnsZGZnLrJphfw4nv62WCwaqkRxGEcnqm4Pm8LtvY8fDFcwq+ag816JssXoito9/VLKvoAHc421HOQ9qHfw== Barry O'Donovan",
@@ -1550,7 +1550,7 @@ class users::virtual::ring_users {
         uid => "5089",
         groups => ['ring-users'],
     }
-    authorized_keys { "speedpartner":
+    @authorized_keys { "speedpartner":
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQBwJTzLBlbBl8iJgXt8bCKhim2pHdrct+uu93y/CXDKEI8QCzRIWZ/83S/NucmlXXg21nVqpComhlr+r83sNHqSZ95vmEy8mvztHl21y9SMassGSUvz5flEsOcmosxdU4B1CFGuIrTzWao8T5cEMmX7RcwbSxLI4tD4ca1mCsbljbjkG+3kPDawFQPW2io/UG/3FBxjGIObyXF+Xjx7X+wGhKNZ6H4HUPtT3Ps5YAYQEW7wc0MQj35dxA8Li4Z0rE1Eu/A7Zqhv3l+KjwAnm586TuxTS61pkL5ufyjmwwZKbKHhmGH/EMTvoe4F7ll1tDh14NjJS96tsXAOzLCX4Vuz",
             "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQBd590mCsFILaigJYQFcNROV1JgAoJjU9xJPV1NNSR+gga+tAaZ4jrFn7EqQc1U5HIedAyICSdb+bDd4s+Bq39Xpdk7J466pg7emIh3ZrDsO+eRkHUOy7cCcuNR/biejPcxJ5VYXcRNxTvPtOy6K3b+bXXyviBefqQntgXu3FO2BhtyBx+1pyEwT1aeyiHEPQRe/Ti9vigz5TNrS2JTIX+3MRhJa3R/q4m4j6XjWvoKUJrSqPEgNHPpHpw601dHtSgRK7D55x6Nqx1EA604gtIwqAc/48Gwtpz+2NrsRyevqaU7IrgCt7wl0gGBpWMGmMnmraDsLTvbWpGrNAmwVn3/",
@@ -1567,7 +1567,7 @@ class users::virtual::ring_users {
         uid => "5090",
         groups => ['ring-users'],
     }
-    authorized_keys { "gossamerthreads":
+    @authorized_keys { "gossamerthreads":
         sshkeys => [
                 "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgAAqnUtFGSnPSS0j9uxvadMSigNEr7bERX8o2bno5deLEQHTSccSeXy7FU+lL7qMOm4jdILT1/beA5GOa0c9hDbQBYOWbvw/8PCD23pa0HUlcd8vmbhQPX6ZAr0Sat+Fw8k7eGi9TGR6OpPlJZbx0FXB+cPYQwyTCjL6mAQSVjs/DO0bt7Td+yM9iNy0m/GdvV2qAu8Qy2+a3F+/tBSkkXLj+AnFXXfgfSnALZG3WUFSeafQsYvKr/7NjuwhXEhyOx5ij2u2/bCez1qunEs1xlA60a+g1x9kFd4D8Bj7tumdQqwkZCBF/3QKQ0PCBagOQ/F2V/xpqfhCGUZc1Rh+tAkF9/EPdCBdwohwAxTzGIBrm4kpgZfI8FqMODcdRYgr+7awd9BdT8AW5WKc2ib3tiTKwpD/JFwFAOflnCw6nBAWFq6F1swQbmJL5YGe8ui7PAUDZIGOjlF6DNw1slv0qMSw0n2tHjWpzTF9U8qU/7BXL4NSNLX4IYycBsS24YC+UtVfgJiAmcw141QmC31YCDKem+OsWAoMKx3IATJYdwzt0LjVcQ+9NiKNMOilNlEULly7gauJsQAntYHS15UimuXzezOAUDqd2g0fKB+gZun84YxSmfr6BUQ4rMmeF8Cpgwp2cdQZE0/M2exiJDnZXxWXEru+fW8MluY8Bmfnb5ypQ== root@ns1",
                 "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgAA1awSvThsxjVoemoD+K8tLFw9ETSTAmktm96oxom8apJh/3SDPkArNznlL1Fp+apg2plODCqWBwFgIeMqeBLE02++y32pvP0l/jIO5KHHlisTli1vbJ12lob/6AnTK8Ga9fFDUmccCRLmi10/9z+qhh2DE3YZSgbdLzpK7wkWsQSEr1DXb2Qt/iZPbHqEjcn5LQ/zPx130Fi17g/rsX8R6Qd81p5whxG+ANnFBOQQ5qcH7uuoKhAvpRBpysyLYuM/QHDu7p6bpTyNFE5j60fyg+f75oK+bd6jIMEb0a3Uv9VtmFkqTo+wH0KyjgGiWSQA/sYkiN4uj+CW93hoZaR+xOCFdAxbUzfNhbIow7jX8QVLJJvQ4XCgKCohmmD2UmZ3gGF+CCRwPJ7Ap+B8XS0aY0p6Sh+f9uQdW7k+KpAdJ/xwwEOVUsN63JJCfo+YUn5QpoNYuMjQzLVhj+1X0bxvMyyRSeHY91k7hsv6NUK3eOXlzrUXEsJ2hyDjB8RfoWDBnXy6zYo6D/HSXiHn3LLQORy2mrTrmRiJzXM5TkUjgOpz+4X8b93doHCeT83XOGbC0IcNGwUsVhI2KbhgzhbaWCwexGq5e2fkbJkj4mHYCoR8rlM8UjaS06rGuiDg+n0wzRVcVcPgcRDFjHvDij6Q8zIq9eyv84BeInaA51/88w== root@ns1",
@@ -1587,7 +1587,7 @@ class users::virtual::ring_users {
         uid => "5091",
         groups => ['ring-users'],
     }
-    authorized_keys { "towardex":
+    @authorized_keys { "towardex":
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCTZfGsKq33sb1pw9OO/bHAY0MuVZtKuuP84xRE1MdxkRBYxHr5w1A1hu1+O6V1fievcWxyji3yie3AvCO7QFyl3wNZ7ZVcY1iNOEj9le8gTq29WhqalRqdFUN1Dm2Z83JenNhx35uspARZ+VnfeLtVvhXujCUl+o/WEO/wl/rN3xKV8+K+uJsHKq5J6G1Lyg90y3/isIcUCcWYHAhrI6HeKQZyQFNRmv/IrNxtK+NPq6ztlre8LmerglyNn+EdVV5t02do0/LpE8sWx1ib1dAaOCSQSv5nDbtTd29wbff4i4F2nLiEx0VptEH3lb9cAEQL6iEcBvlo7aFiH686srrp lee@towardex",
             ],
@@ -1603,7 +1603,7 @@ class users::virtual::ring_users {
         uid => "5092",
         groups => ['ring-users'],
     }
-    authorized_keys { "simplytransit":
+    @authorized_keys { "simplytransit":
 		sshkeys => [
 			"ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAiTEcV2pjn3DYPCgjULm3AOjjfD1sdOVpq6vTW7KpMpfF/rDz5iOBz2jIpxyeNcurywdotgYN0CB71Ik6ciJMM6U3uXDK0+p0DISi23Fv4zvuWYa/zTqNAl/yD3b2N9d+SAIG9mRceDeJHV1Dd5Y5cAgTn60HYHtq8lE730JiQFM= rsa-key-20060527-Brian Ross",
 			"ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQBuwueyh+GdXZk6JTqRdDMsICz5SzWDh76HboYRzEdioZAOEF0IogAtVt76ds8EHHl9rT8UbbeHX8wfgWcL+ouBmDqioJfQqZaQn3nKPVsjalerZmpBGOUd5qXbBCiQaMUSzEW5oeB9n+FaQt0Dd34AUthdZTEZZbACK1X0yrr8NIN4JIK5V+AZgOt2MDC/pQMkqt4YZZDhhJbG5DZibYr+9VALh+8Vgc+4stWGktyQ7KlgcNphujg+4un/i5cy1HvqNN7Ep46Wa5MArPgBTQiAbc9B8fsDjDLn3PDAdgcgy5SKaGqwKWZnwCD0hwwcfEg9JSzP9NPMXyZux9jZxsih mtaylor@names.co.uk    #8/5/2012 additions",
@@ -1641,7 +1641,7 @@ class users::virtual::ring_users {
         uid => "5093",
         groups => ['ring-users'],
     }
-    authorized_keys { "isarnet":
+    @authorized_keys { "isarnet":
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEAyA9qjUkDy6LPyyPjXCeCknjRhQ297XI/jbeI5VH0pnwLOiqKa5l1jXK/CAgVxHjS4kZrsonqVINWk4/1Q54Hu7vdn4dN/J8VxDLER2Pzb6pXd68L72IFjgN1tc9d9Y7YRyHwDrB9Hu9NtFWC4UWrttOg2WmWZc2B6pE7QBuH8r0= stefan@django",
             ],
@@ -1657,7 +1657,7 @@ class users::virtual::ring_users {
         uid => "5094",
         groups => ['ring-users'],
     }
-    authorized_keys { "strato":
+    @authorized_keys { "strato":
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA3LaVh6UpHC0XEywYGvkk2QiyuThQgGQRzJIhKNTQyMqDkay9BCpB0IlQEhVzmqwVtfRzvOLwsVtl0rmXvqzKXTzhgscmQ2lL++6rznKubDvJzkWF48UM3s2XEUm+oBi4qyECa56WQxC0b8c/hj5Bg4VjriDsEuXEzV97Zvh5ZxBygNQmV5z61BRLJmG/tk9VL8LLhglLr7nEjreGvt+bTda+o0EQ0QGUBBaN9zhstPhJUnzxfx0lzbvj5UwN1drGOfF4loO8FeYQlmPqzUatrpQF8o5XCop0GLZ30C9fNg4Hx6H6WliEFc0CzD/7bmfiuzAInSH7kEFot0TuLcSquQ== chris@gizmo",
             "ssh-dss AAAAB3NzaC1kc3MAAACBALND9ObbpqRdXK4BeKQaZsnbHGBJ8/TZJ8FZ77YIIkwc4EyqkXV7/yQCweVa5svMBWLuoX2M47NIPVvuoU0CzJgwx2XwBh11r3MKmsremUm2m9X9UqfuKu0udvpgZutjgFFmau2ZXRW5Qs0XIYGv1l8ftnOixIsEuGB0Yr81/j0rAAAAFQCshyaOjV5l7jJzbTMCFQ1Vk6BEyQAAAIA8BeqhwvNGmNWLVtKmxT1rtPYC+dyBAvmnkUyGqPM3eeHnShZGvvLPH1w1BQA7qyMU6rP10wTEUMiQwNfpu28/kMcYmxLu2LnV5XE1+26D6ZVHFmOyIF+GM99zGDbODn6ZfZJ4eoDYGxlLOqKVPz3xi32UntllRmTG8VZz/ms/twAAAIBniPjq12jdfYlGbm8ULJjDnWoh3fxB4sA4TWd/cQopjPItuSTbmfpJ24B1iYQIbHyF5I2ltMoEwVem2n+kijwZmD3yBeBL+LLE4JvjG5Bv+tf3Bj6beTFMC8qyxMbb/vZ/oQAwlVE/4E+KiT0rcfSbivMqW+YuBUi53DbD90cxUw== /home/erik/.ssh/id_dsa",
@@ -1677,7 +1677,7 @@ class users::virtual::ring_users {
         uid => "5095",
         groups => ['ring-users'],
     }
-    authorized_keys { "edutel":
+    @authorized_keys { "edutel":
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOPaS0VBK0qRV+OpjS7p8qYRfPtjk6tseNWVx8pWh5m6jXC3m0egSjdtOXKa1pJBSac4wXsNWBh+Va8DwO8OxodR8E3nSyEbNO0PHrIWxEbd4npGAM7cToh48kpsodX2lOebyOU0H7dVoM5j/gHItnJHycKg2IuXslITArFwymMiat95ahUav2RRHCfmVlFaLSCGGg8oN4sIKOQlc25lANPKilX0MeCJkLN2bxnkdFap0CQ3aNjv+ZkVbmrAhvGgZOtrHc4SOeBqhbVpR49I/0D/QAuvRurlKaG2fv66WF6NrX0zcBcksllFKdObFSj6cNaxGq6Y8/xJnW6t7PBckJ adriand",
             "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAhnoCUpccWOJcIvg75rgGJ9c3I29CnykoSK+3fGGPWfWMNhd7CrUwQPJ4AXOmkN/Od4n1VOKjvlWdV04NNFcF6zvGxtF4uaAgtUggVZbCU+EDhKTatx5D5c5iNz/gh4C0Z+/7g/2NC4zzMg4MY8Mpx8S9ll7Zl9EfK8MUpaOdad8= Bas van Koert",
@@ -1700,7 +1700,7 @@ class users::virtual::ring_users {
         uid => "5096",
         groups => ['ring-users'],
     }
-    authorized_keys { "sixdegrees":
+    @authorized_keys { "sixdegrees":
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQBQjS8FcxX/ea74STVvPkPOI7xxQ3/6/fPCTzRFnV4IRFndl6HUH3hNcAWWxGovPh9x6dJWDDp+VpfWzKeCeSAcmIFAiCSZ/iY+ZrtNT3Mx84c6cnqP6mIc8ZoPko8uC3ZWm+9LFOIdqwdYNC6LKmobdmomvOmM8B2HL92c2r5QpMnSylKRoCZorPBM2ieRdEFZziObaNGiECTROPV2lkw0yt3IqQJMiKBbgFYwm2Vc7YOGVOrIGJgNz8Us/gYShQ7E1knIhHkEDkxODWAiPx5zHMlgXnL/9T80UyShjHl6nzpDbfqSmiYVa0ghS++HGK2uATwxlO06+mGkfZDhHunT luke@freddo",
             "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5ymVy2mbml5acWpDL0FBnyV0EHXtqgeO23XbzMBz8dQx55INOg9gL7FZp8rjGx0xHRgj3u6vvC91djcdj84SkgUkUuX/q9svtgBRS3bdrdOptAArP/gzAuyDleQt4asL1XsEruryGgMqYgcid35b2IehfiXBnrond535LkB0LBfOasGy2ke2c35bUl9imXyazu6SYDR/2bvTedNdV8tBXuIlNgd4cOzekwwks1JWs9LZHcQ9w5J1LYh5lxLew1JNq7r2wqlZ2KkTEqOsShnJifT5HxUqGQZgLb8cuABU2FhtFVAA4njGmYGi7PPZXeeubDqz34TxFgD10y83ylVOf ben@snarf",
@@ -1725,7 +1725,7 @@ class users::virtual::ring_users {
         uid => "5097",
         groups => ['ring-users'],
     }
-    authorized_keys { "spacedump":
+    @authorized_keys { "spacedump":
         sshkeys => [
             "ssh-dss AAAAB3NzaC1kc3MAAACBAOnVc0/c4FlgoKIfSFY1hGcm/Z5LRBGqJ97VN+6sJNDmAuYLPRSfR5+lhWwETMtzqgSpV7WctfbCa1VzQnMHntxR1BzfGq5w9z2UtIQe4yx8VQ2Fg2rKtSmwfQqDMbWFAA3o/9ivVN8PDPB9Qot0qqq0dpyKvVh1g5ZzEr3F7YA5AAAAFQCI7+B3oxxx6lSR41SBYRZbxxGslQAAAIEAmnHTNeklITq3Yqa0PUg5+etpWWEivTszFkKRLcPNbt7YXEhKU5cAnV7czikDDeRVi63Jyo8elseKxBwV2Z2HK3HhvmWU4hx04Fi0X2LtRrCqsbf+kUXF5hd4Jv46SVs3xg+OsrphOxDNWuWeG+KWHm2Rlh8rFZwc0WR6HJceT7sAAACBAJw3Sm9prEt695IEUQZBl5nqZrPhoeil1roj3wP1RIUYyGVTdgz5Pxb/BOgRvQMcGAsgM/eZZt+RXOHqXENEXvMkMzyYXMWmANVlZ0seLtbnlaMuSIofQkqblvGiwlx5nJhXC+ZwF4+U0CxABcS+sx/11Mwf8i2JWC0+Jc30JbWW spacedmp@tjatt",
         ],
@@ -1741,7 +1741,7 @@ class users::virtual::ring_users {
         uid => "5098",
         groups => ['ring-users'],
     }
-    authorized_keys { "rbnetwork":
+    @authorized_keys { "rbnetwork":
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDPStRZCo/mKCuVNOWuh2LqVQAZuWaUsYsNfnYw3koL12OczQUQTgnXfyN1gkcrjKbZgD1yyDQRYtw5l6ig6lRRfvuFiDr+vMDi0xLGTusmYuYozRsUueeMNvKBvL754F5zqz4yRiJWIRboOSDDEyDd9/G3JwrvRTqBWmOFzgm8St3k1G9QEPpfwKh7iYtX4rwqCWca3LP5XEtA+NYpbMw8HMPVDO4n0HFXXlrMVpE/c8UzVYavlTYpsZ6xiiFBMFSUhbNp5HfszOUN4kdemd252ndQW3I4YfFfz+O8amEHpNKIvoFVIYuCls06L/xLUfzpgBQex4Ix1cZS1+S/VOpf fre",
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAuBcwLlZ1Sq2ytj067uVxUW5bW0qi9KIQEsbdjZ4SzszDWO6d2sL30gLCkteUvLYlNuyqZdWTsPhCPLf94ozhb+CkdIJyeqPszMjhsAlD0wwlRrPnuaIp/jvhU7vNtapbzbNnAfIjT/ditOJ9Zs3I1U2HVvYEICn3pNYyFiycz0I0YlowsGQbEECraciU+MdLeEK1CuenpxPrdi+y6R+yqrVkwEvlUWy6jnuONr0vhGazeCY0r+ExODQknF2RvPLB0P8tzlIbXftgixE9+63DEiaOQvF9QTFGOxItwXmZQoOzllEpqdSjpK1A45u7YppHesMWkHOCdJo5wA38lsgcKw== ak@rbnetwork.ch",
@@ -1758,7 +1758,7 @@ class users::virtual::ring_users {
         uid => "5099",
         groups => ['ring-users'],
     }
-    authorized_keys { "yourorg":
+    @authorized_keys { "yourorg":
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDD3RbIiRjR51RXizorCvK1iFVjQkXKV8/G2AKBFu90AqjhR5toc7ivZQpyrUXCeB9uBnQ0Ch5Lm00lHHjWl6YR2ZnsFj5jgKRmk8dxq25GqhGhCpVA19JHkuY3A9RWWlnCEmHkdoAD7AKiTNMavwa/zMO9TCWKcBPbCzY/WjFZQh3rfQsOAUUZRcL+/VxTNBorQrlh8CLvHn+yaeVei10M9Cx1hUQDNzZxYZ7Wxop4bfl9JIUVI85KvmMt9jxRf9yrYYwlESGRx4UOV0XZctitu4lTgFNLBWD8+wGdJEgRYzLxGGtHtgSg2G+wZztrVhPpNGKsLpfbSKPqscmTHFRp toasty@mb4.your.org",
         ],
@@ -1774,7 +1774,7 @@ class users::virtual::ring_users {
         uid => "5100",
         groups => ['ring-users'],
     }
-    authorized_keys { "occaid":
+    @authorized_keys { "occaid":
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCTZfGsKq33sb1pw9OO/bHAY0MuVZtKuuP84xRE1MdxkRBYxHr5w1A1hu1+O6V1fievcWxyji3yie3AvCO7QFyl3wNZ7ZVcY1iNOEj9le8gTq29WhqalRqdFUN1Dm2Z83JenNhx35uspARZ+VnfeLtVvhXujCUl+o/WEO/wl/rN3xKV8+K+uJsHKq5J6G1Lyg90y3/isIcUCcWYHAhrI6HeKQZyQFNRmv/IrNxtK+NPq6ztlre8LmerglyNn+EdVV5t02do0/LpE8sWx1ib1dAaOCSQSv5nDbtTd29wbff4i4F2nLiEx0VptEH3lb9cAEQL6iEcBvlo7aFiH686srrp lee@towardex",
         ],
@@ -1790,7 +1790,7 @@ class users::virtual::ring_users {
         uid => "5101",
         groups => ['ring-users'],
     }
-    authorized_keys { "as250net":
+    @authorized_keys { "as250net":
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDUUZnRJlUCyk04hFmrTzGQM3wbZl2ABfdfOgXN9PrpTZBjwFEwMFxbLRC6Ve7KbLSimwSNqh1aq/bD9qXOaTqGD4g+RZZZ73A4eHwjGBAgMTo4oH/MCIogvxtBNw3CBg6BDxUDLozb+hXPnkfdC2ZIQwp1zKFuvGOIihiWFpuIBYsDCkTlvivwqXbxa97TUPA/BUy1RqxA5zvG6TypfRYxtft8gVBMONy6ReQYo+7StjjUS5nQESKjuFROZWMRVSZxrqrnRFyamokVQi45Q/4OX7UyRG1ElgcTA6N40KyWYfigOXeIEDM/7XDM34RsUO/ugeTfNCieM+DXKpIr87BQLMntTBj25GxXHByDPCpsVvVEpazDARe2u49zrrzZtbMf6lyxAMD/oCXeCI6e8Pv0LJ5FX7ug0vAw22Uck6l7ddsqg6jaVyWjZscL76908M8vsRgW+YZAVMC7LqXAsU9Hu2+oWAr1LBxYd4K01jTL5vbqnvGnPP0WepBf4tA9U/tteVVpMB1M2hg+VmwColcm39BV1QGbb/ba93OuGKTWYzoOAgZIcvaAhgVfh3SXRduyy/CETX9fifxhRyaBfeU/xlfhAoIY3khFwj/k0LD7gXqm5wLCYrgz1EAQob8kws7DHiwXExlxsmhuU5N6Av2m1pfHvk2/WyVe+cb8oMCyLw== nibbler",
         ],

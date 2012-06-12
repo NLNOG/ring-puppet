@@ -7,7 +7,7 @@ fi
 
 RING_USER=$2
 
-echo -e "\tauthorized_keys { \"$2\":"
+echo -e "\t@authorized_keys { \"$2\":"
 echo -e "\t\tsshkeys => ["
 cat $1 | while read line; 
 do
