@@ -56,8 +56,7 @@ define authorized_keys ($sshkeys, $ensure = "present", $home = '') {
     # This line allows default homedir based on $title variable.
     # If $home is empty, the default is used.
     $homedir = $home ? {'' => "/home/${title}", default => $home}
-    file {
-        "${homedir}/.ssh/authorized_keys":
+    file { "${homedir}/.ssh/authorized_keys":
             ensure  => $ensure,
             owner   => $ensure ? {'present' => $title, default => undef },
             group   => $ensure ? {'present' => $title, default => undef },
