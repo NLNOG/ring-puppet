@@ -91,7 +91,7 @@ syslogng_reload() {
     if $SYSLOGNG -s $SYSLOGNG_OPTS
     then
       start-stop-daemon --stop --signal 1 --quiet --exec "$SYSLOGNG" \
-                        --pidfile "$PIDFILE" $SYSLOGNG_OPTS
+                        --pidfile "$PIDFILE" -- -p "$PIDFILE" $SYSLOGNG_OPTS
       RET="$?"
       log_end_msg $RET
       return $RET
