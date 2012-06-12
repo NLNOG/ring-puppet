@@ -36,7 +36,7 @@ class users::virtual::ring_users {
 
 ##### BEGIN bit #####
 
-    @add_user { 'bit': 
+    @add_user { 'bit':
         email    => 'teun@teun.tv',
         company => 'BIT',
         uid      => 5002,
@@ -156,11 +156,11 @@ class users::virtual::ring_users {
         sshkeys => [
             'ssh-dss AAAAB3NzaC1kc3MAAACBAKfdyrV1X4PvcSvGKFW9sMSLXqGzaUOrQFQIAceg/tl+GZKkL8EPMSLW19aoORupsuJhQMIv4Qqe2oFITl12R6AUnzbcTb65B+YK/3dpMmzBce5IpADUdTyLVzQSiGUF5gsfw8C79fLAkgBi6JXwbVDewzqnQ17XX1qc11R0sMZNAAAAFQCWZNFJhB4e+ml9KI7d2XEVrMR3oQAAAIBuPk7yGJc4tgoCZKcQUUiXDS9jyv9YuNUkvCWKBtzgJjcRmtrF4b5ntOqI6mEnuMGUBznzFcGI9mCUQHnfb/kpLL6QSzcLpTCfNXHTevA1aeG3hrIEXnYvbh2R4IpXPjp6kN1/HUfJLHYzn4svfXXZ921cmoa7iT86M4/TWKH0kwAAAIA/IYO8R6PA1B42uqiSNVbklvrecua1hKexlG7JO0WitowKQVmArKe9o8uO+2ri7k5DXGlPLNpoc3OqEWo8GOG3YMtQjEW2MUblBVlAMN7bFLj+DZSqBrEdiFZnZ/azElpH08m+ojMI0yzObGqhrnEodCkYDYi5LgVXXrOMiMFnmQ== smite@zylon.net',
         ],
-    } 
+    }
 ##### END zylon #####
-    
-##### BEGIN duocast #####    
-    
+
+##### BEGIN duocast #####
+
     @add_user { 'duocast':
         email   => 'noc@duocast.net',
         company => 'Duocast',
@@ -175,7 +175,7 @@ class users::virtual::ring_users {
         ],
     }
 ##### END duocast #####
-    
+
 ##### BEGIN easyhosting #####
 
     @add_user { 'easyhosting':
@@ -190,7 +190,7 @@ class users::virtual::ring_users {
         ],
     }
 ##### END easyhosting #####
-    
+
 ##### BEGIN previder #####
 
     @add_user { 'previder':
@@ -209,7 +209,7 @@ class users::virtual::ring_users {
         ],
     }
 ##### END previder #####
-    
+ 
 ##### BEGIN leaseweb #####
 
     @add_user { 'leaseweb':
@@ -235,7 +235,7 @@ class users::virtual::ring_users {
     }
 
 ##### END leaseweb #####
-    
+ 
 ##### BEGIN nxs #####
 
     @add_user { 'nxs':
@@ -250,7 +250,7 @@ class users::virtual::ring_users {
         ],
     }
 ##### END nxs #####
-    
+ 
 ##### BEGIN ic-hosting #####
 
     @add_user { 'ic-hosting':
@@ -267,8 +267,8 @@ class users::virtual::ring_users {
     }
 ##### END ic-hosting #####
 
-##### BEGIN xs4all ##### 
-    
+##### BEGIN xs4all #####
+ 
     @add_user { 'xs4all':
         email   => 'noc@xs4all.net',
         company => 'XS4ALL',
@@ -347,7 +347,7 @@ class users::virtual::ring_users {
             'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIBR3Y5KY3uInywLRDtdzFelAzO9tMFZ9MVwEIuFCfOx3KtusIz7kArynuS4y4r6K0k/4M9/WlFBkKrr9qcWeoDkwBngn6NZj2a5dw0ImwDUH8CrpoSLFaOh7B46Y4A2aDwEL6Blh5+YgHERcoOVF9ozHYwhxD1SF8FnY8wZST2yzw== arnoud@oxilion',
             'ssh-dss AAAAB3NzaC1kc3MAAACBAIH4uNqbeod/QUf4DcKCHEFlLm5+8zf8xw3uamyRnJl1z/C1zMW5xMbPysRPNUJDJZzAxu2C4AwMSaOYdTjYKINfZWYD0aBcbgn7Ggz1bG/rxd6JcOLzp6X+Pgz4lP8RgMyt2FsiEO+5KtwcU0EA06uXO5TsFco5Eot1xLvpzi5vAAAAFQDyRQXCVHwVZ2loVneB5+8noD+x9QAAAIAb0ZnMNjefY3Lcd2ZRZKic8Gs8vNJDLuckwgytLY2HfJq4VFWs+oVxIq7C5+JVwroR3cz5wLTaUZ95Vnc4/SlpklQewCDwlL0SWOnh59TwlGkPgusypBy0UQHp/qEQH8TXiqtZLu4QjArCEO71RVqypgqTVV8NXE3cYkL6hv1ncQAAAIA1czSkbdbQfQjtwTYFWpSu1DIaQaeNsUVMnScA7W3RvZOIm+xo8kdqXvCBTyDZyZf04j815k7aZOA3fycouepZHPJNvfQj39eagcDkVmPI/kx7rgpLTFWQO+xZMJN3q9mA1gzxG0b1g5ZClUgkCn7xm4pzk3/YxOMqIqvkvKEnRA== sander@fedora.jronline.nl',
         ],
-    }    
+    }
 ##### END oxilion #####
 
 ##### BEGIN ebayclassifiedsgroup #####
@@ -364,7 +364,7 @@ class users::virtual::ring_users {
             'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA2BNYw6ZZI1KSZ/3cL/KqewqF8OVnYiAHTOQjzoUc8wWgEChoyDsGcK22OUN2OnLaI0i5aQftwyNSuyQUtCgrQis0AHtkdfINE2hOmCzjnNsJrb+vR9+6vdV0joz4nn3EVEzrLWvsmYlI6lm/Bi23XzddF31/izaspbp73+cs6gV76mxDBwfkGYyInwU2hxsAZdGHZ5fXime7V3fBwep1sXceFBMEyKuplyhfEZ1InV6Am1MUyRQcTLUj5bdnDq9dD28G2lP5ttGXP1Ve8VuoauNwbLMCMGWPs3HdvYcpMH0jc39Ce8DV3MvRcYaYxuaFeUFRcDdPOTD+/0x/2SAKtw== kvdhulst-ebayclassifiedsgroup',
             'ssh-dss AAAAB3NzaC1kc3MAAACBAOdtbDlpjFQPmNd9EP0kXWdtr07iol4eRxpJU99wGTSDZAroX+A80iW6+erIBkYgiaZyuxL7cLd6qvNbzUjapzueh8Oty+p+6HxZqdXYNtcJzlhgUGENw8ibW2EeQLR1QDl5Ncw/DaDMFgIU7GRjRqvSXJVzGJKyMh6EERe8xMGBAAAAFQCVyV1jy1OeY4IVIsuvolpmFrVWGwAAAIEAyi0L8GqB8kY1sZjgMpYLWCBCa1pNEDTh7vkh2O5VQY3mP0+12o4VL/K66dqZIjis3DkJWozqOKt3hFGtbIRv+2sqg/6ySd9wzoVcV5xF47RKvvqRWTiQHWdsAPeKHpjb4Z/achjMFD8lF5Ch4W2rPiAu1GbA3x57wRycnMwryekAAACBAKorVt7GGZo1pLksOC+E774xDqhwnB1wkln20lQoamcZnlC8RUmg8NvvLPmwYiE4Rm06/kwMp+3bxJvzLvoR49m6syizIh6Gqo6PV598PpseaEU8r78qejlbNz4Ngy3IbWqmoCa2/9ir0a8C+PNTx+l6pgFO5TJyRdj1YJMII/8F willem_ebay',
         ],
-    }  
+    }
 ##### END ebayclassifiedsgroup #####
 
 ##### BEGIN is #####
