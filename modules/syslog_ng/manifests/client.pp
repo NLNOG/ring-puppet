@@ -29,4 +29,13 @@ class syslog_ng::client inherits syslog_ng {
         source  => "puppet:///files/etc/init.d/syslog-ng",
     }
 
+    file {
+        "/etc/default/syslog-ng":
+        owner   => root,
+        group   => root,
+        mode    => 0644,
+        notify => Service["syslog-ng"],
+        source  => "puppet:///files/etc/default/syslog-ng",
+    }
+
 } # class syslog_ng::client
