@@ -19,30 +19,30 @@ class users::virtual::ring_users {
 
 ##### BEGIN intouch #####
 
-    @add_user { intouch:
+    @add_user { 'intouch':
         email    => 'tech@intouch.eu',
         company => 'InTouch NV',
         uid      => 5001,
         groups  => ['ring-users'],
     }
-    @authorized_keys { intouch:
+    @authorized_keys { 'intouch':
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAxr0qjSn+2nhibydQhc/Ry4KiChKv9OJBja69s0ScyNTwWhvWvEItgXQlbLp0RW5XeZ7aBvehHa3pYLPZUshhz5roRMhZHZhKe9Cu12ZSS7qIXk1DRL8vTDP2K9f+yyH04yDlIr2O9uyh/B3KCcK1TdGVDsj/KiXgDQSClfQnFdqByYqFftEnjAq86eoADhIWnEbH06HE2ndEtnggtOJcy0D7SC1O0Y3MxqpJy8oEHMsrVoFi+Do+bc6iqW39Yi20t92I/qKz08wHrOEqNSsL0OMi302GJ9ZozhJXHIUCdvMMgUlufI41lbhXpeq8Kau/eZAdgC3CcqE1nsL19mOSfw== tt@intouch.eu",
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAtKkm8CZww0PWJHSQ0CifRxmfpRmow1N5ExDRU+O2TB0loaENFsmrbtfh8e5lJZu8YISA5mNXU1bgb3+B5H1CqAItNaIYWoM+t8MUMj52Nfe8u75NnK30tGX6ebIc2lJcF2sORx4oIxDJcjCJMeBQANl6t9Zeuq5Xn9xSd6f1gF2osbReQCSnX+f6iSxHMIjv+crqkrui+ELzZEmKnIfJE6nDXl3yA9LhtUy7JKi6YYBzPNRCFyHuqBntTschC4gIOEncaudxe3SZB2CIKSinovBK4wYOUx06h46m8l/9e0pVCU/HiJUdfsZUDrlKbgDwlMyyqYi8mHvJOCnnRWWg3w== kevin@intouch.eu",
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAlygrWfVGVCQ0gSizA/USj9En0vmjsmPFWStt3UMqABYjStx733q+GrBPgufuVUg5Wk8APIUwEYyL8uQvs0WO1SOGbWuqIFvnc9Z45swIr3H9UkgNEHiOuhmuGfitRtuwhVaIb/pUsAggMJz1/BO18pBIEyz+Uo9fU1UQ7pdKnWH+nOUp1PrhPOKye7AZAnfVVOiGMzyZdUo8Yrx4kQF+XQr+5OfaDbSD3eHME6oKOCYIe6GwaOdkw7tjwxO/bLBAIsBA48FQ37tze/V5SERI/tN5gAUL66xMYAqMtonmY4jVBgF1/TbA1n/ww9XsFxYmQAyCC2q0XxnpuRrzmASHPQ== Simps@Tymora.local",
         ],
     }
-##### END intouch ##### 
+##### END intouch #####
 
 ##### BEGIN bit #####
 
-    @add_user { bit:
+    @add_user { 'bit': 
         email    => "teun@teun.tv",
         company => "BIT",
         uid      => 5002,
         groups   => ['ring-users']
     }
-    @authorized_keys { "bit":
+    @authorized_keys { 'bit':
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAvPciyWewoUEGow3cSWVjOmFQEAlcsleDn4ZxIz3iPhjwzA5E4g06Dz9ODIO02Nj/Tgv4NzTswMPdVwA0Qep/BS2HLrpspyDiIcZo/xt2uWcKha4+xaplq34IjWh8HYqhaoM7hFHnZd8Z75v/JLH+BhOIKIveffQpHbfJQW7De4rEeZsDWDLixuP/I5M29TEbKVbQyRM0ZZJMsI4BTmIGI1sAf6CKX3gwXNCer+cl9+PE4gJhGBcMZfVpy5MpnpT7sT/P7lFBGqta9/+wtbiK0EwFQhHL7IlDGbzNlruPwKeEZUGaL0H3nB+on58U4H+/H5OnVNtfEVcL1kq/9dirSw== bart@bart-desktop_2",
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAw49gy56iQ33B5X0KxKfMA+Q5+RMgJCbGTu0dGKUGNhBz4gYHiYrmjd/XHtTivMAWkHYOg5xYwRHxfyb/XQwhHcwFHmMAtFMANBN2JuYH5MdcaeoocCNyyQFMS/m7oBLaPk0qzdidU21K5rNH1DjRspfKcqKKDlr03V3Q8gYS4lJUfRZuxxrEkjkD2ZeHjm/iW0wCrF6czC+0mLTuD9DwQ4xfFDUsWp5wRgtcQoVt6rJz+JFyrf1KfUz+G2rTxTwwees4K6O+vG5teEy8FcHjEzULZzAX+uzfVEJ0xpTXw9zL518dahfd4Pnu5GkoTSqw9VHRoQt8sLA4xVT6t/a9KQ== jeroen@jeroen-desktop_11",
@@ -62,13 +62,13 @@ class users::virtual::ring_users {
 
 ##### BEGIN coloclue #####
 
-    @add_user { coloclue:
+    @add_user { 'coloclue':
         email   => "routers@coloclue.net",
         company => "Netwerkvereniging Coloclue",
         uid     => 5003,
         groups  => ['ring-users']
     }
-    @authorized_keys { "coloclue":
+    @authorized_keys { 'coloclue':
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA3gqVHURqyVTzzjUjgMXeCJfUi1VtLnUqIr166az2wNUTgnuxLLLsa1evPz7mfDJwY36UKi5IcUuC9pf1B9q2vD6o1fLrrd4sviGQZsvSrGuJkMEvIhXM8JtKxpwbEgg/3vCPPUV4cfjBqeNJeo2r6vru6oOHOdFuGJO5vDtDG/EmuQVgMirTWvjlONKWqEGxz/5BTnDX8PGZ5dEryAdtXrhvf1wYqWcQCkh+ZSgBqq7Vv4Chfzeo7P2iIPi4SAoz6j3pDRNQDzPu2r1cMDPqZCPeTVR0+P6+NpIVo5xlxops6NsJPEwxYhhMYc9OsNvR58JII6G5Z2T2/0LZFeVmEQ== weerd@weirdnet.nl",
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEArwx5A1fV4Exd1uAWMXo/TC0tmMqhexSjpiUwJS9iI1+DsVU5MarlvPp12JTc9V7cYGwsIqRCWtXmxiS9yB0Ro70pTMMckyjRtFeyoxhVD9wjEX8o5UHAZ8xWSHShMQKm8TZzDmisCb1KwfrCbRZgBA+Km6TgMeUhTUSuhyELu6h2OBhwvpDAhWmPXOVKD4RnSU+z3hqgEe6R57idvNOQJRVVks05a4gM49gX/JYRzbNPWveb8OkyAvxNjYy15PHDa/5L3fMILxy2AQBo5GaNJUE1obxXhCACiDSYUpI01XfCVBnUELaYepp0++VuZKJp16Yd0sAZ6olpjZhEAcrrkw== niels@alphix.local",
@@ -80,13 +80,13 @@ class users::virtual::ring_users {
 
 ##### BEGIN widexs #####
 
-    @add_user { widexs:
+    @add_user { 'widexs':
         email    => "noc@widexs.nl",
         company => "WideXS",
         uid      => 5004,
         groups   => ['ring-users']
     }
-    @authorized_keys { "widexs":
+    @authorized_keys { 'widexs':
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEAyyOtKholD/KBwXrQPMeWa3lEC76ihFMVOHOh8b4FAWvztWGNtfLWXmfL6BR+kj8fC0jX/qffPoMH1GdDFgUr2zpy1bbYoOGu/W4jd9JPJAQ5+pgQTrDZq8ygIDiJEnRJzR7dG9bS0Qh91CXY8T7acSOn0AsG9OV/JfoJUR7GEMCim3VFiz1poitzPPYNPNFJJaj3vEhV/Om/wUhaRwLbFQLBN89Gdpe4BsYWnhFyMvFW9iW/cBzU89yyNvKzu/aWMjMqiMUE71nDptDRL9UkhbQW4czvZ6lG1ZOkqlB0LCgs99KPEst+3cZNLmedIIMMOK9uRzyFoO52YYf2hSYg22qz8i8jSn+AuODKLnIDobO9CSfGrq4Pqv2j47hjp0SDiTI+pgRPpIp92XHXdBxi0s7SV4WOfduJ2V/frssNPQI/akGj7iPXCufMeFcPkhhu96nNzr61JyTypDfTpprcJZzE/GW9XB1AYIv7VedYLvA3idAqf8ehwVyTZo1rpC/Qtaj/kib0lxOtR48Bw9Z5gwsQBTKAkOwEbYQ1oYgvQh4+ZA0hiN+7UXQ6MDSmW+cNODW4o0414vEHI8rXCGx4cmcu1ocWq0H5WT8Ev1fX7bd6h8VAdZRXVZ0PldykN2J+QMybBkyM+l2oVi2AG3m5WjZx76OV9kO2OPvDS6IARqE= wouter@widexs",
         ],
@@ -95,13 +95,13 @@ class users::virtual::ring_users {
 
 ##### BEGIN xlshosting #####
 
-    @add_user { xlshosting:
+    @add_user { 'xlshosting':
         email    => "noc@xlshosting.nl",
         company => "XLSHosting BV",
         uid      => 5005,
         groups   => ['ring-users']
     }
-    @authorized_keys { "xlshosting":
+    @authorized_keys { 'xlshosting':
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEAzZcxnNSBqocQVE830nX4k8Mx3LNDFvOsDWezhon5zy8LKu09nACOnQYPTqGAADqDr5lrq8X9Hme0RKrThltMrihugR4yw8kTVl7C/ISazdlzn0EnaZpQ+H3bgbvzp9Ba5WmpPGx7b/YKROEZeADfga3TEARhj5ZsFutuerQE4LVpVc8iXQwjTVziHCPH/ezKyGa4CmH707qQTRMTFQW/bEcvlUqk+0KJTGKBaiPXZ9vVODDTjmgStiDkc3Rn4il6ifGlWBakm4ky6Md26cGzQWli8ABWOGswpunPNboNEgmQsuI7ifVA/OO73UNucho1g1FNT+33AfhCK9o6Vpztx3seun7rbGMNrv7y4ROe63yh8PeUbF3Sf0GdyB1KmCL+qFMaVOAuKnSzxpsBMUFycXdncrUmVXzdrzb1aXRhE9+FascA5KG6dGirhxgl7Jxk1P9TWtav/swAkJN54JwLM99a8T8EOC7N651y1sNZ32gDrOsXVIIxDArRoj084ZCnLxYScoXUw9qqZStTL/a90O5CTkl4jV6T+OwftHAnqmtrgHlc7vkOFbkGfB0QPu+Wzl0+mTZus9csrvzGAeSpUJXgDniL7Bebd3fWpEaYnB2UViAV7D2U259mMHmrmcAh3BZiZQBMoeDSo2l7Kwi4To0dKa8T/bq4XJwBRgpODGE= root@jumphost.xlshosting.nl",
         ],
@@ -110,13 +110,13 @@ class users::virtual::ring_users {
 
 ##### BEGIN interconnect #####
 
-    @add_user { interconnect:
+    @add_user { 'interconnect':
         email    => "noc@interconnect.nl",
         company => "Interconnect",
         uid      => 5006,
         groups   => ['ring-users']
     }
-    @authorized_keys { "interconnect":
+    @authorized_keys { 'interconnect':
         sshkeys => [
             "ssh-dss AAAAB3NzaC1kc3MAAACBAL/dFf7qvalf0XqAm8bAB7/VtQEbMxzMHyQV9682MXiin3/k0XWwFplg0+Eem7cyFNyLW8N3I8xsLFgrBzaH0W8OtfeW3/Vp6tVsBkSL/11mZWdon4ZQSl8gBqFcaiprqD1LaQhYvRdCQA0hvzRIOe9MxHK1rmUQPHYS1RCmWzcPAAAAFQDo38eE3Vhd2+ZFDui8AN8o1pZw7wAAAIEAk7bh+NAU0TN+ktgnLl5oDTcGcoxdm7pjlfcY0FQoYfLNLk3fWU0SMqdAjkp3Mdg4b68slJxG6usjqvbFydVTRYbBXIQBkrseG73DQA63LNmrQIA1kz3DdqUi8vqZtX+QVLrNb8pt/0NVmSvUc3EAAx7N7BgKdTGOJNoATsrPdEkAAACAYLLpo4BH4Huf3QmFC6D91nkQh1m3EwgyDxHx2mD+NoeQUlnl4/rzhhTqQ3wFtgd9ia+86bFr4wIN4f0TFjgXd6Mcdhn7swQMT5fttfvhgrb/bD6kDSE+8PZrfExgUEhw6plPvLi22tCBgAJ+Jfao5dmz9IWMU/G1RIJSyXAKtOw= interconnect@pjotr.interconnect.nl",
         ],
@@ -125,13 +125,13 @@ class users::virtual::ring_users {
 
 ##### BEGIN cambrium #####
 
-    @add_user { cambrium:
+    @add_user { 'cambrium':
         email    => "noc@cambrium.nl",
         company => "Cambrium",
         uid      => 5007,
         groups   => ['ring-users']
     }
-    @authorized_keys { "cambrium":
+    @authorized_keys { 'cambrium':
         sshkeys => [
             "ssh-dss AAAAB3NzaC1kc3MAAACBANnnPEOmV/40/HvwU+Xr5kkEF2CtJ15ZlYFfFDYqPSxEvXKwdUW4LL++SWj9YTi6sEEppH1t/0oSLwq/RXs6uey1pBnDMcikLIPuF5xmh3dc1yr38cLefD/1VfncXIfBpajjzb5gyhvGAMwCednKttOS6HMFYhj4XK8x7XF3R1dNAAAAFQDWRIJVFVQr9Rizit+exU3uH0ZWuwAAAIBXVZNjdibQ0blGrsNAH/pz2yPvtRZDFlUHHkLlT41pj+JitoIW/zPrBcELTRl3Bn9hPrMhs+arfT7wPMCwtUhu9RM23H0AY8A6iWMd+MAjyuRVnbKm/t5UY+9OeSGmhY0VmSd1VmgtL1WFW2Z8JruDU+SKobBs+FAnAPOVyetXogAAAIBu3pU9tLu7VZh96MqTYAOsnhkFdhcSemgQDtgWhvWN4sOah+g2i0VuqPC2G2bRpiiJO2Zu6Y6OguA46Ie6l1PCcm1I799vqe5545JKUGi3rS50lX3udH5j68twbvSTpniTMQzaGUdKB67rWBsSABKawWc75f1ifJa1eUdHxfoQxg== cambrium@cambrium01.ring.nlnog.net",
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEAwreIddtAA7ONovBfx2Uxt1ZA18aTomnFuynzmi/NOD+BdCHCO0xfUPyYjEPf5+R8iuNBSrjDscMKMFIO2nHShmNFueuCyCvWOYhLCFEEFA1SlmzGa3grAnNqNH71sru7igc30qtAi6/BTO591kvzB+qatxQcO2AEsxALu8aPwRk= /home/staff/johan/.ssh/id_rsa",
@@ -146,13 +146,13 @@ class users::virtual::ring_users {
 
 ##### BEGIN zylon #####
 
-    @add_user { zylon:
+    @add_user { 'zylon':
         email    => "smite@zylon.net",
         company => "Zylon",
         uid      => 5008,
         groups   => ['ring-users']
     }
-    @authorized_keys { "zylon":
+    @authorized_keys { 'zylon':
         sshkeys => [
             "ssh-dss AAAAB3NzaC1kc3MAAACBAKfdyrV1X4PvcSvGKFW9sMSLXqGzaUOrQFQIAceg/tl+GZKkL8EPMSLW19aoORupsuJhQMIv4Qqe2oFITl12R6AUnzbcTb65B+YK/3dpMmzBce5IpADUdTyLVzQSiGUF5gsfw8C79fLAkgBi6JXwbVDewzqnQ17XX1qc11R0sMZNAAAAFQCWZNFJhB4e+ml9KI7d2XEVrMR3oQAAAIBuPk7yGJc4tgoCZKcQUUiXDS9jyv9YuNUkvCWKBtzgJjcRmtrF4b5ntOqI6mEnuMGUBznzFcGI9mCUQHnfb/kpLL6QSzcLpTCfNXHTevA1aeG3hrIEXnYvbh2R4IpXPjp6kN1/HUfJLHYzn4svfXXZ921cmoa7iT86M4/TWKH0kwAAAIA/IYO8R6PA1B42uqiSNVbklvrecua1hKexlG7JO0WitowKQVmArKe9o8uO+2ri7k5DXGlPLNpoc3OqEWo8GOG3YMtQjEW2MUblBVlAMN7bFLj+DZSqBrEdiFZnZ/azElpH08m+ojMI0yzObGqhrnEodCkYDYi5LgVXXrOMiMFnmQ== smite@zylon.net",
         ],
@@ -161,13 +161,13 @@ class users::virtual::ring_users {
     
 ##### BEGIN duocast #####    
     
-    @add_user { duocast:
+    @add_user { 'duocast':
         email   => "noc@duocast.net",
         company => "Duocast",
         uid     => 5009,
         groups  => ['ring-users']
     }
-    @authorized_keys { "duocast":
+    @authorized_keys { 'duocast':
         sshkeys => [
             "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAghMY9EavxopexZ0HhJvzDYBdIvcf4iBPzvfLrYshuF4keakyugfQ6mob2qlssVIAztJRrQfUDtgvNGKxOFrCzV9vXwf5bJUbCPbUIoSQTdoSBzwl31Q6dHpYBc5jQ5Xmez8wcc0dtxdMun+/eVOVG+ErghC8jpoCVQrwu5ikc2E= fabian@fabian.office.duocast.nl",
             "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAghMY9EavxopexZ0HhJvzDYBdIvcf4iBPzvfLrYshuF4keakyugfQ6mob2qlssVIAztJRrQfUDtgvNGKxOFrCzV9vXwf5bJUbCPbUIoSQTdoSBzwl31Q6dHpYBc5jQ5Xmez8wcc0dtxdMun+/eVOVG+ErghC8jpoCVQrwu5ikc2E= fabian@fabian.office.duocast.nl_1",
@@ -178,13 +178,13 @@ class users::virtual::ring_users {
     
 ##### BEGIN easyhosting #####
 
-    @add_user { easyhosting:
+    @add_user { 'easyhosting':
         email   => "systeembeheer@easyhosting.nl",
         company => "Easyhosting",
         uid     => 5010,
         groups  => ['ring-users']
     }
-    @authorized_keys { "easyhosting":
+    @authorized_keys { 'easyhosting':
         sshkeys => [
             "ssh-dss AAAAB3NzaC1kc3MAAACBALEAhT8vTvMAkAj+Uk0PrGh13BBWDzWlJs8vuWf5xK/7KF5sR2VHKBYmOJ67pGtRc5i+NOkhj8sWjvF3uyVupwTUICUqTpeBLI5R/P/jB5lUeiYVZF3HzV+gDSIalijjY7yZrP35CviZvuyP5Ntr+eSFNCkgqcAKZpphmDHPAASDAAAAFQC5GbXzD7xPYH0kI7+hOjyoSBdW+QAAAIEAgAAI4tMDOkDlfJCbQfDjPMcHsGN7HNxpz9obx1cbJdZOBOGd3fWsYlQmOO/NBvVDRuaQ/JRXzvxP9BKtf7TEu7icWU4Q6PECR7Z4NpgWX2amVuMy2ol0Bs2bcnbM3UHa06IgLX17KaE+Jor0utr9SHMPFClS2doKsTnuuzRQZFoAAACAMiWkNW7j//w3kih64KBvnozjrvDGj5hVyvMq7PZEjwhe2+vx8ErY+af4SnP/a3j1wyTLwMMxDr2+c7143ZRBil5Fmgr9YuPe3OQyx/zZ2AJmCQiWQiZ1EDvMFPl4gcD8XWH6RG+zs21uGLwSShthWUMclTULBIZqUbMA80bJdx0= systeembeheer@easyhosting.nl",
         ],
@@ -193,13 +193,13 @@ class users::virtual::ring_users {
     
 ##### BEGIN previder #####
 
-    @add_user { previder:
+    @add_user { 'previder':
         email   => "noc@previder.net",
         company => "Previder",
         uid     => 5011,
         groups  => ['ring-users']
     }
-    @authorized_keys { "previder":
+    @authorized_keys { 'previder':
         sshkeys => [
             "ssh-dss AAAAB3NzaC1kc3MAAACBAOmrANjEYNBp3+yxYd6T/x0Pe45kAKfQ/rnM256Vd1ytV6LbbHUXPizQjVy/40rA7Vem/uux+9Cw42IX2ss62TFx2JSbQVcp3HxPvW/FXd55r2kSVvARI35OYUWU6KQWH3f8zrFvDtMTkpK/GiB1hB8WJIMMtZZP64r5zyqsi5abAAAAFQDoRLfZtdES20c6SCYHGOtEn1ZVPQAAAIEAr8hFL7oZCs8JRTzVJtW6qp9h/j1cFlTFHDACRy3dN8VWIJUt5+PQss9xfD+0ACobqOo6N41qxvWE6JEfchd0Aeqwx2Jie70eorj7uJKUTjVDFGx5S7T5ZRq3czXlfckzo/xRI5l0nN3kt09wp4G1zXiBmPiK+GwVF06uHSbJelIAAACAXxiOe9j62EgoxRgregDNp32s5lxVFbSGqpsxLOsddMBOB98pa50NluvZEaUwRLv8kK6+YgT4WI/q3DcWwEVXY/ZUP0IDpUmtA8PUQyouy2lBWik746GqN+Re8b5NjO6OwuNfH8bTb1HllFzc339O8+KOHN11t10VMyXzEIo1sk4= robin@previder.net",
             "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEAsNdT8O09tlD93dRZS3bHxGeSwMlO9n/+ZaHlOXeLtnGd9IvNVe+4UxEcXNK7hHgkJrthhlhT/TEQN6irawfRANZw82HprEjQXOOWKprPXUKqhoGfkBI0FV+t+AzuLxH2gDsDQ/A7aQteKoAJYE4rT1nO6nDJM+/bAosSYBCFANU= nick@mustang.introweb.nl",
@@ -212,13 +212,13 @@ class users::virtual::ring_users {
     
 ##### BEGIN leaseweb #####
 
-    @add_user { leaseweb:
+    @add_user { 'leaseweb':
         email   => "noc@leaseweb.com",
         company => "Leaseweb BV",
         uid     => 5012,
         groups  => ['ring-users']
     }
-    @authorized_keys { "leasweb":
+    @authorized_keys { 'leaseweb':
         sshkeys => [
             "ssh-dss AAAAB3NzaC1kc3MAAACBAKrXxLnA6hi7ppZZHOwILVmMmG02n8tRGdgHXxuhYgyEoaEAVJrBPvdziYGSc1MLSXlXtmm+XL8uDMQTnqwb3YZiKKW8v65Se35GdWr1Uf3Gk2jF/M7lq6zR2ji/d7iFq5zUHSEWGOYDz73feDNhJu568k5j/WLSxaV0m9Z7lsdTAAAAFQCeSCQTuWFZVtQYezeFDwDpOf0OlwAAAIB/AlZANZgGYBIsruBaYXseU1jfHm4e5xNGJBmFUtrqLgi09xq+kYpCQITCpPd6eE3MLJ2JylW/o3tlREtvDU/oZDnfG8DgVIz2rtjQ7RkeVH0Wh60CrXn9wV01s/5ih9ISO6ECMV4vr3KWX9XgmQFG91YqXTdcnmHwuYZUeQLQ0AAAAIA4h0zTpnycHcmW2Bfwkor0X2mHdNSZad3+wEx3Bf4DE8VpXMNbJcYgyZ0STbvmGwyAnLZ78qe0+Id0ywkTRXtFd7GNoI02qMnQgBfgZDCcwxHxlcG4v9iI/arCCMGibIWf1Fzog/TYGiJIPExB5WE7G0G3U9jKnxQh3zxG2vtUHA== bas@louise.frogerstraat.nl",
             "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAkCgRUkL3e3vm1UO+mQMYhnxdjOavmZXBeBWQO5X9T0y7uj70M+bX/Z3lhOF4Lq0VX4UL8UEfRy/aYa6zxv+SmUsvrPs4Lgo+yeLAVR+zxnZLjsch6r6zFV6+v4dPfKJUO+58bI69+gIUctuczwQn9nvmp76uPbsTvGXVdbtuwzc= GJA",
@@ -796,7 +796,7 @@ class users::virtual::ring_users {
     }
 ##### END inotel #####
 
-##### BEGIN fremaks ##### 
+##### BEGIN fremaks #####
 
     @add_user { fremaks:
         email => "noc@fremaks.de",
