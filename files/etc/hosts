@@ -348,3 +348,6 @@ ff02::2 ip6-allrouters
 194.150.168.19  as250net01  as250net01.ring.nlnog.net
 2001:4ce8:c134:1019::1  as250net01  as250net01.ring.nlnog.net
 
+87.238.49.250   redpilllinpro01 redpilllinpro01.ring.nlnog.net
+2a02:c0:200:104::1   redpilllinpro01 redpilllinpro01.ring.nlnog.net
+

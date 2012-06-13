@@ -1798,5 +1798,21 @@ class users::virtual::ring_users {
 
 ##### END as250net #####
 
+##### BEGIN redpilllinpro #####
+
+    @add_user { 'redpilllinpro':
+        email => 'noc@redpill-linpro.com',
+        company => 'Redpill Linpro',
+        uid => '5102',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'redpilllinpro':
+        sshkeys => [
+            'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAwf2en7jyapFVhOtK14W7GxW+yygqKr+8kritMtJB7BCUuseLswsupTHp59S2x6NXvgTICvldJyBkdp84MI87Na340sC4c/ls+Rv93bSBwbzXpyOv9r8s/7IrKiW8qyJP0+2WFuSOHMbraKfwmTLOv1lGA2HRXsUkZCU0sfKUEo0d0RQS/iHtsTqWfQnioJuvGMubUcFLgvxxi37kI8lIBCSHwkWrMTS9s/Ncxcr5/lT4StOorHhrwhio1hC9BMlcLTStbMlGgybA/8vyhEX2v8ObZ4K5nWlN8zrU6VbH18v5sp1mvBYQKBiIXvbyZ5nlFNsxQXmmI2J4JcbTUlZlCQ== Tore Anderson, Linpro IsD',
+        ],
+    }
+
+##### END redpilllinpro #####
+
 
 }
