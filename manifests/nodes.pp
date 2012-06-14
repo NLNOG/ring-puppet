@@ -1364,3 +1364,13 @@ node 'redpilllinpro01' inherits ringnode {
     include users
 }
 
+node 'nine01' inherits ringnode {
+    $owner = "nine"
+    $location = "47.38340,8.49555"
+    include smokeping::slave                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
+

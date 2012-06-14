@@ -351,3 +351,6 @@ ff02::2 ip6-allrouters
 87.238.49.250   redpilllinpro01 redpilllinpro01.ring.nlnog.net
 2a02:c0:200:104::1   redpilllinpro01 redpilllinpro01.ring.nlnog.net
 
+217.150.254.165 nine01  nine01.ring.nlnog.net
+2a02:418:4101::165  nine01  nine01.ring.nlnog.net
+

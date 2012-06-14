@@ -1814,5 +1814,21 @@ class users::virtual::ring_users {
 
 ##### END redpilllinpro #####
 
+##### BEGIN nine #####
+
+    @add_user { 'nine':
+        email => 'noc@nine.ch',
+        company => 'Nine Internet Solutions AG',
+        uid => '5103',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'nine':
+        sshkeys => [
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDfHI/dJ8kRjp5exSESBtaKpYkKIIazrHPKKkorSfhDDdPtMSCbhPLIBeE9rx/hN3SIaBA2XmH84k3BWfnq8hQvM2x/USeNapzhWnEiwtSlaKsmLWcOxmcoDVHQ3jilMzOlwXaJ26nONVyxJsvjjVeswuNcuBObD9qm30RoNJtL4kfNuCbYYiz4PE457KLFGJI5j5bZ1nk+cj0ToKbKIMjI88z9ZtYjUfYt/0Xy+cSlsEm/niL1Q0E9yiAWnUEsKCFpUfpqT6zt2dUCVGOCybKlooP4dxpfsNnDVn3OGwVCthuwhrz88RR6AjwmAfiVd/LQhzV19yy6LdmYAeuqF5xv',
+        ],
+    }
+
+##### END nine #####
+
 
 }
