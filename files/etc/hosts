@@ -354,3 +354,6 @@ ff02::2 ip6-allrouters
 217.150.254.165 nine01  nine01.ring.nlnog.net
 2a02:418:4101::165  nine01  nine01.ring.nlnog.net
 
+212.227.126.43  oneandone01 oneandone01.ring.nlnog.net
+2001:8d8:580:400::1:0   oneandone01 oneandone01.ring.nlnog.net
+
