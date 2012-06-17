@@ -1865,5 +1865,21 @@ class users::virtual::ring_users {
     }
 ##### END oneandone #####
 
+##### BEGIN belwue #####
+
+    @add_user { 'belwue':
+        email => 'ip@belwue.de',
+        company => 'BelWü',
+        uid => '5105',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'belwue':
+        sshkeys => [
+            'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA8Y+j5H362wU1R+7gO0fzx20+KFJuTFMc7yBkofQ9BkKjV8fG840tIqyCspTRiiIIcjXCM9FguKfzD6Vw/AEOwHL01UcdZz/El0w6UrvIb3Mqva7Gy1PiQcpP/Neiv9IvBozApb5nCXcsbz/qBAAixGtOmZWN1Nip6TRK4oYgM16GXZcigeEajv6ymKr0mXGc2hEOItKtL/nv2T3Qyj/hy1oy0O7gnfMhxIAxdTbWQUGQfZlyWIUMO0B7N7S1N8ipLEYY/6OGsM3lYJv8WdF3dQ1p8laTrpR3SFU8fZ3pjxAW2MwH/9ZjxLhppElW+NJ55FT7ynwe3O39v8gUC9bZOw== kleefass@osi.belwue.de',
+        ],
+    }
+##### END belwue #####
+
+
 
 }

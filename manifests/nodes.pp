@@ -1384,3 +1384,13 @@ node 'oneandone01' inherits ringnode {
     include users
 }
 
+node 'belwue01' inherits ringnode {
+    $owner = "belwue"
+    $location = "48.745500,9.1037"
+    include smokeping::slave                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
+
