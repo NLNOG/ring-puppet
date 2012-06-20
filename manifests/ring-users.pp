@@ -1880,6 +1880,21 @@ class users::virtual::ring_users {
     }
 ##### END belwue #####
 
+##### BEGIN lagis #####
+
+    @add_user { 'lagis':
+        email => 'sysadmin@lagis.at',
+        company => 'lagis Internet Serviceprovider GmbH',
+        uid => '5106',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'lagis':
+        sshkeys => [
+            'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEAoCDX2/5xVTxxeXNSwgElURMl52ugh9Ct5Q+y0QiW6GZoHF8det1eBN9PM3dQLl95gKpSehSbyAC0YO1BogJR3Xv2JBHovGwVzAxrWY7e2y/UoL0Q/+x5u0oMnQg2oGi7j5N0Ci9rBYO6nMfXkrSlzKj8jltXTuyAA7w6Wm8qQCVawinYfIjwLlrnfVtZ8gm8kHGoKkaHwL3VTdTva+bwGnKnuQ2tbsq97YZd3iZI/n5XnWw+BJ1VQFtCiP5WPPrnoXW70N3i3fzv1OYFjp2cu3hW3DvPH1Y+2AvMw97ocPEoduI69ksZZhNHLvJ1eo0NFfkZSEzERoyAblFsedmdLu981icv1FmDHtMLGvmYzPREJ+ikR9OKT/tmjTUYXXKGUv8rOM8q8saigWFWSS9bPcYX87JNs+HGTwJOdRtzfGJiUoh/Ew1X+oJLsYRKm77SU7P6ip7QDSX8qrIZYxzRD/Qzkks5FeE3QxfFityuorxzDyuSX7/TfTec8+FGC4TFdvTevTEPOoO4NVpJuebf+bcxWolJVUOwCLH1zxCfJ9rtguLiJAVfG+ZFdCLI1I0h+9taJzRT31J7njsHfv7YFGNBUn9WIL/F587M8535kdt9qweO2HlGf2AY/NNOjd5Ch8SSer4aqPwhAA/Ww7OXBqdgSh3A3EBiFqNO7ye4QEk=',
+        ],
+    }
+##### END lagis #####
+
 
 
 }
