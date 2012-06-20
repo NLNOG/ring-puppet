@@ -58,6 +58,16 @@ node 'master01' inherits basenode {
 
 }
 
+node 'container01' inherits basenode {
+    include users
+    include syslog_ng::client
+    include nagios_services
+    include nagios::target::fqdn
+    munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
+    }
+}
+
+
 node 'worker01' inherits basenode {
     include users
     include syslog_ng::client
