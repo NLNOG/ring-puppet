@@ -63,6 +63,7 @@ node 'container01' inherits basenode {
     include syslog_ng::client
     include nagios_services
     include nagios::target::fqdn
+    include container_software
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
 }
