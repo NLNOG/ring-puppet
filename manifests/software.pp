@@ -62,7 +62,12 @@ class nettools {
     package { "puppet": ensure => latest }
     package { "puppet-common": ensure => latest }
     package { "python-dnspython": ensure => present }
-    package { "python-argparse": ensure => present }
+    package { "python-argparse": 
+        ensure => $lsbdistcodename ? {
+            maverick    => present,
+            precise     => absent,
+        }
+    }
     package { "python-ipaddr": ensure => present }
     package { "graphviz": ensure => present }
     package { "hping3": ensure => latest }
