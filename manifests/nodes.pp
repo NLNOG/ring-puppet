@@ -61,8 +61,8 @@ node 'master01' inherits basenode {
 define virtual_machine ($fqdn, $ip, $netmask, $dns="8.8.8.8", $gateway, $memory, $rootsize, $disksize, $bridge ) {
     exec {"create_vm_${name}": 
         path => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",  
-    timeout => 3600,
-    command => "lvcreate -n $name -L ${disksize}G container01; virsh destroy $name; virsh undefine $name ; \
+        timeout => 3600,
+        command => "lvcreate -n $name -L ${disksize}G container01; virsh destroy $name; virsh undefine $name ; \
             /usr/bin/vmbuilder \
             kvm ubuntu  --raw /dev/mapper/container01-$name -v -m $memory --cpus=1 --rootsize=$rootsize \
             --swapsize=512 --domain=ring.nlnog.net --ip=$ip --mask=$netmask --gw=$gateway --dns=$dns \
@@ -82,8 +82,7 @@ define virtual_machine ($fqdn, $ip, $netmask, $dns="8.8.8.8", $gateway, $memory,
             --firstboot=/root/run-puppet-at-boot \
              && virsh start $name \
             rm -rf  ubuntu-kvm",
-    }
-    unless => "/usr/bin/test -L /dev/mapper/container01-$name",
+        unless => "/usr/bin/test -L /dev/mapper/container01-$name",
     }
 }
 
