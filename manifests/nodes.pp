@@ -58,6 +58,35 @@ node 'master01' inherits basenode {
 
 }
 
+define virtual_machine ($fqdn, $ip, $netmask, $dns="8.8.8.8", $gateway, $memory, $rootsize, $disksize, $bridge ) {
+    exec {"create_vm_${name}": 
+        path => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",  
+    timeout => 3600,
+    command => "lvcreate -n $name -L ${disksize}G container01; virsh destroy $name; virsh undefine $name ; \
+            /usr/bin/vmbuilder \
+            kvm ubuntu  --raw /dev/mapper/container01-$name -v -m $memory --cpus=1 --rootsize=$rootsize \
+            --swapsize=512 --domain=ring.nlnog.net --ip=$ip --mask=$netmask --gw=$gateway --dns=$dns \
+            --hostname=$name  --suite=precise --user=nlnog --name=NLNOG \
+            --rootpass=password --libvirt=qemu:///system \
+            --components=main,restricted,universe,multiverse \
+            --debug \
+            --verbose \
+            --timezone=UTC \
+            --lang=en_US.UTF-8 \
+            --tmpfs=- \
+            --addpkg=puppet \
+            --addpkg=openssh-server \
+            --addpkg=traceroute
+            --addpkg=vim
+            --bridge=$bridge \
+            --firstboot=/root/run-puppet-at-boot \
+             && virsh start $name \
+            rm -rf  ubuntu-kvm",
+    }
+    unless => "/usr/bin/test -L /dev/mapper/container01-$name",
+    }
+}
+
 # container01 is hosted at XS4ALL
 # 8 cores / 16GB RAM / 120GB disk
 # IPv4 prefix: 82.94.230.128/28
@@ -70,7 +99,28 @@ node 'container01' inherits basenode {
     include container_software
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
+
+    virtual_machine { 'staging03':
+        fqdn    => 'staging03.ring.nlnog.net',
+        ip      => '82.94.230.130',
+        netmask => '255.255.255.240',
+        dns     => '8.8.8.8',
+        gateway => '82.94.230.129',
+        memory  => '512',
+        disksize => '20',
+        rootsize => '19968',
+        bridge  => 'virbr1',
+    }
 }
+
+node 'staging03' inherits ringnode {
+    $owner = "job"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+	include users
+}
+
 
 
 node 'worker01' inherits basenode {
