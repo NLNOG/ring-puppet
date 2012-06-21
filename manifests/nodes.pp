@@ -76,8 +76,8 @@ define virtual_machine ($fqdn, $ip, $netmask, $dns="8.8.8.8", $gateway, $memory,
             --tmpfs=- \
             --addpkg=puppet \
             --addpkg=openssh-server \
-            --addpkg=traceroute
-            --addpkg=vim
+            --addpkg=traceroute \
+            --addpkg=vim \
             --bridge=$bridge \
             --firstboot=/root/run-puppet-at-boot \
              && virsh start $name \
