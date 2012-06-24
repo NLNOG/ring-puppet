@@ -366,3 +366,6 @@ ff02::2 ip6-allrouters
 83.164.134.32   lagis01 lagis01.ring.nlnog.net
 2a00:1860:101:fffe::1   lagis01 lagis01.ring.nlnog.net
 
+193.150.23.30   fnutt01 fnutt01.ring.nlnog.net
+2001:67c:2a00:1::30 fnutt01 fnutt01.ring.nlnog.net
+
