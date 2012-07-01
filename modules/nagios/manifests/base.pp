@@ -180,7 +180,6 @@ class nagios::base {
            "${nagios::defaults::vars::int_nagios_cfgdir}/conf.d/nagios_servicegroup.cfg",
            "${nagios::defaults::vars::int_nagios_cfgdir}/conf.d/nagios_timeperiod.cfg" ]:
         ensure => file,
-        replace => false,
         notify => Service['nagios'],
         mode => 0644, owner => root, group => 0;
     }
