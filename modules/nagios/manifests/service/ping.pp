@@ -11,8 +11,11 @@ define nagios::service::ping(
         check_command => "check_ping6${real_nagios_ping_rate}",
     }
 
-    nagios::service{ "check_ping":
-        ensure => $ensure,
-        check_command => "check_ping${real_nagios_ping_rate}",
+    # Only add if we have v4
+    if $netmask != undef {
+        nagios::service{ "check_ping":
+            ensure => $ensure,
+            check_command => "check_ping${real_nagios_ping_rate}",
+        }
     }
 }
