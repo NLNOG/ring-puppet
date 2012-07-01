@@ -17,7 +17,7 @@ class nagios_services {
     #
     # Only add if we have a v4 address
     # We check "netmask", because "ipaddr" returns v6 if no v4 is available
-    if $netmask != undef {
+    if $::netmask != undef {
         @@nagios_servicedependency { "${fqdn}_dep_ssh4_on_ping": 
             service_description             => "check_ping",
             dependent_service_description   => "check_ssh4",
