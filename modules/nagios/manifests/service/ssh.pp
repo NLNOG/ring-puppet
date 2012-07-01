@@ -3,7 +3,7 @@ define nagios::service::ssh(
 ){
 
     # Only add if we have v4
-    if $::netmask != undef {
+    if $::netmask != '' {
         nagios::service{ "check_ssh4":
             ensure => $ensure,
             check_command => "check_ssh_4",
