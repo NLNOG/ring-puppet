@@ -1,0 +1,16 @@
+#!/bin/bash
+
+file='/var/lib/puppet/state/puppetdlock'
+puppetd='puppetd'
+maxage=7200
+
+if [ -e $file ]; then
+    filemtime=`stat -c %Y $file`
+    currtime=`date +%s`
+    diff=$((currtime - filemtime))
+
+    if [ "$diff" -gt "$maxage" ]; then
+        pkill -9 $puppetd
+        rm $file
+    fi
+fi

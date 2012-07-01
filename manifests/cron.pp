@@ -74,6 +74,13 @@ class cronjobs {
         minute => $cron2,
         ensure => absent,
     }
+   
+    cron {
+        "zombiekiller":
+        command => "/usr/local/bin/puppet_zombiecleanup > /dev/null 2>&1",
+        user => root,
+        minute => "42",
+    }
 
 # our munin module makes this useless
 # see msp01 example in nodes.pp if you want to enable specific plugins on a host
