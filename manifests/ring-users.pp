@@ -767,6 +767,7 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'hosteam':
         sshkeys => [
+            'ssh-dss AAAAB3NzaC1kc3MAAACBAMnb4PC+YODeA5I2WwDLAwUtp1ZYQ0YBIJOgTOfHeuvgt3iER6IXIpXuLO5XOxgyK1/Hw6d1jE8keWYy5Y5sL7YPg7Fz+WrkFISHPnK2fxHY1KDrpxb+FiPk9nFZrDb6yECGelvq1SoUPMaM9oUZ3sC1IgiqE1N1gxZ1qzDjnQSvAAAAFQCdL60wj5PwnZLfbOU0VeAs04xf7QAAAIADlEhg6LaMu/7+Jz8iMFHnJfe/+5Az+cjwUsuQfcCXaf0wmNavWwBWXljqQbBfee2qX9cqvFNdiguOY8JnDmdLHrGsg5vhg/Yh00CnkcMJf4a5hiaWkyGM4oRuyyFychQE2o3xpfSG1lDdvHBIYnFEY1yV9dgH8Jx19ItMJ0ed/wAAAIByCBbIB9dS/vvFQeBa74uYbe/O/r3CGMpPQFQu3UVfR21aHs8zSbT/SBleIg8HIgzM0Nz0s3yL76zpIq4hz3YCA6qMQnPHWvco79/eao0bx6b4wN849kivwStkQcpEfzWxNMj8IN2xflDssWGiTXaxkEvHn8SW8ihxdkW7ygj1og== ring@hosteam.pl',
             'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAs1ACqSoo3R4LvDgxGUuRP3EGGgmKoLwGnRdOVBLBEjI649eodKbC42hlbJLITI4inHM6KtLsZTmcwX3nSOr9Mlc+rm0SG0iRHhvGpGJ/TUswGR+e4ZiEcrlXoQEXX3Z3VaFESlR8Qoy1WA7N1//bG0piwa7z0WSOtfPwZmWXKGE= rsa-key-20080513_1',
         ],
     }
