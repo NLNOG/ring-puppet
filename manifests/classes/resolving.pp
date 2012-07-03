@@ -32,7 +32,7 @@ nameserver ::1
         ensure      => running,
         require     => [ Package["unbound"], File["/etc/init/unbound.conf"] ],
         provider    => upstart,
-        subscrib    => File["/etc/unbound/unbound.conf"],
+        subscribe   => File["/etc/unbound/unbound.conf"],
     }
 
     file { "/etc/unbound/unbound.conf":
