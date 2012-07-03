@@ -33,4 +33,16 @@ nameserver ::1
         require     => [ Package["unbound"], File["/etc/init/unbound.conf"] ],
         provider    => upstart,
     }
+
+    file { "/etc/unbound/unbound.conf":
+        owner   => root,
+        group   => root,
+        mode    => 0755,                                         
+        source  => $lsbdistcodename ? {
+            maverick    => "puppet:///files/etc/unbound/unbound.conf.maverick",
+            precise     => "puppet:///files/etc/unbound/unbound.conf.precise",
+        }
+        require => Package["unbound"],
+    }
+
 }
