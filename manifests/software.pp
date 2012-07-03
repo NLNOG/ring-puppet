@@ -128,6 +128,7 @@ class nettools {
 
     package { "build-essential": ensure => present }
     package { "dnsutils": ensure => present }
+    package { "ldnsutils": ensure => latest }
     package { "wget": ensure => present }
     package { "netcat-openbsd": ensure => present }
     package { "ngrep": ensure => present }
