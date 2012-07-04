@@ -19,6 +19,7 @@ class syslog_ng {
         enable  => true,
         ensure  => running,
         require => Package["syslog-ng"],
+        hasrestart  => true,
         subscribe => File["/etc/syslog-ng/syslog-ng.conf"],
     } # service
 
