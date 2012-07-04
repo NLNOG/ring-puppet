@@ -33,6 +33,10 @@ class nagios::defaults::commands {
             command_line => '$USER1$/check_ping -6 -H $HOSTNAME$ -w $ARG1$ -c $ARG2$';
           check_ssh_6:
             command_line => '$USER1$/check_ssh -6 $HOSTNAME$';
+        check_dnssec_exp:
+            command_line => '$USER1$/check_dnssec_expiration -H $ARG1$ -D $ARG2$';
+        check_dnssec_trace:
+            command_line => '$USER1$/check_dnssec_trace -H $ARG2$ -D $ARG1$ -k /opt/root-anchor';
         }
       }
       default: {
