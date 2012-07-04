@@ -157,6 +157,13 @@ class etcfiles {
         owner   => root,
         group   => adm,
     }
+
+    file { "/opt/root-anchor":
+        owner   => root,
+        group   => root,
+        mode    => 0644,
+        source  => "puppet:///files//opt/root-anchor",
+    }
 }
 
 class timezone {
