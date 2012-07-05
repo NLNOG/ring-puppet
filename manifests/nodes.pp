@@ -1505,3 +1505,13 @@ node 'fnutt01' inherits ringnode {
     include users
 }
 
+node 'sidn01' inherits ringnode {
+    $owner = "sidn"
+    $location = "51.97696,5.96947"
+    include smokeping::slave                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
+

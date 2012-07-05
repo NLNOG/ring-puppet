@@ -1928,6 +1928,21 @@ class users::virtual::ring_users {
     }
 ##### END fnutt #####
 
+##### BEGIN sidn #####
+
+    @add_user { 'sidn':
+        email => 'unixbeheer@sidn.nl',
+        company => 'SIDN',
+        uid => '5108',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'sidn':
+        sshkeys => [
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbobHox8WHba8jfABGuDUEDS3Kbz/QC36HTedpIIamLIYYV878drH603nXkFq9PQBXyB9gbVyzw5ph3cWTOOFa/udMHGlrnxRfzmBgu9CsYbhuZE8j09hivP8d9GWEyPpdbSVZYbqzi5NYDvsfJT40eWfJh8TF21MixTfaf6HqBcVKcsyfmG41uaw/d2M6vkyp7IbU4pKEjtMMikYUFVTZk71O4wha5HC6LZT7HAtDmV5ppj3PM2tkzwCBTLPCBcL7LuVgASGAMa8rozJVJw03AYSSxu8GLIFsETG94Wf6hHD14tCNHZdFYuh3RHwt0DOeS1iIgQFZ9d9Z4OSsfyNX erwin@venus',
+        ],
+    }
+##### END sidn #####
+
 
 
 }

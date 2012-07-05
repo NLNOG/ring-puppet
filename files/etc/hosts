@@ -372,3 +372,6 @@ ff02::2 ip6-allrouters
 193.150.23.30   fnutt01 fnutt01.ring.nlnog.net
 2001:67c:2a00:1::30 fnutt01 fnutt01.ring.nlnog.net
 
+193.176.144.164 sidn01  sidn01.ring.nlnog.net
+2a00:d78:0:fd:193:176:144:164   sidn01  sidn01.ring.nlnog.net
+
