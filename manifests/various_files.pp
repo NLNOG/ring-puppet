@@ -20,7 +20,9 @@ class etcfiles {
         }
     }
 
-
+    file { "/etc/dpkg/dpkg.cfg.d/multiarch":
+        ensure  => absent,
+    }
     file { "/etc/bash.bashrc":
         owner   => root,
         group   => root,
