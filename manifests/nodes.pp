@@ -115,8 +115,10 @@ node 'master01' inherits basenode {
 
 # container01 is hosted at XS4ALL
 # 8 cores / 16GB RAM / 120GB disk
-# IPv4 prefix: 82.94.230.128/28
-# IPv6 prefix: 2001:888:2001::/48
+# virbr0 is bridged to eth0 (uplink)
+# virbr1 is virtual switch on the box with this IP space:
+#   IPv4 prefix: 82.94.230.128/28
+#   IPv6 prefix: 2001:888:2001::/48
 node 'container01' inherits basenode {
     include users
     include syslog_ng::client
