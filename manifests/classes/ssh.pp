@@ -14,6 +14,8 @@ class ssh {
     # two names in /etc/ssh/ssh_known_hosts 
     # which helps tab completition
 
+    # after we upgrade all nodes to ubuntu precise, we can use:       
+    # host_aliases => ["${fqdn}", "${ipaddress6}", "${ipaddress}"],
     @@sshkey { 
         "${hostname}": 
             host_aliases => ["${fqdn}", "${ipaddress}"],
