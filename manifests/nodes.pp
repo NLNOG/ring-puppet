@@ -233,7 +233,7 @@ node 'staging01' inherits ringnode {
 }
 
 node 'staging02' inherits ringnode {
-    $owner = "job"
+    $owner = "previder"
     include smokeping::slave
     include nagios::target::fqdn
     include nagios_services
