@@ -33,7 +33,13 @@ class nettools {
     package { "python-beautifulsoup":
         ensure => latest,
     }
-    package { "bash-completion":
+    package { "command-not-found":
+        ensure => latest,
+    }
+    package { "whois":
+        ensure  => latest,
+    }
+   package { "bash-completion":
         ensure => latest,
     }
     package { "update-motd":
