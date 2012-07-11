@@ -34,7 +34,7 @@ ff02::2 ip6-allrouters
 2a02:f18:1:9231:87:250:146:52   netground01 netground01.ring.nlnog.net
 87.250.146.52   netground01 netground01.ring.nlnog.net
 
-2a00:1478:30::12:27:0:1 totaalnet01 totaalnet01.ring.nlnog.net
+2a00:1478:50:0:11:913:0:1   totaalnet01 totaalnet01.ring.nlnog.net
 77.95.252.48    totaalnet01 totaalnet01.ring.nlnog.net
 
 2001:4cb8:1:ff03::2 signet01    signet01.ring.nlnog.net
