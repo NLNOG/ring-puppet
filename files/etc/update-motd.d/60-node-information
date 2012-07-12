@@ -10,6 +10,7 @@ IPV4ADDR=$(ip -4 route get 255.255.255.255 | grep src | sed 's/.*src //' | sed '
 #IPV4ADDR=$(dig +short A $NODEFQDN | grep -v '\.$')
 ASN=$(dig +short TXT $(echo $IPV4ADDR | awk -F . '{print $4"."$3"."$2"."$1".asn.routeviews.org"}') | awk '{print $1}' | sed 's/"//g')
 LOCATION=$(grep $(whois $(echo $IPV4ADDR)|grep ^country|awk '{print $2}') /usr/share/zoneinfo/iso3166.tab|awk '{print $2}')
+CYMRUASINFO=$(dig +short TXT AS$ASN.asn.cymru.com | sed 's/"//g')
 REGION=$(echo $CYMRUASINFO | cut -d \| -f 3 | sed 's/^ //' | sed 's/ $//')
 ASINFO=$(echo $CYMRUASINFO | cut -d \| -f 5 | sed 's/^ //' | sed 's/ $//')
 
