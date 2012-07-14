@@ -18,7 +18,7 @@ class ssh {
     # host_aliases => ["${fqdn}", "${ipaddress6}", "${ipaddress}"],
     @@sshkey { 
         "${hostname}": 
-            host_aliases => ["${fqdn}", "${ipaddress}"],
+            host_aliases => ["${fqdn}", "${ipaddress}", "${ipaddress6}"],
             type => ssh-rsa,
             key => "${sshrsakey}",
             require => File["/etc/ssh/ssh_known_hosts"];
