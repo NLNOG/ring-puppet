@@ -1,7 +1,6 @@
 define nagios::service (
     $ensure = present,
     $host_name = $fqdn,
-    $servicegroups,
     $check_command,
     $check_period = '',
     $normal_check_interval = '',
@@ -12,7 +11,8 @@ define nagios::service (
     $notification_options = '',
     $contact_groups = '',
     $use = 'generic-service',
-    $service_description = 'absent' )
+    $service_description = 'absent',
+    $servicegroups = 'absent' )
 {
 
     # TODO: this resource should normally accept all nagios_host parameters
