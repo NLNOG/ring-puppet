@@ -11,7 +11,8 @@ define nagios::service (
     $notification_options = '',
     $contact_groups = '',
     $service_description = 'absent',
-    $servicegroups = 'absent' )
+    $servicegroups = 'absent',
+    $use = 'generic-service' )
 {
 
     # TODO: this resource should normally accept all nagios_host parameters
@@ -19,15 +20,15 @@ define nagios::service (
     $real_name = "${hostname}_${name}"
 
     case $hostname {
-      /^(master|container|worker)/: { $use = 'critical-service' }
-      default: { $use = 'generic-service' }
+      /^(master|container|worker)/: { $my_use = 'critical-service' }
+      default: { $my_use = $use }
     }
 
     @@nagios_service { "${real_name}":
         ensure => $ensure,
         check_command => $check_command,
         host_name => $host_name,
-        use => $use,
+        use => $my_use,
         notify => Service[nagios],
         service_description => $service_description ?{
           'absent' => $name,
