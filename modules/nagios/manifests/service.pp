@@ -19,6 +19,10 @@ define nagios::service (
 
     $real_name = "${hostname}_${name}"
 
+    case $hostname {
+      /^master/: { $use = 'critical-service' }
+    }
+
     @@nagios_service { "${real_name}":
         ensure => $ensure,
         check_command => $check_command,
