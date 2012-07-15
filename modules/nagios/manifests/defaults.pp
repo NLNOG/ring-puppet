@@ -6,6 +6,7 @@ class nagios::defaults {
     include nagios::defaults::contactgroups
     include nagios::defaults::contacts
     include nagios::defaults::hostgroups
+    include nagios::defaults::servicegroups
     include nagios::defaults::templates
     include nagios::defaults::timeperiods
 #    include nagios::defaults::plugins
