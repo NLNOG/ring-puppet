@@ -1,6 +1,7 @@
 define nagios::service (
     $ensure = present,
     $host_name = $fqdn,
+    $servicegroups,
     $check_command,
     $check_period = '',
     $normal_check_interval = '',
