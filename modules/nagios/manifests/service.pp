@@ -27,6 +27,10 @@ define nagios::service (
         service_description => $service_description ?{
           'absent' => $name,
           default => $service_description
+        },
+        servicegroups => $servicegroups ?{
+          'absent' => "all",
+          default => "all,${servicegroups}"
         }
     }
 

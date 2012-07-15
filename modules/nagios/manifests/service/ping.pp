@@ -9,6 +9,7 @@ define nagios::service::ping(
     nagios::service{ "check_ping6":
         ensure => $ensure,
         check_command => "check_ping6${real_nagios_ping_rate}",
+        servicegroups => "ping,ipv6",
     }
 
     # Only add if we have v4
@@ -16,6 +17,7 @@ define nagios::service::ping(
         nagios::service{ "check_ping":
             ensure => $ensure,
             check_command => "check_ping${real_nagios_ping_rate}",
+            servicegroups => "ping,ipv4",
         }
     }
 }
