@@ -5,7 +5,7 @@ class nagios::target (
 {
 
     case $hostname {
-      /^master/: { $use = 'critical-host' }
+      /^(master|container|worker)/: { $use = 'critical-host' }
     }
 
     @@nagios_host { "${fqdn}":

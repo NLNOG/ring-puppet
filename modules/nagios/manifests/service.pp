@@ -20,7 +20,7 @@ define nagios::service (
     $real_name = "${hostname}_${name}"
 
     case $hostname {
-      /^master/: { $use = 'critical-service' }
+      /^(master|container|worker)/: { $use = 'critical-service' }
     }
 
     @@nagios_service { "${real_name}":
