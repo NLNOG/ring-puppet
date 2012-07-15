@@ -141,6 +141,7 @@ class nagios::base {
     }
     Nagios_servicegroup <||> {
         target => "${nagios::defaults::vars::int_nagios_cfgdir}/conf.d/nagios_servicegroup.cfg",
+        require => File['nagios_confd'],
         notify => Service['nagios'],
     }
     Nagios_servicedependency <||> {

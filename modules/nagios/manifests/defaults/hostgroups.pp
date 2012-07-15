@@ -3,9 +3,5 @@ class nagios::defaults::hostgroups {
     'all':
       alias   => 'All Servers',
     	members => '*';
-    'debian-servers':
-      alias   => 'Debian GNU/Linux Servers';
-    'centos-servers':
-      alias   => 'CentOS GNU/Linux Servers';
   }
 }
