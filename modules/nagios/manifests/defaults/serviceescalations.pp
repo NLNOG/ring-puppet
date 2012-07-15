@@ -1,5 +1,5 @@
 class nagios::defaults::serviceescalations {
-  nagios_serviceescalation {
+  nagios_serviceescalation { 'all':
     hostgroup_name          => 'all',
     servicegroup_name       => 'all',
     first_notification      => 2,
