@@ -10,7 +10,6 @@ define nagios::service (
     $notification_period = '',
     $notification_options = '',
     $contact_groups = '',
-    $use = 'generic-service',
     $service_description = 'absent',
     $servicegroups = 'absent' )
 {
@@ -21,6 +20,7 @@ define nagios::service (
 
     case $hostname {
       /^(master|container|worker)/: { $use = 'critical-service' }
+      default: { $use = 'generic-service' }
     }
 
     @@nagios_service { "${real_name}":

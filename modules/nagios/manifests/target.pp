@@ -1,11 +1,10 @@
 # manifests/target.pp
 
-class nagios::target (
-    $use = 'generic-host' )
-{
+class nagios::target {
 
     case $hostname {
       /^(master|container|worker)/: { $use = 'critical-host' }
+      default: { $use = 'generic-host' }
     }
 
     @@nagios_host { "${fqdn}":
