@@ -6,13 +6,18 @@ ORG=$(echo $NODE |sed 's/..$//')
 LOCALADMIN=$(getent passwd $ORG | cut -d : -f 5)
 
 # ASN Info
-IPV4ADDR=$(ip -4 route get 255.255.255.255 | grep src | sed 's/.*src //' | sed 's/ $//')
+IPV4ADDR=$(ip -4 route get 255.255.255.255 2>/dev/null | grep src | sed 's/.*src //' | sed 's/ $//')
 #IPV4ADDR=$(dig +short A $NODEFQDN | grep -v '\.$')
-ASN=$(dig +short TXT $(echo $IPV4ADDR | awk -F . '{print $4"."$3"."$2"."$1".asn.routeviews.org"}') | awk '{print $1}' | sed 's/"//g')
-LOCATION=$(grep $(whois $(echo $IPV4ADDR)|grep ^country|head -n1|awk '{print $2}') /usr/share/zoneinfo/iso3166.tab|cut -f2)
-CYMRUASINFO=$(dig +short TXT AS$ASN.asn.cymru.com | sed 's/"//g')
-REGION=$(echo $CYMRUASINFO | cut -d \| -f 3 | sed 's/^ //' | sed 's/ $//')
-ASINFO=$(echo $CYMRUASINFO | cut -d \| -f 5 | sed 's/^ //' | sed 's/ $//')
+IPV6ADDR=$(ip -6 route get 2001:6e0:100:4001::3 2>/dev/null | grep src | sed 's/.*src //' | sed 's/ *metric.*$//')
+
+if [ -n "$IPV4ADDR" ];
+then
+	ASN=$(dig +short TXT $(echo $IPV4ADDR | awk -F . '{print $4"."$3"."$2"."$1".asn.routeviews.org"}') | awk '{print $1}' | sed 's/"//g')
+	CYMRUASINFO=$(dig +short TXT AS$ASN.asn.cymru.com | sed 's/"//g')
+	REGION=$(echo $CYMRUASINFO | cut -d \| -f 3 | sed 's/^ //' | sed 's/ $//')
+	ASINFO=$(echo $CYMRUASINFO | cut -d \| -f 5 | sed 's/^ //' | sed 's/ $//')
+fi
+LOCATION=$(grep $(whois $(echo $IPV6ADDR)|grep -i ^country|head -n1|awk '{print "^"$2}') /usr/share/zoneinfo/iso3166.tab|cut -f2)
 
 # NLNOG RING Logo - can be disabled :)
 cat /etc/update-motd.d/ring.nlnog.net-logo
@@ -20,7 +25,12 @@ cat /etc/update-motd.d/ring.nlnog.net-logo
 echo
 echo "  Welcome on $NODEFQDN, an NLNOG RING Node!"
 echo "  System operated by $LOCALADMIN"
-echo "  Location: $LOCATION, $REGION - AS$ASN ($ASINFO)"
+if [ -n "$ASN" ];
+then
+	echo "  Location: $LOCATION, $REGION - AS$ASN ($ASINFO)"
+else	
+	echo "  Location: $LOCATION"
+fi
 
 # Munin / Nagios / Smokeping
 
