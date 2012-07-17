@@ -375,3 +375,6 @@ ff02::2 ip6-allrouters
 193.176.144.164 sidn01  sidn01.ring.nlnog.net
 2a00:d78:0:fd:193:176:144:164   sidn01  sidn01.ring.nlnog.net
 
+37.128.187.253  melbourne01 melbourne01.ring.nlnog.net
+2a03:b200:f::2  melbourne01 melbourne01.ring.nlnog.net
+
