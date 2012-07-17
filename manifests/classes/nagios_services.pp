@@ -37,22 +37,5 @@ class nagios_services {
         dependent_host_name             => "${fqdn}",
         notification_failure_criteria       => "w,u,c",
     }
-
-    nagios_servicegroup {
-      'ping':
-        alias   => 'All ICMP Services';
-    }
-    nagios_servicegroup {
-      'ssh':
-        alias   => 'All SSH Services';
-    }
-    nagios_servicegroup {
-      'ipv4':
-        alias   => 'All IPv4 Services';
-    }
-    nagios_servicegroup {
-      'ipv6':
-        alias   => 'All IPv6 Services';
-    }
 }
 
