@@ -1517,7 +1517,7 @@ node 'sidn01' inherits ringnode {
     include users
 }
 
-node 'melbourn01' inherits ringnode {
+node 'melbourne01' inherits ringnode {
     $owner = "melbourne"
     $location = "53.61917,-2.37236"
     include smokeping::slave                                                    
