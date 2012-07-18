@@ -98,7 +98,7 @@ class nettools {
     }
     package { "python-setuptools": ensure => present }
     package { "virt-what": ensure => present }
-    package { "sl": ensure => present }
+    package { "sl": ensure => purged }
     package { "mtr": ensure => latest }
     package { "nmap": ensure => latest }
     package { "traceroute": ensure => present }
