@@ -106,8 +106,8 @@ ff02::2 ip6-allrouters
 2001:67c:b0:3::2    ic-hosting01    ic-hosting01.ring.nlnog.net
 178.19.114.34   ic-hosting01    ic-hosting01.ring.nlnog.net
 
-2a02:990:2:3::3 nedzone01   nedzone01.ring.nlnog.net
-94.103.152.190  nedzone01   nedzone01.ring.nlnog.net
+2a02:990:222::6932:49e9  nedzone01   nedzone01.ring.nlnog.net
+178.18.139.54   nedzone01   nedzone01.ring.nlnog.net
 
 2a00:d10:101::195:1 oxilion01   oxilion01.ring.nlnog.net
 93.186.180.112  oxilion01   oxilion01.ring.nlnog.net
