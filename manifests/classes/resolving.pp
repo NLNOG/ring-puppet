@@ -8,7 +8,7 @@ nameserver ::1
         owner   => root,
         group   => root,
         mode    => 644,
-        require => [ Package["unbound"], File["/etc/unbound/unbound.conf"] ]
+        require => [ Package["unbound"], File["/etc/unbound/unbound.conf"] ],
         content => $etcresolvconf,
    }
 
