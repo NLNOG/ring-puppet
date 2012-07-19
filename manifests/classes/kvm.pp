@@ -23,7 +23,7 @@ define kvm::virtual_machine ($fqdn, $ip, $netmask, $dns="8.8.8.8", $gateway, $me
                 kvm ubuntu  --raw /dev/mapper/${container}-$name -v -m $memory --cpus=1 --rootsize=$rootsize \
                 --swapsize=512 --domain=ring.nlnog.net --ip=$ip --mask=$netmask --gw=$gateway --dns=$dns \
                 --hostname=$fqdn --suite=precise \
-                --rootpass=password --libvirt=qemu:///system \
+                --libvirt=qemu:///system \
                 --components=main,restricted,universe,multiverse \
                 --debug \
                 --verbose \
