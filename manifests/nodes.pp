@@ -118,7 +118,7 @@ node 'container01' inherits basenode {
         ip          => '82.94.249.162', # ipv6 address is 2001:888:2000:3e::1337, have to configure manually
         netmask     => '255.255.255.248',
         dns         => '8.8.8.8',
-        gateway     => '82.94.230.161',
+        gateway     => '82.94.249.161',
         memory      => '512',
         disksize    => '20',
         rootsize    => '19968',
