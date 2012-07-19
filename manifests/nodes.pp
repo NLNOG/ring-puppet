@@ -82,7 +82,7 @@ node 'master01' inherits basenode {
     }
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
-    Exec <<| tag == "destroyed_virtual_machines" |>>
+    Exec <<| tag == "destroy_virtual_machines" |>>
 }
 
 # container01 is hosted at XS4ALL
@@ -99,23 +99,24 @@ node 'container01' inherits basenode {
     include kvm
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
-
-    kvm::virtual_machine { 'staging03':
-        fqdn    => 'staging03.ring.nlnog.net',
-        ip      => '82.94.230.130',
-        netmask => '255.255.255.240',
-        dns     => '8.8.8.8',
-        gateway => '82.94.230.129',
-        memory  => '512',
-        disksize => '20',
-        rootsize => '19968',
-        bridge  => 'virbr1',
-        ensure  => absent,
+    
+    kvm::virtual_machine { 'lg1':
+        fqdn        => 'lg1.ring.nlnog.net',
+        ip          => '82.94.230.130', # ipv6 address is 2001:888:2001::130, have to configure manually
+        netmask     => '255.255.255.240',
+        dns         => '8.8.8.8',
+        gateway     => '82.94.230.129',
+        memory      => '512',
+        disksize    => '20',
+        rootsize    => '19968',
+        bridge      => 'virbr1',
+        container   => "${hostname}",
+        ensure      => present,
     }
 }
 
-# testing 1 2 3 
-node 'staging03' inherits ringnode {
+# looking glass 1
+node 'lg1' inherits ringnode {
     $owner = "job"
     include nagios::target::fqdn
     include nagios_services

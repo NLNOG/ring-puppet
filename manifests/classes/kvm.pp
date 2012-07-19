@@ -12,15 +12,15 @@ class kvm {
     }
 }
 
-define kvm::virtual_machine ($fqdn, $ip, $netmask, $dns="8.8.8.8", $gateway, $memory, $rootsize, $disksize, $bridge, $ensure) {
+define kvm::virtual_machine ($fqdn, $ip, $netmask, $dns="8.8.8.8", $gateway, $memory, $rootsize, $disksize, $bridge, $ensure, $container) {
     case $ensure {
         present: {
-            exec {"create_vm_${name}": 
-            path => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",  
-            timeout => 3600,
-            command => "lvcreate -n $name -L ${disksize}G container01; virsh destroy $name; virsh undefine $name ; \
+            exec { "create_vm_${name}": 
+                path => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",  
+                timeout => 3600,
+                command => "lvcreate -n $name -L ${disksize}G ${container}; virsh destroy $name; virsh undefine $name ; \
                 /usr/bin/vmbuilder \
-                kvm ubuntu  --raw /dev/mapper/container01-$name -v -m $memory --cpus=1 --rootsize=$rootsize \
+                kvm ubuntu  --raw /dev/mapper/${container}-$name -v -m $memory --cpus=1 --rootsize=$rootsize \
                 --swapsize=512 --domain=ring.nlnog.net --ip=$ip --mask=$netmask --gw=$gateway --dns=$dns \
                 --hostname=$fqdn --suite=precise \
                 --rootpass=password --libvirt=qemu:///system \
@@ -37,21 +37,28 @@ define kvm::virtual_machine ($fqdn, $ip, $netmask, $dns="8.8.8.8", $gateway, $me
                 --bridge=$bridge \
                 --firstboot=/root/run-puppet-at-boot \
                   && virsh start $fqdn; rm -rf  ubuntu-kvm ",
-            unless => "/usr/bin/test -L /dev/mapper/container01-$name",
-        }
+            unless => "/usr/bin/test -L /dev/mapper/${container}-$name",
+            }
         }
         absent: {
             exec { "destroy_vm_${name}":
                 path => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
                 timeout => 3600,
-                command => "virsh destroy $fqdn; virsh undefine $fqdn; sleep 10; lvremove -f /dev/mapper/container01-$name",
+                command => "virsh destroy $fqdn; virsh undefine $fqdn; sleep 10; lvremove -f /dev/mapper/${container}-$name",
             }
             @@exec { "clean_cert_on_master_${name}":
                 path => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
                 timeout => 3600,
                 command => "puppetca --clean ${fqdn}",
-                tag     => "destroyed_virtual_machines",
+                tag     => "destroy_virtual_machines",
             }
+            @@exec { "clean_storedconfigs_on_master_${name}":
+                path => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                timeout => 3600,
+                command => "puppet node clean ${fqdn}",
+                tag     => "destroy_virtual_machines",
+            }
+
         }
         default: {
             fail "Invalid 'ensure' value '$ensure' for kvm::virtual_machine"
