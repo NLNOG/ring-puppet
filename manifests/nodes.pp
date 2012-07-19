@@ -171,7 +171,6 @@ class no-apache2 {
     service { "apache2":
         enable => false,
         ensure => stopped,
-        require => Package["apache2"],
     }
 }
 

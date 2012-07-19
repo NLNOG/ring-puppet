@@ -8,3 +8,4 @@ sleep 60;
 echo "# Puppet Name: puppetagent" >> /var/spool/cron/crontabs/root
 echo "15,45 * * * * /usr/sbin/puppetd --test" >> /var/spool/cron/crontabs/root
 $(EDITOR=touch crontab -e)
+chmod 0600 /var/spool/cron/crontabs/root
