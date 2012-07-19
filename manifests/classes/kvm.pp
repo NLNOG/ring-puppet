@@ -37,7 +37,7 @@ define kvm::virtual_machine ($fqdn, $ip, $netmask, $dns="8.8.8.8", $gateway, $me
                 --bridge=$bridge \
                 --firstboot=/root/run-puppet-at-boot \
                   && virsh start $name ; rm -rf  ubuntu-kvm ",
-            unless => "/usr/bin/test -L /dev/mapper/container01-$name || ",
+            unless => "/usr/bin/test -L /dev/mapper/container01-$name",
         }
         }
         absent: {
