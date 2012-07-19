@@ -46,6 +46,12 @@ define kvm::virtual_machine ($fqdn, $ip, $netmask, $dns="8.8.8.8", $gateway, $me
                 timeout => 3600,
                 command => "virsh destroy $fqdn; virsh undefine $fqdn; sleep 10; lvremove -f /dev/mapper/container01-$name",
             }
+            @@exec { "clean_cert_on_master_${name}":
+                path => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                timeout => 3600,
+                command => "puppetca --clean ${fqdn}",
+                tag     => "destroyed_virtual_machines",
+            }
         }
         default: {
             fail "Invalid 'ensure' value '$ensure' for kvm::virtual_machine"

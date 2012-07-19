@@ -82,7 +82,7 @@ node 'master01' inherits basenode {
     }
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
-
+    Exec <<| tag == "destroyed_virtual_machines" |>>
 }
 
 # container01 is hosted at XS4ALL
@@ -110,7 +110,7 @@ node 'container01' inherits basenode {
         disksize => '20',
         rootsize => '19968',
         bridge  => 'virbr1',
-        ensure  => absent,
+        ensure  => present,
     }
 }
 
