@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# this file is fed into the virtual machines that are created and thus
+# we can let them become part of the ring automaticly
+
+/usr/sbin/puppetd --test --debug
+sleep 60;
+/usr/sbin/puppetd --test --debug
