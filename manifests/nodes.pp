@@ -110,7 +110,7 @@ node 'container01' inherits basenode {
         disksize => '20',
         rootsize => '19968',
         bridge  => 'virbr1',
-        ensure  => present,
+        ensure  => absent,
     }
 }
 
