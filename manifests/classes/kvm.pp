@@ -51,4 +51,3 @@ define kvm::virtual_machine ($fqdn, $ip, $netmask, $dns="8.8.8.8", $gateway, $me
         }
     }
 }
-}
