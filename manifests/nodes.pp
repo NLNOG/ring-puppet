@@ -100,7 +100,7 @@ node 'container01' inherits basenode {
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
 
-    virtual_machine { 'staging03':
+    kvm::virtual_machine { 'staging03':
         fqdn    => 'staging03.ring.nlnog.net',
         ip      => '82.94.230.130',
         netmask => '255.255.255.240',
