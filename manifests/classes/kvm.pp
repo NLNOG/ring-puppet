@@ -36,7 +36,7 @@ define kvm::virtual_machine ($fqdn, $ip, $netmask, $dns="8.8.8.8", $gateway, $me
                 --addpkg=vim \
                 --bridge=$bridge \
                 --firstboot=/root/run-puppet-at-boot \
-                  && virsh start $name ; rm -rf  ubuntu-kvm ",
+                  && virsh start $fqdn; rm -rf  ubuntu-kvm ",
             unless => "/usr/bin/test -L /dev/mapper/container01-$name",
         }
         }
@@ -44,7 +44,7 @@ define kvm::virtual_machine ($fqdn, $ip, $netmask, $dns="8.8.8.8", $gateway, $me
             exec { "destroy_vm_${name}":
                 path => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
                 timeout => 3600,
-                command => "virsh destroy $name; virsh undefine $name; sleep 10; lvremove -f /dev/mapper/container01-$name",
+                command => "virsh destroy $fqdn; virsh undefine $fqdn; sleep 10; lvremove -f /dev/mapper/container01-$name",
             }
         }
         default: {
