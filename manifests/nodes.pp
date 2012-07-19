@@ -106,13 +106,27 @@ node 'container01' inherits basenode {
         netmask     => '255.255.255.240',
         dns         => '8.8.8.8',
         gateway     => '82.94.230.129',
-        memory      => '512',
+        memory      => '1024',
         disksize    => '20',
         rootsize    => '19968',
         bridge      => 'virbr1',
         container   => "${hostname}",
         ensure      => present,
     }
+    kvm::virtual_machine { 'xs4all01':
+        fqdn        => 'xs4all01.ring.nlnog.net',
+        ip          => '82.94.249.162', # ipv6 address is 2001:888:2000:3e::1337, have to configure manually
+        netmask     => '255.255.255.248',
+        dns         => '8.8.8.8',
+        gateway     => '82.94.230.161',
+        memory      => '512',
+        disksize    => '20',
+        rootsize    => '19968',
+        bridge      => 'virbr0',
+        container   => "${hostname}",
+        ensure      => present,
+    }
+
 }
 
 # looking glass 1
