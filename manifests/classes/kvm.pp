@@ -18,7 +18,7 @@ define kvm::virtual_machine ($fqdn, $ip, $netmask, $dns="8.8.8.8", $gateway, $me
             exec { "create_vm_${name}": 
                 path => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",  
                 timeout => 3600,
-                command => "lvcreate -n $name -L ${disksize}G ${container}; virsh destroy $name; virsh undefine $name ; \
+                command => "lvcreate -n $name -L ${disksize}G ${container}; virsh destroy ${fqdn}; virsh undefine ${fqdn}; \
                 /usr/bin/vmbuilder \
                 kvm ubuntu  --raw /dev/mapper/${container}-$name -v -m $memory --cpus=1 --rootsize=$rootsize \
                 --swapsize=512 --domain=ring.nlnog.net --ip=$ip --mask=$netmask --gw=$gateway --dns=$dns \
