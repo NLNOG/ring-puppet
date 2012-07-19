@@ -12,7 +12,7 @@ class kvm {
     }
 }
 
-define kvm::virtual_machine ($fqdn, $ip, $netmask, $dns="8.8.8.8", $gateway, $memory, $rootsize, $disksize, $bridge ) {
+define kvm::virtual_machine ($fqdn, $ip, $netmask, $dns="8.8.8.8", $gateway, $memory, $rootsize, $disksize, $bridge, $ensure) {
     case $ensure {
         present: {
             exec {"create_vm_${name}": 
