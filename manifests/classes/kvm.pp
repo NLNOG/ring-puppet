@@ -1,8 +1,9 @@
 # have some functions do deal with virtual machines
 class kvm {
-    package { "qemu-kvm":
+    package { ["qemu-kvm", "python-vm-builder", "ubuntu-vm-builder", "libvirt-bin", "bridge-utils"]:
         ensure => latest,
     }
+
     file { "/root/run-puppet-at-boot":
         owner   => root,
         group   => root,

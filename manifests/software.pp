@@ -14,20 +14,6 @@ class master_software {
     package { "apache2-mpm-prefork": ensure => latest }
 }
 
-class container_software {
-    package { ['python-vm-builder', 'ubuntu-vm-builder']:
-        ensure  => latest
-    }
-
-    package { ['libvirt-bin', 'qemu-kvm']:
-        ensure  => latest
-    }
-
-    package { 'bridge-utils':
-        ensure  => latest
-    }
-}
-
 class nettools {
     # requested by teun
     package { "python-beautifulsoup":
