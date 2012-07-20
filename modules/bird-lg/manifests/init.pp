@@ -37,7 +37,8 @@ class bird-lg-proxy {
         }
 
         service { "bird-lg":
-            ensure  => running,
-            require => File["/etc/init/bird-lg.conf"],
+            ensure      => running,
+            require     => File["/etc/init/bird-lg.conf"],
+            provider    => upstart,
         }
 }
