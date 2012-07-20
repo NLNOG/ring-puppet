@@ -28,17 +28,17 @@ class bird-lg-proxy {
             source      => "puppet:///bird-lg/bird.py",
         }
 
-        file { "/etc/init/bird-lg.conf":
+        file { "/etc/init/bird-lg-proxy.conf":
             owner       => root,
             group       => root,
             mode        => 0755,
-            source      => "puppet:///bird-lg/upstart-bird-lg.conf",
+            source      => "puppet:///bird-lg/upstart-bird-lg-proxy.conf",
             require     => File["/home/nlnogbot/bird-lg/bird.py","/home/nlnogbot/bird-lg/lg-proxy.py","/home/nlnogbot/bird-lg/lg-proxy.cfg","/home/nlnogbot/bird-lg"],
         }
 
-        service { "bird-lg":
+        service { "bird-lg-proxy":
             ensure      => running,
-            require     => File["/etc/init/bird-lg.conf"],
+            require     => File["/etc/init/bird-lg-proxy.conf"],
             provider    => upstart,
         }
 }
