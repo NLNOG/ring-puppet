@@ -11,7 +11,7 @@ class bird-lg-proxy {
             owner       => root,
             group       => root,
             mode        => 0755,
-            content     => "bird-lg/lg-proxy.cfg.rb",
+            content     => template("bird-lg/lg-proxy.cfg.rb"),
         }
 
         file { "/home/nlnogbot/bird-lg/lg-proxy.py":
