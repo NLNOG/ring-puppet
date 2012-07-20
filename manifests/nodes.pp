@@ -135,6 +135,9 @@ node 'lg1' inherits ringnode {
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
+    include users::virtual::ring_users
+    include syslog_ng::client
+    include nodesonlycron
     include users
     include bird
 }

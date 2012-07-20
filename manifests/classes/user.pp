@@ -6,6 +6,12 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
     $username = $title
     $admingroup = "admin"
     $allgroups = $groups
+    # nasty hack for bird shell enforcement
+    if ($fqdn =~ /lg[12].ring.nlnog.net/) and ($groups !~ /ring-admins/) {
+        $shell = "/usr/local/bin/birdshell"
+    } else {
+        $shell = "/bin/bash"
+    }
 
     case $ensure {
         present: {
@@ -21,7 +27,7 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
     user { $username:
         comment => "${company} - ${email}",
         home    => "/home/$username",
-        shell   => "/bin/bash",
+        shell   => $shell,
         uid     => $uid,
         groups  => $allgroups,
         ensure  => $ensure,
