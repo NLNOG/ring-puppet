@@ -33,7 +33,7 @@ class bird-lg-proxy {
             group       => root,
             mode        => 0755,
             source      => "puppet:///bird-lg/upstart-bird-lg.conf",
-            require     => "File["/home/nlnogbot/bird-lg/bird.py","/home/nlnogbot/bird-lg/lg-proxy.py","/home/nlnogbot/bird-lg/lg-proxy.cfg","/home/nlnogbot/bird-lg"],
+            require     => File["/home/nlnogbot/bird-lg/bird.py","/home/nlnogbot/bird-lg/lg-proxy.py","/home/nlnogbot/bird-lg/lg-proxy.cfg","/home/nlnogbot/bird-lg"],
         }
 
         service { "bird-lg":
