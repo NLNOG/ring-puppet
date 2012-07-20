@@ -22,7 +22,7 @@ template bgp peers {
     export none;
 }
 
-<% peers.each do |lg_peers_v6|
+<% lg_peers_v4.each do |peers|
     peer = peers.split(',') %>
 
 protocol bgp <%= peer[0] %> from peers {
