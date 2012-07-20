@@ -130,7 +130,7 @@ node 'container01' inherits basenode {
 }
 
 # looking glass 1
-node 'lg1' inherits ringnode {
+node 'lg1' inherits basenode {
     $owner = "job"
     include nagios::target::fqdn
     include nagios_services
