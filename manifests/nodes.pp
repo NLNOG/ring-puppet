@@ -173,6 +173,7 @@ node 'lg1' inherits basenode {
     include nodesonlycron
     include users
     include bird
+    include bird-lg
 }
 
 
