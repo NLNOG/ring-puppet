@@ -1,4 +1,4 @@
 
-ACCESS_LIST = ["91.224.149.206", "178.33.111.110"]
+ACCESS_LIST = ["82.94.230.131", "2001:888:2001::131"]
 IPV4_SOURCE="<%= ipaddress %>"
 IPV6_SOURCE="<%= ipaddress6 %>"
