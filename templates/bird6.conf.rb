@@ -5,6 +5,8 @@
 
 router id <%= ipaddress %>; 
 
+timeformat protocol iso long;
+
 template bgp peers {
     local as 199036;
     multihop;
@@ -23,7 +25,6 @@ template bgp peers {
 
 <% scope.lookupvar('bird_peers::lg_peers_v6').each do |peers|
     peer = peers.split(',') %>
-
 protocol bgp <%= peer[0] %> from peers {
     description "<%= peer[0] %>";
     neighbor <%= peer[1] %> as <%= peer[2] %>;
