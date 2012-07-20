@@ -24,9 +24,13 @@ Show all routes originated by AS15562:
 
     \033[1mshow route where bgp_path.last = 15562\033[0m
 
-Show all routes which have AS5580 in the path
+Show all routes which have AS5580 in the path:
 
     \033[1mshow route where bgp_path ~ [= * 5580 * =]\033[0m
+
+Equivalent of 'show bgp sum':
+
+    \033[1mshow protocols\033[0m
 
 have fun!
 ==============================================
@@ -51,9 +55,13 @@ Show all routes originated by AS15562:
 
     \033[1mshow route where bgp_path.last = 15562\033[0m
 
-Show all routes which have AS5580 in the path
+Show all routes which have AS5580 in the path:
 
     \033[1mshow route where bgp_path ~ [= * 5580 * =]\033[0m
+
+Equivalent of 'show bgp sum':
+
+    \033[1mshow protocols\033[0m
 
 have fun!
 ==============================================
