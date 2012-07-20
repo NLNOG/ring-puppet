@@ -22,7 +22,13 @@ template bgp peers {
     export none;
 }
 
-protocol bgp BIT1 from peers {
-    description "BIT1";
-    neighbor 213.136.1.132 as 12859;
+<% peers.each do |lg_peers_v4|
+    peer = peers.split(',') %>
+
+protocol bgp <%= peer[0] %> from peers {
+    description "<%= peer[0] %>";
+    neighbor <%= peer[1] %> as <%= peer[2] %>;
 }
+
+<% end %>
+

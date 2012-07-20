@@ -1,3 +1,14 @@
+class bird_peers {
+    $lg_peers_v4 = [
+        'BIT1,213.136.1.132,12859',
+        'TUXIS1,31.3.104.1,197731',
+        ]
+    $lg_peers_v6 = [
+    'BIT1,2001:888:2001::130,12859',
+    'TUXIS1,2a03:7900::1,197731',
+    ]
+}
+
 class bird {
     exec { "add_bird_repo":
         path    => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
