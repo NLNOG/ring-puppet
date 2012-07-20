@@ -24,15 +24,17 @@ class bird {
     }
     
     service { ["bird"]:
-        ensure  => running,
-        enable  => true,
+        ensure      => running,
+        enable      => true,
         subscribe   => File["/etc/bird.conf"],
+        hasstatus   => false,
     }
 
     service { ["bird6"]:
-        ensure  => running,
-        enable  => true,
+        ensure      => running,
+        enable      => true,
         subscribe   => File["/etc/bird6.conf"],
+        hasstatus   => false,
     }
 
     file { "/etc/bird.conf":
