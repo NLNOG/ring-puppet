@@ -1,7 +1,7 @@
 class bird_peers {
 
 ######
-# add IPv4i peers here
+# add IPv4 peers here
 # format is DESCR,IPv6,ASN
 # note that DESCR must not contain spaces or other weird shit
 #####
