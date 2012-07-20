@@ -106,7 +106,7 @@ node 'container01' inherits basenode {
         netmask     => '255.255.255.240',
         dns         => '8.8.8.8',
         gateway     => '82.94.230.129',
-        memory      => '1024',
+        memory      => '2048',
         disksize    => '20',
         rootsize    => '19968',
         bridge      => 'virbr1',
