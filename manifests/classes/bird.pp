@@ -49,7 +49,10 @@ class bird {
     package { ["bird", "bird6"]:
         ensure => latest,
     }
-
+    
+    package { ["python-flask", "python-dnspython"]:
+        ensure  => latest,
+    }
 
    file { ["/etc/init.d/bird","/etc/init.d/bird6"]:
         ensure  => absent,
