@@ -3,13 +3,13 @@ class bird_peers {
 ######
 # add IPv4 peers here
 # format is DESCR,IPv6,ASN
-# note that DESCR must not contain spaces or other weird shit
+# note that DESCR must not contain spaces or other weird shit like dashes
 #####
 
 $lg_peers_v4 = [
     'BIT1,213.136.1.132,12859',
     'TUXIS1,31.3.104.1,197731',
-    'BOXED_IT,195.200.224.1,50156',
+    'BOXED_IT1,195.200.224.1,50156',
 ]
 
 #####
@@ -21,7 +21,7 @@ $lg_peers_v4 = [
 $lg_peers_v6 = [
     'BIT1,2001:7b8:0:fffe::2,12859',
     'TUXIS1,2a03:7900::1,197731',
-    'BOXED_IT,2001:67c:344::1,50156',
+    'BOXED_IT1,2001:67c:344::1,50156',
 ]
 
 }
