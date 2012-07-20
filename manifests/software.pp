@@ -16,7 +16,7 @@ class master_software {
 
 class nettools {
     # requested by teun
-    package { "python-beautifulsoup":
+    package { ["python-beautifulsoup", "python-flask":
         ensure => latest,
     }
     package { "command-not-found":
