@@ -136,6 +136,7 @@ node 'lg1' inherits ringnode {
     include nagios_services
     include set_local_settings
     include users
+    include bird
 }
 
 
