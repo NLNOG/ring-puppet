@@ -17,12 +17,12 @@ template bgp peers {
                                     # errors occur, we increase the delay exponentially ...
     error forget time 300;          # ... until this timeout expires)
     disable after error;            # Disable the protocol automatically when an error occurs
-    source address <%= ipaddress %>;   # What local address we use for the TCP connection
+    source address <%= ipaddress6 %>;   # What local address we use for the TCP connection
     import all;
     export none;
 }
 
 protocol bgp BIT1 from peers {
     description "BIT1";
-    neighbor 213.136.1.132 as 12859;
+    neighbor 2001:7b8:0:fffe::2 as 12859;
 }
