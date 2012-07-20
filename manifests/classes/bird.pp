@@ -93,4 +93,28 @@ class bird {
         ensure  => file,
     }
 
+    file { "/usr/local/bin/birdshell":
+        owner   => root,
+        group   => root,
+        mode    => 0755,
+        source  => "puppet:///files/usr/local/bin/birdshell",
+        ensure  => file,
+    }
+
+    line { "birdshell_in_shells":
+        file    => "/etc/shells",
+        line    => "/usr/local/bin/birdshell",
+        ensure  => present,
+    }
+   
+   file { "/etc/passwd":
+        ensure  => present,
+    }
+
+    exec { "force_birdshell":
+        path    => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        timeout => 3600,
+        command => '/bin/grep -E ":5[0-9]..:" /etc/passwd | /bin/sed "s/:.*//" | while read line; do /usr/bin/chsh -s /usr/local/bin/birdshell $line; done',
+        subscribe   => File["/etc/passwd"]
+    }
 }
