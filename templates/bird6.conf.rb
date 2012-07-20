@@ -22,7 +22,7 @@ template bgp peers {
     export none;
 }
 
-<% scope.lookupvar('bird_peers::lg_peers_v4').each do |peers|
+<% scope.lookupvar('bird_peers::lg_peers_v6').each do |peers|
     peer = peers.split(',') %>
 
 protocol bgp <%= peer[0] %> from peers {
