@@ -22,6 +22,9 @@ class nettools {
     package { "command-not-found":
         ensure => latest,
     }
+    package { "psmisc":
+        ensure => latest,
+    }
     package { "whois":
         ensure  => latest,
     }
