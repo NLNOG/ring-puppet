@@ -22,19 +22,44 @@ class bird {
     package { ["bird", "bird6"]:
         ensure => latest,
     }
-    
-    service { ["bird"]:
-        ensure      => running,
-        enable      => true,
-        subscribe   => File["/etc/bird.conf"],
-        hasstatus   => false,
+
+
+   file { ["/etc/init.d/bird","/etc/init.d/bird6"]:
+        ensure  => absent,
     }
 
-    service { ["bird6"]:
+    file { "/etc/init/bird.conf":
+        ensure  => file,
+        mode    => 0644,
+        owner   => root,
+        group   => root,
+        source  => "puppet:///files/etc/init/bird.conf",
+    }
+
+    file { "/etc/init/bird6.conf":
+        ensure  => file,
+        mode    => 0644,
+        owner   => root,
+        group   => root,
+        source  => "puppet:///files/etc/init/bird6.conf",
+    }
+
+    service { "bird":
         ensure      => running,
-        enable      => true,
+        subscribe   => File["/etc/bird.conf"],
+        require     => File["/etc/init/bird.conf"],
+        provider    => "upstart",
+        hasstatus   => true,
+        restart     => "service bird reload",
+    }
+
+    service { "bird6":
+        ensure      => running,
         subscribe   => File["/etc/bird6.conf"],
-        hasstatus   => false,
+        require     => File["/etc/init/bird6.conf"],
+        provider    => "upstart",
+        restart     => "service bird6 reload",
+        hasstatus   => true,
     }
 
     file { "/etc/bird.conf":
