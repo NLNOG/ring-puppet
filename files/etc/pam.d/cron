@@ -6,13 +6,13 @@
 
 # Read environment variables from pam_env's default files, /etc/environment
 # and /etc/security/pam_env.conf.
-session       required   pam_env.so 
+session       required   pam_env.so
 
 # In addition, read system locale information
-session       required   pam_env.so envfile=/etc/default/locale 
+session       required   pam_env.so envfile=/etc/default/locale
 
 @include common-account
-@include common-session-noninteractive 
+@include common-session-noninteractive
 # Sets up user limits, please define limits for cron tasks
 # through /etc/security/limits.conf
 session    required   pam_limits.so
