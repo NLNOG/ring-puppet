@@ -137,7 +137,6 @@ node 'lg1' inherits ringnode {
     include set_local_settings
     include users
     include bird
-    include bird_peers
 }
 
 

@@ -10,6 +10,7 @@ class bird_peers {
 }
 
 class bird {
+    include bird_peers
     exec { "add_bird_repo":
         path    => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
         timeout => 3600,
