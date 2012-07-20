@@ -16,7 +16,6 @@ template bgp peers {
     error wait time 60, 300;        # Minimum and maximum time we wait after an error (when consecutive
                                     # errors occur, we increase the delay exponentially ...
     error forget time 300;          # ... until this timeout expires)
-    disable after error;            # Disable the protocol automatically when an error occurs
     source address <%= ipaddress6 %>;   # What local address we use for the TCP connection
     import all;
     export none;
