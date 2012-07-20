@@ -113,6 +113,20 @@ node 'container01' inherits basenode {
         container   => "${hostname}",
         ensure      => present,
     }
+    kvm::virtual_machine { 'public1':
+        fqdn        => 'public1.infra.ring.nlnog.net',
+        ip          => '82.94.230.131', # ipv6 address is 2001:888:2001::131, have to configure manually
+        netmask     => '255.255.255.240',
+        dns         => '8.8.8.8',
+        gateway     => '82.94.230.129',
+        memory      => '1024',
+        disksize    => '20',
+        rootsize    => '19968',
+        bridge      => 'virbr1',
+        container   => "${hostname}",
+        ensure      => present,
+    }
+
     kvm::virtual_machine { 'xs4all01':
         fqdn        => 'xs4all01.ring.nlnog.net',
         ip          => '82.94.249.162', # ipv6 address is 2001:888:2000:3e::1337, have to configure manually
@@ -127,6 +141,17 @@ node 'container01' inherits basenode {
         ensure      => present,
     }
 
+}
+
+# website, dns, mailing-list etc
+node 'public1.infra' inherits basenode {
+    $owner = "job"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include syslog_ng::client
+    include nodesonlycron
+    include users
 }
 
 # looking glass 1
