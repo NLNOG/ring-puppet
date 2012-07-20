@@ -152,6 +152,10 @@ node 'public1.infra' inherits basenode {
     include syslog_ng::client
     include nodesonlycron
     include users
+    include apache2
+    munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
+    }
+
 }
 
 # looking glass 1
