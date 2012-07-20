@@ -155,6 +155,10 @@ node 'public1.infra' inherits basenode {
     include apache2
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
+    nagios::service::http { $name:
+        check_domain => "${name}"
+    }
+
 
 }
 
