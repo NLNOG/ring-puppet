@@ -111,7 +111,7 @@ class bird {
         owner   => root,
         group   => root,
         mode    => 0755,
-        content => template("bird.conf.rb"),
+        content => template("bird/bird.conf.rb"),
         ensure  => file,
     }
     
@@ -119,7 +119,7 @@ class bird {
         owner   => root,
         group   => root,
         mode    => 0755,
-        content => template("bird6.conf.rb"),
+        content => template("bird/bird6.conf.rb"),
         ensure  => file,
     }
 
