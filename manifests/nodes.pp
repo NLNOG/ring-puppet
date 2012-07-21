@@ -100,8 +100,8 @@ node 'container01' inherits basenode {
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
     
-    kvm::virtual_machine { 'lg1':
-        fqdn        => 'lg1.ring.nlnog.net',
+    kvm::virtual_machine { 'lg01':
+        fqdn        => 'lg01.ring.nlnog.net',
         ip          => '82.94.230.130', # ipv6 address is 2001:888:2001::130, have to configure manually
         netmask     => '255.255.255.240',
         dns         => '8.8.8.8',
@@ -163,7 +163,7 @@ node 'public1.infra' inherits basenode {
 }
 
 # looking glass 1
-node 'lg1' inherits basenode {
+node 'lg01' inherits basenode {
     $owner = "job"
     include nagios::target::fqdn
     include nagios_services
