@@ -53,6 +53,8 @@ $lg_peers_v6 = [
 'YOURORG1,2001:4978:1:10::ffff,19255',
 ]
 
+###### END_MARKER #####
+
 }
 
 class bird {
