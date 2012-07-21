@@ -1317,7 +1317,7 @@ node 'softlayer03' inherits ringnode {
 node 'softlayer04' inherits ringnode {
     $owner = "softlayer"
     $location = "37.33939,-121.89496"
-    $nagios_ping_rate = '!250.0,20%!400.0,60%'
+    $nagios_ping_rate = '!500.0,20%!600.0,60%'
     include smokeping::slave                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
