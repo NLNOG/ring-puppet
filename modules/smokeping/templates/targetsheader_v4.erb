@@ -1,6 +1,6 @@
 *** Targets ***
 
-<%= `/bin/echo -e "slaves = $(/bin/grep nlnog.net$ /etc/hosts | /bin/grep -Ev '(master|container|worker|lg)[0-9][0-9]\.' | /usr/bin/nawk '{print $3}' | /usr/bin/sort -u | /usr/bin/tr '\n' ' ')"` %>
+<%= `/bin/echo -e "slaves = $(/bin/grep nlnog.net$ /etc/hosts | /bin/grep -Ev '(master|container|worker|lg)[0-9][0-9]\.' | grep -v lg1.ring.nlnog.net | /usr/bin/nawk '{print $3}' | /usr/bin/sort -u | /usr/bin/tr '\n' ' ')"` %>
 
 probe = FPing
 
