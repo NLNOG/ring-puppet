@@ -313,6 +313,21 @@ ff02::2 ip6-allrouters
 174.36.33.50    softlayer01 softlayer01.ring.nlnog.net
 2607:f0d0:1004:d3::2    softlayer01 softlayer01.ring.nlnog.net
 
+173.193.70.99   softlayer02 softlayer02.ring.nlnog.net
+2607:f0d0:1201:30:225:90ff:fe0c:b7c3    softlayer02 softlayer02.ring.nlnog.net
+
+174.37.230.130  softlayer03 softlayer03.ring.nlnog.net
+2607:f0d0:3003:a9::2    softlayer03 softlayer03.ring.nlnog.net
+
+50.23.64.60 softlayer04 softlayer04.ring.nlnog.net
+2607:f0d0:2101:be::3    softlayer04 softlayer04.ring.nlnog.net
+
+50.23.130.226   softlayer05 softlayer05.ring.nlnog.net
+2607:f0d0:2002:6e::2    softlayer05 softlayer05.ring.nlnog.net
+
+216.12.196.115  softlayer06 softlayer06.ring.nlnog.net
+2401:c900:1101:83::2 softlayer06    softlayer06.ring.nlnog.net
+
 89.127.199.164  imagine01   imagine01.ring.nlnog.net
 2001:4d68:4::a  imagine01   imagine01.ring.nlnog.net
 

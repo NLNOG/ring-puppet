@@ -1292,6 +1292,61 @@ node 'softlayer01' inherits ringnode {
     include users
 }
 
+node 'softlayer02' inherits ringnode {
+    $owner = "softlayer"
+    $location = "29.76019,-95.36939"
+    $nagios_ping_rate = '!250.0,20%!400.0,60%'
+    include smokeping::slave                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
+
+node 'softlayer03' inherits ringnode {
+    $owner = "softlayer"
+    $location = "39.04376,-77.48744"
+    $nagios_ping_rate = '!250.0,20%!400.0,60%'
+    include smokeping::slave                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
+
+node 'softlayer04' inherits ringnode {
+    $owner = "softlayer"
+    $location = "37.33939,-121.89496"
+    $nagios_ping_rate = '!250.0,20%!400.0,60%'
+    include smokeping::slave                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
+
+node 'softlayer05' inherits ringnode {
+    $owner = "softlayer"
+    $location = "47.60621,-122.33207"
+    $nagios_ping_rate = '!250.0,20%!400.0,60%'
+    include smokeping::slave                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
+
+node 'softlayer06' inherits ringnode {
+    $owner = "softlayer"
+    $location = "1.35208,103.81984"
+    $nagios_ping_rate = '!250.0,20%!400.0,60%'
+    include smokeping::slave                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
+
 node 'imagine01' inherits ringnode {
     $owner = "imagine"
     $location = "53.334224,-6.365538"
@@ -1551,4 +1606,5 @@ node 'melbourne01' inherits ringnode {
     include set_local_settings                                                  
     include users
 }
+
 
