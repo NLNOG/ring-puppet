@@ -78,7 +78,7 @@ class bird {
         mode    => 0644,
         owner   => root,
         group   => root,
-        source  => "puppet:///files/etc/init/bird.conf",
+        source  => "puppet:///bird/upstart-bird.conf",
     }
 
     file { "/etc/init/bird6.conf":
@@ -86,7 +86,7 @@ class bird {
         mode    => 0644,
         owner   => root,
         group   => root,
-        source  => "puppet:///files/etc/init/bird6.conf",
+        source  => "puppet:///bird/upstart-bird6.conf",
     }
 
     service { "bird":
@@ -127,7 +127,7 @@ class bird {
         owner   => root,
         group   => root,
         mode    => 0755,
-        source  => "puppet:///files/usr/local/bin/birdshell",
+        source  => "puppet:///bird//birdshell",
         ensure  => file,
     }
 
