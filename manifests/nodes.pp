@@ -113,8 +113,8 @@ node 'container01' inherits basenode {
         container   => "${hostname}",
         ensure      => present,
     }
-    kvm::virtual_machine { 'public1':
-        fqdn        => 'public1.infra.ring.nlnog.net',
+    kvm::virtual_machine { 'public01':
+        fqdn        => 'public01.infra.ring.nlnog.net',
         ip          => '82.94.230.131', # ipv6 address is 2001:888:2001::131, have to configure manually
         netmask     => '255.255.255.240',
         dns         => '8.8.8.8',
@@ -144,7 +144,7 @@ node 'container01' inherits basenode {
 }
 
 # website, dns, mailing-list etc
-node 'public1.infra' inherits basenode {
+node 'public01.infra' inherits basenode {
     $owner = "job"
     include nagios::target::fqdn
     include nagios_services
