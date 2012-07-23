@@ -31,23 +31,24 @@ class powerdns {
         hasstatus  => "${powerdns::params::hasstatus}",
         pattern    => "${powerdns::params::processname}",
         require    => Package["powerdns"],
-        subscribe  => File["${powerdns::params::configfile}"],
+        subscribe  => File["powerdns.conf"],
     }
-	#file { "powerdns.conf":
-	#        mode => 644, 
-	#		owner => root, 
-	#		group => root,
-	#        require => Package['powerdns'],
-	#        ensure => present,
-	#        path => $operatingsystem ?{
-	#            default => "/etc/powerdns/pdns.conf",
-	#        },
-	#		source => [
-	#		            "puppet://$server/powerdns/pdns.conf.$hostname",
-	#		            "puppet://$server/powerdns/pdns.conf"
-	#		        ],
-	#		sourceselect => first
-	#}
+	file { "powerdns.conf":
+	        mode => 644, 
+			owner => root, 
+			group => root,
+	        require => Package['powerdns'],
+	        ensure => present,
+	        path => $operatingsystem ?{
+	            default => "/etc/powerdns/pdns.conf",
+	        },
+            content => template("powerdns/pdns.conf.erb")
+			#source => [
+			#            "puppet://$server/powerdns/pdns.conf.$hostname",
+			#            "puppet://$server/powerdns/pdns.conf"
+			#        ],
+			#sourceselect => first
+	}
 	
 
     # Include OS specific subclasses, if necessary
