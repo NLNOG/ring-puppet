@@ -16,8 +16,8 @@ define powerdns::conf ($value) {
         line      => "$name = $value",
         pattern   => "^$name ",
         engine    => "replaceline",
+        content   => template("powerdns/pdns.conf.erb"),
         notify    => Service["powerdns"],
-        require   => File["powerdns.conf"],
     }
 
 }
