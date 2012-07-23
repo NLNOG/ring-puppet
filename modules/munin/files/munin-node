@@ -70,3 +70,6 @@ user root
 
 [vlan*]
 user root
+
+[bird*]
+user root
