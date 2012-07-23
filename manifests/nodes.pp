@@ -174,6 +174,9 @@ node 'lg01' inherits basenode {
     include users
     include bird
     include bird-lg-proxy 
+    munin::plugin { ["bird", "bird6"]:
+    }
+
 }
 
 
