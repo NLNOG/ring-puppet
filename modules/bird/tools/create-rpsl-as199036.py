@@ -52,9 +52,11 @@ print """org: ORG-SNIJ1-RIPE
 admin-c: JWJS1-RIPE
 admin-c: PVD99-RIPE
 admin-c: MP9136-RIPE
+admin-c: EH4682
 tech-c: JWJS1-RIPE
 tech-c: PVD99-RIPE
 tech-c: MP9136-RIPE
+tech-c: EH4682
 mnt-by: RIPE-NCC-END-MNT
 mnt-by: SNIJDERS-MNT
 mnt-routes: SNIJDERS-MNT
