@@ -258,6 +258,22 @@ class local_binaries {
         source  => "puppet:///files/usr/local/bin/puppet_zombiecleanup",
         ensure => present,
     }
+    file { "/usr/sbin/purgekernels":
+        owner   => root,
+        group   => root,
+        mode    => 0755,
+        source  => "puppet:///files/usr/sbin/purgekernels",
+        ensure => present,
+    }
+    file { "/etc/apt/apt.conf.d/88pergekernels":
+        owner   => root,
+        group   => root,
+        mode    => 0755,
+        source  => "puppet:///files/etc/apt/apt.conf.d/88pergekernels",
+        ensure => present,
+    }
+
+
 
 }
 

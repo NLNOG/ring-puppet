@@ -1,0 +1,108 @@
+#!/usr/bin/perl -wT
+BEGIN { $ENV{PATH} = "/bin:/sbin:/usr/bin:/usr/sbin"; }
+use strict;
+use IPC::Open3;
+use Data::Dumper;
+sub isnewer ($$);   # prototype for sort{} usage
+#
+# $Id$
+#
+# Run as Post-Invoke:
+# $ cat /etc/apt/apt.conf.d/88local
+# DPkg::Post-Invoke { "/usr/local/sbin/purgekernels --debug"; };
+#
+# Or manual:
+# root@host:~# /usr/sbin/purgekernels --debug
+#
+my $debug = 0;
+$debug++ if grep(/--debug/, @ARGV);
+print "$0: cleaning up kernels ..\n";
+
+my $kernels = {};
+my $kernel_version = "";
+my $current_kernel_version = "";
+
+# Installed kernels
+my $dpkg = `dpkg -l linux-image-\*`;
+dprint("cmd out: '$dpkg'");
+while ($dpkg =~ m#^[ri][ci]\s+(linux\-image\-\d+\.\d+\.\d+\-\d+(?:\-\w+)+)\s#gm) {
+    my $package_name = $1;
+    $package_name =~ m#^linux\-image\-(\d+\.\d+\.\d+\-\d+)(?:\-\w+)+$#gm;
+    $kernel_version = $1;
+    $$kernels{$kernel_version} = $package_name;
+    dprint("found installed $kernel_version");
+}
+
+die "parsing failed? no kernels installed?\n" if not scalar(keys(%$kernels));
+
+# Current kernel
+my $uname = `uname -r`; chomp($uname);
+dprint("cmd out: '$uname'");
+($current_kernel_version) = $uname =~ m#(\d+\.\d+\.\d+\-\d+)\-#;
+dprint("currently running $current_kernel_version");
+
+# Rinse dem proper
+my @sorted_kernels = reverse sort { isnewer($a, $b) } keys %$kernels;
+
+dprint("---- \$kernels ----");
+dprint("".Dumper($kernels));
+dprint("---- \@sorted_kernels -----");
+dprint("".Dumper(@sorted_kernels));
+
+# Strip off the top three, keeping these installed.
+my $keep1 = shift @sorted_kernels; # at least one kernel should be installed
+my $keep2 = shift @sorted_kernels; $keep2 ||= "";
+my $keep3 = shift @sorted_kernels; $keep3 ||= "";
+dprint("keeping [$keep1]  [$keep2]  [$keep3]");
+print("reboot to activate newer kernel $keep1\n") if isnewer($keep1, $current_kernel_version);
+
+# Current kernel could be in the remainder of the list!
+foreach my $remove_kernel_version (@sorted_kernels) {
+    if ($remove_kernel_version eq $current_kernel_version) {
+        print "not removing current kernel.\n";
+        next;
+    }
+
+    print "\n\nremoving $remove_kernel_version\n";
+
+    my @cmd = ("/usr/bin/dpkg", "--purge", $$kernels{$remove_kernel_version});
+    system(@cmd) == 0 or warn "Forking dpkg failed: $!\n";
+    if ($? == -1) {
+        print "failed to execute: $!\n";
+    } elsif ($? & 127) {
+        printf "child died with signal %d, %s coredump\n", ($? & 127),  ($? & 128) ? 'with' : 'without';
+    } else {
+        printf "child exited with value %d\n", $? >> 8;
+    }
+
+    print "done.\n";
+}
+
+print "$0: done.\n";
+exit 0;
+
+##  ##
+# ## #
+#bwub#
+######
+
+sub dprint {
+    my ($msg, $level) = @_;
+    return if not $debug;
+    $level ||= 1;
+    $msg =~ s/\n+$//;
+    print $msg . "\n" if $level <= $debug;
+}
+
+sub isnewer ($$) {
+    my ($astr, $bstr) = @_;
+
+    $astr =~ s/-/./g; my ($aver, $amaj, $amin, $arev) = split /\./, $astr;
+    $bstr =~ s/-/./g; my ($bver, $bmaj, $bmin, $brev) = split /\./, $bstr;
+
+    return 1 if $aver > $bver; return -1 if $bver > $aver;
+    return 1 if $amaj > $bmaj; return -1 if $bmaj > $amaj;
+    return 1 if $amin > $bmin; return -1 if $bmin > $amin;
+    return 1 if $arev > $brev; return -1 if $brev > $arev;
+    return 0;
+}
