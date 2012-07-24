@@ -209,7 +209,9 @@ node 'worker02' inherits basenode {
         check_domain => "${name}"
     }
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
-    }
+ }
+# give Brendon access for AMP
+ User <| name == "brandon-wand" |>
 }
 
 # we don't want apache running on regular ringnodes. smokeping installs 
