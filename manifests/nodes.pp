@@ -158,7 +158,7 @@ node 'public01.infra' inherits basenode {
     nagios::service::http { $name:
         check_domain => "${name}"
     }
-
+    include powerdns
 
 }
 
