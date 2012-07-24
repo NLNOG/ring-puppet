@@ -101,7 +101,7 @@ node 'container01' inherits basenode {
     }
     
     kvm::virtual_machine { 'lg01':
-        fqdn        => 'lg01.ring.nlnog.net',
+        fqdn        => 'lg01.infra.ring.nlnog.net',
         ip          => '82.94.230.130', # ipv6 address is 2001:888:2001::130, have to configure manually
         netmask     => '255.255.255.240',
         dns         => '8.8.8.8',
