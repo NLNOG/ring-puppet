@@ -22,6 +22,9 @@ class nettools {
     package { "command-not-found":
         ensure => latest,
     }
+    package { "telnet":
+        ensure  => latest,
+    }
     package { "python-software-properties":
         ensure  => latest,
     }
