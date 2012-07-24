@@ -70,7 +70,7 @@ define kvm::virtual_machine ($fqdn, $ip, $netmask, $dns="8.8.8.8", $gateway, $me
                 command => "puppet node clean ${fqdn}",
                 tag     => "destroy_virtual_machines",
             }
-            file { "/etc/libvirt/qemu/autostart/${name}":
+            file { "/etc/libvirt/qemu/autostart/${fqdn}.xml":
                 ensure  => absent,
             }
         }
