@@ -265,13 +265,13 @@ class local_binaries {
         source  => "puppet:///files/usr/sbin/purgekernel",
         ensure => present,
     }
-#    file { "/etc/apt/apt.conf.d/88pergekernels":
-#        owner   => root,
-#        group   => root,
-#        mode    => 0755,
-#        source  => "puppet:///files/etc/apt/apt.conf.d/88purgekernels",
-#        ensure => present,
-#   }
+    file { "/etc/apt/apt.conf.d/88pergekernels":
+        owner   => root,
+        group   => root,
+        mode    => 0755,
+        source  => "puppet:///files/etc/apt/apt.conf.d/88purgekernels",
+        ensure => present,
+   }
 
 }
 
