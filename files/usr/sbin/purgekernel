@@ -5,7 +5,7 @@ use IPC::Open3;
 use Data::Dumper;
 sub isnewer ($$);   # prototype for sort{} usage
 #
-# $Id$
+# $Id: purgekernels 36 2012-07-24 08:05:38Z sanders $
 #
 # Run as Post-Invoke:
 # $ cat /etc/apt/apt.conf.d/88local
@@ -14,8 +14,11 @@ sub isnewer ($$);   # prototype for sort{} usage
 # Or manual:
 # root@host:~# /usr/sbin/purgekernels --debug
 #
+
 my $debug = 0;
 $debug++ if grep(/--debug/, @ARGV);
+$ENV{DEBCONF_FRONTEND} = 'noninteractive' if grep(/--non-interactive/, @ARGV);
+
 print "$0: cleaning up kernels ..\n";
 
 my $kernels = {};
