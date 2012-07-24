@@ -10,6 +10,11 @@ class kvm {
         mode    => 0755,
         source  => "puppet:///files/root/run-puppet-at-boot",
     }
+    
+    file { "/etc/libvirt/qemu/autostart":
+        ensure  => directory,
+    }
+
 }
 
 define kvm::virtual_machine ($fqdn, $ip, $netmask, $dns="8.8.8.8", $gateway, $memory, $rootsize, $disksize, $bridge, $ensure, $container) {
@@ -39,6 +44,10 @@ define kvm::virtual_machine ($fqdn, $ip, $netmask, $dns="8.8.8.8", $gateway, $me
                   && virsh start $fqdn; rm -rf  ubuntu-kvm ",
             unless => "/usr/bin/test -L /dev/mapper/${container}-$name",
             }
+            
+            file { "/etc/libvirt/qemu/autostart/${name}":
+                ensure  => "/etc/libvirt/qemu/${name}",
+            }
         }
         absent: {
             exec { "destroy_vm_${name}":
@@ -58,7 +67,9 @@ define kvm::virtual_machine ($fqdn, $ip, $netmask, $dns="8.8.8.8", $gateway, $me
                 command => "puppet node clean ${fqdn}",
                 tag     => "destroy_virtual_machines",
             }
-
+            file { "/etc/libvirt/qemu/autostart/${name}":
+                ensure  => absent,
+            }
         }
         default: {
             fail "Invalid 'ensure' value '$ensure' for kvm::virtual_machine"
