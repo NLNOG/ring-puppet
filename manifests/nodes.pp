@@ -1627,4 +1627,14 @@ node 'melbourne01' inherits ringnode {
     include users
 }
 
+node 'go6lab01' inherits ringnode {
+    $owner = "go6lab"
+    $location = "46.16554,14.30661"
+    include smokeping::slave                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
+
 

@@ -1974,5 +1974,19 @@ class users::virtual::ring_users {
 
 ##### END brendon-wand #####
 
+##### BEGIN go6lab #####
+
+    @add_user { 'go6lab':
+        email => 'jan@go6.si',
+        company => 'Go6 Institute',
+        uid => '5111',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'go6lab':
+        sshkeys => [
+            'ssh-dss AAAAB3NzaC1kc3MAAAEBALDqDpGvwPAeANWVbWhZb6qLqPTyBo7izGKzsmChdjJ7qm4DmprVVNipt+gbjo8AypyKQc+eyaDgdJIzR5ugK++MIZSGJsB3YzBYS+zjIZOLUTdIl42NN1lUarA6ciKIGxxyz7ApHp4x7W21GRhbHfMN9rOvFH2JXqvsx3tub6TogYW/PlcvPoH4qEGPj6tYvWy21W66X7tWiMaX0Lq68u58C5E2ODPsq59iigkYE5HMtLJrOxEmQ1H/z2HnxepQXU1nkS3qnWqGOskw5nbAEMAa1tMuzBq6jrwKjlyZDdWAQAvcIbhP3bGRQctDcaLyS4eQ8gUKE5s1rMnDD/TGDi8AAAAVANBsiJIbvZdzkogFQaPYlUA93D9tAAABAAoKPGQV7NPTJrtqOU2YAe1an4KfPEmJjoJmO50X6A8uUI5blrLeKqIGqAarfwqYp47Q+A/BnfMrLkKErN2pGEzIHabz1hAYKDNYaithjYmf6EsEYCu+HHxAZdjbihpGlzBJiysQdV5A7TXU4nT7ae1PszpzbcPSb7FVeV7ofzGxi9NTaY64Eu7GS6YxvpfrlQ6TGLVUoKlr1Vmv63vnaM3Wwd8yCigj6fJ7K26c5fJYBHOVErXV2tw20pSVb7fd+TH2p9ClFpS/Zx5fHArMfj69hT3h15+5lCdp92RPMLuSacAwBy12j2EmLH7gYYu3C72HZvp05Vop2VikdKxmNrYAAAEAGGKUMpAMxNneOxyUbhTa+echPex0iLcbbrtXqAzAyWfrIv/amKprJN3u4oebrrA1S2CK27tH8DqcG2Lm0V1zImjUpFjrbO9WhbGoQ6OOTOCuRoUYmRcylJ0skSw6KuNMMdBGh6SMIYLVEizKOFDLyd5OSnyGlOJCICLl8K53fIVpfwKJCwhbgzrNNkM7aVM2ezlOCZgD3DDP5F110blSVtnCzKp7AnjfDE9PZWfKkL+xvD1I3V 73pE/oS dNT+Lb8bbbicilEouLYgnDetpVicfD15bpjj3J10CpRaxohiW6JreyFMZqD0K/nnngn9HpTIMliUJNmwR4sODhktSFmxg== root@pfsense.local',
+        ],
+    }
+##### END go6lab #####
 
 }

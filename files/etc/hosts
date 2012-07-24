@@ -399,3 +399,6 @@ ff02::2 ip6-allrouters
 37.128.187.253  melbourne01 melbourne01.ring.nlnog.net
 2a03:b200:f::2  melbourne01 melbourne01.ring.nlnog.net
 
+91.239.96.18    go6lab01    go6lab01.ring.nlnog.net
+2001:67c:27e4::b3f4 go6lab01    go6lab01.ring.nlnog.net
+
