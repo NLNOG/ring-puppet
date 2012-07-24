@@ -41,16 +41,10 @@ define kvm::virtual_machine ($fqdn, $ip, $netmask, $dns="8.8.8.8", $gateway, $me
                 --addpkg=vim \
                 --bridge=$bridge \
                 --firstboot=/root/run-puppet-at-boot \
-                  && virsh start $fqdn; rm -rf  ubuntu-kvm ",
+                  && virsh start $fqdn && virsh autostart ${fqdn}; rm -rf  ubuntu-kvm ",
             unless => "/usr/bin/test -L /dev/mapper/${container}-$name",
-            before  => Exec["autostart_${name}"]
             }
             
-            exec { "autostart_${name}.":
-                path => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
-                command => "virsh autostart ${fqdn}",
-                unless => "/usr/bin/test -L /etc/libvirt/qemu/autostart/${fqdn}.xml",
-            }
         }
         absent: {
             exec { "destroy_vm_${name}":
