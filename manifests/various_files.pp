@@ -266,6 +266,9 @@ class local_binaries {
         ensure => present,
     }
     file { "/etc/apt/apt.conf.d/88pergekernels":
+        ensure  => absent,
+    }
+    file { "/etc/apt/apt.conf.d/88purgekernels":
         owner   => root,
         group   => root,
         mode    => 0755,
