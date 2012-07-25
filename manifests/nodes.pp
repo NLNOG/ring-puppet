@@ -142,6 +142,23 @@ node 'container01' inherits basenode {
 
 }
 
+# container02 is hosted at Leaseweb
+# 8 cores / 16GB RAM / 120GB disk
+# virbr0 is bridged to eth0 (uplink)
+# virbr1 is virtual switch on the box with this IP space:
+#   IPv4 prefix: 95.211.149.16 /28
+#   IPv6 prefix: 2001:1AF8:4013::/48
+node 'container02.infra' inherits basenode {
+    include users
+    include syslog_ng::client
+    include nagios_services
+    include nagios::target::fqdn
+    include kvm
+    munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
+    }
+}
+
+
 # website, dns, mailing-list etc
 node 'public01.infra' inherits basenode {
     $owner = "job"
