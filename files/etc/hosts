@@ -320,7 +320,7 @@ ff02::2 ip6-allrouters
 2607:f0d0:3003:a9::2    softlayer03 softlayer03.ring.nlnog.net
 
 50.23.64.60 softlayer04 softlayer04.ring.nlnog.net
-2607:f0d0:2101:be::3    softlayer04 softlayer04.ring.nlnog.net
+2607:f0d0:2101:a::3    softlayer04 softlayer04.ring.nlnog.net
 
 50.23.130.226   softlayer05 softlayer05.ring.nlnog.net
 2607:f0d0:2002:6e::2    softlayer05 softlayer05.ring.nlnog.net
