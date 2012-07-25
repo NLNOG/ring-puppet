@@ -12,8 +12,7 @@ class nagios_services {
     nagios::service::ssh { $name: } 
    
     # check if we can reach munin
-    nagios::service::tcp_munin { "${name}":
-        port    => "4949",
+    nagios::service::tcp_munin { $name:
     }
 
     # these virtual exported resources will create a dependeny between
