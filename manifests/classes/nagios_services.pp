@@ -12,7 +12,7 @@ class nagios_services {
     nagios::service::ssh { $name: } 
    
     # check if we can reach munin
-    nagios::service::tcp_munin { $name: }
+    include nagios::service::tcp_munin 
 
     # these virtual exported resources will create a dependeny between
     # the IPv4 ping check and the IPv4 SSH check
