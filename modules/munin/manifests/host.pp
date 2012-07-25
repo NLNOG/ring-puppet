@@ -8,8 +8,7 @@ class munin::host
 
 	module_dir { [ "munin/nodes" ]: }
 
-# not needed because every host gets nmap - job
-# package { [ "munin", "nmap"]: ensure => installed, }
+    package { [ "munin" ]: ensure => installed, }
 
 	File <<| tag == 'munin' |>>
 

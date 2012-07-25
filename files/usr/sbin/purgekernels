@@ -5,7 +5,7 @@ use IPC::Open3;
 use Data::Dumper;
 sub isnewer ($$);   # prototype for sort{} usage
 #
-# $Id: purgekernels 36 2012-07-24 08:05:38Z sanders $
+# $Id: purgekernels 144 2012-02-06 20:48:33Z sanders $
 #
 # Run as Post-Invoke:
 # $ cat /etc/apt/apt.conf.d/88local
@@ -15,11 +15,24 @@ sub isnewer ($$);   # prototype for sort{} usage
 # root@host:~# /usr/sbin/purgekernels --debug
 #
 
+die "Run this as root.\n" if ($< != 0);
+
 my $debug = 0;
 $debug++ if grep(/--debug/, @ARGV);
-$ENV{DEBCONF_FRONTEND} = 'noninteractive' if grep(/--non-interactive/, @ARGV);
-
 print "$0: cleaning up kernels ..\n";
+
+my $virt_what = "/usr/sbin/virt-what";
+if (-e $virt_what) {
+    my $virt = `$virt_what`; chomp($virt);
+    if ($virt eq "openvz") {
+        dprint("$0: not cleaning in openvz container.");
+        exit 0;
+    } else {
+        dprint("$0: virtualization status: '$virt'");
+    }
+} else {
+    dprint("$0: could not find 'virt-what' utility, can't check if openvz or not.");
+}
 
 my $kernels = {};
 my $kernel_version = "";
