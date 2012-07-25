@@ -10,6 +10,11 @@ class nagios_services {
     # towards the FQDN of the node that's including this class
     # names of the services: check_ssh4 and check_ssh6
     nagios::service::ssh { $name: } 
+   
+    # check if we can reach munin
+    nagios::service::tcp_munin { "${name}":
+        port    => "4949",
+    }
 
     # these virtual exported resources will create a dependeny between
     # the IPv4 ping check and the IPv4 SSH check
