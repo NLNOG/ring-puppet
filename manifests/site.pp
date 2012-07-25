@@ -1,5 +1,6 @@
 # site.pp
-$munin_cidr_allow = '212.19.220.59/32' 
+$munin_cidr_allow = '82.94.230.131/32'
+
 $logServerList = ['master01.ring.nlnog.net']
 
 import "modules.pp"
