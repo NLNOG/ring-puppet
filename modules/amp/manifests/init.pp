@@ -3,6 +3,16 @@ class amp_client {
     package { ["amp-client"]:
         ensure => latest,
     }
+ 
+    file { "/usr/lib/amp/ext-bin/scamper":
+        ensure  => "/usr/bin/scamper",
+    }
+
+    file { "/usr/bin/scamper":
+        mode    => 6755,
+        owner   => "root",
+        group   => "root",
+    }
     
     file { "/etc/amp/collectors":
         ensure  => file,
