@@ -157,6 +157,20 @@ node 'container02.infra' inherits basenode {
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
 
+    kvm::virtual_machine { 'lg02':
+        fqdn        => 'lg02.infra.ring.nlnog.net',
+        ip          => '95.211.149.19', # ipv6 address is 2001:1AF8:4013::19
+        netmask     => '255.255.255.240',
+        dns         => '8.8.8.8',
+        gateway     => '95.211.149.17',
+        memory      => '2048',
+        disksize    => '20',
+        rootsize    => '19968',
+        bridge      => 'virbr1',
+        container   => "${hostname}",
+        ensure      => present,
+    }
+
     kvm::virtual_machine { 'public02':
         fqdn        => 'public02.infra.ring.nlnog.net',
         ip          => '95.211.149.18', # ipv6 address is 2001:1AF8:4013::18 
@@ -213,7 +227,7 @@ node 'public02.infra' inherits basenode {
 
 
 # looking glass 1
-node 'lg01' inherits basenode {
+node 'lg01.infra' inherits basenode {
     $owner = "job"
     include nagios::target::fqdn
     include nagios_services
@@ -228,6 +242,23 @@ node 'lg01' inherits basenode {
     }
 
 }
+
+node 'lg02.infra' inherits basenode {
+    $owner = "job"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users::virtual::ring_users
+    include syslog_ng::client
+    include nodesonlycron
+    include users
+    include bird
+    include bird-lg-proxy 
+    munin::plugin { ["bird", "bird6"]:
+    }
+
+}
+
 
 
 node 'worker01' inherits basenode {
