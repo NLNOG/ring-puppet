@@ -203,7 +203,6 @@ node 'public02.infra' inherits basenode {
     include nodesonlycron
     include users
     include apache2
-    include munin::host
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
     nagios::service::http { $name:
