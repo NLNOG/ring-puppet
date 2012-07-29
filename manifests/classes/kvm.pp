@@ -14,6 +14,14 @@ class kvm {
     file { "/etc/libvirt/qemu/autostart":
         ensure  => directory,
     }
+    
+    sysctl::value { "net.ipv4.ip_forward":
+        value   => "1",
+    }
+    
+    sysctl::value { "net.ipv6.conf.all.forwarding":
+        value   => "1",
+    }
 
 }
 
