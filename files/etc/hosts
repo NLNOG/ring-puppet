@@ -28,6 +28,9 @@ ff02::2 ip6-allrouters
 82.94.230.131   public01.infra public01.infra.ring.nlnog.net
 2001:888:2001::131  public01.infra public01.infra.ring.nlnog.net
 
+95.211.149.18   public02.infra public02.infra.ring.nlnog.net
+2001:1AF8:4013::18  public02.infra public02.infra.ring.nlnog.net
+
 213.154.236.191 staging01   staging01.ring.nlnog.net
 2001:7b8:625:0:213:154:236:191  staging01 staging01.ring.nlnog.net
 
