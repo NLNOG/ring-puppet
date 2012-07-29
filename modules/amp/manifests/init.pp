@@ -1,6 +1,6 @@
 class amp_client {
 
-    package { ["amp-client"]:
+    package { ["amplet-client"]:
         ensure => latest,
     }
  
@@ -71,7 +71,7 @@ class amp_client {
     service { "amp":
         ensure      => running,
         subscribe   => File["/etc/amp/collectors", "/etc/amp/nametable", "/etc/amp/schedule", "/etc/amp/ampnameprefix"],
-        require     => Package["amp-client"],
+        require     => Package["amplet-client"],
         hasstatus   => false,
         hasrestart  => true,
         enable      => true,
