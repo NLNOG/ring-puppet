@@ -1,0 +1,36 @@
+amp-staging02,icmp,D,0,86400000,60000
+amp-worker02,icmp,D,0,86400000,60000
+amp-tdc01,icmp,D,0,86400000,60000
+amp-bit01,icmp,D,0,86400000,60000
+amp-xs4all01,icmp,D,0,86400000,60000
+
+amp-staging02,path,D,0,86400000,60000
+amp-worker02,path,D,0,86400000,60000
+amp-tdc01,path,D,0,86400000,60000
+amp-bit01,path,D,0,86400000,60000
+amp-xs4all01,path,D,0,86400000,60000
+
+amp-staging02,scamper,D,0,86400000,60000, -P udp-paris -M
+amp-worker02,scamper,D,0,86400000,60000, -P udp-paris -M
+amp-tdc01,scamper,D,0,86400000,60000, -P udp-paris -M
+amp-bit01,scamper,D,0,86400000,60000, -P udp-paris -M
+amp-xs4all01,scamper,D,0,86400000,60000, -P udp-paris -M
+
+
+amp-staging02:v6,icmp,D,0,86400000,60000
+amp-worker02:v6,icmp,D,0,86400000,60000
+amp-tdc01:v6,icmp,D,0,86400000,60000
+amp-bit01:v6,icmp,D,0,86400000,60000
+amp-xs4all01:v6,icmp,D,0,86400000,60000
+
+amp-staging02:v6,path,D,0,86400000,60000
+amp-worker02:v6,path,D,0,86400000,60000
+amp-tdc01:v6,path,D,0,86400000,60000
+amp-bit01:v6,path,D,0,86400000,60000
+amp-xs4all01:v6,path,D,0,86400000,60000
+
+amp-staging02:v6,scamper,D,0,86400000,60000, -P udp-paris -M
+amp-worker02:v6,scamper,D,0,86400000,60000, -P udp-paris -M
+amp-tdc01:v6,scamper,D,0,86400000,60000, -P udp-paris -M
+amp-bit01:v6,scamper,D,0,86400000,60000, -P udp-paris -M
+amp-xs4all01:v6,scamper,D,0,86400000,60000, -P udp-paris -M

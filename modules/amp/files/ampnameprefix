@@ -1,0 +1,6 @@
+# Put the prefix that should be used to construct the names of amp monitors
+# in this file.  This sets the value used for AMP_NAME_PREFIX.
+
+#Note: If you change this value, amp must be restarted.
+
+ring-
