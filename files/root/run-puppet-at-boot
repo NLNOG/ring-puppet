@@ -13,6 +13,14 @@ EOF
 
 chmod 0600 /root/.ssh/authorized_keys
 
+# configure IPv6 based on the DNS shizzle
+ipv6address=$(dig +short aaaa public02.infra.ring.nlnog.net)
+ipv6gateway=$(dig +short aaaa public02.infra.ring.nlnog.net | sed 's/::.*/::1/')
+
+echo -e "iface eth0 inet6 static\n\taddress ${ipv6address}\n\tnetmask 64\n\tgateway ${ipv6gateway}" >> /etc/network/interfaces
+
+/etc/init.d/networking restart
+
 # then run puppet a bit 
 # install a crontab so puppet keeps trying
 /usr/sbin/puppetd --test --debug

@@ -101,7 +101,7 @@ node 'container01' inherits basenode {
     
     kvm::virtual_machine { 'lg01':
         fqdn        => 'lg01.infra.ring.nlnog.net',
-        ip          => '82.94.230.130', # ipv6 address is 2001:888:2001::130, have to configure manually
+        ip          => '82.94.230.130', # ipv6 address is 2001:888:2001::130 
         netmask     => '255.255.255.240',
         dns         => '8.8.8.8',
         gateway     => '82.94.230.129',
@@ -114,7 +114,7 @@ node 'container01' inherits basenode {
     }
     kvm::virtual_machine { 'public01':
         fqdn        => 'public01.infra.ring.nlnog.net',
-        ip          => '82.94.230.131', # ipv6 address is 2001:888:2001::131, have to configure manually
+        ip          => '82.94.230.131', # ipv6 address is 2001:888:2001::131
         netmask     => '255.255.255.240',
         dns         => '8.8.8.8',
         gateway     => '82.94.230.129',
@@ -128,7 +128,7 @@ node 'container01' inherits basenode {
 
     kvm::virtual_machine { 'xs4all01':
         fqdn        => 'xs4all01.ring.nlnog.net',
-        ip          => '82.94.249.162', # ipv6 address is 2001:888:2000:3e::1337, have to configure manually
+        ip          => '82.94.249.162', # ipv6 address is 2001:888:2000:3e::1337
         netmask     => '255.255.255.248',
         dns         => '8.8.8.8',
         gateway     => '82.94.249.161',
@@ -156,6 +156,22 @@ node 'container02.infra' inherits basenode {
     include kvm
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
+
+    kvm::virtual_machine { 'public02':
+        fqdn        => 'public02.infra.ring.nlnog.net',
+        ip          => '95.211.149.18', # ipv6 address is 2001:1AF8:4013::18 
+        netmask     => '255.255.255.240',
+        dns         => '8.8.8.8',
+        gateway     => '95.211.149.17',
+        memory      => '1024',
+        disksize    => '20',
+        rootsize    => '19968',
+        bridge      => 'virbr1',
+        container   => "${hostname}",
+        ensure      => present,
+    }
+
+
 }
 
 
@@ -176,8 +192,26 @@ node 'public01.infra' inherits basenode {
         check_domain => "${name}"
     }
     include powerdns
-
 }
+
+node 'public02.infra' inherits basenode {
+    $owner = "job"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include syslog_ng::client
+    include nodesonlycron
+    include users
+    include apache2
+    include munin::host
+    munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
+    }
+    nagios::service::http { $name:
+        check_domain => "${name}"
+    }
+    include powerdns
+}
+
 
 # looking glass 1
 node 'lg01' inherits basenode {
