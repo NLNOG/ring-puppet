@@ -7,6 +7,11 @@ class amp_client {
     file { "/usr/lib/amp/ext-bin/scamper":
         ensure  => "/usr/bin/scamper",
     }
+    
+    file { "/etc/amp/datahome":
+        content => "/home/measure/amp-data"
+        require => Package["amplet-client"],
+    }
 
     file { "/usr/bin/scamper":
         mode    => 6755,
