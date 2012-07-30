@@ -20,9 +20,10 @@ class nodesonlycron {
 
     cron { "restartsmokeping":
         command => "/etc/init.d/smokeping restart > /dev/null 2>&1",
-        minute => fqdn_rand(60),
-        hour => fqdn_rand(23),
-        user => "root",
+        minute  => fqdn_rand(60),
+        hour    => fqdn_rand(23),
+        user    => "root",
+        ensure  => absent,
     }
 
 }
