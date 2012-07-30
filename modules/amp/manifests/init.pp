@@ -6,6 +6,7 @@ class amp_client {
  
     file { "/usr/lib/amp/ext-bin/scamper":
         ensure  => "/usr/bin/scamper",
+        require => Package["amplet-client"],
     }
     
     file { "/etc/amp/datahome":
