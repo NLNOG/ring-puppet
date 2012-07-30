@@ -9,7 +9,7 @@ class amp_client {
     }
     
     file { "/etc/amp/datahome":
-        content => "/home/measure/amp-data"
+        content => "/home/measure/amp-data",
         require => Package["amplet-client"],
     }
 
