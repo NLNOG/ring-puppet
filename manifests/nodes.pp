@@ -36,6 +36,10 @@ node ringnode inherits basenode {
     include syslog_ng::client
     include nodesonlycron
     package{ "munin": ensure => purged, }
+    service { "smokeping":
+        ensure  => "stopped",
+        enable  => false,
+    }
 }
 
 node 'master01' inherits basenode {

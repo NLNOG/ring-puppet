@@ -1,7 +1,6 @@
 import "common"
 import "munin"
 import "syslog_ng"
-import "smokeping"
 import "nagios"
 import "postfix"
 import "bird-lg"
