@@ -12,6 +12,7 @@ class amp_client {
         mode    => 6755,
         owner   => "root",
         group   => "root",
+        require => Package["scamper"],
     }
     
     file { "/etc/amp/collectors":
@@ -20,6 +21,7 @@ class amp_client {
         owner   => root,
         group   => root,
         source  => "puppet:///amp/collectors",
+        require => Package["amplet-client"],
     }
 
     file { "/etc/amp/ampnameprefix":
@@ -28,6 +30,7 @@ class amp_client {
         owner   => root,
         group   => root,
         source  => "puppet:///amp/ampnameprefix",
+        require => Package["amplet-client"],
     }
 
     file { "/etc/amp/nametable":
@@ -36,6 +39,7 @@ class amp_client {
         owner   => root,
         group   => root,
         source  => "puppet:///amp/nametable",
+        require => Package["amplet-client"],
     }
 
     file { "/etc/amp/schedule":
@@ -44,6 +48,7 @@ class amp_client {
         owner   => root,
         group   => root,
         source  => "puppet:///amp/schedule",
+        require => Package["amplet-client"],
     }
 
     file { "/etc/amp/cacert.pem":
@@ -52,6 +57,7 @@ class amp_client {
         owner   => root,
         group   => root,
         source  => "puppet:///amp/cacert.pem",
+        require => Package["amplet-client"],
     }
     file { "/etc/amp/client-cert.pem":
         ensure  => file,
@@ -59,6 +65,7 @@ class amp_client {
         owner   => root,
         group   => root,
         source  => "puppet:///amp/client-cert.pem",
+        require => Package["amplet-client"],
     }
     file { "/etc/amp/client-privkey.pem":
         ensure  => file,
@@ -66,6 +73,7 @@ class amp_client {
         owner   => root,
         group   => root,
         source  => "puppet:///amp/client-privkey.pem",
+        require => Package["amplet-client"],
     }
 
     service { "amp":
