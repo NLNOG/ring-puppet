@@ -414,4 +414,6 @@ ff02::2 ip6-allrouters
 178.249.153.39  a2binternet01   a2binternet01.ring.nlnog.net
 2a02:1668:a2b:1011::39  a2binternet01   a2binternet01.ring.nlnog.net
 
+31.204.129.45   i3d01   i3d01.ring.nlnog.net
+2a00:1630:2:a01::1  i3d01   i3d01.ring.nlnog.net
 
