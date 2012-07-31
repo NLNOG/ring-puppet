@@ -1,747 +1,1012 @@
 ring-staging01:v6,icmp,D,0,86400000,60000
-ring-staging01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-staging01:v6,icmp,D,0,86400000,60000, -s 576
+ring-staging01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-staging02:v6,icmp,D,0,86400000,60000
-ring-staging02:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-staging02:v6,icmp,D,0,86400000,60000, -s 576
+ring-staging02:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-in2ip01:v6,icmp,D,0,86400000,60000
-ring-in2ip01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-in2ip01:v6,icmp,D,0,86400000,60000, -s 576
+ring-in2ip01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-netground01:v6,icmp,D,0,86400000,60000
-ring-netground01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-netground01:v6,icmp,D,0,86400000,60000, -s 576
+ring-netground01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-totaalnet01:v6,icmp,D,0,86400000,60000
-ring-totaalnet01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-totaalnet01:v6,icmp,D,0,86400000,60000, -s 576
+ring-totaalnet01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-signet01:v6,icmp,D,0,86400000,60000
-ring-signet01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-signet01:v6,icmp,D,0,86400000,60000, -s 576
+ring-signet01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-tripleit01:v6,icmp,D,0,86400000,60000
-ring-tripleit01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-tripleit01:v6,icmp,D,0,86400000,60000, -s 576
+ring-tripleit01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-jaguarnetwork01:v6,icmp,D,0,86400000,60000
-ring-jaguarnetwork01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-jaguarnetwork01:v6,icmp,D,0,86400000,60000, -s 576
+ring-jaguarnetwork01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-tuxis01:v6,icmp,D,0,86400000,60000
-ring-tuxis01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-tuxis01:v6,icmp,D,0,86400000,60000, -s 576
+ring-tuxis01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-tenet01:v6,icmp,D,0,86400000,60000
-ring-tenet01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-tenet01:v6,icmp,D,0,86400000,60000, -s 576
+ring-tenet01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-bigwells01:v6,icmp,D,0,86400000,60000
-ring-bigwells01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-bigwells01:v6,icmp,D,0,86400000,60000, -s 576
+ring-bigwells01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-cyso01:v6,icmp,D,0,86400000,60000
-ring-cyso01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-cyso01:v6,icmp,D,0,86400000,60000, -s 576
+ring-cyso01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-atrato01:v6,icmp,D,0,86400000,60000
-ring-atrato01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-atrato01:v6,icmp,D,0,86400000,60000, -s 576
+ring-atrato01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-tdc01:v6,icmp,D,0,86400000,60000
-ring-tdc01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-tdc01:v6,icmp,D,0,86400000,60000, -s 576
+ring-tdc01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-intouch01:v6,icmp,D,0,86400000,60000
-ring-intouch01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-intouch01:v6,icmp,D,0,86400000,60000, -s 576
+ring-intouch01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-zylon01:v6,icmp,D,0,86400000,60000
-ring-zylon01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-zylon01:v6,icmp,D,0,86400000,60000, -s 576
+ring-zylon01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-xlshosting01:v6,icmp,D,0,86400000,60000
-ring-xlshosting01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-xlshosting01:v6,icmp,D,0,86400000,60000, -s 576
+ring-xlshosting01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-coloclue01:v6,icmp,D,0,86400000,60000
-ring-coloclue01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-coloclue01:v6,icmp,D,0,86400000,60000, -s 576
+ring-coloclue01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-widexs01:v6,icmp,D,0,86400000,60000
-ring-widexs01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-widexs01:v6,icmp,D,0,86400000,60000, -s 576
+ring-widexs01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-xs4all01:v6,icmp,D,0,86400000,60000
-ring-xs4all01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-xs4all01:v6,icmp,D,0,86400000,60000, -s 576
+ring-xs4all01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-bit01:v6,icmp,D,0,86400000,60000
-ring-bit01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-bit01:v6,icmp,D,0,86400000,60000, -s 576
+ring-bit01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-cambrium01:v6,icmp,D,0,86400000,60000
-ring-cambrium01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-cambrium01:v6,icmp,D,0,86400000,60000, -s 576
+ring-cambrium01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-interconnect01:v6,icmp,D,0,86400000,60000
-ring-interconnect01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-interconnect01:v6,icmp,D,0,86400000,60000, -s 576
+ring-interconnect01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-duocast01:v6,icmp,D,0,86400000,60000
-ring-duocast01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-duocast01:v6,icmp,D,0,86400000,60000, -s 576
+ring-duocast01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-easyhosting01:v6,icmp,D,0,86400000,60000
-ring-easyhosting01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-easyhosting01:v6,icmp,D,0,86400000,60000, -s 576
+ring-easyhosting01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-previder01:v6,icmp,D,0,86400000,60000
-ring-previder01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-previder01:v6,icmp,D,0,86400000,60000, -s 576
+ring-previder01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-nxs01:v6,icmp,D,0,86400000,60000
-ring-nxs01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-nxs01:v6,icmp,D,0,86400000,60000, -s 576
+ring-nxs01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-ic-hosting01:v6,icmp,D,0,86400000,60000
-ring-ic-hosting01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-ic-hosting01:v6,icmp,D,0,86400000,60000, -s 576
+ring-ic-hosting01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-nedzone01:v6,icmp,D,0,86400000,60000
-ring-nedzone01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-nedzone01:v6,icmp,D,0,86400000,60000, -s 576
+ring-nedzone01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-oxilion01:v6,icmp,D,0,86400000,60000
-ring-oxilion01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-oxilion01:v6,icmp,D,0,86400000,60000, -s 576
+ring-oxilion01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-ebayclassifiedsgroup01:v6,icmp,D,0,86400000,60000
-ring-ebayclassifiedsgroup01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-ebayclassifiedsgroup01:v6,icmp,D,0,86400000,60000, -s 576
+ring-ebayclassifiedsgroup01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-is01:v6,icmp,D,0,86400000,60000
-ring-is01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-is01:v6,icmp,D,0,86400000,60000, -s 576
+ring-is01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-surfnet01:v6,icmp,D,0,86400000,60000
-ring-surfnet01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-surfnet01:v6,icmp,D,0,86400000,60000, -s 576
+ring-surfnet01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-leaseweb01:v6,icmp,D,0,86400000,60000
-ring-leaseweb01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-leaseweb01:v6,icmp,D,0,86400000,60000, -s 576
+ring-leaseweb01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-prolocation01:v6,icmp,D,0,86400000,60000
-ring-prolocation01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-prolocation01:v6,icmp,D,0,86400000,60000, -s 576
+ring-prolocation01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-unilogicnetworks01:v6,icmp,D,0,86400000,60000
-ring-unilogicnetworks01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-unilogicnetworks01:v6,icmp,D,0,86400000,60000, -s 576
+ring-unilogicnetworks01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-maverick01:v6,icmp,D,0,86400000,60000
-ring-maverick01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-maverick01:v6,icmp,D,0,86400000,60000, -s 576
+ring-maverick01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-acsystemy01:v6,icmp,D,0,86400000,60000
-ring-acsystemy01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-acsystemy01:v6,icmp,D,0,86400000,60000, -s 576
+ring-acsystemy01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-netsign01:v6,icmp,D,0,86400000,60000
-ring-netsign01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-netsign01:v6,icmp,D,0,86400000,60000, -s 576
+ring-netsign01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-rrbone01:v6,icmp,D,0,86400000,60000
-ring-rrbone01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-rrbone01:v6,icmp,D,0,86400000,60000, -s 576
+ring-rrbone01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-hosteam01:v6,icmp,D,0,86400000,60000
-ring-hosteam01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-hosteam01:v6,icmp,D,0,86400000,60000, -s 576
+ring-hosteam01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-msp01:v6,icmp,D,0,86400000,60000
-ring-msp01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-msp01:v6,icmp,D,0,86400000,60000, -s 576
+ring-msp01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-inotel01:v6,icmp,D,0,86400000,60000
-ring-inotel01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-inotel01:v6,icmp,D,0,86400000,60000, -s 576
+ring-inotel01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-fremaks01:v6,icmp,D,0,86400000,60000
-ring-fremaks01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-fremaks01:v6,icmp,D,0,86400000,60000, -s 576
+ring-fremaks01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-netability01:v6,icmp,D,0,86400000,60000
-ring-netability01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-netability01:v6,icmp,D,0,86400000,60000, -s 576
+ring-netability01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-blix01:v6,icmp,D,0,86400000,60000
-ring-blix01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-blix01:v6,icmp,D,0,86400000,60000, -s 576
+ring-blix01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-solido01:v6,icmp,D,0,86400000,60000
-ring-solido01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-solido01:v6,icmp,D,0,86400000,60000, -s 576
+ring-solido01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-portlane01:v6,icmp,D,0,86400000,60000
-ring-portlane01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-portlane01:v6,icmp,D,0,86400000,60000, -s 576
+ring-portlane01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-digmia01:v6,icmp,D,0,86400000,60000
-ring-digmia01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-digmia01:v6,icmp,D,0,86400000,60000, -s 576
+ring-digmia01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-rootlu01:v6,icmp,D,0,86400000,60000
-ring-rootlu01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-rootlu01:v6,icmp,D,0,86400000,60000, -s 576
+ring-rootlu01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-globalaxs01:v6,icmp,D,0,86400000,60000
-ring-globalaxs01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-globalaxs01:v6,icmp,D,0,86400000,60000, -s 576
+ring-globalaxs01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-nebula01:v6,icmp,D,0,86400000,60000
-ring-nebula01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-nebula01:v6,icmp,D,0,86400000,60000, -s 576
+ring-nebula01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-tilaa01:v6,icmp,D,0,86400000,60000
-ring-tilaa01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-tilaa01:v6,icmp,D,0,86400000,60000, -s 576
+ring-tilaa01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-nautile01:v6,icmp,D,0,86400000,60000
-ring-nautile01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-nautile01:v6,icmp,D,0,86400000,60000, -s 576
+ring-nautile01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-voxel01:v6,icmp,D,0,86400000,60000
-ring-voxel01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-voxel01:v6,icmp,D,0,86400000,60000, -s 576
+ring-voxel01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-voxel02:v6,icmp,D,0,86400000,60000
-ring-voxel02:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-voxel02:v6,icmp,D,0,86400000,60000, -s 576
+ring-voxel02:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-neotelecoms01:v6,icmp,D,0,86400000,60000
-ring-neotelecoms01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-neotelecoms01:v6,icmp,D,0,86400000,60000, -s 576
+ring-neotelecoms01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-apnic01:v6,icmp,D,0,86400000,60000
-ring-apnic01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-apnic01:v6,icmp,D,0,86400000,60000, -s 576
+ring-apnic01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-atrato02:v6,icmp,D,0,86400000,60000
-ring-atrato02:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-atrato02:v6,icmp,D,0,86400000,60000, -s 576
+ring-atrato02:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-man-da01:v6,icmp,D,0,86400000,60000
-ring-man-da01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-man-da01:v6,icmp,D,0,86400000,60000, -s 576
+ring-man-da01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-webair01:v6,icmp,D,0,86400000,60000
-ring-webair01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-webair01:v6,icmp,D,0,86400000,60000, -s 576
+ring-webair01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-concepts-ict01:v6,icmp,D,0,86400000,60000
-ring-concepts-ict01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-concepts-ict01:v6,icmp,D,0,86400000,60000, -s 576
+ring-concepts-ict01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-dataoppdrag01:v6,icmp,D,0,86400000,60000
-ring-dataoppdrag01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-dataoppdrag01:v6,icmp,D,0,86400000,60000, -s 576
+ring-dataoppdrag01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-tetaneutral01:v6,icmp,D,0,86400000,60000
-ring-tetaneutral01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-tetaneutral01:v6,icmp,D,0,86400000,60000, -s 576
+ring-tetaneutral01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-jump01:v6,icmp,D,0,86400000,60000
-ring-jump01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-jump01:v6,icmp,D,0,86400000,60000, -s 576
+ring-jump01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-iway01:v6,icmp,D,0,86400000,60000
-ring-iway01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-iway01:v6,icmp,D,0,86400000,60000, -s 576
+ring-iway01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-timico01:v6,icmp,D,0,86400000,60000
-ring-timico01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-timico01:v6,icmp,D,0,86400000,60000, -s 576
+ring-timico01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-yacast01:v6,icmp,D,0,86400000,60000
-ring-yacast01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-yacast01:v6,icmp,D,0,86400000,60000, -s 576
+ring-yacast01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-rezopole01:v6,icmp,D,0,86400000,60000
-ring-rezopole01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-rezopole01:v6,icmp,D,0,86400000,60000, -s 576
+ring-rezopole01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-globalaxs02:v6,icmp,D,0,86400000,60000
-ring-globalaxs02:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-globalaxs02:v6,icmp,D,0,86400000,60000, -s 576
+ring-globalaxs02:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-solnet01:v6,icmp,D,0,86400000,60000
-ring-solnet01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-solnet01:v6,icmp,D,0,86400000,60000, -s 576
+ring-solnet01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-boxed-it01:v6,icmp,D,0,86400000,60000
-ring-boxed-it01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-boxed-it01:v6,icmp,D,0,86400000,60000, -s 576
+ring-boxed-it01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-spacenet01:v6,icmp,D,0,86400000,60000
-ring-spacenet01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-spacenet01:v6,icmp,D,0,86400000,60000, -s 576
+ring-spacenet01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-mironet01:v6,icmp,D,0,86400000,60000
-ring-mironet01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-mironet01:v6,icmp,D,0,86400000,60000, -s 576
+ring-mironet01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-seeweb01:v6,icmp,D,0,86400000,60000
-ring-seeweb01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-seeweb01:v6,icmp,D,0,86400000,60000, -s 576
+ring-seeweb01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-networkdesign01:v6,icmp,D,0,86400000,60000
-ring-networkdesign01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-networkdesign01:v6,icmp,D,0,86400000,60000, -s 576
+ring-networkdesign01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-zensystems01:v6,icmp,D,0,86400000,60000
-ring-zensystems01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-zensystems01:v6,icmp,D,0,86400000,60000, -s 576
+ring-zensystems01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-westnet01:v6,icmp,D,0,86400000,60000
-ring-westnet01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-westnet01:v6,icmp,D,0,86400000,60000, -s 576
+ring-westnet01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-kantonsschulezug01:v6,icmp,D,0,86400000,60000
-ring-kantonsschulezug01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-kantonsschulezug01:v6,icmp,D,0,86400000,60000, -s 576
+ring-kantonsschulezug01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-filoo01:v6,icmp,D,0,86400000,60000
-ring-filoo01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-filoo01:v6,icmp,D,0,86400000,60000, -s 576
+ring-filoo01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-nessus01:v6,icmp,D,0,86400000,60000
-ring-nessus01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-nessus01:v6,icmp,D,0,86400000,60000, -s 576
+ring-nessus01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-amazon01:v6,icmp,D,0,86400000,60000
-ring-amazon01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-amazon01:v6,icmp,D,0,86400000,60000, -s 576
+ring-amazon01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-amazon02:v6,icmp,D,0,86400000,60000
-ring-amazon02:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-amazon02:v6,icmp,D,0,86400000,60000, -s 576
+ring-amazon02:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-amazon03:v6,icmp,D,0,86400000,60000
-ring-amazon03:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-amazon03:v6,icmp,D,0,86400000,60000, -s 576
+ring-amazon03:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-amazon04:v6,icmp,D,0,86400000,60000
-ring-amazon04:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-amazon04:v6,icmp,D,0,86400000,60000, -s 576
+ring-amazon04:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-amazon05:v6,icmp,D,0,86400000,60000
-ring-amazon05:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-amazon05:v6,icmp,D,0,86400000,60000, -s 576
+ring-amazon05:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-amazon06:v6,icmp,D,0,86400000,60000
-ring-amazon06:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-amazon06:v6,icmp,D,0,86400000,60000, -s 576
+ring-amazon06:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-equinixnl01:v6,icmp,D,0,86400000,60000
-ring-equinixnl01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-equinixnl01:v6,icmp,D,0,86400000,60000, -s 576
+ring-equinixnl01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-lchost01:v6,icmp,D,0,86400000,60000
-ring-lchost01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-lchost01:v6,icmp,D,0,86400000,60000, -s 576
+ring-lchost01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-hostway01:v6,icmp,D,0,86400000,60000
-ring-hostway01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-hostway01:v6,icmp,D,0,86400000,60000, -s 576
+ring-hostway01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-pcextreme01:v6,icmp,D,0,86400000,60000
-ring-pcextreme01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-pcextreme01:v6,icmp,D,0,86400000,60000, -s 576
+ring-pcextreme01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-antagonist01:v6,icmp,D,0,86400000,60000
-ring-antagonist01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-antagonist01:v6,icmp,D,0,86400000,60000, -s 576
+ring-antagonist01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-nts01:v6,icmp,D,0,86400000,60000
-ring-nts01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-nts01:v6,icmp,D,0,86400000,60000, -s 576
+ring-nts01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-multiplay01:v6,icmp,D,0,86400000,60000
-ring-multiplay01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-multiplay01:v6,icmp,D,0,86400000,60000, -s 576
+ring-multiplay01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-softlayer01:v6,icmp,D,0,86400000,60000
-ring-softlayer01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-softlayer01:v6,icmp,D,0,86400000,60000, -s 576
+ring-softlayer01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-softlayer02:v6,icmp,D,0,86400000,60000
-ring-softlayer02:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-softlayer02:v6,icmp,D,0,86400000,60000, -s 576
+ring-softlayer02:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-softlayer03:v6,icmp,D,0,86400000,60000
-ring-softlayer03:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-softlayer03:v6,icmp,D,0,86400000,60000, -s 576
+ring-softlayer03:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-softlayer04:v6,icmp,D,0,86400000,60000
-ring-softlayer04:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-softlayer04:v6,icmp,D,0,86400000,60000, -s 576
+ring-softlayer04:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-softlayer05:v6,icmp,D,0,86400000,60000
-ring-softlayer05:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-softlayer05:v6,icmp,D,0,86400000,60000, -s 576
+ring-softlayer05:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-softlayer06:v6,icmp,D,0,86400000,60000
-ring-softlayer06:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-softlayer06:v6,icmp,D,0,86400000,60000, -s 576
+ring-softlayer06:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-imagine01:v6,icmp,D,0,86400000,60000
-ring-imagine01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-imagine01:v6,icmp,D,0,86400000,60000, -s 576
+ring-imagine01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-speedpartner01:v6,icmp,D,0,86400000,60000
-ring-speedpartner01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-speedpartner01:v6,icmp,D,0,86400000,60000, -s 576
+ring-speedpartner01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-gossamerthreads01:v6,icmp,D,0,86400000,60000
-ring-gossamerthreads01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-gossamerthreads01:v6,icmp,D,0,86400000,60000, -s 576
+ring-gossamerthreads01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-towardex01:v6,icmp,D,0,86400000,60000
-ring-towardex01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-towardex01:v6,icmp,D,0,86400000,60000, -s 576
+ring-towardex01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-simplytransit01:v6,icmp,D,0,86400000,60000
-ring-simplytransit01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-simplytransit01:v6,icmp,D,0,86400000,60000, -s 576
+ring-simplytransit01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-isarnet01:v6,icmp,D,0,86400000,60000
-ring-isarnet01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-isarnet01:v6,icmp,D,0,86400000,60000, -s 576
+ring-isarnet01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-strato01:v6,icmp,D,0,86400000,60000
-ring-strato01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-strato01:v6,icmp,D,0,86400000,60000, -s 576
+ring-strato01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-edutel01:v6,icmp,D,0,86400000,60000
-ring-edutel01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-edutel01:v6,icmp,D,0,86400000,60000, -s 576
+ring-edutel01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-sixdegrees01:v6,icmp,D,0,86400000,60000
-ring-sixdegrees01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-sixdegrees01:v6,icmp,D,0,86400000,60000, -s 576
+ring-sixdegrees01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-spacedump01:v6,icmp,D,0,86400000,60000
-ring-spacedump01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-spacedump01:v6,icmp,D,0,86400000,60000, -s 576
+ring-spacedump01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-rbnetwork01:v6,icmp,D,0,86400000,60000
-ring-rbnetwork01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-rbnetwork01:v6,icmp,D,0,86400000,60000, -s 576
+ring-rbnetwork01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-yourorg01:v6,icmp,D,0,86400000,60000
-ring-yourorg01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-yourorg01:v6,icmp,D,0,86400000,60000, -s 576
+ring-yourorg01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-occaid01:v6,icmp,D,0,86400000,60000
-ring-occaid01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-occaid01:v6,icmp,D,0,86400000,60000, -s 576
+ring-occaid01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-solido02:v6,icmp,D,0,86400000,60000
-ring-solido02:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-solido02:v6,icmp,D,0,86400000,60000, -s 576
+ring-solido02:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-as250net01:v6,icmp,D,0,86400000,60000
-ring-as250net01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-as250net01:v6,icmp,D,0,86400000,60000, -s 576
+ring-as250net01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-redpilllinpro01:v6,icmp,D,0,86400000,60000
-ring-redpilllinpro01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-redpilllinpro01:v6,icmp,D,0,86400000,60000, -s 576
+ring-redpilllinpro01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-nine01:v6,icmp,D,0,86400000,60000
-ring-nine01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-nine01:v6,icmp,D,0,86400000,60000, -s 576
+ring-nine01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-oneandone01:v6,icmp,D,0,86400000,60000
-ring-oneandone01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-oneandone01:v6,icmp,D,0,86400000,60000, -s 576
+ring-oneandone01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-belwue01:v6,icmp,D,0,86400000,60000
-ring-belwue01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-belwue01:v6,icmp,D,0,86400000,60000, -s 576
+ring-belwue01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-container01:v6,icmp,D,0,86400000,60000
-ring-container01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-container01:v6,icmp,D,0,86400000,60000, -s 576
+ring-container01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-lagis01:v6,icmp,D,0,86400000,60000
-ring-lagis01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-lagis01:v6,icmp,D,0,86400000,60000, -s 576
+ring-lagis01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-fnutt01:v6,icmp,D,0,86400000,60000
-ring-fnutt01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-fnutt01:v6,icmp,D,0,86400000,60000, -s 576
+ring-fnutt01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-sidn01:v6,icmp,D,0,86400000,60000
-ring-sidn01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-sidn01:v6,icmp,D,0,86400000,60000, -s 576
+ring-sidn01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-melbourne01:v6,icmp,D,0,86400000,60000
-ring-melbourne01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-melbourne01:v6,icmp,D,0,86400000,60000, -s 576
+ring-melbourne01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-go6lab01:v6,icmp,D,0,86400000,60000
-ring-go6lab01:v6,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-go6lab01:v6,icmp,D,0,86400000,60000, -s 576
+ring-go6lab01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-siminn01:v6,icmp,D,0,86400000,60000
+ring-siminn01:v6,icmp,D,0,86400000,60000, -s 576
+ring-siminn01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-a2binternet01:v6,icmp,D,0,86400000,60000
+ring-a2binternet01:v6,icmp,D,0,86400000,60000, -s 576
+ring-a2binternet01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-staging01,icmp,D,0,86400000,60000
-ring-staging01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-staging01,icmp,D,0,86400000,60000, -s 576
+ring-staging01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-staging02,icmp,D,0,86400000,60000
-ring-staging02,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-staging02,icmp,D,0,86400000,60000, -s 576
+ring-staging02,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-in2ip01,icmp,D,0,86400000,60000
-ring-in2ip01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-in2ip01,icmp,D,0,86400000,60000, -s 576
+ring-in2ip01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-netground01,icmp,D,0,86400000,60000
-ring-netground01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-netground01,icmp,D,0,86400000,60000, -s 576
+ring-netground01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-totaalnet01,icmp,D,0,86400000,60000
-ring-totaalnet01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-totaalnet01,icmp,D,0,86400000,60000, -s 576
+ring-totaalnet01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-signet01,icmp,D,0,86400000,60000
-ring-signet01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-signet01,icmp,D,0,86400000,60000, -s 576
+ring-signet01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-tripleit01,icmp,D,0,86400000,60000
-ring-tripleit01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-tripleit01,icmp,D,0,86400000,60000, -s 576
+ring-tripleit01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-jaguarnetwork01,icmp,D,0,86400000,60000
-ring-jaguarnetwork01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-jaguarnetwork01,icmp,D,0,86400000,60000, -s 576
+ring-jaguarnetwork01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-tuxis01,icmp,D,0,86400000,60000
-ring-tuxis01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-tuxis01,icmp,D,0,86400000,60000, -s 576
+ring-tuxis01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-tenet01,icmp,D,0,86400000,60000
-ring-tenet01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-tenet01,icmp,D,0,86400000,60000, -s 576
+ring-tenet01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-bigwells01,icmp,D,0,86400000,60000
-ring-bigwells01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-bigwells01,icmp,D,0,86400000,60000, -s 576
+ring-bigwells01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-cyso01,icmp,D,0,86400000,60000
-ring-cyso01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-cyso01,icmp,D,0,86400000,60000, -s 576
+ring-cyso01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-atrato01,icmp,D,0,86400000,60000
-ring-atrato01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-atrato01,icmp,D,0,86400000,60000, -s 576
+ring-atrato01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-tdc01,icmp,D,0,86400000,60000
-ring-tdc01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-tdc01,icmp,D,0,86400000,60000, -s 576
+ring-tdc01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-intouch01,icmp,D,0,86400000,60000
-ring-intouch01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-intouch01,icmp,D,0,86400000,60000, -s 576
+ring-intouch01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-zylon01,icmp,D,0,86400000,60000
-ring-zylon01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-zylon01,icmp,D,0,86400000,60000, -s 576
+ring-zylon01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-xlshosting01,icmp,D,0,86400000,60000
-ring-xlshosting01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-xlshosting01,icmp,D,0,86400000,60000, -s 576
+ring-xlshosting01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-coloclue01,icmp,D,0,86400000,60000
-ring-coloclue01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-coloclue01,icmp,D,0,86400000,60000, -s 576
+ring-coloclue01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-widexs01,icmp,D,0,86400000,60000
-ring-widexs01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-widexs01,icmp,D,0,86400000,60000, -s 576
+ring-widexs01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-xs4all01,icmp,D,0,86400000,60000
-ring-xs4all01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-xs4all01,icmp,D,0,86400000,60000, -s 576
+ring-xs4all01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-bit01,icmp,D,0,86400000,60000
-ring-bit01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-bit01,icmp,D,0,86400000,60000, -s 576
+ring-bit01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-cambrium01,icmp,D,0,86400000,60000
-ring-cambrium01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-cambrium01,icmp,D,0,86400000,60000, -s 576
+ring-cambrium01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-interconnect01,icmp,D,0,86400000,60000
-ring-interconnect01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-interconnect01,icmp,D,0,86400000,60000, -s 576
+ring-interconnect01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-duocast01,icmp,D,0,86400000,60000
-ring-duocast01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-duocast01,icmp,D,0,86400000,60000, -s 576
+ring-duocast01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-easyhosting01,icmp,D,0,86400000,60000
-ring-easyhosting01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-easyhosting01,icmp,D,0,86400000,60000, -s 576
+ring-easyhosting01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-previder01,icmp,D,0,86400000,60000
-ring-previder01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-previder01,icmp,D,0,86400000,60000, -s 576
+ring-previder01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-nxs01,icmp,D,0,86400000,60000
-ring-nxs01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-nxs01,icmp,D,0,86400000,60000, -s 576
+ring-nxs01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-ic-hosting01,icmp,D,0,86400000,60000
-ring-ic-hosting01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-ic-hosting01,icmp,D,0,86400000,60000, -s 576
+ring-ic-hosting01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-nedzone01,icmp,D,0,86400000,60000
-ring-nedzone01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-nedzone01,icmp,D,0,86400000,60000, -s 576
+ring-nedzone01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-oxilion01,icmp,D,0,86400000,60000
-ring-oxilion01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-oxilion01,icmp,D,0,86400000,60000, -s 576
+ring-oxilion01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-ebayclassifiedsgroup01,icmp,D,0,86400000,60000
-ring-ebayclassifiedsgroup01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-ebayclassifiedsgroup01,icmp,D,0,86400000,60000, -s 576
+ring-ebayclassifiedsgroup01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-is01,icmp,D,0,86400000,60000
-ring-is01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-is01,icmp,D,0,86400000,60000, -s 576
+ring-is01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-surfnet01,icmp,D,0,86400000,60000
-ring-surfnet01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-surfnet01,icmp,D,0,86400000,60000, -s 576
+ring-surfnet01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-leaseweb01,icmp,D,0,86400000,60000
-ring-leaseweb01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-leaseweb01,icmp,D,0,86400000,60000, -s 576
+ring-leaseweb01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-prolocation01,icmp,D,0,86400000,60000
-ring-prolocation01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-prolocation01,icmp,D,0,86400000,60000, -s 576
+ring-prolocation01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-unilogicnetworks01,icmp,D,0,86400000,60000
-ring-unilogicnetworks01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-unilogicnetworks01,icmp,D,0,86400000,60000, -s 576
+ring-unilogicnetworks01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-maverick01,icmp,D,0,86400000,60000
-ring-maverick01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-maverick01,icmp,D,0,86400000,60000, -s 576
+ring-maverick01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-acsystemy01,icmp,D,0,86400000,60000
-ring-acsystemy01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-acsystemy01,icmp,D,0,86400000,60000, -s 576
+ring-acsystemy01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-netsign01,icmp,D,0,86400000,60000
-ring-netsign01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-netsign01,icmp,D,0,86400000,60000, -s 576
+ring-netsign01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-rrbone01,icmp,D,0,86400000,60000
-ring-rrbone01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-rrbone01,icmp,D,0,86400000,60000, -s 576
+ring-rrbone01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-hosteam01,icmp,D,0,86400000,60000
-ring-hosteam01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-hosteam01,icmp,D,0,86400000,60000, -s 576
+ring-hosteam01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-msp01,icmp,D,0,86400000,60000
-ring-msp01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-msp01,icmp,D,0,86400000,60000, -s 576
+ring-msp01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-inotel01,icmp,D,0,86400000,60000
-ring-inotel01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-inotel01,icmp,D,0,86400000,60000, -s 576
+ring-inotel01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-fremaks01,icmp,D,0,86400000,60000
-ring-fremaks01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-fremaks01,icmp,D,0,86400000,60000, -s 576
+ring-fremaks01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-netability01,icmp,D,0,86400000,60000
-ring-netability01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-netability01,icmp,D,0,86400000,60000, -s 576
+ring-netability01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-blix01,icmp,D,0,86400000,60000
-ring-blix01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-blix01,icmp,D,0,86400000,60000, -s 576
+ring-blix01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-solido01,icmp,D,0,86400000,60000
-ring-solido01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-solido01,icmp,D,0,86400000,60000, -s 576
+ring-solido01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-portlane01,icmp,D,0,86400000,60000
-ring-portlane01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-portlane01,icmp,D,0,86400000,60000, -s 576
+ring-portlane01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-digmia01,icmp,D,0,86400000,60000
-ring-digmia01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-digmia01,icmp,D,0,86400000,60000, -s 576
+ring-digmia01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-rootlu01,icmp,D,0,86400000,60000
-ring-rootlu01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-rootlu01,icmp,D,0,86400000,60000, -s 576
+ring-rootlu01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-globalaxs01,icmp,D,0,86400000,60000
-ring-globalaxs01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-globalaxs01,icmp,D,0,86400000,60000, -s 576
+ring-globalaxs01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-nebula01,icmp,D,0,86400000,60000
-ring-nebula01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-nebula01,icmp,D,0,86400000,60000, -s 576
+ring-nebula01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-tilaa01,icmp,D,0,86400000,60000
-ring-tilaa01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-tilaa01,icmp,D,0,86400000,60000, -s 576
+ring-tilaa01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-nautile01,icmp,D,0,86400000,60000
-ring-nautile01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-nautile01,icmp,D,0,86400000,60000, -s 576
+ring-nautile01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-voxel01,icmp,D,0,86400000,60000
-ring-voxel01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-voxel01,icmp,D,0,86400000,60000, -s 576
+ring-voxel01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-voxel02,icmp,D,0,86400000,60000
-ring-voxel02,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-voxel02,icmp,D,0,86400000,60000, -s 576
+ring-voxel02,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-neotelecoms01,icmp,D,0,86400000,60000
-ring-neotelecoms01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-neotelecoms01,icmp,D,0,86400000,60000, -s 576
+ring-neotelecoms01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-apnic01,icmp,D,0,86400000,60000
-ring-apnic01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-apnic01,icmp,D,0,86400000,60000, -s 576
+ring-apnic01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-atrato02,icmp,D,0,86400000,60000
-ring-atrato02,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-atrato02,icmp,D,0,86400000,60000, -s 576
+ring-atrato02,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-man-da01,icmp,D,0,86400000,60000
-ring-man-da01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-man-da01,icmp,D,0,86400000,60000, -s 576
+ring-man-da01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-webair01,icmp,D,0,86400000,60000
-ring-webair01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-webair01,icmp,D,0,86400000,60000, -s 576
+ring-webair01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-concepts-ict01,icmp,D,0,86400000,60000
-ring-concepts-ict01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-concepts-ict01,icmp,D,0,86400000,60000, -s 576
+ring-concepts-ict01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-dataoppdrag01,icmp,D,0,86400000,60000
-ring-dataoppdrag01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-dataoppdrag01,icmp,D,0,86400000,60000, -s 576
+ring-dataoppdrag01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-tetaneutral01,icmp,D,0,86400000,60000
-ring-tetaneutral01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-tetaneutral01,icmp,D,0,86400000,60000, -s 576
+ring-tetaneutral01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-jump01,icmp,D,0,86400000,60000
-ring-jump01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-jump01,icmp,D,0,86400000,60000, -s 576
+ring-jump01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-iway01,icmp,D,0,86400000,60000
-ring-iway01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-iway01,icmp,D,0,86400000,60000, -s 576
+ring-iway01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-timico01,icmp,D,0,86400000,60000
-ring-timico01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-timico01,icmp,D,0,86400000,60000, -s 576
+ring-timico01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-yacast01,icmp,D,0,86400000,60000
-ring-yacast01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-yacast01,icmp,D,0,86400000,60000, -s 576
+ring-yacast01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-rezopole01,icmp,D,0,86400000,60000
-ring-rezopole01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-rezopole01,icmp,D,0,86400000,60000, -s 576
+ring-rezopole01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-globalaxs02,icmp,D,0,86400000,60000
-ring-globalaxs02,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-globalaxs02,icmp,D,0,86400000,60000, -s 576
+ring-globalaxs02,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-solnet01,icmp,D,0,86400000,60000
-ring-solnet01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-solnet01,icmp,D,0,86400000,60000, -s 576
+ring-solnet01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-boxed-it01,icmp,D,0,86400000,60000
-ring-boxed-it01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-boxed-it01,icmp,D,0,86400000,60000, -s 576
+ring-boxed-it01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-spacenet01,icmp,D,0,86400000,60000
-ring-spacenet01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-spacenet01,icmp,D,0,86400000,60000, -s 576
+ring-spacenet01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-mironet01,icmp,D,0,86400000,60000
-ring-mironet01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-mironet01,icmp,D,0,86400000,60000, -s 576
+ring-mironet01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-seeweb01,icmp,D,0,86400000,60000
-ring-seeweb01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-seeweb01,icmp,D,0,86400000,60000, -s 576
+ring-seeweb01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-networkdesign01,icmp,D,0,86400000,60000
-ring-networkdesign01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-networkdesign01,icmp,D,0,86400000,60000, -s 576
+ring-networkdesign01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-zensystems01,icmp,D,0,86400000,60000
-ring-zensystems01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-zensystems01,icmp,D,0,86400000,60000, -s 576
+ring-zensystems01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-westnet01,icmp,D,0,86400000,60000
-ring-westnet01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-westnet01,icmp,D,0,86400000,60000, -s 576
+ring-westnet01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-kantonsschulezug01,icmp,D,0,86400000,60000
-ring-kantonsschulezug01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-kantonsschulezug01,icmp,D,0,86400000,60000, -s 576
+ring-kantonsschulezug01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-filoo01,icmp,D,0,86400000,60000
-ring-filoo01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-filoo01,icmp,D,0,86400000,60000, -s 576
+ring-filoo01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-nessus01,icmp,D,0,86400000,60000
-ring-nessus01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-nessus01,icmp,D,0,86400000,60000, -s 576
+ring-nessus01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-amazon01,icmp,D,0,86400000,60000
-ring-amazon01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-amazon01,icmp,D,0,86400000,60000, -s 576
+ring-amazon01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-amazon02,icmp,D,0,86400000,60000
-ring-amazon02,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-amazon02,icmp,D,0,86400000,60000, -s 576
+ring-amazon02,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-amazon03,icmp,D,0,86400000,60000
-ring-amazon03,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-amazon03,icmp,D,0,86400000,60000, -s 576
+ring-amazon03,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-amazon04,icmp,D,0,86400000,60000
-ring-amazon04,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-amazon04,icmp,D,0,86400000,60000, -s 576
+ring-amazon04,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-amazon05,icmp,D,0,86400000,60000
-ring-amazon05,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-amazon05,icmp,D,0,86400000,60000, -s 576
+ring-amazon05,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-amazon06,icmp,D,0,86400000,60000
-ring-amazon06,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-amazon06,icmp,D,0,86400000,60000, -s 576
+ring-amazon06,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-equinixnl01,icmp,D,0,86400000,60000
-ring-equinixnl01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-equinixnl01,icmp,D,0,86400000,60000, -s 576
+ring-equinixnl01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-lchost01,icmp,D,0,86400000,60000
-ring-lchost01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-lchost01,icmp,D,0,86400000,60000, -s 576
+ring-lchost01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-hostway01,icmp,D,0,86400000,60000
-ring-hostway01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-hostway01,icmp,D,0,86400000,60000, -s 576
+ring-hostway01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-pcextreme01,icmp,D,0,86400000,60000
-ring-pcextreme01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-pcextreme01,icmp,D,0,86400000,60000, -s 576
+ring-pcextreme01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-antagonist01,icmp,D,0,86400000,60000
-ring-antagonist01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-antagonist01,icmp,D,0,86400000,60000, -s 576
+ring-antagonist01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-nts01,icmp,D,0,86400000,60000
-ring-nts01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-nts01,icmp,D,0,86400000,60000, -s 576
+ring-nts01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-multiplay01,icmp,D,0,86400000,60000
-ring-multiplay01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-multiplay01,icmp,D,0,86400000,60000, -s 576
+ring-multiplay01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-softlayer01,icmp,D,0,86400000,60000
-ring-softlayer01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-softlayer01,icmp,D,0,86400000,60000, -s 576
+ring-softlayer01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-softlayer02,icmp,D,0,86400000,60000
-ring-softlayer02,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-softlayer02,icmp,D,0,86400000,60000, -s 576
+ring-softlayer02,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-softlayer03,icmp,D,0,86400000,60000
-ring-softlayer03,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-softlayer03,icmp,D,0,86400000,60000, -s 576
+ring-softlayer03,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-softlayer04,icmp,D,0,86400000,60000
-ring-softlayer04,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-softlayer04,icmp,D,0,86400000,60000, -s 576
+ring-softlayer04,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-softlayer05,icmp,D,0,86400000,60000
-ring-softlayer05,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-softlayer05,icmp,D,0,86400000,60000, -s 576
+ring-softlayer05,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-softlayer06,icmp,D,0,86400000,60000
-ring-softlayer06,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-softlayer06,icmp,D,0,86400000,60000, -s 576
+ring-softlayer06,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-imagine01,icmp,D,0,86400000,60000
-ring-imagine01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-imagine01,icmp,D,0,86400000,60000, -s 576
+ring-imagine01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-speedpartner01,icmp,D,0,86400000,60000
-ring-speedpartner01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-speedpartner01,icmp,D,0,86400000,60000, -s 576
+ring-speedpartner01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-gossamerthreads01,icmp,D,0,86400000,60000
-ring-gossamerthreads01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-gossamerthreads01,icmp,D,0,86400000,60000, -s 576
+ring-gossamerthreads01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-towardex01,icmp,D,0,86400000,60000
-ring-towardex01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-towardex01,icmp,D,0,86400000,60000, -s 576
+ring-towardex01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-simplytransit01,icmp,D,0,86400000,60000
-ring-simplytransit01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-simplytransit01,icmp,D,0,86400000,60000, -s 576
+ring-simplytransit01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-isarnet01,icmp,D,0,86400000,60000
-ring-isarnet01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-isarnet01,icmp,D,0,86400000,60000, -s 576
+ring-isarnet01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-strato01,icmp,D,0,86400000,60000
-ring-strato01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-strato01,icmp,D,0,86400000,60000, -s 576
+ring-strato01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-edutel01,icmp,D,0,86400000,60000
-ring-edutel01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-edutel01,icmp,D,0,86400000,60000, -s 576
+ring-edutel01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-sixdegrees01,icmp,D,0,86400000,60000
-ring-sixdegrees01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-sixdegrees01,icmp,D,0,86400000,60000, -s 576
+ring-sixdegrees01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-spacedump01,icmp,D,0,86400000,60000
-ring-spacedump01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-spacedump01,icmp,D,0,86400000,60000, -s 576
+ring-spacedump01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-rbnetwork01,icmp,D,0,86400000,60000
-ring-rbnetwork01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-rbnetwork01,icmp,D,0,86400000,60000, -s 576
+ring-rbnetwork01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-yourorg01,icmp,D,0,86400000,60000
-ring-yourorg01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-yourorg01,icmp,D,0,86400000,60000, -s 576
+ring-yourorg01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-solido02,icmp,D,0,86400000,60000
-ring-solido02,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-solido02,icmp,D,0,86400000,60000, -s 576
+ring-solido02,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-as250net01,icmp,D,0,86400000,60000
-ring-as250net01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-as250net01,icmp,D,0,86400000,60000, -s 576
+ring-as250net01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-redpilllinpro01,icmp,D,0,86400000,60000
-ring-redpilllinpro01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-redpilllinpro01,icmp,D,0,86400000,60000, -s 576
+ring-redpilllinpro01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-nine01,icmp,D,0,86400000,60000
-ring-nine01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-nine01,icmp,D,0,86400000,60000, -s 576
+ring-nine01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-oneandone01,icmp,D,0,86400000,60000
-ring-oneandone01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-oneandone01,icmp,D,0,86400000,60000, -s 576
+ring-oneandone01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-belwue01,icmp,D,0,86400000,60000
-ring-belwue01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-belwue01,icmp,D,0,86400000,60000, -s 576
+ring-belwue01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-container01,icmp,D,0,86400000,60000
-ring-container01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-container01,icmp,D,0,86400000,60000, -s 576
+ring-container01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-lagis01,icmp,D,0,86400000,60000
-ring-lagis01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-lagis01,icmp,D,0,86400000,60000, -s 576
+ring-lagis01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-fnutt01,icmp,D,0,86400000,60000
-ring-fnutt01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-fnutt01,icmp,D,0,86400000,60000, -s 576
+ring-fnutt01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-sidn01,icmp,D,0,86400000,60000
-ring-sidn01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-sidn01,icmp,D,0,86400000,60000, -s 576
+ring-sidn01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-melbourne01,icmp,D,0,86400000,60000
-ring-melbourne01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-melbourne01,icmp,D,0,86400000,60000, -s 576
+ring-melbourne01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-go6lab01,icmp,D,0,86400000,60000
-ring-go6lab01,scamper,D,0,86400000,500000, -P udp-paris -M
+ring-go6lab01,icmp,D,0,86400000,60000, -s 576
+ring-go6lab01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-siminn01,icmp,D,0,86400000,60000
+ring-siminn01,icmp,D,0,86400000,60000, -s 576
+ring-siminn01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-a2binternet01,icmp,D,0,86400000,60000
+ring-a2binternet01,icmp,D,0,86400000,60000, -s 576
+ring-a2binternet01,scamper,D,0,86400000,900000, -P udp-paris -M
 
