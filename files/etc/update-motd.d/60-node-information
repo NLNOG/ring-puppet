@@ -37,7 +37,6 @@ fi
 echo 
 echo "  Smokeping / Nagios / Munin:"
 echo
-echo "  https://ring.nlnog.net/smokeping/$NODE"
 echo "  https://ring.nlnog.net/cgi-bin/nagios3/status.cgi?host=$NODEFQDN"
 echo "  https://ring.nlnog.net/munin/ring.nlnog.net/$NODEFQDN"
 
