@@ -510,6 +510,10 @@ ring-i3d01:v6,icmp,D,0,86400000,60000
 ring-i3d01:v6,icmp,D,0,86400000,60000, -s 576
 ring-i3d01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-digiweb01:v6,icmp,D,0,86400000,60000
+ring-digiweb01:v6,icmp,D,0,86400000,60000, -s 576
+ring-digiweb01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging01,icmp,D,0,86400000,60000
 ring-staging01,icmp,D,0,86400000,60000, -s 576
 ring-staging01,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1017,4 +1021,8 @@ ring-a2binternet01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-i3d01,icmp,D,0,86400000,60000
 ring-i3d01,icmp,D,0,86400000,60000, -s 576
 ring-i3d01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-digiweb01,icmp,D,0,86400000,60000
+ring-digiweb01,icmp,D,0,86400000,60000, -s 576
+ring-digiweb01,scamper,D,0,86400000,900000, -P udp-paris -M
 
