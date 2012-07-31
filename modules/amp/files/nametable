@@ -125,6 +125,7 @@ ring-melbourne01:v6 2a03:b200:f::2
 ring-go6lab01:v6 2001:67c:27e4::b3f4
 ring-siminn01:v6 2a01:3a0:23:2222::2
 ring-a2binternet01:v6 2a02:1668:a2b:1011::39
+ring-i3d01:v6 2a00:1630:2:a01::1
 ring-staging01 213.154.236.191
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
@@ -251,3 +252,4 @@ ring-melbourne01 37.128.187.253
 ring-go6lab01 91.239.96.18
 ring-siminn01 213.173.231.26
 ring-a2binternet01 178.249.153.39
+ring-i3d01 31.204.129.45
