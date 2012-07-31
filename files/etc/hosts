@@ -408,3 +408,10 @@ ff02::2 ip6-allrouters
 91.239.96.18    go6lab01    go6lab01.ring.nlnog.net
 2001:67c:27e4::b3f4 go6lab01    go6lab01.ring.nlnog.net
 
+213.173.231.26  siminn01    siminn01.ring.nlnog.net
+2a01:3a0:23:2222::2  siminn01    siminn01.ring.nlnog.net
+
+178.249.153.39  a2binternet01   a2binternet01.ring.nlnog.net
+2a02:1668:a2b:1011::39  a2binternet01   a2binternet01.ring.nlnog.net
+
+
