@@ -1722,4 +1722,25 @@ node 'go6lab01' inherits ringnode {
     include users
 }
 
+node 'siminn01' inherits ringnode {
+    $owner = "siminn"
+    $location = "55.66210,12.30134"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
+
+node 'a2binternet01' inherits ringnode {
+    $owner = "a2binternet"
+    $location = "52.62588,4.77044"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
+
+
 
