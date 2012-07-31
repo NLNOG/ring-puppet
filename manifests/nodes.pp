@@ -1752,5 +1752,15 @@ node 'i3d01' inherits ringnode {
     include users
 }
 
+node 'digiweb01' inherits ringnode {
+    $owner = "digiweb"
+    $location = "53.406871,-6.372274"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
+
 
 

@@ -417,3 +417,5 @@ ff02::2 ip6-allrouters
 31.204.129.45   i3d01   i3d01.ring.nlnog.net
 2a00:1630:2:a01::1  i3d01   i3d01.ring.nlnog.net
 
+80.93.31.245    digiweb01   digiweb01.ring.nlnog.net
+2a01:258:8:6:20c:29ff:fe95:1965 digiweb01   digiweb01.ring.nlnog.net

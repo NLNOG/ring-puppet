@@ -2040,5 +2040,22 @@ class users::virtual::ring_users {
 
 ##### END i3d #####
 
+##### BEGIN digiweb #####
+
+    @add_user { 'digiweb':
+        email => 'noc@digiweb.ie',
+        company => 'Digiweb Ltd',
+        uid => '5115',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'digiweb':
+        sshkeys => [
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQChyTqfQkcz/NGII/cW6RYxoEj9QjWqRoJtH2YN00QNZlwwRV6GZkJp/3dl0oRDh+jBOR1NNM96/fJJl/Hi5a9m3Hu0nTi9b0Vw+EweN6wXqnb3f1xeDdHIxCZXBoFVPnKXxmRhOUtzR9vDVg5BQRiYYEHEruk5FkRnxFpT5dyn5XEle5a7lxtBI8hc89j3D/vnE4v2uG8lIlCWCismHSWiP/zw8PoAc6tt2874aXINEJ9SIwkyorgcenHwdYyEaS5fcDH7lxua+XTH3055oqKz02ncY5NKs+kIxGhSYb8pYCuAxPXV+cbRo5/a3J/VSO9m/PsgDmJwaTNP4fHIHMdf serek@itgoboom',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA5qpyC+uK1ZfEeYsuGfmZ7bO99cUv1eKWVem3b6BRhMa1eww1g0dfjZFChhoRTdl2YbgZQfvEj8p+Y/BFutU4YyefAsBDBpCJUt7PbUUm+P6DXDsEtYrEavlI1++XsU7SKf6wXZEaXsVu62s/4wMYAjSct45oE5sUd7dgGWL/RONyOcIlW6EFHAubhtz1ktwkdRFpGfzUu3FaGwQK0nWoeOm4jNICmrgQR5itce+o7Lm1NUUJaZe6TtuN2kbTQn+oEqqQ8iEU52TSGAyH09xGOB3rQ6tbY5SWZLPPvsvs6MrIwrhCXVdH7Sj7GnRYYjvuTA+kyiTAIbasN2cWUrVQ9w== serek@net-mgmt',
+        ],
+    }
+
+##### END digiweb #####
+
 
 }
