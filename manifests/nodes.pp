@@ -172,7 +172,7 @@ node 'container02.infra' inherits basenode {
         rootsize    => '19968',
         bridge      => 'virbr1',
         container   => "${hostname}",
-        ensure      => present,
+        ensure      => absent,
     }
 
     kvm::virtual_machine { 'public02':
@@ -246,24 +246,6 @@ node 'lg01.infra' inherits basenode {
     }
 
 }
-
-node 'lg02.infra' inherits basenode {
-    $owner = "job"
-    include nagios::target::fqdn
-    include nagios_services
-    include set_local_settings
-    include users::virtual::ring_users
-    include syslog_ng::client
-    include nodesonlycron
-    include users
-    include bird
-    include bird-lg-proxy 
-    munin::plugin { ["bird", "bird6"]:
-    }
-
-}
-
-
 
 node 'worker01' inherits basenode {
     include users
