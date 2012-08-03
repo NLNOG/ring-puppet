@@ -1047,6 +1047,7 @@ class users::virtual::ring_users {
         company => 'Webair Internet Development Inc',
         uid => '5059',
         groups => ['ring-users'],
+    }
     @authorized_keys { 'webair':
         sshkeys => [
             'ssh-dss AAAAB3NzaC1kc3MAAAEBAIe2NdQl9lAwpAQzVcuuQLomZiD+XP+uNPEZH94LUVbCbA/X4IJ+DVROWaXfLazq4QZaKRurbGAFnGNBqTi4iOpvO3vT/QdhoMIn2lEu0sefegweMSQTCC5abaMNPOg7v14DSjkXda48yKm81zumR+BuIuaWa7wHx5kNtz2nxWitzOL3DjmLa6IEMu42AR1m2zFwfD6tyawZyppw8+RgphiN0AyS8440Ya5HnrAmBM9NW3FRK/bZiGCuNaOwBT8lM9c+wmjhgvyAjHm4Xw8tTq2QG92augzhMRSSsVl0MzOGNG+bZtuXItP92fYJPMWp9taq0Sr49O3GPVOHdvaA3EMAAAAVAJVigsweDqNZx1d862faYbVBqSEXAAABACenCy6m4eW/2zVHQ+qmsch8WCdWAWCJLBz23bQ+DSL+82j/aLWdsGfizfTUXFYREDDbjyyt9Yk0GjEz2nInz1hJGAWFkt999OkJX9YBV3vzCGVaUPY0iNevAi9Yj57cJMJBO2ecUNL69dsfXSiBGJaUkKXVcXg13RfTZumylBxYtjbZ4amGogDIPaowelV1RfMUiDImhlukhgWQJZtMXjf86Nr054HL9hLbz9kCzSTjgwcDub02wv+3d72yLr690RFDNymHxGRJRr9luim46a3kb2Sa3eb6iumCB4/oCTe2RCMYFV04vAJgcQlEiZ8RLy1fHLQzhvjC6iyO6gI7kqIAAAEAPgbfGVXfuq93VT02S8ax/XLb7B4bRlSrQ7OjTJjliKZI0BHEqs1B0R8JtaDGdMG5539YOE6RV0RFZbuNETqc5I04fPRk4jhADeHlzljmLhRauThTkfjGrB9FKhI+CM9iHqatw9sPtQdlzuWLUy7x31LNi5Zq30IYnaH1tlnv7aaALbOeNB5rmcgHcOYDgdjDA2hSode17/1TwE7VIKWg3dA3xMF4EutTYP8mQWxGnmcIpVr479ip4lRddJYhLJWo5iN/3n4Ds6WsenF9HGYWwAoAJbNEObeZvdUymZGxmbdNMC7spjBGX6uOFEoLgzOls72uhqsHnJiZZYYH1MSVFQ== ipadmin@webair.com',
