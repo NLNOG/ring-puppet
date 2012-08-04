@@ -77,7 +77,7 @@ class bird {
         before  => Package["bird", "bird6"],
     }
 
-    package { ["bird", "bird6"]:
+    package { ["bird", "bird6", "dialog"]:
         ensure => latest,
     }
     
