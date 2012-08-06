@@ -1,5 +1,5 @@
 
-cat ../../../files/etc/hosts | grep -v infra.ring.nlnog.net | grep -v worker | grep -v master | less | grep ring.nlnog.net | grep : | nawk '{ print "ring-" $2 ":v6 " $1}' > ../files/nametable
-cat ../../../files/etc/hosts | grep -v infra.ring.nlnog.net | grep -v worker | grep -v master | less | grep ring.nlnog.net | grep -v : | nawk '{ print "ring-" $2 " " $1}' >> ../files/nametable
+cat ../../../files/etc/hosts | grep -v infra.ring.nlnog.net | grep -v container01 | grep -v worker | grep -v master | less | grep ring.nlnog.net | grep : | nawk '{ print "ring-" $2 ":v6 " $1}' > ../files/nametable
+cat ../../../files/etc/hosts | grep -v infra.ring.nlnog.net | grep -v container01 | grep -v worker | grep -v master | less | grep ring.nlnog.net | grep -v : | nawk '{ print "ring-" $2 " " $1}' >> ../files/nametable
 
 cat ../files/nametable | nawk '{print $1}' | while read line; do echo -e "${line},icmp,D,0,86400000,60000\n${line},icmp,D,0,86400000,60000, -s 576\n${line},scamper,D,0,86400000,900000, -P udp-paris -M\n"; done > ../files/schedule

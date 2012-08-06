@@ -474,10 +474,6 @@ ring-belwue01:v6,icmp,D,0,86400000,60000
 ring-belwue01:v6,icmp,D,0,86400000,60000, -s 576
 ring-belwue01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
-ring-container01:v6,icmp,D,0,86400000,60000
-ring-container01:v6,icmp,D,0,86400000,60000, -s 576
-ring-container01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
-
 ring-lagis01:v6,icmp,D,0,86400000,60000
 ring-lagis01:v6,icmp,D,0,86400000,60000, -s 576
 ring-lagis01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -986,10 +982,6 @@ ring-belwue01,icmp,D,0,86400000,60000
 ring-belwue01,icmp,D,0,86400000,60000, -s 576
 ring-belwue01,scamper,D,0,86400000,900000, -P udp-paris -M
 
-ring-container01,icmp,D,0,86400000,60000
-ring-container01,icmp,D,0,86400000,60000, -s 576
-ring-container01,scamper,D,0,86400000,900000, -P udp-paris -M
-
 ring-lagis01,icmp,D,0,86400000,60000
 ring-lagis01,icmp,D,0,86400000,60000, -s 576
 ring-lagis01,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1022,4 +1014,7 @@ ring-i3d01,icmp,D,0,86400000,60000
 ring-i3d01,icmp,D,0,86400000,60000, -s 576
 ring-i3d01,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-digiweb01,icmp,D,0,86400000,60000
+ring-digiweb01,icmp,D,0,86400000,60000, -s 576
+ring-digiweb01,scamper,D,0,86400000,900000, -P udp-paris -M
 

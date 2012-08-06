@@ -117,7 +117,6 @@ ring-redpilllinpro01:v6 2a02:c0:200:104::1
 ring-nine01:v6 2a02:418:4101::165
 ring-oneandone01:v6 2001:8d8:580:400::1:0
 ring-belwue01:v6 2001:7c0:701:23::2
-ring-container01:v6 2001:888:2000:3e::1338
 ring-lagis01:v6 2a00:1860:101:fffe::1
 ring-fnutt01:v6 2001:67c:2a00:1::30
 ring-sidn01:v6 2a00:d78:0:fd:193:176:144:164
@@ -245,7 +244,6 @@ ring-redpilllinpro01 87.238.49.250
 ring-nine01 217.150.254.165
 ring-oneandone01 212.227.126.43
 ring-belwue01 129.143.4.237
-ring-container01 82.94.249.163
 ring-lagis01 83.164.134.32
 ring-fnutt01 193.150.23.30
 ring-sidn01 193.176.144.164
@@ -254,3 +252,4 @@ ring-go6lab01 91.239.96.18
 ring-siminn01 213.173.231.26
 ring-a2binternet01 178.249.153.39
 ring-i3d01 31.204.129.45
+ring-digiweb01 80.93.31.245
