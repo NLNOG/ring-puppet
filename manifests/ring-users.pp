@@ -2082,5 +2082,19 @@ class users::virtual::ring_users {
     }
 ##### END sidnrd #####
 
+##### BEGIN obenetwork #####
+
+    @add_user { 'obenetwork':
+        email => 'noc@obenetwork.com',
+        company => 'Obenetwork AB',
+        uid => '5117',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'obenetwork':
+        sshkeys => [
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9hFwclD6VWkrQBAY0DHWTdLBmX5eHbByPdFI/x/L6YmnrCBBXpCyiQLJLaIU05i/iCNw/hhAdph4/DvPy1vX3Il4koYklL15RJqLB4vIymb7Xiw6YdS9e6orr1Yh86Z4RxEK3OE9p0LCh5ZGtNjmuW3Hg5XIuklE9jrkdmJKQ927cAhomxFc7AGH2Uu3g8OCIG4TD3EZkAiYOa/kEF47nL+0PlpdPYXdqT8+EItyH1enuOcLeD2joe8LC+/zul9VPWmvM/7EiKdFDMkWlbj+JgZOeVkR2ebxsr/mmmvzCUdwmBEeQnJp1kr7QnVJn32NWsFFEisHqJjMuNCRXL5fJ tobias@irc'
+        ],
+    }
+##### END obenetwork #####
 
 }
