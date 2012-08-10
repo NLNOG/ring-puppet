@@ -2082,5 +2082,16 @@ class users::virtual::ring_users {
     }
 ##### END sidnrd #####
 
+##### BEGIN keenondots #####
+
+    @add_user { 'keenondots':
+        email => 'support@keenondots.com',
+        company => 'SIDN',
+        uid => '5117',
+        groups => ['ring-users'],
+    }
+
+##### END keenondots #####
+
 
 }
