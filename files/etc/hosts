@@ -422,3 +422,6 @@ ff02::2 ip6-allrouters
 
 46.227.66.10    obenetwork01    obenetwork01.ring.nlnog.net
 2A03:8600:0:132::2  obenetwork01    obenetwork01.ring.nlnog.net
+
+84.16.92.119    infomaniak01    infomaniak01.ring.nlnog.net
+2001:1600:3:5::110  infomaniak01    infomaniak01.ring.nlnog.net
