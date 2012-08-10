@@ -2086,7 +2086,7 @@ class users::virtual::ring_users {
 
     @add_user { 'keenondots':
         email => 'support@keenondots.com',
-        company => 'SIDN',
+        company => 'Keen on Dots',
         uid => '5117',
         groups => ['ring-users'],
     }
@@ -2098,7 +2098,7 @@ class users::virtual::ring_users {
     @add_user { 'obenetwork':
         email => 'noc@obenetwork.com',
         company => 'Obenetwork AB',
-        uid => '5117',
+        uid => '5118',
         groups => ['ring-users'],
     }
     @authorized_keys { 'obenetwork':
@@ -2113,7 +2113,7 @@ class users::virtual::ring_users {
     @add_user { 'infomaniak':
         email => 'operator@infomaniak.ch',
         company => 'Infomaniak Network SA',
-        uid => '5117',
+        uid => '5119',
         groups => ['ring-users'],
     }
     @authorized_keys { 'infomaniak':
