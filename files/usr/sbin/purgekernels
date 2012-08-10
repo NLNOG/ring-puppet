@@ -5,7 +5,7 @@ use IPC::Open3;
 use Data::Dumper;
 sub isnewer ($$);   # prototype for sort{} usage
 #
-# $Id: purgekernels 144 2012-02-06 20:48:33Z sanders $
+# $Id: purgekernels 211 2012-08-10 18:07:32Z sanders $
 #
 # Run as Post-Invoke:
 # $ cat /etc/apt/apt.conf.d/88local
@@ -41,9 +41,9 @@ my $current_kernel_version = "";
 # Installed kernels
 my $dpkg = `dpkg -l linux-image-\*`;
 dprint("cmd out: '$dpkg'");
-while ($dpkg =~ m#^[ri][ci]\s+(linux\-image\-\d+\.\d+\.\d+\-\d+(?:\-\w+)+)\s#gm) {
+while ($dpkg =~ m#^[ri][ci]\s+(linux\-image\-\d+\.\d+\.\d+\-[\.\d]+(?:\-\w+)+)\s#gm) {
     my $package_name = $1;
-    $package_name =~ m#^linux\-image\-(\d+\.\d+\.\d+\-\d+)(?:\-\w+)+$#gm;
+    $package_name =~ m#^linux\-image\-(\d+\.\d+\.\d+\-[\.\d]+)(?:\-\w+)+$#gm;
     $kernel_version = $1;
     $$kernels{$kernel_version} = $package_name;
     dprint("found installed $kernel_version");
