@@ -1767,7 +1767,7 @@ node 'obenetwork01' inherits ringnode {
 
 node 'infomaniak01' inherits ringnode {
     $owner = "infomaniak"
-    $location = "46.21755,6.08268""
+    $location = "46.21755,6.08268"
     include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
