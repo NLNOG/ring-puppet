@@ -2119,7 +2119,7 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'infomaniak':
         sshkeys => [
-            'AAAAB3NzaC1kc3MAAACBAM9fAfW/i4MbeSAWaFWPJQEs+wdougobv7E2e9fsTvUnvANBndqr9MdCWuuQfhOd6sMW9Fyr1F4IYTaUam+VUmWSHDP1Ht01qpA/b7ZmPR96LDxRL6xlG1ORnqFAB1FLFSxjgyJ7hFBpbgqtprJLxc4J/IPzfgao1OjaqgjRbqztAAAAFQCAhJvQbqqhXMcuEQhlpXyWsB9+LQAAAIA1Ffgfw4BSdOcHWpLZgQ9ndrni6tQpTOHrtHGBOzbwpkTP1aX230CrlPlDH3X/U1PXzmsuEiTdAQ/NY5bvpKPi24Gjuru/lfjdhNZspl4mpCP6bU++pNqCofnY0OOIMIF/01WTix3kuYifeZCT2WTDTgiUE7i+CZ4PADWZShCehwAAAIEAm19daf26uaUg7NkCZmDAL7reLlhoQIpe5MnY0xvTz1GZ4Ytfjc5quWWH3PXOJGTyTVwOwGWeMWZcNHKgupD6WpsdXvv3L4iKa6FqX3JhsWXLe6AGGZeWVQuCSR/ywS/UiBHa7GKl1r3p4trGrDvxpdFLTog99mQbJ7o8CDtqHP4= luria@linux',
+            'ssh-dss AAAAB3NzaC1kc3MAAACBAM9fAfW/i4MbeSAWaFWPJQEs+wdougobv7E2e9fsTvUnvANBndqr9MdCWuuQfhOd6sMW9Fyr1F4IYTaUam+VUmWSHDP1Ht01qpA/b7ZmPR96LDxRL6xlG1ORnqFAB1FLFSxjgyJ7hFBpbgqtprJLxc4J/IPzfgao1OjaqgjRbqztAAAAFQCAhJvQbqqhXMcuEQhlpXyWsB9+LQAAAIA1Ffgfw4BSdOcHWpLZgQ9ndrni6tQpTOHrtHGBOzbwpkTP1aX230CrlPlDH3X/U1PXzmsuEiTdAQ/NY5bvpKPi24Gjuru/lfjdhNZspl4mpCP6bU++pNqCofnY0OOIMIF/01WTix3kuYifeZCT2WTDTgiUE7i+CZ4PADWZShCehwAAAIEAm19daf26uaUg7NkCZmDAL7reLlhoQIpe5MnY0xvTz1GZ4Ytfjc5quWWH3PXOJGTyTVwOwGWeMWZcNHKgupD6WpsdXvv3L4iKa6FqX3JhsWXLe6AGGZeWVQuCSR/ywS/UiBHa7GKl1r3p4trGrDvxpdFLTog99mQbJ7o8CDtqHP4= luria@linux',
         ],
     }
 ##### END infomaniak #####
