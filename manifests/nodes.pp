@@ -109,7 +109,7 @@ node 'container01' inherits basenode {
         netmask     => '255.255.255.240',
         dns         => '8.8.8.8',
         gateway     => '82.94.230.129',
-        memory      => '2048',
+        memory      => '4096',
         disksize    => '20',
         rootsize    => '19968',
         bridge      => 'virbr1',
@@ -1767,6 +1767,16 @@ node 'obenetwork01' inherits ringnode {
 node 'infomaniak01' inherits ringnode {
     $owner = "infomaniak"
     $location = "46.21755,6.08268"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
+
+node 'teamix01' inherits ringnode {
+    $owner = "teamix"
+    $location = "49.42788,11.02210"
     include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     

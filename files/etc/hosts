@@ -428,3 +428,7 @@ ff02::2 ip6-allrouters
 
 91.218.150.255  keenondots01    keenondots01.ring.nlnog.net
 2a03:3400:3:2501::150:255  keenondots01    keenondots01.ring.nlnog.net
+
+194.150.191.55  teamix01    teamix01.ring.nlnog.net
+2001:67c:14c:12f::55:1 teamix01 teamix01.ring.nlnog.net
+
