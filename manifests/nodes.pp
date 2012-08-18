@@ -100,7 +100,7 @@ node 'container01' inherits basenode {
     include nagios_services
     include nagios::target::fqdn
     include kvm
-    munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
+    munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
     }
     
     kvm::virtual_machine { 'lg01':
@@ -158,7 +158,7 @@ node 'container02.infra' inherits basenode {
     include nagios_services
     include nagios::target::fqdn
     include kvm
-    munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
+    munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
     }
 
     kvm::virtual_machine { 'lg02':

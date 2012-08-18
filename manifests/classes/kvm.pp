@@ -23,6 +23,10 @@ class kvm {
         value   => "1",
     }
 
+    package { ["virt-goodies"]:
+        ensure  => latest,
+    }
+
 }
 
 define kvm::virtual_machine ($fqdn, $ip, $netmask, $dns="8.8.8.8", $gateway, $memory, $rootsize, $disksize, $bridge, $ensure, $container) {
