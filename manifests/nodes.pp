@@ -1784,3 +1784,12 @@ node 'teamix01' inherits ringnode {
     include users
 }
 
+node 'bci01' inherits ringnode {
+    $owner = "bci"
+    $location = "31.90720,35.20617"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
