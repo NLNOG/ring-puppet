@@ -97,7 +97,17 @@ class nettools {
     package { "mtr": ensure => latest }
     package { "nmap": ensure => latest }
     package { "traceroute": ensure => present }
-    
+
+    exec { "setcap cap_net_raw+ep /usr/bin/traceroute":
+        onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/bin/traceroute`\" != \"/usr/bin/traceroute = cap_net_raw+eip\"",
+        require => Package["traceroute"],
+    }
+    exec { "setcap cap_net_raw+ep /usr/bin/traceroute6":
+        onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/bin/traceroute6`\" != \"/usr/bin/traceroute6 = cap_net_raw+eip\"",
+        require => Package["traceroute"],
+    }
+
+
     package { "tcpdump": ensure => present }
     package { "libcap2-bin": ensure => present }
     # here we permit ring-users to use tcpdump
