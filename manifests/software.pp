@@ -98,8 +98,8 @@ class nettools {
     package { "nmap": ensure => latest }
     package { "traceroute": ensure => present }
 
-    exec { "setcap cap_net_raw+ep /usr/bin/traceroute":
-        onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/bin/traceroute`\" != \"/usr/bin/traceroute = cap_net_raw+eip\"",
+    exec { "setcap cap_net_raw+ep /usr/bin/traceroute.db":
+        onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/bin/traceroute.db`\" != \"/usr/bin/traceroute.db = cap_net_raw+eip\"",
         require => Package["traceroute"],
     }
 #    exec { "setcap cap_net_raw+ep /usr/bin/traceroute6":
