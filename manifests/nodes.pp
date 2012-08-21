@@ -1803,3 +1803,13 @@ node 'skyway01' inherits ringnode {
     include set_local_settings                                             
     include users
 }
+
+node 'solcon01' inherits ringnode {
+    $owner = "solcon"
+    $location = "52.18958,5.29524"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                             
+    include users
+}
