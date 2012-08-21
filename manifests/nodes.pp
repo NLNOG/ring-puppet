@@ -1793,3 +1793,13 @@ node 'bci01' inherits ringnode {
     include set_local_settings                                                  
     include users
 }
+
+node 'skyway01' inherits ringnode {
+    $owner = "skyway"
+    $location = "49.279285,7.107489"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                             
+    include users
+}

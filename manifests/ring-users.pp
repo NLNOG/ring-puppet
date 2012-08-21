@@ -2162,5 +2162,19 @@ class users::virtual::ring_users {
 ##### END bci #####
 
 
+##### BEGIN skyway #####
+
+    @add_user { 'skyway':
+        email => 'noc@skyway-dc.com',
+        company => 'SKYWAY DataCenter GmbH',
+        uid => '5122',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'skyway':
+        sshkeys => [
+            'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAyfJEsZVS+gDqB5WrHMiOBFBO5a2tVf11ICuofxouBdsiHF6iB8dSHbhj5ZFoI73xLAcl4fieTu+/NSHiVw7hBG3Jbv2M0rlXAKQHaFrTWRr4yhKg8jisPWbRgWYIN8bzUqIX7RoLfnlQaNLocaKoR/ZPmtreyoMAiubWKyrdFIuXT6gL80ucVEjQxsuFQ7QQAedskWYpu4cko6TVNkOombK8fslrNzgV+PfIx/Ut26Ub73ZJy9Wn0VTyCsr926yHB9D6dV5sIFsb6uAJ0Xs1yRWAJliGnpK/th9Xim4KY5UMwqSBkMybS3LGpnpx4thx/y7ZFp6GxEIGmTEqhBdmYw== hf@silverbird',
+        ],
+    }
+##### END skyway #####
 
 }
