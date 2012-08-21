@@ -102,10 +102,10 @@ class nettools {
         onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/bin/traceroute`\" != \"/usr/bin/traceroute = cap_net_raw+eip\"",
         require => Package["traceroute"],
     }
-    exec { "setcap cap_net_raw+ep /usr/bin/traceroute6":
-        onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/bin/traceroute6`\" != \"/usr/bin/traceroute6 = cap_net_raw+eip\"",
-        require => Package["traceroute"],
-    }
+#    exec { "setcap cap_net_raw+ep /usr/bin/traceroute6":
+#        onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/bin/traceroute6`\" != \"/usr/bin/traceroute6 = cap_net_raw+eip\"",
+#        require => Package["traceroute"],
+#    }
 
 
     package { "tcpdump": ensure => present }
