@@ -1806,7 +1806,7 @@ node 'skyway01' inherits ringnode {
 
 node 'solcon01' inherits ringnode {
     $owner = "solcon"
-    $location = "52.18958,5.29524"
+    $location = "52.53998,5.702248"
     include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
