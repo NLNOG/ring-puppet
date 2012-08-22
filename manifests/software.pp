@@ -1,15 +1,15 @@
 # Class: master_software
 #
 class master_software {
-    package { "libactiverecord-ruby1.8": ensure => present }
-    package { "libsqlite3-ruby1.8": ensure => present }
-    package { "sqlite3": ensure => present }
-    package { "libactivesupport-ruby1.8": ensure => present }
-    package { "rails": ensure => present }
-    package { "mysql-server": ensure => present }
-    package { "libmysql-ruby": ensure => present }
+    package { "libactiverecord-ruby1.8": ensure => latest }
+    package { "libsqlite3-ruby1.8": ensure => latest }
+    package { "sqlite3": ensure => latest }
+    package { "libactivesupport-ruby1.8": ensure => latest }
+    package { "rails": ensure => latest }
+    package { "mysql-server": ensure => latest }
+    package { "libmysql-ruby": ensure => latest }
     package { "puppetmaster": ensure => latest }
-    package { "etckeeper": ensure => present }
+    package { "etckeeper": ensure => latest }
     package { "puppetmaster-common": ensure => latest }
     package { "apache2-mpm-prefork": ensure => latest }
 }
@@ -38,10 +38,10 @@ class nettools {
         ensure => latest,
     }
     package { "update-motd":
-        ensure => present,
+        ensure => latest,
     }
     package { "iperf":
-        ensure => present,
+        ensure => latest,
     }
     package { "scamper":
         ensure => latest,
@@ -49,7 +49,7 @@ class nettools {
     package { ["iputils-ping", "iputils-tracepath"]:
         ensure => latest,
     }
-    package { "lft": ensure => present }
+    package { "lft": ensure => latest }
     file { "/usr/bin/lft":
         ensure => "/usr/sbin/lft",
         require => [Package["lft"]],
@@ -59,18 +59,18 @@ class nettools {
         require => [Package["lft"]],
     }
 
-    package { "libnet-ssh2-ruby1.8": ensure => present }
+    package { "libnet-ssh2-ruby1.8": ensure => latest }
     package { "puppet": ensure => latest }
     package { "puppet-common": ensure => latest }
-    package { "python-dnspython": ensure => present }
+    package { "python-dnspython": ensure => latest }
     package { "python-argparse": 
         ensure => $lsbdistcodename ? {
-            maverick    => present,
+            maverick    => latest,
             precise     => absent,
         }
     }
-    package { "python-ipaddr": ensure => present }
-    package { "graphviz": ensure => present }
+    package { "python-ipaddr": ensure => latest }
+    package { "graphviz": ensure => latest }
     package { "hping3": ensure => latest }
     package { "gnutls-bin": ensure => latest }
     exec { "setcap cap_net_raw,cap_net_admin=eip /usr/sbin/hping3":
@@ -91,12 +91,12 @@ class nettools {
         ensure => running,
         subscribe => File["/etc/ntp.conf"],
     }
-    package { "python-setuptools": ensure => present }
-    package { "virt-what": ensure => present }
+    package { "python-setuptools": ensure => latest }
+    package { "virt-what": ensure => latest }
     package { "sl": ensure => purged }
     package { "mtr": ensure => latest }
     package { "nmap": ensure => latest }
-    package { "traceroute": ensure => present }
+    package { "traceroute": ensure => latest }
 
     exec { "setcap cap_net_raw+ep /usr/bin/traceroute.db":
         onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/bin/traceroute.db`\" != \"/usr/bin/traceroute.db = cap_net_raw+ep\"",
@@ -108,8 +108,8 @@ class nettools {
 #    }
 
 
-    package { "tcpdump": ensure => present }
-    package { "libcap2-bin": ensure => present }
+    package { "tcpdump": ensure => latest }
+    package { "libcap2-bin": ensure => latest }
     # here we permit ring-users to use tcpdump
     file { "/usr/sbin/tcpdump":
         mode    => "0755",
@@ -123,7 +123,7 @@ class nettools {
         require => [ Package["libcap2-bin"], Package["tcpdump"] ],
     }
     
-    package { "tshark": ensure => present }
+    package { "tshark": ensure => latest }
     # here we permit ring-users to use tshark
     file { "/usr/bin/dumpcap":
         mode    => "0754",
@@ -137,51 +137,51 @@ class nettools {
         require => Package["tshark"],
     }
 
-    package { "build-essential": ensure => present }
-    package { "dnsutils": ensure => present }
+    package { "build-essential": ensure => latest }
+    package { "dnsutils": ensure => latest }
     package { "ldnsutils": ensure => latest }
-    package { "wget": ensure => present }
-    package { "netcat-openbsd": ensure => present }
-    package { "ngrep": ensure => present }
-    package { "netsed": ensure => present }
-    package { "git-core": ensure => present }
-    package { "mercurial": ensure => present }
-    package { "w3m": ensure => present }
-    package { "curl": ensure => present }
-    package { "bc": ensure => present }
-    package { "dbndns": ensure => present }
-    package { "bind9-host": ensure => present }
-    package { "bzr": ensure => present }
-    package { "cvs": ensure => present }
-    package { "dsniff": ensure => present }
-    package { "fpdns": ensure => present }
-    package { "gnupg": ensure => present }
-    package { "ipcalc": ensure => present }
-    package { "sipcalc": ensure => present }
-    package { "lftp": ensure => present }
-    package { "python": ensure => present }
-    package { "ruby": ensure => present }
-    package { "lynx": ensure => present }
-    package { "php5-cli": ensure => present }
-    package { "pv": ensure => present }
-    package { "rsync": ensure => present }
-    package { "strace": ensure => present }
-    package { "lsof": ensure => present }
-    package { "ltrace": ensure => present }
-    package { "tcptraceroute": ensure => present }
-    package { "ndisc6": ensure => present }
-    package { "tmux": ensure => present }
-    package { "screen": ensure => present }
-    package { "ucspi-tcp": ensure => present }
-    package { "fping": ensure => present }
-    package { "update-manager-core": ensure => present }
-    package { "man-db": ensure => present }
-    package { "landscape-common": ensure => present }
-    package { "unattended-upgrades": ensure => present }
-    package { "update-notifier-common": ensure => present }
-    package { "pastebinit": ensure => present }
-    package { "markdown": ensure => present }
-    package { "vim": ensure => present }
+    package { "wget": ensure => latest }
+    package { "netcat-openbsd": ensure => latest }
+    package { "ngrep": ensure => latest }
+    package { "netsed": ensure => latest }
+    package { "git-core": ensure => latest }
+    package { "mercurial": ensure => latest }
+    package { "w3m": ensure => latest }
+    package { "curl": ensure => latest }
+    package { "bc": ensure => latest }
+    package { "dbndns": ensure => latest }
+    package { "bind9-host": ensure => latest }
+    package { "bzr": ensure => latest }
+    package { "cvs": ensure => latest }
+    package { "dsniff": ensure => latest }
+    package { "fpdns": ensure => latest }
+    package { "gnupg": ensure => latest }
+    package { "ipcalc": ensure => latest }
+    package { "sipcalc": ensure => latest }
+    package { "lftp": ensure => latest }
+    package { "python": ensure => latest }
+    package { "ruby": ensure => latest }
+    package { "lynx": ensure => latest }
+    package { "php5-cli": ensure => latest }
+    package { "pv": ensure => latest }
+    package { "rsync": ensure => latest }
+    package { "strace": ensure => latest }
+    package { "lsof": ensure => latest }
+    package { "ltrace": ensure => latest }
+    package { "tcptraceroute": ensure => latest }
+    package { "ndisc6": ensure => latest }
+    package { "tmux": ensure => latest }
+    package { "screen": ensure => latest }
+    package { "ucspi-tcp": ensure => latest }
+    package { "fping": ensure => latest }
+    package { "update-manager-core": ensure => latest }
+    package { "man-db": ensure => latest }
+    package { "landscape-common": ensure => latest }
+    package { "unattended-upgrades": ensure => latest }
+    package { "update-notifier-common": ensure => latest }
+    package { "pastebinit": ensure => latest }
+    package { "markdown": ensure => latest }
+    package { "vim": ensure => latest }
 
     # packages we don't like
     package { "pppoe": ensure => purged }
@@ -195,12 +195,12 @@ class nettools {
     package { "apparmor-utils": ensure => purged }
     package { ["dhcp3-client", "dhcp3-common"]:
         ensure  => $hostname ? {
-            'amazon01'  => present,
-            'amazon02'  => present,
-            'amazon03'  => present,
-            'amazon04'  => present,
-            'amazon05'  => present,
-            'amazon06'  => present,
+            'amazon01'  => latest,
+            'amazon02'  => latest,
+            'amazon03'  => latest,
+            'amazon04'  => latest,
+            'amazon05'  => latest,
+            'amazon06'  => latest,
             default => purged,
         }
     }
