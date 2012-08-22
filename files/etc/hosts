@@ -437,3 +437,6 @@ ff02::2 ip6-allrouters
 
 109.234.105.30  skyway01    skyway01.ring.nlnog.net
 2a00:18e0:0:dc:109:234:105:30   skyway01    skyway01.ring.nlnog.net
+
+212.45.52.2 solcon01    solcon01.ring.nlnog.net
+2001:9e0:400:53:212:45:52:2 solcon01    solcon01.ring.nlnog.net
