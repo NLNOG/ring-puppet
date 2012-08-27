@@ -510,6 +510,34 @@ ring-digiweb01:v6,icmp,D,0,86400000,60000
 ring-digiweb01:v6,icmp,D,0,86400000,60000, -s 576
 ring-digiweb01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-obenetwork01:v6,icmp,D,0,86400000,60000
+ring-obenetwork01:v6,icmp,D,0,86400000,60000, -s 576
+ring-obenetwork01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-infomaniak01:v6,icmp,D,0,86400000,60000
+ring-infomaniak01:v6,icmp,D,0,86400000,60000, -s 576
+ring-infomaniak01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-keenondots01:v6,icmp,D,0,86400000,60000
+ring-keenondots01:v6,icmp,D,0,86400000,60000, -s 576
+ring-keenondots01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-teamix01:v6,icmp,D,0,86400000,60000
+ring-teamix01:v6,icmp,D,0,86400000,60000, -s 576
+ring-teamix01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-bci01:v6,icmp,D,0,86400000,60000
+ring-bci01:v6,icmp,D,0,86400000,60000, -s 576
+ring-bci01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-skyway01:v6,icmp,D,0,86400000,60000
+ring-skyway01:v6,icmp,D,0,86400000,60000, -s 576
+ring-skyway01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-solcon01:v6,icmp,D,0,86400000,60000
+ring-solcon01:v6,icmp,D,0,86400000,60000, -s 576
+ring-solcon01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging01,icmp,D,0,86400000,60000
 ring-staging01,icmp,D,0,86400000,60000, -s 576
 ring-staging01,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1017,4 +1045,32 @@ ring-i3d01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-digiweb01,icmp,D,0,86400000,60000
 ring-digiweb01,icmp,D,0,86400000,60000, -s 576
 ring-digiweb01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-obenetwork01,icmp,D,0,86400000,60000
+ring-obenetwork01,icmp,D,0,86400000,60000, -s 576
+ring-obenetwork01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-infomaniak01,icmp,D,0,86400000,60000
+ring-infomaniak01,icmp,D,0,86400000,60000, -s 576
+ring-infomaniak01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-keenondots01,icmp,D,0,86400000,60000
+ring-keenondots01,icmp,D,0,86400000,60000, -s 576
+ring-keenondots01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-teamix01,icmp,D,0,86400000,60000
+ring-teamix01,icmp,D,0,86400000,60000, -s 576
+ring-teamix01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-bci01,icmp,D,0,86400000,60000
+ring-bci01,icmp,D,0,86400000,60000, -s 576
+ring-bci01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-skyway01,icmp,D,0,86400000,60000
+ring-skyway01,icmp,D,0,86400000,60000, -s 576
+ring-skyway01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-solcon01,icmp,D,0,86400000,60000
+ring-solcon01,icmp,D,0,86400000,60000, -s 576
+ring-solcon01,scamper,D,0,86400000,900000, -P udp-paris -M
 

@@ -126,6 +126,13 @@ ring-siminn01:v6 2a01:3a0:23:2222::2
 ring-a2binternet01:v6 2a02:1668:a2b:1011::39
 ring-i3d01:v6 2a00:1630:2:a01::1
 ring-digiweb01:v6 2a01:258:8:6:20c:29ff:fe95:1965
+ring-obenetwork01:v6 2A03:8600:0:132::2
+ring-infomaniak01:v6 2001:1600:3:5::110
+ring-keenondots01:v6 2a03:3400:3:2501::150:255
+ring-teamix01:v6 2001:67c:14c:12f::55:1
+ring-bci01:v6 2a02:26d0:2:0:20c:29ff:fe7b:a2b4
+ring-skyway01:v6 2a00:18e0:0:dc:109:234:105:30
+ring-solcon01:v6 2001:9e0:400:53:212:45:52:2
 ring-staging01 213.154.236.191
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
@@ -253,3 +260,10 @@ ring-siminn01 213.173.231.26
 ring-a2binternet01 178.249.153.39
 ring-i3d01 31.204.129.45
 ring-digiweb01 80.93.31.245
+ring-obenetwork01 46.227.66.10
+ring-infomaniak01 84.16.92.119
+ring-keenondots01 91.218.150.255
+ring-teamix01 194.150.191.55
+ring-bci01 93.184.4.7
+ring-skyway01 109.234.105.30
+ring-solcon01 212.45.52.2
