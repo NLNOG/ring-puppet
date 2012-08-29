@@ -1813,3 +1813,13 @@ node 'solcon01' inherits ringnode {
     include set_local_settings                                             
     include users
 }
+
+node 'claranet01' inherits ringnode {
+    $owner = "claranet"
+    $location = "51.510901,-0.003482"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                             
+    include users
+}

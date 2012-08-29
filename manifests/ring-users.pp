@@ -2194,4 +2194,19 @@ class users::virtual::ring_users {
     }
 ##### END solcon #####
 
+##### BEGIN claranet #####
+
+    @add_user { 'claranet':
+        email => 'ring@eu.clara.net',
+        company => 'Claranet',
+        uid => '5124',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'claranet':
+        sshkeys => [
+            "ssh-dss AAAAB3NzaC1kc3MAAACBAOXFB7Ui+uev7aSUoca+IiI8bC5c4hLfRhzHZ6sQbYRdx8zqOg3++/7QBJN8HZ19Yu7P4DgOOl/PM9dvude22ikNaTv9wTReVIBVfnkomDoXeWOL5mh2sGGIOrTBF5qhV0f68y6nrxY/Ownhp6GVQ+cNNW1bLgeaVoyE7oExhMwdAAAAFQD7vGc/vMgTDXb3aAx7rbg+0pMTiwAAAIEA0icQ730T0zJZC/6B/XJ/G3PXzHox5BrZY7k3wFQykF30N7hrkuJG5umowPkMUheKjDOP4PlFI7MqbVd78/T/v8HcRs1/iakyKHkzAhM8nolXBGDTGu1KHvtXJLNNu0KUhBTlVOqwqFJ1pOid2JxnU3E0aIwCjMZpj5QN1kIg4esAAACBANZDC2dNsWcc19+jb/v3FF1CnC1Wf/Aiquw/sjW0vXXETRthR2qkHwQHnVVyt8Uf1ILPivcbch9LWTZbl3nmzeRtcI28um4GFu19Wh6MMclFSA3mBoDlGkvJLzBwlFHtn0H+0rnbmGeTg7zXVv+e0AU9zxT0l+MsqF5cQ8ZQdMQh tdcdf1@synchronicity.convergence.cx",
+        ],
+    }
+##### END claranet #####
+
 }
