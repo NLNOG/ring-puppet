@@ -538,6 +538,14 @@ ring-solcon01:v6,icmp,D,0,86400000,60000
 ring-solcon01:v6,icmp,D,0,86400000,60000, -s 576
 ring-solcon01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-claranet01:v6,icmp,D,0,86400000,60000
+ring-claranet01:v6,icmp,D,0,86400000,60000, -s 576
+ring-claranet01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-claranet02:v6,icmp,D,0,86400000,60000
+ring-claranet02:v6,icmp,D,0,86400000,60000, -s 576
+ring-claranet02:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging01,icmp,D,0,86400000,60000
 ring-staging01,icmp,D,0,86400000,60000, -s 576
 ring-staging01,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1073,4 +1081,12 @@ ring-skyway01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-solcon01,icmp,D,0,86400000,60000
 ring-solcon01,icmp,D,0,86400000,60000, -s 576
 ring-solcon01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-claranet01,icmp,D,0,86400000,60000
+ring-claranet01,icmp,D,0,86400000,60000, -s 576
+ring-claranet01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-claranet02,icmp,D,0,86400000,60000
+ring-claranet02,icmp,D,0,86400000,60000, -s 576
+ring-claranet02,scamper,D,0,86400000,900000, -P udp-paris -M
 

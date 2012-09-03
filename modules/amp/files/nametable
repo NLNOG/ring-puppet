@@ -133,6 +133,8 @@ ring-teamix01:v6 2001:67c:14c:12f::55:1
 ring-bci01:v6 2a02:26d0:2:0:20c:29ff:fe7b:a2b4
 ring-skyway01:v6 2a00:18e0:0:dc:109:234:105:30
 ring-solcon01:v6 2001:9e0:400:53:212:45:52:2
+ring-claranet01:v6 2001:a88:0:ff00::4
+ring-claranet02:v6 2a00:1798:fff0::4
 ring-staging01 213.154.236.191
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
@@ -267,3 +269,5 @@ ring-teamix01 194.150.191.55
 ring-bci01 93.184.4.7
 ring-skyway01 109.234.105.30
 ring-solcon01 212.45.52.2
+ring-claranet01 195.157.9.4
+ring-claranet02 195.38.140.4
