@@ -1090,3 +1090,11 @@ ring-claranet02,icmp,D,0,86400000,60000
 ring-claranet02,icmp,D,0,86400000,60000, -s 576
 ring-claranet02,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-claranet03,icmp,D,0,86400000,60000
+ring-claranet03,icmp,D,0,86400000,60000, -s 576
+ring-claranet03,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-claranet03:v6,icmp,D,0,86400000,60000
+ring-claranet03:v6,icmp,D,0,86400000,60000, -s 576
+ring-claranet03:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+

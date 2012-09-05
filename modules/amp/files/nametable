@@ -271,3 +271,5 @@ ring-skyway01 109.234.105.30
 ring-solcon01 212.45.52.2
 ring-claranet01 195.157.9.4
 ring-claranet02 195.38.140.4
+ring-claranet03 212.61.158.6
+ring-claranet03:v6 2a02:830:1:4::2
