@@ -446,3 +446,6 @@ ff02::2 ip6-allrouters
 
 195.38.140.4 claranet02  claranet02.ring.nlnog.net
 2a00:1798:fff0::4 claranet02  claranet02.ring.nlnog.net
+
+212.61.158.6    claranet03  claranet03.ring.nlnog.net
+2a02:830:1:4::2 claranet03  claranet03.ring.nlnog.net
