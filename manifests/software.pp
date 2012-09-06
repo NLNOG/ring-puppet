@@ -75,7 +75,7 @@ class nettools {
     package { "gnutls-bin": ensure => latest }
     exec { "setcap cap_net_raw,cap_net_admin=eip /usr/sbin/hping3":
         onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/sbin/hping3`\" != \"/usr/sbin/hping3 = cap_net_admin,cap_net_raw+eip\"",
-        require => Package["hping3"],
+        require => Package["hping3", "libcap2-bin"],
     }
  
     package { "openntpd": ensure => purged }
@@ -100,7 +100,7 @@ class nettools {
 
     exec { "setcap cap_net_raw+ep /usr/bin/traceroute.db":
         onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/bin/traceroute.db`\" != \"/usr/bin/traceroute.db = cap_net_raw+ep\"",
-        require => Package["traceroute"],
+        require => Package["traceroute", "libcap2-bin"],
     }
 #    exec { "setcap cap_net_raw+ep /usr/bin/traceroute6":
 #        onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/bin/traceroute6`\" != \"/usr/bin/traceroute6 = cap_net_raw+eip\"",
@@ -134,7 +134,7 @@ class nettools {
     }
     exec { "setcap cap_net_admin,cap_net_raw+eip /usr/bin/dumpcap":
         onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/bin/dumpcap`\" != \"/usr/bin/dumpcap = cap_net_admin,cap_net_raw+eip\"",
-        require => Package["tshark"],
+        require => Package["tshark", "libcap2-bin"],
     }
 
     package { "build-essential": ensure => latest }
