@@ -27,7 +27,7 @@ ring-previder01:v6 2001:1690:2:115::18
 ring-nxs01:v6 2001:14a0:300:3::22:1
 ring-ic-hosting01:v6 2001:67c:b0:3::2
 ring-nedzone01:v6 2a02:990:222::6932:49e9
-ring-oxilion01:v6 2a00:d10:101::195:1
+ring-oxilion01:v6 2a00:d10:1141:6::5
 ring-ebayclassifiedsgroup01:v6 2001:67c:2d0:4150::2
 ring-is01:v6 2001:9a0:2000:a::1:1
 ring-surfnet01:v6 2001:610:511:123:192:42:123:22
@@ -164,7 +164,7 @@ ring-previder01 84.241.137.18
 ring-nxs01 217.115.195.38
 ring-ic-hosting01 178.19.114.34
 ring-nedzone01 178.18.139.54
-ring-oxilion01 93.186.180.112
+ring-oxilion01 93.186.180.113
 ring-ebayclassifiedsgroup01 91.211.73.209
 ring-is01 213.197.240.52
 ring-surfnet01 192.42.123.22

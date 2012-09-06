@@ -121,8 +121,8 @@ ff02::2 ip6-allrouters
 2a02:990:222::6932:49e9  nedzone01   nedzone01.ring.nlnog.net
 178.18.139.54   nedzone01   nedzone01.ring.nlnog.net
 
-2a00:d10:101::195:1 oxilion01   oxilion01.ring.nlnog.net
-93.186.180.112  oxilion01   oxilion01.ring.nlnog.net
+93.186.180.113   oxilion01   oxilion01.ring.nlnog.net
+2a00:d10:1141:6::5  oxilion01   oxilion01.ring.nlnog.net
 
 2001:67c:2d0:4150::2    ebayclassifiedsgroup01  ebayclassifiedsgroup01.ring.nlnog.net
 91.211.73.209   ebayclassifiedsgroup01  ebayclassifiedsgroup01.ring.nlnog.net
