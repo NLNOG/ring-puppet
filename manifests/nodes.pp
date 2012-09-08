@@ -1853,3 +1853,23 @@ node 'claranet04' inherits ringnode {
     include set_local_settings                                             
     include users
 }
+
+node 'xlhosting02' inherits ringnode {
+    $owner = "xlshosting"
+    $location = "0,0"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                             
+    include users
+}
+
+node 'xlhosting03' inherits ringnode {
+    $owner = "xlshosting"
+    $location = "0,0"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                             
+    include users
+}
