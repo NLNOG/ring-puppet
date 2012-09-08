@@ -1854,7 +1854,7 @@ node 'claranet04' inherits ringnode {
     include users
 }
 
-node 'xlhosting02' inherits ringnode {
+node 'xlshosting02' inherits ringnode {
     $owner = "xlshosting"
     $location = "52.332912,4.919461"
     include amp_client                                                    
@@ -1864,7 +1864,7 @@ node 'xlhosting02' inherits ringnode {
     include users
 }
 
-node 'xlhosting03' inherits ringnode {
+node 'xlshosting03' inherits ringnode {
     $owner = "xlshosting"
     $location = "52.332912,4.919461"
     include amp_client                                                    
