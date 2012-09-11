@@ -1300,11 +1300,6 @@ class users::virtual::ring_users {
         groups => ['ring-users'],
         ensure  => absent,
     }
-    @authorized_keys { 'networkdesign':
-        sshkeys => [
-            '',
-            ],
-    }
 
 ##### END networkdesign #####
 
