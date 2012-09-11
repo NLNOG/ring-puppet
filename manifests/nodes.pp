@@ -1110,17 +1110,6 @@ node 'seeweb01' inherits ringnode {
 	include users
 }
 
-node 'networkdesign01' inherits ringnode {
-    $owner = "networkdesign"
-    $location = "47.38339,8.49560"
-    $nagios_ping_rate = '!200.0,20%!300.0,60%'
-    include amp_client
-    include nagios::target::fqdn
-    include nagios_services
-    include set_local_settings
-	include users
-}
-
 node 'zensystems01' inherits ringnode {
     $owner = "zensystems"
     $location = "55.7284634,12.376985"

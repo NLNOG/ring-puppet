@@ -298,10 +298,6 @@ ring-seeweb01:v6,icmp,D,0,86400000,60000
 ring-seeweb01:v6,icmp,D,0,86400000,60000, -s 576
 ring-seeweb01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
-ring-networkdesign01:v6,icmp,D,0,86400000,60000
-ring-networkdesign01:v6,icmp,D,0,86400000,60000, -s 576
-ring-networkdesign01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
-
 ring-zensystems01:v6,icmp,D,0,86400000,60000
 ring-zensystems01:v6,icmp,D,0,86400000,60000, -s 576
 ring-zensystems01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -861,10 +857,6 @@ ring-mironet01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-seeweb01,icmp,D,0,86400000,60000
 ring-seeweb01,icmp,D,0,86400000,60000, -s 576
 ring-seeweb01,scamper,D,0,86400000,900000, -P udp-paris -M
-
-ring-networkdesign01,icmp,D,0,86400000,60000
-ring-networkdesign01,icmp,D,0,86400000,60000, -s 576
-ring-networkdesign01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-zensystems01,icmp,D,0,86400000,60000
 ring-zensystems01,icmp,D,0,86400000,60000, -s 576
