@@ -4,6 +4,10 @@ class amp_client {
         ensure => latest,
     }
  
+   package { ["amplet-common"]:
+        ensure => latest,
+    }
+
     file { "/usr/lib/amp/ext-bin/scamper":
         ensure  => "/usr/bin/scamper",
         require => Package["amplet-client"],
