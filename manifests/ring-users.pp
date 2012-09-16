@@ -1298,11 +1298,7 @@ class users::virtual::ring_users {
         company => 'Network Design GmbH',
         uid => '5073',
         groups => ['ring-users'],
-    }
-    @authorized_keys { 'networkdesign':
-        sshkeys => [
-            'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAuBcwLlZ1Sq2ytj067uVxUW5bW0qi9KIQEsbdjZ4SzszDWO6d2sL30gLCkteUvLYlNuyqZdWTsPhCPLf94ozhb+CkdIJyeqPszMjhsAlD0wwlRrPnuaIp/jvhU7vNtapbzbNnAfIjT/ditOJ9Zs3I1U2HVvYEICn3pNYyFiycz0I0YlowsGQbEECraciU+MdLeEK1CuenpxPrdi+y6R+yqrVkwEvlUWy6jnuONr0vhGazeCY0r+ExODQknF2RvPLB0P8tzlIbXftgixE9+63DEiaOQvF9QTFGOxItwXmZQoOzllEpqdSjpK1A45u7YppHesMWkHOCdJo5wA38lsgcKw== kee@ndm.ch',
-            ],
+        ensure  => absent,
     }
 
 ##### END networkdesign #####
@@ -1849,6 +1845,7 @@ class users::virtual::ring_users {
     @authorized_keys { 'nine':
         sshkeys => [
             'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDfHI/dJ8kRjp5exSESBtaKpYkKIIazrHPKKkorSfhDDdPtMSCbhPLIBeE9rx/hN3SIaBA2XmH84k3BWfnq8hQvM2x/USeNapzhWnEiwtSlaKsmLWcOxmcoDVHQ3jilMzOlwXaJ26nONVyxJsvjjVeswuNcuBObD9qm30RoNJtL4kfNuCbYYiz4PE457KLFGJI5j5bZ1nk+cj0ToKbKIMjI88z9ZtYjUfYt/0Xy+cSlsEm/niL1Q0E9yiAWnUEsKCFpUfpqT6zt2dUCVGOCybKlooP4dxpfsNnDVn3OGwVCthuwhrz88RR6AjwmAfiVd/LQhzV19yy6LdmYAeuqF5xv',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDD98X1e5GCK1OuOfaAYuiQLwfHXrgAFll82Z1i7c9O3Xr0LvpHFSmRINiyfFg/Jz7tw6mvmXVy59KtGwJYQD+DfMHmJFMKtw0zK2qUn7SKa3jYXTnEB9IrWLZ+GTQIiN0B1eaxXkqNZ5uZxIVgc6OIgcOYYzVIyLf1AUCQRzVNDYmt74h7gbNqsd2hSqTwpra3tBKusIjjFZR3GZukgW/7C8hov2K+5Eb+Y8wnNeJ5B353pveOEraOe6iw1sig6Z1RfKOmlTQZm8G+eDfBCQyX3gSzbZLhYkmBoPcXdx4l2EQ4z/kuIpVJpHvCU7eOGFFuVi9ZVcc2CtTT9h2tgm9/ Nine Ring Node Access',
         ],
     }
 

@@ -298,10 +298,6 @@ ring-seeweb01:v6,icmp,D,0,86400000,60000
 ring-seeweb01:v6,icmp,D,0,86400000,60000, -s 576
 ring-seeweb01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
-ring-networkdesign01:v6,icmp,D,0,86400000,60000
-ring-networkdesign01:v6,icmp,D,0,86400000,60000, -s 576
-ring-networkdesign01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
-
 ring-zensystems01:v6,icmp,D,0,86400000,60000
 ring-zensystems01:v6,icmp,D,0,86400000,60000, -s 576
 ring-zensystems01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -545,6 +541,22 @@ ring-claranet01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-claranet02:v6,icmp,D,0,86400000,60000
 ring-claranet02:v6,icmp,D,0,86400000,60000, -s 576
 ring-claranet02:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-claranet03:v6,icmp,D,0,86400000,60000
+ring-claranet03:v6,icmp,D,0,86400000,60000, -s 576
+ring-claranet03:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-claranet04:v6,icmp,D,0,86400000,60000
+ring-claranet04:v6,icmp,D,0,86400000,60000, -s 576
+ring-claranet04:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-xlshosting02:v6,icmp,D,0,86400000,60000
+ring-xlshosting02:v6,icmp,D,0,86400000,60000, -s 576
+ring-xlshosting02:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-xlshosting03:v6,icmp,D,0,86400000,60000
+ring-xlshosting03:v6,icmp,D,0,86400000,60000, -s 576
+ring-xlshosting03:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-staging01,icmp,D,0,86400000,60000
 ring-staging01,icmp,D,0,86400000,60000, -s 576
@@ -846,10 +858,6 @@ ring-seeweb01,icmp,D,0,86400000,60000
 ring-seeweb01,icmp,D,0,86400000,60000, -s 576
 ring-seeweb01,scamper,D,0,86400000,900000, -P udp-paris -M
 
-ring-networkdesign01,icmp,D,0,86400000,60000
-ring-networkdesign01,icmp,D,0,86400000,60000, -s 576
-ring-networkdesign01,scamper,D,0,86400000,900000, -P udp-paris -M
-
 ring-zensystems01,icmp,D,0,86400000,60000
 ring-zensystems01,icmp,D,0,86400000,60000, -s 576
 ring-zensystems01,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1094,7 +1102,15 @@ ring-claranet03,icmp,D,0,86400000,60000
 ring-claranet03,icmp,D,0,86400000,60000, -s 576
 ring-claranet03,scamper,D,0,86400000,900000, -P udp-paris -M
 
-ring-claranet03:v6,icmp,D,0,86400000,60000
-ring-claranet03:v6,icmp,D,0,86400000,60000, -s 576
-ring-claranet03:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+ring-claranet04,icmp,D,0,86400000,60000
+ring-claranet04,icmp,D,0,86400000,60000, -s 576
+ring-claranet04,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-xlshosting02,icmp,D,0,86400000,60000
+ring-xlshosting02,icmp,D,0,86400000,60000, -s 576
+ring-xlshosting02,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-xlshosting03,icmp,D,0,86400000,60000
+ring-xlshosting03,icmp,D,0,86400000,60000, -s 576
+ring-xlshosting03,scamper,D,0,86400000,900000, -P udp-paris -M
 
