@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# this file is run after vmbuilder is done creating a vm, to add serial console to it
+
+target=$1
+
+(printf "serial --unit=0 --speed=115200 --word=8 --parity=no --stop=1\nterminal --dumb serial\n\n"; cat $target/boot/grub/menu.lst) > $target/tmp/menu.lst && mv $target/tmp/menu.lst $target/boot/grub/menu.lst
+
+chroot $target sed -i -e '/^# kopt=/s/^\(.*\)$/\1 console=ttyS0,115200n8/; /^# defoptions=/s/=.*$/=/' \
+  /boot/grub/menu.lst
+chroot $target update-grub

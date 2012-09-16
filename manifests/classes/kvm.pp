@@ -11,6 +11,13 @@ class kvm {
         source  => "puppet:///files/root/run-puppet-at-boot",
     }
     
+    file { "/root/add-serial-to-grub":
+        owner   => root,
+        group   => root,
+        mode    => 0755,
+        source  => "puppet:///files/root/add-serial-to-grub",
+    }
+    
     file { "/etc/libvirt/qemu/autostart":
         ensure  => directory,
     }
@@ -53,11 +60,18 @@ define kvm::virtual_machine ($fqdn, $ip, $netmask, $dns="8.8.8.8", $gateway, $me
                 --addpkg=traceroute \
                 --addpkg=vim \
                 --bridge=$bridge \
+                --execscript=/root/add-serial-to-grub
                 --firstboot=/root/run-puppet-at-boot \
                   && virsh start $fqdn && virsh autostart ${fqdn}; rm -rf  ubuntu-kvm ",
             unless => "/usr/bin/test -L /dev/mapper/${container}-$name",
             }
-            
+    
+            file { "/etc/init/ttyS0.conf":
+                owner   => root,
+                group   => root,
+                mode    => 0755,
+                source  => "puppet:///files/etc/init/ttyS0.conf",
+            }
         }
         absent: {
             exec { "destroy_vm_${name}":
