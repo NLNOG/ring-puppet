@@ -1862,3 +1862,13 @@ node 'xlshosting03' inherits ringnode {
     include set_local_settings                                             
     include users
 }
+
+node 'arpnetworks01' inherits ringnode {
+    $owner = "arpnetworks"
+    $location = "34.058723,-118.235299"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                             
+    include users
+}

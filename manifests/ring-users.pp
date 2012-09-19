@@ -2215,4 +2215,19 @@ class users::virtual::ring_users {
     }
 ##### END claranet #####
 
+##### BEGIN arpnetworks #####
+
+    @add_user { 'arpnetworks':
+        email => 'noc@arpnetworks.com',
+        company => 'ARP Networks, Inc.',
+        uid => '5125',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'arpnetworks':
+        sshkeys => [
+            'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAwkUmBU3x8c5NZed7KGhh+abJaM4HD/MHXm6fZlST4rmrSVAc5iUx3shOgjFUeh8UQt8fjtfXScDw5ul0NJci4y4c5KUYYRqtdzxl3n4IeTFvTYGQkkpNuhp4VE6FOX7yJROCDW0mx3CukGZi5i52qZuRPO9dtUAFJ8FUsXbKJbGiHAA1i03npiUBgnRlbCZwRSA3jC6O5338CQQNnSNVI/lYmMner+vsGfVq+h9k37qySZjdjcCanzuaC2NGpBCpBKa7g50neOcrpfK1op0F1FX1aYZHtbgTL24NHYJNl4pUs9loqgfeKpQ9tzMUEoBFQeEUToa5iTJKLtbVW1lRqQ==',
+        ],
+    }
+##### END arpnetworks #####
+
 }
