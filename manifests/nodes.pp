@@ -114,7 +114,7 @@ node 'container01' inherits basenode {
         rootsize    => '19968',
         bridge      => 'virbr1',
         container   => "${hostname}",
-        ensure      => absent,
+        ensure      => present,
     }
     kvm::virtual_machine { 'public01':
         fqdn        => 'public01.infra.ring.nlnog.net',
