@@ -2225,7 +2225,7 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'arpnetworks':
         sshkeys => [
-            'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAwkUmBU3x8c5NZed7KGhh+abJaM4HD/MHXm6fZlST4rmrSVAc5iUx3shOgjFUeh8UQt8fjtfXScDw5ul0NJci4y4c5KUYYRqtdzxl3n4IeTFvTYGQkkpNuhp4VE6FOX7yJROCDW0mx3CukGZi5i52qZuRPO9dtUAFJ8FUsXbKJbGiHAA1i03npiUBgnRlbCZwRSA3jC6O5338CQQNnSNVI/lYmMner+vsGfVq+h9k37qySZjdjcCanzuaC2NGpBCpBKa7g50neOcrpfK1op0F1FX1aYZHtbgTL24NHYJNl4pUs9loqgfeKpQ9tzMUEoBFQeEUToa5iTJKLtbVW1lRqQ==',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA5m6Dgvvm6sGMrzQ2/3qnal95WtX7SGf6NJ5PX4GJWgLwX3z2whFWv+DNDCas3ZR6aPrA+GXzIXgaJhkP4XDjkizQDQP9ZDuNGrMaVeKMuGkZZlydMTrbPN5AFjvdRqiIsIp5tSQASUoGEQUoWG76p9epc3pACPR9KXQzPiDhGAJuJFYsOkGRAN7uSdqC6F5Afr1UythBXY/sjW19OQkJ4yGVRMkDCWlJKxzbVdD0w/iCcOuScGpZZkTCO/cnVCrucrnV1jd5f85zh7vH88YO2nMBSpooRzUiIULJkA+IQfSJhRYned9sk2/FLO9qha+thO4l52BkHgmczJLoLlb3yw== nlnog-ring',
         ],
     }
 ##### END arpnetworks #####
