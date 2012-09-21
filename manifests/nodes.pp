@@ -114,7 +114,7 @@ node 'container01' inherits basenode {
         rootsize    => '19968',
         bridge      => 'virbr1',
         container   => "${hostname}",
-        ensure      => present,
+        ensure      => absent,
     }
     kvm::virtual_machine { 'public01':
         fqdn        => 'public01.infra.ring.nlnog.net',
@@ -244,7 +244,6 @@ node 'lg01.infra' inherits basenode {
     include bird-lg-proxy 
     munin::plugin { ["bird", "bird6"]:
     }
-
 }
 
 node 'worker01' inherits basenode {
