@@ -17,7 +17,10 @@ then
 	REGION=$(echo $CYMRUASINFO | cut -d \| -f 3 | sed 's/^ //' | sed 's/ $//')
 	ASINFO=$(echo $CYMRUASINFO | cut -d \| -f 5 | sed 's/^ //' | sed 's/ $//')
 fi
-LOCATION=$(grep $(whois $(echo $IPV6ADDR)|grep -i ^country|head -n1|awk '{print "^"$2}') /usr/share/zoneinfo/iso3166.tab|cut -f2)
+LOCATION=$(whois $(echo $IPV6ADDR) 2>/dev/null|grep -i ^country)
+if [ -n "$LOCATION" ]; then
+        LOCATION=$(grep $(echo "$LOCATION "|head -n1|awk '{print "^"$2}') /usr/share/zoneinfo/iso3166.tab|cut -f2)
+fi
 
 # NLNOG RING Logo - can be disabled :)
 cat /etc/update-motd.d/ring.nlnog.net-logo
