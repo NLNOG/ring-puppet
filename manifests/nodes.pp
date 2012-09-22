@@ -244,7 +244,6 @@ node 'lg01.infra' inherits basenode {
     include bird-lg-proxy 
     munin::plugin { ["bird", "bird6"]:
     }
-
 }
 
 node 'worker01' inherits basenode {
