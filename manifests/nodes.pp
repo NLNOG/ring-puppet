@@ -1871,3 +1871,13 @@ node 'arpnetworks01' inherits ringnode {
     include set_local_settings                                             
     include users
 }
+
+node 'iabg01' inherits ringnode {
+    $owner = "iabg"
+    $location = "48.05159,11.659881"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                             
+    include users
+}

@@ -458,3 +458,6 @@ ff02::2 ip6-allrouters
 
 174.136.100.234 arpnetworks01   arpnetworks01.ring.nlnog.net
 2607:f2f8:ade8::2 arpnetworks01   arpnetworks01.ring.nlnog.net
+
+83.170.60.36    iabg01  iabg01.ring.nlnog.net
+2001:1b10:1006::53aa:3c24    iabg01  iabg01.ring.nlnog.net

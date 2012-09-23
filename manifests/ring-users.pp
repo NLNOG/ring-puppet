@@ -2230,4 +2230,19 @@ class users::virtual::ring_users {
     }
 ##### END arpnetworks #####
 
+##### BEGIN iabg #####
+
+    @add_user { 'iabg':
+        email => 'ip@teleport-iabg.de',
+        company => 'IABG mbH - Teleport',
+        uid => '5126',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'iabg':
+        sshkeys => [
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBXddKMlL9Wp/bzB0+9bl+vtf7TNM0HCtHpfSnaPRrNFHuJ3ER79r1mGJBBgbAGAbdt5phBFUvI0FofGb0hiySYCNdAlqbaWrf/limTJo5udJ/sm9eORY94+sGdJfS5TXPXRX1HgCFLhLkid9WrjmlGYmOz+a9W4J+mGRIYN7Jk5Im9kdId4z/9QXuQNePEOB1ErUprgy9Opo6ntNoLmfQ1hB6YfLoj3Hlx2riSOd6+4oO7HeXySzVSlCqf8UbNJLE2X5ypnCQWyrgJy9BRXs2MULVab/NTUU94e62R3FYCPgLv2QXtTwgjSO8K9bvNggzztngG0KjD7wDiHiN9zV/ bschmidt@ops01',
+        ],
+    }
+##### END iabg #####
+
 }
