@@ -276,6 +276,19 @@ node 'worker02' inherits basenode {
     }
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
  }
+ 
+node 'worker03' inherits basenode {
+    include users
+    include syslog_ng::client
+    include apache2
+    include nagios_services
+    include nagios::target::fqdn
+    nagios::service::http { $name:
+        check_domain => "${name}"
+    }
+    munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
+ }
+
 # give Brendon access for AMP
 ##### BEGIN brendon-wand #####
 
