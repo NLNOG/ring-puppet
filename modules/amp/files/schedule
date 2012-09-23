@@ -562,6 +562,10 @@ ring-arpnetworks01:v6,icmp,D,0,86400000,60000
 ring-arpnetworks01:v6,icmp,D,0,86400000,60000, -s 576
 ring-arpnetworks01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-iabg01:v6,icmp,D,0,86400000,60000
+ring-iabg01:v6,icmp,D,0,86400000,60000, -s 576
+ring-iabg01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging01,icmp,D,0,86400000,60000
 ring-staging01,icmp,D,0,86400000,60000, -s 576
 ring-staging01,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1121,4 +1125,8 @@ ring-xlshosting03,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-arpnetworks01,icmp,D,0,86400000,60000
 ring-arpnetworks01,icmp,D,0,86400000,60000, -s 576
 ring-arpnetworks01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-iabg01,icmp,D,0,86400000,60000
+ring-iabg01,icmp,D,0,86400000,60000, -s 576
+ring-iabg01,scamper,D,0,86400000,900000, -P udp-paris -M
 
