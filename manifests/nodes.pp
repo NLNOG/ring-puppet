@@ -275,8 +275,9 @@ node 'worker02' inherits basenode {
         check_domain => "${name}"
     }
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
- }
- 
+    }
+}
+
 node 'worker03' inherits basenode {
     include users
     include syslog_ng::client
@@ -287,7 +288,7 @@ node 'worker03' inherits basenode {
         check_domain => "${name}"
     }
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
- }
+    }
 
 # give Brendon access for AMP
 ##### BEGIN brendon-wand #####
@@ -303,7 +304,6 @@ node 'worker03' inherits basenode {
            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDESb7w1mFquFHO1isMqwBABo+PRhKBtewCYnnKsRLWSlC0EYonnpRWGhZv29P7vgVpv79aUuf8XUtSYx2knMXFlFWZhj5/e71Yhn15Fg7E7Ib2N9kwd0Gizg5KXTSoMR7HUMpDPFXbZY7MkpNZQtC3iyQzptp8q/VlszbFtUvMMK2jlrMRkULR8PCV28WHZnBeIB8+XXgzUwOPrG4sgaZqiiEXnC/eVv8bPPZApwIvv6Ac1ekqMq7HNQaccgYff0c1s6EPZzlMV2vLhvKi3E4NMpFXNRIhvM2Px2QsrnvmV+NMIDB3O5zQkV+Lv1kFoWT1NRb6AfQ0KtDF3zjkiVbX brendonj@voodoo',
         ],
     }
-
 ##### END brendon-wand #####
 
 }
