@@ -140,6 +140,7 @@ ring-xlshosting02:v6 2a02:348:97:8083::1
 ring-xlshosting03:v6 2a02:348:97:8084::1
 ring-arpnetworks01:v6 2607:f2f8:ade8::2
 ring-iabg01:v6 2001:1b10:1006::53aa:3c24
+ring-initseven01:v6 2001:1620:2777:36::98
 ring-staging01 213.154.236.191
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
@@ -281,3 +282,4 @@ ring-xlshosting02 93.191.128.131
 ring-xlshosting03 93.191.128.132
 ring-arpnetworks01 174.136.100.234
 ring-iabg01 83.170.60.36
+ring-initseven01 82.197.163.98
