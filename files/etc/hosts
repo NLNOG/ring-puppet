@@ -464,3 +464,6 @@ ff02::2 ip6-allrouters
 
 83.170.60.36    iabg01  iabg01.ring.nlnog.net
 2001:1b10:1006::53aa:3c24    iabg01  iabg01.ring.nlnog.net
+
+82.197.163.98   initseven01 initseven01.ring.nlnog.net
+2001:1620:2777:36::98   initseven01 initseven01.ring.nlnog.net

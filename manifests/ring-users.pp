@@ -2243,4 +2243,19 @@ class users::virtual::ring_users {
     }
 ##### END iabg #####
 
+##### BEGIN initseven #####
+
+    @add_user { 'initseven':
+        email => 'noc@init7.net',
+        company => 'INIT7',
+        uid => '5127',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'initseven':
+        sshkeys => [
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIzSP19ge2HGg33AyOjBy1ix+pMBOjgc7sVIrSUF8zG4sWjHWK2xETLBVVJ7xdR1Miv0yINjX/lRRWBgmAW7r0QKJGUMHPDYockXpXnZ4mI2WKhAB0mUHMkcuXoeHB0dX1pepNwlgkYX4DimX7IcpxbYSOxdOPmCmo9ngWBksrZ0jY0BoWSRtBEDOhpZYtcpihWjDvRpYldsREZSlV5Skff6ZsNZ4LDsOeeUKXleYbbF8PVOHb199XSwhlf7ujP2D5x0lV8acy/v8vVdCyljjK72c5IoJ0MoWRoKxtSV5aisaDpU6l3AuTnaXvuvT9Wt28UTsHbDfEzevmR0CiONRh cyril@cronsulu',
+        ],
+    }
+##### END initseven #####
+
 }
