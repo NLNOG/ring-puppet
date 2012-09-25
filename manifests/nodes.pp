@@ -1904,3 +1904,23 @@ node 'initseven01' inherits ringnode {
     include set_local_settings                                             
     include users
 }
+
+node 'hosting90systems01' inherits ringnode {
+    $owner = "hosting90systems"
+    $location = "50.078122,14.472277"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                             
+    include users
+}
+
+node 'claranet05' inherits ringnode {
+    $owner = "claranet"
+    $location = "48.905224522197365, 2.2583717107772827"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                             
+    include users
+}
