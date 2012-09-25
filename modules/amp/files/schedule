@@ -570,6 +570,14 @@ ring-initseven01:v6,icmp,D,0,86400000,60000
 ring-initseven01:v6,icmp,D,0,86400000,60000, -s 576
 ring-initseven01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-hosting90systems01:v6,icmp,D,0,86400000,60000
+ring-hosting90systems01:v6,icmp,D,0,86400000,60000, -s 576
+ring-hosting90systems01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-claranet05:v6,icmp,D,0,86400000,60000
+ring-claranet05:v6,icmp,D,0,86400000,60000, -s 576
+ring-claranet05:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging01,icmp,D,0,86400000,60000
 ring-staging01,icmp,D,0,86400000,60000, -s 576
 ring-staging01,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1137,4 +1145,12 @@ ring-iabg01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-initseven01,icmp,D,0,86400000,60000
 ring-initseven01,icmp,D,0,86400000,60000, -s 576
 ring-initseven01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-hosting90systems01,icmp,D,0,86400000,60000
+ring-hosting90systems01,icmp,D,0,86400000,60000, -s 576
+ring-hosting90systems01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-claranet05,icmp,D,0,86400000,60000
+ring-claranet05,icmp,D,0,86400000,60000, -s 576
+ring-claranet05,scamper,D,0,86400000,900000, -P udp-paris -M
 
