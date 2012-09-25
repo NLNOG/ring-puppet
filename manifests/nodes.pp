@@ -196,8 +196,8 @@ node 'container02.infra' inherits basenode {
 # 8 cores / 24GB RAM / 750GB disk
 # virbr0 is bridged to eth0 (uplink)
 # virbr1 is virtual switch on the box with this IP space:
-#   IPv4 prefix: TBD
-#   IPv6 prefix: TDB
+#   IPv4 prefix: 78.152.42.64/28
+#   IPv6 prefix: 2a02:d28:666:0:0:0:0:0/48
 node 'container03.infra' inherits basenode {
     include users
     include syslog_ng::client
