@@ -192,6 +192,23 @@ node 'container02.infra' inherits basenode {
 
 }
 
+# container03 is hosted at Atrato in Frankfurt
+# 8 cores / 24GB RAM / 750GB disk
+# virbr0 is bridged to eth0 (uplink)
+# virbr1 is virtual switch on the box with this IP space:
+#   IPv4 prefix: TBD
+#   IPv6 prefix: TDB
+node 'container02.infra' inherits basenode {
+    include users
+    include syslog_ng::client
+    include nagios_services
+    include nagios::target::fqdn
+    include kvm
+    munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
+    }
+}
+
+
 
 # website, dns, mailing-list etc
 node 'public01.infra' inherits basenode {
