@@ -198,7 +198,7 @@ node 'container02.infra' inherits basenode {
 # virbr1 is virtual switch on the box with this IP space:
 #   IPv4 prefix: TBD
 #   IPv6 prefix: TDB
-node 'container02.infra' inherits basenode {
+node 'container03.infra' inherits basenode {
     include users
     include syslog_ng::client
     include nagios_services
