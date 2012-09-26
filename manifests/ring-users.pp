@@ -2275,4 +2275,20 @@ class users::virtual::ring_users {
     }
 ##### END hosting90systems #####
 
+##### BEGIN kordia #####
+
+    @add_user { 'kordia':
+        email => 'smc@kordia.co.nz',
+        company => 'Kordia',
+        uid => '5129',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'kordia':
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAlG62nbZ13cGLbpMprpj3QlzD9xzu/UMwHJpWG+PdoFajEJRK1YdxXUiuwCthXF5p5mYqVzjh6aGp3ky47uuG/zmkIa37KM7rRf41Edn3EWR/j6+qxdPkAnI1fxJsgkEob0THjCNP8Xm2IKP9grXAvFCLSjwK6nNXCDcHiF8NHJ8=",
+        ],
+    }
+##### END kordia #####
+
+
 }

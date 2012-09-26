@@ -1941,3 +1941,13 @@ node 'claranet05' inherits ringnode {
     include set_local_settings                                             
     include users
 }
+
+node 'kordia01' inherits ringnode {
+    $owner = "kordia"
+    $location = "-41.187501,174.946346"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                             
+    include users
+}

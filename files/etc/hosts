@@ -478,3 +478,7 @@ ff02::2 ip6-allrouters
 
 62.240.228.4    claranet05  claranet05.ring.nlnog.net
 2001:a70:ff:5::4 claranet05  claranet05.ring.nlnog.net
+
+124.157.73.94   kordia01    kordia01.ring.nlnog.net
+2404:6c00:1:f::2    kordia01    kordia01.ring.nlnog.net
+
