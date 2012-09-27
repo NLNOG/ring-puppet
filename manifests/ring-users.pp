@@ -2290,5 +2290,23 @@ class users::virtual::ring_users {
     }
 ##### END kordia #####
 
+##### BEGIN isc #####
+
+    @add_user { 'isc':
+        email => 'ops@safdef.isc.org',
+        company => 'Internet Systems Consortium, Inc.',
+        uid => '5130',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'isc':
+        sshkeys => [
+            "ssh-dss AAAAB3NzaC1kc3MAAACBAII2sqb3kNCfWcfbXEuRsDt9n53ziQkZTHglhMT2EQUvCUeQk5/Jv0sm0FjjLFzcoF5tvIg9g9b2hFzbyPVtL47CG4TtfTs811/jMirhjrKUG+tfpQW+sibo6N0KGVEk5sB0gUanXhswm3m+dVn5j6P6Syz6cvaTsJ8tmjHyJ7SdAAAAFQDdTajtJKTOuQvAXolBVLbCnci+uwAAAIBD2H3d8ma6d54rpxo/66XHs2heOZifb2gE+JbJz5rxn5QAaVoWTiL1UdG38h/cEZDrTxz37Vr9RVZyUC2a7lmpdzvXCMxhK9r3FVnKEdlOkWzdzA5YfIRFxgvDqik8YOB2VSuLEZweHuuMqLusVbNAzyOx0dX3m2/KK7OEfAj46wAAAIAi75q26kBPwQUQqPhHHo0o7Mtv7IISLeXjJFH0ILZiY5Cn0CVKA2wnJEO3a+NwoexuGZo2JUEAj68RxFk5hY9CfhU02IEV9WtPLI2tgvkidwjkoL4F+QTYkWsNPfbTJ9ZzQmE1aSmE+BsskzGvt761b7mItPHQAFiUcgUtlcfZZw== jeroen@yomi.ch.unfix.org",
+            "ssh-dss AAAAB3NzaC1kc3MAAACBAICcb6pURF3OhJ1OipTQVd4XM0sM1SG1GX1NxfUdxJfhRfxiLMNSziFOt9Uk/s3QFJogT9/ghFWg+m415+RjObL7dyjqTky1B5PP+W/xaoeqYK82UU6ZASMCLXsqYa+B715vh88ZXQ4SpkUA4ggA0Gyz0SBvGMt8vfg5aTrWRbjVAAAAFQDBINeYuN52vrKM1F+IXMJcDYxMdQAAAIA3E4NmfoeJh4O8LcVE7etoSLMXHZDp7Nv6Lt6avLt566moo6ImOOELIKkIXtflgSUGNs6b/+p2ooEER1AI33udg4zZCzey01vpen5AgmXgd+kveHpkmZI8uFrEFVjZT6m0zYk6OpfGb933eog6XcpFwfObCS+mUGBR9TCkwIFFAQAAAIB3gE2srLt521b2l9/uMYxL+FXGOU/ZfGtin8Iey8/sL8+myXB2bRua66PUc4qtg3JdgxFJrGnREkC4MwvYlhpQRAG/Qyp2Nlblw2evzNvolNT7LObXLenSkcmJib9HiWWm/sc2+zbg0z0GqBaqr3iiLzhuGL92gWAH77/0SbjEqw== jeroen@safdef.isc.org",
+            "ssh-dss AAAAB3NzaC1kc3MAAACBAL6D0F12sN4N3SrZhmYpP4kdCcjOeMH+0MohfwrbiYAIAhWwPyABlColPFgE97MSvDtkFahMdJgf1WQJyTxxRp1WNcXRVovxCWcya3sxNBuoFv4mmEr1jt03OFaQKjene3mMPUQDcTbX38Wha2CFnzYL88fanGkvTsGIvNcVViqxAAAAFQCUUUIAYs4vTTZnUuD9aA/mPLQAiwAAAIEAiG118h0ekZ5T2iZz8NEyBLtUd2jW8K0upSalpGWIOXsqSDaf9kosKKlnvHWciZfFAvczkVJjchbGZ80h5sYHsVVRb/4Hc+/ZrdFxP51lGLu9vOWjM6DssIg017rcomMfjWo5Nyjx+IchKQrd1AyZRSsX1pT4Moyg4QtP6jye4eYAAACBALqkEaXJFTIp4FzldlIuf1HraCnUhzBPWFFvyFJS3QVigl4nmApjxjRzQSSO9MluvQf739KyefyGEQ4Xkf+zLK3sDcMDyR1Nz92q09zhQvmUYlhgsRjJ5HSfyxe75cZKvGGYXUf9BSfwjivDtzpPLdhP/emm0pui2peNGVOhyacJ jeroen@kami.ch.unfix.org",
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEA1PZK1iixZ/P7/MYquyOIP3OpBG6Zw0YY6oZa6GAbdLLQxPBCf4GNZjJbW2AWSV87Y5jcba2zwNqNEKo60GCOTmHYtp6C0KrRQMG+UZvtC1goPSAh9c1gwQ7bNbPIwDAHPWfyPrVvHbg2J2ukXNzqjrQcXIyhFt6fS3nwtKtU3+ri7+ML3w9AoFXDDoSBsBDe9sN6MauGcshHJIlDpd45xgUqZwQ4TQb6wXRWX8GpbMOMekPsGA9Ek6+uLMCd463I9Yaf3aI7CJFbFIv+e7fK1nia/NBrp/TB6OPqkPqbM5HKoaoosEt6f014vN6P4zx9pzxtcYtE5Pgc/ZbKIbs+AviXMEsJqgaJhl5z/7wHubqXHt5j1WWOtroU88luAw68zJqHA5AYMI9oRyD77584Y7Audqs9UgQ/Ad3gIMNBEV3tNuHiPJcJKZAXT/zU2GpZ1m6QcnsQDzlKD4M20SDotEyL38YQckrUf3Xp1webNRYB/NQWm87Nyd7LsjEQkM7efpM4j+1XneD2tfCqL44VVOSecP0jA0snv49uIHLHYVwXl5tChoxr/pblV5A4ws6WZz95E08PBrP8cCUscKU4Xf4HyspIDDdzx1BdoCgJzAXMiBMMF0Sw2VTeiKgvdiDwvfhTLfq2N7zJTl/i3SvVULhGb8HfV6BHq918yUFSgw8= vixie@ww",
+        ],
+    }
+##### END isc #####
+
 
 }
