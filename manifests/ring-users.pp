@@ -2254,7 +2254,7 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'initseven':
         sshkeys => [
-            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIzSP19ge2HGg33AyOjBy1ix+pMBOjgc7sVIrSUF8zG4sWjHWK2xETLBVVJ7xdR1Miv0yINjX/lRRWBgmAW7r0QKJGUMHPDYockXpXnZ4mI2WKhAB0mUHMkcuXoeHB0dX1pepNwlgkYX4DimX7IcpxbYSOxdOPmCmo9ngWBksrZ0jY0BoWSRtBEDOhpZYtcpihWjDvRpYldsREZSlV5Skff6ZsNZ4LDsOeeUKXleYbbF8PVOHb199XSwhlf7ujP2D5x0lV8acy/v8vVdCyljjK72c5IoJ0MoWRoKxtSV5aisaDpU6l3AuTnaXvuvT9Wt28UTsHbDfEzevmR0CiONRh cyril@cronsulu',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDY6hor4dw1/ilt9/YoGQqU4tIUz8/9cUM0s26TWvql4sdawINEPcu1IDVKdiTY3bXH0vv7Vq61k6aDUVmTp+cfkUeLUOCTTxsE4YZ6JBGsUND+RD91sqih1eovvNWXGEzFQJlB2kx5f7njhbu1v6umaZF35J2eXfqYRWyKCGHNl9PslskGGne2ewqSchugIhRs/KOzvIqwlGTB0hKSpmrQ40Due9ELKqP/GUE1hmxkogq6Y9B9elirnSAF8/Nqk9KFKR5kXVsQ0X7mcMBV4Y4HHsLd4gECLnoRO838wopmu6qICw3Q1NMb9sRj8VlbMYWwLoDsKox6d+XlZMyTTeWx waller@init7.net',
         ],
     }
 ##### END initseven #####
