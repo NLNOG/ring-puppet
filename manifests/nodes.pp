@@ -208,6 +208,22 @@ node 'container03.infra' inherits basenode {
     }
 }
 
+# container04 is hosted at Bit in Ede
+# 8 cores / 16GB RAM / 146GB disk
+# virbr0 is bridged to eth0 (uplink)
+# virbr1 is virtual switch on the box with this IP space:
+#   IPv4 prefix: 213.154.249.160/28
+#   IPv6 prefix: 2001:7b8:d05::/48
+
+node 'container04.infra' inherits basenode {
+    include users
+    include syslog_ng::client
+    include nagios_services
+    include nagios::target::fqdn
+    include kvm
+    munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
+    }
+}
 
 
 # website, dns, mailing-list etc
