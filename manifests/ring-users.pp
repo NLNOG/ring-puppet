@@ -736,6 +736,7 @@ class users::virtual::ring_users {
     @authorized_keys { 'netsign':
         sshkeys => [
             'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA0MgFgdVHuY8T7ceFo9QGT9bjVguAjYAXMqDEaK+OgCk6+8SBACyZvDLnWOOxu7fMT5kyHXwu3vmdpkE4B7A/3mmQRzBy1lffZFYRIvzQ2g+5C/lSkFMq46xJt0Gqm8hZASmNXQhCiDP9t1dLYIaWh8ecr/kFNO/T6pW6dD2d8vP8EQi+dwVylpaNK25mAZQbKPEQOPldbN5DyGWRqgcI53Rxv5hSFi1FjSoJiXYIpqSC+2Hfu29spEi/Z1ypUxOFVWHbZuMFGw9nSNtLmYY9/tb8N+DNAlWdasdEFnUtXeinzy7B5zUPIxDlJEz7KODkpvJv/VR+VLUure9UKiIkuw== kre@netsign.eu_2',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC2TPBhajtPSFDGLauDodU21fG6bpFKGCx1cNjJjVYEcNVOGZMlZGV5Ocd0w3ZqDk+7oi1ZUufSxecLJHII4CXZIh1ne8F5hBCYhuGL9oDiMdxbpmlsL/yWeNWiede7h4eWlLqtyKTy7PGm4IweSv/s2oCoFjXeNG18VB5+HUNxrBvETZJPQzltbWtkFGhmPD1pK3ayWKr1dYYphqn73g95u4BAMRCVaSjkgFNmYBhA6+ZZeN4YObHEdog5MqP4yjzNQ/ACuHucigGi8QGppl1Go2FlzMLpigdczZet5YoW/UDzgwVKb3qDaGbDI7wSzZlZpH2mcxH8TTtQXDsdCQ80r3j1NQmTxTrb4FuZcRY7okKiq38h76znPeAZ9OHLc9aS4jxww96RGKJ9cPoAwqNwA9MkT6Iu6FZEZow/WFhaiC+xEeUFaa+K7hTr2mr2y8Y3WpUQf/HT9bOF2Suav6e2XdzPdXt+pmMmpwgp/Ouoneyyg+nHMHOCs2lzms1E+Fg8kmk/L5r95RsR/2XaTMI5po0Yk8o7Hi/C+WcvFVo5pSAQERiCizHAFOX1s2H3KkOA9YlX2+mLgxq+bFzADw6e1qgNDzBH1JZd6eRZSwcx16OWt6P1Qm32S6orEY77RHFGUa8cRl6/BNYRw3xTeo+F3zI0QcXDVvJtAs5H0Lv+Hw== leon@netsign',
         ],
     }
 ##### END netsign #####
