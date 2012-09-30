@@ -1094,17 +1094,6 @@ node 'rezopole01' inherits ringnode {
 	include users
 }
 
-node 'globalaxs02' inherits ringnode {
-    $owner = "globalaxs"
-    $location = "51.511526923,-0.0011855363845825195"
-    $nagios_ping_rate = '!200.0,20%!400.0,60%'
-    include amp_client
-    include nagios::target::fqdn
-    include nagios_services
-    include set_local_settings
-	include users
-}
-
 node 'solnet01' inherits ringnode {
     $owner = "solnet"
     $location = "47.20182,7.52878"
@@ -1916,6 +1905,7 @@ node 'arpnetworks01' inherits ringnode {
     include nagios_services                                                     
     include set_local_settings                                             
     include users
+    $nagios_ping_rate = '!200.0,20%!300.0,60%'
 }
 
 node 'iabg01' inherits ringnode {

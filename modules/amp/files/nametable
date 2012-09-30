@@ -67,7 +67,6 @@ ring-iway01:v6 2001:8e0:40:318:0:abcd:dead:beef
 ring-timico01:v6 2001:40a0:41:1000::4
 ring-yacast01:v6 2a02:3e8:ffff:198::cafe
 ring-rezopole01:v6 2001:7f8:47:41::5
-ring-globalaxs02:v6 2a01:300:2::4
 ring-solnet01:v6 2001:1680:2:100:3:51:0:10
 ring-boxed-it01:v6 2001:67c:344:1010:5054:ff:feca:6f60
 ring-spacenet01:v6 2001:608:1:151::17
@@ -214,7 +213,6 @@ ring-iway01 212.25.27.3
 ring-timico01 62.121.13.4
 ring-yacast01 213.205.109.22
 ring-rezopole01 77.95.64.5
-ring-globalaxs02 77.243.177.134
 ring-solnet01 82.220.3.51
 ring-boxed-it01 195.200.224.123
 ring-spacenet01 195.30.193.17

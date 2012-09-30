@@ -274,10 +274,6 @@ ring-rezopole01:v6,icmp,D,0,86400000,60000
 ring-rezopole01:v6,icmp,D,0,86400000,60000, -s 576
 ring-rezopole01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
-ring-globalaxs02:v6,icmp,D,0,86400000,60000
-ring-globalaxs02:v6,icmp,D,0,86400000,60000, -s 576
-ring-globalaxs02:v6,scamper,D,0,86400000,900000, -P udp-paris -M
-
 ring-solnet01:v6,icmp,D,0,86400000,60000
 ring-solnet01:v6,icmp,D,0,86400000,60000, -s 576
 ring-solnet01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -861,10 +857,6 @@ ring-yacast01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-rezopole01,icmp,D,0,86400000,60000
 ring-rezopole01,icmp,D,0,86400000,60000, -s 576
 ring-rezopole01,scamper,D,0,86400000,900000, -P udp-paris -M
-
-ring-globalaxs02,icmp,D,0,86400000,60000
-ring-globalaxs02,icmp,D,0,86400000,60000, -s 576
-ring-globalaxs02,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-solnet01,icmp,D,0,86400000,60000
 ring-solnet01,icmp,D,0,86400000,60000, -s 576
