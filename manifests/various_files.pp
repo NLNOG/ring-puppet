@@ -59,12 +59,6 @@ class etcfiles {
         source  => "puppet:///files/etc/ssh/ssh_config"
     } 
 
-    service { ssh:
-        ensure => running,
-        subscribe => File["/etc/ssh/sshd_config"],
-        hasrestart => true,
-    }
-
      file { "/etc/pam.d/atd":
         owner   => root,
         group   => root,
@@ -167,7 +161,14 @@ class etcfiles_ring {
         group   => root,
         mode    => 644,
         source  => "puppet:///files/etc/ssh/sshd_config"
-    } 
+    }
+ 
+    service { ssh:
+        ensure => running,
+        subscribe => File["/etc/ssh/sshd_config"],
+        hasrestart => true,
+    }
+
 }
 
 class etcfiles_infra {
@@ -177,6 +178,12 @@ class etcfiles_infra {
         mode    => 644,
         source  => "puppet:///files/etc/ssh/sshd_config.infra"
     } 
+    
+    service { ssh:
+        ensure => running,
+        subscribe => File["/etc/ssh/sshd_config"],
+        hasrestart => true,
+    }
 }
 
 class timezone {
