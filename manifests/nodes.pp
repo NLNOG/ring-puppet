@@ -35,6 +35,7 @@ node ringnode inherits basenode {
     include no-apache2
     include syslog_ng::client
     include nodesonlycron
+    include etcfiles_ring
     package{ "munin": ensure => purged, }
     service { "smokeping":
         ensure  => "stopped",
@@ -42,7 +43,11 @@ node ringnode inherits basenode {
     }
 }
 
-node 'master01' inherits basenode {
+node infranode inherits basenode {
+    include etcfiles_infra
+}
+
+node 'master01' inherits infranode {
     include users
     include master_software
     include syslog_ng::server
@@ -94,7 +99,7 @@ node 'master01' inherits basenode {
 # virbr1 is virtual switch on the box with this IP space:
 #   IPv4 prefix: 82.94.230.128/28
 #   IPv6 prefix: 2001:888:2001::/48
-node 'container01' inherits basenode {
+node 'container01' inherits infranode {
     include users
     include syslog_ng::client
     include nagios_services
@@ -152,7 +157,7 @@ node 'container01' inherits basenode {
 # virbr1 is virtual switch on the box with this IP space:
 #   IPv4 prefix: 95.211.149.16 /28
 #   IPv6 prefix: 2001:1AF8:4013::/48
-node 'container02.infra' inherits basenode {
+node 'container02.infra' inherits infranode {
     include users
     include syslog_ng::client
     include nagios_services
@@ -198,7 +203,7 @@ node 'container02.infra' inherits basenode {
 # virbr1 is virtual switch on the box with this IP space:
 #   IPv4 prefix: 78.152.42.64/28
 #   IPv6 prefix: 2a02:d28:666:0:0:0:0:0/48
-node 'container03.infra' inherits basenode {
+node 'container03.infra' inherits infranode {
     include users
     include syslog_ng::client
     include nagios_services
@@ -215,7 +220,7 @@ node 'container03.infra' inherits basenode {
 #   IPv4 prefix: 213.154.249.160/28
 #   IPv6 prefix: 2001:7b8:d05::/48
 
-node 'container04.infra' inherits basenode {
+node 'container04.infra' inherits infranode {
     include users
     include syslog_ng::client
     include nagios_services
@@ -227,7 +232,7 @@ node 'container04.infra' inherits basenode {
 
 
 # website, dns, mailing-list etc
-node 'public01.infra' inherits basenode {
+node 'public01.infra' inherits infranode {
     $owner = "job"
     include nagios::target::fqdn
     include nagios_services
@@ -245,7 +250,7 @@ node 'public01.infra' inherits basenode {
     include powerdns
 }
 
-node 'public02.infra' inherits basenode {
+node 'public02.infra' inherits infranode {
     $owner = "job"
     include nagios::target::fqdn
     include nagios_services
@@ -264,7 +269,7 @@ node 'public02.infra' inherits basenode {
 
 
 # looking glass 1
-node 'lg01.infra' inherits basenode {
+node 'lg01.infra' inherits infranode {
     $owner = "job"
     include nagios::target::fqdn
     include nagios_services
@@ -279,7 +284,7 @@ node 'lg01.infra' inherits basenode {
     }
 }
 
-node 'worker01' inherits basenode {
+node 'worker01' inherits infranode {
     include users
     include syslog_ng::client
     include apache2
@@ -298,7 +303,7 @@ node 'worker01' inherits basenode {
     }
 }
 
-node 'worker02' inherits basenode {
+node 'worker02' inherits infranode {
     include users
     include syslog_ng::client
     include apache2
@@ -311,7 +316,7 @@ node 'worker02' inherits basenode {
     }
 }
 
-node 'worker03' inherits basenode {
+node 'worker03' inherits infranode {
     include users
     include syslog_ng::client
     include apache2

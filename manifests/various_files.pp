@@ -59,13 +59,6 @@ class etcfiles {
         source  => "puppet:///files/etc/ssh/ssh_config"
     } 
 
-    file { "/etc/ssh/sshd_config":
-        owner   => root,
-        group   => root,
-        mode    => 644,
-        source  => "puppet:///files/etc/ssh/sshd_config"
-    } 
-
     service { ssh:
         ensure => running,
         subscribe => File["/etc/ssh/sshd_config"],
@@ -166,6 +159,24 @@ class etcfiles {
         mode    => 0644,
         source  => "puppet:///files//opt/root-anchor",
     }
+}
+
+class etcfiles_ring {
+    file { "/etc/ssh/sshd_config":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/ssh/sshd_config"
+    } 
+}
+
+class etcfiles_infra {
+    file { "/etc/ssh/sshd_config":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/ssh/sshd_config.infra"
+    } 
 }
 
 class timezone {
