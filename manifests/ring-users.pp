@@ -2311,5 +2311,21 @@ class users::virtual::ring_users {
     }
 ##### END isc #####
 
+##### BEGIN backbone #####
+
+    @add_user { 'backbone':
+        email => 'afink@backbone.is',
+        company => 'Backbone ehf',
+        uid => '5131',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'backbone':
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEArD7tltJpwvXUGYGycPwJJRhm7TxaRt1yU66OzhaM0DH1ErwReeCgyIstDiM/cHQyTyHcbvYBeBI6yqEpiTGuRsdOolAQKLy8bOqrxtB1rgrP8iyslv0kziONdmHIQlIEtV6zBD8EmFFLP7VSoe+PDalIDSbRvFtTgkHzAmQ9umR0EFNelE0fpkMkmh4Kns2sJppOzenPZu6MhYGs2Hs2Cq0qqfNfA+VDpFagOpgdM/NU/9uegIwndjcByioMQinNkhrzL/unw0oRMZ4fJCZ6CYNcGq3hF3nE4tJ9Y2N2cT8ihLD7OMHRHwdJ2qARDn2IxfEOZ7XAKgT9Mq7rV3Ks8zHX8CP8KHjUH8JcwORlTuJ+hJCHXYd02OpgjLJWvY1TBYQLOpoQdDx11c0Jeam55N3u3tgen25v9T5lX70GVdy7eP4nWHX0BAfTDau4N8sY5K25Qp4uV9J2bG2bthpTttefdqrR3KMMXhtI25YMmgv2U4l4xQ9+PCC0ugmMxUhwmGIVzH9xEe+DFuGOaVG1vIrkS6MwJzdpGEEWGC9IvmJzNtu4iP8E5Y4ppf6YsuIGOnWkFsknAqg/GTpwW/yvFX1yH0QUTxH7shxv1I6XYySx7ESVWf1mjKhJGRVobA7hYZWdk5A5EPilopQ8Q5WMzrhjdi/QZIDLq1tVSbENerE= afink@intelix.gni.ch",
+        ],
+    }
+##### END backbone #####
+
+
 
 }

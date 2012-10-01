@@ -486,3 +486,8 @@ ff02::2 ip6-allrouters
 149.20.52.36    isc01   isc01.ring.nlnog.net
 2001:4f8:3:2e::36   isc01   isc01.ring.nlnog.net
 
+79.134.255.159  backbone01  backbone01.ring.nlnog.net
+2a01:528:2000:0:987e:fd69:5d5f:292e backbone01  backbone01.ring.nlnog.net
+
+85.195.198.15   backbone02  backbone02.ring.nlnog.net
+2001:4b28:198:0:4891:e211:6b06:43db backbone02  backbone02.ring.nlnog.net

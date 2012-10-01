@@ -1969,3 +1969,23 @@ node 'isc01' inherits ringnode {
     include users
     $nagios_ping_rate = '!200.0,20%!300.0,60%'
 }
+
+node 'backbone01' inherits ringnode {
+    $owner = "backbone"
+    $location = "47.515065,7.617669"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                             
+    include users
+}
+
+node 'backbone02' inherits ringnode {
+    $owner = "backbone"
+    $location = "64.145045,-21.907747"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                             
+    include users
+}
