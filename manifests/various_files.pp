@@ -59,19 +59,6 @@ class etcfiles {
         source  => "puppet:///files/etc/ssh/ssh_config"
     } 
 
-    file { "/etc/ssh/sshd_config":
-        owner   => root,
-        group   => root,
-        mode    => 644,
-        source  => "puppet:///files/etc/ssh/sshd_config"
-    } 
-
-    service { ssh:
-        ensure => running,
-        subscribe => File["/etc/ssh/sshd_config"],
-        hasrestart => true,
-    }
-
      file { "/etc/pam.d/atd":
         owner   => root,
         group   => root,
@@ -165,6 +152,37 @@ class etcfiles {
         group   => root,
         mode    => 0644,
         source  => "puppet:///files//opt/root-anchor",
+    }
+}
+
+class etcfiles_ring {
+    file { "/etc/ssh/sshd_config":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/ssh/sshd_config"
+    }
+ 
+    service { ssh:
+        ensure => running,
+        subscribe => File["/etc/ssh/sshd_config"],
+        hasrestart => true,
+    }
+
+}
+
+class etcfiles_infra {
+    file { "/etc/ssh/sshd_config":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/ssh/sshd_config.infra"
+    } 
+    
+    service { ssh:
+        ensure => running,
+        subscribe => File["/etc/ssh/sshd_config"],
+        hasrestart => true,
     }
 }
 
