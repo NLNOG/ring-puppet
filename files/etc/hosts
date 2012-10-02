@@ -242,7 +242,7 @@ ff02::2 ip6-allrouters
 2a02:3e8:ffff:198::cafe yacast01 yacast01.ring.nlnog.net
 
 77.95.64.5  rezopole01  rezopole01.ring.nlnog.net
-2001:7f8:47:41::5   rezopole01  rezopole01.ring.nlnog.net
+2001:7f8:47:40::5   rezopole01  rezopole01.ring.nlnog.net
 
 82.220.3.51 solnet01    solnet01.ring.nlnog.net
 2001:1680:2:100:3:51:0:10   solnet01    solnet01.ring.nlnog.net

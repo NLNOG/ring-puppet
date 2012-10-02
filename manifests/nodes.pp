@@ -1989,3 +1989,13 @@ node 'backbone02' inherits ringnode {
     include set_local_settings                                             
     include users
 }
+
+node 'nexellent01' inherits ringnode {
+    $owner = "nexellent"
+    $location = "47.432544,8.557972"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                             
+    include users
+}
