@@ -491,3 +491,6 @@ ff02::2 ip6-allrouters
 
 85.195.198.15   backbone02  backbone02.ring.nlnog.net
 2a01:528:2000:0:21c:42ff:fe4a:c3a0  backbone02  backbone02.ring.nlnog.net
+
+217.147.213.237 nexellent01 nexellent01.ring.nlnog.net
+2001:4168:babe:2::2 nexellent01 nexellent01.ring.nlnog.net
