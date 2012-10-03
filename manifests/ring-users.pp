@@ -2328,6 +2328,22 @@ class users::virtual::ring_users {
     }
 ##### END backbone #####
 
+##### BEGIN nexellent #####
+
+    @add_user { 'nexellent':
+        email => 'noc@nexellent.net',
+        company => 'nexellent AG',
+        uid => '5132',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'nexellent':
+        sshkeys => [
+            "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCtYOl7osjX6+VWOm31Uz83MfKlsiAJIi4lv2jzuUv2LssvBSyqjKAQQC+5qSvTcSpbqs/D7RWtbXCCe8vMjKlOcSB7bweAf9GhztfcRXb/nmIHu5fuFndCffcKAgOAB8fp6+h9aarOhmZ1g0GftKcv3PMwnFh81L556sngHWYJgF+gwlL0r13ZupjReLyrTX5H/+mnCWwe5Au2BcspJORA97yIT4zcUqAxLcEaAe9fkxYwXwg95JXX+m9WJzOPcPFarnYEpfPrNQ5zPUGHQncwGE9HQzd49I5au+rRmksLbQeRcRFJ51ASRJmi1tY5cvJMjofweg6t4JfndlP3ZTEt roots@belana-2.local",
+            ],
+    }
+
+##### END nexellent #####
+
 
 
 }
