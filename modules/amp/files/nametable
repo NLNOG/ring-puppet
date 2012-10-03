@@ -147,6 +147,7 @@ ring-isc01:v6 2001:4f8:3:2e::36
 ring-backbone01:v6 2001:4b28:198:0:21c:42ff:fe2a:d38a
 ring-backbone02:v6 2a01:528:2000:0:21c:42ff:fe4a:c3a0
 ring-nexellent01:v6 2001:4168:babe:2::2
+ring-rbnetwork02:v6 2001:67c:88::5c:1
 ring-staging01 213.154.236.191
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
@@ -257,7 +258,7 @@ ring-sixdegrees01 82.147.0.14
 ring-spacedump01 212.63.210.241
 ring-rbnetwork01 91.238.144.6
 ring-yourorg01 204.9.55.77
-ring-solido02 109.238.63.65
+ring-solido02 185.4.139.65
 ring-as250net01 194.150.168.19
 ring-redpilllinpro01 87.238.49.250
 ring-nine01 217.150.254.165
@@ -295,3 +296,4 @@ ring-isc01 149.20.52.36
 ring-backbone01 79.134.255.159
 ring-backbone02 85.195.198.15
 ring-nexellent01 217.147.213.237
+ring-rbnetwork02 91.199.218.92
