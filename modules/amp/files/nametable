@@ -148,6 +148,7 @@ ring-backbone01:v6 2001:4b28:198:0:21c:42ff:fe2a:d38a
 ring-backbone02:v6 2a01:528:2000:0:21c:42ff:fe4a:c3a0
 ring-nexellent01:v6 2001:4168:babe:2::2
 ring-rbnetwork02:v6 2001:67c:88:60::5c:1
+ring-afilias01:v6 2001:500:f1:500::229
 ring-staging01 213.154.236.191
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
@@ -297,3 +298,4 @@ ring-backbone01 79.134.255.159
 ring-backbone02 85.195.198.15
 ring-nexellent01 217.147.213.237
 ring-rbnetwork02 91.199.218.92
+ring-afilias01 199.10.66.229

@@ -598,6 +598,10 @@ ring-rbnetwork02:v6,icmp,D,0,86400000,60000
 ring-rbnetwork02:v6,icmp,D,0,86400000,60000, -s 576
 ring-rbnetwork02:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-afilias01:v6,icmp,D,0,86400000,60000
+ring-afilias01:v6,icmp,D,0,86400000,60000, -s 576
+ring-afilias01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging01,icmp,D,0,86400000,60000
 ring-staging01,icmp,D,0,86400000,60000, -s 576
 ring-staging01,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1193,4 +1197,8 @@ ring-nexellent01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-rbnetwork02,icmp,D,0,86400000,60000
 ring-rbnetwork02,icmp,D,0,86400000,60000, -s 576
 ring-rbnetwork02,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-afilias01,icmp,D,0,86400000,60000
+ring-afilias01,icmp,D,0,86400000,60000, -s 576
+ring-afilias01,scamper,D,0,86400000,900000, -P udp-paris -M
 

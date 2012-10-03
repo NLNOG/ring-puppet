@@ -2346,6 +2346,22 @@ class users::virtual::ring_users {
 
 ##### END nexellent #####
 
+##### BEGIN afilias #####
+
+    @add_user { 'afilias':
+        email => 'cpr@afilias.info',
+        company => 'Afilias',
+        uid => '5133',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'afilias':
+        sshkeys => [
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC/jEUjXu/064KBN2hVCS+JhOAXVIV3jjpOCL2Bcj1IRrIJP6yuDOusOFpFei2dC4+BIxUCMs9utihHhr305mnAbUCLEiua5vn3uJxXTi1/D74zGF5Pc8WtGP7bWUPtSZTi0keMnjkBm1KwR7p78u5MJB0NB2UiSbOWLHHe0ZMywrJDD/FQk7ZOWWCODjP8oUq06O0oLdJaTlY7Q0JRvGqkwH+pZfNzYCR8L4K661Kzowadai3ajEhN0B2mjZqc7B9urx8afJBcby0tA75opIIh30TEMMM0kNYAXBSIfW+IYLCyQQ35VIWZVuMdhCdIbURx5JzAJgGJyFeBaY576N9WmOM9tbgDKAHnKisPWjJrJ7V4WMQQEvyZ5WHjOMGkQIU4Q84s3HEw/sB13puOxyRqgDhyg9kF1OyWTfSxtZgRBrHkYG4wD3G2p7J2oxFwqTX54sdqR+qeJEuoBDUMUoPiUz/z5KzZal2U6nlNA07qKQJJ/rqZ0naZuvsCb/a1v0OGt4NvJE7w0jDatPZIStzsMabGiI7hBDsjbj+CBg1LmuJP5/ZczBpNv7p/jGgK+WeroOiYxVWFCPE70SHvvGSaaKSE+y/Nr+/cfWCe76hcne5Em7iqCY/QY2KJkLT/t9//f81pldCZ+gixegqMcuXxnfWoFMmmgX0qUnnOXmoIFw== paul@flow.neep.net',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAma67FkgwjmBn57QJ1Dzu+uhGmKQnp7hrV0wyTT3YVKVMDhqOtZkGTA6vA3g7CErAUJH+e/2amOqr6TqGUJngEienQj0c64HwYqmS92nRidjNJj537eq7eDzhD+UDCD90W2FAikWLPFzuAv6j9PizdDjEEKTg3zLA3lL92HLycXIHZCqISIJfoOcxMxbEO6KV52tkhWnKZ8wdLYEDT94g2fqYkeOW/OBMzUVPokJEan6kwQMvsp0QLml2ZiAwD8k8Ja54cdHo2PTjVfCwgeJaRbDZ0FfgYaMCF5tqCs7wF5NZOAQoh9SyCKB1TaNL6p5yvecgBFo4lFLRsSfqPyJTAw== paul@Paul-Vlaars-MacBook.local',
+            ],
+    }
+
+##### END afilias #####
 
 
 }
