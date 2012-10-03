@@ -66,7 +66,7 @@ ring-jump01:v6 2001:ba8:1::d975
 ring-iway01:v6 2001:8e0:40:318:0:abcd:dead:beef
 ring-timico01:v6 2001:40a0:41:1000::4
 ring-yacast01:v6 2a02:3e8:ffff:198::cafe
-ring-rezopole01:v6 2001:7f8:47:41::5
+ring-rezopole01:v6 2001:7f8:47:40::5
 ring-solnet01:v6 2001:1680:2:100:3:51:0:10
 ring-boxed-it01:v6 2001:67c:344:1010:5054:ff:feca:6f60
 ring-spacenet01:v6 2001:608:1:151::17
@@ -144,8 +144,9 @@ ring-hosting90systems01:v6 2a03:b780:1:1:216:3eff:fe00:512
 ring-claranet05:v6 2001:a70:ff:5::4
 ring-kordia01:v6 2404:6c00:1:f::2
 ring-isc01:v6 2001:4f8:3:2e::36
-ring-backbone01:v6 2a01:528:2000:0:987e:fd69:5d5f:292e
-ring-backbone02:v6 2001:4b28:198:0:4891:e211:6b06:43db
+ring-backbone01:v6 2001:4b28:198:0:21c:42ff:fe2a:d38a
+ring-backbone02:v6 2a01:528:2000:0:21c:42ff:fe4a:c3a0
+ring-nexellent01:v6 2001:4168:babe:2::2
 ring-staging01 213.154.236.191
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
@@ -293,3 +294,4 @@ ring-kordia01 124.157.73.94
 ring-isc01 149.20.52.36
 ring-backbone01 79.134.255.159
 ring-backbone02 85.195.198.15
+ring-nexellent01 217.147.213.237
