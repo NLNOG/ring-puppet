@@ -501,3 +501,5 @@ ff02::2 ip6-allrouters
 199.10.66.229   afilias01  afilias01.ring.nlnog.net
 2001:500:f1:500::229    afilias01   afilias01.ring.nlnog.net
 
+62.217.125.248  grnet01 grnet01.ring.nlnog.net
+2001:648:2ffc:113:dcdb:eeff:fe35:9c68   grnet01 grnet01.ring.nlnog.net

@@ -2025,5 +2025,13 @@ node 'afilias01' inherits ringnode {
     include users
 }
 
-
+node 'grnet01' inherits ringnode {
+    $owner = "grnet"
+    $location = "38.04581,23.788446"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
 
