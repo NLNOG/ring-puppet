@@ -2367,7 +2367,7 @@ class users::virtual::ring_users {
     @add_user { 'grnet':
         email => 'noc@noc.grnet.gr',
         company => 'GRNET',
-        uid => '5408',
+        uid => '5134',
         groups => ['ring-users'],
     }
     @authorized_keys { 'grnet':
@@ -2388,5 +2388,21 @@ class users::virtual::ring_users {
     }
 
 ##### END grnet #####
+
+##### BEGIN netflix #####
+
+    @add_user { 'netflix':
+        email => 'cdnetops@netflix.com',
+        company => 'Netflix',
+        uid => '5135',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'netflix':
+        sshkeys => [
+                "ssh-dss AAAAB3NzaC1kc3MAAACBAJEINtGXx45paq4AdV+vw1YZDuebh5u+6SBqzgvZw6Oz4ysjUl/Esu1N+voELx6+eoVc11ZTmmnqNoYOsO5MCFGsr3AZHjyBmEXPF+IlEWKZoMYT3a5johcEEFkEjb5ZolOqXINlhSk8Hijn791hbuQmkiw546cbx7TaxAGYUAYXAAAAFQCg2oGXWb4+lddVRlZsB9ecSKn92QAAAIAyHx1+ezy1wVlEVqmHTGZo9Ni7KNGGBM6NvH5V37qIvq1g1mb3uFWoOgCNRmImYLq8O+1E53ut2LPf7nioUVSaWSC22BtJW0ngEQdyu5y8LKPPHb0p2WjlDV80oAriBAZrkhmYyXvLZ/6uLcsTfZY77jVyRZ5QaT4pfevrSiz/YgAAAIEAkGoJztLQfVXt5qmpN/7WlIjbiUiLK6IWpmBKUHFr7UKktyw2akpxU9xTF37xYUgtt9sU7I9XpvUg7PIlWjSKjCyofPzWBLPvig4cFRKiV/DGul8zf5mlx9HZ401OimcVsH9T1deApr1HvjeNRCu0BPj63gdE1QspM0eWizuIDyo=",
+            ],
+    }
+
+##### END netflix #####
 
 }

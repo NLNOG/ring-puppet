@@ -503,3 +503,6 @@ ff02::2 ip6-allrouters
 
 62.217.125.248  grnet01 grnet01.ring.nlnog.net
 2001:648:2ffc:113:dcdb:eeff:fe35:9c68   grnet01 grnet01.ring.nlnog.net
+
+108.175.33.120  netflix01   netflix01.ring.nlnog.net
+2620:10c:7000:3364::120 netflix01   netflix01.ring.nlnog.net

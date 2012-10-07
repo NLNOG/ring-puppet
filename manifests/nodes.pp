@@ -2035,3 +2035,12 @@ node 'grnet01' inherits ringnode {
     include users
 }
 
+node 'netflix01' inherits ringnode {
+    $owner = "netflix"
+    $location = "37.2415096,-121.7817521"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
