@@ -128,7 +128,7 @@ ring-obenetwork01:v6 2A03:8600:0:132::2
 ring-infomaniak01:v6 2001:1600:3:5::110
 ring-keenondots01:v6 2a03:3400:3:2501::150:255
 ring-teamix01:v6 2001:67c:14c:12f::55:1
-ring-bci01:v6 2a02:26d0:2:0:20c:29ff:fe7b:a2b4
+ring-bci01:v6 2a02:26d0:2::a
 ring-skyway01:v6 2a00:18e0:0:dc:109:234:105:30
 ring-solcon01:v6 2001:9e0:400:53:212:45:52:2
 ring-claranet01:v6 2001:a88:0:ff00::4
