@@ -2400,6 +2400,7 @@ class users::virtual::ring_users {
     @authorized_keys { 'netflix':
         sshkeys => [
                 "ssh-dss AAAAB3NzaC1kc3MAAACBAJEINtGXx45paq4AdV+vw1YZDuebh5u+6SBqzgvZw6Oz4ysjUl/Esu1N+voELx6+eoVc11ZTmmnqNoYOsO5MCFGsr3AZHjyBmEXPF+IlEWKZoMYT3a5johcEEFkEjb5ZolOqXINlhSk8Hijn791hbuQmkiw546cbx7TaxAGYUAYXAAAAFQCg2oGXWb4+lddVRlZsB9ecSKn92QAAAIAyHx1+ezy1wVlEVqmHTGZo9Ni7KNGGBM6NvH5V37qIvq1g1mb3uFWoOgCNRmImYLq8O+1E53ut2LPf7nioUVSaWSC22BtJW0ngEQdyu5y8LKPPHb0p2WjlDV80oAriBAZrkhmYyXvLZ/6uLcsTfZY77jVyRZ5QaT4pfevrSiz/YgAAAIEAkGoJztLQfVXt5qmpN/7WlIjbiUiLK6IWpmBKUHFr7UKktyw2akpxU9xTF37xYUgtt9sU7I9XpvUg7PIlWjSKjCyofPzWBLPvig4cFRKiV/DGul8zf5mlx9HZ401OimcVsH9T1deApr1HvjeNRCu0BPj63gdE1QspM0eWizuIDyo=",
+                "ssh-dss AAAAB3NzaC1kc3MAAACBAIxRxB9EXpLfoGUsafhlApCQFXQtMEZvx3Zq3E0TZB4Qy7aUaH9FrK5rkkgTDXU+ATb8oz3g9x7y5ETeoxEwtdKSVeGWxpwlL1vtFH0yRItEGrZRrKCq5HT6dWxjTSxdesECns8cKP3hJmkdXDIEsEtnu3dAQb/1jyy5xNpj/EUvAAAAFQCiXY0B3SQfvZ9KAXld8BrnVdsqAwAAAIEAhs7XUr0lIHJ69A7/Ot8eohofyUj5QZdDEKjReVA4ibA2HJr/pe7/oKZi0AaiNyHO4kJaGnhzUT6BejmlDFXI23A/Bqr7p6E6f/SDSf7oM46+lus3wSuftM5yLAZNR1xoNZXKwRw1qYU9ofXDe4XoE3EKlS2IHbnG5uS6EgSF+1sAAACAGcyE8LktO4SpsscQ5ly19E6fYr2zfpvansX+esJ92XSYnk3lZjYNA1tRfbF4xfs1UCR4fbpx3OGN7R6bOvwmxOIcyVHh4f2YVp2osHVpsCin264eFAlI/+VcC6p2K0NInlcu0EKkm5c41O10TTPmQ00r3oW+BQtyryLk6CijkQo= nhickson@mook",
             ],
     }
 
