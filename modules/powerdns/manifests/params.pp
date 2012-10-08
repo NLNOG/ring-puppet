@@ -37,6 +37,11 @@ class powerdns::params  {
         ubuntu  => "pdns-backend-mysql",
         default => "pdns-backend-mysql",
     }
+    $packagename_sqlite = $operatingsystem ? {
+        debian  => "pdns-backend-sqlite3",
+        ubuntu  => "pdns-backend-sqlite3",
+        default => "pdns-backend-sqlite3",
+    }
 	
     $servicename = $operatingsystem ? {
         debian  => "pdns",

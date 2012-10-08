@@ -5,7 +5,9 @@ config-dir=/etc/powerdns
 daemon=yes
 disable-axfr=yes
 guardian=yes
-launch=gmysql 
+launch=gsqlite3
+sqlite3-database=/var/spool/powerdns/pdns.sqlite
+sqlite3-dnssec
 lazy-recursion=yes
 local-address=<%= ipaddress %>
 local-ipv6=<%= ipaddress6 %>
@@ -15,4 +17,3 @@ setgid=pdns
 setuid=pdns
 socket-dir=/var/run
 version-string=powerdns
-include=/etc/powerdns/pdns.d
