@@ -506,3 +506,6 @@ ff02::2 ip6-allrouters
 
 108.175.33.120  netflix01   netflix01.ring.nlnog.net
 2620:10c:7000:3364::120 netflix01   netflix01.ring.nlnog.net
+
+46.20.247.200   ipmax01 ipmax01.ring.nlnog.net
+2a02:2528:404:1::200    ipmax01 ipmax01.ring.nlnog.net

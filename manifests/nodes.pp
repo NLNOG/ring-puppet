@@ -2045,3 +2045,13 @@ node 'netflix01' inherits ringnode {
     include set_local_settings                                                  
     include users
 }
+
+node 'impax01' inherits ringnode {
+    $owner = "ipmax"
+    $location = "45.723153,4.862412"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
