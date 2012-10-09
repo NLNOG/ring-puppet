@@ -2046,7 +2046,7 @@ node 'netflix01' inherits ringnode {
     include users
 }
 
-node 'impax01' inherits ringnode {
+node 'ipmax01' inherits ringnode {
     $owner = "ipmax"
     $location = "45.723153,4.862412"
     include amp_client                                                    
