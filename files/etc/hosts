@@ -509,3 +509,6 @@ ff02::2 ip6-allrouters
 
 46.20.247.200   ipmax01 ipmax01.ring.nlnog.net
 2a02:2528:404:1::200    ipmax01 ipmax01.ring.nlnog.net
+
+2001:48a8:6880:63::64   merit01 merit01.ring.nlnog.net
+198.108.63.64   merit01 merit01.ring.nlnog.net

@@ -2055,3 +2055,14 @@ node 'ipmax01' inherits ringnode {
     include set_local_settings                                                  
     include users
 }
+
+node 'merit01' inherits ringnode {
+    $owner = "merit"
+    $location = "42.248588,-83.736888"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+    $nagios_ping_rate = '!200.0,20%!300.0,60%'
+}
