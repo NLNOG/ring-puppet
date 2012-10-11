@@ -2164,7 +2164,7 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'bci':
         sshkeys => [
-            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCerMXJqa9ZNuHpmmh1Fpnas8YWfdXxO8oFOnQUOy1tDTTk+Fkxk6ivtTcUD9UFJd7vFRH/kB6Id7rqfAKYAFWg+P5culI1r27n21r4Qqnq0fNHSslGfrSRaWFqiboQGiwbhaTQGDoPp/Yuw3tGt2LLBnITJJXuSnkfaOF1W8AEoLcN9X2BrFXISiuk12sdAEbk1V51GBkg63RcY1/U21W1jTgbF91eLv/VNmVy9njwcseaUQI8yR6I4pH8wNaaodsAeDXRKguAkCRz7pUoqj4xhFS3DAwucqf6mQrir7w55dvsUQ2iZfX7INfErFRyQF5+iOc1TViECkSYPn6j2lzZ root@ring',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJQ5fAQzJWtmNoS03qTCYcjLkaPwJgkcYbeyYEQqMj/2Jkg7g/tMy9Vga/U5KAMe7Y6sWVGq569v7dq2IkAXuNxs5kxiKc3wPtxT5TPp/3YjmmM3qVElSwYnbKeNA1oFKl05ifyotIDDRYAitwvHwpUo3l9806Q1MCH6Wysn1ZVdTbIAXpkMXVxhEPkWADFjGKGg/9SYyNbiWCIVnFdDHbr81HAoNjfOKJI0t6f13iPRyPsXkkLayv4Jjht8oikYgBqezIonfEwvtfoQQyKPWvAsGjPDxoCr9HOIo9w189IcGBVHIvxRNFvkAy9AnTFhVLGYtPVEFs34dKBEDqijed root@mail.palhosting.net',
         ],
     }
 ##### END bci #####
