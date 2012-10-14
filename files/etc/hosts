@@ -515,3 +515,6 @@ ff02::2 ip6-allrouters
 
 195.177.253.104 poznan01    poznan01.ring.nlnog.net
 2001:808:2:3003::5  poznan01    poznan01.ring.nlnog.net
+
+195.177.253.104 nuqe01  nuqe01.ring.nlnog.net
+2001:67C:188:12::12 nuqe01  nuqe01.ring.nlnog.net

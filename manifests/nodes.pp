@@ -2076,3 +2076,13 @@ node 'poznan01' inherits ringnode {
     include set_local_settings                                                  
     include users
 }
+
+node 'nuqe01' inherits ringnode {
+    $owner = "nuqe"
+    $location = "51.511507,-0.00118"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
