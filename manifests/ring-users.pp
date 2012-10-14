@@ -2426,4 +2426,20 @@ class users::virtual::ring_users {
 
 ##### END ipmax #####
 
+##### BEGIN poznan #####
+
+    @add_user { 'poznan':
+        email => 'ipv6-support@man.poznan.pl',
+        company => 'Poznan Supercomputing and Networking Center',
+        uid => '5137',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'poznan':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9iDzrLnGZ0qxXemACbjmnDsGU5Oz/OtE90fpU1mWR3m3CoKSZ7w2k8p3tTrKPi6j+igYg0/W43HE8/ywUQV02tAksgTLyAxUDtuRgBrl7G3Z0/dhHXkccpwoU2j3GZcGK8N2t66n4r9iHGAhvgrX6WVJjTsDBK9I6sG8QCEVWO9Qgmesyzs8B2JM06t2bc/zyf2eBVuuRHSrkSBISmBtvCczaC6fyprFkoPmJjhDbkSOHTlwbx4LZOngeTYS6D6HRtPgfrr2sV2vINBpBgsxpkTE0xAnvsqIgONfd3VfvFIoiPSD9mLa988QEixJ0Ot5bd/DHLWIfGYEF5tTqtbD5',
+            ],
+    }
+
+##### END poznan #####
+
 }
