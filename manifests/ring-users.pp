@@ -1046,6 +1046,7 @@ class users::virtual::ring_users {
             'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEA9g8CEQtrvAp25l6x3b0i/h9M+ZgJYz1DdKgwtXoSQ8Uc8w/wUH9Jkf02uscuZ/SGFNm1gPt0Fx1UVFMcXgfVfBmM8bfQdoFFAGftIpHjGBWXlVlbTJh91wOQtk/pF32eLtgf2iaB5huFrxLv2coA3ms6aZ0orzENanSOcx8r1k5lPPoBUC5FwPTZQ7jmmb9V5kKkOTHGw2f5GaMSOSvKbIGM3VjOrg7pJR/Smxz+0ath9KQifLS+II5yYen2UyL+kSGGvD/b1uOeYQn4a0qycuFM3C2PDsI0NB04kNOiIwq9Kzuh3/EkAGKUTLh5sfbaGnVvrVi6ubGLAdSpT00cbxJ36oG1jN4cGBmOgNS12QzO4nnl0ziMoH5IbxY4CvqFe6s7QfSB7F5I6lgknxnnTiONVDownI4v4rIs97N5DB3RERKYzhEM8WNUdD+2b5Ndt6N5KI67P6YwTZSVbgd/FLiReII8w3+00YMt7Gx3Y2GK7QxAwKsZ+PnCtZ05XHX7m9qw3h4ufq7W+Qzah2iNR/NgGaUsBNYjI7ppF0HzVGtCNH1mspZMPQmzJGJLDxxY+wCPxUJna87X91Y1CV7JNkabR3pWYABx8KgBxZXPYSpui346wbEXRsag/Ndo61mQttrHhJvXvFvq6hpgievg00sK5LQtHnsDLcoRFtLUfnc= lysis@sparkles.man-da.de 2009-07-31',
             'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEA8WX9IBwhptxxIXYwP24tjNGayBJy8/N6L7OLJnU2v8ce9TMj5v6wj1ATlztKxSxX6aSmXjlHWsMjBQjuFxzS6iO0Ok5waPDHVToH68gcPOJ4dbpPakDdiBMgfUYzF6oSAp1Yz6m4uzyelOVmVfYW1pU5BcK0YZ4vhY/5p3YIOsJiSPSwaipg0GkBYDg8hxRyqBzTYbzbS8vQQ21mwf6Bf3/z4lEtpeoschR3Zwt0oVdoeA9nTVqJl6HAcsp3uWLE+0TLnELh3XvyaNj7DlRRG895yi3WyJHHAcCx3LVfCXMy43b55UfXCU7XWVJH5JknxU18HFgxfM8Ad5bv0VM3aJQKU9Xbf9q691S82B7lQAYRI+mYz548MMyBbHQM2U00qzURDhOm7E3Vy5ombBIlmSPJSWQERjVzsGwcYIziBJEfUntbzuP7Ai/jQLydGFia2p4QAXZQchMFL0rn6WocD1xzt4xVCHUp4QYrTHpC0pMYjKNrX6kFQtapnpJxhAKCVW5T2sHefHcXdC7pBKcbHkTjIh8jKjzC9EBfIorrMlCMozNqI90/utfQXnjJ/t6Kuag0wpDFILcCW1Xdhv3N7EjCaP43skDsA6DQcp+9deJSgeyO7X6niH7nyugYdcc7Flj1fs9v5S6H2CnBtKOfb1g9jKz5aRcdHA3c+l+cPR8= lysis@twinkles.man-da.de 2011-05-23',
             'ssh-dss AAAAB3NzaC1kc3MAAACBAK1r3skopjljcFeZlVKOLfDM3hqVxV2H1zzl+5ky78XcO1TH7nTa5mSXBAwTrRCO8w2TzXGGQNu5YqSer2AoP/3YGYcDxeRyAZkgmxZH4rMIPExr4M17PIqX6qQnMe0bZMqfrpKggdK/LzvawwkXTqEe1zRBNr97pbTSG7bALMdhAAAAFQDTs80cw0WZorOlCxYK2UCf42TioQAAAIEAgl2wWXA3BM2IZooQaUCWbdJNWjGQ9il01dmNxrfvMbo5rjRmFnmtlpKO0cykVof5CC6brmn3+z3gwoeAmaOCOOEa6DYw6YFkntHq1jsurSQ0bbeIKQ6+itl8KTeca5lhcbxzfocqqUUdS+MW4130cFj0CYOGqUmIj1f9JteuJPgAAACAGf/25xmFa4hkE81QdlG76z8u/7pyi3AohJ7TEmLLvEnr8ybF9oOiMXqE3BIyELGaOdCOpDgu3D5FDY37hdeue+xYmj8bZg+1RtoYvqrfe+ZI/FC7vcRRnNlQcK7Iu6/UOws2zzxhtOgTf5f5U20uVHcWCrTkU3j8+EQ+fcviZuE= lukas@lukas-desktop',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA4c/u+OOLHZwYlmnbsvgDJLfXTLt3uzuanR6WDUXXWad13akINZWK+WOtnfIn9Q1olbcBF7C6Uk1xH8YdowAx7GQ/niBpoHggeQlWYgtZcP4Ay8X36h0E3g+hDDbep90tRrnatLUYfwyW2ANuHaWb/odMvprTCkWJ4XIKvM5/NGIerkM9ve22+VnnMNpSMUpt8nsVi0tnc76eSVP10EgHSupAqDLc31L9s+8Oajs13wbUsAGASq41UvbbOYtNFQQa7BVYtq7ndopDUJAVeli0rZUF70VPkIPN7WQbJfElIHbuI3IeHC7aN5gNm/98dp2ZC6PgXOT2zJ8fHa36JqPUhQ== kollstedt@ws-kollstedt',
         ],
     }
 ##### END man-da #####
@@ -2163,7 +2164,7 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'bci':
         sshkeys => [
-            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCerMXJqa9ZNuHpmmh1Fpnas8YWfdXxO8oFOnQUOy1tDTTk+Fkxk6ivtTcUD9UFJd7vFRH/kB6Id7rqfAKYAFWg+P5culI1r27n21r4Qqnq0fNHSslGfrSRaWFqiboQGiwbhaTQGDoPp/Yuw3tGt2LLBnITJJXuSnkfaOF1W8AEoLcN9X2BrFXISiuk12sdAEbk1V51GBkg63RcY1/U21W1jTgbF91eLv/VNmVy9njwcseaUQI8yR6I4pH8wNaaodsAeDXRKguAkCRz7pUoqj4xhFS3DAwucqf6mQrir7w55dvsUQ2iZfX7INfErFRyQF5+iOc1TViECkSYPn6j2lzZ root@ring',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJQ5fAQzJWtmNoS03qTCYcjLkaPwJgkcYbeyYEQqMj/2Jkg7g/tMy9Vga/U5KAMe7Y6sWVGq569v7dq2IkAXuNxs5kxiKc3wPtxT5TPp/3YjmmM3qVElSwYnbKeNA1oFKl05ifyotIDDRYAitwvHwpUo3l9806Q1MCH6Wysn1ZVdTbIAXpkMXVxhEPkWADFjGKGg/9SYyNbiWCIVnFdDHbr81HAoNjfOKJI0t6f13iPRyPsXkkLayv4Jjht8oikYgBqezIonfEwvtfoQQyKPWvAsGjPDxoCr9HOIo9w189IcGBVHIvxRNFvkAy9AnTFhVLGYtPVEFs34dKBEDqijed root@mail.palhosting.net',
         ],
     }
 ##### END bci #####
@@ -2211,12 +2212,18 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'claranet':
         sshkeys => [
-            "ssh-dss AAAAB3NzaC1kc3MAAACBAIilbpjEsC0Tqb/k4a/x59vK0PPW4+3cJ2TBqOhKs4VHVknO/BeX9DCt9MRdGndyv+k1IhnGp+O3UOeUO2Lyh0m3B1EO58i/De2xEZCSOZLbbIj7htXIBwV8kNJFtP8r6KYWrVxTW8VIzzp8uhMzeL8nCn51SwjHBql1ygbJjHlDAAAAFQDDZhKNsq21sHVVc6Da1zvhvs/0iQAAAIABXRx54P2uFQ88wKH+1iU24FFSxje3xSIS3b2rf1a2JubQxcVg0ZcakGtyLDQTPChW2lQEuk9nKWQZP/BiX9GLR1kzAycYFyD6uQD9VJH+RtT0iLUWS/pEq4Rgk7pH+oSQ/I/j3LFAmDurMP1eTdqy9UiTXmEhDqtZ/JlbElvdVgAAAIAg51e6PmWB1AufdgquKXO7RZjYgJBcEN4+3Ky1WJ94C2ma7UikeIsXwU78fSDCIcfgkdTdeOTjHCymg8WqxdFGdUcXJkSMuA1NVpovZ38ZQZlRzOYPzUwBJV2iJv1VjdyFCPEAw5++Sao7PPN4b8/+6BmrhG0aD/B5GEFmw9tLww== jaco.engelbrecht@eu.clara.net(RING)",
-            "ssh-dss AAAAB3NzaC1kc3MAAACBANA+2Nq9N9IQfPqgmHhdYl932sxJb45PB/UgE/ATxOiP5Ev9sz6Vi+85WrD3kwYvszbRmdm6nIR6a5O861K8B+DKsYoWuE1tFxWgSszlbYzuTMXfPg+zI2IAen/YtzgsATnJPIKUub5bO18O3qGX5f/Xf21kJUsGdDx/F13Bb1UlAAAAFQC8JQHI/PW8wmZwmJKoLDHjb9W1XQAAAIEAq7/xIeDcg4FYiZeUl7VZxrB7HhMwBePOuBgpVyghYsJIM1wyWULN99aMxVQphZa77Y0I6UeaXoQu4Mt52O7Q8oq8FtxfCxUguFh0O+5qKZ66PjNmu/BC5s/GioxnoZ2baT/ka0xV3pQ01wZknk1Eb0ze750OdDs143Tq9eos2IkAAACBAJxziC4dxXJ6mOKYHdnEWRC57UFYxLwk5fKMemP0xJZk2/2Wahq+2pNoCWZvnUk6jWHMVhIV8BG7Bq37B1Qq/XuiEfkc+E1gCEYjwIhvvKYsR+SMeejCv1Bv7HV39ZPoGUjdYyQgciBrDCG13R1QShWNRcTK5liOTbyCcxI2QzTK david.freedman@uk.clara.net(RING)",
-            "ssh-dss AAAAB3NzaC1kc3MAAACBAKu/ZqkngiwlwOAh3Lvn69oQX0yBpeRjzHVh/8Z7+MQK4yzYg3Q+FfklrI6+DjbSgjMgaP7liRkQP70b6uXbpoAaWBUiKZo5dOAI7kl/folNg3728d1p5NgxTdyzLdyU5txK8h50qaGVrJoAT31vtMrehAqPgYTGMBZ61mhsrUyFAAAAFQCXSyCWW6FVltlP/hEFv3qBCJu8jQAAAIBnsfScoQCDcuw2760sAhWfMWgWjBcvOdGJq5OQ2iQfubj0Y+0EekMiDiob9y0/48ErxuPED1Yu2IiQVEjds16zidlt2rAtkwmWCgqe/mPrhsiMuRVHC49ShJeKpSkQrugT/v+XWJWvaw4B5zZBLKlEaWEEH8bkN065iuAQOo75YgAAAIBRiXKXim7N+HrR12TKvTlTLnKxe80XAm00pbuoX3beqFIiygnXt+3vOw/QcMB9H/4n/R45ztA4MAj38wqK9x+5pAsWOSmq96MjEmTqwr05LQWkQo8+A/wBK5DaaOMLk4QVS3UqTA6vJHwPkx0fpkQ/xm2lkMJIMbSBpEigvmVSQw== prodrigues@pt.clara.net(RING)",
-            "ssh-dss AAAAB3NzaC1kc3MAAACBAL3fUIstXatph0FgG9EG0CWsb00yw7QZZgVGg/f2sMCoidM/3KFE4Rg/JtbwwkO1deMIwSFx6Xpn0FASvbndOpI25LB6EnQTHGKBun816b2fppmPVNjSn/IwsgTvjbeaHSp2Xf7p6of/RQZQA62y2bATOojJMcYYXpAIwym0KvlZAAAAFQDlRvh/bt7nhUj61NPrfoJ4e0Gy4QAAAIBpD+kA6vPB/SPOgCpord/aQvkM25tk/XNdyUKHvdebC11o9oTbmn38zALCPigg5Apv3Egls77DEMvUT4nK/saIvZyC9eFEWtxKbanrbp8sGzu2ayHzE6RLRUhvVt5j/7bl9gjXT3fmWPrBLsDUJ9+rRxtNq4IpalwQ1VQFIpAWmgAAAIEAjmDyhaYOG0o+RbkrQTIjngCJ4naBV/KIJ+EyCkGL5yL2f1Q3gFj0kuQc0TEQbn4Lu0OJFcc/yfTmTIh0JlwZB2zgSGOSgQBh4qs+r/1sdJwQZlNHFDCNx8j0VsfmUIl8up4xrHHxY+jrEcVAOjXTphLMt0r5pqqe17GH10JQR2w= erwan.lerale@fr.clara.net(RING)",
+            'ssh-dss AAAAB3NzaC1kc3MAAACBAMVXLgWxgggxH6tynOfxaiPTrg6V1V2nI46FAdIKJVEHXti0VgRAvWRVE7uOWdHmiYH+bnH/T6mUYgIpZToU8Gv0IdGxvSwY2PegSe1Br1o0RDoqS1geLeq8uWy/pbTgPKILK9dWpFmEamRnuLTGIMGjUutZHnucg03J8ellE7s/AAAAFQDs7aflsNLrAeY+Cle/NchPe5I/UwAAAIBFID/exDBF9ZJRYu8h1Xn+hBrqIrUaniE1y6zBTK/nc8fckVQETbSPC2DsMONWfzkOmQItaf/UDdf4I86kJTBzVEVTjK+uXmg1Zl6hGMOOfawr1eIiIzjekSE/0zejHJsibs8E2gffj/0HHBunJ0MHCnWZYbnvDgjzXvJ7uyrRyQAAAIBx168bp1xHykbeh978EvwSAo6xoKgF6XMi3VNYJhSk2nY/FAZAQPTETavJOD3ZVVErSFGw4nB+oshmONQ79gHRp78i377+CcMSxCLZ3ntT9D7JrkoObwdQ0pic7OHMt2lTH3uoMjYL4IAtGLLW5pNifomypw9uapvWVxDQEIlaew== jaco.engelbrecht@eu.clara.net(RING)',
+            'ssh-dss AAAAB3NzaC1kc3MAAACBANA+2Nq9N9IQfPqgmHhdYl932sxJb45PB/UgE/ATxOiP5Ev9sz6Vi+85WrD3kwYvszbRmdm6nIR6a5O861K8B+DKsYoWuE1tFxWgSszlbYzuTMXfPg+zI2IAen/YtzgsATnJPIKUub5bO18O3qGX5f/Xf21kJUsGdDx/F13Bb1UlAAAAFQC8JQHI/PW8wmZwmJKoLDHjb9W1XQAAAIEAq7/xIeDcg4FYiZeUl7VZxrB7HhMwBePOuBgpVyghYsJIM1wyWULN99aMxVQphZa77Y0I6UeaXoQu4Mt52O7Q8oq8FtxfCxUguFh0O+5qKZ66PjNmu/BC5s/GioxnoZ2baT/ka0xV3pQ01wZknk1Eb0ze750OdDs143Tq9eos2IkAAACBAJxziC4dxXJ6mOKYHdnEWRC57UFYxLwk5fKMemP0xJZk2/2Wahq+2pNoCWZvnUk6jWHMVhIV8BG7Bq37B1Qq/XuiEfkc+E1gCEYjwIhvvKYsR+SMeejCv1Bv7HV39ZPoGUjdYyQgciBrDCG13R1QShWNRcTK5liOTbyCcxI2QzTK david.freedman@uk.clara.net(RING)',
+            'ssh-dss AAAAB3NzaC1kc3MAAACBAKu/ZqkngiwlwOAh3Lvn69oQX0yBpeRjzHVh/8Z7+MQK4yzYg3Q+FfklrI6+DjbSgjMgaP7liRkQP70b6uXbpoAaWBUiKZo5dOAI7kl/folNg3728d1p5NgxTdyzLdyU5txK8h50qaGVrJoAT31vtMrehAqPgYTGMBZ61mhsrUyFAAAAFQCXSyCWW6FVltlP/hEFv3qBCJu8jQAAAIBnsfScoQCDcuw2760sAhWfMWgWjBcvOdGJq5OQ2iQfubj0Y+0EekMiDiob9y0/48ErxuPED1Yu2IiQVEjds16zidlt2rAtkwmWCgqe/mPrhsiMuRVHC49ShJeKpSkQrugT/v+XWJWvaw4B5zZBLKlEaWEEH8bkN065iuAQOo75YgAAAIBRiXKXim7N+HrR12TKvTlTLnKxe80XAm00pbuoX3beqFIiygnXt+3vOw/QcMB9H/4n/R45ztA4MAj38wqK9x+5pAsWOSmq96MjEmTqwr05LQWkQo8+A/wBK5DaaOMLk4QVS3UqTA6vJHwPkx0fpkQ/xm2lkMJIMbSBpEigvmVSQw== prodrigues@pt.clara.net(RING)',
+            'ssh-dss AAAAB3NzaC1kc3MAAACBAL3fUIstXatph0FgG9EG0CWsb00yw7QZZgVGg/f2sMCoidM/3KFE4Rg/JtbwwkO1deMIwSFx6Xpn0FASvbndOpI25LB6EnQTHGKBun816b2fppmPVNjSn/IwsgTvjbeaHSp2Xf7p6of/RQZQA62y2bATOojJMcYYXpAIwym0KvlZAAAAFQDlRvh/bt7nhUj61NPrfoJ4e0Gy4QAAAIBpD+kA6vPB/SPOgCpord/aQvkM25tk/XNdyUKHvdebC11o9oTbmn38zALCPigg5Apv3Egls77DEMvUT4nK/saIvZyC9eFEWtxKbanrbp8sGzu2ayHzE6RLRUhvVt5j/7bl9gjXT3fmWPrBLsDUJ9+rRxtNq4IpalwQ1VQFIpAWmgAAAIEAjmDyhaYOG0o+RbkrQTIjngCJ4naBV/KIJ+EyCkGL5yL2f1Q3gFj0kuQc0TEQbn4Lu0OJFcc/yfTmTIh0JlwZB2zgSGOSgQBh4qs+r/1sdJwQZlNHFDCNx8j0VsfmUIl8up4xrHHxY+jrEcVAOjXTphLMt0r5pqqe17GH10JQR2w= erwan.lerale@fr.clara.net(RING)',
+            'ssh-dss AAAAB3NzaC1kc3MAAACBAJyfrsWcTlV0+WQtLtx5O5mSKiWtNd7enTxDmqwjDmueP63Q7yPXWKvOKuPJfpIMr6O6Fyyk9m+b2H3L3wbWJe6ZJ2h882E/hu2L9UqeQVO3f5+bbK60YN4ogq5gRa3z0cRn8Rz8+Vy2P3b2JkCybnR7/JiX3vcFQFjescjVOVPDAAAAFQDkgnlQh+H75Z5wuaYt4xNzRGEjuwAAAIAhlBRehhXgLND3NZdWry8G9XU6ENYDmxMfXjMcLHs0ZLYEZty2b540qaEHZ3gsYQQtKFGqwNJc1d7PoCJrK9veOWvbs/l3DzP0h4JvqHxgFI0R1rVrgmHC91EQFIrBwoMuEKXkyHPGFre1yL68DkIXmNmXDCQU/6PowXhz13ArxwAAAIATQrRJXTv2tOpX8hlWjlwHZEzeykfZ1DbSWoRCxCqwax3GO2Ka+MPfLdUK4Hvkrar7lnHcZiPV7b56Sivh7dnawuhIrdpTW5lZN+zQtNNLb+jbW0/5ezq0k0warAAqMIwxEp71li6Sslek6tOxB1qhawb7Dzo9T8nG7H1bx8pmpg== mcampos@pt.clara.net(RING)',
+            'ssh-dss AAAAB3NzaC1kc3MAAACBAIbORib67S4s3gCVhkhSJrL9CKySXPfT2wlteHYVjdwOIA9wxLh4/7nHAzvxm7R5mGZQdQMKwZ3LEfAADuNDtqXV2Z8suxje3jHXFmxUkdHPh4KRQ6JcmESLTL6jdOEckcRKhsZSJD6s+bBZSkw2aiVZRvXNcmwQpekRSlkjyxlnAAAAFQDzJqqMVoUldJ4kHQhBjgxLHQyHywAAAIAiS8XtPzC7MmgdUS4Aa35Kx6tAGnPD5F4InOhcMWACKxoHsSkvUEmbPNPDx/EEIopz/T6CmntRIzxjlyFuqKnAPHKy4SFCqnajGKCH92OjtOResYqU5ESo/0NJvmfVmiAqhlPaPGrSwK7N1Y3SPL7alfecLfBTB97g+HuAMN8JigAAAIBkF/9NVUUIyECVU0PABvMOfDRorNPonuM/2xiBMkpBXuSS9cu3RXwYJWEoVM+iNrLsqdGfT2eM2aoJRhA8fiQ5bIGktt8q4HncShjP2wf8CwwkbGuxxzsfL1hXuX7NAXQaeIIjKO+MLlM1UB+OknGVax4SoYMcj6Ihcttg44pJ7A== edwin.degraaf@nl.clara.net(RING)',
+            'ssh-dss AAAAB3NzaC1kc3MAAACBANu+4Rl++22CEQf5d5Y3oOmhuu3RPbQ25zt/OjFiwsBJJnn7p9ugE2jqqL+mIi6g294V99wfxvROTshEYIvQrPmdfG1WFo/Aa2CCPXSFDEhjAxWuafNWs9o6zNguEoEWu29btz7PmuY0tx5COf2zl056LI1+ZWHiM8G6ONedrlVJAAAAFQD/5VUS4iCfxa0Kye+E2OwiMbwfxwAAAIBLNHm8ce+z3aHcMo7aw7JzzZ5oYMp7hpgr8fRax3s6zXClRPdBKXnsBPCxvw29JDEke6yejVBAFEgMWbrZr2/aij0ZVDebTSUy8RM9XN67NZyR772hcIQrk4lukXgs7/KcDbhb+ABSaPflLdA7fCSFdDuofA4ZiIjlo6VPKtdJrwAAAIBKEwu3YBoNFrqRVytZAaUeJQncq2RtmANHcBiNbhMQoVggBc46UJffFL3SCsTfMmoJ7WVeivF28LXNqT5J/5RM1hjwebMmT15S3xa9pbz+GGhQMFPyBDSVUkNuEkVd5v0gJV62z2DECXPpDd901WUIf9BXPXL17SVOUFsq1GiYNg== daniel.winkler@de.clara.net(RING)',
+            'ssh-dss AAAAB3NzaC1kc3MAAACBAIzPKVYptChZVOiYTgZPinKeQeVC5H02poh9KMABiEKQdA2AgvDCzbZ1nb2vqAjYcR1Q0ct/igOkP3hQBnO6bHjVlqDUynhXHWFaOIOuSEmhzcrtHT9yuxdPk6cdnGF5W7Gch/bJCS70DeBaqegDqL3HN6jXc0GzUMSlsQG1LJZVAAAAFQCjfJzGKevmTgU5keVZgKuWM8oQnwAAAIBTo0ZIhYzp3RA8LLXDpAXirQ/baW22oid3vLdZ13EmNDdGYeLhXTaL64AL3DUXPWprkjS1YWBhYCRFlV48dJm4uyAY92cEDGmBW1ITm0iltLkzwLRgd01zgG1S/ZEUDoHXZlxCVaBmYtKSy3YmIiFTG/n6FmIaBqxbyJJ0EinnyAAAAIB04fdlqZVjciQTsKINxOHkliKkrDS7wGPHLEDafediu1aMlBUTZy11VKePxlCZ5cpTX501eJ11oF4e29bzVWxY4xmnwrBRJKMZx/S+dH9d99agmLJbAyis8DVjbdbcDgMQgsblPwJX2o5OTvDzR2AcvnG+lopgnSfyrw3c5WdQtg== kaska@uk.clara.net(RING)',
+            'ssh-dss AAAAB3NzaC1kc3MAAACBANNUb0vBTcCU4HBBjmBg5gHb+0F2xbO7I9Xt6ENgXtzsjPnOtx4OuFWzwwDPfK/QXnoqjKpV56wEZxV2xl+F4z9YAHq8TVoUJYMeDIBD7eKpif9S9pocLzPU3pxtwFH2yqCARf4qnrOLaEf2LQ2CAnp8zsfUIvPXHCkjjzlF8ZOlAAAAFQDIOOaxkW4j6nv97cv1Dn2H70yvmwAAAIAe5l0YltX8lSTu8+6TqYGLKf2//LuzE8F9YqKbP2YevUhYr/Sw4GpMh+9alj8pL1B1zOxAOmexsOYHf+Lv0s9TsQ+0prJumsQirbY43cV/EsJP+RypkqTvcLRyyrChYCc9xExbYAar2RkUseOm0wkwewFL7IbmLm0A1PRYfHBgogAAAIEArDq8SkGXgeW2BzTShaX/ygshqvMbCVWPbLUFU9Dj5mHjUSgX1QKMRPvKo2KHH72f3f/jc0YgqaQO+wLcw6R0yjwggKVlk13e211iYIBIRo2O/YDdfDW56t1JkgydRguKdOCUfTMVkGJAE59TqR5AK2m6sN+xVDyM7K23n0Twu8A= sandy.breeze@uk.clara.net(RING)',
         ],
     }
+
 ##### END claranet #####
 
 ##### BEGIN arpnetworks #####
@@ -2426,12 +2433,28 @@ class users::virtual::ring_users {
 
 ##### END ipmax #####
 
+##### BEGIN merit #####
+
+    @add_user { 'merit':
+        email => 'msc@merit.edu',
+        company => 'Merit Network, Inc',
+        uid => '5137',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'merit':
+        sshkeys => [
+                "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCql5nngCFAD3Ke7MrlECNrbmJVMGTW4e8fNoCGfAlQFrdT2vQ7Az1KoGisGv3vX5gZ5E1MpyBSTaODTrgwrG6vJ4kP6k1/Xv4L3TVSL0qn0O5AByTI+AnZ7vAqAu+FTWnvauyHAfnCnsjAijmcgA41GLPXUlxyl/x/DqMOvIw5qb6s5Ec+/SKZ3XxeWDN/7z2wACXCZjRms4T2lXOjlZaxagWT/IVBzt447YB8Qc7jMN3PiDL1OzLvSHNa8V82xZ9Er25n2fcyAwS5Y2nj643gQF3DgF0Xzbmbo6aAZ28wVSdA96vX+hFms6D2NsuxfEcLwDED8KAi3QT1R0zksYcRThvFNz/Y9AwJmVn5UM4c5ioKOsOiNOyNSPb7Zl6sbqAFP9NVph9YbpRh+TAb+7UrbbingZ3GvjnlcKP7c0LIaafHXiMNSBEnrdJH3OMKlXJZDJRxf74gAmVLSDmpzB0Zb5Qj6ohwncAHO2vZFd49aQXRM0qAzXfESRzYp1zBjY3RN3Eos5MNiCQTVmdZBvdZVVOMa/ozyd16nWP3ko6ODdhYmGJP2Id+uUHv7Gnr+O9v4Ti3nRXqiISQyg1pzwMHtGjgey6IgFrhsI0YGBHIAJ9OcrFQoYIAoTeYMQeXFoy3gpbg2n+ml7AwpYHnpW+bPkkI4JQEFgPb1bbf/WuNPw== nlnog-ring@merit.edu",
+            ],
+    }
+
+##### END merit #####
+
 ##### BEGIN poznan #####
 
     @add_user { 'poznan':
         email => 'ipv6-support@man.poznan.pl',
         company => 'Poznan Supercomputing and Networking Center',
-        uid => '5137',
+        uid => '5138',
         groups => ['ring-users'],
     }
     @authorized_keys { 'poznan':

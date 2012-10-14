@@ -486,11 +486,11 @@ ff02::2 ip6-allrouters
 149.20.52.36    isc01   isc01.ring.nlnog.net
 2001:4f8:3:2e::36   isc01   isc01.ring.nlnog.net
 
-79.134.255.159  backbone01  backbone01.ring.nlnog.net
-2001:4b28:198:0:21c:42ff:fe2a:d38a  backbone01  backbone01.ring.nlnog.net
+85.195.198.15   backbone01  backbone01.ring.nlnog.net
+2a01:528:2000:0:21c:42ff:fe4a:c3a0  backbone01  backbone01.ring.nlnog.net
 
-85.195.198.15   backbone02  backbone02.ring.nlnog.net
-2a01:528:2000:0:21c:42ff:fe4a:c3a0  backbone02  backbone02.ring.nlnog.net
+79.134.255.159  backbone02  backbone02.ring.nlnog.net
+2001:4b28:198:0:21c:42ff:fe2a:d38a  backbone02    backbone02.ring.nlnog.net
 
 217.147.213.237 nexellent01 nexellent01.ring.nlnog.net
 2001:4168:babe:2::2 nexellent01 nexellent01.ring.nlnog.net
@@ -509,6 +509,9 @@ ff02::2 ip6-allrouters
 
 46.20.247.200   ipmax01 ipmax01.ring.nlnog.net
 2a02:2528:404:1::200    ipmax01 ipmax01.ring.nlnog.net
+
+2001:48a8:6880:63::64   merit01 merit01.ring.nlnog.net
+198.108.63.64   merit01 merit01.ring.nlnog.net
 
 195.177.253.104 poznan01    poznan01.ring.nlnog.net
 2001:808:2:3003::5  poznan01    poznan01.ring.nlnog.net
