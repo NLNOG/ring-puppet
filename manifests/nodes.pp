@@ -2066,3 +2066,23 @@ node 'merit01' inherits ringnode {
     include users
     $nagios_ping_rate = '!200.0,20%!300.0,60%'
 }
+
+node 'poznan01' inherits ringnode {
+    $owner = "poznan"
+    $location = "52.411433,16.917933"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
+
+node 'nuqe01' inherits ringnode {
+    $owner = "nuqe"
+    $location = "51.511507,-0.00118"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
