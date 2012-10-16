@@ -522,3 +522,5 @@ ff02::2 ip6-allrouters
 31.222.236.6    bluezonejordan01    bluezonejordan01.ring.nlnog.net
 2a01:8e40:1:12::2   bluezonejordan01    bluezonejordan01.ring.nlnog.net
 
+194.0.58.58 zeronet01   zeronet01.ring.nlnog.net
+2001:67c:3e0:c5::58 zeronet01   zeronet01.ring.nlnog.net
