@@ -2018,6 +2018,7 @@ class users::virtual::ring_users {
             'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAvLIjJFeLhjCmuNdQMFDAs9mZ89pHO7FnUR7XQQpTEGIg1J2VnsFIi+1+7bFSxk2erhIpAEa87HBLtAI9muC7flMzW4AUDye59J+7LGs+1QP/a3wLPKFwseFaKGZWn8APqTknQvJDa2kFuqct844t5E058Q5C1geq9/Yn86o7vic= rsa-key-20120730-RM',
             'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAmuOOgxFD8Y+XMru971E1sn4VJaSm0gwG8r76Wbt8YVaAWOIxDWREMrjMwFCpsrIQQasA5qwfskOXeD5Nl01KFl9dasorS6tm/sUN5ZzK4FKx8u/2GSvn2os/rMUbaDI55rzW5DtdGii3szrGsfW/FNPDTBY269dHC+efqBFIx70= rsa-key-20120828',
             'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIBjdU17phHi99Nm3MSZAjeSLxBv2fIMvhCmj1kw5wmdw1kcfrrRufIE/moHT7dgm5tOH36i4vVsLP6EUhl/K9emL5sRnUVJrsdoYI25rPfaJU6YUj5lIQVwBeBSramtnpKFLqpaf9TcPrcwMqEkzOnFpAybtPXh+rdjG5ZvLJpxKw== rsa-key-20120829',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAw9YO5VfAFLZV6x+eZyrhRYJHmp63efu+uNKMuwxDn4uS1bVNLORM/EZ/M/fI6CVnsIubWn/ZHkpGjhe7oyq/pdp+TLWJLRH0tq31fhJPcF/o18+0qjJnDbrs5vuu2F1rVPyv0gReBprFRFzgWOIdEh11wTaxjAowhWRBhIcV6PZ1nkQa9flzGQsYdysrccuOvR2PqiKHbliBmAH5equeJk13HEzAKXS3d18no7IUEC15ve7p8nP3xNwOa48qVPndnrLCs5JVQQFlZ1RGlYfqOjSVG35NjbJ185umAzBVqr58+STZC52n8SJoqfk7jgXXZ9vJWZ7gEnTIjfjCyUaXcQ== ring-key',
         ],
     }
 ##### END siminn #####
