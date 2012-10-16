@@ -156,6 +156,7 @@ ring-merit01:v6 2001:48a8:6880:63::64
 ring-poznan01:v6 2001:808:2:3003::5
 ring-nuqe01:v6 2001:67C:188:12::12
 ring-bluezonejordan01:v6 2a01:8e40:1:12::2
+ring-zeronet01:v6 2001:67c:3e0:c5::58
 ring-staging01 213.154.236.191
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
@@ -313,3 +314,4 @@ ring-merit01 198.108.63.64
 ring-poznan01 195.177.253.104
 ring-nuqe01 195.177.253.104
 ring-bluezonejordan01 31.222.236.6
+ring-zeronet01 194.0.58.58
