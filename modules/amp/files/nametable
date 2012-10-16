@@ -153,6 +153,9 @@ ring-grnet01:v6 2001:648:2ffc:113:dcdb:eeff:fe35:9c68
 ring-netflix01:v6 2620:10c:7000:3364::120
 ring-ipmax01:v6 2a02:2528:404:1::200
 ring-merit01:v6 2001:48a8:6880:63::64
+ring-poznan01:v6 2001:808:2:3003::5
+ring-nuqe01:v6 2001:67C:188:12::12
+ring-bluezonejordan01:v6 2a01:8e40:1:12::2
 ring-staging01 213.154.236.191
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
@@ -307,3 +310,6 @@ ring-grnet01 62.217.125.248
 ring-netflix01 108.175.33.120
 ring-ipmax01 46.20.247.200
 ring-merit01 198.108.63.64
+ring-poznan01 195.177.253.104
+ring-nuqe01 195.177.253.104
+ring-bluezonejordan01 31.222.236.6

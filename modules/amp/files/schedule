@@ -618,6 +618,18 @@ ring-merit01:v6,icmp,D,0,86400000,60000
 ring-merit01:v6,icmp,D,0,86400000,60000, -s 576
 ring-merit01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-poznan01:v6,icmp,D,0,86400000,60000
+ring-poznan01:v6,icmp,D,0,86400000,60000, -s 576
+ring-poznan01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-nuqe01:v6,icmp,D,0,86400000,60000
+ring-nuqe01:v6,icmp,D,0,86400000,60000, -s 576
+ring-nuqe01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-bluezonejordan01:v6,icmp,D,0,86400000,60000
+ring-bluezonejordan01:v6,icmp,D,0,86400000,60000, -s 576
+ring-bluezonejordan01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging01,icmp,D,0,86400000,60000
 ring-staging01,icmp,D,0,86400000,60000, -s 576
 ring-staging01,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1233,4 +1245,16 @@ ring-ipmax01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-merit01,icmp,D,0,86400000,60000
 ring-merit01,icmp,D,0,86400000,60000, -s 576
 ring-merit01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-poznan01,icmp,D,0,86400000,60000
+ring-poznan01,icmp,D,0,86400000,60000, -s 576
+ring-poznan01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-nuqe01,icmp,D,0,86400000,60000
+ring-nuqe01,icmp,D,0,86400000,60000, -s 576
+ring-nuqe01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-bluezonejordan01,icmp,D,0,86400000,60000
+ring-bluezonejordan01,icmp,D,0,86400000,60000, -s 576
+ring-bluezonejordan01,scamper,D,0,86400000,900000, -P udp-paris -M
 

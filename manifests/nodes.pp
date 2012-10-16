@@ -2086,3 +2086,13 @@ node 'nuqe01' inherits ringnode {
     include set_local_settings                                                  
     include users
 }
+
+node 'bluezonejordan01' inherits ringnode {
+    $owner = "bluezonejordan"
+    $location = "31.9579048,35.8697509"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}

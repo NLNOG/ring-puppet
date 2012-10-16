@@ -518,3 +518,7 @@ ff02::2 ip6-allrouters
 
 195.177.253.104 nuqe01  nuqe01.ring.nlnog.net
 2001:67C:188:12::12 nuqe01  nuqe01.ring.nlnog.net
+
+31.222.236.6    bluezonejordan01    bluezonejordan01.ring.nlnog.net
+2a01:8e40:1:12::2   bluezonejordan01    bluezonejordan01.ring.nlnog.net
+

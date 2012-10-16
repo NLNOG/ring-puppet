@@ -2485,4 +2485,21 @@ class users::virtual::ring_users {
 
 ##### END nuqe #####
 
+##### BEGIN bluezonejordan #####
+
+    @add_user { 'bluezonejordan':
+        email => 'noc@bluezonejordan.com',
+        company => 'Bluezone Jordan',
+        uid => '5140',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'bluezonejordan':
+        sshkeys => [
+            'ssh-dss AAAAB3NzaC1kc3MAAACBAKue35G4yIf2uXIPBIPEy2mwSVQmIpkw4AIptXChgXCreHsaQuerawradqUxXqaDNO0o5CtVv7RPXrx3YU0qw9q5uh34UyHNLE2gxc+jyBWx/BkQ2ZLuWnPQ5mDb5xo7N1nZ03+XSx/J22unJm//jIgTljUm9qfIDkYBbfAcTDAFAAAAFQC2AEpUNAfvH8MSGfmRWvSJxUonvwAAAIBczFjsYGHe3JvUimWj1bdfxkhYEI5cAAFKiBnyT8Gw8nPUN0L4jx2kHsMglE/xCCPqyX38+iNl7kObVXJgZ/FBKFZ4aqtvHB+yg3drlTGWNA43PIC5SGhowxwMYPro4AmEQa4RcoBnkpeP10gUAzMPjx96r18rodfo+FcLl9U3UwAAAIBY5+QbYGLZr8u90hzFsn33oXUsL8BFF7s31iVOA0QVnFWhomBEXBCr4lD20UokBTAgXbhqvAlOF7NVEOsAkdGfGPhkbq91FYoJ8CMgQ0V/KPEmB9vLr+A9rLz3QjgiqfSV6Os0jkmUkxSzcQ59w9OpaRMMearAPKaoGol7PALChA== bzjuser@BZJ-DEBUG',
+            ],
+    }
+
+##### END bluezonejordan #####
+
+
 }
