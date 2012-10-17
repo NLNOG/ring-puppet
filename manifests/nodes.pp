@@ -2044,6 +2044,7 @@ node 'netflix01' inherits ringnode {
     include nagios_services                                                     
     include set_local_settings                                                  
     include users
+    $nagios_ping_rate = '!200.0,20%!300.0,60%'
 }
 
 node 'ipmax01' inherits ringnode {
@@ -2090,6 +2091,16 @@ node 'nuqe01' inherits ringnode {
 node 'bluezonejordan01' inherits ringnode {
     $owner = "bluezonejordan"
     $location = "31.9579048,35.8697509"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
+
+node 'zeronet01' inherits ringnode {
+    $owner = "zeronet"
+    $location = "52.278519,-1.895536"
     include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
