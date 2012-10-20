@@ -524,3 +524,7 @@ ff02::2 ip6-allrouters
 
 194.0.58.58 zeronet01   zeronet01.ring.nlnog.net
 2001:67c:3e0:c5::58 zeronet01   zeronet01.ring.nlnog.net
+
+92.54.7.28  claranet06  claranet06.ring.nlnog.net
+2a02:a0:1:1::4  claranet06  claranet06.ring.nlnog.net
+
