@@ -182,6 +182,7 @@ class nettools {
     package { "pastebinit": ensure => latest }
     package { "markdown": ensure => latest }
     package { "vim": ensure => latest }
+    package { "language-pack-en-base": ensure => latest }
 
     # packages we don't like
     package { "pppoe": ensure => purged }
