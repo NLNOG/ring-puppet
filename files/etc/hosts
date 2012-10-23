@@ -528,3 +528,6 @@ ff02::2 ip6-allrouters
 92.54.7.28  claranet06  claranet06.ring.nlnog.net
 2a02:a0:1:1::4  claranet06  claranet06.ring.nlnog.net
 
+2001:418:1::89  rgnet01 rgnet01.ring.nlnog.net
+147.28.0.89 rgnet01 rgnet01.ring.nlnog.net
+

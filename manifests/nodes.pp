@@ -2117,3 +2117,14 @@ node 'claranet06' inherits ringnode {
     include set_local_settings                                                  
     include users
 }
+
+node 'rgnet01' inherits ringnode {
+    $owner = "rgnet"
+    $location = "47.61435,-122.33852"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+    $nagios_ping_rate = '!200.0,20%!300.0,60%'
+}

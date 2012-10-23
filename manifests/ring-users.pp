@@ -2523,4 +2523,21 @@ class users::virtual::ring_users {
 
 ##### END zeronet #####
 
+##### BEGIN rgnet #####
+
+    @add_user { 'rgnet':
+        email => 'noc@rg.net',
+        company => 'RGnet LLC / psg.com',
+        uid => '5142',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'rgnet':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAww1WTCBezBK1snfUKi1LAwIIvQEQuhgV63toCMnTrYZfkp9/jyI1WVmKf4FIiodJWWeUtjCkt2E7t0oPZ7BxNbP8bn6HTso8qTexng8kM23UCgdzorp0ofatO0esdIdbuXd8qu9uJRlJn1TwVYeY7qY10eF60CbSZawuwSsM0iq0EbKTJQkHBtytd1zC7a7geGfieR4D3sHB9b33YhUgP9b1EO+CYtS8Qbb8xbMboD1eIB0UH0jcSUVZvb2DRtnsyIVQioW6zaAbIbFz7x+5zJBsFjkDvjR/80atOvNYJTyYZRD71D3kBu2peYup2XrsTPvrsKh5hJCVlJFCuFQaNQ== randy@psg.com',
+            ],
+    }
+
+##### END rgnet #####
+
+
 }

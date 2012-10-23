@@ -638,6 +638,10 @@ ring-claranet06:v6,icmp,D,0,86400000,60000
 ring-claranet06:v6,icmp,D,0,86400000,60000, -s 576
 ring-claranet06:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-rgnet01:v6,icmp,D,0,86400000,60000
+ring-rgnet01:v6,icmp,D,0,86400000,60000, -s 576
+ring-rgnet01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging01,icmp,D,0,86400000,60000
 ring-staging01,icmp,D,0,86400000,60000, -s 576
 ring-staging01,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1273,4 +1277,8 @@ ring-zeronet01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-claranet06,icmp,D,0,86400000,60000
 ring-claranet06,icmp,D,0,86400000,60000, -s 576
 ring-claranet06,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-rgnet01,icmp,D,0,86400000,60000
+ring-rgnet01,icmp,D,0,86400000,60000, -s 576
+ring-rgnet01,scamper,D,0,86400000,900000, -P udp-paris -M
 
