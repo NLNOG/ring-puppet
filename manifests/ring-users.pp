@@ -2539,5 +2539,36 @@ class users::virtual::ring_users {
 
 ##### END rgnet #####
 
+##### BEGIN ehsab #####
+
+    @add_user { 'ehsab':
+        email => 'teknik@excellent-hosting.se',
+        company => 'Excellent Hosting Sweden AB',
+        uid => '5143',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'ehsab':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAkPjq+nif0SjaHEUyXfWH7MoGE9grIXr5BN4XpYOCWLvfdE0cg1Pzn9DJcy9es4KsAduC8xB/08ku2O70mI4Tgn5JoPg1rjf5n1KD09FNJGmP50yzRcAjzcyvwSF9qImXD2b/n+VSvx1+WK37fT2iV19b5HGx9T9ZHKEyAyaq0qc= rsa-key-20081123',
+            ],
+    }
+
+##### END ehsab #####
+
+##### BEGIN yellowfiber #####
+
+    @add_user { 'yellowfiber':
+        email => 'support@yellowfiber.net',
+        company => 'Yellow Fiber Networks',
+        uid => '5144',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'yellowfiber':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAzxUnB8XCN0GsUUuTol8wOLahxS0NDBNXxTWir16JM836g8lJq5aOcGhmFmoTrD5gXbdweC1PA80NiIn/FbrDMxT5xNRlpagR5fSV4iV0pDi7pRIonP63JO9NjIz4sqrcuTHeTgqL9rByMyWMr+P7wLw6XQHX44Tdowio4CkdASeDVDQZJgquu7kUrXpSk+vK1uqz5naa+tFrBSLNYST0TC4VdC3LEcP3cy7K7y7apeRMGBCkpkzD//fLPCSeR0nfGviJTBHVWF/yqW9LkGIIp8Zj6wZ1sWOJP50LaMKU84uzCqkqxuiLCFuWAC1lgzRyeTZYfg9Ql3zdUYIUbu+scQ== nlnog@yf-vega.yellowfiber.net',
+            ],
+    }
+
+##### END yellowfiber #####
 
 }

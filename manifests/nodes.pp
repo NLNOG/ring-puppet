@@ -2128,3 +2128,23 @@ node 'rgnet01' inherits ringnode {
     include users
     $nagios_ping_rate = '!200.0,20%!300.0,60%'
 }
+
+node 'ehsab01' inherits ringnode {
+    $owner = "ehsab"
+    $location = "59.306946,18.130274"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
+
+node 'yellowfiber01' inherits ringnode {
+    $owner = "yellowfiber"
+    $location = "38.954003,-77.36392"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
