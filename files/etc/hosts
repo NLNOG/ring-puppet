@@ -534,6 +534,9 @@ ff02::2 ip6-allrouters
 2a02:1610:2000:2::2 ehsab01 ehsab01.ring.nlnog.net
 178.236.65.26 ehsab01 ehsab01.ring.nlnog.net
 
+2a02:1610:1000:2::2 ehsab01 ehsab01.ring.nlnog.net
+178.236.73.122 ehsab01 ehsab01.ring.nlnog.net
+
 2607:fd50:1::5a yellowfiber01   yellowfiber01.ring.nlnog.net
 67.23.114.2 yellowfiber01   yellowfiber01.ring.nlnog.net
 
