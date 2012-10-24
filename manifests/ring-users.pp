@@ -2533,7 +2533,7 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'rgnet':
         sshkeys => [
-                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAww1WTCBezBK1snfUKi1LAwIIvQEQuhgV63toCMnTrYZfkp9/jyI1WVmKf4FIiodJWWeUtjCkt2E7t0oPZ7BxNbP8bn6HTso8qTexng8kM23UCgdzorp0ofatO0esdIdbuXd8qu9uJRlJn1TwVYeY7qY10eF60CbSZawuwSsM0iq0EbKTJQkHBtytd1zC7a7geGfieR4D3sHB9b33YhUgP9b1EO+CYtS8Qbb8xbMboD1eIB0UH0jcSUVZvb2DRtnsyIVQioW6zaAbIbFz7x+5zJBsFjkDvjR/80atOvNYJTyYZRD71D3kBu2peYup2XrsTPvrsKh5hJCVlJFCuFQaNQ== randy@psg.com',
+                'ssh-dss AAAAB3NzaC1kc3MAAACBAMcyFrmcI06jwD2IEA5lvqNM84mr05eMIARy+JQ9f++tix9eMk5Y7b9Dmau3iYNG7WAEUtzEhj+ZO1QSMNqDX+TARAkesWHhRtNp5aTSpTrnyb7W74x7Wdjd0Zw6iQyYjzv8qYdcg3siN/POE6traHqzratuSrN9euEjXSq6lmutAAAAFQCo1RS1pRSCgmkTogCNHEqCnHDOOwAAAIEAg0XcJyRT3Er5oanfdQQT69mXfrGkcqGaahJchbIkVX9MDlFLmrAw8Av/77Plesq6uOgQuP1/tgJKN3gjW+n25S4Ly5L6P+vo8JH22+gSDWKdfjbf44xDRdorG19vbOrjynrZ/qZIS9UAdjT0aWiCkyRjhcqFpv3EvqXaqP/wpewAAACBAIu6JsMU53WWWDDVGtFVTKPkx1S0MF69xIOrVVbka88DzHsRg9qLqHlH/7TjVYv8Dzp4SBp1sf70JQhFgA0cPbQB7VcGX9rlJdvSqE2d695iSkJY8X08UrcSasjHbThtbjy1dsVXxiUV0Vt7rFYKaxlk4GJz83p8e7KorTiJMTu/ randy@psg.com',
             ],
     }
 
