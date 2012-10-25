@@ -2571,4 +2571,36 @@ class users::virtual::ring_users {
 
 ##### END yellowfiber #####
 
+##### BEGIN bahnhof #####
+
+    @add_user { 'bahnhof':
+        email => 'ncc@bahnhof.net',
+        company => 'Bahnhof',
+        uid => '5145',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'bahnhof':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDo4U5zHPbBEAYRBlQfn6qwdV85T+zZGIDhMjWU6c04O478/HIsG3D5dBglrZ93H4YoaFrsS2OEGuF58ZWqWHbYb+Q3FWGhx7U6Jm9hWbWO2+pU7mmJhYEpAwNFAp1rrHPRzoalJK49zPPKvBI+ciK3SGNEY1sHJnPOYwdOMAP69ai8DX/XlLrO9G5dGlFFIrKvarHQIWVJh0OO26v8yoWYA4dNQDyu7IcQv8HTHB+zqSdX+xIeRXMDcBRRCPJTWl4IegHCYCmI2su+LJYvk4Wo9NtDhtUq3dHhK1bp7LBIhiXoqhgy3NzFoh3YzVjQsgnQYOUi03cdJZLafgJbRyBHDA/fm8Wk5gQ8UvAfIVpULMnwq8viMVjNgBpdfqVGWO/tZf0vagUNHZBIGCYA1yuakVkhk6gUESAcvjkfFbnMuZRef8iNbxc3ad0chSv3D7JnyvLqlND8oT42p5oLvqKtw2kcH2cBbyECrETkx2/gG418yI5ZLD1YdwSQPgWXMkfDkoxywYNQdbWnOsOzrrNm8WbeFUYCSG1GqVLEwZ44zn44hvQulvXAIrQVZIGcY47a+xpe1wV0YE0J8FgTBR1pSI7GMFeuKfbCVPdP5SXK4sR6NKYlh/CLFntCvNJJ9M/nw1yuXAwBJWBYw1wwxGd0kQ1uFvGpCOQGYp8XMHqt2w== david@maclol.bahnhof.net',
+            ],
+    }
+
+##### END bahnhof #####
+
+##### BEGIN nicchile #####
+
+    @add_user { 'nicchile':
+        email => 'noc@nic.cl',
+        company => 'Universidad de Chile - NIC Chile',
+        uid => '5146',
+        groups => ['ring-users'],
+    }
+#    @authorized_keys { 'nicchile':
+#        sshkeys => [
+#                '',
+#            ],
+#    }
+
+##### END nicchile #####
+
 }
