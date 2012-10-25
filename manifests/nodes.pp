@@ -2177,4 +2177,5 @@ node 'nicchile01' inherits ringnode {
     include nagios_services                                                     
     include set_local_settings                                                  
     include users
+    $nagios_ping_rate = '!300.0,20%!400.0,60%'
 }
