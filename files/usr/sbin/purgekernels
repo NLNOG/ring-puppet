@@ -49,7 +49,10 @@ while ($dpkg =~ m#^[ri][ci]\s+(linux\-image\-\d+\.\d+\.\d+\-[\.\d]+(?:\-\w+)+)\s
     dprint("found installed $kernel_version");
 }
 
-die "parsing failed? no kernels installed?\n" if not scalar(keys(%$kernels));
+if (! scalar(keys(%$kernels))) {
+        print STDERR "parsing failed? no kernels installed?\n";
+        exit;
+}
 
 # Current kernel
 my $uname = `uname -r`; chomp($uname);
