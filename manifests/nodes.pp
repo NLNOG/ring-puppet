@@ -309,9 +309,9 @@ node 'worker02' inherits infranode {
     include apache2
     include nagios_services
     include nagios::target::fqdn
-    nagios::service::http { $name:
-        check_domain => "${name}"
-    }
+#    nagios::service::http { $name:
+#        check_domain => "${name}"
+#    }
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
 }
