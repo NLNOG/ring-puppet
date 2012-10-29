@@ -1988,7 +1988,7 @@ node 'isc01' inherits ringnode {
     include nagios_services                                                     
     include set_local_settings                                             
     include users
-    $nagios_ping_rate = '!200.0,20%!300.0,60%'
+    $nagios_ping_rate = '!250.0,20%!300.0,60%'
 }
 
 node 'backbone01' inherits ringnode {
