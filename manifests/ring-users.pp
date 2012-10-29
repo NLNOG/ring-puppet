@@ -2604,4 +2604,20 @@ class users::virtual::ring_users {
 
 ##### END nicchile #####
 
+##### BEGIN glesys #####
+
+    @add_user { 'glesys':
+        email => 'noc@glesys.se',
+        company => 'GleSYS Internet Services AB',
+        uid => '5147',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'glesys':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA1wus7DNOja21lhrdHSXOm1zAHtNYHQ4R0bmeJ227nCWPn6zfimGcCAhlUreEHUi6PnrFQsNBrjxg2uzvbdIPnMf+txwv2f/7C35G2DRNY5vxfy+gm4Y+3Xdo/+WvZPSZ3Q919IMrMsr7GZ9hWfYTf9ToCq951JkV/o9QykrP6HsSOkqJ6tvuoXzAu45HxytDiOyZf8BM/IFhg1l5sq1RCl6MxjTgri8tD5RPhRrvhfly3TLaMJpfiKSVez9GbYTZLUVKBLK3g5IitfdNLIDrWmK2X8g8eF1TnGtILLw+8wk39fE9Xy50r7GXNYKtE53t8rdQmi7tfQFGgC24aOz/rQ== jb@gatorhole',
+            ],
+    }
+
+##### END glesys #####
+
 }

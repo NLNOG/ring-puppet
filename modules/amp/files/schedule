@@ -662,6 +662,10 @@ ring-nicchile01:v6,icmp,D,0,86400000,60000
 ring-nicchile01:v6,icmp,D,0,86400000,60000, -s 576
 ring-nicchile01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-glesys01:v6,icmp,D,0,86400000,60000
+ring-glesys01:v6,icmp,D,0,86400000,60000, -s 576
+ring-glesys01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging01,icmp,D,0,86400000,60000
 ring-staging01,icmp,D,0,86400000,60000, -s 576
 ring-staging01,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1321,4 +1325,8 @@ ring-bahnhof01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-nicchile01,icmp,D,0,86400000,60000
 ring-nicchile01,icmp,D,0,86400000,60000, -s 576
 ring-nicchile01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-glesys01,icmp,D,0,86400000,60000
+ring-glesys01,icmp,D,0,86400000,60000, -s 576
+ring-glesys01,scamper,D,0,86400000,900000, -P udp-paris -M
 
