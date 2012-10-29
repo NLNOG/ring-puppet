@@ -1642,7 +1642,7 @@ node 'occaid01' {
     include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
-    $nagios_ping_rate = '!250.0,20%!400.0,60%'
+    $nagios_ping_rate = '!280.0,20%!400.0,60%'
     include set_local_settings                                                  
     include users
 }
