@@ -160,7 +160,7 @@ ring-zeronet01:v6 2001:67c:3e0:c5::58
 ring-claranet06:v6 2a02:a0:1:1::4
 ring-rgnet01:v6 2001:418:1::89
 ring-ehsab01:v6 2a02:1610:2000:2::2
-ring-ehsab01:v6 2a02:1610:1000:2::2
+ring-ehsab02:v6 2a02:1610:1000:2::2
 ring-yellowfiber01:v6 2607:fd50:1::5a
 ring-bahnhof01:v6 2001:9b0:01:1107::2
 ring-nicchile01:v6 2001:1398:3:120:200:1:120:28
@@ -326,7 +326,7 @@ ring-zeronet01 194.0.58.58
 ring-claranet06 92.54.7.28
 ring-rgnet01 147.28.0.89
 ring-ehsab01 178.236.65.26
-ring-ehsab01 178.236.73.122
+ring-ehsab02 178.236.73.122
 ring-yellowfiber01 67.23.114.2
 ring-bahnhof01 195.178.185.171
 ring-nicchile01 200.1.120.28

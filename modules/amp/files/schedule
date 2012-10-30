@@ -646,9 +646,9 @@ ring-ehsab01:v6,icmp,D,0,86400000,60000
 ring-ehsab01:v6,icmp,D,0,86400000,60000, -s 576
 ring-ehsab01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
-ring-ehsab01:v6,icmp,D,0,86400000,60000
-ring-ehsab01:v6,icmp,D,0,86400000,60000, -s 576
-ring-ehsab01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+ring-ehsab02:v6,icmp,D,0,86400000,60000
+ring-ehsab02:v6,icmp,D,0,86400000,60000, -s 576
+ring-ehsab02:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-yellowfiber01:v6,icmp,D,0,86400000,60000
 ring-yellowfiber01:v6,icmp,D,0,86400000,60000, -s 576
@@ -1310,9 +1310,9 @@ ring-ehsab01,icmp,D,0,86400000,60000
 ring-ehsab01,icmp,D,0,86400000,60000, -s 576
 ring-ehsab01,scamper,D,0,86400000,900000, -P udp-paris -M
 
-ring-ehsab01,icmp,D,0,86400000,60000
-ring-ehsab01,icmp,D,0,86400000,60000, -s 576
-ring-ehsab01,scamper,D,0,86400000,900000, -P udp-paris -M
+ring-ehsab02,icmp,D,0,86400000,60000
+ring-ehsab02,icmp,D,0,86400000,60000, -s 576
+ring-ehsab02,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-yellowfiber01,icmp,D,0,86400000,60000
 ring-yellowfiber01,icmp,D,0,86400000,60000, -s 576
