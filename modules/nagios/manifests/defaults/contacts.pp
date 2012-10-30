@@ -24,7 +24,7 @@ class nagios::defaults::contacts {
             alias                           => 'IRC Bot',
             service_notification_period     => '24x7',
             host_notification_period        => '24x7',
-            service_notification_options    => 'w,u,c,r',
+            service_notification_options    => 'u,c,r',
             host_notification_options       => 'd,r',
             service_notification_commands   => 'notify-by-irc',
             host_notification_commands      => 'host-notify-by-irc',
