@@ -19,6 +19,12 @@ class nettools {
     package { ["python-beautifulsoup", "python-flask"]:
         ensure => latest,
     }
+
+    # requested by teun
+    package { ["snmp"]:
+        ensure => latest,
+    }
+
     package { "command-not-found":
         ensure => latest,
     }
