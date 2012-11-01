@@ -2621,4 +2621,20 @@ class users::virtual::ring_users {
 
 ##### END glesys #####
 
+##### BEGIN rcsrds #####
+
+    @add_user { 'rcsrds':
+        email => 'noc@ploiesti.rdsnet.ro',
+        company => 'S.C. RCS RDS S.A.',
+        uid => '5148',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'rcsrds':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDLUdN2YRlJHhJpizTEqdzfDUhNxnmavSWMFhMcI93pS6Amk9kFv5d/ahOY6MT2088hRR7vhRgzQRWtEr4vUk9h/sP+Vfui0sq5Jp/vCWaQvAusJQ6GJIu7TvPSEXDR9hBO9wcrjaRnX/hcZelWJ3FmH3v2TvrDwFWTdVdfUU4Z91HEYivETqPCOPVqLUtfK2XiWQL+WCFFJjYxR1ZJ4n/R83PmfFwXEQcBCnNBJQ/ok17Ky9tcZXUeyjROrDNdGbg1DoMhDp1GhpOfSkE4jGiYoMNPFzi+Y5iHZbsiI4kk7fbzTeDyjiCLlpeVZRWhDNskpSsplamHaTD3FipW4UKN mihai@rcs-rds',
+            ],
+    }
+
+##### END rcsrds #####
+
 }

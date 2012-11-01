@@ -66,7 +66,7 @@ ring-jump01:v6 2001:ba8:1::d975
 ring-iway01:v6 2001:8e0:40:318:0:abcd:dead:beef
 ring-timico01:v6 2001:40a0:41:1000::4
 ring-yacast01:v6 2a02:3e8:ffff:198::cafe
-ring-rezopole01:v6 2001:7f8:47:40::5
+ring-rezopole01:v6 2001:7f8:47:21::a5
 ring-solnet01:v6 2001:1680:2:100:3:51:0:10
 ring-boxed-it01:v6 2001:67c:344:1010:5054:ff:feca:6f60
 ring-spacenet01:v6 2001:608:1:151::17
@@ -165,6 +165,7 @@ ring-yellowfiber01:v6 2607:fd50:1::5a
 ring-bahnhof01:v6 2001:9b0:01:1107::2
 ring-nicchile01:v6 2001:1398:3:120:200:1:120:28
 ring-glesys01:v6 2a02:750:7::392
+ring-rcsrds01:v6 2a02:2f02:b030:1::2
 ring-staging01 213.154.236.191
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
@@ -233,7 +234,7 @@ ring-jump01 212.13.217.117
 ring-iway01 212.25.27.3
 ring-timico01 62.121.13.4
 ring-yacast01 213.205.109.22
-ring-rezopole01 77.95.64.5
+ring-rezopole01 77.95.70.165
 ring-solnet01 82.220.3.51
 ring-boxed-it01 195.200.224.123
 ring-spacenet01 195.30.193.17
@@ -331,3 +332,4 @@ ring-yellowfiber01 67.23.114.2
 ring-bahnhof01 195.178.185.171
 ring-nicchile01 200.1.120.28
 ring-glesys01 109.74.6.228
+ring-rcsrds01 82.79.149.42

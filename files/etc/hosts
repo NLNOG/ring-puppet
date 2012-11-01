@@ -548,3 +548,6 @@ ff02::2 ip6-allrouters
 
 2a02:750:7::392 glesys01    glesys01.ring.nlnog.net
 109.74.6.228 glesys01    glesys01.ring.nlnog.net
+
+2a02:2f02:b030:1::2 rcsrds01    rcsrds01.ring.nlnog.net
+82.79.149.42 rcsrds01    rcsrds01.ring.nlnog.net
