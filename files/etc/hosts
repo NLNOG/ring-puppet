@@ -551,3 +551,6 @@ ff02::2 ip6-allrouters
 
 2a02:2f02:b030:1::2 rcsrds01    rcsrds01.ring.nlnog.net
 82.79.149.42 rcsrds01    rcsrds01.ring.nlnog.net
+
+2a01:298:f001:a::7  indit01 indit01.ring.nlnog.net
+178.16.220.7    indit01 indit01.ring.nlnog.net

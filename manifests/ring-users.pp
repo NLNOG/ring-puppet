@@ -2637,4 +2637,20 @@ class users::virtual::ring_users {
 
 ##### END rcsrds #####
 
+##### BEGIN indit #####
+
+    @add_user { 'indit':
+        email => 'noc@indithosting.se',
+        company => 'Indit Hosting AB',
+        uid => '5149',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'indit':
+        sshkeys => [
+                'ssh-dss AAAAB3NzaC1kc3MAAACBAMXoN8avzFpQmS7ymLBJ70aQOLp25w6zdGXpXHKOQNaxBW/jQ5Jnu6cLowhGUwDlY0qOVtPbMq4cLN9gP7y/clHD8XoY/WtsVwg/cBg9BZYjH7I11Pa7PQ/ptXzE6MkGl1RSw9CszKhyYjV6UZX4hQR1reHBhvUWTjEWLNKv3iN1AAAAFQDh/L0vsxORKiOaumuKxySLWN9iLQAAAIEAj636Pl7c9nlQyt/VILv06yaY/ynUTUzw6BVnpTmBu3+mAweI6NrQpNR0999IOZYY2SpCSv1MKDl5Tng/Fme/tMiS1O+GB19feVoNLtABONj0aBblWRih422UBxtpVxg60gTPGNKZflFeporOH+esQdo7sRD8cu5gUdejy1opGPEAAACBAKK353mBCQOIQK5PY1B6lFHM3VyZMUkDdEfTtTN1bJSOXvWyFLJY1QXw8BrQ3nHRcbQvdKIAm/NxIWGTBoKPOLogR/7GRsr24Y/xvqARNGEzFbU5GSf+35GbKCraVBO3XPubEQSM+o/jKRqNWrd59uCL1/jwxWN3mqS48HJwJsnT mikael@stargate2',
+            ],
+    }
+
+##### END indit #####
+
 }
