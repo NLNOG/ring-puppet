@@ -112,7 +112,7 @@ ring-occaid01:v6 2001:4830:ed::2
 ring-solido02:v6 2a02:9d0:ff00:63::2
 ring-as250net01:v6 2001:4ce8:c134:1019::1
 ring-redpilllinpro01:v6 2a02:c0:200:104::1
-ring-nine01:v6 2a02:418:4101::165
+ring-nine01:v6 2a02:418:4101::166
 ring-oneandone01:v6 2001:8d8:580:400::1:0
 ring-belwue01:v6 2001:7c0:701:23::2
 ring-lagis01:v6 2a00:1860:101:fffe::1
@@ -279,7 +279,7 @@ ring-yourorg01 204.9.55.77
 ring-solido02 185.4.139.65
 ring-as250net01 194.150.168.19
 ring-redpilllinpro01 87.238.49.250
-ring-nine01 217.150.254.165
+ring-nine01 217.150.254.166
 ring-oneandone01 212.227.126.43
 ring-belwue01 129.143.4.237
 ring-lagis01 83.164.134.32
