@@ -2126,7 +2126,8 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'obenetwork':
         sshkeys => [
-            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9hFwclD6VWkrQBAY0DHWTdLBmX5eHbByPdFI/x/L6YmnrCBBXpCyiQLJLaIU05i/iCNw/hhAdph4/DvPy1vX3Il4koYklL15RJqLB4vIymb7Xiw6YdS9e6orr1Yh86Z4RxEK3OE9p0LCh5ZGtNjmuW3Hg5XIuklE9jrkdmJKQ927cAhomxFc7AGH2Uu3g8OCIG4TD3EZkAiYOa/kEF47nL+0PlpdPYXdqT8+EItyH1enuOcLeD2joe8LC+/zul9VPWmvM/7EiKdFDMkWlbj+JgZOeVkR2ebxsr/mmmvzCUdwmBEeQnJp1kr7QnVJn32NWsFFEisHqJjMuNCRXL5fJ tobias@irc'
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9hFwclD6VWkrQBAY0DHWTdLBmX5eHbByPdFI/x/L6YmnrCBBXpCyiQLJLaIU05i/iCNw/hhAdph4/DvPy1vX3Il4koYklL15RJqLB4vIymb7Xiw6YdS9e6orr1Yh86Z4RxEK3OE9p0LCh5ZGtNjmuW3Hg5XIuklE9jrkdmJKQ927cAhomxFc7AGH2Uu3g8OCIG4TD3EZkAiYOa/kEF47nL+0PlpdPYXdqT8+EItyH1enuOcLeD2joe8LC+/zul9VPWmvM/7EiKdFDMkWlbj+JgZOeVkR2ebxsr/mmmvzCUdwmBEeQnJp1kr7QnVJn32NWsFFEisHqJjMuNCRXL5fJ tobias@irc',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCUm6rajBN8cWOGxksNfB8s4BQs6kLHe4/EK7AFuswUWi23Bpu4mlUDXaQgrxNUPOZd/iCbeQoqW2B+6tMat07Ptdl9XJfLHwfkBg42RXWBtSMAXzdiazMpAfNkwjbTL/aJCieAWK082U+XEMmzsKXv4ZUH0Sm64qkuRyOm6ybDh2s3wIDuVhksFRenKDyyqyi/cLt8hirgUIdDoIWJR1sUf8Otbrosa2XMJNX8FIIpWko5WbLPfegQyJr+euVlBw4kvenjxf3VkaoukhRSrqp1WjDt9gCKGKuvUG8CfdpSygalFOem5PCzG4L5/XF0viM+iFwQ9YJl1CBT1SmWc8mj koon@koon-laptop',
         ],
     }
 ##### END obenetwork #####
