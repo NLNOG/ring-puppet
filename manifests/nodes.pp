@@ -2230,3 +2230,13 @@ node 'rcsrds01' inherits ringnode {
     include set_local_settings                                                  
     include users
 }
+
+node 'indit01' inherits ringnode {
+    $owner = "indit"
+    $location = "59.422474,17.918095"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}

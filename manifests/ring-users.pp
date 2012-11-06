@@ -2126,7 +2126,8 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'obenetwork':
         sshkeys => [
-            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9hFwclD6VWkrQBAY0DHWTdLBmX5eHbByPdFI/x/L6YmnrCBBXpCyiQLJLaIU05i/iCNw/hhAdph4/DvPy1vX3Il4koYklL15RJqLB4vIymb7Xiw6YdS9e6orr1Yh86Z4RxEK3OE9p0LCh5ZGtNjmuW3Hg5XIuklE9jrkdmJKQ927cAhomxFc7AGH2Uu3g8OCIG4TD3EZkAiYOa/kEF47nL+0PlpdPYXdqT8+EItyH1enuOcLeD2joe8LC+/zul9VPWmvM/7EiKdFDMkWlbj+JgZOeVkR2ebxsr/mmmvzCUdwmBEeQnJp1kr7QnVJn32NWsFFEisHqJjMuNCRXL5fJ tobias@irc'
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9hFwclD6VWkrQBAY0DHWTdLBmX5eHbByPdFI/x/L6YmnrCBBXpCyiQLJLaIU05i/iCNw/hhAdph4/DvPy1vX3Il4koYklL15RJqLB4vIymb7Xiw6YdS9e6orr1Yh86Z4RxEK3OE9p0LCh5ZGtNjmuW3Hg5XIuklE9jrkdmJKQ927cAhomxFc7AGH2Uu3g8OCIG4TD3EZkAiYOa/kEF47nL+0PlpdPYXdqT8+EItyH1enuOcLeD2joe8LC+/zul9VPWmvM/7EiKdFDMkWlbj+JgZOeVkR2ebxsr/mmmvzCUdwmBEeQnJp1kr7QnVJn32NWsFFEisHqJjMuNCRXL5fJ tobias@irc',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCUm6rajBN8cWOGxksNfB8s4BQs6kLHe4/EK7AFuswUWi23Bpu4mlUDXaQgrxNUPOZd/iCbeQoqW2B+6tMat07Ptdl9XJfLHwfkBg42RXWBtSMAXzdiazMpAfNkwjbTL/aJCieAWK082U+XEMmzsKXv4ZUH0Sm64qkuRyOm6ybDh2s3wIDuVhksFRenKDyyqyi/cLt8hirgUIdDoIWJR1sUf8Otbrosa2XMJNX8FIIpWko5WbLPfegQyJr+euVlBw4kvenjxf3VkaoukhRSrqp1WjDt9gCKGKuvUG8CfdpSygalFOem5PCzG4L5/XF0viM+iFwQ9YJl1CBT1SmWc8mj koon@koon-laptop',
         ],
     }
 ##### END obenetwork #####
@@ -2636,5 +2637,21 @@ class users::virtual::ring_users {
     }
 
 ##### END rcsrds #####
+
+##### BEGIN indit #####
+
+    @add_user { 'indit':
+        email => 'noc@indithosting.se',
+        company => 'Indit Hosting AB',
+        uid => '5149',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'indit':
+        sshkeys => [
+                'ssh-dss AAAAB3NzaC1kc3MAAACBAMXoN8avzFpQmS7ymLBJ70aQOLp25w6zdGXpXHKOQNaxBW/jQ5Jnu6cLowhGUwDlY0qOVtPbMq4cLN9gP7y/clHD8XoY/WtsVwg/cBg9BZYjH7I11Pa7PQ/ptXzE6MkGl1RSw9CszKhyYjV6UZX4hQR1reHBhvUWTjEWLNKv3iN1AAAAFQDh/L0vsxORKiOaumuKxySLWN9iLQAAAIEAj636Pl7c9nlQyt/VILv06yaY/ynUTUzw6BVnpTmBu3+mAweI6NrQpNR0999IOZYY2SpCSv1MKDl5Tng/Fme/tMiS1O+GB19feVoNLtABONj0aBblWRih422UBxtpVxg60gTPGNKZflFeporOH+esQdo7sRD8cu5gUdejy1opGPEAAACBAKK353mBCQOIQK5PY1B6lFHM3VyZMUkDdEfTtTN1bJSOXvWyFLJY1QXw8BrQ3nHRcbQvdKIAm/NxIWGTBoKPOLogR/7GRsr24Y/xvqARNGEzFbU5GSf+35GbKCraVBO3XPubEQSM+o/jKRqNWrd59uCL1/jwxWN3mqS48HJwJsnT mikael@stargate2',
+            ],
+    }
+
+##### END indit #####
 
 }
