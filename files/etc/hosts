@@ -399,6 +399,9 @@ ff02::2 ip6-allrouters
 213.154.246.206	container04.infra  container04.infra.ring.nlnog.net  
 2001:7b8:d05::2	container04.infra  container04.infra.ring.nlnog.net  
 
+108.168.156.210 container05.infra   container05.infra.ring.nlnog.net
+2607:f0d0:1103:e5::2    container05.infra   container05.infra.ring.nlnog.net
+
 83.164.134.32   lagis01 lagis01.ring.nlnog.net
 2a00:1860:101:fffe::1   lagis01 lagis01.ring.nlnog.net
 
@@ -551,3 +554,5 @@ ff02::2 ip6-allrouters
 
 2a02:2f02:b030:1::2 rcsrds01    rcsrds01.ring.nlnog.net
 82.79.149.42 rcsrds01    rcsrds01.ring.nlnog.net
+
+

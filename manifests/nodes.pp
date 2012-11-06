@@ -245,6 +245,22 @@ node 'container04.infra' inherits infranode {
     }
 }
 
+# container05 is hosted at Softlayer in Dallas 
+# 24 cores / 32GB RAM / 1000GB RAID1
+# virbr0 is bridged to eth0 (uplink)
+# virbr1 is virtual switch on the box with this IP space:
+#   IPv4 prefix: /28
+#   IPv6 prefix: 16 x /64
+node 'container05.infra' inherits infranode {
+    include users
+    include syslog_ng::client
+    include nagios_services
+    include nagios::target::fqdn
+    include kvm
+    munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
+    }
+}
+
 
 # website, dns, mailing-list etc
 node 'public01.infra' inherits infranode {
