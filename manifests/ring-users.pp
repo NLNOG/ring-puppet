@@ -23,7 +23,7 @@ class users::virtual::ring_users {
     company => 'IC Hosting',
     uid => 5014,
     groups  => ['ring-users'],
-    present => absent,
+    ensure => absent,
 }
 
 ##### BEGIN intouch #####
