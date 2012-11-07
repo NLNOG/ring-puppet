@@ -578,16 +578,6 @@ node 'nxs01' inherits ringnode {
 	include users
 }
 
-node 'ic-hosting01' inherits ringnode {
-    $owner = "ic-hosting"
-    $location = "52.282215,4.772927"
-    include amp_client
-    include nagios::target::fqdn
-    include nagios_services
-    include set_local_settings
-	include users
-}
-
 node 'xs4all01' inherits ringnode {
     $owner = "xs4all"
     $location = "52.336353,4.886652"

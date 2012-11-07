@@ -106,10 +106,6 @@ ring-nxs01:v6,icmp,D,0,86400000,60000
 ring-nxs01:v6,icmp,D,0,86400000,60000, -s 576
 ring-nxs01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
-ring-ic-hosting01:v6,icmp,D,0,86400000,60000
-ring-ic-hosting01:v6,icmp,D,0,86400000,60000, -s 576
-ring-ic-hosting01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
-
 ring-nedzone01:v6,icmp,D,0,86400000,60000
 ring-nedzone01:v6,icmp,D,0,86400000,60000, -s 576
 ring-nedzone01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -781,10 +777,6 @@ ring-previder01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-nxs01,icmp,D,0,86400000,60000
 ring-nxs01,icmp,D,0,86400000,60000, -s 576
 ring-nxs01,scamper,D,0,86400000,900000, -P udp-paris -M
-
-ring-ic-hosting01,icmp,D,0,86400000,60000
-ring-ic-hosting01,icmp,D,0,86400000,60000, -s 576
-ring-ic-hosting01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-nedzone01,icmp,D,0,86400000,60000
 ring-nedzone01,icmp,D,0,86400000,60000, -s 576
