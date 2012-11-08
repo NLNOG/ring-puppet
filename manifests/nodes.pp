@@ -259,6 +259,7 @@ node 'container05.infra' inherits infranode {
     include kvm
     munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
     }
+    $nagios_ping_rate = '!150.0,20%!300.0,60%'
 }
 
 
