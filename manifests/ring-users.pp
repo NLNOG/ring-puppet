@@ -313,7 +313,7 @@ class users::virtual::ring_users {
     @add_user { 'nlnogbot':
         email   => 'sten@snore.nl',
         company => 'Sten Spans limited',
-        uid     => '5017',
+        uid     => 5017,
         groups  => ['ring-users'],
     }
     @authorized_keys { 'nlnogbot':
@@ -329,7 +329,7 @@ class users::virtual::ring_users {
     @add_user { 'oxilion':
         email   => 'noc@oxilion.nl',
         company => 'Oxilion',
-        uid     => '5018',
+        uid     => 5018,
         groups  => ['ring-users'],
     }
     @authorized_keys { 'oxilion':
@@ -356,7 +356,7 @@ class users::virtual::ring_users {
     @add_user { 'ebayclassifiedsgroup':
         email   => 'DL-eBay-Classifieds-Networking@ebay.com',
         company => 'eBay Classifieds Group',
-        uid     => '5019',
+        uid     => 5019,
         groups  => ['ring-users'],
     }
     @authorized_keys { 'ebayclassifiedsgroup':
@@ -374,7 +374,7 @@ class users::virtual::ring_users {
     @add_user { 'is':
         email   => 'netwerk@is.nl',
         company => 'IS',
-        uid     => '5021',
+        uid     => 5021,
         groups  => ['ring-users'],
     }
     @authorized_keys { 'is':
@@ -401,7 +401,7 @@ class users::virtual::ring_users {
     @add_user { 'surfnet':
         email   => 'surf-ring@prolocation.eu',
         company => 'SURFNet',
-        uid     => '5022',
+        uid     => 5022,
         groups  => ['ring-users'],
     }
     @authorized_keys { 'surfnet':
@@ -417,7 +417,7 @@ class users::virtual::ring_users {
     @add_user { 'prolocation':
         email   => 'cedric@prolocation.net',
         company => 'Prolocation',
-        uid     => '5023',
+        uid     => 5023,
         groups  => ['ring-users'],
     }
     @authorized_keys { 'prolocation':
@@ -432,7 +432,7 @@ class users::virtual::ring_users {
     @add_user { 'in2ip':
         email   => 'noc@in2ip.nl',
         company => 'IN2IP',
-        uid     => '5024',
+        uid     => 5024,
         groups  => ['ring-users'],
     }
     @authorized_keys { 'in2ip':
@@ -447,7 +447,7 @@ class users::virtual::ring_users {
     @add_user { 'netground':
         email   => 'systeembeheer@netground.nl',
         company => 'NetGround BV',
-        uid     => '5025',
+        uid     => 5025,
         groups  => ['ring-users'],
     }
     @authorized_keys { 'netground':
@@ -463,7 +463,7 @@ class users::virtual::ring_users {
     @add_user { 'totaalnet':
         email   => 'noc@gl-ix.net',
         company => 'Totaalnet',
-        uid     => '5026',
+        uid     => 5026,
         groups  => ['ring-users'],
     }
     @authorized_keys { 'totaalnet':
@@ -482,7 +482,7 @@ class users::virtual::ring_users {
     @add_user { 'signet':
        email    => 'noc@signet.nl',
        company => 'SIGNet',
-       uid      => '5027',
+       uid      => 5027,
        groups   => ['ring-users'],
     }
     @authorized_keys { 'signet':
@@ -504,7 +504,7 @@ class users::virtual::ring_users {
     @add_user { 'tripleit':
        email    => 'support@triple-it.nl',
        company => 'Triple IT BV',
-       uid      => '5028',
+       uid      => 5028,
        groups   => ['ring-users'],
     }
     @authorized_keys { 'tripleit':
@@ -519,7 +519,7 @@ class users::virtual::ring_users {
     @add_user { 'jaguarnetwork':
        email    => 'noc@as30781.net',
        company => 'Jaguar Networks',
-       uid      => '5029',
+       uid      => 5029,
        groups   => ['ring-users'],
     }
     @authorized_keys { 'jaguarnetwork':
@@ -538,7 +538,7 @@ class users::virtual::ring_users {
     @add_user { 'tuxis':
        email    => 'mark@tuxis.nl',
        company => 'Tuxis Internet Engineering',
-       uid      => '5030',
+       uid      => 5030,
        groups   => ['ring-users'],
     }
     @authorized_keys { 'tuxis':
@@ -553,7 +553,7 @@ class users::virtual::ring_users {
     @add_user { 'tenet':
        email    => 'noc@tenet.ac.za',
        company => 'TENET',
-       uid      => '5031',
+       uid      => 5031,
        groups   => ['ring-users'],
     }
     @authorized_keys { 'tenet':
@@ -568,7 +568,7 @@ class users::virtual::ring_users {
     @add_user { 'bigwells':
         email   => 'neteng@bigwells.net',
         company => 'Bigwells',
-        uid     => '5032',
+        uid     => 5032,
         groups  => ['ring-users'],
     }
     @authorized_keys { 'bigwells':
@@ -583,7 +583,7 @@ class users::virtual::ring_users {
     @add_user { 'atrato':
         email   => 'nmc@atratoip.net',
         company => 'Atrato IP Networks',
-        uid     => '5033',
+        uid     => 5033,
         groups  => ['ring-users'],
     }
     @authorized_keys { 'atrato':
@@ -600,7 +600,7 @@ class users::virtual::ring_users {
     @add_user { 'cyso':
         email   => 'noc@cyso.net',
         company => 'Cyso',
-        uid     => '5034',
+        uid     => 5034,
         groups  => ['ring-users'],
     }
     @authorized_keys { 'cyso':
@@ -638,7 +638,7 @@ class users::virtual::ring_users {
     @add_user { 'tdc':
         email   => 'noc@tdc.fi',
         company => 'TDC',
-        uid     => '5035',
+        uid     => 5035,
         groups  => ['ring-users'],
     }
     @authorized_keys { 'tdc':
@@ -666,7 +666,7 @@ class users::virtual::ring_users {
     @add_user { 'netability':
         email   => 'nick@netability.ie',
         company => 'Netability',
-        uid     => '5036',
+        uid     => 5036,
         groups  => ['ring-users'],
     }
     @authorized_keys { 'netability':
@@ -682,7 +682,7 @@ class users::virtual::ring_users {
     @add_user { 'unilogicnetworks':
         email   => 'noc@unilogicnetworks.net',
         company => 'Unilogic Networks',
-        uid     => '5037',
+        uid     => 5037,
         groups  => ['ring-users'],
     }
     @authorized_keys { 'unilogicnetworks':
@@ -697,7 +697,7 @@ class users::virtual::ring_users {
     @add_user { 'maverick':
         email   => 'noc@maverick.com.pl',
         company => 'Maverick',
-        uid     => '5038',
+        uid     => 5038,
         groups  => ['ring-users'],
     }
     @authorized_keys { 'maverick':
@@ -714,7 +714,7 @@ class users::virtual::ring_users {
     @add_user { 'acsystemy':
         email => 'noc@acsystemy.pl',
         company => 'AC Systemy',
-        uid => '5039',
+        uid => 5039,
         groups => ['ring-users'],
     }
     @authorized_keys { 'acsystemy':
@@ -730,7 +730,7 @@ class users::virtual::ring_users {
     @add_user { 'netsign':
         email => 'noc@netsign.eu',
         company => 'Netsign',
-        uid => '5040',
+        uid => 5040,
         groups => ['ring-users'],
     }
     @authorized_keys { 'netsign':
@@ -746,7 +746,7 @@ class users::virtual::ring_users {
     @add_user { 'rrbone':
         email => 'noc@rrbone.net',
         company => 'rrbone',
-        uid => '5041',
+        uid => 5041,
         groups => ['ring-users'],
     }
     @authorized_keys { 'rrbone':
@@ -768,7 +768,7 @@ class users::virtual::ring_users {
     @add_user { 'hosteam':
         email => 'noc@hosteam.pl',
         company => 'HosTeam',
-        uid => '5042',
+        uid => 5042,
         groups => ['ring-users'],
     }
     @authorized_keys { 'hosteam':
@@ -784,7 +784,7 @@ class users::virtual::ring_users {
     @add_user { 'msp':
         email => 'noc@mediasp.com',
         company => 'Media Service Provider',
-        uid => '5043',
+        uid => 5043,
         groups => ['ring-users'],
     }
     @authorized_keys { 'msp':
@@ -799,7 +799,7 @@ class users::virtual::ring_users {
     @add_user { 'inotel':
         email => 'noc@inotel.pl',
         company => 'Inotel',
-        uid => '5044',
+        uid => 5044,
         groups => ['ring-users'],
     }
     @authorized_keys { 'inotel':
@@ -819,7 +819,7 @@ class users::virtual::ring_users {
     @add_user { 'fremaks':
         email => 'noc@fremaks.de',
         company => 'Fremaks GmbH',
-        uid => '5045',
+        uid => 5045,
         groups => ['ring-users'],
     }
     @authorized_keys { 'fremaks':
@@ -832,7 +832,7 @@ class users::virtual::ring_users {
     @add_user { 'blix':
         email => 'support@blixsolutions.no',
         company => 'Blix Solutions',
-        uid => '5046',
+        uid => 5046,
         groups => ['ring-users'],
     }
     @authorized_keys { 'blix':
@@ -847,7 +847,7 @@ class users::virtual::ring_users {
     @add_user { 'portlane':
         email => 'noc@portlane.com',
         company => 'Portlane',
-        uid => '5047',
+        uid => 5047,
         groups => ['ring-users'],
     }
     @authorized_keys { 'portlane':
@@ -862,7 +862,7 @@ class users::virtual::ring_users {
     @add_user { 'solido':
         email => 'noc@solido.net',
         company => 'Solido',
-        uid => '5048',
+        uid => 5048,
         groups => ['ring-users'],
     }
     @authorized_keys { 'solido':
@@ -887,7 +887,7 @@ class users::virtual::ring_users {
     @add_user { 'digmia':
         email => 'ring@digmia.com',
         company => 'Digmia',
-        uid => '5049',
+        uid => 5049,
         groups => ['ring-users'],
     }
     @authorized_keys { 'digmia':
@@ -903,7 +903,7 @@ class users::virtual::ring_users {
     @add_user { 'rootlu':
         email => 'noc@as5577.net',
         company => 'ROOT S.A.',
-        uid => '5050',
+        uid => 5050,
         groups => ['ring-users'],
     }
     @authorized_keys { 'rootlu':
@@ -919,7 +919,7 @@ class users::virtual::ring_users {
     @add_user { 'globalaxs':
         email => 'nmc@m247.com',
         company => 'GlobalAXS Communications Ltd',
-        uid => '5051',
+        uid => 5051,
         groups => ['ring-users'],
     }
     @authorized_keys { 'globalaxs':
@@ -935,7 +935,7 @@ class users::virtual::ring_users {
     @add_user { 'nebula':
         email => 'net-core@nebula.fi',
         company => 'Nebula Oy',
-        uid => '5052',
+        uid => 5052,
         groups => ['ring-users'],
     }
     @authorized_keys { 'nebula':
@@ -957,7 +957,7 @@ class users::virtual::ring_users {
     @add_user { 'tilaa':
         email => 'noc@tilaa.nl',
         company => 'Tilaa',
-        uid => '5053',
+        uid => 5053,
         groups => ['ring-users'],
     }
     @authorized_keys { 'tilaa':
@@ -973,7 +973,7 @@ class users::virtual::ring_users {
     @add_user { 'nautile':
         email => 'network@nautile.nc',
         company => 'Nautile',
-        uid => '5054',
+        uid => 5054,
         groups => ['ring-users'],
     }
     @authorized_keys { 'nautile':
@@ -991,7 +991,7 @@ class users::virtual::ring_users {
     @add_user { 'voxel':
         email => 'asr@voxel.net',
         company => 'Voxel dot Net, Inc.',
-        uid => '5055',
+        uid => 5055,
         groups => ['ring-users'],
     }
     @authorized_keys { 'voxel':
@@ -1006,7 +1006,7 @@ class users::virtual::ring_users {
     @add_user { 'neotelecoms':
         email => 'eng@neotelecoms.com',
         company => 'Neotelecoms',
-        uid => '5056',
+        uid => 5056,
         groups => ['ring-users'],
     }
     @authorized_keys { 'neotelecoms':
@@ -1022,7 +1022,7 @@ class users::virtual::ring_users {
     @add_user { 'apnic':
         email => 'noc-notify@apnic.net',
         company => 'APNIC',
-        uid => '5057',
+        uid => 5057,
         groups => ['ring-users'],
     }
     @authorized_keys { 'apnic':
@@ -1039,7 +1039,7 @@ class users::virtual::ring_users {
     @add_user { 'man-da':
         email => 'noc@man-da.de',
         company => 'man-da.de GmbH',
-        uid => '5058',
+        uid => 5058,
         groups => ['ring-users'],
     }
     @authorized_keys { 'man-da':
@@ -1057,7 +1057,7 @@ class users::virtual::ring_users {
     @add_user { 'webair':
         email => 'ipadmin@webair.com',
         company => 'Webair Internet Development Inc',
-        uid => '5059',
+        uid => 5059,
         groups => ['ring-users'],
     }
     @authorized_keys { 'webair':
@@ -1077,7 +1077,7 @@ class users::virtual::ring_users {
     @add_user { 'concepts-ict':
         email => 'noc@concepts.nl',
         company => 'Concepts ICT',
-        uid => '5060',
+        uid => 5060,
         groups => ['ring-users'],
     }
     @authorized_keys { 'concepts-ict':
@@ -1096,7 +1096,7 @@ class users::virtual::ring_users {
     @add_user { 'dataoppdrag':
         email => 'noc@dataoppdrag.no',
         company => 'DataOppdrag AS',
-        uid => '5061',
+        uid => 5061,
         groups => ['ring-users'],
     }
     @authorized_keys { 'dataoppdrag':
@@ -1112,7 +1112,7 @@ class users::virtual::ring_users {
     @add_user { 'tetaneutral':
         email => 'noc@tetaneutral.net',
         company => 'Association tetaneutral.net',
-        uid => '5062',
+        uid => 5062,
         groups => ['ring-users'],
     }
     @authorized_keys { 'tetaneutral':
@@ -1129,7 +1129,7 @@ class users::virtual::ring_users {
     @add_user { 'jump':
         email => 'admins@jump.net.uk',
         company => 'Jump Networks Ltd',
-        uid => '5063',
+        uid => 5063,
         groups => ['ring-users'],
     }
     @authorized_keys { 'jump':
@@ -1145,7 +1145,7 @@ class users::virtual::ring_users {
     @add_user { 'iway':
         email => 'noc@as8758.net',
         company => 'iway AG',
-        uid => '5064',
+        uid => 5064,
         groups => ['ring-users'],
     }
     @authorized_keys { 'iway':
@@ -1164,7 +1164,7 @@ class users::virtual::ring_users {
     @add_user { 'timico':
         email => 'networks@timico.net',
         company => 'Timico Ltd.',
-        uid => '5065',
+        uid => 5065,
         groups => ['ring-users'],
     }
     @authorized_keys { 'timico':
@@ -1185,7 +1185,7 @@ class users::virtual::ring_users {
     @add_user { 'yacast':
         email => 'noc@yacast.fr',
         company => 'Yacast Media',
-        uid => '5066',
+        uid => 5066,
         groups => ['ring-users'],
     }
     @authorized_keys { 'yacast':
@@ -1202,7 +1202,7 @@ class users::virtual::ring_users {
     @add_user { 'rezopole':
         email => 'noc@rezopole.net',
         company => 'Rezopole',
-        uid => '5067',
+        uid => 5067,
         groups => ['ring-users'],
     }
     @authorized_keys { 'rezopole':
@@ -1219,7 +1219,7 @@ class users::virtual::ring_users {
     @add_user { 'solnet':
         email => 'noc@solnet.ch',
         company => 'Solnet',
-        uid => '5068',
+        uid => 5068,
         groups => ['ring-users'],
     }
     @authorized_keys { 'solnet':
@@ -1235,7 +1235,7 @@ class users::virtual::ring_users {
     @add_user { 'boxed-it':
         email => 'netadmin@boxed-it.com',
         company => 'Boxed IT Ltd.',
-        uid => '5069',
+        uid => 5069,
         groups => ['ring-users'],
     }
     @authorized_keys { 'boxed-it':
@@ -1251,7 +1251,7 @@ class users::virtual::ring_users {
     @add_user { 'spacenet':
         email => 'netmaster-dist@space.net',
         company => 'SpaceNet AG',
-        uid => '5070',
+        uid => 5070,
         groups => ['ring-users'],
     }
     @authorized_keys { 'spacenet':
@@ -1269,7 +1269,7 @@ class users::virtual::ring_users {
     @add_user { 'mironet':
         email => 'noc@mironet.ch',
         company => 'MiroNet GmbH',
-        uid => '5071',
+        uid => 5071,
         groups => ['ring-users'],
     }
     @authorized_keys { 'mironet':
@@ -1285,7 +1285,7 @@ class users::virtual::ring_users {
     @add_user { 'seeweb':
         email => 'noc@seeweb.it',
         company => 'Seeweb s.r.l.',
-        uid => '5072',
+        uid => 5072,
         groups => ['ring-users'],
     }
     @authorized_keys { 'seeweb':
@@ -1301,7 +1301,7 @@ class users::virtual::ring_users {
     @add_user { 'networkdesign':
         email => 'noc@ndnet.ch',
         company => 'Network Design GmbH',
-        uid => '5073',
+        uid => 5073,
         groups => ['ring-users'],
         ensure  => absent,
     }
@@ -1313,7 +1313,7 @@ class users::virtual::ring_users {
     @add_user { 'zensystems':
         email => 'noc@zensystems.dk',
         company => 'Zen Systems',
-        uid => '5074',
+        uid => 5074,
         groups => ['ring-users'],
     }
     @authorized_keys { 'zensystems':
@@ -1329,7 +1329,7 @@ class users::virtual::ring_users {
     @add_user { 'westnet':
         email => 'noc@westnet.ie',
         company => 'Westnet',
-        uid => '5075',
+        uid => 5075,
         groups => ['ring-users'],
     }
     @authorized_keys { 'westnet':
@@ -1345,7 +1345,7 @@ class users::virtual::ring_users {
     @add_user { 'kantonsschulezug':
         email => 'noc@as34288.net',
         company => 'Kantonsschule Zug',
-        uid => '5076',
+        uid => 5076,
         groups => ['ring-users'],
     }
     @authorized_keys { 'kantonsschulezug':
@@ -1363,7 +1363,7 @@ class users::virtual::ring_users {
     @add_user { 'filoo':
         email => 'noc@filoo.de',
         company => 'Filoo GmbH',
-        uid => '5077',
+        uid => 5077,
         groups => ['ring-users'],
     }
     @authorized_keys { 'filoo':
@@ -1379,7 +1379,7 @@ class users::virtual::ring_users {
     @add_user { 'nessus':
         email => 'td@nessus.at',
         company => 'Nessus GmbH',
-        uid => '5078',
+        uid => 5078,
         groups => ['ring-users'],
     }
     @authorized_keys { 'nessus':
@@ -1395,7 +1395,7 @@ class users::virtual::ring_users {
     @add_user { 'amazon':
         email => 'colinwh@amazon.com',
         company => 'Amazon Web Services',
-        uid => '5079',
+        uid => 5079,
         groups => ['ring-users'],
     }
     @authorized_keys { 'amazon':
@@ -1411,7 +1411,7 @@ class users::virtual::ring_users {
     @add_user { 'equinixnl':
         email => 'servicedesk.nl@eu.equinix.com',
         company => 'Equinix NL',
-        uid => '5080',
+        uid => 5080,
         groups => ['ring-users'],
     }
     @authorized_keys { 'equinixnl':
@@ -1430,7 +1430,7 @@ class users::virtual::ring_users {
     @add_user { 'lchost':
         email => 'phil@lchost.co.uk',
         company => 'LCHost',
-        uid => '5081',
+        uid => 5081,
         groups => ['ring-users'],
     }
     @authorized_keys { 'lchost':
@@ -1445,7 +1445,7 @@ class users::virtual::ring_users {
     @add_user { 'hostway':
         email => 'noc@netnation.com',
         company => 'Hostway',
-        uid => '5082',
+        uid => 5082,
         groups => ['ring-users'],
     }
     @authorized_keys { 'hostway':
@@ -1464,7 +1464,7 @@ class users::virtual::ring_users {
     @add_user { 'pcextreme':
         email => 'network@pcextreme.nl',
         company => 'PCextreme',
-        uid => '5083',
+        uid => 5083,
         groups => ['ring-users'],
     }
     @authorized_keys { 'pcextreme':
@@ -1481,7 +1481,7 @@ class users::virtual::ring_users {
     @add_user { 'antagonist':
         email => 'systeembeheer@antagonist.nl',
         company => 'Antagonist',
-        uid => '5084',
+        uid => 5084,
         groups => ['ring-users'],
     }
     @authorized_keys { 'antagonist':
@@ -1499,7 +1499,7 @@ class users::virtual::ring_users {
     @add_user { 'nts':
         email => 'noc@nts.ch',
         company => 'NTS Workspace AG',
-        uid => '5085',
+        uid => 5085,
         groups => ['ring-users'],
     }
     @authorized_keys { 'nts':
@@ -1519,7 +1519,7 @@ class users::virtual::ring_users {
     @add_user { 'multiplay':
         email => 'noc@multiplay.co.uk',
         company => 'Multiplay',
-        uid => '5086',
+        uid => 5086,
         groups => ['ring-users'],
     }
     @authorized_keys { 'multiplay':
@@ -1537,7 +1537,7 @@ class users::virtual::ring_users {
     @add_user { 'softlayer':
         email => 'noc@softlayer.com',
         company => 'Softlayer Technologies',
-        uid => '5087',
+        uid => 5087,
         groups => ['ring-users'],
     }
     @authorized_keys { 'softlayer':
@@ -1553,7 +1553,7 @@ class users::virtual::ring_users {
     @add_user { 'imagine':
         email => 'networkoperations@imaginegroup.ie',
         company => 'Imagine Communications Ltd.',
-        uid => '5088',
+        uid => 5088,
         groups => ['ring-users'],
     }
     @authorized_keys { 'imagine':
@@ -1570,7 +1570,7 @@ class users::virtual::ring_users {
     @add_user { 'speedpartner':
         email => 'info@speedpartner.de',
         company => 'SpeedPartner GmbH',
-        uid => '5089',
+        uid => 5089,
         groups => ['ring-users'],
     }
     @authorized_keys { 'speedpartner':
@@ -1587,7 +1587,7 @@ class users::virtual::ring_users {
     @add_user { 'gossamerthreads':
         email => 'noc-nlnog@gt.net',
         company => 'Gossamer Threads Inc.',
-        uid => '5090',
+        uid => 5090,
         groups => ['ring-users'],
     }
     @authorized_keys { 'gossamerthreads':
@@ -1607,7 +1607,7 @@ class users::virtual::ring_users {
     @add_user { 'towardex':
         email => 'ip-admin@twdx.net',
         company => 'TowardEX Carrier Services',
-        uid => '5091',
+        uid => 5091,
         groups => ['ring-users'],
     }
     @authorized_keys { 'towardex':
@@ -1623,7 +1623,7 @@ class users::virtual::ring_users {
     @add_user { 'simplytransit':
         email => 'nt@names.co.uk',
         company => 'Simply Transit',
-        uid => '5092',
+        uid => 5092,
         groups => ['ring-users'],
     }
     @authorized_keys { 'simplytransit':
@@ -1661,7 +1661,7 @@ class users::virtual::ring_users {
     @add_user { 'isarnet':
         email => 'noc@isarnet.de',
         company => 'IsarNet AG',
-        uid => '5093',
+        uid => 5093,
         groups => ['ring-users'],
     }
     @authorized_keys { 'isarnet':
@@ -1678,7 +1678,7 @@ class users::virtual::ring_users {
     @add_user { 'strato':
         email => 'noc@strato-rz.de',
         company => 'STRATO AG',
-        uid => '5094',
+        uid => 5094,
         groups => ['ring-users'],
     }
     @authorized_keys { 'strato':
@@ -1698,7 +1698,7 @@ class users::virtual::ring_users {
     @add_user { 'edutel':
         email => 'noc@edutel.nl',
         company => 'Edutel B.V.',
-        uid => '5095',
+        uid => 5095,
         groups => ['ring-users'],
     }
     @authorized_keys { 'edutel':
@@ -1722,7 +1722,7 @@ class users::virtual::ring_users {
     @add_user { 'sixdegrees':
         email => 'noc@6dg.co.uk',
         company => 'Six Degrees Group',
-        uid => '5096',
+        uid => 5096,
         groups => ['ring-users'],
     }
     @authorized_keys { 'sixdegrees':
@@ -1747,7 +1747,7 @@ class users::virtual::ring_users {
     @add_user { 'spacedump':
         email => 'registry@spacedump.se',
         company => 'SpaceDump IT AB',
-        uid => '5097',
+        uid => 5097,
         groups => ['ring-users'],
     }
     @authorized_keys { 'spacedump':
@@ -1763,7 +1763,7 @@ class users::virtual::ring_users {
     @add_user { 'rbnetwork':
         email => 'noc@rbnetwork.ch',
         company => 'RBNetwork',
-        uid => '5098',
+        uid => 5098,
         groups => ['ring-users'],
     }
     @authorized_keys { 'rbnetwork':
@@ -1780,7 +1780,7 @@ class users::virtual::ring_users {
     @add_user { 'yourorg':
         email => 'noc@your.org',
         company => 'Your.Org',
-        uid => '5099',
+        uid => 5099,
         groups => ['ring-users'],
     }
     @authorized_keys { 'yourorg':
@@ -1796,7 +1796,7 @@ class users::virtual::ring_users {
     @add_user { 'occaid':
         email => 'noc@occaid.org',
         company => 'OCCAID, Inc',
-        uid => '5100',
+        uid => 5100,
         groups => ['ring-users'],
     }
     @authorized_keys { 'occaid':
@@ -1812,7 +1812,7 @@ class users::virtual::ring_users {
     @add_user { 'as250net':
         email => 'noc@as250.net',
         company => 'AS250.net',
-        uid => '5101',
+        uid => 5101,
         groups => ['ring-users'],
     }
     @authorized_keys { 'as250net':
@@ -1828,7 +1828,7 @@ class users::virtual::ring_users {
     @add_user { 'redpilllinpro':
         email => 'noc@redpill-linpro.com',
         company => 'Redpill Linpro',
-        uid => '5102',
+        uid => 5102,
         groups => ['ring-users'],
     }
     @authorized_keys { 'redpilllinpro':
@@ -1844,7 +1844,7 @@ class users::virtual::ring_users {
     @add_user { 'nine':
         email => 'noc@nine.ch',
         company => 'Nine Internet Solutions AG',
-        uid => '5103',
+        uid => 5103,
         groups => ['ring-users'],
     }
     @authorized_keys { 'nine':
@@ -1861,7 +1861,7 @@ class users::virtual::ring_users {
     @add_user { 'oneandone':
         email => 'noc@oneandone.net',
         company => '1&1 Internet AG',
-        uid => '5104',
+        uid => 5104,
         groups => ['ring-users'],
     }
     @authorized_keys { 'oneandone':
@@ -1898,7 +1898,7 @@ class users::virtual::ring_users {
     @add_user { 'belwue':
         email => 'ip@belwue.de',
         company => 'BelWü',
-        uid => '5105',
+        uid => 5105,
         groups => ['ring-users'],
     }
     @authorized_keys { 'belwue':
@@ -1916,7 +1916,7 @@ class users::virtual::ring_users {
     @add_user { 'lagis':
         email => 'sysadmin@lagis.at',
         company => 'lagis Internet Serviceprovider GmbH',
-        uid => '5106',
+        uid => 5106,
         groups => ['ring-users'],
     }
     @authorized_keys { 'lagis':
@@ -1933,7 +1933,7 @@ class users::virtual::ring_users {
     @add_user { 'fnutt':
         email => 'peering@fnutt.net',
         company => 'Fnutt Consulting',
-        uid => '5107',
+        uid => 5107,
         groups => ['ring-users'],
     }
     @authorized_keys { 'fnutt':
@@ -1948,7 +1948,7 @@ class users::virtual::ring_users {
     @add_user { 'sidn':
         email => 'unixbeheer@sidn.nl',
         company => 'SIDN',
-        uid => '5108',
+        uid => 5108,
         groups => ['ring-users'],
     }
     @authorized_keys { 'sidn':
@@ -1963,7 +1963,7 @@ class users::virtual::ring_users {
     @add_user { 'melbourne':
         email => 'support.team@melbourne.co.uk',
         company => 'Melbourne Server Hosting',
-        uid => '5109',
+        uid => 5109,
         groups => ['ring-users'],
     }
     @authorized_keys { 'melbourne':
@@ -1979,7 +1979,7 @@ class users::virtual::ring_users {
     @add_user { 'brendon-wand':
         email => 'brendonj@cs.waikato.ac.nz',
         company => 'Brendon Jones',
-        uid => '5110',
+        uid => 5110,
         groups => ['ring-users'],
     }
     @authorized_keys { 'brendon-wand':
@@ -1995,7 +1995,7 @@ class users::virtual::ring_users {
     @add_user { 'go6lab':
         email => 'jan@go6.si',
         company => 'Go6 Institute',
-        uid => '5111',
+        uid => 5111,
         groups => ['ring-users'],
     }
     @authorized_keys { 'go6lab':
@@ -2011,7 +2011,7 @@ class users::virtual::ring_users {
     @add_user { 'siminn':
         email => 'drift@siminn.dk',
         company => 'Siminn Danmark',
-        uid => '5112',
+        uid => 5112,
         groups => ['ring-users'],
     }
     @authorized_keys { 'siminn':
@@ -2030,7 +2030,7 @@ class users::virtual::ring_users {
     @add_user { 'a2binternet':
         email => 'noc@a2b-internet.com',
         company => 'A2B Internet B.V.',
-        uid => '5113',
+        uid => 5113,
         groups => ['ring-users'],
     }
     @authorized_keys { 'a2binternet':
@@ -2047,7 +2047,7 @@ class users::virtual::ring_users {
     @add_user { 'i3d':
         email => 'noc2@i3d.nl',
         company => 'Interactive 3D',
-        uid => '5114',
+        uid => 5114,
         groups => ['ring-users'],
     }
     @authorized_keys { 'i3d':
@@ -2063,7 +2063,7 @@ class users::virtual::ring_users {
     @add_user { 'digiweb':
         email => 'noc@digiweb.ie',
         company => 'Digiweb Ltd',
-        uid => '5115',
+        uid => 5115,
         groups => ['ring-users'],
     }
     @authorized_keys { 'digiweb':
@@ -2086,7 +2086,7 @@ class users::virtual::ring_users {
     @add_user { 'sidnrd':
         email => 'unixbeheer@sidnrd.nl',
         company => 'SIDN',
-        uid => '5116',
+        uid => 5116,
         groups => ['ring-users'],
     }
     @authorized_keys { 'sidnrd':
@@ -2101,7 +2101,7 @@ class users::virtual::ring_users {
     @add_user { 'keenondots':
         email => 'support@keenondots.com',
         company => 'Keen on Dots',
-        uid => '5117',
+        uid => 5117,
         groups => ['ring-users'],
     }
     @authorized_keys { 'keenondots':
@@ -2117,7 +2117,7 @@ class users::virtual::ring_users {
     @add_user { 'obenetwork':
         email => 'noc@obenetwork.com',
         company => 'Obenetwork AB',
-        uid => '5118',
+        uid => 5118,
         groups => ['ring-users'],
     }
     @authorized_keys { 'obenetwork':
@@ -2133,7 +2133,7 @@ class users::virtual::ring_users {
     @add_user { 'infomaniak':
         email => 'operator@infomaniak.ch',
         company => 'Infomaniak Network SA',
-        uid => '5119',
+        uid => 5119,
         groups => ['ring-users'],
     }
     @authorized_keys { 'infomaniak':
@@ -2150,7 +2150,7 @@ class users::virtual::ring_users {
     @add_user { 'teamix':
         email => 'rg@teamix.ch',
         company => 'teamix GmbH',
-        uid => '5120',
+        uid => 5120,
         groups => ['ring-users'],
     }
     @authorized_keys { 'teamix':
@@ -2165,7 +2165,7 @@ class users::virtual::ring_users {
     @add_user { 'bci':
         email => 'support@ipv6.ps',
         company => 'BNET - BCI Telecommunication & Advanced Technology Company',
-        uid => '5121',
+        uid => 5121,
         groups => ['ring-users'],
     }
     @authorized_keys { 'bci':
@@ -2181,7 +2181,7 @@ class users::virtual::ring_users {
     @add_user { 'skyway':
         email => 'noc@skyway-dc.com',
         company => 'SKYWAY DataCenter GmbH',
-        uid => '5122',
+        uid => 5122,
         groups => ['ring-users'],
     }
     @authorized_keys { 'skyway':
@@ -2197,7 +2197,7 @@ class users::virtual::ring_users {
     @add_user { 'solcon':
         email => 'noc@isp.solcon.nl',
         company => 'Solcon Internetdiensten B.V.',
-        uid => '5123',
+        uid => 5123,
         groups => ['ring-users'],
     }
     @authorized_keys { 'solcon':
@@ -2213,7 +2213,7 @@ class users::virtual::ring_users {
     @add_user { 'claranet':
         email => 'ring@eu.clara.net',
         company => 'Claranet',
-        uid => '5124',
+        uid => 5124,
         groups => ['ring-users'],
     }
     @authorized_keys { 'claranet':
@@ -2239,7 +2239,7 @@ class users::virtual::ring_users {
     @add_user { 'arpnetworks':
         email => 'noc@arpnetworks.com',
         company => 'ARP Networks, Inc.',
-        uid => '5125',
+        uid => 5125,
         groups => ['ring-users'],
     }
     @authorized_keys { 'arpnetworks':
@@ -2254,7 +2254,7 @@ class users::virtual::ring_users {
     @add_user { 'iabg':
         email => 'ip@teleport-iabg.de',
         company => 'IABG mbH - Teleport',
-        uid => '5126',
+        uid => 5126,
         groups => ['ring-users'],
     }
     @authorized_keys { 'iabg':
@@ -2269,7 +2269,7 @@ class users::virtual::ring_users {
     @add_user { 'initseven':
         email => 'noc@init7.net',
         company => 'INIT7',
-        uid => '5127',
+        uid => 5127,
         groups => ['ring-users'],
     }
     @authorized_keys { 'initseven':
@@ -2285,7 +2285,7 @@ class users::virtual::ring_users {
     @add_user { 'hosting90systems':
         email => 'admin@hosting90.cz',
         company => 'HOSTING90 systems s.r.o.',
-        uid => '5128',
+        uid => 5128,
         groups => ['ring-users'],
     }
     @authorized_keys { 'hosting90systems':
@@ -2301,7 +2301,7 @@ class users::virtual::ring_users {
     @add_user { 'kordia':
         email => 'smc@kordia.co.nz',
         company => 'Kordia',
-        uid => '5129',
+        uid => 5129,
         groups => ['ring-users'],
     }
     @authorized_keys { 'kordia':
@@ -2316,7 +2316,7 @@ class users::virtual::ring_users {
     @add_user { 'isc':
         email => 'ops@safdef.isc.org',
         company => 'Internet Systems Consortium, Inc.',
-        uid => '5130',
+        uid => 5130,
         groups => ['ring-users'],
     }
     @authorized_keys { 'isc':
@@ -2335,7 +2335,7 @@ class users::virtual::ring_users {
     @add_user { 'backbone':
         email => 'afink@backbone.is',
         company => 'Backbone ehf',
-        uid => '5131',
+        uid => 5131,
         groups => ['ring-users'],
     }
     @authorized_keys { 'backbone':
@@ -2352,7 +2352,7 @@ class users::virtual::ring_users {
     @add_user { 'nexellent':
         email => 'noc@nexellent.net',
         company => 'nexellent AG',
-        uid => '5132',
+        uid => 5132,
         groups => ['ring-users'],
     }
     @authorized_keys { 'nexellent':
@@ -2368,7 +2368,7 @@ class users::virtual::ring_users {
     @add_user { 'afilias':
         email => 'cpr@afilias.info',
         company => 'Afilias',
-        uid => '5133',
+        uid => 5133,
         groups => ['ring-users'],
     }
     @authorized_keys { 'afilias':
@@ -2384,7 +2384,7 @@ class users::virtual::ring_users {
     @add_user { 'grnet':
         email => 'noc@noc.grnet.gr',
         company => 'GRNET',
-        uid => '5134',
+        uid => 5134,
         groups => ['ring-users'],
     }
     @authorized_keys { 'grnet':
@@ -2411,7 +2411,7 @@ class users::virtual::ring_users {
     @add_user { 'netflix':
         email => 'cdnetops@netflix.com',
         company => 'Netflix',
-        uid => '5135',
+        uid => 5135,
         groups => ['ring-users'],
     }
     @authorized_keys { 'netflix':
@@ -2428,7 +2428,7 @@ class users::virtual::ring_users {
     @add_user { 'ipmax':
         email => 'noc@ip-max.net',
         company => 'IP-Max',
-        uid => '5136',
+        uid => 5136,
         groups => ['ring-users'],
     }
     @authorized_keys { 'ipmax':
@@ -2447,7 +2447,7 @@ class users::virtual::ring_users {
     @add_user { 'merit':
         email => 'msc@merit.edu',
         company => 'Merit Network, Inc',
-        uid => '5137',
+        uid => 5137,
         groups => ['ring-users'],
     }
     @authorized_keys { 'merit':
@@ -2463,7 +2463,7 @@ class users::virtual::ring_users {
     @add_user { 'poznan':
         email => 'ipv6-support@man.poznan.pl',
         company => 'Poznan Supercomputing and Networking Center',
-        uid => '5138',
+        uid => 5138,
         groups => ['ring-users'],
     }
     @authorized_keys { 'poznan':
@@ -2479,7 +2479,7 @@ class users::virtual::ring_users {
     @add_user { 'nuqe':
         email => 'nat@nuqe.net',
         company => 'AS30746',
-        uid => '5139',
+        uid => 5139,
         groups => ['ring-users'],
     }
     @authorized_keys { 'nuqe':
@@ -2496,7 +2496,7 @@ class users::virtual::ring_users {
     @add_user { 'bluezonejordan':
         email => 'noc@bluezonejordan.com',
         company => 'Bluezone Jordan',
-        uid => '5140',
+        uid => 5140,
         groups => ['ring-users'],
     }
     @authorized_keys { 'bluezonejordan':
@@ -2512,7 +2512,7 @@ class users::virtual::ring_users {
     @add_user { 'zeronet':
         email => 'noc@zero.net.uk',
         company => 'zero.net.uk',
-        uid => '5141',
+        uid => 5141,
         groups => ['ring-users'],
     }
     @authorized_keys { 'zeronet':
@@ -2528,7 +2528,7 @@ class users::virtual::ring_users {
     @add_user { 'rgnet':
         email => 'noc@rg.net',
         company => 'RGnet LLC / psg.com',
-        uid => '5142',
+        uid => 5142,
         groups => ['ring-users'],
     }
     @authorized_keys { 'rgnet':
@@ -2544,7 +2544,7 @@ class users::virtual::ring_users {
     @add_user { 'ehsab':
         email => 'teknik@excellent-hosting.se',
         company => 'Excellent Hosting Sweden AB',
-        uid => '5143',
+        uid => 5143,
         groups => ['ring-users'],
     }
     @authorized_keys { 'ehsab':
@@ -2560,7 +2560,7 @@ class users::virtual::ring_users {
     @add_user { 'yellowfiber':
         email => 'support@yellowfiber.net',
         company => 'Yellow Fiber Networks',
-        uid => '5144',
+        uid => 5144,
         groups => ['ring-users'],
     }
     @authorized_keys { 'yellowfiber':
@@ -2576,7 +2576,7 @@ class users::virtual::ring_users {
     @add_user { 'bahnhof':
         email => 'ncc@bahnhof.net',
         company => 'Bahnhof',
-        uid => '5145',
+        uid => 5145,
         groups => ['ring-users'],
     }
     @authorized_keys { 'bahnhof':
@@ -2592,7 +2592,7 @@ class users::virtual::ring_users {
     @add_user { 'nicchile':
         email => 'noc@nic.cl',
         company => 'Universidad de Chile - NIC Chile',
-        uid => '5146',
+        uid => 5146,
         groups => ['ring-users'],
     }
     @authorized_keys { 'nicchile':
@@ -2609,7 +2609,7 @@ class users::virtual::ring_users {
     @add_user { 'glesys':
         email => 'noc@glesys.se',
         company => 'GleSYS Internet Services AB',
-        uid => '5147',
+        uid => 5147,
         groups => ['ring-users'],
     }
     @authorized_keys { 'glesys':
@@ -2625,7 +2625,7 @@ class users::virtual::ring_users {
     @add_user { 'rcsrds':
         email => 'noc@ploiesti.rdsnet.ro',
         company => 'S.C. RCS RDS S.A.',
-        uid => '5148',
+        uid => 5148,
         groups => ['ring-users'],
     }
     @authorized_keys { 'rcsrds':
@@ -2641,7 +2641,7 @@ class users::virtual::ring_users {
     @add_user { 'indit':
         email => 'noc@indithosting.se',
         company => 'Indit Hosting AB',
-        uid => '5149',
+        uid => 5149,
         groups => ['ring-users'],
     }
     @authorized_keys { 'indit':
