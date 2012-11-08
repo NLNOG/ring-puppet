@@ -24,10 +24,6 @@ class users::virtual::ring_users {
     uid => 5014,
     groups  => ['ring-users'],
     ensure => absent,
-    @authorized_keys { 'ic-hosting':
-        sshkeys => [],
-    }
-
 }
 
 ##### END former users #####
