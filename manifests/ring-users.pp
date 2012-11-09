@@ -590,6 +590,7 @@ class users::virtual::ring_users {
         sshkeys => [
             'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA4NNE9wlAtxviuVJuhSjhzbHiOWploxKseVGfxFSPOBnay9bK2QNFlP0xZAGDWDPZfNQxTbf4dc4qNs0Tv6s06ZvA/DW0QuOWuDnghxXPZAzlzjlvO9eNZYMADhIRbnA6vXH/N1wFpA/23uMM9EoQPpIbt49OjvIq/pCvzEuejaRfV/vIILA5whFi/1z+LCVfQRn/eT1hNdCDWSntRhh5GeiWi/FBzvD84MO0EWtWO+fXTHz6Vzb2rkjpzU8CuAuA4IQqcByhhuShJBgwDITPPWIaLqCSPkOmZqueczdHyXDMGxGYv1uHtBm6v7KpNypuK9hbhWqQr4xWVj/ylmXLHQ== atrato',
             'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAyoQKYlEKFNCJHtxOt4L7XF2eYeHy+3oR4ZqkxsdtotIkcKsZOy/mAFxPWJoranTCE0ym21p2NbAzi3xMZAIv3WfxG5LcpY0xWzfMBsCnNEwvdqXlZsweIcKaX98s6vLdU67Cz3dCwvu1i3CsxjtEW3FEyY6rLy07q2yfEb7LSuh1wPrCbci23ZPWil6R87zkWY01/deHsIo7VooiqCov7xJY2/+NnUUPX0UOXllnFElHfp5PcCUOJKVCWfGroCZTtjZVmN+76n11UhjXqEMgwH3ojcNNwXtVcXmnMN68Wt3U/d3dVVfMKCMg6l+m88dKKCeXatV6aqRHN46WZ63DPQ== bart@auth01.as5580.net',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsNZi7mD+HV83QWgxcillmcTCyXvdTeWqjbqZjYWKtz2h8bX5tOMYmfJTWHHlr0/Bq3t8g3X8yJmaBY7QPQ+xoqgF/ACap1tqXzLr/+lI4PU31amPRjtMz9ih+Md/UZhDHbRXmHQO5izjEAWu5d0MFi52fDVANtlRYi6jN596RdLy/NcGdvDG4udigv4YaSyodNJsMzsxrui1N6Tj6W8ExhJl2ra0dqPRoRo4RvhFvX1jXD6Ajpp1NzeSNN02qiWRjQHtRn7WBmxNx2TspnILWB4tLtU2pgW7YQxKtSs5Dde645dRYw+YpCI7R8Ic/NfizyKSS/fsshRfDd0o3YGJb stephan@Stephans-MacBook-Air.local',
             ],
     }
 
