@@ -554,3 +554,7 @@ ff02::2 ip6-allrouters
 
 2a01:298:f001:a::7  indit01 indit01.ring.nlnog.net
 178.16.220.7    indit01 indit01.ring.nlnog.net
+
+81.94.161.36    itmastaren01    itmastaren01.ring.nlnog.net
+2a00:7800:8000::36    itmastaren01    itmastaren01.ring.nlnog.net
+

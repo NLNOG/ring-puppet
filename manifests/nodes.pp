@@ -2231,3 +2231,13 @@ node 'indit01' inherits ringnode {
     include set_local_settings                                                  
     include users
 }
+
+node 'itmastaren01' inherits ringnode {
+    $owner = "itmastaren"
+    $location = "59.2722,15.2088"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
