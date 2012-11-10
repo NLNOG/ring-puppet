@@ -357,7 +357,6 @@ node 'dbmaster.infra' inherits infranode {
     include syslog_ng::client
     include nodesonlycron
     include users
-    include munin::host
 }
 
 node 'db01.infra' inherits dbslaves {
@@ -368,7 +367,6 @@ node 'db01.infra' inherits dbslaves {
     include syslog_ng::client
     include nodesonlycron
     include users
-    include munin::host
 }
 node 'db02.infra' inherits dbslaves {
     $owner = "job"
@@ -378,7 +376,6 @@ node 'db02.infra' inherits dbslaves {
     include syslog_ng::client
     include nodesonlycron
     include users
-    include munin::host
 }
 node 'db03.infra' inherits dbslaves {
     $owner = "job"
@@ -388,7 +385,6 @@ node 'db03.infra' inherits dbslaves {
     include syslog_ng::client
     include nodesonlycron
     include users
-    include munin::host
 }
 node 'db04.infra' inherits dbslaves {
     $owner = "job"
@@ -398,7 +394,6 @@ node 'db04.infra' inherits dbslaves {
     include syslog_ng::client
     include nodesonlycron
     include users
-    include munin::host
 }
 node 'db05.infra' inherits dbslaves {
     $owner = "job"
@@ -408,7 +403,6 @@ node 'db05.infra' inherits dbslaves {
     include syslog_ng::client
     include nodesonlycron
     include users
-    include munin::host
 }
 
 # website, dns, mailing-list etc
