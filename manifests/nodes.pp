@@ -268,7 +268,7 @@ node 'container03.infra' inherits infranode {
     }
     kvm::virtual_machine { 'db03':
         fqdn        => 'db03.infra.ring.nlnog.net',
-        ip          => '78.152.42.67', # ipv6 address is 2a02:d28:666::66
+        ip          => '78.152.42.67', # ipv6 address is 2a02:d28:666::67
         netmask     => '255.255.255.240',
         dns         => '8.8.8.8',
         gateway     => '78.152.42.65',

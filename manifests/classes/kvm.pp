@@ -1,6 +1,6 @@
 # have some functions do deal with virtual machines
 class kvm {
-    package { ["qemu-kvm", "python-vm-builder", "ubuntu-vm-builder", "libvirt-bin", "bridge-utils", "lvm2"]:
+    package { ["qemu-kvm", "python-vm-builder", "ubuntu-vm-builder", "libvirt-bin", "bridge-utils", "lvm2", "virt-viewer"]:
         ensure => latest,
     }
 
