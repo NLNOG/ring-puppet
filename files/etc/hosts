@@ -402,8 +402,8 @@ ff02::2 ip6-allrouters
 129.143.4.237   belwue01    belwue01.ring.nlnog.net
 2001:7c0:701:23::2  belwue01    belwue01.ring.nlnog.net
 
-82.94.249.163   container01 container01.ring.nlnog.net
-2001:888:2000:3e::1338 container01  container01.ring.nlnog.net
+82.94.249.163   container01.infra container01.infra.ring.nlnog.net
+2001:888:2000:3e::1338 container01.infra  container01.infra.ring.nlnog.net
 
 85.17.27.45 container02.infra   container02.infra.ring.nlnog.net
 2001:1af8:4010::2   container02.infra   container02.infra.ring.nlnog.net

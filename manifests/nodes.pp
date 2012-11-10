@@ -99,7 +99,7 @@ node 'master01' inherits infranode {
 # virbr1 is virtual switch on the box with this IP space:
 #   IPv4 prefix: 82.94.230.128/28
 #   IPv6 prefix: 2001:888:2001::/48
-node 'container01' inherits infranode {
+node 'container01.infra' inherits infranode {
     include users
     include syslog_ng::client
     include nagios_services
