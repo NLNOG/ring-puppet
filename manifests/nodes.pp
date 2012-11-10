@@ -163,7 +163,7 @@ node 'container01' inherits infranode {
         ensure      => present,
     }
 
-    kvm::virtual_machine { 'db01.infra':
+    kvm::virtual_machine { 'db01':
         fqdn        => 'db01.infra.ring.nlnog.net',
         ip          => '82.94.230.133', # ipv6 address is 2001:888:2001::133
         netmask     => '255.255.255.248',
