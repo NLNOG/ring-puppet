@@ -66,12 +66,12 @@ define kvm::virtual_machine ($fqdn, $ip, $netmask, $dns="8.8.8.8", $gateway, $me
             unless => "/usr/bin/test -L /dev/mapper/${container}-$name",
             }
     
-            file { "/etc/init/ttyS0.conf":
-                owner   => root,
-                group   => root,
-                mode    => 0755,
-                source  => "puppet:///files/etc/init/ttyS0.conf",
-            }
+#            file { "/etc/init/ttyS0.conf":
+#                owner   => root,
+#                group   => root,
+#                mode    => 0755,
+#                source  => "puppet:///files/etc/init/ttyS0.conf",
+#            }
         }
         absent: {
             exec { "destroy_vm_${name}":
