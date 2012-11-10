@@ -26,7 +26,7 @@ ff02::2 ip6-allrouters
 2001:1AF8:4013::19  db02.infra  db02.infra.ring.nlnog.net
 
 78.152.42.67    db03.infra  db03.infra.ring.nlnog.net
-2a02:d28:666::66    db03.infra  db03.infra.ring.nlnog.net
+2a02:d28:666::67    db03.infra  db03.infra.ring.nlnog.net
 
 213.154.249.162 db04.infra  db04.infra.ring.nlnog.net
 2001:7b8:d05::162   db04.infra  db04.infra.ring.nlnog.net
