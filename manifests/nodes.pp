@@ -50,6 +50,7 @@ node infranode inherits basenode {
 node 'master01' inherits infranode {
     include users
     include master_software
+    include collect_ringdb
     include syslog_ng::server
     include apache2
     include mastercronjobs
@@ -420,6 +421,7 @@ class users {
 node 'staging01' inherits ringnode {
     $owner = "job"
     include amp_client
+    include distribute_ringdb
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
