@@ -15,6 +15,8 @@ class master_software {
 }
 
 class nettools {
+    package { "libcache-cache-perl": ensure => latest }
+
     # requested by teun
     package { ["python-beautifulsoup", "python-flask"]:
         ensure => latest,

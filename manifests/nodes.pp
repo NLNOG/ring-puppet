@@ -226,6 +226,21 @@ node 'container03.infra' inherits infranode {
     include kvm
     munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
     }
+    kvm::virtual_machine { 'dbmaster':
+        fqdn        => 'dbmaster.infra.ring.nlnog.net',
+        ip          => '78.152.42.66', # ipv6 address is 2a02:d28:666::66
+        netmask     => '255.255.255.240',
+        dns         => '8.8.8.8',
+        gateway     => '78.152.42.65',
+        memory      => '1024',
+        disksize    => '20',
+        rootsize    => '19968',
+        bridge      => 'virbr1',
+        container   => "${hostname}",
+        ensure      => present,
+    }
+
+
 }
 
 # container04 is hosted at Bit in Ede
