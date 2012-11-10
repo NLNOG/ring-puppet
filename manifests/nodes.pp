@@ -2162,7 +2162,7 @@ node 'ehsab01' inherits ringnode {
 }
 
 node 'ehsab02' inherits ringnode {
-    $owner = "ehsab02"
+    $owner = "ehsab"
     $location = "55.606901,12.998484"
     include amp_client                                                    
     include nagios::target::fqdn                                                
