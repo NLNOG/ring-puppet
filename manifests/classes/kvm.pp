@@ -60,7 +60,7 @@ define kvm::virtual_machine ($fqdn, $ip, $netmask, $dns="8.8.8.8", $gateway, $me
                 --addpkg=traceroute \
                 --addpkg=vim \
                 --bridge=$bridge \
-                --execscript=/root/add-serial-to-grub
+                --execscript=/root/add-serial-to-grub \
                 --firstboot=/root/run-puppet-at-boot \
                   && virsh start $fqdn && virsh autostart ${fqdn}; rm -rf  ubuntu-kvm ",
             unless => "/usr/bin/test -L /dev/mapper/${container}-$name",
