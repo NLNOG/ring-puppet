@@ -14,12 +14,6 @@ node basenode {
     include lang
     munin::plugin { ["users", "tcp", "ntp_offset", "uptime", "threads", "ntp_kernel_pll_off", "diskstats", "proc_pri", "iostat_ios"]:
     }
-    munin::plugin { ["if_eth0"]:
-        ensure => "if_" 
-    }
-    munin::plugin { ["if_err_eth0"]:
-        ensure => "if_err_" 
-    }
     include ssh
     include timezone
     include fail2ban-whitelist
@@ -1786,12 +1780,6 @@ node 'occaid01' {
 #   ipv6 and munin no success yet
 #    include munin::client
 #    munin::plugin { ["users", "tcp", "ntp_offset", "uptime", "threads", "ntp_kernel_pll_off", "diskstats", "proc_pri", "iostat_ios"]:
-#    }
-#    munin::plugin { ["if_eth0"]:
-#        ensure => "if_" 
-#    }
-#    munin::plugin { ["if_err_eth0"]:
-#        ensure => "if_err_" 
 #    }
 #    package{ "munin": ensure => purged, }
 
