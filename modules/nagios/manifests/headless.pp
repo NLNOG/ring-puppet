@@ -2,6 +2,10 @@ class nagios::headless {
     $nagios_httpd = 'absent'
     include nagios
 
+    resources { [ "nagios_service", "nagios_servicegroup", "nagios_host" ]:
+        purge => true;
+    }
+
     nagios_servicegroup {
       'ping':
         alias   => 'All ICMP Services';
