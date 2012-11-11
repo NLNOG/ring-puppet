@@ -1,6 +1,6 @@
 class rubygems::highline {
   require rubygems
-  package{'rubygem-highline':
+  package{'ruby-highline':
     ensure => present,
   }
 }
