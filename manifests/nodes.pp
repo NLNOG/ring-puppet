@@ -343,8 +343,8 @@ node 'dbmaster.infra' inherits infranode {
     include syslog_ng::client
     include nodesonlycron
     include users
-    include mysql::server::large
-    include mysql::master
+#    include mysql::server::large
+    include mysql::master::large
 }
 
 node 'db01.infra' inherits dbslaves {
