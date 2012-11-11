@@ -345,6 +345,7 @@ node 'dbmaster.infra' inherits infranode {
     include nodesonlycron
     include users
     $mysql_serverid = "666"
+    $mysql_password = trocla('mysql_${fqdn}','sha512crypt');
     include mysql::master::large
 }
 
