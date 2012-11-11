@@ -38,6 +38,14 @@ class etcfiles {
         source  => "puppet:///files/etc/hosts"
     }
 
+    file { "/etc/puppet/puppet.conf":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/puppet/puppet.conf"
+    }
+
+
     file { "/etc/sudoers":
         owner   => root,
         group   => root,
