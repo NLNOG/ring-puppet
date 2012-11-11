@@ -1,0 +1,7 @@
+trocla
+
+This is the trocla module. It provides the necessary function to query
+trocla from puppet, as well as a puppet class to setup things on the
+puppetmaster.
+
+For more information about trocla visit: https://github.com/duritong/trocla
