@@ -334,6 +334,9 @@ node 'container05.infra' inherits infranode {
 # db boys
 
 node dbslaves inherits infranode {
+    $mysql_masterhost = "dbmaster.infra.ring.nlnog.net"
+    $mysql_masteruser = "replication"
+    $mysql_masterpw = trocla("mysql_replication", 'plain')
 }
 
 node 'dbmaster.infra' inherits infranode {
@@ -345,7 +348,7 @@ node 'dbmaster.infra' inherits infranode {
     include nodesonlycron
     include users
     $mysql_serverid = "666"
-    $mysql_password = trocla("mysql_${fqdn}",'mysql')
+    $mysql_password = trocla("mysql_${fqdn}",'plain')
     include mysql::master::large
 }
 
@@ -357,6 +360,8 @@ node 'db01.infra' inherits dbslaves {
     include syslog_ng::client
     include nodesonlycron
     include users
+    $mysql_password = trocla("mysql_${fqdn}",'plain')
+    $mysql_serverid = "1"
 }
 node 'db02.infra' inherits dbslaves {
     $owner = "job"
@@ -366,6 +371,8 @@ node 'db02.infra' inherits dbslaves {
     include syslog_ng::client
     include nodesonlycron
     include users
+    $mysql_password = trocla("mysql_${fqdn}",'plain')
+    $mysql_serverid = "2"
 }
 node 'db03.infra' inherits dbslaves {
     $owner = "job"
@@ -375,9 +382,9 @@ node 'db03.infra' inherits dbslaves {
     include syslog_ng::client
     include nodesonlycron
     include users
+    $mysql_password = trocla("mysql_${fqdn}",'plain')
     $mysql_serverid = "3"
     include mysql::slave::large
-
 }
 node 'db04.infra' inherits dbslaves {
     $owner = "job"
@@ -387,6 +394,8 @@ node 'db04.infra' inherits dbslaves {
     include syslog_ng::client
     include nodesonlycron
     include users
+    $mysql_password = trocla("mysql_${fqdn}",'plain')
+    $mysql_serverid = "4"
 }
 node 'db05.infra' inherits dbslaves {
     $owner = "job"
@@ -396,6 +405,8 @@ node 'db05.infra' inherits dbslaves {
     include syslog_ng::client
     include nodesonlycron
     include users
+    $mysql_password = trocla("mysql_${fqdn}",'plain')
+    $mysql_serverid = "5"
 }
 
 # website, dns, mailing-list etc
