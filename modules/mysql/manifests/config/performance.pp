@@ -1,6 +1,6 @@
 class mysql::config::performance {
   # force use of system defaults
-  mysql::config {
+#  mysql::config {
 # #    'key_buffer':                      ensure => absent;
 #     'max_allowed_packet':              ensure => absent;
 #     'table_cache':                     ensure => absent;
@@ -21,5 +21,5 @@ class mysql::config::performance {
 #     'myisamchk/sort_buffer_size':      ensure => absent;
 #     'myisamchk/read_buffer':           ensure => absent;
 #     'myisamchk/write_buffer':          ensure => absent;
-  }
+# }
 }
