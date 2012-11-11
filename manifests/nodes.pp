@@ -333,8 +333,7 @@ node 'container05.infra' inherits infranode {
 # db boys
 
 node dbslaves inherits infranode {
-    include mysql::server
-    include mysql::slave::large 
+    include mysql::slave
 }
 
 node 'dbmaster.infra' inherits infranode {
@@ -345,8 +344,7 @@ node 'dbmaster.infra' inherits infranode {
     include syslog_ng::client
     include nodesonlycron
     include users
-    include mysql::server
-    include mysql::master::large
+    include mysql::master
 }
 
 node 'db01.infra' inherits dbslaves {
