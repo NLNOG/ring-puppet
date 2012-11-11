@@ -1,0 +1,16 @@
+## This part comes from modules/mysql/manifests/classes/administration.pp
+<% if has_variable?("sudo_mysql_admin_user") -%>
+User_Alias MYSQL_ADMIN_USER = %mysql-admin,<%= sudo_mysql_admin_user %>
+<% else -%>
+User_Alias MYSQL_ADMIN_USER = %mysql-admin
+<% end -%>
+<% if has_variable?("sudo_mysql_admin_cmnd") %>
+Cmnd_Alias MYSQL_ADMIN_CMND = <%= sudo_mysql_admin_cmnd %>
+<% elsif operatingsystem == "Debian" -%>
+Cmnd_Alias MYSQL_ADMIN_CMND = /etc/init.d/mysql
+<% elsif operatingsystem == "RedHat" -%>
+Cmnd_Alias MYSQL_ADMIN_CMND  = /etc/init.d/mysqld, /sbin/service mysqld
+<% end -%>
+MYSQL_ADMIN_USER ALL=(root) MYSQL_ADMIN_CMND
+##
+

@@ -1,0 +1,76 @@
+#!/bin/sh
+# file managed by puppet
+
+usage() {
+  echo "Usage: $0 (week|month [number]|year)"
+  exit 1
+}
+
+UNITKEEP=1
+PATH="/bin:/sbin:/usr/bin:/usr/sbin"
+MYDIR="<%= data_dir %>"
+BKPDIR="<%= backup_dir %>"
+
+if [ $# -gt 1 ]
+then
+  UNITKEEP=$2
+  if [[ $UNITKEEP == *[!0-9]* ]]; then
+    echo "Optionnal argument should be integer"
+    usage
+  fi
+fi
+
+case "$1" in
+  week)
+    DAY=$(date +%A |tr 'A-Z' 'a-z')
+    ;;
+  month)
+    DAY=$(date +%d)
+    if [ $UNITKEEP -lt 1 -o $UNITKEEP -gt 12 ]; then
+       echo "Optionnal argument should be between 1 and 12 for month"
+       usage
+    fi
+    if [ $UNITKEEP -gt 1 ]; then
+       MONTH=$( date +%m )
+       SUBDIR=$( echo "${MONTH} % ${UNITKEEP}" | bc )
+       BKPDIR="${BKPDIR}/${SUBDIR}"
+       [ ! -d ${BKPDIR} ] && mkdir -p ${BKPDIR}
+    fi
+    ;;
+  year)
+    DAY=$(date +%j)
+    ;;
+  *)
+    usage
+    ;;
+esac
+
+# Installed ?
+if [ -e /usr/bin/mysqladmin ] && [ -e /usr/bin/mysqldump ]; then
+  # used ?
+  if [ -d $MYDIR ] && [ -n "$(find $MYDIR -maxdepth 1 -type d ! -iname mysql ! -iname test )" ]; then
+    # Running ?
+    if /usr/bin/mysqladmin -s ping > /dev/null; then
+<% if ( has_variable?('mysqldump_on_slave') and mysqldump_on_slave == true ) -%>
+      /usr/bin/mysqladmin stop-slave && \
+<% end -%>
+      /usr/bin/mysqldump <%=mysqldump_options%> > $BKPDIR/mysql.sql && \
+<% if ( has_variable?('mysqldump_on_slave') and mysqldump_on_slave == true ) -%>
+      /usr/bin/mysqladmin start-slave && \
+<% end -%>
+        nice -n 19 gzip -9 $BKPDIR/mysql.sql && \
+        mv -f $BKPDIR/mysql.sql.gz $BKPDIR/mysql-$DAY.sql.gz || exit 1
+      <%= mysql_post_backup_hook %>
+      exit $?
+    else
+      echo 'mysqld not running'
+      exit 1
+    fi
+  else
+    # no databases to backup ? no problem
+    exit 0
+  fi
+else
+  echo "mysqladmin/mysqldump missing. Are you sure this cron must run ?"
+  exit 1
+fi

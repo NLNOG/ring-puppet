@@ -1,0 +1,18 @@
+# file managed by puppet
+/var/log/mysqld.log /var/log/mysql-queries.log /var/log/mysql-slow-queries.log {
+    daily
+    rotate 7
+    missingok
+    create 640 mysql <%= logfile_group %>
+    compress
+    sharedscripts
+    postrotate
+        export MYADMIN="/usr/bin/mysqladmin --defaults-extra-file=/root/.my.cnf"
+        test -x /usr/bin/mysqladmin || exit 0
+        if ! $MYADMIN ping 2>&1 > /dev/null; then
+          echo "mysql not running" && exit 1
+        else
+          $MYADMIN flush-logs
+        fi
+    endscript
+}

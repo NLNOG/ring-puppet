@@ -1,0 +1,24 @@
+= Mysql Puppet module =
+
+== Usage ==
+
+include mysql::server
+
+mysql::rights{"Set rights for puppet database":
+  ensure   => present,
+  database => "puppet",
+  user     => "puppet",
+  password => "puppet"
+}
+
+mysql::database{"mydb":
+  ensure   => present
+}
+
+== Requires ==
+- Depends on augeas module, available here:
+  http://github.com/camptocamp/puppet-augeas
+- you have to define a global path for exec, like:
+  Exec { path => "/usr/bin:/bin/...." } 
+  You can put it in globals.pp
+
