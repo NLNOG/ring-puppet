@@ -1,7 +1,7 @@
 class rubygems::moneta {
   require rubygems
-  package{'libmoneta-ruby1.8':
+  package{'moneta':
     ensure => present,
-    provider => apt,
+    provider => gem,
   }
 }
