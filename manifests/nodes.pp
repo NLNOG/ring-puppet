@@ -338,7 +338,7 @@ node 'dbmaster.infra' inherits infranode {
     include syslog_ng::client
     include nodesonlycron
     include users
-    mysql::server { "mysql":
+    class { "mysql::server": 
         config_hash => {
             'root_password' => trocla("mysql_${fqdn}",'plain'),
             'server-id'     => '666',
