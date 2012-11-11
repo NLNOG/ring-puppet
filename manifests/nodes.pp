@@ -344,7 +344,7 @@ node 'dbmaster.infra' inherits infranode {
     include nodesonlycron
     include users
     include mysql::server::large
-    include mysql::master::large
+    include mysql::master
 }
 
 node 'db01.infra' inherits dbslaves {
