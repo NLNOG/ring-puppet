@@ -344,9 +344,12 @@ node 'dbmaster.infra' inherits infranode {
     include syslog_ng::client
     include nodesonlycron
     include users
-    $mysql_serverid = "666"
-    $mysql_password = trocla("mysql_${fqdn}",'plain')
-    include mysql::master::large
+    mysql::server { "mysql":
+        config_hash => {
+            'root_password' => trocla("mysql_${fqdn}",'plain'),
+            'server-id'     => '666',
+        }
+    }
 }
 
 node 'db01.infra' inherits dbslaves {
@@ -357,8 +360,12 @@ node 'db01.infra' inherits dbslaves {
     include syslog_ng::client
     include nodesonlycron
     include users
-    $mysql_password = trocla("mysql_${fqdn}",'plain')
-    $mysql_serverid = "1"
+#    mysql::server { "mysql":
+#        config_hash => {
+#            'root_password' => trocla("mysql_${fqdn}",'plain'),
+#            'server-id'     => '1',
+#        }
+#    }
 }
 node 'db02.infra' inherits dbslaves {
     $owner = "job"
@@ -368,8 +375,12 @@ node 'db02.infra' inherits dbslaves {
     include syslog_ng::client
     include nodesonlycron
     include users
-    $mysql_password = trocla("mysql_${fqdn}",'plain')
-    $mysql_serverid = "2"
+#    mysql::server { "mysql":
+#        config_hash => {
+#            'root_password' => trocla("mysql_${fqdn}",'plain'),
+#            'server-id'     => '2',
+#        }
+#    }
 }
 node 'db03.infra' inherits dbslaves {
     $owner = "job"
@@ -379,9 +390,12 @@ node 'db03.infra' inherits dbslaves {
     include syslog_ng::client
     include nodesonlycron
     include users
-    $mysql_password = trocla("mysql_${fqdn}",'plain')
-    $mysql_serverid = "3"
-    include mysql::server::large
+    mysql::server { "mysql":
+        config_hash => {
+            'root_password' => trocla("mysql_${fqdn}",'plain'),
+            'server-id'     => '3',
+        }
+    }
 }
 node 'db04.infra' inherits dbslaves {
     $owner = "job"
@@ -391,8 +405,12 @@ node 'db04.infra' inherits dbslaves {
     include syslog_ng::client
     include nodesonlycron
     include users
-    $mysql_password = trocla("mysql_${fqdn}",'plain')
-    $mysql_serverid = "4"
+#    mysql::server { "mysql":
+#        config_hash => {
+#            'root_password' => trocla("mysql_${fqdn}",'plain'),
+#            'server-id'     => '4',
+#        }
+#    }
 }
 node 'db05.infra' inherits dbslaves {
     $owner = "job"
@@ -402,8 +420,12 @@ node 'db05.infra' inherits dbslaves {
     include syslog_ng::client
     include nodesonlycron
     include users
-    $mysql_password = trocla("mysql_${fqdn}",'plain')
-    $mysql_serverid = "5"
+#    mysql::server { "mysql":
+#        config_hash => {
+#            'root_password' => trocla("mysql_${fqdn}",'plain'),
+#            'server-id'     => '5',
+#        }
+#    }
 }
 
 # website, dns, mailing-list etc

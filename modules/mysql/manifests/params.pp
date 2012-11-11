@@ -1,34 +1,118 @@
+# Class: mysql::params
+#
+#   The mysql configuration settings.
+#
+# Parameters:
+#
+# Actions:
+#
+# Requires:
+#
+# Sample Usage:
+#
 class mysql::params {
 
-  $mycnf = $operatingsystem ? {
-    /RedHat|Fedora|CentOS/ => "/etc/my.cnf",
-    default => "/etc/mysql/my.cnf",
+  $bind_address        = '127.0.0.1'
+  $port                = 3306
+  $etc_root_password   = false
+  $ssl                 = false
+  $restart             = true
+
+  case $::operatingsystem {
+    'Ubuntu': {
+      $service_provider = upstart
+    }
+    default: {
+      $service_provider = undef
+    }
   }
 
-  $mycnfctx = "/files${mycnf}"
+  case $::osfamily {
+    'RedHat': {
+      $basedir               = '/usr'
+      $datadir               = '/var/lib/mysql'
+      $service_name          = 'mysqld'
+      $client_package_name   = 'mysql'
+      $server_package_name   = 'mysql-server'
+      $socket                = '/var/lib/mysql/mysql.sock'
+      $pidfile               = '/var/run/mysqld/mysqld.pid'
+      $config_file           = '/etc/my.cnf'
+      $log_error             = '/var/log/mysqld.log'
+      $ruby_package_name     = 'ruby-mysql'
+      $ruby_package_provider = 'gem'
+      $python_package_name   = 'MySQL-python'
+      $java_package_name     = 'mysql-connector-java'
+      $root_group            = 'root'
+      $ssl_ca                = '/etc/mysql/cacert.pem'
+      $ssl_cert              = '/etc/mysql/server-cert.pem'
+      $ssl_key               = '/etc/mysql/server-key.pem'
+    }
 
-  $data_dir = $mysql_data_dir ? {
-    "" => "/var/lib/mysql",
-    default => $mysql_data_dir,
-  }
+    'Debian': {
+      $basedir              = '/usr'
+      $datadir              = '/var/lib/mysql'
+      $service_name         = 'mysql'
+      $client_package_name  = 'mysql-client'
+      $server_package_name  = 'mysql-server'
+      $socket               = '/var/run/mysqld/mysqld.sock'
+      $pidfile              = '/var/run/mysqld/mysqld.pid'
+      $config_file          = '/etc/mysql/my.cnf'
+      $log_error            = '/var/log/mysql/error.log'
+      $ruby_package_name    = 'libmysql-ruby'
+      $python_package_name  = 'python-mysqldb'
+      $java_package_name    = 'libmysql-java'
+      $root_group           = 'root'
+      $ssl_ca               = '/etc/mysql/cacert.pem'
+      $ssl_cert             = '/etc/mysql/server-cert.pem'
+      $ssl_key              = '/etc/mysql/server-key.pem'
+    }
 
-  $backup_dir = $mysql_backupdir ? {
-    "" => "/var/backups/mysql",
-    default => $mysql_backupdir,
-  }
+    'FreeBSD': {
+      $basedir               = '/usr/local'
+      $datadir               = '/var/db/mysql'
+      $service_name          = 'mysql-server'
+      $client_package_name   = 'databases/mysql55-client'
+      $server_package_name   = 'databases/mysql55-server'
+      $socket                = '/tmp/mysql.sock'
+      $pidfile               = '/var/db/mysql/mysql.pid'
+      $config_file           = '/var/db/mysql/my.cnf'
+      $log_error             = "/var/db/mysql/${::hostname}.err"
+      $ruby_package_name     = 'ruby-mysql'
+      $ruby_package_provider = 'gem'
+      $python_package_name   = 'databases/py-MySQLdb'
+      $java_package_name     = 'databases/mysql-connector-java'
+      $root_group            = 'wheel'
+      $ssl_ca                = undef
+      $ssl_cert              = undef
+      $ssl_key               = undef
+    }
 
-  $replication_binlog_format = $replication_binlog_format ? {
-    "" => "STATEMENT",
-    default => $replication_binlog_format,
-  }
+    default: {
+      case $::operatingsystem {
+        'Amazon': {
+          $basedir               = '/usr'
+          $datadir               = '/var/lib/mysql'
+          $service_name          = 'mysqld'
+          $client_package_name   = 'mysql'
+          $server_package_name   = 'mysql-server'
+          $socket                = '/var/lib/mysql/mysql.sock'
+          $config_file           = '/etc/my.cnf'
+          $log_error             = '/var/log/mysqld.log'
+          $ruby_package_name     = 'ruby-mysql'
+          $ruby_package_provider = 'gem'
+          $python_package_name   = 'MySQL-python'
+          $java_package_name     = 'mysql-connector-java'
+          $root_group            = 'root'
+          $ssl_ca                = '/etc/mysql/cacert.pem'
+          $ssl_cert              = '/etc/mysql/server-cert.pem'
+          $ssl_key               = '/etc/mysql/server-key.pem'
+        }
 
-  $logfile_group = $mysql_logfile_group ? {
-    '' => $operatingsystem ? {
-        'RedHat' => 'mysql',
-        'Debian' => 'adm',
-        default  => 'adm',
-      },
-    default => $mysql_logfile_group,
+        default: {
+          fail("Unsupported osfamily: ${::osfamily} operatingsystem: ${::operatingsystem}, module ${module_name} only support osfamily RedHat, Debian, and FreeBSD, or operatingsystem Amazon")
+        }
+      }
+    }
   }
 
 }
