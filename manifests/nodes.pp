@@ -343,7 +343,7 @@ node 'dbmaster.infra' inherits infranode {
     include syslog_ng::client
     include nodesonlycron
     include users
-#    include mysql::server::large
+    $mysql_serverid = "666"
     include mysql::master::large
 }
 
@@ -373,6 +373,9 @@ node 'db03.infra' inherits dbslaves {
     include syslog_ng::client
     include nodesonlycron
     include users
+    $mysql_serverid = "3"
+    include mysql::slave::large
+
 }
 node 'db04.infra' inherits dbslaves {
     $owner = "job"
