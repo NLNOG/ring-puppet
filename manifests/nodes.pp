@@ -53,7 +53,7 @@ node 'master01' inherits infranode {
     include syslog_ng::server
     include apache2
     include mastercronjobs
-    include trocla::master
+    include trocla::config
     include usage_statistics
     include nagios::defaults
     include nagios::headless
