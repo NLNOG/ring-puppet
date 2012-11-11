@@ -96,6 +96,11 @@ class nagios::base {
     Nagios_timeperiod <<||>>
     File <<| tag == 'nagios_plugin' |>>
 
+    # clean up old nagios config
+    resources { [ "nagios_service", "nagios_servicedependency", "nagios_host" ]:
+        purge => true;
+    }
+
     Nagios_command <||> {
         target => "${nagios::defaults::vars::int_nagios_cfgdir}/conf.d/nagios_command.cfg",
         require => File['nagios_confd'],
