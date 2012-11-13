@@ -35,6 +35,12 @@ node ringnode inherits basenode {
         ensure  => "stopped",
         enable  => false,
     }
+    file { "/etc/puppet/puppet.conf":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/puppet/puppet.conf"
+    }
 }
 
 node infranode inherits basenode {
