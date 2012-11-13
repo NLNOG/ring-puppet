@@ -2400,3 +2400,14 @@ node 'itmastaren01' inherits ringnode {
     include set_local_settings                                                  
     include users
 }
+
+node 'openminds01' inherits ringnode {
+    $owner = "openminds"
+    $location = "0,0"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

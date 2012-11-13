@@ -167,6 +167,7 @@ ring-glesys01:v6 2a02:750:7::392
 ring-rcsrds01:v6 2a02:2f02:b030:1::2
 ring-indit01:v6 2a01:298:f001:a::7
 ring-itmastaren01:v6 2a00:7800:8000::36
+ring-openminds01:v6 2a02:d08:1001:201::1000
 ring-staging01 213.154.236.191
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
@@ -335,3 +336,4 @@ ring-glesys01 109.74.6.228
 ring-rcsrds01 82.79.149.42
 ring-indit01 178.16.220.7
 ring-itmastaren01 81.94.161.36
+ring-openminds01 188.93.100.32
