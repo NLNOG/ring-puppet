@@ -327,7 +327,7 @@ node 'container05.infra' inherits infranode {
     include kvm
     munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
     }
-    $nagios_ping_rate = '!150.0,20%!300.0,60%'
+    $nagios_ping_rate = '!180.0,20%!300.0,60%'
     
     kvm::virtual_machine { 'db05':
         fqdn        => 'db05.infra.ring.nlnog.net',
@@ -454,6 +454,7 @@ node 'db05.infra' inherits dbslaves {
     include syslog_ng::client
     include nodesonlycron
     include users
+    $nagios_ping_rate = '!180.0,20%!300.0,60%'
 #    mysql::server { "mysql":
 #        config_hash => {
 #            'root_password' => trocla("mysql_${fqdn}",'plain'),
