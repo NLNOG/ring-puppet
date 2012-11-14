@@ -674,6 +674,10 @@ ring-itmastaren01:v6,icmp,D,0,86400000,60000
 ring-itmastaren01:v6,icmp,D,0,86400000,60000, -s 576
 ring-itmastaren01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-openminds01:v6,icmp,D,0,86400000,60000
+ring-openminds01:v6,icmp,D,0,86400000,60000, -s 576
+ring-openminds01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging01,icmp,D,0,86400000,60000
 ring-staging01,icmp,D,0,86400000,60000, -s 576
 ring-staging01,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1345,4 +1349,8 @@ ring-indit01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-itmastaren01,icmp,D,0,86400000,60000
 ring-itmastaren01,icmp,D,0,86400000,60000, -s 576
 ring-itmastaren01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-openminds01,icmp,D,0,86400000,60000
+ring-openminds01,icmp,D,0,86400000,60000, -s 576
+ring-openminds01,scamper,D,0,86400000,900000, -P udp-paris -M
 

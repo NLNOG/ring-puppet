@@ -2678,5 +2678,25 @@ class users::virtual::ring_users {
 
 ##### END itmastaren #####
 
+##### BEGIN openminds #####
+
+    @add_user { 'openminds':
+        email => 'tech@openminds.be',
+        company => 'Openminds bvba',
+        uid => '5151',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'openminds':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA+3/UxYdsWmOyO6Ozlo4hTvOiNr8UTkH9YO/jDRtRzsv+ytE+KmI4HOdxxZZvSt3vHXCuIfLgHq+GglQzsfHnL4+Ec9cK8m2qRoovpYAx+MVPIlGCSTddMP3Vt7AKy2o0YFlwsj4cW7B2Pcx9ct/wS1eQJM5rCswdkuMZpDuMvU7zZtoBWmjqL+7jFzd1zxKJ4nh5iI55qdxryQD80TR996w+aszYdKO/ypgkSfzAy2iatNVT37Lp2DUpVZ6yGvLStml2j4tyVDNEtcJ/cEh83blKotHfXd+r9IkyCvhYRsd+mCwd0Jg0600wgfP26vSKwXJZv8CJcq9/+msuPnx9TQ==',
+                'ssh-dsa AAAAB3NzaC1kc3MAAACBAIZjYwPsNQewxb0l9fCOq/9yvHxdswDBNe+n10qFfRSlTDIiJhBkzlgX0bO6F5UDvZav9RXuLL/0U1s59hqPHdaOoXfQRrLBUiyjyy5oyQUHqN+FBaAkywBbjhDZVAxMCC9sZdzX5To6W022hkUS6b5wIsn+8RS7yCf5GaQ6RabvAAAAFQDd1gLANwISYMEebqWoCYmRAi/mqwAAAIBY9sS71739+3a9NIDM3YR7KFLuy3HiOTvuFR8fiTInZWT3/NV9wnqml8xtz0CjI5txDx7RNoPaK+yja87rflMyCu4WF5xT9TIvN3Sd/qAbDEZZr8nAvu945pRoSByITT4d2dwT9sRrh2g44BFCISMGQXJsGQ/vZ4ehSS7OirfB9wAAAIBH8tSGYColc0E2mXopWS0jv5kx7NoyaLmMaINuZiOHADuJSCwiZie6oQFwrPlpJv2CdlGdagfovnzrjK/ZJsaXBN71RVcQC1EAvZQ4YKZpeCEFqkG/oQdblgzcU+yZSB7Jltau7OGr40+fBB79hJXU3mXMY0z7j3YePirS/dqv5A== bernardgrymonpon@dhcp106.om',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA3EItOq3wlQg6RuSif50f5hI7ljiqS7YBiZCg8xmAL+TEYXo61u2xBceyajExhE0tNhv7VDY9csgOoe1PZtmAXf2vn1E1CnuDKWPxH9jVuWOaHcidSJu6Y5f9z3gEM//KXYyWYDsoEv0k9hOlvFJw/TACcoo5IIavFWeJLqaUDVIUsSd2eHfSciNlcHSFMcc48wGqI7hzkaq9Xu0Q/Zdn97FohOprjI1web+nkECGL4LW968xY/K6w1F91vI6ia8FWv1EO9ReKcITFaOuVIJXbon/PLaaHDtGDl9gRMXnAQIGtgm2/lhpNltuY/0kbhzr9Yl3ET+vyRnrBrIxFebldw== bram@bram-laptop',
+                'ssh-dss AAAAB3NzaC1kc3MAAACBAO0unJBSVGhmOAiTqTothJofYyVWwi/CF8lCQzlt+lk7rJUkGDGC1ovmmHDaJPC1K1e5mmoj6X4TcWta7p77Lufhu9DxfrUMSqngOd7TZFSFu5jEVmMR8Gm31n+iBEz/6fCbF35h2JTqyq5ccV1rCSXV1jxdeA8VrBVjw5GVnCg9AAAAFQDbET4YAiJq+nrC5hxmfI+vohmYdQAAAIABM7fWiTjNPB3GQB7EXORKpUSR0WkG8Sqdc3vculuPOaQqRgtD1Mfb1kWJxuKzUAzxXa64T1oc5aSp6BsVuL3Mfh1lx/XEsBLb5HJiIpJYZ8YZVunCBddkuLKJ3QCc7/c/SS5yS80krVReVNYU34qkXAv3zGhno4oEQCHMvarF+QAAAIBxHXM8AK06Tmejx/opTySWoDIFubmeMs3y8dRI1OXefjxmHo3c6DvOu2lkHsAyO5uMuYNHjgK+0KTSdz6eCx0QkLzAeKj6Z/v0d+8puJ6OffIBgg+nO+QVYfTCEc4IU6f+RsDc4xxZY+2hl0mFejtwWNAhj7eBQy/wpQpcsDFIRw== frank@tembo.frank.be',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAgfP+NEFaqTEcNbRO8U1DBRTVKzmSobxjy56WRIGZn/0mKzaR7O+OooWYe2nuz4z9bWn8u9DpJTO+f5v59f3wnoHMA3EyogmPsQyUQrZygHiqi0KpCz7QdYQcyZcGfcV/01qWjJR+QoFbWn7be7Q6fVViv91Asw0wXicfGNoiB98= rsa-key-20101006-robbe',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA5jLR2PRDwgelTm9HOc78Ky8ixkHzIl2TfUdYoYGnJ7JkqP4oOo0/EXf1DSDbFTKzDvUmUF7WfEs4QONSvyO/15rIurG+lz6qF28++Bh+8s0E267YmizqIGpLF4rrdQORTARAbkOklKoOh63dFgayXXVOOj0Xw7G0tuh6Nc8jvAHDevI++gZZc/MDdfZSmy7+HoVXPEa20ns5FVY3P+cNcljoLBE11rVy1gEwy7twN51re0ipD81h1/8P75L6XkAmjd6IYjRV8hIBDKV1PrkZkEqF8bTZdjarYgyYI7Gmva1ngGWwVdu0HLQRcYmyrxEHepFXgCWbScDDSQX3+FPt/w== steven@openminds.be',
+            ],
+    }
+
+##### END openminds #####
 
 }
