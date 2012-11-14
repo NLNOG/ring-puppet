@@ -15,6 +15,9 @@ class master_software {
 }
 
 class nettools {
+    # for BGPmon stuff (requested by dave) 
+    package { "libxml2-dev": ensure => latest }
+
     package { "libcache-cache-perl": ensure => latest }
     package { "httping": ensure => latest }
 
