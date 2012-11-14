@@ -266,6 +266,20 @@ node 'container03.infra' inherits infranode {
         container   => "${hostname}",
         ensure      => present,
     }
+    kvm::virtual_machine { 'bgpmon':
+        fqdn        => 'bgpmon.infra.ring.nlnog.net',
+        ip          => '78.152.42.68', # ipv6 address is 2a02:d28:666::68
+        netmask     => '255.255.255.240',
+        dns         => '8.8.8.8',
+        gateway     => '78.152.42.65',
+        memory      => '2048',
+        disksize    => '20',
+        rootsize    => '19968',
+        bridge      => 'virbr1',
+        container   => "${hostname}",
+        ensure      => present,
+    }
+
 }
 
 # container04 is hosted at Bit in Ede
@@ -330,6 +344,17 @@ node 'container05.infra' inherits infranode {
     }
 
 }
+
+node 'bgpmon.infra' inherits infranode {
+    $owner = "job"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include syslog_ng::client
+    include nodesonlycron
+    include users
+}
+
 
 # db boys
 
