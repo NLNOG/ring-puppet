@@ -5,6 +5,8 @@
 
 router id <%= ipaddress %>; 
 
+mrtdump "/var/run/mrtdump6";
+
 timeformat protocol iso long;
 
 template bgp peers {
