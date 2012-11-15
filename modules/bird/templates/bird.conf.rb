@@ -5,7 +5,7 @@
 
 router id <%= ipaddress %>; 
 
-mrtdump "/var/run/mrtdump6";
+mrtdump "/var/run/mrtdump4";
 
 timeformat protocol iso long;
 
