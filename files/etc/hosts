@@ -582,3 +582,16 @@ ff02::2 ip6-allrouters
 2a02:d08:1001:201::1000  openminds01 openminds01.ring.nlnog.net
 188.93.100.32    openminds01 openminds01.ring.nlnog.net
 
+2a02:2350:1:1201::1  one01 one01.ring.nlnog.net
+46.30.209.1    one01 one01.ring.nlnog.net
+
+2001:770:1c:7::c101:2117  heanet01 heanet01.ring.nlnog.net
+193.1.33.23    heanet01 heanet01.ring.nlnog.net
+
+2001:1291:400:e::b  algar01 algar01.ring.nlnog.net
+187.72.248.26    algar01 algar01.ring.nlnog.net
+
+2a03:c300:ffff:fffe::d  qbranch01 qbranch01.ring.nlnog.net
+217.151.198.151    qbranch01 qbranch01.ring.nlnog.net
+
+2001:67c:14c0:0:213:72ff:fefb:12d1  nlnetlabs01 nlnetlabs01.ring.nlnog.net

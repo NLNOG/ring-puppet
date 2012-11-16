@@ -2700,4 +2700,85 @@ class users::virtual::ring_users {
 
 ##### END openminds #####
 
+##### BEGIN one #####
+
+    @add_user { 'one':
+        email => 'network@one.com',
+        company => 'One.com',
+        uid => '5152',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'one':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDhkOHi/OmAw/myHI9DNwrElNQ3nTUwhTcGIAJlGJ0bctATcBmfAXA+0nbR5IOFuZIyyVQuA1nOUYU56RlMnTXRVcvJMXj6Dbc8P1IlaqQzMQRgVLNvjsNKRwwb7sosZr3CKgDfawWpWg7Sn0zxugynQbLLp0ay6yND5JVTBcu5bQnFu2Hjw2S0Bv3njmJvrIyLe+TLONlVoO1Q7qPq9QL106SzVd+X1pEMY491rRC0Bmt8SU1wWWi8kGSfoWQTdVb1VrfiW0HNEL/PJXSzk10IgALu7b3OoXksyyETh7E3uVJbs10HLQ+ArrCxhsVoTtTK7y77ecfEIVT26WvrnLqv mph@one.com',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAnUmELcX+cclAvFipLKkIMhd2yx1bfDKZaDPg/TzNuqxJzq6qTzYinrOy5IyAK84t62prPiqSkIrX8mcDdBD2v5gy+/QDAee+d7I+U+XXer45kjlO8QULTCPL1Op2+HGJtvfcS7TpD184AzgO1JTnfo6Xz9rM2tjTdQt+YGWPogN+V/Sjjrpz/shOJwyIaGTpRZzcUWXl+KJAnQuRWR6Qq0FhpsHv5z93e6bW90at9W7fUqRFnzRgrfCpFBeWN8MOCrmdHyXrw6KyUNHf+FWAMHUnd3E9G28BTrT7zM8UEMdxPdedqiDQnHjWfgO9lNIP0zVD0Rca94imcjKZPxsJzQ== mmk@one.com',
+            ],
+    }
+
+##### END one #####
+
+##### BEGIN heanet #####
+
+    @add_user { 'heanet':
+        email => 'noc@heanet.ie',
+        company => 'HEAnet',
+        uid => '5155',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'heanet':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDwuol6pJXWyIhX1wpRjPtEBHo9uZXq+1R6kNv3Cq4q1uix/C96XYLOa6mBLQfOQD+MLuVlnLfp5am4v+r1UyHyKXwiPKRtmfS76lGrAhGuH30oa8Y/eRo/s1hEmbrBCdxPT6xk2C8LaC3HY7lqiYB2zqrjbrzy6zuB/suMoLWvMxFhBrZKiJScm4iAV0b7LkQma59nP4FHt/OMwUbJ2irR64C/KvgC0wWNy/SWBlF9BnYqi1Tur1W1+u8s2/T/I5ymE1pM7lF/q7/cIsCX8HKC11W2MhGIWRMpl3YB3vZt2a5CzlqSG4EyzkBLw3AHadpiGBYhkK19KVIZHANi4hvf bass@conchy.heanet.ie',
+            ],
+    }
+
+##### END heanet #####
+
+##### BEGIN algar #####
+
+    @add_user { 'algar':
+        email => 'cordados@ctbc.com.br',
+        company => 'Algar Telecom',
+        uid => '5156',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'algar':
+        sshkeys => [
+            ],
+    }
+
+##### END algar #####
+
+##### BEGIN qbranch #####
+
+    @add_user { 'qbranch':
+        email => 'networking@qbranch.se',
+        company => 'Qbranch Services AB',
+        uid => '5157',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'qbranch':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCu8jMiR/OCtNmLoGC+ajidg8/xYI3eCzvVMx7yUFfRmBtN73KpqLUWtZDzcfQmq0VOQT0jmzE/surOtmWg1xZ6K6ycuz2MUyOyeZsysywD28qMxV6lnIy7zNE5XYhTihveCUmMYuzF30H1y0FHsuEvCOKaYEP1319EyPly3ZGlV8HxCQ4/DOJ5AWiLYVlBAUBuSLnVGXefTIpgFvYYDnrzerOJcPVdkNQBf6Da8EPFXeY0+CntUTLRDbEIuRKQVSEm+xCB5ebONamK9fWy2AQ4dQp574xRyziiN1jCTBF9bKsrIRiLctdgHvRsxycA0XxmZ+ypXBicuH8ggGfiaZUqezR78uwFInquRBgGl8tcKRP+BgPiAdPsz8O/bKhPdBR6vErtLsVXPqbhC72+mdPIe7p76h4MjLUsTAT2Yb0Oc2zACo/xIJ/GZHtxIlwRRBRx5B8mlEbyjblzPuzj353+DEDbTJQNUQpar3+CaThDMREbql8raxvivwx8bPI34wq/eFisnVTnkFy3yLGOahGXYZTA6BeqTpvxC5qTO+GZOf03Qlfz69YWGFK9q9k87X1JSYvicN+GD50A2WsxOzxK5G1r3AWkF8zaQCclTVRLOzXAA1skAj6NK/bdBigqmYsQ9i8FmNOrpUsii2dXQ6bYkeVRTcGBN1IUA+4o2Utg1w== qbranch@qbranch01.ring.nlnog.net',
+            ],
+    }
+
+##### END qbranch #####
+
+##### BEGIN nlnetlabs #####
+
+    @add_user { 'nlnetlabs':
+        email => 'tech-admin@nlnetlabs.nl',
+        company => 'NLnet Labs',
+        uid => '5158',
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'nlnetlabs':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3kccqWtnb/IqOFZdc8o7YIvODgB8oybaj12DY4oMBTvbmtZI/Mz6EsjFvN8dV5kUkpAn+vdPsHlp/KOU9bBdZB3T8uww+jMsikY8zyIwqvkhCuaB3JpKakXiYpukqIp07s7R/k98F6TO1lWEkcWwEjmYFcIT+qE+FO0XFw3wisT/i9CCcT6WIqD0y3xqZW3lzcKhgZmwV3hwvpFSBCDhThZHGBRmpYLbnquOLLZ9YGcZ/4qSTZk2NO9GSmc2yr69yZXhmJYkN352vscirJLbfdNlov24OMKQWORfwzOXxuMqGex+6CaWSouGEI6hfnx7zYyt/dkjp6pqAtuvE32+L willem@mirre.nlnetlabs.nl',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAtSfTaVfBMMkcO6AoXi9OQ7HW7pXg/feztkJ6O3Go+VEf02coAurp1M9+SvyS47yYixEWKgrBWq9qX9vJTp03CTGukg4F+8s2yt1Do+oa8ed+dCA1JcljmGVgvT98vMYCz4fly5us/OEVqLP3vBsGQ22Qq00DuNqzbQutqJ4PNbvncmxMUS3Xy/zwqXEEses9XKPCIJzMRHfA2Uvi2qid45GopP6ndDcUY11ziO4jI9q5EbRnMU3lPNw/hv8Fjn+6eAto5EXSZSWV/FLpQMJ9Qa50PzMdRcgv6j8UyRqS1q3AW/3B9+cCWQM3GM8K8qwTjNRzDDfK8JLvM5i/++UIIw== bjo@tinkerbell.nlnetlabs.nl',
+            ],
+    }
+
+##### END nlnetlabs #####
+
 }

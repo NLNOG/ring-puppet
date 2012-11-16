@@ -678,6 +678,26 @@ ring-openminds01:v6,icmp,D,0,86400000,60000
 ring-openminds01:v6,icmp,D,0,86400000,60000, -s 576
 ring-openminds01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-one01:v6,icmp,D,0,86400000,60000
+ring-one01:v6,icmp,D,0,86400000,60000, -s 576
+ring-one01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-heanet01:v6,icmp,D,0,86400000,60000
+ring-heanet01:v6,icmp,D,0,86400000,60000, -s 576
+ring-heanet01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-algar01:v6,icmp,D,0,86400000,60000
+ring-algar01:v6,icmp,D,0,86400000,60000, -s 576
+ring-algar01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-qbranch01:v6,icmp,D,0,86400000,60000
+ring-qbranch01:v6,icmp,D,0,86400000,60000, -s 576
+ring-qbranch01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-nlnetlabs01:v6,icmp,D,0,86400000,60000
+ring-nlnetlabs01:v6,icmp,D,0,86400000,60000, -s 576
+ring-nlnetlabs01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging01,icmp,D,0,86400000,60000
 ring-staging01,icmp,D,0,86400000,60000, -s 576
 ring-staging01,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1353,4 +1373,20 @@ ring-itmastaren01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-openminds01,icmp,D,0,86400000,60000
 ring-openminds01,icmp,D,0,86400000,60000, -s 576
 ring-openminds01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-one01,icmp,D,0,86400000,60000
+ring-one01,icmp,D,0,86400000,60000, -s 576
+ring-one01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-heanet01,icmp,D,0,86400000,60000
+ring-heanet01,icmp,D,0,86400000,60000, -s 576
+ring-heanet01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-algar01,icmp,D,0,86400000,60000
+ring-algar01,icmp,D,0,86400000,60000, -s 576
+ring-algar01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-qbranch01,icmp,D,0,86400000,60000
+ring-qbranch01,icmp,D,0,86400000,60000, -s 576
+ring-qbranch01,scamper,D,0,86400000,900000, -P udp-paris -M
 

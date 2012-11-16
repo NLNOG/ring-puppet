@@ -168,6 +168,11 @@ ring-rcsrds01:v6 2a02:2f02:b030:1::2
 ring-indit01:v6 2a01:298:f001:a::7
 ring-itmastaren01:v6 2a00:7800:8000::36
 ring-openminds01:v6 2a02:d08:1001:201::1000
+ring-one01:v6 2a02:2350:1:1201::1
+ring-heanet01:v6 2001:770:1c:7::c101:2117
+ring-algar01:v6 2001:1291:400:e::b
+ring-qbranch01:v6 2a03:c300:ffff:fffe::d
+ring-nlnetlabs01:v6 2001:67c:14c0:0:213:72ff:fefb:12d1
 ring-staging01 213.154.236.191
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
@@ -337,3 +342,7 @@ ring-rcsrds01 82.79.149.42
 ring-indit01 178.16.220.7
 ring-itmastaren01 81.94.161.36
 ring-openminds01 188.93.100.32
+ring-one01 46.30.209.1
+ring-heanet01 193.1.33.23
+ring-algar01 187.72.248.26
+ring-qbranch01 217.151.198.151

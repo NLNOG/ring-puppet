@@ -2446,3 +2446,80 @@ node 'openminds01' inherits ringnode {
     include users
 }
 
+node 'one01' inherits ringnode {
+    $owner = "one"
+    $location = "55.72687,12.37698"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'heanet01' inherits ringnode {
+    $owner = "heanet"
+    $location = "53.333145,-6.369291"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'algar01' inherits ringnode {
+    $owner = "algar"
+    $location = "-20.536090,-47.400950"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'qbranch01' inherits ringnode {
+    $owner = "qbranch"
+    $location = "59.325964,18.00222"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'nlnetlabs01' {
+    include users::virtual::ring_admins
+    include cronjobs
+    include groups
+    include nettools
+    include etcfiles
+    include local_binaries
+    include nlnogrepokey
+    include lang
+#   ipv6 and munin no success yet
+#    include munin::client
+#    munin::plugin { ["users", "tcp", "ntp_offset", "uptime", "threads", "ntp_kernel_pll_off", "diskstats", "proc_pri", "iostat_ios"]:
+#    }
+#    package{ "munin": ensure => purged, }
+
+    include ssh
+    include timezone
+#   ipv6 and fail2ban are not ok
+#    include fail2ban-whitelist
+    $postfix_smtp_listen = "127.0.0.1"
+    $root_mail_recipient = "ring-admins@ring.nlnog.net"
+    $postfix_myorigin = ""
+    include postfix
+    include resolving
+    include users::virtual::ring_users
+    include no-apache2
+    include syslog_ng::client
+    include nodesonlycron
+
+    $owner = "nlnetlabs"
+    $location = "52.356387,4.955663"
+    include amp_client                                                    
+    include nagios::target::fqdn                                                
+    include nagios_services                                                     
+    include set_local_settings                                                  
+    include users
+}
