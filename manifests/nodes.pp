@@ -2457,6 +2457,16 @@ node 'one01' inherits ringnode {
     include users
 }
 
+node 'networking4all01' inherits ringnode {
+    $owner = "networking4all"
+    $location = "52.345054,4.832804"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
 node 'heanet01' inherits ringnode {
     $owner = "heanet"
     $location = "53.333145,-6.369291"
