@@ -2710,9 +2710,9 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'one':
         sshkeys => [
-                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDhkOHi/OmAw/myHI9DNwrElNQ3nTUwhTcGIAJlGJ0bctATcBmfAXA+0nbR5IOFuZIyyVQuA1nOUYU56RlMnTXRVcvJMXj6Dbc8P1IlaqQzMQRgVLNvjsNKRwwb7sosZr3CKgDfawWpWg7Sn0zxugynQbLLp0ay6yND5JVTBcu5bQnFu2Hjw2S0Bv3njmJvrIyLe+TLONlVoO1Q7qPq9QL106SzVd+X1pEMY491rRC0Bmt8SU1wWWi8kGSfoWQTdVb1VrfiW0HNEL/PJXSzk10IgALu7b3OoXksyyETh7E3uVJbs10HLQ+ArrCxhsVoTtTK7y77ecfEIVT26WvrnLqv mph@one.com',
-                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAnUmELcX+cclAvFipLKkIMhd2yx1bfDKZaDPg/TzNuqxJzq6qTzYinrOy5IyAK84t62prPiqSkIrX8mcDdBD2v5gy+/QDAee+d7I+U+XXer45kjlO8QULTCPL1Op2+HGJtvfcS7TpD184AzgO1JTnfo6Xz9rM2tjTdQt+YGWPogN+V/Sjjrpz/shOJwyIaGTpRZzcUWXl+KJAnQuRWR6Qq0FhpsHv5z93e6bW90at9W7fUqRFnzRgrfCpFBeWN8MOCrmdHyXrw6KyUNHf+FWAMHUnd3E9G28BTrT7zM8UEMdxPdedqiDQnHjWfgO9lNIP0zVD0Rca94imcjKZPxsJzQ== mmk@one.com',
-            ],
+            'ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBIKxLYOvbSvV5fF9jWYH3lGziE2Rt/E54pYN5WGWU2E0Aogo1gWHVWCqhSq1wqTdUCciPeH28odmkTr3YVTGTL4= mph@one.com (ring)',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJEGIHKyF/NrZszbWq+fc7jZITYdGvcz6EoQs77+4ZPbjUTLbDoPXx2sDij0XyPi91jQw3aAYxhT4toVbeF5KodD9HqZEaK7jkVkwDvjMg/6Fa4FVlhbiGZMAO8/UiiaWPxiK8Ayv9ukN13pzpbHFi5PzuvQ8gBNjM2wAHVdXVsJ18KIut1MzXFq3w35wPsIHwZ7xU/Z4hdjw67ZS3wdHeMxuMcC15yquT79Y0QnPnrb12nen8l7xgjJgIncIst4cXBgeBLNe3vgz7MAZXNczj22fZVmQBTHbmclHY/xFu55tFVR2S//IAd7pXSV5mi2ALy9Pb12X3TkVeP31Gnrlv mmk@one.com (ring)',
+        ],
     }
 
 ##### END one #####
