@@ -12,7 +12,6 @@ class master_software {
     package { "etckeeper": ensure => latest }
     package { "puppetmaster-common": ensure => latest }
     package { "apache2-mpm-prefork": ensure => latest }
-    package { "python-pycountry": ensure => latest }
 }
 
 class nettools {
