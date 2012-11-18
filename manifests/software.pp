@@ -41,6 +41,9 @@ class nettools {
     package { "python-software-properties":
         ensure  => latest,
     }
+    package { "python-pycountry":
+        ensure  => latest,
+    }
     package { "psmisc":
         ensure => latest,
     }
