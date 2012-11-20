@@ -2477,6 +2477,11 @@ class users::virtual::ring_users {
     @authorized_keys { 'poznan':
         sshkeys => [
                 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9iDzrLnGZ0qxXemACbjmnDsGU5Oz/OtE90fpU1mWR3m3CoKSZ7w2k8p3tTrKPi6j+igYg0/W43HE8/ywUQV02tAksgTLyAxUDtuRgBrl7G3Z0/dhHXkccpwoU2j3GZcGK8N2t66n4r9iHGAhvgrX6WVJjTsDBK9I6sG8QCEVWO9Qgmesyzs8B2JM06t2bc/zyf2eBVuuRHSrkSBISmBtvCczaC6fyprFkoPmJjhDbkSOHTlwbx4LZOngeTYS6D6HRtPgfrr2sV2vINBpBgsxpkTE0xAnvsqIgONfd3VfvFIoiPSD9mLa988QEixJ0Ot5bd/DHLWIfGYEF5tTqtbD5',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAsbijLZHHvKGjGovyF/rM946ak5uQtkE4IZZxHbAiYihdt4WifPzIYhSOMr1fvCwkjScBrKlmtfvVVmRXjZ9w97j7/uLenDSAZsOE8mtnhNYI/sn2KfManuB1mcKrCOxsrnf7Kbfaw6BAZlEMrkRebJOmjOtcUoHVSdfAtByGNhXxO//JZNSTWX0Bg0ZOavFSeUyZwSjl6pLQtNACwj+9gH2FLo68W7ZVnXNMqe/7qw16/TObCcO/+K5jBd5IrZNEuULcupT+MiEO5Y3/pzM5e/G6wwDfkjnJToZXRSuGbR8kDsEmrNi0YYPeFgERbXbSJNyNOx1fafK3oj0Lbiq2FQ== lhx@caraway-m',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQBv3nOtmtLAu20uhb32YhDIO6v3djzwGpnFTTDJOuGJSRuRp9y7tvGUSHJiPzAgFiuvHhsGW/G+zYyTIXfnn7RO+o9k4dlp52CnI6cx46P1ayxNfR7Qiwjk5O6u8H0FvWqBwkjMLIsUwE1Yt9/Pw0CjfeFqlBsLzhTBzai7VFUWcETic+u5gHjPWJJkK59XvOJLu+r0PvpgXbrSUiCSTVorsMVq4VNWWEVMNh1bQN9tCIe8hoROEKrHiyIEXbqI80mY1bwRxkOkj1rCnSNQ+28Joi0pwzlTcxhM5u5y6+Lo14MnUYpUTPaCLblx6J8F+LXLdNe/OgxrslrDYPLEVt9x rsa-key-20070221',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAtIcyGqYkhNk03Oj9FpBtzXP2Bz2T6fgmMwHhGFnqsq7MOuhmkO5m/x7CcniQDNWo1ovnirpHRxRuv+mE00ff0wajrKN0098ma2i1r7x0kFwDz9gymRLkyQvBlGa+A5gc+4tOTMiRl9iSREFR5dufUea1I+Nz/IRacE2N4MBj1MHm0BLv439R57Bwvf2WlD31NYM50jfCqkU2I31K60p8jvwatHmkVfFkSHivPkUh0/VwFHSGHixuA/AqwPHrj2Nhv1SEw42cgstnvdmVJmk5OX7WkDYv4Q266s8wny6Vw6n9nncWvgZfe9tTas4voakk8f7MFDGt1JQUP0G+L2PaCw== operator@rose',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDXJX9qIqFGU8yqEaO/FKZt2dqxuU8oyEIIdAPhciNvqRunMZE3YwhSgho1U2j09jZ3jd2Wv0kn2LiOOmDrBoujrUimUOwFUEwpYKtVItrwofEFMAsI4A3JxOFdAkIqr3fvzhyLFO6p9H0IUKBkQ9ogyJHEjm0iyorQGmJnqTZ52IKGPTe6dwLJXDHJanbhaqTZrHr3Wx30Ct+PIxqly3zMfoKqkrYsgYu8DDm447+rg3zU5KJyoZd9PpodIq3gZh5tqu8wJyf62he5A17YnelmriiBO/SL0y3nQ5dqjAjIUOyP+2tLx/dpYPLKjKGlLXm1QncZip6brtEVNfE4pN4d',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAxt46I0vG6XfcXtPYLeTA8H3XMBBNaoDXDeSc4C76WkT4qIcoEnkMs32M04ivRdxThxM0pjvz0cc3q5X8B6DAxomDG2uhmVs7tLNKwfXk32UosU4YJk6Oawcb532AHux5yf3ofdNPbUEJsqhxbMupX5RVhFIqtX95u9cNtBZnrW9VwWXl+LLDMJUSRJ8a3eAx0Ofd+CwyPq7gc2AWfvdqXfh/J87wfzdrSnQEjL4jZR6J+fZDCc1koLiBYSeZGFAEnPF/cQg9sv2DM+VKgiMyhd1uGDmwzE5TfoW4homJePS5UZWMeHvUWlpB/KqNYyU540hLTdSebSbdZBrm4UnDhQ== wiku@wiku-laptop'
             ],
     }
 
@@ -2685,7 +2690,7 @@ class users::virtual::ring_users {
     @add_user { 'openminds':
         email => 'tech@openminds.be',
         company => 'Openminds bvba',
-        uid => '5151',
+        uid => 5151,
         groups => ['ring-users'],
     }
     @authorized_keys { 'openminds':
@@ -2706,7 +2711,7 @@ class users::virtual::ring_users {
     @add_user { 'one':
         email => 'network@one.com',
         company => 'One.com',
-        uid => '5152',
+        uid => 5152,
         groups => ['ring-users'],
     }
     @authorized_keys { 'one':
@@ -2723,7 +2728,7 @@ class users::virtual::ring_users {
     @add_user { 'networking4all':
         email => 'noc@networking4all.com',
         company => 'Networking4all',
-        uid => '5153',
+        uid => 5153,
         groups => ['ring-users'],
     }
     @authorized_keys { 'networking4all':
@@ -2739,7 +2744,7 @@ class users::virtual::ring_users {
     @add_user { 'heanet':
         email => 'noc@heanet.ie',
         company => 'HEAnet',
-        uid => '5155',
+        uid => 5155,
         groups => ['ring-users'],
     }
     @authorized_keys { 'heanet':
@@ -2755,7 +2760,7 @@ class users::virtual::ring_users {
     @add_user { 'algar':
         email => 'cordados@ctbc.com.br',
         company => 'Algar Telecom',
-        uid => '5156',
+        uid => 5156,
         groups => ['ring-users'],
     }
     @authorized_keys { 'algar':
@@ -2771,7 +2776,7 @@ class users::virtual::ring_users {
     @add_user { 'qbranch':
         email => 'networking@qbranch.se',
         company => 'Qbranch Services AB',
-        uid => '5157',
+        uid => 5157,
         groups => ['ring-users'],
     }
     @authorized_keys { 'qbranch':
@@ -2787,7 +2792,7 @@ class users::virtual::ring_users {
     @add_user { 'nlnetlabs':
         email => 'tech-admin@nlnetlabs.nl',
         company => 'NLnet Labs',
-        uid => '5158',
+        uid => 5158,
         groups => ['ring-users'],
     }
     @authorized_keys { 'nlnetlabs':
