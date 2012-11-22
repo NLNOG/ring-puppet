@@ -2804,4 +2804,23 @@ class users::virtual::ring_users {
 
 ##### END nlnetlabs #####
 
+##### BEGIN entanet #####
+
+    @add_user { 'entanet':
+        email => 'noc@enta.net',
+        company => 'Entanet',
+        uid => 5159,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'entanet':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDVG4XGEGBv4rIzHx1YkBuIbw+Lj1pdIZWftespzbtPufU7r7RwuqJQ1JkjTxOaJ5D3AzD2xni9Zq5lZN0cNogc4kYgqs3D2vQ7ksQUQ5zZ55uzDbptV9lphTDlBulZhuDPXYJZS9i6xiHS+cjoZ9Pe1C+Y93rnLd8tJxhpS8enxQ+kdMiRPPkdcj3q7/Uf2EvfXS3MP3QyKCa9LcuL5bYJWd18Z018C3qHWfhR0GmFhVUblEoBGv3eKRbf8LgrlIl6R7Gw+OE2C5418pyoIP32li8iHqgevi8Vf86X+QvgGPydUXGV0yrf8lKSZnuEZHOSAzVAKNEREF9F+tcO2cl1 steve',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC61OihTzz/PVFzE1m3eu8eqQBwBH6rG8jYRUJRtb/lcxdC7dv8eLVusCgtDkEwTyFc3UjymTOnrsBfTxN7wDotiZtq44d1b7SPcW7b3ZGrosj0DHA8/OHf2l2GS3jYGd1nDB2dvn10Abkg6PgAnDERpNLMskao+Win7P7wR2zAXVQgESMN0lrFUiu67NmiQOV+ECUEfXD7IPgJZUWAs8PnZC2/KC6aziVp683lyEE+8m/dHm8E5v3nWfo8TqFZRuKyLXqCHpy7Uw+U73zcS+WTbZtXH56Kai1gj8VlfJ9w9nMxw7atP9lcX/cXqFBTIwxH3NNP+13wPlRpBCOPuAn1 jake',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCrYBd4UUfWqa8oa6OsnmXAnt53ACNijv7dDZCQFiNAsqeQQbw2bY+P3dWw7+EoJzrnLiXZeCyfez21leDZNvzXw1nFChZwT3zvE4lkqoW/NaktzdJAYKu7Br/hVqH6Lub7hfbtVU/BlUUKYV6PctHCljHupI4sekisAKJitSERuxD15U4r1QHl8Vkq9tkjrAdBqepWSEi47flVA/pnrFOdVEPqXOBQ7FzLFGeHMvr7ksVxPu1R/iziXBg82MO6hHd+cEGHCSRPMOfGCrxy2D4yXAp5khKQU7vFvAkYhonUToq+9N368zr3owF1lkAd2IKDKw0YUFBBrsRqT/GWhZ3V phil',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCbI7FJTVN85yS7TGrxr19Xr+6FFwREUHE1sZMspytWDyRYAohIbChEtaWkpRHmjqbanVeEZG6bqRCnAOO8Wqt0rBBlHDBkRmZpoHPi00ST2d0yElm4E0N6n+p6HuICnGBBZnp6zyG4qETpAQJ+AyrsUFfGjlKDlgGkUj5pD6tQ0aFyx+Kj1FvrUiFwgoANnJwFRCzd1t3joWfiZScZtcDl7ZQyT6v2bP+0poQDOi77oLk5Z/bmFB5ffMs+F2L1vH7FkTGATaH5ADu/sLH1PO/+TEFNFrwzmDFaCPLKjSmVsokX3h4Jt6KxiAo6TX+fpHJASPedLpD4//XcMGBcD449 ming',
+            ],
+    }
+
+##### END entanet #####
+
 }

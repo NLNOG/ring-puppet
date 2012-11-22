@@ -698,6 +698,14 @@ ring-nlnetlabs01:v6,icmp,D,0,86400000,60000
 ring-nlnetlabs01:v6,icmp,D,0,86400000,60000, -s 576
 ring-nlnetlabs01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-networking4all01:v6,icmp,D,0,86400000,60000
+ring-networking4all01:v6,icmp,D,0,86400000,60000, -s 576
+ring-networking4all01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-entanet01:v6,icmp,D,0,86400000,60000
+ring-entanet01:v6,icmp,D,0,86400000,60000, -s 576
+ring-entanet01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging01,icmp,D,0,86400000,60000
 ring-staging01,icmp,D,0,86400000,60000, -s 576
 ring-staging01,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1389,4 +1397,12 @@ ring-algar01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-qbranch01,icmp,D,0,86400000,60000
 ring-qbranch01,icmp,D,0,86400000,60000, -s 576
 ring-qbranch01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-networking4all01,icmp,D,0,86400000,60000
+ring-networking4all01,icmp,D,0,86400000,60000, -s 576
+ring-networking4all01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-entanet01,icmp,D,0,86400000,60000
+ring-entanet01,icmp,D,0,86400000,60000, -s 576
+ring-entanet01,scamper,D,0,86400000,900000, -P udp-paris -M
 

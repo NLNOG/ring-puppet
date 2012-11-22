@@ -598,3 +598,7 @@ ff02::2 ip6-allrouters
 
 2a01:448:1:2008::148  networking4all01 networking4all01.ring.nlnog.net
 213.249.68.148    networking4all01 networking4all01.ring.nlnog.net
+
+2001:4d48:face:e::2  entanet01 entanet01.ring.nlnog.net
+78.33.35.246    entanet01 entanet01.ring.nlnog.net
+

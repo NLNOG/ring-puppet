@@ -2535,3 +2535,14 @@ node 'nlnetlabs01' {
     include set_local_settings                                                  
     include users
 }
+
+node 'entanet01' inherits ringnode {
+    $owner = "entanet"
+    $location = "52.67917,-2.41528"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
