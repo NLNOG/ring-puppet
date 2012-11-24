@@ -177,6 +177,7 @@ ring-networking4all01:v6 2a01:448:1:2008::148
 ring-entanet01:v6 2001:4d48:face:e::2
 ring-ripe01:v6 2001:67c:2e8:3::c100:b4
 ring-hosteurope01:v6 2a01:488:ded::d973:8c3d
+ring-wirehive01:v6 2a03:b980:c037::1
 ring-staging01 213.154.236.191
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
@@ -354,3 +355,4 @@ ring-networking4all01 213.249.68.148
 ring-entanet01 78.33.35.246
 ring-ripe01 193.0.0.180
 ring-hosteurope01 217.115.140.61
+ring-wirehive01 134.0.17.134
