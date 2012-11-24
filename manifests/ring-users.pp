@@ -2823,4 +2823,20 @@ class users::virtual::ring_users {
 
 ##### END entanet #####
 
+##### BEGIN ripe #####
+
+    @add_user { 'ripe':
+        email => 'netops@ripe.net',
+        company => 'RIPE NCC',
+        uid => None,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'ripe':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEAu85Jo/Bxv38OffE+0bVK/GXlxGxyrhieQfNRDwN590bqVc/yyuvsb7TxBMkl5IkoqszcM+SISxweM7iq5K5lcEwWmlB27Tzam3I/OdzejUSbNvqpCtQEQXoice7o+FoTf9jnONyQCSd7iRBagEGePjvi3eXIfxw95+dtG1494U0= mschepers@office',
+            ],
+    }
+
+##### END ripe #####
+
 }

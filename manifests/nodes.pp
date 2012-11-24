@@ -2546,3 +2546,13 @@ node 'entanet01' inherits ringnode {
     include users
 }
 
+node 'ripe01' inherits ringnode {
+    $owner = "ripe"
+    $location = "52.303062,4.937775"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

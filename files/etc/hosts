@@ -602,3 +602,5 @@ ff02::2 ip6-allrouters
 2001:4d48:face:e::2  entanet01 entanet01.ring.nlnog.net
 78.33.35.246    entanet01 entanet01.ring.nlnog.net
 
+2001:67c:2e8:3::c100:b4  ripe01 ripe01.ring.nlnog.net
+193.0.0.180    ripe01 ripe01.ring.nlnog.net
