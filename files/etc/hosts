@@ -604,3 +604,6 @@ ff02::2 ip6-allrouters
 
 2001:67c:2e8:3::c100:b4  ripe01 ripe01.ring.nlnog.net
 193.0.0.180    ripe01 ripe01.ring.nlnog.net
+
+2a01:488:ded::d973:8c3d  hosteurope01 hosteurope01.ring.nlnog.net
+217.115.140.61    hosteurope01 hosteurope01.ring.nlnog.net

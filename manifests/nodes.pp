@@ -2556,3 +2556,12 @@ node 'ripe01' inherits ringnode {
     include users
 }
 
+node 'hosteurope01' inherits ringnode {
+    $owner = "hosteurope"
+    $location = "50.91061,7.06054"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}

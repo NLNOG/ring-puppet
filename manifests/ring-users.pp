@@ -593,6 +593,8 @@ class users::virtual::ring_users {
             'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAyoQKYlEKFNCJHtxOt4L7XF2eYeHy+3oR4ZqkxsdtotIkcKsZOy/mAFxPWJoranTCE0ym21p2NbAzi3xMZAIv3WfxG5LcpY0xWzfMBsCnNEwvdqXlZsweIcKaX98s6vLdU67Cz3dCwvu1i3CsxjtEW3FEyY6rLy07q2yfEb7LSuh1wPrCbci23ZPWil6R87zkWY01/deHsIo7VooiqCov7xJY2/+NnUUPX0UOXllnFElHfp5PcCUOJKVCWfGroCZTtjZVmN+76n11UhjXqEMgwH3ojcNNwXtVcXmnMN68Wt3U/d3dVVfMKCMg6l+m88dKKCeXatV6aqRHN46WZ63DPQ== bart@auth01.as5580.net',
             'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsNZi7mD+HV83QWgxcillmcTCyXvdTeWqjbqZjYWKtz2h8bX5tOMYmfJTWHHlr0/Bq3t8g3X8yJmaBY7QPQ+xoqgF/ACap1tqXzLr/+lI4PU31amPRjtMz9ih+Md/UZhDHbRXmHQO5izjEAWu5d0MFi52fDVANtlRYi6jN596RdLy/NcGdvDG4udigv4YaSyodNJsMzsxrui1N6Tj6W8ExhJl2ra0dqPRoRo4RvhFvX1jXD6Ajpp1NzeSNN02qiWRjQHtRn7WBmxNx2TspnILWB4tLtU2pgW7YQxKtSs5Dde645dRYw+YpCI7R8Ic/NfizyKSS/fsshRfDd0o3YGJb stephan@Stephans-MacBook-Air.local',
             'ssh-dss AAAAB3NzaC1kc3MAAACBAIHiGPWXaSitsP22IRbSU3F864FAUafR/XaMBtwyBWwTEV95xQeCiKUlc0/+xFPxkM6ZI6CWTai09FZH8XhsZz0y9xpEs9DDxYgaM70MLZ9a94qNiClfYf+B1ci/IF0uhU1cDZ1f9TaX4zf2WEUknlXZmWJ/vSaTN6njX1G7kmyzAAAAFQC3X0hxPFHrGh9wBgzTnfyK+IxHhwAAAIAD/8SWkBMSlcN6BejsblckFdEHyfTeUQCia1Aug0OVneY5ye+sY1imwSK/YDyRLv+NP+9xz41AbjDAl4dRn7lur1AbRs95HLjlo/ryIWcyfw25DhLwgVd1EAybeOSkuEQrRRTlxCD+nEbr9mDeAyViVXui0ydXZVRchEscOUGGLwAAAIAUx/m8wCtu5aTB7/jSBViJR+Sv+kVZYbMhb8ZWs8iWaSpGUpkzl+PP+O6WWkdgEaklhGjfJiLK9hsayEdkmuQDBzJVHZllMO2PW3Nwxt1jQ5Clh84kdrTkgqWww/7hio7L7xyHVjvJgVta2NQmW/gQdXsKOFOq7NX8iW6A3yjSWg== michiel@MaquePreaux.local',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDY0kBEr78xwvLnBGa3HaaUeiNe4KnG3RWycj1xsFKtaVZm95oqoeHA0NgqcDRROVz4aEe+FbtvOVTorJsYbYg+K7qx5KsZAeHnYHDQKfQo8Hehmew1XsN4rOoB17yrJo7ewdfglw9GDH2xLTeAMq6c93yRBlp688E3L5w6UrMOMSsXPvNzDw4dBwXmf+9bwwjfllWvouUO2yHzM94qjuobumDGsCGXQWfqsl24rYvw3nhd3Il8jGgTNCdkXZMPJ9T7GInxrKXjJHsvgtI5fFXs2AwXK5NGFLodEcmT7uMtwC8iIt3UKt/qYDBXz+T19y1xjWdia24J5DEhglPZ8gObhqHHP7ckD2tAZTFBUTqfUCpCteXLBbC1ATlQN7ariQJ4QrpzIqvtn/SsfpZJPLQEBPN+ZV4WsPY4jzj6g2YY2Kw1dsWUCRQPGYhuDa+S1ha3iko9guoDYh4XSe4m5PMUE884JigHhEiOBGlVXree9PM9YAAX1q/ycGkwcAA9/MCIGd0LC+dk1EViWX1Zp50qGOHeTA+PKYG14DY3lv2V0b3xnmV4m5SieGEPUqF9aAfs+RjAbE3bKkSA8uWkN0RXj/WJiIp/eDQwEPA8NsU2U0nbCM+VX9wWqPTaefRF1zhDUsLk4/iOYWgECHSXZfHyR9fkvzOe5PwnjhetNxm9yw== matthew@Matthews-MacBook-Air.local',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC5f5N99RBWEn59j+goZquSR1NvMyaWyMFhipm2APxEoOtVunFWRpYKk0y1G+4jxMeZ9F1hJwTfsZ3FYYBkMSt0jiEvnhgpGwBVrPwRW1jPT0vUF2QldN6B1QClttPBOAKj6knpX/j5u6NtRiirqA/5LUaGHBqfxUgS7sCt99NSEITKsHe4vr4Y00BgS9ba8Cgk/0qOklE7QE8JtzBZz6dfTpdfV30KLLIppPxsFMId+pwL9zo2wGEfQ8ijA1j2StDCYa1YP1Z+3e3y8MZo5b6Xf6l/kv/rYjh118JufgpdZNnvbau0dJIUmSDSrqhuopwdw+/G/wNLuFOIFrFVdXknA7AQfBRhzResGH5YG7nHSYLXFSpOPXWY6wVJ0wwbtxuN2DTo5S6foTV40KVw59j/PPuIcQNDPeLBtK+xceZrdYvYGIH4oUi7hSRr6hOrgPxc7mpMfnh8v/5zCCD7Wl9gSEZ8RchtY6U6GccjJ38KcB6ZVDZEisK5JbirJzqgOPhkv6/T5uTVTGxmF2tWZp599bifhcvpSrK2+PWRKLJ6q2EQ0u5hTmnhmXnouD/lLNq+7+Kb6gmfBwWFkVi8fLynqExLiHps57s8X4edXlgsJ5xFrTmtV4uvnApkLTR5ShuT0S+FrpS+8KJj+zWukwkpRkAR8IO8esjnP3L7/BeY/w== matthew@jungle.loopback.nl',
             ],
     }
 
@@ -2839,4 +2841,18 @@ class users::virtual::ring_users {
 
 ##### END ripe #####
 
+##### BEGIN hosteurope #####
+
+    @add_user { 'hosteurope':
+        email => 'noc@hosteurope.de',
+        company => 'Host Europe GmbH',
+        uid => 5161,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'hosteurope':
+        sshkeys => [
+            ],
+    }
+
+##### END hosteurope #####
 }
