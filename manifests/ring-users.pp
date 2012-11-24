@@ -2828,7 +2828,7 @@ class users::virtual::ring_users {
     @add_user { 'ripe':
         email => 'netops@ripe.net',
         company => 'RIPE NCC',
-        uid => None,
+        uid => 5160,
         groups => ['ring-users'],
     }
     @authorized_keys { 'ripe':
