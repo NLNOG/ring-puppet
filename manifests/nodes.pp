@@ -2565,3 +2565,14 @@ node 'hosteurope01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'wirehive01' inherits ringnode {
+    $owner = "wirehive"
+    $location = "51.347629,-0.479842"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

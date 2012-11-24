@@ -2855,4 +2855,21 @@ class users::virtual::ring_users {
     }
 
 ##### END hosteurope #####
+
+##### BEGIN wirehive #####
+
+    @add_user { 'wirehive':
+        email => 'support@wirehive.net',
+        company => 'Wirehive Ltd',
+        uid => 5162,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'wirehive':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEArXaaM5wglsopsMgnmeSBPIryw+3F4CbqPtPbDANF1VxR4BN9QV0KCCtXXtXe8Yy4IlBA7y8+H298Rv+WDPaJzs2XPjHfoo4PhL4pQQFqxbZWKb+Km3KEHX6ooD3P8Ezq9mGygP3Xifwkp+0LEy0CFjb/uPZXjhDS8Tc7UWNKeT0= simon-green-rsa-key-20120214',
+            ],
+    }
+
+##### END wirehive #####
+
 }
