@@ -420,6 +420,9 @@ ff02::2 ip6-allrouters
 108.168.156.210 container05.infra   container05.infra.ring.nlnog.net
 2607:f0d0:1103:e5::2    container05.infra   container05.infra.ring.nlnog.net
 
+109.72.82.182   container06.infra   container06.infra.ring.nlnog.net
+2a00:0f10:0103:010f::1  container06.infra   container06.infra.ring.nlnog.net
+
 83.164.134.32   lagis01 lagis01.ring.nlnog.net
 2a00:1860:101:fffe::1   lagis01 lagis01.ring.nlnog.net
 

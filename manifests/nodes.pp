@@ -364,6 +364,36 @@ node 'bgpmon.infra' inherits infranode {
     }
 }
 
+# container06 is hosted at PCExtreme in Amsterdam
+# 8 cores / 32GB RAM / 2000GB RAID1 + SSD disks
+# eth0 (uplink)
+# virbr1 is virtual switch on the box with this IP space:
+#   IPv4 prefix: TBD
+#   IPv6 prefix: TBD
+node 'container06.infra' inherits infranode {
+    include users
+    include syslog_ng::client
+    include nagios_services
+    include nagios::target::fqdn
+    include kvm
+    munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
+    }
+    
+#    kvm::virtual_machine { 'db05':
+#        fqdn        => 'db05.infra.ring.nlnog.net',
+#        ip          => '108.168.252.130', # ipv6 address is 2607:f0d0:1103:f0::130
+#        netmask     => '255.255.255.240',
+#        dns         => '8.8.8.8',
+#        gateway     => '108.168.252.129',
+#        memory      => '1024',
+#        disksize    => '20',
+#        rootsize    => '19968',
+#        bridge      => 'virbr1',
+#        container   => "${hostname}",
+#        ensure      => present,
+#    }
+
+}
 
 # db boys
 
