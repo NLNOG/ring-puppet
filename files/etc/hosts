@@ -611,3 +611,9 @@ ff02::2 ip6-allrouters
 2a03:b980:c037::1  wirehive01 wirehive01.ring.nlnog.net
 134.0.17.134    wirehive01 wirehive01.ring.nlnog.net
 
+2a00:1768:1000:21:1::1  nforce01 nforce01.ring.nlnog.net
+77.247.183.177    nforce01 nforce01.ring.nlnog.net
+
+2a01:8780:7473::7269:6e67  xing01 xing01.ring.nlnog.net
+109.233.152.243    xing01 xing01.ring.nlnog.net
+

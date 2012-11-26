@@ -1661,6 +1661,7 @@ class users::virtual::ring_users {
             'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEAp+iQOOhHwePy8gBVHvXPW0Kdecuidk36CSRZEGN91jRWLZmmTttqfrqNeuocOm7X3Rp5jfHFrW+DrcUvQ9ioTyxUJpaOM2C8ppPfR/Pgv9Il9FOqVBZ7Zd+KY3qFEQQxewVjA2OqAuaUsgtCyfUxHF6zgFjBwJE9LiA/x+2mXuCBXSByvTUGmaTVzsdPmtKHJGdo9RUJEM5gIrCdlf1btCj83oIghm7W8nIx+boVMklekRR5SBl6f9RZEgpRBmsE6JJ9x8OK640wmX7fEKK5501+OOjjo1/gFyaatqPl8BoCrdW+GhfRF3h+VykXnnKS0/IBqRDxcUp8vPxpSfy22+f/m5eFLSREBsuCLfpDU55Gi1L73pe/K+QgbzIQgcgvUHdGZdpa3TWVKtJZDuRXeo/81Q911aONyRsmELXANxz4fWAjIDDKgafBR0GfU/PLAmSuLuoTg4N9UQzZIcfKQjr0BKiU3D16dL0smVEvT28zoTX3WB3/QKFtedS7CCWTN2EmlVF30S7lwAgQjLgDfBLpaV4Sw/SB8d3I8hJYaa3Pyc8ZvRnz/QutPdG7ufXQBgs4yw7TWFe93YdoT4jzUAgeY8xYVvDOnRa7xVc0RJWTqHSG8IsroqsaHng4MuZj7D7yqgI14G327s8ChylVXVfoFMwTVfgg03+Nku9p/Kc= spartaco.morelli@dada.net',
             'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA1aj6KdimBiD8nYLmVUIkNuM0+uU5FQEUcw63ZdG9pqCKcUROeEj4DWM+KLwYC2Q+QOuuLd0sNcgC9lpUS09FyDf0vg7esrXBwq2ZPx4AF1hmhV5HZepyRzHN8C8waifAA7DAMgZBhoc6n9M8M1gK95JKZqDnWJw/e4Y5tHG04QX8AGk+8463KYrW9DRo4oqLTV1DVNFPThlIKuAhTD4pjZJjmLTUhwDeSgirgMuYh7pKgzJRLS3hDy35Fc6adpCi5QxxO/I+IiwR95eC1X8aXNR30z6xCAyCT+sUGOIwjiFaZFRRDktBk7XxP7ii3goPAdL8VwtRfN1w6wNjU0p5Qw== stefano.diprima@dada.net',
             'ssh-dss AAAAB3NzaC1kc3MAAACBAMx6D93yBLQ5JTyOr+od5hf4BvCjHNkC9bqNfVQyFwfvZcJAezsO/CUfHbFplbkkISpdCr2WVBDoCx72wXuSAe5UcDy0GuzKv7Cwud68FNyl7gKceBmkkm1UbUyyKGrA+gYFbltcNNPPWKYkbqHueuzxZ/AmBzAlEMyIIkpt4hKfAAAAFQDRmT2WJ6YCkYLkhe8u6QPxaLZmGwAAAIEAzFvt5aGBR2g+4YP0EcbU9O7GZTQqb/nXIATo4o1Plv9hbgy/fwXQe6TjV4k83Y6bGOTJApABPMbwA/1W7+Q7jUlGJm1J9tPALrom9BX8mnIbvuih9xeOa/jes4rL25ctVjilhsFFvDhCsWV8YTLpWXkXVH4M+/0XXk+Uv5Xj1y4AAACAbRS3bSPOX7jA43xrTdk/bokn5/BvbFMkSjcwj8nq5cZp8hAjV28fmHWP/4UdMRyHqLhF6Wh3rNcjp6C6Kp/65Tt1nacbKRDUsEgaOaBc1PmnkB4RPxus7KDvVOmSwh6wwfSKNSGb4r3l+AlW2gfh34KrWo8ekL5d/Daep9nzfTk= luca.villani@dada.net',
+            'ssh-dss AAAAB3NzaC1kc3MAAACBAOChM9JOZYDOpLpeDrPnylrr3mXgoO4hCv/HMnkd45F1QehRYSfGlzJjLVpHou1jnyyPYX/zXR07l3tj8tghIFmCLdzOetJRAESpv6ZrHbbWNHEUiVtOtTtI7YqGxXSUSqGKdJXww9SDxcDxQHbo/Ct1RcxxGfJoXEiu5Zm+cSypAAAAFQD44pFQgwwyd3BftQNA2gO+IJ5I2QAAAIEAuFsY4+5esmcsDQvrTCr94/Tw2+5OPv0fso9sHOENxIXYw0zqWqMVaCjm8EyzoB+dDWV7GSj3ZfPux5bCFfca0pyiUy5uG0RzdCFj9tajqNSHoMGGWumOyzT0YRYRWCkkATGL1e37MQ35LLLFhkGT7h2/Ck3sIfpcW9yodyS25uEAAACBANHk1Ugfxrv86mqwMWe2Dn2Uz8OQY05j/UpaiuGI1Vsq0b3V26O9/9sU4d/R3KhvkoDRFmvFq/PVEB/CyTqaFWAXoNbeQ8oNnruGURIP2Zl/+ZGJMB3IqJq7kwRJ/viZc12H4cMU71zyRhxpG/tXqEJvXtlF/95rRl5GtMESL/wV cdp@bb',
         ],
     }
 
@@ -2874,5 +2875,39 @@ class users::virtual::ring_users {
     }
 
 ##### END wirehive #####
+
+##### BEGIN nforce #####
+
+    @add_user { 'nforce':
+        email => 'noc@nforce.com',
+        company => 'NFOrce Entertainment B.V.',
+        uid => 5164,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'nforce':
+        sshkeys => [
+            ],
+    }
+
+##### END nforce #####
+
+##### BEGIN xing #####
+
+    @add_user { 'xing':
+        email => 'xing-nog@lists.xing.com',
+        company => 'XING AG',
+        uid => 5165,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'xing':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAxCcE9GSYgp+apklOLSTtlYjp81Zy2h7qcvavdqhS8DQ2GbgxD5WG/Ig6aNCd0aRoB/w2Lg9apTCCMf5i+3JUTFJW1EtalK0NKwMTzJapPohZmFu//PEMM3H0hNVj/vDMrrPNc3FYsstjecvDz/pfZu1rli4uUxqfFFkVWWxSM5o3b+4z0tXcsWQIn0lbSgqtZ7j2szJnCUAnB2bfplZNtKOdqtGKW73RCZgl9p//1UTNymOAnK4JYp3Cjf2EB707o3Oew3iRA/L33owR6Abgv33oAoGq8fZvB0IzCzY4HYLfegATQmGfvgS+M4aHZbIzE9DPtS3UA3S6Z3tybvbSmw== cneukirch@xing.com',
+                'ssh-dss AAAAB3NzaC1kc3MAAAEAbEbHWL7yhCff0UwAYo3r+dO/+LeEXn/wmji77RRW2ImTfdbsBpdVWUiYF8cJd24oFzKZcPUvaNvnSk0KKF9hi5JFMbMDstEFmeZlLv9nxe+H4Qj2lvOMZN+iultNIm/qmzR9dpTXvDIlOpvZ32kDc2v1DM9wNrkm0VWCySOUfuS6PyYBrobnT6MBsZ2lJ6vOWFSJMrd82BOewtzyEMa7dDgMAuVIgL+bh00xiD1s4+U0epD1uEkA94jviPYFm/9eyGYV3meoLmT4wOxSwYvO32d7qrSE4ZtRj1yljTFCR4Xp3tMhp/T/1SWkMe9ZDYZWKwytd8ecVxVGO/Vz4CD6zwAAABUApCX/1iQTwzOGTpqXNo46ccxLO5cAAAEAASdgxiVV7HrlX6XM5u4fdK6CB5ZaGS7yGcS4/1BDZP+mH4Qn6zhwR5L81SkBvaiO5qbYNwS2XgaCu0DXiZn7GtYqnxore2UOqO8AuhMBBotKRjoeiIz1y9O8wVE94panQpGxN2SbAZaPFqHLJcdrrtsaCzg8V8Uoc4AC3gSubodsLrW8BeysUGVYUMfOgcqKkqbT9dbT/nRICLj38i6V3/BUP5STxzqASevQFLrqMH0YIkslzkQVhcGRdwzVLgmNJS4MfvUbxuOouAif2I+oLsX07lX0xFDB4JZ+R7f9EIznv1+0FwVxojhVwbnA4sX+oaqAQBp739Ge6ANBjHy4PQAAAQA9UI02YBD8eNza5cTlqBeIsgKpDhzIj9aBm+dwwxadWf3icn7Oh1DkARE+7gIiO9IyOFgB3N7roaUGN4xWLdnfbot9uxHc3v79LPs2dKshJf/3AoiBd+xUXa54xV9jZQW+vGXz/6oRM9RUuQmofHeQHLZoSW/EcVyDdcuyyIIipuTqgzF+XwUOW3CyHNg0I2YnraouH7B6oumNjUaT5aNvMTuy2xC/NCP8djaxh159LG1s2UsFNUL+YzQRRx4C/LdvPak9Lue0IksGg9z6ejRrbIosNMzQG6t3V505IjJpz2NonQJmxZp2P9sgiNjZ8kvew7vpZQ1DOdjGRWm5Sh7A dneubacher@xing.com',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEA0kxJ1mDVB5Ef+kIHu5N9pas0G8ZTGDYT0qczq1hMePQXpXPkvhzBQ5uJmuRK1GOwqfEnL5NE3cAipYtntd9BoomFuWogvnvj3tPXizfZV5xGH2qCV5uJd38D511Jk72eIxHUoHz81PYPXkFo2gNdhS7z0QBJaF26ILgAL3nZ0sk= julferts@xing.com',
+                'ssh-dss AAAAB3NzaC1kc3MAAACBAKeUslA7eBPdmWzqvRD5yycCs0jbCIEjv2Q9fk9A3U4M/aS5bbvTAcqlcAGfSiWXTmp0om61PnW3aGk4dJvsHOLLwTGERwoEUcUAaRXjghl9GLxH444saEDx43YUTOB5gGV26dKccQKnhk1XJTAz9blcD9boIDunCBfJ0o6Uyyg9AAAAFQCzTU+pOZ2WNA3ZILw++M/5vCYN7QAAAIEAmmirA3gugAw9NQk5lHZaB4NEehrvTt1pyExyncZjYGYTRHcREx8s8YMdGj5G2x94j11byfhHgGXRFTsoNtcPRIeTpiiA806ssHKDtET1czGMskpDFD8FEjplVixEWO6NX76vaZkbqYBaxzxVjaKGOSTCAD89P35YEdqrFl0UPkgAAACAZ4IkI0Q7HnVMww9ZXBCETdlmh+N38jMEGB469GiCM07W7yxxOygxtysGpFK3RgZsfye8PO3m38WkeGdut3Ei49adZHv8YuIhZhEiyVR2DWIhcfR4Zp9ixPa3hNFCrL2Q1fZJp5zaDKv5sZ+p4Rxe3GjEmrYeiu3p0WviYpKZX8o= fstern@xing.com',
+            ],
+    }
+
+##### END xing #####
 
 }
