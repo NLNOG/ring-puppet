@@ -2576,3 +2576,23 @@ node 'wirehive01' inherits ringnode {
     include users
 }
 
+node 'nforce01' inherits ringnode {
+    $owner = "nforce"
+    $location = "52.3964434,4.8511319"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'xing01' inherits ringnode {
+    $owner = "xing"
+    $location = "50.08165,8.62295"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

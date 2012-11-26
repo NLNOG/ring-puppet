@@ -718,6 +718,14 @@ ring-wirehive01:v6,icmp,D,0,86400000,60000
 ring-wirehive01:v6,icmp,D,0,86400000,60000, -s 576
 ring-wirehive01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-nforce01:v6,icmp,D,0,86400000,60000
+ring-nforce01:v6,icmp,D,0,86400000,60000, -s 576
+ring-nforce01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-xing01:v6,icmp,D,0,86400000,60000
+ring-xing01:v6,icmp,D,0,86400000,60000, -s 576
+ring-xing01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging01,icmp,D,0,86400000,60000
 ring-staging01,icmp,D,0,86400000,60000, -s 576
 ring-staging01,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1429,4 +1437,12 @@ ring-hosteurope01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-wirehive01,icmp,D,0,86400000,60000
 ring-wirehive01,icmp,D,0,86400000,60000, -s 576
 ring-wirehive01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-nforce01,icmp,D,0,86400000,60000
+ring-nforce01,icmp,D,0,86400000,60000, -s 576
+ring-nforce01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-xing01,icmp,D,0,86400000,60000
+ring-xing01,icmp,D,0,86400000,60000, -s 576
+ring-xing01,scamper,D,0,86400000,900000, -P udp-paris -M
 
