@@ -493,6 +493,23 @@ node 'db05.infra' inherits dbslaves {
 #    }
 }
 
+node 'db06.infra' inherits dbslaves {
+    $owner = "job"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include syslog_ng::client
+    include nodesonlycron
+    include users
+#    mysql::server { "mysql":
+#        config_hash => {
+#            'root_password' => trocla("mysql_${fqdn}",'plain'),
+#            'server-id'     => '5',
+#        }
+#    }
+}
+
+
 # website, dns, mailing-list etc
 node 'public01.infra' inherits infranode {
     $owner = "job"
