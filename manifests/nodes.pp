@@ -368,8 +368,8 @@ node 'bgpmon.infra' inherits infranode {
 # 8 cores / 32GB RAM / 2000GB RAID1 + SSD disks
 # eth0 (uplink)
 # virbr1 is virtual switch on the box with this IP space:
-#   IPv4 prefix: TBD
-#   IPv6 prefix: TBD
+#   IPv4 prefix: 109.72.93.32/28
+#   IPv6 prefix: 2a00:0f10:0122::/48
 node 'container06.infra' inherits infranode {
     include users
     include syslog_ng::client
