@@ -2839,6 +2839,7 @@ class users::virtual::ring_users {
     @authorized_keys { 'ripe':
         sshkeys => [
                 'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEAu85Jo/Bxv38OffE+0bVK/GXlxGxyrhieQfNRDwN590bqVc/yyuvsb7TxBMkl5IkoqszcM+SISxweM7iq5K5lcEwWmlB27Tzam3I/OdzejUSbNvqpCtQEQXoice7o+FoTf9jnONyQCSd7iRBagEGePjvi3eXIfxw95+dtG1494U0= mschepers@office',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEAwGick//KmUU6irvk/dTEufmpx3xXZZuUFtMWZ1vtVueQnyOhipAbhCTIuABkCs9MLLMwAdUJNkdOZgEUmONr4ujsC4NfgljjbC5wMkzGJt3f068cVK08k1MH3+t5ExSTfI4ND2v/t0WHXIc17elanpGiKMuvuKkICHDipgSeO2s= phomburg@dog',
             ],
     }
 
