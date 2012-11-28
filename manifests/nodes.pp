@@ -47,7 +47,7 @@ node infranode inherits basenode {
     include etcfiles_infra
 }
 
-node 'master01' inherits infranode {
+node 'master01.infra' inherits infranode {
     include users
     include master_software
     include syslog_ng::server
@@ -327,7 +327,7 @@ node 'container04.infra' inherits infranode {
 }
 
 # container05 is hosted at Softlayer in Dallas 
-# 24 cores / 32GB RAM / 1000GB RAID1
+# 12 cores / 32GB RAM / 1000GB RAID1
 # virbr0 is bridged to eth0 (uplink)
 # virbr1 is virtual switch on the box with this IP space:
 #   IPv4 prefix: 108.168.252.128/28
