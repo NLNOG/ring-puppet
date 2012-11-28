@@ -2682,3 +2682,13 @@ node 'xing01' inherits ringnode {
     include users
 }
 
+node 'xing02' inherits ringnode {
+    $owner = "xing"
+    $location = "50.09760,8.64410"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

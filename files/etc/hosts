@@ -620,3 +620,6 @@ ff02::2 ip6-allrouters
 2a01:8780:7473::7269:6e67  xing01 xing01.ring.nlnog.net
 109.233.152.243    xing01 xing01.ring.nlnog.net
 
+2a01:8781:7473::7269:6e67  xing02 xing02.ring.nlnog.net
+109.233.156.243    xing02 xing02.ring.nlnog.net
+
