@@ -393,6 +393,21 @@ node 'container06.infra' inherits infranode {
         ensure      => present,
     }
 
+    kvm::virtual_machine { 'backup':
+        fqdn        => 'backup.infra.ring.nlnog.net',
+        ip          => '109.72.93.35', # ipv6 address is 2a00:0f10:0122::35
+        netmask     => '255.255.255.240',
+        dns         => '8.8.8.8',
+        gateway     => '109.72.93.33',
+        memory      => '1024',
+        disksize    => '20',
+        rootsize    => '19968',
+        bridge      => 'virbr1',
+        container   => "${hostname}",
+        ensure      => present,
+    }
+
+
 }
 
 # db boys
@@ -431,6 +446,7 @@ node 'db01.infra' inherits dbslaves {
 #        }
 #    }
 }
+
 node 'db02.infra' inherits dbslaves {
     $owner = "job"
     include nagios::target::fqdn
@@ -446,6 +462,7 @@ node 'db02.infra' inherits dbslaves {
 #        }
 #    }
 }
+
 node 'db03.infra' inherits dbslaves {
     $owner = "job"
     include nagios::target::fqdn
@@ -476,6 +493,7 @@ node 'db04.infra' inherits dbslaves {
 #        }
 #    }
 }
+
 node 'db05.infra' inherits dbslaves {
     $owner = "job"
     include nagios::target::fqdn
@@ -544,6 +562,16 @@ node 'public02.infra' inherits infranode {
         check_domain => "${name}"
     }
     include powerdns
+}
+
+node 'backup.infra' inherits infranode {
+    $owner = "job"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include syslog_ng::client
+    include nodesonlycron
+    include users
 }
 
 
