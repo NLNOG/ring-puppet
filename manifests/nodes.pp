@@ -400,14 +400,12 @@ node 'container06.infra' inherits infranode {
         dns         => '8.8.8.8',
         gateway     => '109.72.93.33',
         memory      => '1024',
-        disksize    => '20',
+        disksize    => '600',
         rootsize    => '19968',
         bridge      => 'virbr1',
         container   => "${hostname}",
         ensure      => present,
     }
-
-
 }
 
 # db boys
