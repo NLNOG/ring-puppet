@@ -1,2 +1,2 @@
 # The NLNOG RING Repo
-deb http://master.ring.nlnog.net/deb maverick main
+deb http://apt.ring.nlnog.net/deb maverick main
