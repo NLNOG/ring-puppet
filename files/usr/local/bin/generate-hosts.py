@@ -23,11 +23,9 @@ ff00::0 ip6-mcastprefix
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 
-212.19.220.59   master01 master01.ring.nlnog.net puppet
-2001:6e0:100:4001::3    master01 master01.ring.nlnog.net puppet
+78.152.42.69 master01 master01.infra..ring.nlnog.net puppet
+2a02:d28:666::69    master01 master01.infra.ring.nlnog.net puppet
 
-213.154.236.191 staging01   staging01.ring.nlnog.net
-2001:7b8:625:0:213:154:236:191  staging01 staging01.ring.nlnog.net
 """
 
 for server in all_hosts:
