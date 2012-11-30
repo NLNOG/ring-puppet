@@ -110,7 +110,7 @@ class nettools {
     package { "python-setuptools": ensure => latest }
     package { "virt-what": ensure => latest }
     package { "sl": ensure => purged }
-    package { "mtr": ensure => latest }
+    package { "mtr": ensure => latest}
     package { "nmap": ensure => latest }
     package { "traceroute": ensure => latest }
 
