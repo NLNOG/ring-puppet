@@ -71,8 +71,9 @@ dprint("".Dumper(@sorted_kernels));
 # Strip off the top three, keeping these installed.
 my $keep1 = shift @sorted_kernels; # at least one kernel should be installed
 my $keep2 = shift @sorted_kernels; $keep2 ||= "";
-my $keep3 = shift @sorted_kernels; $keep3 ||= "";
-dprint("keeping [$keep1]  [$keep2]  [$keep3]");
+#my $keep3 = shift @sorted_kernels; $keep3 ||= "";
+#dprint("keeping [$keep1]  [$keep2]  [$keep3]");
+dprint("keeping [$keep1]  [$keep2]");
 print("reboot to activate newer kernel $keep1\n") if isnewer($keep1, $current_kernel_version);
 
 # Current kernel could be in the remainder of the list!
