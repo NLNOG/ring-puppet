@@ -623,3 +623,6 @@ ff02::2 ip6-allrouters
 2a01:8781:7473::7269:6e67  xing02 xing02.ring.nlnog.net
 109.233.156.243    xing02 xing02.ring.nlnog.net
 
+2a01:8000::1:2  serverchoice01  serverchoice01.ring.nlnog.net
+178.18.123.233  serverchoice01  serverchoice01.ring.nlnog.net
+
