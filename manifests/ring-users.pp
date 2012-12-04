@@ -2893,13 +2893,8 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'nforce':
         sshkeys => [
-<<<<<<< HEAD
-            'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAgxNIz/KbwCElWeO2UKLzb/Mj4LBcNDTg1d+pKhzFDH2XFkkbNaQVN3ManAECGqvNjOGJlogEbFKEQ7nLjL2ULDG2rpXv0lwO6t6HmmmwcHXNh4xjr8TqiwclMuDopigXxroLUVOgPVWOxolTdLmyudj+8lbVixO0l8gjAQeEZydsckO9pYRLqpl17bcOYJB5TUynFnyNBjmKNFkvArDXWKftmPa4wyGVlOkI/Wkvga/vbgwxfoDX2CdDtZZqicuVQZd4rwYYHDKMs4ivcDyzDLPTwKBDFb8CyOqlX2UuMWMngyXgJBQ2HPI/w38VNkgDSpTyCfPJDlU9RxMCBbcY0w== y.koolen@nforce.com',
-            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEt7exBf21sJ9mvstoHz98SMj18IVE3is4Pb00cAbyOaJuM5OLAqCrOsOVXccwggRgML+2jB5q+W3UIIyfZtayvqZ9JIah0KmQGIJ04Agu3ykoNwq3+4RsFA+Vt8ytnvYgtuKBSbG5LI0bLcKF19Fj+Dv9rtSemLsjE/HIscVEzqpFR13+lsvN5V1x3XQkdLXyOrwpt7imSXNIa+bpmXS5cmAOiblOEzBdMS5NVNncppwNeFJtuYVt64XPseOF5cTNC/z7YIrOefC8vOx3uYygVdsds6iN4AE9DSNaUdST9nJReBrls7UMnFGnc1+CiCaceXLWQJ+3cnNA+pMF9yL7 p.taks@nforce.com',
-=======
                 'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAgxNIz/KbwCElWeO2UKLzb/Mj4LBcNDTg1d+pKhzFDH2XFkkbNaQVN3ManAECGqvNjOGJlogEbFKEQ7nLjL2ULDG2rpXv0lwO6t6HmmmwcHXNh4xjr8TqiwclMuDopigXxroLUVOgPVWOxolTdLmyudj+8lbVixO0l8gjAQeEZydsckO9pYRLqpl17bcOYJB5TUynFnyNBjmKNFkvArDXWKftmPa4wyGVlOkI/Wkvga/vbgwxfoDX2CdDtZZqicuVQZd4rwYYHDKMs4ivcDyzDLPTwKBDFb8CyOqlX2UuMWMngyXgJBQ2HPI/w38VNkgDSpTyCfPJDlU9RxMCBbcY0w== y.koolen@nforce.com',
                 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEt7exBf21sJ9mvstoHz98SMj18IVE3is4Pb00cAbyOaJuM5OLAqCrOsOVXccwggRgML+2jB5q+W3UIIyfZtayvqZ9JIah0KmQGIJ04Agu3ykoNwq3+4RsFA+Vt8ytnvYgtuKBSbG5LI0bLcKF19Fj+Dv9rtSemLsjE/HIscVEzqpFR13+lsvN5V1x3XQkdLXyOrwpt7imSXNIa+bpmXS5cmAOiblOEzBdMS5NVNncppwNeFJtuYVt64XPseOF5cTNC/z7YIrOefC8vOx3uYygVdsds6iN4AE9DSNaUdST9nJReBrls7UMnFGnc1+CiCaceXLWQJ+3cnNA+pMF9yL7 p.taks@nforce.com',
->>>>>>> 89708f58591d29bcef68f8224f4a162f7af8a570
             ],
     }
 
