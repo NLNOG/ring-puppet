@@ -2944,7 +2944,7 @@ class users::virtual::ring_users {
     @add_user { 'bredband2':
         email => 'noc@bredband2.se',
         company => 'Bredband2 AB',
-        uid => None,
+        uid => 5167,
         groups => ['ring-users'],
     }
     @authorized_keys { 'bredband2':
