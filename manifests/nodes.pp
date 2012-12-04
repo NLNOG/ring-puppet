@@ -2703,3 +2703,13 @@ node 'serverchoice01' inherits ringnode {
     include users
 }
 
+node 'bredband201' inherits ringnode {
+    $owner = "bredband2"
+    $location = "55.574704,12.927673"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

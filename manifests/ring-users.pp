@@ -2939,5 +2939,21 @@ class users::virtual::ring_users {
 
 ##### END serverchoice #####
 
+##### BEGIN bredband2 #####
+
+    @add_user { 'bredband2':
+        email => 'noc@bredband2.se',
+        company => 'Bredband2 AB',
+        uid => None,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'bredband2':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0r17gch41t9KokSoyG4eFP4Ce9VOAfKLfFbxQcfQC/vU3PFOBFCTZe04GK00w9JnearSHuK4LzaZw92/cHlKEzHuFnAr3lXt23OppYzmFdBRMythyAkcCOY6fXbylcRs+Ked4AlJ+Y4AjKXaW0NA65sEwtBt/bhyni6lM1lFhvZnQBsczTYpzqavbVkfvnQwjcN44VPDRhpSl2YFtLPD1EU59WFkNgxQAS9tvFGgphYyAfrxMcj7Ta7jL/Lpo1+5dwXgKeYmeDyr0oT11eT7GExyMux8r3IonVXR0T/qgfx29EQXvF62HKEslUvoSK6grm4vMAVFoz+6jcRwGX9Qx petper@netmanager',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA5O3wUTz8xQhZt7VwRTu8B7oWKE/cx8jM3CL4lw+/W0BAkeDvgYd83BO3TxraMvcle2Cu/lEHu7tUsG/L7mwn1iUun1QA53LvAc22DThSSwj9I11OWrQOHwVM7xqWpAbf5jSrKvxPe2sj+kHZkdym+cV28/ljFPm2vuv+Ru9NShyi7HrdxIu9OCoqAB2xlEeepIhUK5WemfO4i4wlT2KgcHpnp+n21Ew/OG5ee1P21+AaTRRaGo6wKyMC5uCnYBFn2up8HvDSBIlhMjc/1+s3Jzrzi3hG4JvpO2QcRoo0mAY2SMlXoQH0sV+Mm/JmQOUqOCeEfshOzPrtMBxz4+tF9w== frevoc@netmanager',
+            ],
+    }
+
+##### END bredband2 #####
 
 }
