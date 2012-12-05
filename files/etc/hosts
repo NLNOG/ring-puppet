@@ -628,3 +628,6 @@ ff02::2 ip6-allrouters
 
 2a00:1598:bb2::666  bredband201 bredband201.ring.nlnog.net
 82.209.169.88    bredband201 bredband201.ring.nlnog.net
+
+2607:fee0:8008:1::10  cdw01 cdw01.ring.nlnog.net
+64.73.41.115    cdw01 cdw01.ring.nlnog.net
