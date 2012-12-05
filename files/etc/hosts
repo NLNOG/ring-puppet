@@ -631,3 +631,7 @@ ff02::2 ip6-allrouters
 
 2607:fee0:8008:1::10  cdw01 cdw01.ring.nlnog.net
 64.73.41.115    cdw01 cdw01.ring.nlnog.net
+
+2001:ad0:1400:1000::2  linxtelecom01 linxtelecom01.ring.nlnog.net
+195.222.12.126    linxtelecom01 linxtelecom01.ring.nlnog.net
+

@@ -742,6 +742,10 @@ ring-cdw01:v6,icmp,D,0,86400000,60000
 ring-cdw01:v6,icmp,D,0,86400000,60000, -s 576
 ring-cdw01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-linxtelecom01:v6,icmp,D,0,86400000,60000
+ring-linxtelecom01:v6,icmp,D,0,86400000,60000, -s 576
+ring-linxtelecom01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging01,icmp,D,0,86400000,60000
 ring-staging01,icmp,D,0,86400000,60000, -s 576
 ring-staging01,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1477,4 +1481,8 @@ ring-bredband201,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-cdw01,icmp,D,0,86400000,60000
 ring-cdw01,icmp,D,0,86400000,60000, -s 576
 ring-cdw01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-linxtelecom01,icmp,D,0,86400000,60000
+ring-linxtelecom01,icmp,D,0,86400000,60000, -s 576
+ring-linxtelecom01,scamper,D,0,86400000,900000, -P udp-paris -M
 
