@@ -2977,4 +2977,21 @@ class users::virtual::ring_users {
     }
 
 ##### END cdw #####
+
+##### BEGIN linxtelecom #####
+
+    @add_user { 'linxtelecom':
+        email => 'noc@linxtelecom.com',
+        company => 'Linxtelecom',
+        uid => 5169,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'linxtelecom':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD8ovJ9bQLXHMzq8HGK2Ez/MlJiYxLGdD2IFih/xHxIkWdl3fs4XAuki7z4+NhC8hiZ43ApRqYZzTR26bMKkAPQMiL97VSPM5GGM9cPFp6yGfEMAamQ2zyqSnj/ems4X0hDBCfetTrkMTWkGwN7FgIvbyaAoQQPuoRmP4kMZUsRYSEDAVd4C9zxAYFKPOUM3c/+lixARdbK3IvBxXDhrAFZG55PZnXrnqqg3/LUlloeqOfhHEEe4kiMnTE9kIhg+f3DKa1nyf2bmg8xW24VobimU8EIsYiaXMpzrZu+HukyiRC+RWBizn2mwFUXZ37xeR+ukgvJ4PPXS1PYSwnXq7P/ "Daniel Verlouw <daniel.verlouw@linxtelecom.com>"',
+            ],
+    }
+
+##### END linxtelecom #####
+
 }

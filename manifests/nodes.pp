@@ -2724,3 +2724,13 @@ node 'cdw01' inherits ringnode {
     $nagios_ping_rate = '!250.0,20%!400.0,60%'
 }
 
+node 'linxtelecom01' inherits ringnode {
+    $owner = "linxtelecom"
+    $location = "59.43621,24.70500"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
