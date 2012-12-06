@@ -3009,4 +3009,19 @@ class users::virtual::ring_users {
 
 ##### END linxtelecom #####
 
+##### BEGIN underworld #####                                                                                                                                                                                                                                                                                                                                                                                              
+    @add_user { 'underworld':
+        email => 'drift@underworld.no',
+        company => 'Underworld',
+        uid => 5170,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'underworld':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC9RNVl1p8lctr1t+3Hcj8sfOCM2NheGs+H2UOfRzLJRMbEgWTkf073++Z6BPjl32v38kNYJaOh9WCHkXwWiCH2uaYXANUpDmQABw/398QLk2kfEavGa7u2GPx1kPz2QONwFr41ERiDG7c+zpozwxxCbKASSkPJWm8EzhihFfNouCvqyiS+kF5MS61G+p0DPWfnJhlhUfjrWM3ZBagsq5f/C7kDcs3dGDx31IiLVJ4RdFWT77rPZHt7TpD0E0NpTvTbClnubYSfXuYdxL3kclalQU3Q6X6boOTzofa9ivmDJfu/DJyLAAUZtCJWHw1WN2sukEbQPJXDSZCSOCLJHIt28owPzOdhEAx6jp1u0kvrl9Ns6PW8DdSyPsRwh12rTaBYRtx7BqMvkbeQhByJpAfWkiNCmQhBit/fbFv1sW5OxpUAYowDmvMY+tbnV0YW7s8ynSiMPTYoz050PeCaRMKXSip1YUMpNMa/pH7I7dHZnz9vQsbOrM/DCbwU06VhGAntXh3fbPYmJlY2zXZnZ95GXwYcL5NFKwTCBouQn6x6o5iOjRAD4Bsa3AYXGQTxeu0QtQnu4AkKOOJGjd8DMxrMacGfqfvbkbQalYT4pIchq7y0MTL6xZz3Ampw86pstO80YwSMqDrWVWckaVAYAHT9y8tkWRDkdJy2gcbJD5L9ZQ== suom1@IRC',
+            ],
+    }
+
+##### END underworld #####
+
 }

@@ -638,3 +638,6 @@ ff02::2 ip6-allrouters
 2a02:e0:0:15::2  superonline01 superonline01.ring.nlnog.net
 92.45.52.74    superonline01 superonline01.ring.nlnog.net
 
+2001:67c:398::91  underworld01 underworld01.ring.nlnog.net
+91.213.203.91    underworld01 underworld01.ring.nlnog.net
+

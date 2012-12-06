@@ -750,6 +750,10 @@ ring-superonline01:v6,icmp,D,0,86400000,60000
 ring-superonline01:v6,icmp,D,0,86400000,60000, -s 576
 ring-superonline01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-underworld01:v6,icmp,D,0,86400000,60000
+ring-underworld01:v6,icmp,D,0,86400000,60000, -s 576
+ring-underworld01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging01,icmp,D,0,86400000,60000
 ring-staging01,icmp,D,0,86400000,60000, -s 576
 ring-staging01,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1493,4 +1497,8 @@ ring-linxtelecom01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-superonline01,icmp,D,0,86400000,60000
 ring-superonline01,icmp,D,0,86400000,60000, -s 576
 ring-superonline01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-underworld01,icmp,D,0,86400000,60000
+ring-underworld01,icmp,D,0,86400000,60000, -s 576
+ring-underworld01,scamper,D,0,86400000,900000, -P udp-paris -M
 
