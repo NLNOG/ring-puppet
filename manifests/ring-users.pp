@@ -2888,6 +2888,21 @@ class users::virtual::ring_users {
 
 ##### END wirehive #####
 
+##### BEGIN superonline #####
+
+    @add_user { 'superonline':
+        email => 'TEAM-IPMPLS@superonline.net',
+        company => 'Turkcell Superonline',
+        uid => 5163,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'superonline':
+        sshkeys => [
+            ],
+    }
+
+##### END superonline #####
+
 ##### BEGIN nforce #####
 
     @add_user { 'nforce':

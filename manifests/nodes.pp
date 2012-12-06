@@ -2734,3 +2734,13 @@ node 'linxtelecom01' inherits ringnode {
     include users
 }
 
+node 'superonline01' inherits ringnode {
+    $owner = "superonline"
+    $location = "40.897996,29.193764"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
