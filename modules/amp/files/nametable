@@ -187,6 +187,7 @@ ring-cdw01:v6 2607:fee0:8008:1::10
 ring-linxtelecom01:v6 2001:ad0:1400:1000::2
 ring-superonline01:v6 2a02:e0:0:15::2
 ring-underworld01:v6 2001:67c:398::91
+ring-adminor01:v6 2a01:7a00:12:a::109
 ring-staging01 213.154.236.191
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
@@ -374,3 +375,4 @@ ring-cdw01 64.73.41.115
 ring-linxtelecom01 195.222.12.126
 ring-superonline01 92.45.52.74
 ring-underworld01 91.213.203.91
+ring-adminor01 46.253.203.109

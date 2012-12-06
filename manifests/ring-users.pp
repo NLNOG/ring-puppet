@@ -3024,4 +3024,20 @@ class users::virtual::ring_users {
 
 ##### END underworld #####
 
+##### BEGIN adminor #####
+
+    @add_user { 'adminor':
+        email => 'noc@adminor.net',
+        company => 'Adminor AB',
+        uid => 5171,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'adminor':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAzUw6Og0T8Si6Peb/uPGEmZNAK7T86iwFtOeaRBYpQifAb12ntgigX5hVCw3JtQe4eBHC0jHxe8hLcd/qA7vHJfDRNRSEDUz4myFlHfFsewPMbWL2Vm36VkNjTjIJ3mXuzJjX1OlR4u8m/t4pZ3GF/yc0oxBjTd8wx1KTLGzqmKcU68oCTFatsDEaQxTVIXT8hXOho8f9HLDDFRMLXv9xOhI1VumCF7MyrSf2yipwj3Q9WfdawoJJLddPrBLunxRs5JLp4vUKReIGGMWhZKVFLPrZItefOkEUy0XSP7fy+2DXtvmrkjJ2z1zGC4PwZQr0ZHK9t1Bdf1oajzyM+a2zjw==',
+            ],
+    }
+
+##### END adminor #####
+
 }

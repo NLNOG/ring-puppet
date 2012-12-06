@@ -2754,3 +2754,13 @@ node 'underworld01' inherits ringnode {
     include users
 }
 
+node 'adminor01' inherits ringnode {
+    $owner = "adminor"
+    $location = "59.301498,18.091709"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
