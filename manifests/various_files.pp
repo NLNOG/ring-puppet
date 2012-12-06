@@ -296,6 +296,20 @@ class local_binaries {
         source  => "puppet:///files/etc/apt/apt.conf.d/88purgekernels",
         ensure => present,
    }
+    file { "/etc/dhcp/dhclient.conf":
+        owner   => root,
+        group   => root,
+        mode    => 0644,
+        source  => "puppet:///files/etc/dhcp/dhclient.conf",
+        ensure => present,
+    }
+    file { "/etc/dhcp3/dhclient.conf":
+        owner   => root,
+        group   => root,
+        mode    => 0644,
+        source  => "puppet:///files/etc/dhcp/dhclient.conf",
+        ensure => present,
+    }
 
 }
 
