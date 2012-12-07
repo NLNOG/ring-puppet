@@ -3009,9 +3009,10 @@ class users::virtual::ring_users {
 
 ##### END linxtelecom #####
 
-##### BEGIN underworld #####                                                                                                                                                                                                                                                                                                                                                                                              
+##### BEGIN underworld #####
+    
     @add_user { 'underworld':
-        email => 'drift@underworld.no',
+        email => 'noc@underworld.no',
         company => 'Underworld',
         uid => 5170,
         groups => ['ring-users'],
