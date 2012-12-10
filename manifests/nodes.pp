@@ -636,6 +636,7 @@ node 'worker02' inherits infranode {
 }
 
 node 'worker03' inherits infranode {
+    $nagios_ping_rate = '!180.0,20%!300.0,60%'
     include users
     include syslog_ng::client
     include apache2
