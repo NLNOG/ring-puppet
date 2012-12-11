@@ -2651,6 +2651,7 @@ class users::virtual::ring_users {
     @authorized_keys { 'rcsrds':
         sshkeys => [
                 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDLUdN2YRlJHhJpizTEqdzfDUhNxnmavSWMFhMcI93pS6Amk9kFv5d/ahOY6MT2088hRR7vhRgzQRWtEr4vUk9h/sP+Vfui0sq5Jp/vCWaQvAusJQ6GJIu7TvPSEXDR9hBO9wcrjaRnX/hcZelWJ3FmH3v2TvrDwFWTdVdfUU4Z91HEYivETqPCOPVqLUtfK2XiWQL+WCFFJjYxR1ZJ4n/R83PmfFwXEQcBCnNBJQ/ok17Ky9tcZXUeyjROrDNdGbg1DoMhDp1GhpOfSkE4jGiYoMNPFzi+Y5iHZbsiI4kk7fbzTeDyjiCLlpeVZRWhDNskpSsplamHaTD3FipW4UKN mihai@rcs-rds',
+                'sh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIB9JrWly3hlUvHTu5npMitGIskOtf/vcISQ0DbHnE7hpV61dbT6zX6wtPu01VAxIGO0BJA7i3h4fvkMVAgFHzUSPKKcbffvLh4j1aZrXMi3R3enJxw6Kmz3euaI4lDGScTSK6uJx8gI7LTaBXoCamXgfPrxCZx2WD0ikOVwU8TLyw== rsa-key-20121210',
             ],
     }
 
