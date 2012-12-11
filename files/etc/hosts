@@ -644,3 +644,6 @@ ff02::2 ip6-allrouters
 2a01:7a00:12:a::109  adminor01 adminor01.ring.nlnog.net
 46.253.203.109    adminor01 adminor01.ring.nlnog.net
 
+2a01:a100:a:500::228  videoplaza01 videoplaza01.ring.nlnog.net
+46.226.152.228    videoplaza01 videoplaza01.ring.nlnog.net
+

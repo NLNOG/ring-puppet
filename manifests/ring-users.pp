@@ -3042,4 +3042,20 @@ class users::virtual::ring_users {
 
 ##### END adminor #####
 
+##### BEGIN videoplaza #####
+
+    @add_user { 'videoplaza':
+        email => 'noc@videoplaza.com',
+        company => 'Videoplaza AB',
+        uid => 5172,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'videoplaza':
+        sshkeys => [
+                "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA14rTMkjcMsOUndXM49kreBwAgZBn4VmjmdQ6FA1tg9FHsjtmHyT5YU6Gm6cKbkzsPaXLcgVF7CT88AUo2p8S/o3voOP3/q5uHTtOJsb7R8tWiQbZEkBXvqKTLYQn5mlxoycOLbPJmyFyTFvpXh5uyPFLfYSdqscKpIuHdFd/S4xfDg15nCnUnz2aPDSNvbk51GEEjiGe11bEAyoTJbzjrFmbbWDbxJwRrkWjHbHcv3riYLoUj6avX+rpoUxi3XbDJpX/9DoocKl67bARAyzYUksWC3mnjQABDky9aYc3aWyZHTNK1LeB+N0321WiI9ILx9p4ZoGEGV3vSEDlMfI2IQ==",
+            ],
+    }
+
+##### END videoplaza #####
+
 }
