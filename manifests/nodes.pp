@@ -298,7 +298,7 @@ node 'container03.infra' inherits infranode {
         netmask     => '255.255.255.240',
         dns         => '8.8.8.8',
         gateway     => '78.152.42.65',
-        memory      => '8192',
+        memory      => '512',
         disksize    => '20',
         rootsize    => '19968',
         bridge      => 'virbr1',
