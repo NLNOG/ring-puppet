@@ -56,6 +56,7 @@ ring-voxel02:v6 2404:1200:0:5::2
 ring-neotelecoms01:v6 2001:1b48:100:1::8218:42
 ring-apnic01:v6 2401:2000:6660::14
 ring-atrato02:v6 2a02:d28:5580:a::52
+ring-atrato03:v6 2a02:d28:666::70
 ring-man-da01:v6 2001:41b8:0:1001:d81a:28ff:feab:40a1
 ring-webair01:v6 2604:9e00:0001:010c:0000:0000:0000:0005
 ring-concepts-ict01:v6 2001:838:76:20::2
@@ -247,6 +248,7 @@ ring-voxel02 103.22.129.2
 ring-neotelecoms01 83.167.57.42
 ring-apnic01 203.133.248.14
 ring-atrato02 78.152.36.10
+ring-atrato03 78.152.42.70
 ring-man-da01 82.195.72.4
 ring-webair01 174.137.148.20
 ring-concepts-ict01 85.113.233.194

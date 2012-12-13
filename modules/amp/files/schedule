@@ -230,6 +230,10 @@ ring-atrato02:v6,icmp,D,0,86400000,60000
 ring-atrato02:v6,icmp,D,0,86400000,60000, -s 576
 ring-atrato02:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-atrato03:v6,icmp,D,0,86400000,60000
+ring-atrato03:v6,icmp,D,0,86400000,60000, -s 576
+ring-atrato03:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-man-da01:v6,icmp,D,0,86400000,60000
 ring-man-da01:v6,icmp,D,0,86400000,60000, -s 576
 ring-man-da01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -993,6 +997,10 @@ ring-apnic01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-atrato02,icmp,D,0,86400000,60000
 ring-atrato02,icmp,D,0,86400000,60000, -s 576
 ring-atrato02,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-atrato03,icmp,D,0,86400000,60000
+ring-atrato03,icmp,D,0,86400000,60000, -s 576
+ring-atrato03,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-man-da01,icmp,D,0,86400000,60000
 ring-man-da01,icmp,D,0,86400000,60000, -s 576

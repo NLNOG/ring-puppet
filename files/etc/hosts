@@ -232,6 +232,9 @@ ff02::2 ip6-allrouters
 78.152.36.10    atrato02    atrato02.ring.nlnog.net
 2a02:d28:5580:a::52 atrato02    atrato02.ring.nlnog.net
 
+78.152.42.70    atrato03    atrato03.ring.nlnog.net
+2a02:d28:666::70    atrato03    atrato03.ring.nlnog.net
+
 82.195.72.4 man-da01    man-da01.ring.nlnog.net
 2001:41b8:0:1001:d81a:28ff:feab:40a1    man-da01    man-da01.ring.nlnog.net
 
