@@ -18,7 +18,7 @@ ring-xlshosting01:v6 2a02:348:5d:5990::1
 ring-coloclue01:v6 2a02:898:0:201::2
 ring-widexs01:v6 2001:898:2000:d::4
 ring-xs4all01:v6 2001:888:2000:3e::1337
-ring-bit01:v6 2001:7b8:608::213:136:13:101
+ring-bit01:v6 2001:7b8:d05::163
 ring-cambrium01:v6 2a02:58:3:110::23:1
 ring-interconnect01:v6 2001:4018:1000:b::2
 ring-duocast01:v6 2a01:1b0:7999:453::50
@@ -210,7 +210,7 @@ ring-xlshosting01 178.18.89.144
 ring-coloclue01 94.142.247.64
 ring-widexs01 213.206.104.156
 ring-xs4all01 82.94.249.162
-ring-bit01 213.136.13.101
+ring-bit01 213.154.249.163
 ring-cambrium01 217.19.17.23
 ring-interconnect01 212.83.212.122
 ring-duocast01 89.188.27.50

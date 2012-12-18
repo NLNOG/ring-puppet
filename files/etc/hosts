@@ -118,8 +118,8 @@ ff02::2 ip6-allrouters
 2001:888:2000:3e::1337  xs4all01    xs4all01.ring.nlnog.net
 82.94.249.162   xs4all01    xs4all01.ring.nlnog.net
 
-2001:7b8:608::213:136:13:101    bit01   bit01.ring.nlnog.net
-213.136.13.101  bit01   bit01.ring.nlnog.net
+2001:7b8:d05::163   bit01   bit01.ring.nlnog.net
+213.154.249.163 bit01   bit01.ring.nlnog.net
 
 2a02:58:3:110::23:1 cambrium01  cambrium01.ring.nlnog.net
 217.19.17.23    cambrium01  cambrium01.ring.nlnog.net
