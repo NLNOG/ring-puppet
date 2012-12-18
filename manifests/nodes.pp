@@ -347,14 +347,14 @@ node 'container04.infra' inherits infranode {
         ensure      => present,
     }
     kvm::virtual_machine { 'staging01':
-        fqdn        => 'bit01.ring.nlnog.net',
+        fqdn        => 'staging01.ring.nlnog.net',
         ip          => '213.154.249.164', # ipv6 address is 2001:7b8:d05::164
         netmask     => '255.255.255.240',
         dns         => '8.8.8.8',
         gateway     => '213.154.249.161',
         memory      => '512',
         disksize    => '10',
-        rootsize    => '19968',
+        rootsize    => '9984',
         bridge      => 'virbr1',
         container   => "${hostname}",
         ensure      => present,
