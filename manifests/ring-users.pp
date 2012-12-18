@@ -48,7 +48,7 @@ class users::virtual::ring_users {
 ##### BEGIN bit #####
 
     @add_user { 'bit':
-        email    => 'teun@teun.tv',
+        email    => 'support@bit.nl',
         company => 'BIT',
         uid      => 5002,
         groups   => ['ring-users']
