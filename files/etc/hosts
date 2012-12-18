@@ -638,7 +638,7 @@ ff02::2 ip6-allrouters
 2001:ad0:1400:1000::2  linxtelecom01 linxtelecom01.ring.nlnog.net
 195.222.12.126    linxtelecom01 linxtelecom01.ring.nlnog.net
 
-2a02:e0:0:15::2  superonline01 superonline01.ring.nlnog.net
+2a02:e0:1::2    superonline01 superonline01.ring.nlnog.net
 92.45.52.74    superonline01 superonline01.ring.nlnog.net
 
 2001:67c:398::91  underworld01 underworld01.ring.nlnog.net
