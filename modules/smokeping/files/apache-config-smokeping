@@ -1,6 +1,0 @@
-ScriptAlias /smokeping/smokeping.fcgi /usr/lib/cgi-bin/smokeping.fcgi
-Alias /smokeping /usr/share/smokeping/www
-
-<Directory "/usr/share/smokeping/www">
-    Options FollowSymLinks
-</Directory>

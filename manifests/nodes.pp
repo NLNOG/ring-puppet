@@ -31,10 +31,6 @@ node ringnode inherits basenode {
     include nodesonlycron
     include etcfiles_ring
     package{ "munin": ensure => purged, }
-    service { "smokeping":
-        ensure  => "stopped",
-        enable  => false,
-    }
     file { "/etc/puppet/puppet.conf":
         owner   => root,
         group   => root,
@@ -624,11 +620,6 @@ node 'worker01' inherits infranode {
     include apache2
     include nagios_services
     include nagios::target::fqdn
-    $sp_owner = "NLNOG RING"
-    $sp_owner_email = "ring-admins@ring.nlnog.net"
-    $sp_cgi_url = "http://worker01.ring.nlnog.net/smokeping/smokeping.fcgi"
-    $sp_mailhost = "127.0.0.1"
-    include smokeping::master
 
    nagios::service::http { $name:
         check_domain => "${name}"
