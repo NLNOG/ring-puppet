@@ -353,7 +353,7 @@ node 'container04.infra' inherits infranode {
         dns         => '8.8.8.8',
         gateway     => '213.154.249.161',
         memory      => '512',
-        disksize    => '20',
+        disksize    => '10',
         rootsize    => '19968',
         bridge      => 'virbr1',
         container   => "${hostname}",
