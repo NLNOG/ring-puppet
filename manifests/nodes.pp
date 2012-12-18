@@ -618,6 +618,7 @@ node 'lg01.infra' inherits infranode {
 }
 
 node 'worker01' inherits infranode {
+    $nagios_ping_rate = '!180.0,20%!300.0,60%'
     include users
     include syslog_ng::client
     include apache2
@@ -637,6 +638,7 @@ node 'worker01' inherits infranode {
 }
 
 node 'worker02' inherits infranode {
+    $nagios_ping_rate = '!180.0,20%!300.0,60%'
     include users
     include syslog_ng::client
     include apache2
@@ -1096,6 +1098,7 @@ node 'maverick01' inherits ringnode {
 node 'acsystemy01' inherits ringnode {
     $owner = "acsystemy"
     $location = "53.910034,14.247578"
+    $nagios_ping_rate = '!180.0,20%!300.0,60%'
     include amp_client
     include nagios::target::fqdn
     include nagios_services
@@ -1477,6 +1480,7 @@ node 'mironet01' inherits ringnode {
 node 'seeweb01' inherits ringnode {
     $owner = "seeweb"
     $location = "45.478696,9.105091"
+    $nagios_ping_rate = '!180.0,20%!300.0,60%'
     include amp_client
     include nagios::target::fqdn
     include nagios_services
@@ -1558,6 +1562,7 @@ node 'amazon01' inherits ringnode {
 node 'amazon02' inherits ringnode {
     $owner = "amazon"
     $location = "53.43333,-6.25000"
+    $nagios_ping_rate = '!180.0,20%!300.0,60%'
     include amp_client
     include nagios::target::fqdn
     include nagios_services
@@ -1964,6 +1969,7 @@ node 'occaid01' {
 node 'as250net01' inherits ringnode {
     $owner = "as250net"
     $location = "52.50200,13.37000"
+    $nagios_ping_rate = '!180.0,20%!300.0,60%'
     include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
@@ -2420,6 +2426,7 @@ node 'nuqe01' inherits ringnode {
 node 'bluezonejordan01' inherits ringnode {
     $owner = "bluezonejordan"
     $location = "31.9579048,35.8697509"
+    $nagios_ping_rate = '!180.0,20%!300.0,60%'
     include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
@@ -2582,6 +2589,7 @@ node 'networking4all01' inherits ringnode {
 node 'heanet01' inherits ringnode {
     $owner = "heanet"
     $location = "53.333145,-6.369291"
+    $nagios_ping_rate = '!180.0,20%!300.0,60%'
     include amp_client
     include nagios::target::fqdn
     include nagios_services
@@ -2731,6 +2739,7 @@ node 'serverchoice01' inherits ringnode {
 node 'bredband201' inherits ringnode {
     $owner = "bredband2"
     $location = "55.574704,12.927673"
+    $nagios_ping_rate = '!180.0,20%!300.0,60%'
     include amp_client
     include nagios::target::fqdn
     include nagios_services
