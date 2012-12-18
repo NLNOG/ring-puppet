@@ -2417,7 +2417,7 @@ node 'nuqe01' inherits ringnode {
 node 'bluezonejordan01' inherits ringnode {
     $owner = "bluezonejordan"
     $location = "31.9579048,35.8697509"
-    $nagios_ping_rate = '!180.0,20%!300.0,60%'
+    $nagios_ping_rate = '!2500.0,20%!350.0,60%'
     include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
