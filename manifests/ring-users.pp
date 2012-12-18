@@ -2904,6 +2904,8 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'superonline':
         sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIB0oX/hqFiSBj3gwktZfQXxq2qL532//HCnRqos0Rx50BO6jalsvda8aRaZzX7uyo+/yWXHAANsPCPaQksTrVfuyHxnODUq3t4WkXRKGqEM0JYswcY+8HqCM7QRwVdOeLuwERc2EEx+fMlQDP9QnSD78U6ofYdgao3WWjdSCAFqyw==',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAzfD1juT1D2oXVBX9h5LgKxnV90RSqa01K9BCpd8VIfVYE4laq/8O1r+N7gkHhQGUPM77swheML2KtqU9/dMJufYB7+x1DVU2V75TkcznXscr32zueUdRBfR18H5q8pgtTtOZlkdXtgd5ryEB+DUByFBwdEUCqAZwnQIX39BQEn8=',
             ],
     }
 
