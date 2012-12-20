@@ -3068,4 +3068,21 @@ class users::virtual::ring_users {
 
 ##### END videoplaza #####
 
+##### BEGIN rnp #####
+
+    @add_user { 'rnp':
+        email => 'noc@rnp.br',
+        company => 'RNP',
+        uid => 5173,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'rnp':
+        sshkeys => [
+                'ssh-dss AAAAB3NzaC1kc3MAAACBAPJvn/K0RLRq+BFd4hBkTJkfX374bTX7zxSVF2BejnSV6fQ41vkcJQNF5cpZAEd03Se6nWb0x40bvrmWxnvUqEutVse/9uBbN5JBQm0Y0ZRJQbGx0szJPaNyEjs8NlTWcruI0pANPcqbTM6YF0kgor1tQ0BgoXFrXyNF0AnAen8VAAAAFQCCQp4UX0QuZKR1NPIxTcuvF8S2vwAAAIEA8IyrpqfoMSmLn5r+2tLKCU8MOLk4T2FVAWpZAjAWAPljmuwwjO0GaO1Bbb3GuulWERxyDDvBdffZ05tum+0Nlqd4WwMO0GneJrI1MWsOnC66HAD3xwUMZVpRFt9AwiLS9KGnPPZZDoxAT415P8hT6oEpe+5KQ0phxjjb57bTM0UAAACADH8uAJfCQY5RRDkswXTrH2Q6zmlAHLMTQlBGL/gLIjZOQqw3IXA6tAC3+fr7fbvM96aO2CKIESVc3oRknTDvgaT3fDXtl5miacfhe2ZW24jjJTMjnc1S7kVlu+6Zujp48Oi65iTf5tBlF+BX4lZIhWwEIR1sH8iyvepEgKa8cSw= root@nlnog-pop-sp',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzMUZXNnzPCS0carTW/asR5+96ml95/OYKIWEFmqYJfyItNLt6+Z2Hc2u14TL3ludw7GF+L4bPuRKiPc4vUoL35UaFhlkGki8f7w8aoD3sA+E14VMEFWKacMncWcG/c2Fmrgb3Zuz/7ckuV12IcI8VRMHQfUBPSnROzlzv4GynQM8kNyBZYL7+rqpBpIzWlI5/aUY7R8wgu9094YPuVEwppg+59TmjBmJ6kY7hSqp8nxnYtfDc/2dtKcVE1CE2wd1vwxMSwRZsSuC0BeEuHsBFVoHND0Nzdhpv8VW+QB/Bl0zSwZ2i6AyYLdtQMoOuKQ9ydZdvQMhX4UBrjmTLZOdf root@nlnog-pop-sp',
+            ],
+    }
+
+##### END rnp #####
+
 }
