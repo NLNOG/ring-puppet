@@ -653,3 +653,5 @@ ff02::2 ip6-allrouters
 2001:12f0:d00:1::1916:93    rnp01   rnp01.ring.nlnog.net
 200.133.192.67  rnp01   rnp01.ring.nlnog.net
 
+2001:240:10c:5:0:69:696a:3031   iij01   iij01.ring.nlnog.net
+202.32.157.84   iij01   iij01.ring.nlnog.net

@@ -3088,4 +3088,20 @@ class users::virtual::ring_users {
 
 ##### END rnp #####
 
+##### BEGIN iij #####
+
+    @add_user { 'iij':
+        email => 'noc@iij.ad.jp',
+        company => 'IIJ',
+        uid => 5174,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'iij':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA4w3kDdUSWdpjKzzk+eB5RMqtSM1GY5kT1VeQReaAL1dsVCsNzKhdq66XvVrenxesx0H08NQ93kGxT/MoW4xTmmJTNyGtV9HZpIAVbz6A2288HgkFbI7mezJ2eTRK4m6U3aZ89JfAq2IWaxpgGMdFDNbg0kdNztXVvRukYE+bxqiTt0/cm22sdsube2Av0UXITYZfxEgshEMNsHoIjWlvlGTLo5VT+QuRrNYoXPUGx2I4Qgl2ryoMXiiipLUIvqKUvhR+87anVdfuWMz+811jiquO1D96p/XBEsJgp/+qSnADYKVlwKl0w2DZaDv7hM5g9aBEimo5XU2t1L/xQzNPXQ== maz@dogan.iij.ad.jp',
+            ],
+    }
+
+##### END iij #####
+
 }

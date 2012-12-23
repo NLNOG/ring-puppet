@@ -770,6 +770,10 @@ ring-rnp01:v6,icmp,D,0,86400000,60000
 ring-rnp01:v6,icmp,D,0,86400000,60000, -s 576
 ring-rnp01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-iij01:v6,icmp,D,0,86400000,60000
+ring-iij01:v6,icmp,D,0,86400000,60000, -s 576
+ring-iij01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging02,icmp,D,0,86400000,60000
 ring-staging02,icmp,D,0,86400000,60000, -s 576
 ring-staging02,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1533,4 +1537,8 @@ ring-videoplaza01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-rnp01,icmp,D,0,86400000,60000
 ring-rnp01,icmp,D,0,86400000,60000, -s 576
 ring-rnp01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-iij01,icmp,D,0,86400000,60000
+ring-iij01,icmp,D,0,86400000,60000, -s 576
+ring-iij01,scamper,D,0,86400000,900000, -P udp-paris -M
 
