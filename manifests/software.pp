@@ -66,7 +66,7 @@ class nettools {
         ensure => latest,
     }
 
-    File { "/bin/ping":
+    file { "/bin/ping":
         mode    =>  "4755",
         require =>  Package["iputils-ping"],
     }
