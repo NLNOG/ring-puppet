@@ -65,6 +65,12 @@ class nettools {
     package { ["iputils-ping", "iputils-tracepath"]:
         ensure => latest,
     }
+
+    File { "/bin/ping":
+        mode    =>  "4755",
+        require =>  Package["iputils-ping"],
+    }
+
     package { "lft": ensure => latest }
     file { "/usr/bin/lft":
         ensure => "/usr/sbin/lft",
