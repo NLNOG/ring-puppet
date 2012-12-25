@@ -2838,7 +2838,7 @@ node 'rnp01' inherits ringnode {
 
 node 'iij01' inherits ringnode {
     $owner = "iij"
-    $location = "Tokyo, Japan"
+    $location = "35.683191,139.761949"
     include amp_client
     include nagios::target::fqdn
     include nagios_services
