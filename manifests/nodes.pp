@@ -1132,6 +1132,7 @@ node 'netsign01' inherits ringnode {
     include nagios_services
     include set_local_settings
 	include users
+    $nagios_ping_rate = '!150.0,20%!250.0,60%'
 }
 
 node 'rrbone01' inherits ringnode {
@@ -2834,6 +2835,7 @@ node 'rnp01' inherits ringnode {
     include nagios_services
     include set_local_settings
     include users
+    $nagios_ping_rate = '!300.0,20%!400.0,60%'
 }
 
 node 'iij01' inherits ringnode {
@@ -2844,5 +2846,6 @@ node 'iij01' inherits ringnode {
     include nagios_services
     include set_local_settings
     include users
+    $nagios_ping_rate = '!300.0,20%!400.0,60%'
 }
 
