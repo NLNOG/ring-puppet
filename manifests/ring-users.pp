@@ -3106,4 +3106,19 @@ class users::virtual::ring_users {
 
 ##### END iij #####
 
+##### BEGIN beanfield #####
+
+    @add_user { 'beanfield':
+        email => 'noc@beanfield.com',
+        company => 'Beanfield Technologies',
+        uid => 5175,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'beanfield':
+        sshkeys => [
+            ],
+    }
+
+##### END beanfield #####
+
 }

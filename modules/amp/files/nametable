@@ -190,8 +190,9 @@ ring-superonline01:v6 2a02:e0:1::2
 ring-underworld01:v6 2001:67c:398::91
 ring-adminor01:v6 2a01:7a00:12:a::109
 ring-videoplaza01:v6 2a01:a100:a:500::228
-ring-rnp01:v6 2001:12f0:d00:1::1916:93
+ring-rnp01:v6 2001:12f0:500:1dc::1916:12
 ring-iij01:v6 2001:240:10c:5:0:69:696a:3031
+ring-beanfield01:v6 2607:F0C8:1:1::1
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
 ring-netground01 87.250.146.52
@@ -384,3 +385,4 @@ ring-adminor01 46.253.203.109
 ring-videoplaza01 46.226.152.228
 ring-rnp01 200.133.192.67
 ring-iij01 202.32.157.84
+ring-beanfield01 66.207.196.130

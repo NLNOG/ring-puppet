@@ -2849,3 +2849,13 @@ node 'iij01' inherits ringnode {
     $nagios_ping_rate = '!300.0,20%!400.0,60%'
 }
 
+node 'beanfield01' inherits ringnode {
+    $owner = "beanfield"
+    $location = "43.638090,-79.425509"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

@@ -655,3 +655,7 @@ ff02::2 ip6-allrouters
 
 2001:240:10c:5:0:69:696a:3031   iij01   iij01.ring.nlnog.net
 202.32.157.84   iij01   iij01.ring.nlnog.net
+
+2607:F0C8:1:1::1  beanfield01 beanfield01.ring.nlnog.net
+66.207.196.130    beanfield01 beanfield01.ring.nlnog.net
+
