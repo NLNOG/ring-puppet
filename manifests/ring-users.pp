@@ -3116,6 +3116,7 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'beanfield':
         sshkeys => [
+                'ssh-dss AAAAB3NzaC1kc3MAAACBAPdRbdELGn0uGBLteSkkD/71WzvY/7Skk1D8ElwKLEszx7boTzkMYrr4/sJInztuxMURKn2WgJGPaVMMjTboa+YcE4MGQrSiLCJOF+q5CFDZFJl8qHHjZ3x6U3HlmV5AVRPEevNUMkQoEuNtEZfBVtmtyFn32Ea87fNPxINxhlb1AAAAFQCpiWX1GyNRK5wI5GcsShHInMA1kwAAAIEAlhJ3Mew6Ql8OKyi6xejOnifLJ6zqC/pvKpyvdnOUDZU1DgYfpggfOfU/Y20o6BD/FnyHWfj5UhfT/2L5m7UdRVO5+Z8ATEQnzWmyHKR/F5nAsXwNYmXoqZoOZtA7RUrDP2jP+0S2Z91jJf6OuRv2tdEgY+TyJzGmdHAzrjuvDxsAAACBAPTTGSP1vXjZkpESlN/qNwlSt24RBWi8yb8jTbNU4dUYEtFHhewCCOJYCxGbgFMHt5eCmPdKDHZfC6cb7UVCEn0nnFy2sTWYihnCPiBTVgquEWR4kQm7BNlGaB6fbFy+x6Q0l9Q7eR8shWhDQ8AnF1sakNPbMD3bYaEUJ/H3ahSX jlixfeld@BlackBox.local',
             ],
     }
 
