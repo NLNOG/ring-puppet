@@ -659,3 +659,9 @@ ff02::2 ip6-allrouters
 2607:F0C8:1:1::1  beanfield01 beanfield01.ring.nlnog.net
 66.207.196.130    beanfield01 beanfield01.ring.nlnog.net
 
+2001:67c:2a0:8::beef  serioustubes01 serioustubes01.ring.nlnog.net
+194.14.0.167    serioustubes01 serioustubes01.ring.nlnog.net
+
+2607:f1e8:f0f0:b:528a:1948:db90:ec59  direcpath01 direcpath01.ring.nlnog.net
+65.50.1.70    direcpath01 direcpath01.ring.nlnog.net
+

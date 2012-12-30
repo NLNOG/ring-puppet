@@ -2859,3 +2859,23 @@ node 'beanfield01' inherits ringnode {
     include users
 }
 
+node 'serioustubes01' inherits ringnode {
+    $owner = "serioustubes"
+    $location = "59.3268,18.0717"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'direcpath01' inherits ringnode {
+    $owner = "direcpath"
+    $location = "33.782149,-84.404582"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

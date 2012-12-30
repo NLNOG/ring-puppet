@@ -778,6 +778,14 @@ ring-beanfield01:v6,icmp,D,0,86400000,60000
 ring-beanfield01:v6,icmp,D,0,86400000,60000, -s 576
 ring-beanfield01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-serioustubes01:v6,icmp,D,0,86400000,60000
+ring-serioustubes01:v6,icmp,D,0,86400000,60000, -s 576
+ring-serioustubes01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-direcpath01:v6,icmp,D,0,86400000,60000
+ring-direcpath01:v6,icmp,D,0,86400000,60000, -s 576
+ring-direcpath01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging02,icmp,D,0,86400000,60000
 ring-staging02,icmp,D,0,86400000,60000, -s 576
 ring-staging02,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1549,4 +1557,12 @@ ring-iij01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-beanfield01,icmp,D,0,86400000,60000
 ring-beanfield01,icmp,D,0,86400000,60000, -s 576
 ring-beanfield01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-serioustubes01,icmp,D,0,86400000,60000
+ring-serioustubes01,icmp,D,0,86400000,60000, -s 576
+ring-serioustubes01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-direcpath01,icmp,D,0,86400000,60000
+ring-direcpath01,icmp,D,0,86400000,60000, -s 576
+ring-direcpath01,scamper,D,0,86400000,900000, -P udp-paris -M
 

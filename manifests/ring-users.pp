@@ -3122,4 +3122,38 @@ class users::virtual::ring_users {
 
 ##### END beanfield #####
 
+##### BEGIN serioustubes #####
+
+    @add_user { 'serioustubes':
+        email => 'noc@serioustubes.se',
+        company => 'Serious Tubes Networks',
+        uid => 5176,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'serioustubes':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA0aLrV7GHuzTJTHTQYmrwAFW9RjWZtRQSYSl3GbvuuYeTiGzU2Alz1xmFraJoIshN+EMMBW4i2CEUoX+OJTEBUgqIazvME74gQYBuPsjD5VQ+BEYriYy/KrdMX9n0tgbb9nTPTM3CoJfgp38+cNJUd8zRAuVbWj7o3+weoqwtbthle/GQJOEqIKnkg6jPEzzexCfHoc9ocWoN5hH9qcR7+GOjWwr8riHKbH+aCNrYs9YTqxrGDuUQcpemQcoernDF+Ux7VnZ9sBn8jGEuNAGo2vztAykkdmTh5aeVHQ6xyUlB4i0tCZ+rAXH0AlSWTpKx0HQIcgP7cVCD6tFdfyUqIw== magma@sasori.talismoon.net',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDG6tekZivgfWIaZx5QAzPVMvdFOLB/metklHISMHZnJQqGfN8m6ur0HLxzitIn2LWb8egD8eLS1mziTOLYxxYHcQHNOQ3RvKqN+U+LCHxypUE/pqvpsO5y//R/b6SUD2ztg6wHP9aV5imIzboT3CGjNTjiSfWFZlpanp4rer+D+pgcnVMauax3cci0qiq4lZjO6vr3z2NVQg1nXJV2K54jhzliZi49NXWELP0nWfPCHO6Ge4qPkVb4PcNPJOvJ4Dgu1w3iDlv7+0/MC602wFvC5dE5JgV0pwUmwpsM6T9m9sr2O8kfZWfQugRb0dbHNJNMKfeybtzE68Cbu/vKHq9n magma@trolol',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAvmyt1yuy1o+gf/6+KcoE41sU7pd9P+tRBMzrGeCr9WvlcJK6qO+ktKgwTIxb+DEZzxTkpKl1YYfIxPIdEiDSLvhX+LFeZUep5ogsdLwAFUh+oED/ZOyMKhODaHQu1PVyLr4izpVThxXGWXxAve5LEkDCvhsWxUJzrG662Q1UupGkJbLv9ukhLj3L38/CN7szKD+M3cHUWdRXmqJ2mkLttzBc5r3XLGq8k1FH97HjrU6cVYb4RjGsbZt9ibDg6PcsQRidKnRqMCi6a3FIykoUFCnWzNuOPryr68lpFCxq8sMHfiA6mLGRCKx4JnUC0Sx/cvqvLmT61RagRODvUecKHw== magma@gai',
+            ],
+    }
+
+##### END serioustubes #####
+
+##### BEGIN direcpath #####
+
+    @add_user { 'direcpath':
+        email => 'engr@direcpath.com',
+        company => 'Direcpath, LLC',
+        uid => 5177,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'direcpath':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDdDGk1/kFeeISQXiWvmc5lZl3TFvv81SAJUvTKWqmcxCjGqcM6doiqmkJmmz7G1FdTlKkOLYxckML6b1QAkpSKvvV7pY2WLwC56XaKvfaQroDe2IrTG9RQBV886K80C9Wyoj6RM+dxCfmTckYn8+zXbs3g/14xbYYr95eCf5GNtbDHbAgeu7p1hwTjB0/ULtSiy6o9RpAQqlEXox3epAW5awpCn0zHt3uiqS+WCPZDWlFCxcIvKCRoQ8FboFofLAcWhGv8ob3iMTGS7AxmPAzgBnvXGUXY+/kbxquTdl/siIfk++WvtDBdlDAnUruNGCoFQhS2ntQufNT0VjQeZMH7 "nlnog-ring rdrake 29-Dec-2010"',
+            ],
+    }
+
+##### END direcpath #####
+
 }
