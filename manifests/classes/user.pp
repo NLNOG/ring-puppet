@@ -8,7 +8,9 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
     $allgroups = $groups
     # nasty hack for bird shell enforcement
     if ($fqdn =~ /lg0[12].infra.ring.nlnog.net/) and ($groups !~ /ring-admins/) {
-        $shell = "/usr/local/bin/birdshell"
+        if ($username != 'dave') {
+            $shell = "/usr/local/bin/birdshell"
+        }
     } else {
         $shell = "/bin/bash"
     }
