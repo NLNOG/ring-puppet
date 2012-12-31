@@ -641,7 +641,7 @@ node 'lg01.infra' inherits infranode {
     add_user { 'dave':                                                                                                                                                                                                 
         email    => 'dave@claranet',
         company => 'Claranet',
-        uid      => 5124,
+        uid      => 6124,
         groups  => ['ring-users', 'admin'],
     }
     authorized_keys { 'dave':
