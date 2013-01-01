@@ -594,6 +594,11 @@ node 'public01.infra' inherits infranode {
         check_domain => "${name}"
     }
     include powerdns
+    mysql::server { "mysql":
+        config_hash => {
+            'root_password' => trocla("mysql_${fqdn}",'plain'),
+        }
+    }
 }
 
 node 'public02.infra' inherits infranode {
