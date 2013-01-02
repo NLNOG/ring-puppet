@@ -34,8 +34,8 @@ class powerdns {
         subscribe  => File["powerdns.conf"],
     }
 	file { "powerdns.conf":
-	        mode => 644, 
-			owner => root, 
+	        mode => 640, 
+			owner => pdns, 
 			group => root,
 	        require => Package['powerdns'],
 	        ensure => present,

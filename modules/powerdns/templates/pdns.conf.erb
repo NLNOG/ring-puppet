@@ -5,9 +5,12 @@ config-dir=/etc/powerdns
 daemon=yes
 disable-axfr=yes
 guardian=yes
-launch=gsqlite3
-gsqlite3-database=/var/spool/powerdns/pdns.sqlite
-gsqlite3-dnssec
+launch=gmysql
+gmysql-host=localhost
+gmysql-dbname=pdns
+gmysql-user=pdns
+gmysql-password=<%= trocla("pdns_${fqdn}",'plain') %>
+gmysql-dnssec=yes
 lazy-recursion=yes
 local-address=<%= ipaddress %>
 local-ipv6=<%= ipaddress6 %>
