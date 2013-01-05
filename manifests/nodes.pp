@@ -2894,3 +2894,13 @@ node 'direcpath01' inherits ringnode {
     include users
 }
 
+node 'dcsone01' inherits ringnode {
+    $owner = "dcsone"
+    $location = "1.31,103.75"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

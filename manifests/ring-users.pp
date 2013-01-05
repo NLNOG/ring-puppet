@@ -3157,4 +3157,20 @@ class users::virtual::ring_users {
 
 ##### END direcpath #####
 
+##### BEGIN dcsone #####
+
+    @add_user { 'dcsone':
+        email => 'noc@dcs1.biz',
+        company => 'DCS1 Pte Ltd',
+        uid => 5178,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'dcsone':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIB4mmAlv7+PdCL97FxqDbRoJGOQfgZQVhkgmmDLrVI0AAOQWkbqy2wDadJOPlqWrZkyCNfAcPWebq5VZJwrM/LEZKno6pxCx3GSubF0P6fb5rNU/e110AfvpkCI+jNC37N1tzQTkCA0x1C6lqFWVQXjHfpEvrsNl7NM4qL/MlymLQ== sanjeev@dcs1.biz',
+            ],
+    }
+
+##### END dcsone #####
+
 }

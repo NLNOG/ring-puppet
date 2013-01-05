@@ -665,3 +665,6 @@ ff02::2 ip6-allrouters
 2607:f1e8:f0f0:b:528a:1948:db90:ec59  direcpath01 direcpath01.ring.nlnog.net
 65.50.1.70    direcpath01 direcpath01.ring.nlnog.net
 
+2405:fc00::a001  dcsone01 dcsone01.ring.nlnog.net
+203.123.48.14    dcsone01 dcsone01.ring.nlnog.net
+
