@@ -668,3 +668,9 @@ ff02::2 ip6-allrouters
 2405:fc00::a001  dcsone01 dcsone01.ring.nlnog.net
 203.123.48.14    dcsone01 dcsone01.ring.nlnog.net
 
+2607:f140:ffff:ff07::a  berkeley01 berkeley01.ring.nlnog.net
+128.32.158.98    berkeley01 berkeley01.ring.nlnog.net
+
+2001:968:8888:0:212:79:254:61  ispservices01 ispservices01.ring.nlnog.net
+212.79.254.61    ispservices01 ispservices01.ring.nlnog.net
+

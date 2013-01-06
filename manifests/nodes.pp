@@ -2906,3 +2906,23 @@ node 'dcsone01' inherits ringnode {
     include users
 }
 
+node 'berkeley01' inherits ringnode {
+    $owner = "berkeley"
+    $location = "37.874871,-122.258335"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'ispservices01' inherits ringnode {
+    $owner = "ispservices"
+    $location = "51.954204,6.300182"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

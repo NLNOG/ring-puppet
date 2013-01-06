@@ -3173,4 +3173,36 @@ class users::virtual::ring_users {
 
 ##### END dcsone #####
 
+##### BEGIN berkeley #####
+
+    @add_user { 'berkeley':
+        email => 'noc@nak.berkeley.edu',
+        company => 'University of California at Berkeley',
+        uid => 5179,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'berkeley':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEA+u88/r23be8El8DpX8RehjiBUA6JbcV1Owu2fWpsNHJG4TC/nLhgBXGvKzjL+yRPb32wx7/P0oM3FvRg8SDDl2+pjtt0PaisH9/BTaNBvmDCD1lRg5ax5T3NeKnOcXK7EbOGak105iFLLX7Hb6kvk0qa2wNjqKa88QH2uEQ3DHbJKeA8MrahZQBferqlfmHfYN3zfiaO/kIkKD2lCPX7xA0gzlqVC2p1BzIDwIjD5QbqMn+E8U5MJaQm7FBkoFIrf0iEFxb7noWLCbwg9JPD3pjDhRcmrp0C6UeaT2mEFVvcKYh/LpI+w3iA1Z/FvhyyEIvq8wcRaYx6qnOKnxHyPa3UHppRCK57PPyed3DFUpiBlx0qPlcolceaD57V31cEyc7CSE9AA9yyu/ZT3fty2i33Zk4A5HkoZeMWusFc3YE1yRRm0wm5ifUC4Fm8zyk5p4borOscHUQeM8+3ErIlWKKCwOgf6vm6L/GQmMTVu4RcRlwlqWrGjqqr0NpM96pLTpSCZhR5gnSqiBiGd5bc89VFo15sJj352jKh9fktv7ZP5moKUSj53Ie7/QMFnW0gxGXHlvGDdcYy40ud62uWqS61nLOI90PEOaEdj09Lv83OtkWohouZQT96JneywgcTsxfbtM2CekhWcNCKr+NIYL20ok30mDDud6/jFUIkuWk= "runes@ack.berkeley.edu for nlnog"',
+            ],
+    }
+
+##### END berkeley #####
+
+##### BEGIN ispservices #####
+
+    @add_user { 'ispservices':
+        email => 'noc@isp-services.nl',
+        company => 'ISP Services',
+        uid => 5180,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'ispservices':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2V6/ZDCOrJiniPoBnf5XTUSMua+nlHVVD6yUgZfYn3iZsEVv2XhXkKDMwth9tsw1H61OmkMdw+3g1iPsZWCpf06I3LuFTApk9eU6rpwv5l5QHpffRukNWZFr6R3Kl+ePzPLTusMY5ARqkBFvSsPDv/nX3DsAKekTg0tuVJ/45xFQmHOSF8D9jZUm52f99CAa+hbRSE+5mzD1hIljWb+ty7F8iiq71j3PdWgXSjQbKLpWIpagyopTPf60Ft11Ad1lb9907RRA+v2Je/xe3i/GNdKGQwyqxgQZLBWUABTT8/jiroyF7vf3stRSP1ZjA5EFXx7VnzG9npLwommoKKfTL dennis@Denniss-MacBook-Pro.local',
+            ],
+    }
+
+##### END ispservices #####
+
 }

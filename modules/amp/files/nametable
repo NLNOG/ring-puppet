@@ -196,6 +196,8 @@ ring-beanfield01:v6 2607:F0C8:1:1::1
 ring-serioustubes01:v6 2001:67c:2a0:8::beef
 ring-direcpath01:v6 2607:f1e8:f0f0:b:528a:1948:db90:ec59
 ring-dcsone01:v6 2405:fc00::a001
+ring-berkeley01:v6 2607:f140:ffff:ff07::a
+ring-ispservices01:v6 2001:968:8888:0:212:79:254:61
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
 ring-netground01 87.250.146.52
@@ -392,3 +394,5 @@ ring-beanfield01 66.207.196.130
 ring-serioustubes01 194.14.0.167
 ring-direcpath01 65.50.1.70
 ring-dcsone01 203.123.48.14
+ring-berkeley01 128.32.158.98
+ring-ispservices01 212.79.254.61
