@@ -9,7 +9,7 @@ launch=gmysql
 gmysql-host=localhost
 gmysql-dbname=pdns
 gmysql-user=pdns
-gmysql-password=<%= trocla("pdns_${fqdn}",'plain') %>
+gmysql-password=<%= scope.function_trocla("pdns_${fqdn}",'plain') %>
 gmysql-dnssec=yes
 lazy-recursion=yes
 local-address=<%= ipaddress %>
