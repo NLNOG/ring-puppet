@@ -600,6 +600,7 @@ node 'public01.infra' inherits infranode {
         }
     }
     package { "python-mysqldb": ensure => latest }
+    include local_binaries_pdnsmaster
 }
 
 node 'public02.infra' inherits infranode {
