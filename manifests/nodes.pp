@@ -520,7 +520,7 @@ node 'db03.infra' inherits dbslaves {
     include syslog_ng::client
     include nodesonlycron
     include users
-    mysql::server { "mysql":
+    class { 'mysql::server':
         config_hash => {
             'root_password' => trocla("mysql_${fqdn}",'plain'),
             'server-id'     => '3',
@@ -594,7 +594,7 @@ node 'public01.infra' inherits infranode {
         check_domain => "${name}"
     }
     include powerdns
-    mysql::server { "mysql":
+    class { 'mysql::server':
         config_hash => {
             'root_password' => trocla("mysql_${fqdn}",'plain'),
         }
