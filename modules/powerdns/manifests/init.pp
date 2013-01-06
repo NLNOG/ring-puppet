@@ -36,7 +36,7 @@ class powerdns {
 	file { "powerdns.conf":
 	        mode => 640, 
 			owner => pdns, 
-			group => root,
+			group => ring-admins,
 	        require => Package['powerdns'],
 	        ensure => present,
 	        path => $operatingsystem ?{

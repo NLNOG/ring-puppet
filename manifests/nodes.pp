@@ -599,6 +599,7 @@ node 'public01.infra' inherits infranode {
             'root_password' => trocla("mysql_${fqdn}",'plain'),
         }
     }
+    package { "python-mysqldb": ensure => latest }
 }
 
 node 'public02.infra' inherits infranode {
