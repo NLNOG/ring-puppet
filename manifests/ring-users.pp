@@ -3200,6 +3200,7 @@ class users::virtual::ring_users {
     @authorized_keys { 'ispservices':
         sshkeys => [
                 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2V6/ZDCOrJiniPoBnf5XTUSMua+nlHVVD6yUgZfYn3iZsEVv2XhXkKDMwth9tsw1H61OmkMdw+3g1iPsZWCpf06I3LuFTApk9eU6rpwv5l5QHpffRukNWZFr6R3Kl+ePzPLTusMY5ARqkBFvSsPDv/nX3DsAKekTg0tuVJ/45xFQmHOSF8D9jZUm52f99CAa+hbRSE+5mzD1hIljWb+ty7F8iiq71j3PdWgXSjQbKLpWIpagyopTPf60Ft11Ad1lb9907RRA+v2Je/xe3i/GNdKGQwyqxgQZLBWUABTT8/jiroyF7vf3stRSP1ZjA5EFXx7VnzG9npLwommoKKfTL dennis@Denniss-MacBook-Pro.local',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAuvzp91Z6MJhmXEftKu1/42xn9INx78DKf99piw6BHD6Sz3S0l3LCGl3AgdxYcBbOY4JJbasAQ8zPTUP28DAiDCyNTP5CBUwAAqPoEJRXK2Uiiumeq5hNyBufDX7boeL+20dKNAnB1E5WmH6oSDRb4DzQ6QDUmuJnM8Ns3WocAvVCaqlVAUbvQY6moOPkAd0eiu63ZdxIsfG114KLXMpRNaqfsVhppNNduwQU9Mbfa+TtYXDgZMawojgEy/ZcsuAfZQ6QlI/qUunY8MtztN+Xdk9lR2rd1jkd4CGimgOODYH0jdwYivw5GuFgJRBEq6fpXOjO8rd8d3FY9wHbpIqbcw== master11@isp-services.nl',
             ],
     }
 
