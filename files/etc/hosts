@@ -674,3 +674,9 @@ ff02::2 ip6-allrouters
 2001:968:8888:0:212:79:254:61  ispservices01 ispservices01.ring.nlnog.net
 212.79.254.61    ispservices01 ispservices01.ring.nlnog.net
 
+120.29.249.252  ausregistry01   ausregistry01.ring.nlnog.net
+2001:dcd:11:3d::4   ausregistry01   ausregistry01.ring.nlnog.net
+
+2001:620:0:9::a3  switch01 switch01.ring.nlnog.net
+195.176.255.11    switch01 switch01.ring.nlnog.net
+

@@ -2926,3 +2926,23 @@ node 'ispservices01' inherits ringnode {
     include users
 }
 
+node 'ausregistry01' inherits ringnode {
+    $owner = "ausregistry"
+    $location = "-37.822633,144.932208"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+    $nagios_ping_rate = '!300.0,20%!400.0,60%'
+}
+
+node 'switch01' inherits ringnode {
+    $owner = "switch"
+    $location = "47.38014,8.54459"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}

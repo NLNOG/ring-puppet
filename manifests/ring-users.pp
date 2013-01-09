@@ -3215,4 +3215,36 @@ class users::virtual::ring_users {
 
 ##### END ispservices #####
 
+##### BEGIN ausregistry #####
+
+    @add_user { 'ausregistry':
+        email => 'netadmin@ausregistry.com.au',
+        company => 'AusRegistry',
+        uid => 5181,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'ausregistry':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAuOP5DZOrW93zCuY9qwtpn45PnhobvciaRg9FeGjsH6kDPHfkjohH6y0uWInlchQ6QUNwqw86eMgr7vMpzPwepYJiurqkj65aMFkt6w3+dgfg3HoHOhf08OnTTZLm2kQoiCez/hYqfZnidfzYXY1ba2WyiY1fDggAOeuFlS/50IBYH6ypWAq/jSlOn2+xdT35DYTF9xnHwsjfeOBwbF1ajyQAEy9swoSZuwf1Ed5NTXSFG/gzJ5va+11lhYpg5r8LOw6BBg+FSO+7GGiVw3SJbF2dVCFo3csrgpqNIJsTUcCuVw2WwBBi6s7MZZe3dTjrV8iU2nvKli+Nau7d+q0YtQ==',
+            ],
+    }
+
+##### END ausregistry #####
+
+##### BEGIN switch #####
+
+    @add_user { 'switch':
+        email => 'noc@switch.ch',
+        company => 'SWITCH',
+        uid => 5182,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'switch':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEA4ZBNhxuJ9mhP6fho+CkzzxQTnvzrsyCl2uk/SgW1uaMPhwZ0Nr2ImxukAVM4z5VaZdNkPceK1K6MnE9RBlrsF9STkuoesp/alCUB2vFya0mXGRhhXESQ5wqgsqpK1sEHFBliGY84xUlH92b1+TuD5gmgoqNz5e7EeisXoVCGG1E= welti@sleipnir',
+            ],
+    }
+
+##### END switch #####
+
 }
