@@ -2874,6 +2874,7 @@ node 'beanfield01' inherits ringnode {
     include nagios_services
     include set_local_settings
     include users
+    $nagios_ping_rate = '!200.0,20%!300.0,60%'
 }
 
 node 'serioustubes01' inherits ringnode {
@@ -2894,6 +2895,7 @@ node 'direcpath01' inherits ringnode {
     include nagios_services
     include set_local_settings
     include users
+    $nagios_ping_rate = '!200.0,20%!300.0,60%'
 }
 
 node 'dcsone01' inherits ringnode {
@@ -2904,6 +2906,7 @@ node 'dcsone01' inherits ringnode {
     include nagios_services
     include set_local_settings
     include users
+    $nagios_ping_rate = '!350.0,20%!450.0,60%'
 }
 
 node 'berkeley01' inherits ringnode {
@@ -2914,6 +2917,7 @@ node 'berkeley01' inherits ringnode {
     include nagios_services
     include set_local_settings
     include users
+    $nagios_ping_rate = '!200.0,20%!300.0,60%'
 }
 
 node 'ispservices01' inherits ringnode {
@@ -2934,7 +2938,7 @@ node 'ausregistry01' inherits ringnode {
     include nagios_services
     include set_local_settings
     include users
-    $nagios_ping_rate = '!300.0,20%!400.0,60%'
+    $nagios_ping_rate = '!400.0,20%!500.0,60%'
 }
 
 node 'switch01' inherits ringnode {
