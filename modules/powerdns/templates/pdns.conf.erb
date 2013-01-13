@@ -3,7 +3,8 @@
 allow-recursion=127.0.0.1
 config-dir=/etc/powerdns
 daemon=yes
-disable-axfr=yes
+disable-axfr=no
+allow-axfr-ips=<%= ipaddress %>/32,<%= ipaddress6 %>/128
 guardian=yes
 launch=gmysql
 gmysql-host=localhost
