@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import MySQLdb as mdb
-import sys, inspect, re, time
+import sys, inspect, re, time, simplejson, urllib, math
 from subprocess import call
 
 PDNSCONF='/etc/powerdns/pdns.conf'
@@ -9,6 +9,7 @@ DBUSER='pdns'
 DB='pdns'
 ZONE='ring.nlnog.net'
 SOA='ns01.infra.ring.nlnog.net. ring-admins.ring.nlnog.net. %.0f 7200 3600 1209600 900' % time.time()
+ELEVATION='http://maps.googleapis.com/maps/api/elevation/json'
 
 SCHEMA='''
 create table domains (
@@ -167,11 +168,11 @@ class commands(object):
             print '%-*s %s' % (maxcmdlen+2, cmd, doc)
         return 1
     
-    def dbdo(self, q, script=False):
+    def dbdo(self, q, v=None):
         conn = mdb.connect(DBHOST,DBUSER,self.get_dbpass(PDNSCONF),DB)
         cur = conn.cursor()
-        if script:
-            cur.executescript(q)
+        if v:
+            cur.execute(q, v)
         else:
             cur.execute(q)
         conn.commit()
@@ -202,6 +203,11 @@ class commands(object):
             return res[0]
         else:
             return None
+
+    def dbdelete(self, table, **kwargs):
+        cols, vals = zip(*kwargs.items())
+        query = 'DELETE FROM %s WHERE %s' % (table, ' '.join('%s=%%s' % col for col in cols))
+        self.dbdo(query, vals)
         
     def dblist(self, table):
         query = 'SELECT * FROM %s' % table
@@ -219,8 +225,6 @@ class commands(object):
         self.dbdo(query)
 
     def add_record(self,name,rtype,content,ttl,prio,zone=ZONE):
-        if not (re.match(r'.*%s$' % zone,name)):
-            name=name + "." + zone
         query = "insert into records (domain_id, name,type,content,ttl,prio) select id ,'%s', '%s', '%s', %s, %s " \
                 "from domains where name='%s'" % (name,rtype,content,ttl,prio,zone)
         _, rowid = self.dbdo(query)
@@ -236,6 +240,13 @@ class commands(object):
     
     def update_record(self,id,content):
         query = "update records set content='%s' where id=%s" % (content,id)
+        _, rowid = self.dbdo(query)
+        self.update_soa()
+        self.rectify_zone()
+        return rowid
+    
+    def update_rtype(self,name,rtype,content):
+        query = "update records set content='%s' where name='%s' AND type='%s'" % (content,name,rtype)
         _, rowid = self.dbdo(query)
         self.update_soa()
         self.rectify_zone()
@@ -300,8 +311,10 @@ class commands(object):
                 dbpass=re.sub('gmysql-password=','',line)
                 return dbpass.rstrip()
 
-    def cmd_add_record(self,name,rtype,content,ttl=600,prio=0):
+    def cmd_add_record(self,name,rtype,content,ttl=600,prio=0,zone=ZONE):
         """add a record"""
+        if not (re.match(r'.*%s$' % zone,name)):
+            name=name + "." + zone
         recid=self.add_record(name=name,rtype=rtype,content=content,ttl=ttl,prio=prio)
         print 'record %s added' % (recid)
     
@@ -310,20 +323,61 @@ class commands(object):
         self.del_record(pid)
         print 'record %s deleted' % (pid)
 
-    def cmd_list_records(self,pid=None):
+    def cmd_list_records(self,name=None):
         """list records"""
-        if pid:
-            print self.dbselectone('records', id=pid)
+        zone=ZONE
+        if name:
+            if not (re.match(r'.*%s$' % zone,name)):
+                name=name + "." + zone
+            result=self.dbselect('records', name=name)
+            for row in result:
+                print row
         else:
             self.dblist('records')
     
-    def cmd_add_node(self,name,v4,v6):
+    def cmd_add_node(self,name,v4,v6,geo=None):
         """add records for a node"""
+        zone=ZONE
+        if not (re.match(r'.*%s$' % zone,name)):
+            name=name + "." + zone
         recid=self.add_record(name=name,rtype='AAAA',content=v6,ttl=600,prio=0)
         print 'record %s added' % (recid)
         recid=self.add_record(name=name,rtype='A',content=v4,ttl=600,prio=0)
         print 'record %s added' % (recid)
+        if geo:
+            recid=self.add_record(name=name,rtype='LOC',
+                                  content=self.getgeo(geo),ttl=600,prio=0)
+            print 'record %s added' % (recid)
         print 'node %s added' % (name)
+        
+    def cmd_update_node(self,name,attribute,value):
+        """update record for a node"""
+        zone=ZONE
+        rtype=None
+        if not (re.match(r'.*%s$' % zone,name)):
+            name=name + "." + zone
+        if attribute=='v4':
+            rtype='A'
+        elif attribute=='v6':
+            rtype='AAAA'
+        elif attribute=='geo':
+            rtype='LOC'
+            value=self.getgeo(value)
+        else:
+            sys.exit('unknown attribute %s' % attribute)
+        self.update_rtype(name=name,rtype=rtype,content=value)
+        print 'node %s updated' % (name)
+
+    def cmd_del_node(self,name):
+        """del records for a node"""
+        zone=ZONE
+        fullname=name
+        if not (re.match(r'.*%s$' % zone,fullname)):
+            fullname=fullname + "." + zone
+        self.del_from_txt(name);
+        print 'node %s deactivated' % (name)
+        self.dbdelete('records',name=fullname);
+        print 'node %s deleted' % (name)
 
     def cmd_activate_node(self,name):
         """add the TXT entry for a node"""
@@ -334,11 +388,6 @@ class commands(object):
         """remove the TXT entry for a node"""
         self.del_from_txt(name);
         print 'node %s deactivated' % (name)
-
-    def cmd_initdb(self):
-        """initialize database"""
-        self.dbdo(SCHEMA, script=True)
-        print 'database initialized'
 
     def cmd_add_domain(self,zone=ZONE):
         """add a domain"""
@@ -361,6 +410,47 @@ class commands(object):
         """add the SOA for a domain"""
         recid=self.add_record(zone,'SOA',SOA,3600,0)
         print 'record %s added' % (recid)
+
+    def getgeo(self,geo):
+        url=ELEVATION+"?locations="+geo+"&sensor=false"
+        response = simplejson.load(urllib.urlopen(url))
+        resultset = response['results'][0]
+        #print "lat:"+str(resultset['location']['lat'])
+        #print "lng:"+str(resultset['location']['lng'])
+        #print "elev:"+str(resultset['elevation'])
+        #print "res:"+str(resultset['resolution'])
+
+        lat=self.dd2dms(float(resultset['location']['lat']),"lat")
+        lng=self.dd2dms(float(resultset['location']['lng']),"lng")
+        elv="%.2f" % (round(resultset['elevation'],2))
+
+        return "%s %s %sm" % (lat,lng,elv)
+
+    def dd2dms(self,value,type):
+        d=int(math.floor(value))
+        frac=value-d
+        frac=frac*60
+        m=int(math.floor(frac))
+        frac=frac-m
+        s=round(frac*60,3)
+
+        dir = None
+        if (type == "lat"):
+            if (d<0):
+                d=abs(d)
+                dir = "S"
+            else:
+                dir = "N"
+        elif (type == "lng"):
+            if (d<0):
+                d=abs(d)
+                dir = "W"
+            else:
+                dir = "E"
+        else:
+            sys.exit("invalid degree type")
+
+        return str(d)+" "+str(m)+" "+str(s)+" "+dir
         
 def run(args):
     c = commands()
