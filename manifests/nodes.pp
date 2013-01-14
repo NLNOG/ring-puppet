@@ -76,7 +76,7 @@ node 'master01.infra' inherits infranode {
             dns_ip  => '94.142.241.53', dnsserver   => 'ns1.6core.net';
         '${name}_5':
             domain  => 'ring.nlnog.net',
-            dns_ip  => '89.31.100.199', dnsserver   => 'ns3.coloclue.net';
+            dns_ip  => '82.94.230.131', dnsserver   => 'ns01.infra.ring.nlnog.net';
         '${name}_6':
             domain  => 'ring.nlnog.net',
             dns_ip  => '79.170.90.163', dnsserver   => 'ns.rodecker.nl';
