@@ -165,7 +165,7 @@ ring-yellowfiber01:v6 2607:fd50:1::5a
 ring-bahnhof01:v6 2001:9b0:01:1107::2
 ring-nicchile01:v6 2001:1398:3:120:200:1:120:28
 ring-glesys01:v6 2a02:750:7::392
-ring-rcsrds01:v6 2a02:2f02:b030:1::2
+ring-rcsrds01:v6 2a02:2f0c:8000:f::2
 ring-indit01:v6 2a01:298:f001:a::7
 ring-itmastaren01:v6 2a00:7800:8000::36
 ring-openminds01:v6 2a02:d08:1001:201::1000
@@ -366,7 +366,7 @@ ring-yellowfiber01 67.23.114.2
 ring-bahnhof01 195.178.185.171
 ring-nicchile01 200.1.120.28
 ring-glesys01 109.74.6.228
-ring-rcsrds01 82.79.149.42
+ring-rcsrds01 82.76.255.222
 ring-indit01 178.16.220.7
 ring-itmastaren01 81.94.161.36
 ring-openminds01 188.93.100.32
