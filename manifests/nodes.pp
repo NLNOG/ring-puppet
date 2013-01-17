@@ -2564,7 +2564,7 @@ node 'glesys01' inherits ringnode {
 
 node 'rcsrds01' inherits ringnode {
     $owner = "rcsrds"
-    $location = "44.934916,26.025970"
+    $location = "44.429187,26.079895"
     include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
