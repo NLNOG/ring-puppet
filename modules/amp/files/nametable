@@ -200,6 +200,7 @@ ring-berkeley01:v6 2607:f140:ffff:ff07::a
 ring-ispservices01:v6 2001:968:8888:0:212:79:254:61
 ring-ausregistry01:v6 2001:dcd:11:3d::4
 ring-switch01:v6 2001:620:0:9::a3
+ring-hurricane01:v6 2001:470:0:292::2
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
 ring-netground01 87.250.146.52
@@ -400,3 +401,4 @@ ring-berkeley01 128.32.158.98
 ring-ispservices01 212.79.254.61
 ring-ausregistry01 120.29.249.252
 ring-switch01 195.176.255.11
+ring-hurricane01 64.71.160.154

@@ -806,6 +806,10 @@ ring-switch01:v6,icmp,D,0,86400000,60000
 ring-switch01:v6,icmp,D,0,86400000,60000, -s 576
 ring-switch01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-hurricane01:v6,icmp,D,0,86400000,60000
+ring-hurricane01:v6,icmp,D,0,86400000,60000, -s 576
+ring-hurricane01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging02,icmp,D,0,86400000,60000
 ring-staging02,icmp,D,0,86400000,60000, -s 576
 ring-staging02,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1605,4 +1609,8 @@ ring-ausregistry01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-switch01,icmp,D,0,86400000,60000
 ring-switch01,icmp,D,0,86400000,60000, -s 576
 ring-switch01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-hurricane01,icmp,D,0,86400000,60000
+ring-hurricane01,icmp,D,0,86400000,60000, -s 576
+ring-hurricane01,scamper,D,0,86400000,900000, -P udp-paris -M
 

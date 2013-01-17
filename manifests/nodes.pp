@@ -2950,3 +2950,15 @@ node 'switch01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'hurricane01' inherits ringnode {
+    $owner = "hurricane"
+    $location = "37.49012,-121.93130"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+    $nagios_ping_rate = '!200.0,20%!300.0,60%'
+}
+
