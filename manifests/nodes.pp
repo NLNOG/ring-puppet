@@ -2962,3 +2962,13 @@ node 'hurricane01' inherits ringnode {
     $nagios_ping_rate = '!200.0,20%!300.0,60%'
 }
 
+node 'proserve01' inherits ringnode {
+    $owner = "proserve"
+    $location = "51.846185,4.679017"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

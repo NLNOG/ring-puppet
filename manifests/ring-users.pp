@@ -3281,4 +3281,19 @@ class users::virtual::ring_users {
 
 ##### END hurricane #####
 
+##### BEGIN proserve #####
+
+    @add_user { 'proserve':
+        email => 'noc@proserve.nl',
+        company => 'Proserve B.V.',
+        uid => 5184,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'proserve':
+        sshkeys => [
+            ],
+    }
+
+##### END proserve #####
+
 }

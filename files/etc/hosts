@@ -683,3 +683,6 @@ ff02::2 ip6-allrouters
 2001:470:0:292::2  hurricane01 hurricane01.ring.nlnog.net
 64.71.160.154    hurricane01 hurricane01.ring.nlnog.net
 
+2001:828:100:82:11:104:0:1  proserve01 proserve01.ring.nlnog.net
+83.96.195.104    proserve01 proserve01.ring.nlnog.net
+
