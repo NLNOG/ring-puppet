@@ -3291,6 +3291,8 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'proserve':
         sshkeys => [
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCjEt4xTSr8KDiCLJRRJXtQTFh/oH+BBzcmFZ0ftuWxxwtsUeFRDbT/chK1IMfyl5HHTJBvJVJ3jiy1EP+u82Ovxgpte5q/wXQKjPqcBi5NVUmZii2qaRVMKbjmyXbgfbSDduPVKRpKktpCN8lXOEyAQ6dMMd5RIAQ+tIdFhO2Zfo1IJehPLjW4Tew/B5VZ64WsMLD86cFIWCfkvMF7SlWIjkoX9j2O7QBxOdSdwZ4R1uBjqvv3rTJaMT0GvXxa/9nyW5slC1hXnXAqMjKzNuTgBkNgBAcqXCv/iJ8zy+IujKr5t2ceIUYRNmN+QRne40v6tEi9OsunBrqma/qHdYtd michiel@kraan.proserve.nl',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC04f9VNXDWWyY+7UvLdD7eQcuDyQmTsyKkPgiIbNWtdvgIfx9VjGF9FnG59ZENXHBgzzwwYF7+7JGc2zUTZRtbiTztTwxSHyComcXAqOEJWSghHH9+jTRPfVj94bejgjUKB7Zqbio1SNnytdsgFVLNlFOf+3N9l+3QVuuWcPZOsWAlTCQE//nWSN70mpQM+3/hNGA7FBSemZDypLWG1UKv4w7ck7QrJ8S0Uxu8lY0VgmZ5kqnFwyL/L42Zx8YqGTkZvJQaTSqZpKgIjvI9YrIBztGr1in903xC4QyCfkseUMyLyBm3ngCTHvpfecZF76A+6CL+2FJ5oAep391XKOER edwin@kalle.org',
             ],
     }
 
