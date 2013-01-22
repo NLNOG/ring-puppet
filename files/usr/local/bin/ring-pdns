@@ -192,7 +192,8 @@ class commands(object):
 
     def dbselect(self, table, **kwargs):
         cols, vals = zip(*kwargs.items())
-        query = 'SELECT * FROM %s WHERE %s' % (table, ' '.join('%s=%%s' % col for col in cols))
+        query = 'SELECT * FROM %s WHERE %s' % (table, ' '.join('%s=%%s AND' % col for col in cols))
+        query=re.sub(' AND$','',query)
         return self.dbquery(query, vals)
 
     def dbselectone(self, table, **kwargs):
@@ -252,9 +253,13 @@ class commands(object):
         self.rectify_zone()
         return rowid
 
-    def add_to_txt(self,name,zone=ZONE):
+    def add_to_txt(self,name,subzone=None,zone=ZONE):
         name=re.sub('.' + ZONE,'',name)
-        result = self.dbselect('records', type='TXT')
+        recordname=zone
+        if subzone:
+            recordname=subzone+'.'+recordname
+
+        result = self.dbselect('records',name=recordname,type='TXT')
         update = None
         newtxt = None
         for row in result:
@@ -271,12 +276,16 @@ class commands(object):
             self.update_record(update,newtxt)
             print "record %s updated" % id
         else:
-            recid = self.add_record(ZONE,'TXT',name,600,0);
+            recid = self.add_record(recordname,'TXT',name,600,0);
             print 'record %s added' % (recid)
  
-    def del_from_txt(self,name,zone=ZONE):
+    def del_from_txt(self,name,subzone=None,zone=ZONE):
         name=re.sub('.' + ZONE,'',name)
-        result = self.dbselect('records', type='TXT')
+        recordname=zone
+        if subzone:
+            recordname=subzone+'.'+recordname
+
+        result = self.dbselect('records',name=recordname,type='TXT')
         update = None
         newtxt = None
         for row in result:
@@ -335,7 +344,7 @@ class commands(object):
         else:
             self.dblist('records')
     
-    def cmd_add_node(self,name,v4,v6,geo=None):
+    def cmd_add_node(self,name,v4,v6,geo):
         """add records for a node"""
         zone=ZONE
         if not (re.match(r'.*%s$' % zone,name)):
@@ -365,27 +374,46 @@ class commands(object):
             value=self.getgeo(value)
         else:
             sys.exit('unknown attribute %s' % attribute)
-        self.update_rtype(name=name,rtype=rtype,content=value)
+        
+        result = self.dbselect('records',name=name,type=rtype)
+        update=None
+        for row in result:
+            update=1
+            break
+
+        if update:
+            self.update_rtype(name=name,rtype=rtype,content=value)
+        else:    
+            recid=self.add_record(name=name,rtype=rtype,
+                                  content=value,ttl=600,prio=0)
+            print 'record %s added' % (recid)
         print 'node %s updated' % (name)
 
-    def cmd_del_node(self,name):
+    def cmd_del_node(self,name,country):
         """del records for a node"""
         zone=ZONE
         fullname=name
         if not (re.match(r'.*%s$' % zone,fullname)):
             fullname=fullname + "." + zone
+        
+        if country:
+            self.del_from_txt(name,country.lower());
         self.del_from_txt(name);
         print 'node %s deactivated' % (name)
         self.dbdelete('records',name=fullname);
         print 'node %s deleted' % (name)
 
-    def cmd_activate_node(self,name):
+    def cmd_activate_node(self,name,country):
         """add the TXT entry for a node"""
+        if country:
+            self.add_to_txt(name,country.lower());
         self.add_to_txt(name);
         print 'node %s activated' % (name)
     
-    def cmd_deactivate_node(self,name):
+    def cmd_deactivate_node(self,name,country):
         """remove the TXT entry for a node"""
+        if country:
+            self.del_from_txt(name,country.lower());
         self.del_from_txt(name);
         print 'node %s deactivated' % (name)
 
