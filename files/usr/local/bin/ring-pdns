@@ -448,13 +448,19 @@ class commands(object):
         #print "elev:"+str(resultset['elevation'])
         #print "res:"+str(resultset['resolution'])
 
-        lat=self.dd2dms(float(resultset['location']['lat']),"lat")
-        lng=self.dd2dms(float(resultset['location']['lng']),"lng")
+        lat=self.dd2dms(resultset['location']['lat'],"lat")
+        lng=self.dd2dms(resultset['location']['lng'],"lng")
         elv="%.2f" % (round(resultset['elevation'],2))
 
         return "%s %s %sm" % (lat,lng,elv)
 
-    def dd2dms(self,value,type):
+    def dd2dms(self,dd,type):
+        value=float(dd)
+        isneg=0
+        if (value<0):
+            isneg=1
+            value=-value
+
         d=int(math.floor(value))
         frac=value-d
         frac=frac*60
@@ -464,13 +470,13 @@ class commands(object):
 
         dir = None
         if (type == "lat"):
-            if (d<0):
+            if (isneg):
                 d=abs(d)
                 dir = "S"
             else:
                 dir = "N"
         elif (type == "lng"):
-            if (d<0):
+            if (isneg):
                 d=abs(d)
                 dir = "W"
             else:
