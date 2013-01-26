@@ -18,6 +18,7 @@ class nettools {
     # for BGPmon stuff (requested by dave) 
     package { "libxml2-dev": ensure => latest }
     package { "socat": ensure => latest }
+    package { "htop": ensure => latest }
 
     package { "libcache-cache-perl": ensure => latest }
     package { "httping": ensure => latest }
