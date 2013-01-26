@@ -2,6 +2,7 @@
 import MySQLdb as mdb
 import sys, inspect, re, time, simplejson, urllib, math
 from subprocess import call
+from itertools import tee
 
 PDNSCONF='/etc/powerdns/pdns.conf'
 DBHOST='localhost'
@@ -262,7 +263,17 @@ class commands(object):
         result = self.dbselect('records',name=recordname,type='TXT')
         update = None
         newtxt = None
+
+        result, result2 = tee(result)
         for row in result:
+            id= row[0]
+            txt = row[4]
+            txt=re.sub('\"','',txt)
+            if (re.search(r'(^|\s+)%s($|\s+)' % name,txt)):
+                print "%s already in txt (record %s)" % (name,id)
+                return
+
+        for row in result2:
             id= row[0]
             txt = row[4]
             txt=re.sub('\"','',txt)
@@ -407,6 +418,7 @@ class commands(object):
         """add the TXT entry for a node"""
         if country:
             self.add_to_txt(name,country.lower());
+            self.add_to_txt(country.lower(),"countries");
         self.add_to_txt(name);
         print 'node %s activated' % (name)
     
@@ -414,6 +426,7 @@ class commands(object):
         """remove the TXT entry for a node"""
         if country:
             self.del_from_txt(name,country.lower());
+            self.del_from_txt(country.lower(),"countries");
         self.del_from_txt(name);
         print 'node %s deactivated' % (name)
 
