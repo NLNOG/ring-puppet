@@ -3294,6 +3294,8 @@ class users::virtual::ring_users {
         sshkeys => [
             'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCjEt4xTSr8KDiCLJRRJXtQTFh/oH+BBzcmFZ0ftuWxxwtsUeFRDbT/chK1IMfyl5HHTJBvJVJ3jiy1EP+u82Ovxgpte5q/wXQKjPqcBi5NVUmZii2qaRVMKbjmyXbgfbSDduPVKRpKktpCN8lXOEyAQ6dMMd5RIAQ+tIdFhO2Zfo1IJehPLjW4Tew/B5VZ64WsMLD86cFIWCfkvMF7SlWIjkoX9j2O7QBxOdSdwZ4R1uBjqvv3rTJaMT0GvXxa/9nyW5slC1hXnXAqMjKzNuTgBkNgBAcqXCv/iJ8zy+IujKr5t2ceIUYRNmN+QRne40v6tEi9OsunBrqma/qHdYtd michiel@kraan.proserve.nl',
             'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC04f9VNXDWWyY+7UvLdD7eQcuDyQmTsyKkPgiIbNWtdvgIfx9VjGF9FnG59ZENXHBgzzwwYF7+7JGc2zUTZRtbiTztTwxSHyComcXAqOEJWSghHH9+jTRPfVj94bejgjUKB7Zqbio1SNnytdsgFVLNlFOf+3N9l+3QVuuWcPZOsWAlTCQE//nWSN70mpQM+3/hNGA7FBSemZDypLWG1UKv4w7ck7QrJ8S0Uxu8lY0VgmZ5kqnFwyL/L42Zx8YqGTkZvJQaTSqZpKgIjvI9YrIBztGr1in903xC4QyCfkseUMyLyBm3ngCTHvpfecZF76A+6CL+2FJ5oAep391XKOER edwin@kalle.org',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAwXB1oOoQ9T3+LmOoS6ghuy2C9qzJhqS+CDHfMefFecdaFwNznzudHbnotAsecpyXZnO4rdt3d63uEQ6h2vvhcSxz5WaVEpbcJNYSnCZqiZuZOQBYbBOAaGIuDsiF9li+ce+1GuSaSysPX7A0JpHexmxSJUl7Z7FoTeLWZ6F2X3QQBy4B4fmce056B3SmUMwwI4My9nUbBRkt2X1n8uu+xIAiSshgntP43qIxzFqKIamcBDnnIWo9RjKjO9phmWvmp7BhaN83nOpPnqW3jcUMUrLNaZrZTboWNXSKYcK9pjDv8Nab9XLqkBvJ1CUEEtm6UhlFj/c18ho+6EcyufryMQ== bvelburg@proserve.nl',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDE3CB2RYVNs8p+ByUzJwsC8w/q0t+TMTuhcntVsIH4rWNU+ys8KnhSmbeKZaUvtqjxSbOH8vq+teNEnSxuHYCWIkNg8Iy3yrqdYKQKxJ/QhpbkvEWsDARKud4cDiMCnpnQom/3uRISScV4wSBW+fOOuudIlsU/JpN4HMZgxnBXi5Z8/OaXJF4iFAzAfYfcVfi1mvCvpfZRdZf7z0knQp1VnXi4WyD3BKYP71KdZNNyWX9ULMLvheHsLgo0W18RDhPXhn5ryBpZRik3pE6x9TDXcoKB7itSGkdwG9AwZjGdUmWZXrB8kYe8Ox5wa7HJhG52tuLxn8TGWLUBHw140Za/ proserve@proserve01.ring.nlnog.net',
             ],
     }
 
