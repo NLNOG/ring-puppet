@@ -40,4 +40,4 @@ allows.each do |cidr|
 -%>
 cidr_allow <%= cidr %>
 <% end -%>
-
+allow ^82\.94\.230\.131$
