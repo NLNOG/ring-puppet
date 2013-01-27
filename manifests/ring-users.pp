@@ -3301,4 +3301,51 @@ class users::virtual::ring_users {
 
 ##### END proserve #####
 
+##### BEGIN teletalk #####
+
+    @add_user { 'teletalk':
+        email => 'noc@teletalk.com.br',
+        company => 'Teletalk Telecomunicações Ltda',
+        uid => 5185,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'teletalk':
+        sshkeys => [
+            ],
+    }
+
+##### END teletalk #####
+
+##### BEGIN poppr #####
+
+    @add_user { 'poppr':
+        email => 'admnet@pop-pr.rnp.br',
+        company => 'PoP-PR',
+        uid => 5186,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'poppr':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC07kPx5ekP6+6aJ/tyCSjMufy80Ma276zbLFO11Y3eGU5eS9FGi7qnFUEJl2DcGZQaFvCOtjhmdQZljg8WVP2MqhWpV8KJtGrge0Qn0lQEASjDoNt4siCVIusLastoaP1pOjAscJsMpVa/ckHFrXT4Uu3eobeeUAS/vNW+Lnx9lfv7HRqBu6C5NRPSU8X0mQlI6U5XNcW7WWVNyDMYBNN2JaoW0qJv/T9htcFyQptI3HjYnR4ujY01KOxP4p4hPdUpVBQOOJVJCRrkoA0NNn5UrjzE4LD2lrT0NLpQRYKrGfVPkhT1deLNCoVpCyzdmMllWfOnuEkrrTIriSADr4fh popuser@skyline',
+            ],
+    }
+
+##### END poppr #####
+
+##### BEGIN kaiaglobal #####
+
+    @add_user { 'kaiaglobal':
+        email => 'cust.noc@nmc.kaiaglobal.com',
+        company => 'Kaia Global Networks Ltd.',
+        uid => 5187,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'kaiaglobal':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEAtizDeHq3l13pp8K9udaQVJmgFfoy3/ErDBxDndmHTClueMdqr6Cw2qzeeoAPgVBRCv7ZDpYNcK+uhWGaiYcTOt7Td2XW0VI2Y5lgis5cJ/sotIIz/zkouH6K/n4VZPzIYCwoJIHSfnKH1BdWjPfkYiu9pqM7X4azgLwx4Xjw7FSCyy4WqLkqsskSs8f5f8k1OUc6mJn7mFZvDKcRZTO2oMiFXCgne6dpZrhTra1vTTIy/3BrTjoUn7dMz5JE5F9/Wh9FCoVt6uO3LZ8v/kqNd/klEf7zFVoXrIwcYCiHPJEEDijHkLrv43YYkMRiRduHjErtU0fautX5EGLL22AZjsY7tKQe8z117D5POXidyvijCVy1hUqCMD+SZL40RuxyJkFcLIM94qcmKfph9wEF8n1OTXkxg8pAdtAIJAGsNhgRVMBVLlm+/b953dNq4Y9+F71EieYQwIi9jnC4eCN8XOTUPUcBb/SsADmGK3G0Pstq61CbFC2hhyNTBG6SU+xuALp1ha6zZEfJKrwOaL4ZJEoz5ooU7u2GYkTq62Wo0cNjlQuhEyeANqUYC32ZT8tMOqt3GdVxUpgP6eEoujcOHeu7/I1fopYcatNcwiY19x7bV1UrEsUIdUkI0HQ9UXN81vkK9zG8Sog3XESyQxsGvUDQ+Gu7jfqZu6BZez6PDI0= fhibler',
+            ],
+    }
+
+##### END kaiaglobal #####
+
 }

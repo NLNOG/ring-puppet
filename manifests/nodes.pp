@@ -2972,3 +2972,35 @@ node 'proserve01' inherits ringnode {
     include users
 }
 
+node 'teletalk01' inherits ringnode {
+    $owner = "teletalk"
+    $location = "-12.984611,-38.467272"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+    $nagios_ping_rate = '!200.0,20%!300.0,60%'
+}
+
+node 'poppr01' inherits ringnode {
+    $owner = "poppr"
+    $location = "-25.445832,-49.233255"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+    $nagios_ping_rate = '!200.0,20%!300.0,60%'
+}
+
+node 'kaiaglobal01' inherits ringnode {
+    $owner = "kaiaglobal"
+    $location = "53.551004,10.047029"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

@@ -814,6 +814,18 @@ ring-proserve01:v6,icmp,D,0,86400000,60000
 ring-proserve01:v6,icmp,D,0,86400000,60000, -s 576
 ring-proserve01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-teletalk01:v6,icmp,D,0,86400000,60000
+ring-teletalk01:v6,icmp,D,0,86400000,60000, -s 576
+ring-teletalk01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-poppr01:v6,icmp,D,0,86400000,60000
+ring-poppr01:v6,icmp,D,0,86400000,60000, -s 576
+ring-poppr01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-kaiaglobal01:v6,icmp,D,0,86400000,60000
+ring-kaiaglobal01:v6,icmp,D,0,86400000,60000, -s 576
+ring-kaiaglobal01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging02,icmp,D,0,86400000,60000
 ring-staging02,icmp,D,0,86400000,60000, -s 576
 ring-staging02,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1621,4 +1633,16 @@ ring-hurricane01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-proserve01,icmp,D,0,86400000,60000
 ring-proserve01,icmp,D,0,86400000,60000, -s 576
 ring-proserve01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-teletalk01,icmp,D,0,86400000,60000
+ring-teletalk01,icmp,D,0,86400000,60000, -s 576
+ring-teletalk01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-poppr01,icmp,D,0,86400000,60000
+ring-poppr01,icmp,D,0,86400000,60000, -s 576
+ring-poppr01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-kaiaglobal01,icmp,D,0,86400000,60000
+ring-kaiaglobal01,icmp,D,0,86400000,60000, -s 576
+ring-kaiaglobal01,scamper,D,0,86400000,900000, -P udp-paris -M
 
