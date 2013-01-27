@@ -6,7 +6,7 @@ require "resolv"
 	host = hostname.downcase
 	fhost = name.downcase
     v4host = (Resolv::DNS.new.getresource munin_host_real, Resolv::DNS::Resource::IN::A).address.to_s
-    v4host = (Resolv::DNS.new.getresource munin_host_real, Resolv::DNS::Resource::IN::AAAA).address.to_s
+    v6host = (Resolv::DNS.new.getresource munin_host_real, Resolv::DNS::Resource::IN::AAAA).address.to_s
 
 # v4host = (Resolv::DNS.new.getresource"munin_host_real", Resolv::DNS::Resource::IN::A).address.to_s
 #    v4host = Resolv::Hosts#getaddress(munin_host_real)
