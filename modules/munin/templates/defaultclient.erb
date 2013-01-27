@@ -6,6 +6,7 @@ require "resolv"
 	host = hostname.downcase
 	fhost = name.downcase
     v4host = (Resolv::DNS.new.getresource munin_host_real, Resolv::DNS::Resource::IN::A).address.to_s
+    v4host = (Resolv::DNS.new.getresource munin_host_real, Resolv::DNS::Resource::IN::AAAA).address.to_s
 
 # v4host = (Resolv::DNS.new.getresource"munin_host_real", Resolv::DNS::Resource::IN::A).address.to_s
 #    v4host = Resolv::Hosts#getaddress(munin_host_real)
@@ -16,6 +17,6 @@ require "resolv"
 #+<%= dom %>
 #-<%= host %>=<%= fhost %>:load.load
 [<%= fhost %>] # linux box 
-	address <%= v4host %>
+	address <%= v6host %>
 	port <%= munin_port_real %>
 	use_node_name yes
