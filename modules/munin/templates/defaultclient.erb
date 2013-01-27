@@ -13,10 +13,8 @@ require "resolv"
 #    v4host = Resolv.getaddress(munin_host_real)
 
 %>
-### This syntax can be extended, it might get better ...
 #+<%= dom %>
-#-<%= host %>=<%= fhost %>:load.load
-[<%= fhost %>] # linux box 
+[<%= fhost %>] 
 	address <%= v6host %>
 	port <%= munin_port_real %>
 	use_node_name yes
