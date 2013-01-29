@@ -3317,7 +3317,7 @@ class users::virtual::ring_users {
 
     @add_user { 'teletalk':
         email => 'noc@teletalk.com.br',
-        company => 'Teletalk Telecomunica��es Ltda',
+        company => 'Teletalk Telecomunications Ltda',
         uid => 5185,
         groups => ['ring-users'],
     }
