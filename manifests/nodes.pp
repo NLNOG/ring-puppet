@@ -392,7 +392,19 @@ node 'container05.infra' inherits infranode {
         container   => "${hostname}",
         ensure      => present,
     }
-
+    kvm::virtual_machine { 'irr':
+        fqdn        => 'us.irr.infra.ring.nlnog.net',
+        ip          => '108.168.252.131', # ipv6 address is 2607:f0d0:1103:f0::131
+        netmask     => '255.255.255.240',
+        dns         => '8.8.8.8',
+        gateway     => '108.168.252.129',
+        memory      => '5120',
+        disksize    => '20',
+        rootsize    => '19968',
+        bridge      => 'virbr1',
+        container   => "${hostname}",
+        ensure      => present,
+    }
 }
 
 node 'bgpmon.infra' inherits infranode {
