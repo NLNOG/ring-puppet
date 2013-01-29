@@ -161,6 +161,7 @@ class nettools {
     }
 
     package { "build-essential": ensure => latest }
+    package { ["bison", "flex"]: ensure => latest }
     package { "dnsutils": ensure => latest }
     package { "ldnsutils": ensure => latest }
     package { "wget": ensure => latest }
