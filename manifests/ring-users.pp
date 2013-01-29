@@ -2910,6 +2910,7 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'wirehive':
         sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEArXaaM5wglsopsMgnmeSBPIryw+3F4CbqPtPbDANF1VxR4BN9QV0KCCtXXtXe8Yy4IlBA7y8+H298Rv+WDPaJzs2XPjHfoo4PhL4pQQFqxbZWKb+Km3KEHX6ooD3P8Ezq9mGygP3Xifwkp+0LEy0CFjb/uPZXjhDS8Tc7UWNKeT0= simon-green-rsa-key-20120214',
                 'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEA3gjLUQPwPRevgCtNArhH3yrCkGfgoVO/TQ17thGmf5n/McIF+hIu1bJMOYASnVwZBz6E1n1qCzD8T/p7KB7MBXA59ifLBUpsRwJY+tMI4ZscmIH8QTLAm7kKDBPLu/8uEmh41lVAbr1sS+27kUsqkNmTQB/uUHuhUzoq0+9np6moJlV7bLvWMfpUzQywdL/IWnlsUDPdB9sTclg9B2QDG12EFValYZzXgS7PX/F25Ou4o25I2NMTLkSM4mCvESospPmIoC1T6XhpuQ+b/ZMXHtvRM+/elEvjPQNGoVh6HmLeqVlnDKfPiGKh9DJhs8FnW2zLiuhY36GqBROOGPg+tQ== wh-JonTotham-RSA-201212',
                 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDcQ4kmefHE0QLlp8s/GYVvKJMhVhhUPkkrn7ivtK9v/9LtHNWwCT7RbEUZpsz5dCJMv2aqDwH5LlYHiXaiqm7sS/6WPkcQ3vn5FX/Oxd1bFWuR4EslIBJ4vgQO9AXxejqHLEjsxKLsPPAXeVi85cjBS5cQwEaxAHrl9h9upuZ2yoHAzCKReZ1hpKKjquF343EZjjkzT25pLv8829QYevEMx4HiVpLwn4+iQnUfxKVQts9WB51g8f+Uiw71phu6t17/E13YjXtBHbC5l/kUWepK0inJK/grVD36nb1fWMXPfT1BYQw0RBnPFO7NyiSpuSqzHApW26vo7Y73YvhrUEPx wh-TimFreeborn-RSA-201211',
                 'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEA294E0mpn1QQ4UL+v05HUbN+xhm+Q827vaJ2wMo9rRJSpQiEbmJt0jGe2Vmz2NF/mo2SPu5XfiuDmjLNjLvN43DpbIJIFDSW1EgS9nP5s/cyz5SSk0wvd2eNCI+0Q/T2Yva9Sr0gLKD6uW8eTdBd8iI6GIMa9gu1EL2/62E7XS58= maxfrimond-rsa-key-20121220',
@@ -3316,7 +3317,7 @@ class users::virtual::ring_users {
 
     @add_user { 'teletalk':
         email => 'noc@teletalk.com.br',
-        company => 'Teletalk Telecomunicações Ltda',
+        company => 'Teletalk Telecomunicaï¿½ï¿½es Ltda',
         uid => 5185,
         groups => ['ring-users'],
     }
