@@ -434,6 +434,7 @@ node 'us01.irr.infra' inherits infranode {
     include syslog_ng::client
     include nodesonlycron
     include users
+    $nagios_ping_rate = '!180.0,20%!300.0,60%'
 }
 
 
