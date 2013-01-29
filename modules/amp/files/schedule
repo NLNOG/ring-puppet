@@ -826,6 +826,10 @@ ring-kaiaglobal01:v6,icmp,D,0,86400000,60000
 ring-kaiaglobal01:v6,icmp,D,0,86400000,60000, -s 576
 ring-kaiaglobal01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-enestdata01:v6,icmp,D,0,86400000,60000
+ring-enestdata01:v6,icmp,D,0,86400000,60000, -s 576
+ring-enestdata01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging02,icmp,D,0,86400000,60000
 ring-staging02,icmp,D,0,86400000,60000, -s 576
 ring-staging02,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1645,4 +1649,8 @@ ring-poppr01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-kaiaglobal01,icmp,D,0,86400000,60000
 ring-kaiaglobal01,icmp,D,0,86400000,60000, -s 576
 ring-kaiaglobal01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-enestdata01,icmp,D,0,86400000,60000
+ring-enestdata01,icmp,D,0,86400000,60000, -s 576
+ring-enestdata01,scamper,D,0,86400000,900000, -P udp-paris -M
 
