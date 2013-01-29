@@ -3359,4 +3359,20 @@ class users::virtual::ring_users {
 
 ##### END kaiaglobal #####
 
+##### BEGIN enestdata #####
+
+    @add_user { 'enestdata':
+        email => 'noc@e-nestdata.ch',
+        company => 'e-nestdata SA',
+        uid => 5188,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'enestdata':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDCR/ZgtdNgW/sTzRN5HuBW/61jcV2GDB8O0z/MLjUBNlc6eDq2jK3id0x9y1m8Nnwe+DCPDRekhiTAnn2GFueHztjZ982prwcd7go+6YmtmmlaBsuUCyNPDZuKzUCeR4l/uIneD+VEwijGmQpVBJStlyUcN4qY1uym9bgBFd+9vkFs63IJaUJaNOM+phdbnpGTSMoMNxlWIP9Xf8qSR+j8K+nlcqUjcHfVCPZwVul3PZ/dOyVHCljYs700MzAP6XieRvBPNiOZhBAEeRlwarAO4JBFdPZbVzUTVPoPLpjpwN0c0DAvAaZEGWdrvm+HPQ4Jh8fUktFDcbKl0DsfOvJ5',
+            ],
+    }
+
+##### END enestdata #####
+
 }

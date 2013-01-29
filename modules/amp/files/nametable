@@ -205,6 +205,7 @@ ring-proserve01:v6 2001:828:100:82:11:104:0:1
 ring-teletalk01:v6 2001:470:10:29::2
 ring-poppr01:v6 2801:82:0:3::54
 ring-kaiaglobal01:v6 2a02:b0:1048:1::2
+ring-enestdata01:v6 2a02:74c0::232:52
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
 ring-netground01 87.250.146.52
@@ -410,3 +411,4 @@ ring-proserve01 83.96.195.104
 ring-teletalk01 177.21.0.60
 ring-poppr01 200.134.255.54
 ring-kaiaglobal01 95.141.20.62
+ring-enestdata01 185.4.232.52
