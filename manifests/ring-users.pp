@@ -351,6 +351,7 @@ class users::virtual::ring_users {
             'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAumJ86e02yat/LOKMaxxGNeZpgDbTTqFidwC3h48FhyH82tRw4IR+47/LpNXRTPDNV2rpFHJq/GjPws+euySN4JKG0SCh7Lzn0A2kLoxIwF34+98jV1++pjQ3i/m9sO2hLOX7AUJ1yli5Etzye6IV+BNKNpFTMzjzD6Rsr4/ppIjoWzkPHIzNO9zZItPUlsOHs/TLmpsdjdWrMJQkY56Ap8FftmMeTgOK41zQPQ6Q+cNRNR3k6dON8J0N33nuG9V8q+fosZmrf36wLZb3HMp34EkFLcp8VGwh7WIF+kfXdoDMdl9twXxRXedhzv3xG7kdnXnCThrE0lPKv6gf/E/rnw== /home/wouter/.ssh/id_rsa',
             'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQB8E67IL35a4I2gGhP44E0gO/jjtiBx98X6Y//BDEvUzsVCjZFG8rgKVxzPVHgXfJugPymAc4fvy6+cX1vXVl7vQPEUJUFB3cA32E7eHQRpVp5i3jtvno3dqCVncjpkjKG/9njDpWtvsH+mtCCP8BB47t8VRuRlDnPkoFjMC85odOKDFGEVrdWI1ZVkQw/PO76bUNJ5lyeEKZmboRfS8HSafLsKfaMHRz1/sR43QwSCXXVcpmj7+2GVpCssfbZinxFjgzS9SsUKg0PHkDcC07BWMiYeB07V4x+HP02HXPp2yCULRLRjoR0ReyyXjDLZeZ3/M/ENe/qDh2PW2LNA217T Arnoud nieuw',
             'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAiiyQ3NMxDbA5oURe4dVoYu3XgXFpb5/vJp1g8gjxi/WpVkBNa3AxTp//cp5Z3Mv0lf/xxPOaukc0DZqtEVN8bcdF0Iwr/C9YlUtmTGTrlMykmpLjXTioZE/WdOhbnzqKIfUlElNcMjN505zcUibp2oDNDybHtkQujP5JSHPF8/M= rsa-key-20120607-rik',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAu7ljTiYn4c0boEG3KKeSyxRyH4tEe78zuW9ijiImX+0nqryoHa99AoqyBzp+QdATK7cRQgh1nwT0Xariimx7MPmX1Hyh0i+S9AmZprWXYPY419lJa0QxKjHDnVgrVRalXCkG4lhdFO/cyKorQJZAwjalNSIuEtiZZFwZYUSr2nE= h.j.stam@oxilion.nl',
         ],
     }
 ##### END oxilion #####
