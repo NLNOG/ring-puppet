@@ -808,7 +808,7 @@ class users::virtual::ring_users {
 ##### BEGIN inotel #####
 
     @add_user { 'inotel':
-        email => 'noc@inotel.pl',
+        email => 'noc@inotel-voip.pl',
         company => 'Inotel',
         uid => 5044,
         groups => ['ring-users'],
