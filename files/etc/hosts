@@ -698,3 +698,6 @@ ff02::2 ip6-allrouters
 2a02:74c0::232:52  enestdata01 enestdata01.ring.nlnog.net
 185.4.232.52    enestdata01 enestdata01.ring.nlnog.net
 
+2620:89:8000:38e::20  ualbany01 ualbany01.ring.nlnog.net
+169.226.252.20    ualbany01 ualbany01.ring.nlnog.net
+

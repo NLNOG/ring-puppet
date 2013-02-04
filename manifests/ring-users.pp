@@ -3382,4 +3382,20 @@ class users::virtual::ring_users {
 
 ##### END enestdata #####
 
+##### BEGIN ualbany #####
+
+    @add_user { 'ualbany':
+        email => 'noc@albany.edu',
+        company => 'University at Albany',
+        uid => 5190,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'ualbany':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDPbFi5hjmjNCY8dFZx5YWaxppFRGCgoV7f6JxfTH7qevRZWeSZh+40LIV8EnJjA6n7PfDxtjpXm7TnYWI6/IsocGjfc7dQOyH+LIM8uMtNS7MhR0K4Nu2kImorftwSWp2piOhp0MWU9SnVDPZthkwh/vgAF2gzeEJAYuVqeNKxJgHYRbOqO0N82G8vNud7og9u2l6NEapVGYWminlP8Uy3OBUgx1v9JM3jzJ/AAKi45drwP0tr0YcKtd9gIhMG7sq3s40qMi4KW/N3eHsDMwl8lxrLSrYyapij9ZUIk0i8FiXPghiexJfSSi16BT/UzM1Yvf4O/tetCiWHSCPri+Sd justin@bert',
+            ],
+    }
+
+##### END ualbany #####
+
 }
