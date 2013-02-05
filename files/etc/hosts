@@ -486,12 +486,6 @@ ff02::2 ip6-allrouters
 195.22.19.34    claranet04  claranet04.ring.nlnog.net
 2001:4cc0:cafe:babe::2 claranet04  claranet04.ring.nlnog.net
 
-93.191.128.131  xlshosting02    xlshosting02.ring.nlnog.net
-2a02:348:97:8083::1 xlshosting02    xlshosting02.ring.nlnog.net
-
-93.191.128.132  xlshosting03    xlshosting03.ring.nlnog.net
-2a02:348:97:8084::1 xlshosting03    xlshosting03.ring.nlnog.net
-
 174.136.100.234 arpnetworks01   arpnetworks01.ring.nlnog.net
 2607:f2f8:ade8::2 arpnetworks01   arpnetworks01.ring.nlnog.net
 
