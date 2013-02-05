@@ -135,8 +135,6 @@ ring-claranet01:v6 2001:a88:0:ff00::4
 ring-claranet02:v6 2a00:1798:fff0::4
 ring-claranet03:v6 2a02:830:1:4::2
 ring-claranet04:v6 2001:4cc0:cafe:babe::2
-ring-xlshosting02:v6 2a02:348:97:8083::1
-ring-xlshosting03:v6 2a02:348:97:8084::1
 ring-arpnetworks01:v6 2607:f2f8:ade8::2
 ring-iabg01:v6 2001:1b10:1006::53aa:3c24
 ring-initseven01:v6 2001:1620:2777:36::98
@@ -343,8 +341,6 @@ ring-claranet01 195.157.9.4
 ring-claranet02 195.38.140.4
 ring-claranet03 212.61.158.6
 ring-claranet04 195.22.19.34
-ring-xlshosting02 93.191.128.131
-ring-xlshosting03 93.191.128.132
 ring-arpnetworks01 174.136.100.234
 ring-iabg01 83.170.60.36
 ring-initseven01 82.197.163.98
