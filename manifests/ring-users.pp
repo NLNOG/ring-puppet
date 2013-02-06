@@ -3415,4 +3415,19 @@ class users::virtual::ring_users {
 
 ##### END masterinternet #####
 
+##### BEGIN icanndns #####
+
+    @add_user { 'icanndns':
+        email => 'noc@dns.icann.org',
+        company => 'ICANN DNS Operations',
+        uid => 5192,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'icanndns':
+        sshkeys => [
+            ],
+    }
+
+##### END icanndns #####
+
 }

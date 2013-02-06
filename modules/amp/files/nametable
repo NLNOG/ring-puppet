@@ -205,6 +205,7 @@ ring-poppr01:v6 2801:82:0:3::54
 ring-kaiaglobal01:v6 2a02:b0:1048:1::2
 ring-enestdata01:v6 2a02:74c0::232:52
 ring-ualbany01:v6 2620:89:8000:38e::20
+ring-icanndns01:v6 2620:0:22b0:4::222
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
 ring-netground01 87.250.146.52
@@ -410,3 +411,4 @@ ring-poppr01 200.134.255.54
 ring-kaiaglobal01 95.141.20.62
 ring-enestdata01 185.4.232.52
 ring-ualbany01 169.226.252.20
+ring-icanndns01 199.4.28.222

@@ -3038,3 +3038,12 @@ node 'masterinternet01' inherits ringnode {
     include users
 }
 
+node 'icanndns01' inherits ringnode {
+    $owner = "icanndns"
+    $location = "33.91918,-118.41647"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}

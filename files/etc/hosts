@@ -698,3 +698,6 @@ ff02::2 ip6-allrouters
 2a01:430:100:2::2  masterinternet01 masterinternet01.ring.nlnog.net
 85.118.134.2    masterinternet01 masterinternet01.ring.nlnog.net
 
+199.4.28.222    icanndns01  icanndns01.ring.nlnog.net
+2620:0:22b0:4::222  icanndns01  icanndns01.ring.nlnog.net
+
