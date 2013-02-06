@@ -3399,4 +3399,20 @@ class users::virtual::ring_users {
 
 ##### END ualbany #####
 
+##### BEGIN masterinternet #####
+
+    @add_user { 'masterinternet':
+        email => 'support@master.cz',
+        company => 'Master Internet s.r.o.',
+        uid => 5191,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'masterinternet':
+        sshkeys => [
+                'ssh-dss AAAAB3NzaC1kc3MAAACBALpw8Abhc0ZhggCFXvOoMLXmRTVc8/CBTtErqo2ZdQZKYB9sYKZjwzlincLJyTzyiAQa8DnHZiULg1ytVgWGwhfmFLWqZY+3g/uOKOtYPiQVX1FTXsIv0vVKK/oqzD969STLWMA3DxkbKQyhHSlsVQjhh0OihMIhcl8aImvUCPCNAAAAFQDyVpNjZJooKED9NmA4oHTXorF+CQAAAIEAqXAtxl4OoRO+uDNsK3EWCR9BUtGbG/h/0xf+rfcAv5N8jp+NDZEAvVlinl1JRZzc55Fn4aMpqHz2F0W+932L7ZXX/m0QsDt0aWLXRkCZBfdZF23i+4XpmNXds7yVcu7+yolgTVG4MpRInGg0z1wJCpU1QVW+WcSWCvh68AS+I9EAAACAdkP67TWRxLwnxLEwZdrRrduyqxaMICB67X5J2hjNqt7ddjzyUjKhF/7cso+czpxDt5+6XCwyw7av1OrxEa8xsRiPPVSIjxqKQkaY5zXdGZobVuouV/6MYPfxYhbkuhiRfyqImz9w+EmXg+wrjCV/1zxI/Xvo3Y1oc5YyGxgLBhM= mzi@devnull',
+            ],
+    }
+
+##### END masterinternet #####
+
 }

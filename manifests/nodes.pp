@@ -3028,3 +3028,13 @@ node 'ualbany01' inherits ringnode {
     include users
 }
 
+node 'masterinternet01' inherits ringnode {
+    $owner = "masterinternet"
+    $location = "49.196986,16.618667"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

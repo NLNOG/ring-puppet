@@ -695,3 +695,6 @@ ff02::2 ip6-allrouters
 2620:89:8000:38e::20  ualbany01 ualbany01.ring.nlnog.net
 169.226.252.20    ualbany01 ualbany01.ring.nlnog.net
 
+2a01:430:100:2::2  masterinternet01 masterinternet01.ring.nlnog.net
+85.118.134.2    masterinternet01 masterinternet01.ring.nlnog.net
+
