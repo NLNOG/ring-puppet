@@ -3425,6 +3425,7 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'icanndns':
         sshkeys => [
+            'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAvEzaTZuCTHAJRKdPUoOOBtRie8pUa5oK8oEZUwENgGkwzUbxCtF8aPMI3Xia73tx/DlWomaIAQKETSvlG4wBmuoSkWKzAubJ98JIsyFt2kWea731Hp5E7xuwHwLBMNjJ7S4grqJuHT/tti/XgSDaCWMb4pB0aHqc7IT4M3yuxi/EnWg+V5c0mH2FZ8m+xgKcqtWvDh6/zxtACRhqJyHyqLSlsAnbvZaVxIqUA+e92pyM4jmu4ftfJPzXkBZuiBkS4+U8co0KltLo/MpT7T3SZFi9/XW9f9cdlpgZp1GX7rD/yX4qMUywRNFuJCfB/5U6cKBVqzC6cJaB7w4UnSIQDQ== mehmet',
             ],
     }
 
