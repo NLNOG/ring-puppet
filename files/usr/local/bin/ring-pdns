@@ -169,20 +169,21 @@ class commands(object):
             print '%-*s %s' % (maxcmdlen+2, cmd, doc)
         return 1
     
-    def dbdo(self, q, v=None):
+    def dbdo(self, q, v=None, script=False):
         conn = mdb.connect(DBHOST,DBUSER,self.get_dbpass(PDNSCONF),DB)
         cur = conn.cursor()
         if v:
             cur.execute(q, v)
         else:
             cur.execute(q)
-        conn.commit()
+        if not script:
+            conn.commit()
         conn.close()
         return cur.rowcount, cur.lastrowid
     
     def dbquery(self, q, v=None):
         conn = mdb.connect(DBHOST,DBUSER,self.get_dbpass(PDNSCONF),DB)
-        cur = conn.cursor()
+        cur = conn.cursor(mdb.cursors.DictCursor)
         if v:
             cur.execute(q, v)
         else:
@@ -451,6 +452,10 @@ class commands(object):
         """add the SOA for a domain"""
         recid=self.add_record(zone,'SOA',SOA,3600,0)
         print 'record %s added' % (recid)
+
+    def cmd_initdb(self):
+        """initialize database"""
+        self.dbdo(SCHEMA, None, script=True)
 
     def getgeo(self,geo):
         url=ELEVATION+"?locations="+geo+"&sensor=false"
