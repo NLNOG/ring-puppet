@@ -502,6 +502,8 @@ node 'dbmaster.infra' inherits infranode {
 #            'server-id'     => '666',
 #        }
 #    }
+    package { "python-mysqldb": ensure => latest }
+    include local_binaries_dbmaster
 }
 
 node 'db01.infra' inherits dbslaves {

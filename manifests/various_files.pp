@@ -330,3 +330,13 @@ class local_binaries_pdnsmaster {
         ensure => present,
     }
 }
+
+class local_binaries_dbmaster {
+    file { "/usr/local/bin/ring-admin":
+        owner   => root,
+        group   => root,
+        mode    => 0755,
+        source  => "puppet:///files/usr/local/bin/ring-admin",
+        ensure => present,
+    }
+}
