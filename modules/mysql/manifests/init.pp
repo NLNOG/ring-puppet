@@ -51,7 +51,7 @@ class mysql (
         source => $certkey,
         owner => mysql, group => mysql, mode => 600;
     "/etc/mysql/conf.d/ssl.conf":
-        content => template("mysql/ssl.conf.erb")
+        content => template("mysql/ssl.conf.erb"),
         owner => mysql, group => mysql, mode => 644;
   }
 }
