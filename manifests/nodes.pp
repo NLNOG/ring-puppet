@@ -51,6 +51,7 @@ node 'master01.infra' inherits infranode {
     include mastercronjobs
     include trocla::config
     include usage_statistics
+    include website
     include nagios::defaults
     include nagios::headless
     include nagios_services

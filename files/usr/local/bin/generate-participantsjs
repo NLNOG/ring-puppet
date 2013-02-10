@@ -1,0 +1,125 @@
+#!/usr/bin/env python
+import MySQLdb as mdb
+import sys, re, string, os, tempfile
+from string import Template
+
+DBHOST='dbmaster.infra.ring.nlnog.net'
+DBUSER='ring'
+DBPASS=''
+DB='ring'
+
+BASEDIR='/var/www/ring.nlnog.net/HTML/images/ring-logos'
+PARTFILE='participants.js'
+COUNTFILE='counters.js'
+
+FOOTER='''
+function shuffle(array) {
+    var tmp, current, top = array.length;
+
+    if(top) while(--top) {
+        current = Math.floor(Math.random() * (top + 1));
+        tmp = array[current];
+        array[current] = array[top];
+        array[top] = tmp;
+    }
+
+    return array;
+}
+
+var participantsrand = shuffle(participants);
+
+for (var i = 0; i < participantsrand.length; i++) {
+var participant = participantsrand[i];
+
+document.write('<hr><table><tr><td width="300px" style="vertical-align: middle; text-align:center;"><img src="/images/ring-logos/' + participant[1] + '" />');
+document.write('</td><td style="vertical-align: middle;">');
+document.write('<h3>' + participant[0] + '</h3>');
+document.write('<ul>');
+document.write('        <li>website: <a title="' + participant[0] + '" href="' + participant[2] + '" target="_blank">' + participant[2] + '</a></li>');
+document.write('        <li>machine: ' + participant[3] + '</li>');
+document.write('        <li>ASN: <a href="http://www.ris.ripe.net/dashboard/AS' + participant[4] + '">' + participant[4] + '</a></li>');
+document.write('</ul></td></tr></table>');
+
+}
+'''
+
+def dbquery(q, v=None):
+    conn = mdb.connect(DBHOST,DBUSER,DBPASS,DB)
+    if not conn:
+        sys.stderr.write("could not connect to db\n")
+        sys.exit(1)
+    cur = conn.cursor(mdb.cursors.DictCursor)
+    if v:
+        cur.execute(q, v)
+    else:
+        cur.execute(q)
+    for row in cur.fetchall():
+        yield row
+    conn.close()
+
+orgcount=0
+machinecount=0
+asnlist={}
+countrylist={}
+
+f = tempfile.NamedTemporaryFile(delete=False)
+f.write("var participants = [\n")
+
+query = "select * from participants where public > 0 or public is NULL"
+participants = list(dbquery(query))
+for p in participants:
+    query = "select * from users where participant=%s" % (p['id'])
+    users=list(dbquery(query))
+    if len(users)<1:
+        continue
+
+    name=p['company']
+    logo=None
+    url=p['url']
+    node=None
+    asn=None
+    for u in users:
+        if not logo:
+            logo=u['username'] + '.png'
+            #try:
+            #    with open(BASEDIR+'/'+logo) as f: pass
+            #except IOError as e:
+            #    sys.stderr.write("%s: logo %s does not exist\n" % (__file__,logo))
+
+        query = "select * from machines where owner=%s" % (u['id'])
+        machines = list(dbquery(query))
+        if len(machines)<1:
+            continue
+
+        for m in machines:
+            if not node:
+                node=m['hostname']
+                asn=str(m['autnum'])
+            machinecount=machinecount+1
+            asnlist[str(m['autnum'])]=1
+            countrylist[m['country']]=1
+    if node:
+        orgcount=orgcount+1
+        f.write("['"+name+"', '"+logo+"', '"+url+"', '"+node+"', '"+asn+"'],\n")
+
+f.write("];\n")
+f.write(FOOTER)
+f.close()
+fstat=os.stat(f.name)
+if fstat.st_size<1200:
+    sys.stderr.write("failure in generating %s\n" % (PARTFILE))
+    sys.exit(1)
+os.rename(f.name,BASEDIR+'/'+PARTFILE)
+os.chmod(BASEDIR+'/'+PARTFILE,0444)
+
+f = tempfile.NamedTemporaryFile(delete=False)
+f.write("document.write('<ul>');\n")
+f.write("document.write('    <li>Organisations: <strong>%s</strong></li>');\n" % orgcount)
+f.write("document.write('    <li>RING nodes: <strong>%s</strong></li>');\n" % machinecount)
+f.write("document.write('    <li>ASNs: <strong>%s</strong></li>');\n" % len(asnlist))
+f.write("document.write('    <li>Countries: <strong>%s</strong></li>');\n" % len(countrylist))
+f.write("document.write('</ul>');\n")
+f.close()
+os.rename(f.name,BASEDIR+'/'+COUNTFILE)
+os.chmod(BASEDIR+'/'+COUNTFILE,0444)
+
