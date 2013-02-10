@@ -209,6 +209,7 @@ class nettools {
     package { "markdown": ensure => latest }
     package { "vim": ensure => latest }
     package { "language-pack-en-base": ensure => latest }
+    package { "sshfp": ensure => latest }
 
     # packages we don't like
     package { "pppoe": ensure => purged }

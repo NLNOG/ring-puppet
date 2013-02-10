@@ -8,9 +8,18 @@ class mastercronjobs {
         user    => root,
         ensure  => present,
     }
-
 }
 
+class pdnscronjobs {
+    cron {
+        "update-sshfp":
+        command => "sshfp -k /etc/ssh/ssh_known_hosts -a | ring-pdns update sshfp >/dev/null",
+        user => root,
+        minute => "04",
+        hour => "04",
+        ensure => present,
+    }
+}
 
 class nodesonlycron {
 }

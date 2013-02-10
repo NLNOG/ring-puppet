@@ -626,6 +626,7 @@ node 'public01.infra' inherits infranode {
         }
     }
     include local_binaries_pdnsmaster
+    include pdnscronjobs
 }
 
 node 'public02.infra' inherits infranode {

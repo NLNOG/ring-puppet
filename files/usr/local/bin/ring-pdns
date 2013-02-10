@@ -431,6 +431,45 @@ class commands(object):
         self.del_from_txt(name);
         print 'node %s deactivated' % (name)
 
+    def cmd_update_sshfp(self,filename=None):
+        """update SSHFP records"""
+        zone=ZONE
+        rtype="SSHFP"
+
+        f = None
+        if filename:
+            f = open(filename,"r")
+        else:
+            f = sys.stdin
+
+        for line in f:
+            if (re.search(r'^#',line)):
+                continue
+            vals = line.split()
+            if len(vals) < 6 or vals[1] != "IN" or vals[2] != rtype:
+                print >> sys.stderr, "Skipping invalid entry"
+                continue
+
+            name=vals[0]
+            if not (re.match(r'.*%s$' % zone,name)):
+                name=name + "." + zone
+            value=vals[3]+" "+vals[4]+" "+vals[5]
+        
+            result = self.dbselect('records',name=name,type=rtype)
+            update=None
+            for row in result:
+                update=1
+                break
+
+            if update:
+                self.update_rtype(name=name,rtype=rtype,content=value)
+            else:
+                recid=self.add_record(name=name,rtype=rtype,
+                                    content=value,ttl=600,prio=0)
+                print 'record %s added' % (recid)
+            print 'node %s updated' % (name)
+        f.close()
+
     def cmd_add_domain(self,zone=ZONE):
         """add a domain"""
         domainid=self.add_domain(zone)
