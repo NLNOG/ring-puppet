@@ -502,7 +502,6 @@ node 'dbmaster.infra' inherits infranode {
 #            'server-id'     => '666',
 #        }
 #    }
-    package { "python-mysqldb": ensure => latest }
     include local_binaries_dbmaster
 }
 
@@ -625,7 +624,6 @@ node 'public01.infra' inherits infranode {
             'root_password' => trocla("mysql_${fqdn}",'plain'),
         }
     }
-    package { "python-mysqldb": ensure => latest }
     include local_binaries_pdnsmaster
 }
 

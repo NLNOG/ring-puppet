@@ -120,6 +120,8 @@ class nettools {
     package { "mtr": ensure => latest}
     package { "nmap": ensure => latest }
     package { "traceroute": ensure => latest }
+    
+    package { "python-mysqldb": ensure => latest }
 
     exec { "setcap cap_net_raw+ep /usr/bin/traceroute.db":
         onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/bin/traceroute.db`\" != \"/usr/bin/traceroute.db = cap_net_raw+ep\"",
