@@ -675,29 +675,6 @@ class commands(object):
         print m['v6']+"  "+name+" "+m['hostname']
         if m['v4']:
             print m['v4']+"    "+name+" "+m['hostname']
-
-    def cmd_generate_javascript(self,username):
-        """generate javascript participant entry"""
-        partid=self.username2pid(username)
-        if not partid:
-            sys.exit('user %s not found' % username)
-        p=self.dbselectone('participants', id=partid)
-        if not p:
-            sys.exit('participant %s not found' % partid)
-        u=self.dbselectone('users', participant=partid)
-        m=self.dbselect('machines', owner=u['id'])
-        if not m:
-            sys.exit('no machines found for %s' % username)
-        hostname=''
-        autnum=''
-        try:
-            mfirst=m.next()
-            hostname=mfirst['hostname']
-            autnum=str(mfirst['autnum'])
-        except StopIteration:
-            pass
-        print "['"+p['company']+"', '"+str(u['username'])+".png', '"+\
-              str(p['url'])+"', '"+hostname+"', '"+autnum+"'],"
     
     def cmd_dnscommands(self,hostname):
         """generate dns commands"""
