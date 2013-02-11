@@ -52,4 +52,4 @@ Host *
     GSSAPIAuthentication yes
     GSSAPIDelegateCredentials no
     Compression yes
-
+    VerifyHostKeyDNS yes
