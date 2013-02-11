@@ -455,19 +455,27 @@ class commands(object):
                 name=name + "." + zone
             value=vals[3]+" "+vals[4]+" "+vals[5]
         
+            result = self.dbselect('records',name=name,type="CNAME")
+            cname=None
+            for row in result:
+                cname=1
+                break
+            
             result = self.dbselect('records',name=name,type=rtype)
             update=None
             for row in result:
                 update=1
                 break
 
-            if update:
+            if cname:
+                print 'cname found. skipping %s' % (name)
+            elif update:
                 self.update_rtype(name=name,rtype=rtype,content=value)
+                print 'node %s updated' % (name)
             else:
                 recid=self.add_record(name=name,rtype=rtype,
                                     content=value,ttl=600,prio=0)
-                print 'record %s added' % (recid)
-            print 'node %s updated' % (name)
+                print 'record %s added for %s' % (recid,name)
         f.close()
 
     def cmd_add_domain(self,zone=ZONE):
