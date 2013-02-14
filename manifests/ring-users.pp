@@ -3428,7 +3428,7 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'icanndns':
         sshkeys => [
-            'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAvEzaTZuCTHAJRKdPUoOOBtRie8pUa5oK8oEZUwENgGkwzUbxCtF8aPMI3Xia73tx/DlWomaIAQKETSvlG4wBmuoSkWKzAubJ98JIsyFt2kWea731Hp5E7xuwHwLBMNjJ7S4grqJuHT/tti/XgSDaCWMb4pB0aHqc7IT4M3yuxi/EnWg+V5c0mH2FZ8m+xgKcqtWvDh6/zxtACRhqJyHyqLSlsAnbvZaVxIqUA+e92pyM4jmu4ftfJPzXkBZuiBkS4+U8co0KltLo/MpT7T3SZFi9/XW9f9cdlpgZp1GX7rD/yX4qMUywRNFuJCfB/5U6cKBVqzC6cJaB7w4UnSIQDQ== mehmet',
+            'ssh-dss AAAAB3NzaC1kc3MAAACBAN0gPlrAgk3Wm/DmoV1hkXln8ggfClFmmNyGMFsJyn+jrgCohWcIr9gBKAeb/eV5jKmZQDadqrcZNlS8YgzvoWTNOAmPEhjOU225lHItByviduhh+9u1G15fJh8f6UJbUG4oMFL9aMTK8/N1zSrwf9XBNo/1lsQpU/wZQYqJMQ7nAAAAFQCPiJALLl+Z40yQHrAIIJI1VH6NjwAAAIA7PfzR77zj5YcgGkHH6KDMGE/dA3B8lQo1V0VODX5HMuC0fshiTsPpYdNv1Srpsb2EUkxFPaqEydL79sPxRTBXAAm+D+irRHTNHpTt+5fhNfoaexCIZ0nA763xLEPPlEoOzmHn4r7ovMf+yYFZW72xEX/ONT6OrQwDfYwPl0CHXAAAAIBsTQJ+JTtULWY4d mehmet',
             ],
     }
 
