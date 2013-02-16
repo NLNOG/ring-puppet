@@ -1199,23 +1199,6 @@ class users::virtual::ring_users {
 
 ##### END timico #####
 
-##### BEGIN yacast  #####
-
-    @add_user { 'yacast':
-        email => 'noc@yacast.fr',
-        company => 'Yacast Media',
-        uid => 5066,
-        groups => ['ring-users'],
-    }
-    @authorized_keys { 'yacast':
-        sshkeys => [
-            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDWrB6eKgYlnclg+6kXIicNor/zqf9i/04UM+w7mOdd6fnJ14M4aAZsurwPeRxU3GId9lOAg4awQxWhZcZ4Jlj8IU8+gurogtGCdrvw+nF3G0L/QtAhdBb3QajSloTa7au44xwvnCoh1dngYSOrOSzA5eBFmrr6S3sxdd0hBLbQS60ZES+mSqib62+2AJKvAdvBRlPvoUY7KhFFwo4tQbPb1tOWcyntsLKjj0/GQ0m33A5Bs0AO7iJw+6eFNsiruRXcUD2xPKrzyb//XG+nhb93FfxNelozIsMrqAip+XqJIEoQtcNVKkJCS+43eAcnZMCX4ygIIweAA8AVRXtbZ3L3 clement@palao.yacast.fr',
-            'ssh-dss AAAAB3NzaC1kc3MAAACBAKqyApkb5ExJKQYdzK7kZXOqPIcy5gGWfkap9GvwneTqbrwy8tsoMDc88C5qwVYbClbKzwrf4Gs1v1wPVwX0eoDXCB+Rp0JurWySGQQL2wnBeNIx7cJWOoP8eFW8wq2hyJ0wt3MXMlpXxRrACLIspzUkYokoZOVRb8h6KfIKOOFRAAAAFQDqqsR+ByIIonSvlHDRQO76yNn9hQAAAIEAgyD+GvUVYg8SyBRNDC5YoylTkuWnfYUzPv3Ie319WdC417RxN/QYx5csgrQUv9TWAZ1ahlGMOWJZ6mSiZJNssJS+RLGJkodd4E23oNzMhDKJFsHe32fUN/8b+hsvsgutCLE7pux+3Qu+2r9XUN+EW9roLhkq8WvkUcHxDl/33v8AAACAeHC9lq3hrrC/PI5Y+CmDJndbGi7+E0vzeMtqcn18IIBQBrs5yMjsETHUiy3odPmoSphaHdSJNA8jTQEgw2THO9dxKTiuYUIjXmLButIE3/0NTVHSlUHbMeF3RSYDGbIsCGDrFYwsSr6UNbkX6OjHK++y78QmmcUfNZwAVAzRENI= acontios@puisard',
-            ],
-    }
-
-##### END yacast #####
-
 ##### BEGIN rezopole  #####
 
     @add_user { 'rezopole':

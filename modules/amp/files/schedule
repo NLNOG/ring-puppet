@@ -266,10 +266,6 @@ ring-timico01:v6,icmp,D,0,86400000,60000
 ring-timico01:v6,icmp,D,0,86400000,60000, -s 576
 ring-timico01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
-ring-yacast01:v6,icmp,D,0,86400000,60000
-ring-yacast01:v6,icmp,D,0,86400000,60000, -s 576
-ring-yacast01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
-
 ring-rezopole01:v6,icmp,D,0,86400000,60000
 ring-rezopole01:v6,icmp,D,0,86400000,60000, -s 576
 ring-rezopole01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1101,10 +1097,6 @@ ring-iway01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-timico01,icmp,D,0,86400000,60000
 ring-timico01,icmp,D,0,86400000,60000, -s 576
 ring-timico01,scamper,D,0,86400000,900000, -P udp-paris -M
-
-ring-yacast01,icmp,D,0,86400000,60000
-ring-yacast01,icmp,D,0,86400000,60000, -s 576
-ring-yacast01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-rezopole01,icmp,D,0,86400000,60000
 ring-rezopole01,icmp,D,0,86400000,60000, -s 576
