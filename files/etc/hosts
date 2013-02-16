@@ -701,3 +701,6 @@ ff02::2 ip6-allrouters
 199.4.28.222    icanndns01  icanndns01.ring.nlnog.net
 2620:0:22b0:4::222  icanndns01  icanndns01.ring.nlnog.net
 
+2a03:1400:21:1703::66  intellit01 intellit01.ring.nlnog.net
+62.24.55.66    intellit01 intellit01.ring.nlnog.net
+

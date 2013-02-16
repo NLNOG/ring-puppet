@@ -830,6 +830,10 @@ ring-icanndns01:v6,icmp,D,0,86400000,60000
 ring-icanndns01:v6,icmp,D,0,86400000,60000, -s 576
 ring-icanndns01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-intellit01:v6,icmp,D,0,86400000,60000
+ring-intellit01:v6,icmp,D,0,86400000,60000, -s 576
+ring-intellit01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging02,icmp,D,0,86400000,60000
 ring-staging02,icmp,D,0,86400000,60000, -s 576
 ring-staging02,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1653,4 +1657,8 @@ ring-ualbany01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-icanndns01,icmp,D,0,86400000,60000
 ring-icanndns01,icmp,D,0,86400000,60000, -s 576
 ring-icanndns01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-intellit01,icmp,D,0,86400000,60000
+ring-intellit01,icmp,D,0,86400000,60000, -s 576
+ring-intellit01,scamper,D,0,86400000,900000, -P udp-paris -M
 

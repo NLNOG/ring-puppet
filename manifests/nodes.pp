@@ -3049,3 +3049,14 @@ node 'icanndns01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'intellit01' inherits ringnode {
+    $owner = "intellit"
+    $location = "59.942783,10.717142"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
