@@ -388,9 +388,9 @@ class commands(object):
             sys.exit('unknown attribute %s' % attribute)
         
         result = self.dbselect('records',name=name,type=rtype)
-        update=None
+        update=False
         for row in result:
-            update=1
+            update=True
             break
 
         if update:
@@ -456,15 +456,15 @@ class commands(object):
             value=vals[3]+" "+vals[4]+" "+vals[5]
         
             result = self.dbselect('records',name=name,type="CNAME")
-            cname=None
+            cname=False
             for row in result:
-                cname=1
+                cname=True
                 break
             
             result = self.dbselect('records',name=name,type=rtype)
-            update=None
+            update=False
             for row in result:
-                update=1
+                update=True
                 break
 
             if cname:
