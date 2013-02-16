@@ -267,16 +267,16 @@ class commands(object):
 
         result, result2 = tee(result)
         for row in result:
-            id= row[0]
-            txt = row[4]
+            id= row['id']
+            txt = row['content']
             txt=re.sub('\"','',txt)
             if (re.search(r'(^|\s+)%s($|\s+)' % name,txt)):
                 print "%s already in txt (record %s)" % (name,id)
                 return
 
         for row in result2:
-            id= row[0]
-            txt = row[4]
+            id= row['id']
+            txt = row['content']
             txt=re.sub('\"','',txt)
             newtxt=txt + " " + name
             if (len(newtxt) <= 255):
@@ -301,8 +301,8 @@ class commands(object):
         update = None
         newtxt = None
         for row in result:
-            id= row[0]
-            txt = row[4]
+            id= row['id']
+            txt = row['content']
             txt=re.sub('\"','',txt)
             if (re.search(r'(^|\s+)%s($|\s+)' % name,txt)):
                 newtxt=re.sub(r'\s?%s\s?' % name,'',txt)
