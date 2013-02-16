@@ -3422,7 +3422,7 @@ class users::virtual::ring_users {
     @add_user { 'intellit':
         email => 'noc@intellit.no',
         company => 'INTELLIT AS',
-        uid => 5192,
+        uid => 5193,
         groups => ['ring-users'],
     }
     @authorized_keys { 'intellit':
