@@ -257,7 +257,7 @@ class commands(object):
         if len(res)>1:
             raise KeyError
         elif res:
-            return res[0][0]
+            return res[0]['MAX(%s)'% (counter)]
         else:
             return None
 
