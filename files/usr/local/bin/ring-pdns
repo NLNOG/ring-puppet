@@ -305,7 +305,9 @@ class commands(object):
             txt = row['content']
             txt=re.sub('\"','',txt)
             if (re.search(r'(^|\s+)%s($|\s+)' % name,txt)):
-                newtxt=re.sub(r'\s?%s\s?' % name,'',txt)
+                newtxt=re.sub(r'^%s\s?' % name,'',txt)
+                newtxt=re.sub(r'\s%s$' % name,'',newtxt)
+                newtxt=re.sub(r'\s%s\s' % name,'\s',newtxt)
                 update=id
                 break
 
