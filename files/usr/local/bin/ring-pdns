@@ -429,7 +429,6 @@ class commands(object):
         """remove the TXT entry for a node"""
         if country:
             self.del_from_txt(name,country.lower());
-            self.del_from_txt(country.lower(),"countries");
         self.del_from_txt(name);
         print 'node %s deactivated' % (name)
 
