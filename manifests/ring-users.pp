@@ -2168,22 +2168,6 @@ class users::virtual::ring_users {
     }
 ##### END teamix #####
 
-##### BEGIN bci #####
-
-    @add_user { 'bci':
-        email => 'support@ipv6.ps',
-        company => 'BNET - BCI Telecommunication & Advanced Technology Company',
-        uid => 5121,
-        groups => ['ring-users'],
-    }
-    @authorized_keys { 'bci':
-        sshkeys => [
-            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJQ5fAQzJWtmNoS03qTCYcjLkaPwJgkcYbeyYEQqMj/2Jkg7g/tMy9Vga/U5KAMe7Y6sWVGq569v7dq2IkAXuNxs5kxiKc3wPtxT5TPp/3YjmmM3qVElSwYnbKeNA1oFKl05ifyotIDDRYAitwvHwpUo3l9806Q1MCH6Wysn1ZVdTbIAXpkMXVxhEPkWADFjGKGg/9SYyNbiWCIVnFdDHbr81HAoNjfOKJI0t6f13iPRyPsXkkLayv4Jjht8oikYgBqezIonfEwvtfoQQyKPWvAsGjPDxoCr9HOIo9w189IcGBVHIvxRNFvkAy9AnTFhVLGYtPVEFs34dKBEDqijed root@mail.palhosting.net',
-        ],
-    }
-##### END bci #####
-
-
 ##### BEGIN skyway #####
 
     @add_user { 'skyway':

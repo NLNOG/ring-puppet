@@ -462,9 +462,6 @@ ff02::2 ip6-allrouters
 194.150.191.55  teamix01    teamix01.ring.nlnog.net
 2001:67c:14c:12f::55:1 teamix01 teamix01.ring.nlnog.net
 
-93.184.4.7  bci01   bci01.ring.nlnog.net
-2a02:26d0:2::a  bci01   bci01.ring.nlnog.net
-
 109.234.105.30  skyway01    skyway01.ring.nlnog.net
 2a00:18e0:0:dc:109:234:105:30   skyway01    skyway01.ring.nlnog.net
 

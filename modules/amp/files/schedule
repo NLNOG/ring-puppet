@@ -514,10 +514,6 @@ ring-teamix01:v6,icmp,D,0,86400000,60000
 ring-teamix01:v6,icmp,D,0,86400000,60000, -s 576
 ring-teamix01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
-ring-bci01:v6,icmp,D,0,86400000,60000
-ring-bci01:v6,icmp,D,0,86400000,60000, -s 576
-ring-bci01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
-
 ring-skyway01:v6,icmp,D,0,86400000,60000
 ring-skyway01:v6,icmp,D,0,86400000,60000, -s 576
 ring-skyway01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1345,10 +1341,6 @@ ring-keenondots01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-teamix01,icmp,D,0,86400000,60000
 ring-teamix01,icmp,D,0,86400000,60000, -s 576
 ring-teamix01,scamper,D,0,86400000,900000, -P udp-paris -M
-
-ring-bci01,icmp,D,0,86400000,60000
-ring-bci01,icmp,D,0,86400000,60000, -s 576
-ring-bci01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-skyway01,icmp,D,0,86400000,60000
 ring-skyway01,icmp,D,0,86400000,60000, -s 576
