@@ -701,3 +701,6 @@ ff02::2 ip6-allrouters
 2a03:1400:21:1703::66  intellit01 intellit01.ring.nlnog.net
 62.24.55.66    intellit01 intellit01.ring.nlnog.net
 
+2a02:c10:3f00:5::2  onet01 onet01.ring.nlnog.net
+141.105.16.129    onet01 onet01.ring.nlnog.net
+

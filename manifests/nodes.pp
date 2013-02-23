@@ -3051,3 +3051,13 @@ node 'intellit01' inherits ringnode {
     include users
 }
 
+node 'onet01' inherits ringnode {
+    $owner = "onet"
+    $location = "50.080482,19.892557"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

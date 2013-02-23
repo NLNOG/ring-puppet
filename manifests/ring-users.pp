@@ -3438,4 +3438,21 @@ class users::virtual::ring_users {
 
 ##### END intellit #####
 
+##### BEGIN onet #####
+
+    @add_user { 'onet':
+        email => 'noc@onet.pl',
+        company => 'Grupa Onet.pl S.A.',
+        uid => 5194,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'onet':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA1ZTETLWSdZh39n/r3lYPzhm7NL3r5lAD/cBJivCEJ+9fsqIKtq5/SjX7Uqv/UVqhdisqSY23vBfJsOHw0y+6MA+mtPyXy+uPtZ0VXrEQ46dyLPSiv+eFCXMTcr+fgBjk/NYVys/17xTMpViGbjp7orrF/pE9OXMqgTUbq3JVSNMAQbHGPSXBwhT8qEjlTXuZYCfmT+jyYani9s0TPj9pnMfUhX7iviHo7XP5RWpvE8VnjyekjHrFGvZOGeCQbC9bq5ySDOLeaUjbHl4uNeZY2T3ro3pUvouSTLeX6yXK7lEKfRzsI3l/mOgIWJxzHPyokeQM7CFikuOH6h2e+NVmyQ== root@maya.onet',
+            ],
+    }
+
+##### END onet #####
+
+
 }
