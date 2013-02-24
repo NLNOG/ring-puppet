@@ -42,10 +42,6 @@ ring-cyso01:v6,icmp,D,0,86400000,60000
 ring-cyso01:v6,icmp,D,0,86400000,60000, -s 576
 ring-cyso01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
-ring-atrato01:v6,icmp,D,0,86400000,60000
-ring-atrato01:v6,icmp,D,0,86400000,60000, -s 576
-ring-atrato01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
-
 ring-tdc01:v6,icmp,D,0,86400000,60000
 ring-tdc01:v6,icmp,D,0,86400000,60000, -s 576
 ring-tdc01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -873,10 +869,6 @@ ring-bigwells01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-cyso01,icmp,D,0,86400000,60000
 ring-cyso01,icmp,D,0,86400000,60000, -s 576
 ring-cyso01,scamper,D,0,86400000,900000, -P udp-paris -M
-
-ring-atrato01,icmp,D,0,86400000,60000
-ring-atrato01,icmp,D,0,86400000,60000, -s 576
-ring-atrato01,scamper,D,0,86400000,900000, -P udp-paris -M
 
 ring-tdc01,icmp,D,0,86400000,60000
 ring-tdc01,icmp,D,0,86400000,60000, -s 576

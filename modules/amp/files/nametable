@@ -9,7 +9,6 @@ ring-tuxis01:v6 2a03:7900:2::31:3:104:43
 ring-tenet01:v6 2001:4200:fffb::20c:29ff:fe7e:8ea4
 ring-bigwells01:v6 2620:8b:0:3ed::a
 ring-cyso01:v6 2a01:518:1:58:2::2
-ring-atrato01:v6 2a02:d28:5580:114:602::2
 ring-tdc01:v6 2001:6e8:8c0:100::c
 ring-intouch01:v6 2001:6e0:100:4001::2
 ring-zylon01:v6 2a01:310:8312:1001::19
@@ -217,7 +216,6 @@ ring-tuxis01 31.3.104.43
 ring-tenet01 155.232.10.18
 ring-bigwells01 199.30.196.208
 ring-cyso01 93.94.224.87
-ring-atrato01 78.152.62.110
 ring-tdc01 194.100.40.53
 ring-intouch01 212.19.220.58
 ring-zylon01 193.16.154.25

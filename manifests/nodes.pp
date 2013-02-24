@@ -1106,16 +1106,6 @@ node 'bigwells01' inherits ringnode {
 	include users
 }
 
-node 'atrato01' inherits ringnode {
-    $owner = "atrato"
-    $location = "50.059772,14.480634"
-    include amp_client
-    include nagios::target::fqdn
-    include nagios_services
-    include set_local_settings
-	include users
-}
-
 node 'tdc01' inherits ringnode {
     $owner = "tdc"
     $location = "60.221024,24.848589"
