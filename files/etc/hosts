@@ -698,3 +698,6 @@ ff02::2 ip6-allrouters
 2a02:c10:3f00:5::2  onet01 onet01.ring.nlnog.net
 141.105.16.129    onet01 onet01.ring.nlnog.net
 
+2a00:f480:0:104::2  msu01 msu01.ring.nlnog.net
+93.180.19.229    msu01 msu01.ring.nlnog.net
+

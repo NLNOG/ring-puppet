@@ -3438,5 +3438,20 @@ class users::virtual::ring_users {
 
 ##### END onet #####
 
+##### BEGIN msu #####
+
+    @add_user { 'msu':
+        email => 'noc@msu.ru',
+        company => 'Lomonosov Moscow State University',
+        uid => 5195,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'msu':
+        sshkeys => [
+                'ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAC4msrg1plTAvzMNbMHZv2BFOOrEyj7icmO0E5Pd4oSdNdJpvvXpHwrryiWtngaD2Ogq1MVngatTZoCOVfqSv2S7wHqV7cBxidrdID+Goch4E4lB829GmYHxeWlqfKAeSSIkJL1GY0eZ01TE5qoBgPb0LtDHlms/KKnHL9QxaNnfH5EMA== user@plum',
+            ],
+    }
+
+##### END msu #####
 
 }
