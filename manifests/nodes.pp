@@ -3050,3 +3050,13 @@ node 'msu01' inherits ringnode {
     include users
 }
 
+node 'robtex01' inherits ringnode {
+    $owner = "robtex"
+    $location = "38.96350,-77.38076"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

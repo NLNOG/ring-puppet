@@ -701,3 +701,6 @@ ff02::2 ip6-allrouters
 2a00:f480:0:104::2  msu01 msu01.ring.nlnog.net
 93.180.19.229    msu01 msu01.ring.nlnog.net
 
+2a00:9c00:1000:130::2  robtex01 robtex01.ring.nlnog.net
+192.71.253.130    robtex01 robtex01.ring.nlnog.net
+

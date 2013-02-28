@@ -830,6 +830,10 @@ ring-msu01:v6,icmp,D,0,86400000,60000
 ring-msu01:v6,icmp,D,0,86400000,60000, -s 576
 ring-msu01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-robtex01:v6,icmp,D,0,86400000,60000
+ring-robtex01:v6,icmp,D,0,86400000,60000, -s 576
+ring-robtex01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging02,icmp,D,0,86400000,60000
 ring-staging02,icmp,D,0,86400000,60000, -s 576
 ring-staging02,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1653,4 +1657,8 @@ ring-onet01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-msu01,icmp,D,0,86400000,60000
 ring-msu01,icmp,D,0,86400000,60000, -s 576
 ring-msu01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-robtex01,icmp,D,0,86400000,60000
+ring-robtex01,icmp,D,0,86400000,60000, -s 576
+ring-robtex01,scamper,D,0,86400000,900000, -P udp-paris -M
 
