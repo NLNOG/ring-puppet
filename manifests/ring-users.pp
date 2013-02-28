@@ -2156,7 +2156,7 @@ class users::virtual::ring_users {
 ##### BEGIN teamix #####
 
     @add_user { 'teamix':
-        email => 'rg@teamix.ch',
+        email => 'rg@teamix.de',
         company => 'teamix GmbH',
         uid => 5120,
         groups => ['ring-users'],
