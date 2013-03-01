@@ -168,7 +168,6 @@ class nettools {
     package { "ldnsutils": ensure => latest }
     package { "wget": ensure => latest }
     package { "netcat-openbsd": ensure => latest }
-    package { "socat": ensure => latest }
     package { "ngrep": ensure => latest }
     package { "netsed": ensure => latest }
     package { "git-core": ensure => latest }
