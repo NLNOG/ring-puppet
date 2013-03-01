@@ -3449,6 +3449,7 @@ class users::virtual::ring_users {
     @authorized_keys { 'msu':
         sshkeys => [
                 'ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAC4msrg1plTAvzMNbMHZv2BFOOrEyj7icmO0E5Pd4oSdNdJpvvXpHwrryiWtngaD2Ogq1MVngatTZoCOVfqSv2S7wHqV7cBxidrdID+Goch4E4lB829GmYHxeWlqfKAeSSIkJL1GY0eZ01TE5qoBgPb0LtDHlms/KKnHL9QxaNnfH5EMA== user@plum',
+                'ssh-dss AAAAB3NzaC1kc3MAAACBAJ1D8yWA/p5DpkAxxqtCkM8mrPmWKF/RNtDPojDOxZNfIOn39VK53K5WaEBwoQgq7VIFawRK0BHr6OhdoLcXQRclX1ZVcMKNZfTqYTnzmdErnBStntGNfs3+6PZaxUBs8iWLeOWslFPKuRyk7y47SFneq+r82fOERkdFpcH+d5TrAAAAFQDQkycuIwsj7iPkpLU8mVkhG14mVQAAAIAurTWTDh8FAL6Ph0h/CmBw2cPteCgap0jW82RecZeBmE0H7TFo83uIOf8+TDC8ZrCDr9By4q0EqU/tHUI0eRQUFmtHMsMcFCF9EgEzkkEEDek6NpyEm/fMZOvLa3exxs0dYKHLats7qGvAe3yvd+cGyJVD7IrjWaacAbNf3eMFSgAAAIBR87dm7fvaA0q+TAXLILckBrwl5XLLJqm5+Ie12caxwCR7e8ykusaQRIrIZvv9xtpXH3EB/8rK1n+u5vKu6zPpqAmReJkYLE44IOuLZ3R8J5Ys+CEsJPnhIkp9Fi8Pm9wgwVpWlAmrqe4j3fW3yoiTWmFAiEY3eXnuHJSyzFIktQ== northman@navy.nmd.msu.ru',
             ],
     }
 
