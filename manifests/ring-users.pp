@@ -3472,4 +3472,20 @@ class users::virtual::ring_users {
 
 ##### END robtex #####
 
+##### BEGIN dyn #####
+
+    @add_user { 'dyn':
+        email => 'noc@dyn.com',
+        company => 'Dyn',
+        uid => 5197,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'dyn':
+        sshkeys => [
+                'ssh-dss AAAAB3NzaC1kc3MAAACBAJLtu+vyr321Qyo9AuRX7AoeqAuvT+A+7zdBjkrhmVkkq/7ovN1AwKgwuI2LSygJOkW4aloENfDX5frsewbJxcIhSjLMLMAnVlL643bRjckWxwkTO1IDo4cElOADOOMHtD/cf2W9iBsIJrJ9LRCg5KeJ57ovx2LNFDwqxzjUhfpZAAAAFQCiGVw42dKZPX2uN5kciE1n7OZVCwAAAIBeLZmYuUSNKQgIo2tGDUx80BjDYeAwkxZjXGVjs/IiU2HqeU/R8XHTs2By+WMhJHN17WQAKxGasGjwwdEqkjT7vgtwpnQWEt4UxGGfdmxl1IoxWcLdAVFkAC1hLVSASpNZXezAT6UrFoGMD+RraMD8HJASmsPWyGMbyxyodUkkswAAAIBSybDbe9Guy2XkGh4M5JUGP0KGoC1hDGCBSgja6CiloBKCkZ2N42XFKgc0W6YlfZ91G3jLGJAyZpfvYmTJ7asRzT01s+rs5XdbifLGsGvLpUw7zcQxXi6oFHisgUJrnjTpx98Kekw3ToVN3l9ntt3uxAbHUCpKivZgXdZBbIF74w==',
+            ],
+    }
+
+##### END dyn #####
+
 }

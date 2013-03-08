@@ -704,3 +704,6 @@ ff02::2 ip6-allrouters
 2a00:9c00:1000:130::2  robtex01 robtex01.ring.nlnog.net
 192.71.253.130    robtex01 robtex01.ring.nlnog.net
 
+2001:df0:258:300::beef  dyn01 dyn01.ring.nlnog.net
+103.11.200.254    dyn01 dyn01.ring.nlnog.net
+

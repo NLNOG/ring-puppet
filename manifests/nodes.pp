@@ -3060,3 +3060,14 @@ node 'robtex01' inherits ringnode {
     include users
 }
 
+node 'dyn01' inherits ringnode {
+    $owner = "dyn"
+    $location = "35.617481,139.749775"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+    $nagios_ping_rate = '!300.0,20%!400.0,60%'
+}
+
