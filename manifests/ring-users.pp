@@ -3483,6 +3483,7 @@ class users::virtual::ring_users {
     @authorized_keys { 'dyn':
         sshkeys => [
                 'ssh-dss AAAAB3NzaC1kc3MAAACBAJLtu+vyr321Qyo9AuRX7AoeqAuvT+A+7zdBjkrhmVkkq/7ovN1AwKgwuI2LSygJOkW4aloENfDX5frsewbJxcIhSjLMLMAnVlL643bRjckWxwkTO1IDo4cElOADOOMHtD/cf2W9iBsIJrJ9LRCg5KeJ57ovx2LNFDwqxzjUhfpZAAAAFQCiGVw42dKZPX2uN5kciE1n7OZVCwAAAIBeLZmYuUSNKQgIo2tGDUx80BjDYeAwkxZjXGVjs/IiU2HqeU/R8XHTs2By+WMhJHN17WQAKxGasGjwwdEqkjT7vgtwpnQWEt4UxGGfdmxl1IoxWcLdAVFkAC1hLVSASpNZXezAT6UrFoGMD+RraMD8HJASmsPWyGMbyxyodUkkswAAAIBSybDbe9Guy2XkGh4M5JUGP0KGoC1hDGCBSgja6CiloBKCkZ2N42XFKgc0W6YlfZ91G3jLGJAyZpfvYmTJ7asRzT01s+rs5XdbifLGsGvLpUw7zcQxXi6oFHisgUJrnjTpx98Kekw3ToVN3l9ntt3uxAbHUCpKivZgXdZBbIF74w==',
+                'ssh-dss AAAAB3NzaC1kc3MAAACBANhYLvhnxeYTwnNaKs+EnxiGmbiz9fy80JUuAPPa3hOoB7sBsZKUbfO0558+y0z59lLQj/zg2h/sn41JTv3eJIkYV2v0Y3bjQSL+n2C1bPXakWbf+xqX0KjJ6SvLP9uaTfSr1vg5+ct+9ATiZlM73NN5xe8ZNdOAbDLC40VdNYozAAAAFQCi7tKXPa/b4+n7zNqImqx5NF96ywAAAIEAjvPieGcsuIJYnYL9GvItKG52Gmg94bHk+94kf6qAnHFGJUOvbYNgSNYlEwrBgW/8Hv0tnGlumgxLuNpvnXu4Emaz9wsIUFZeIHV6O1WzT53edoCJjQWZq2xB9VyFwqvtQay9jtUd26DXehw0RYPMG8+4naEVAkghdUCcw6edYqsAAACAT7S5W98b7DxE5gOgO9PN1BKBOC4tyDNyFioAxDFjI9tmrioA9KWRBTU/n1SfpVCi9Qg51MkknqUmk0K+4l02gOqO/nM7Orivs5AEGZeALDSqx1tDAbLjGYIcpPA8rKdxlk2SBfCYen8vRzD6f23SJJI0ueXwOsdCVbtIG4VodOg= cmarshall+ring@dyn.com',
             ],
     }
 
