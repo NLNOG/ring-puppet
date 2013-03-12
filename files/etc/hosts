@@ -707,3 +707,5 @@ ff02::2 ip6-allrouters
 2001:df0:258:300::beef  dyn01 dyn01.ring.nlnog.net
 103.11.200.254    dyn01 dyn01.ring.nlnog.net
 
+2001:fb0:100:ffff:211:25ff:fe40:9468  trueinternet01 trueinternet01.ring.nlnog.net
+203.144.167.57    trueinternet01 trueinternet01.ring.nlnog.net

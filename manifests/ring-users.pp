@@ -3489,4 +3489,21 @@ class users::virtual::ring_users {
 
 ##### END dyn #####
 
+##### BEGIN trueinternet #####
+
+    @add_user { 'trueinternet':
+        email => 'corpsupport@trueinternet.co.th',
+        company => 'True Internet Co., Ltd.',
+        uid => 5198,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'trueinternet':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCRgvoVQfyon6Fyiv6+6MlZNxeenM9h6LdaJgDxgiaKfDDCXsI7jX4K3Xnsz1c5+2hArxNDdY2QhP7eD0jPBcOeumiFAEQTu8SH90fk6d7quVMZ7qdW4oTH+9EobqbBQnjCokLdDnIWALVIkt13+kiTnik5ehwRe1SbK0UP65rQfqroirhr0Pz7fXAhwfW52FyZMvKv1F1wWe3Iq5SYMi1hTLnDh8qRt89efxmDUGAwf/yLdvsialt+Md+rSk7ctFufbw5NZh1QoybClSVjS6019bYhxtrPxj8LSNwM+6dNirZ64vLgp3RXM30L8ynuMbS+J6QLaYLKmb2wY9ozjqCH tools@trueinternet',
+            ],
+    }
+
+##### END trueinternet #####
+
+
 }

@@ -3071,3 +3071,12 @@ node 'dyn01' inherits ringnode {
     $nagios_ping_rate = '!300.0,20%!400.0,60%'
 }
 
+node 'trueinternet01' inherits ringnode {
+    $owner = "trueinternet"
+    $location = "13.759441,100.565325"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
