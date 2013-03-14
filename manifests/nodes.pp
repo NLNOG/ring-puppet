@@ -515,12 +515,6 @@ node 'db01.infra' inherits dbslaves {
     include nodesonlycron
     include users
     include mysql::server
-#    mysql::server { "mysql":
-#        config_hash => {
-#            'root_password' => trocla("mysql_${fqdn}",'plain'),
-#            'server-id'     => '1',
-#        }
-#    }
 }
 
 node 'db02.infra' inherits dbslaves {
@@ -532,12 +526,6 @@ node 'db02.infra' inherits dbslaves {
     include nodesonlycron
     include users
     include mysql::server 
-#    { "mysql":
-#        config_hash => {
-#            'root_password' => trocla("mysql_${fqdn}",'plain'),
-#            'server-id'     => '2',
-#        }
-#    }
 }
 
 node 'db03.infra' inherits dbslaves {
@@ -548,12 +536,7 @@ node 'db03.infra' inherits dbslaves {
     include syslog_ng::client
     include nodesonlycron
     include users
-    class { 'mysql::server':
-        config_hash => {
-            'root_password' => trocla("mysql_${fqdn}",'plain'),
-            'server-id'     => '3',
-        }
-    }
+    include mysql::server
 }
 node 'db04.infra' inherits dbslaves {
     $owner = "job"
@@ -563,12 +546,7 @@ node 'db04.infra' inherits dbslaves {
     include syslog_ng::client
     include nodesonlycron
     include users
-#    mysql::server { "mysql":
-#        config_hash => {
-#            'root_password' => trocla("mysql_${fqdn}",'plain'),
-#            'server-id'     => '4',
-#        }
-#    }
+    include mysql::server
 }
 
 node 'db05.infra' inherits dbslaves {
@@ -580,12 +558,7 @@ node 'db05.infra' inherits dbslaves {
     include nodesonlycron
     include users
     $nagios_ping_rate = '!180.0,20%!300.0,60%'
-#    mysql::server { "mysql":
-#        config_hash => {
-#            'root_password' => trocla("mysql_${fqdn}",'plain'),
-#            'server-id'     => '5',
-#        }
-#    }
+    include mysql::server
 }
 
 node 'db06.infra' inherits dbslaves {
