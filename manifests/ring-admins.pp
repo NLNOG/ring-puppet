@@ -1,4 +1,8 @@
 class users::virtual::ring_admins {
+    
+    @add_user { 'ubuntu':
+        ensure => absent,
+    }
 
     @add_user { job:
         email    => "job@instituut.net",
