@@ -514,6 +514,7 @@ node 'db01.infra' inherits dbslaves {
     include syslog_ng::client
     include nodesonlycron
     include users
+    include mysql::server
 #    mysql::server { "mysql":
 #        config_hash => {
 #            'root_password' => trocla("mysql_${fqdn}",'plain'),
