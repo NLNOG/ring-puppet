@@ -709,3 +709,7 @@ ff02::2 ip6-allrouters
 
 2001:fb0:100:ffff:211:25ff:fe40:9468  trueinternet01 trueinternet01.ring.nlnog.net
 203.144.167.57    trueinternet01 trueinternet01.ring.nlnog.net
+
+2001:67c:105c:800::2  phusion01 phusion01.ring.nlnog.net
+91.239.87.47    phusion01 phusion01.ring.nlnog.net
+
