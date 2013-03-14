@@ -26,6 +26,15 @@ class users::virtual::ring_users {
     ensure => absent,
 }
 
+@add_user { 'ubuntu':
+    email   => 'default ubuntu',
+    company => 'Ubuntu',
+    uid => 1000,
+    groups  => ['ubuntu'],
+    ensure => absent,
+}
+
+
 ##### END former users #####
 
 ##### BEGIN intouch #####
