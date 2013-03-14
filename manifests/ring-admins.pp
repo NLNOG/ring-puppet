@@ -1,12 +1,8 @@
 class users::virtual::ring_admins {
     
-    @add_user { 'ubuntu':
-        ensure => absent,
-    }
-
     @add_user { job:
-        email    => "job@instituut.net",
-        company  => "Snijders IT",
+        email    => "job.snijders@atrato.com",
+        company  => "Atrato Communications",
         uid      => 6001,
         groups   => ['ring-admins', 'ring-users']
     }

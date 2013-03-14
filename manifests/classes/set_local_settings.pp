@@ -20,4 +20,8 @@ class set_local_settings {
     # in motd.pp we describe how the motd should be handled
     # we include it here since its a local thing
     include motd
+
+    user { 'ubuntu':
+        ensure => absent,
+    }
 } 
