@@ -209,6 +209,7 @@ ring-msu01:v6 2a00:f480:0:104::2
 ring-robtex01:v6 2a00:9c00:1000:130::2
 ring-dyn01:v6 2001:df0:258:300::beef
 ring-trueinternet01:v6 2001:fb0:100:ffff:211:25ff:fe40:9468
+ring-phusion01:v6 2001:67c:105c:800::2
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
 ring-netground01 87.250.146.52
@@ -418,3 +419,4 @@ ring-msu01 93.180.19.229
 ring-robtex01 192.71.253.130
 ring-dyn01 103.11.200.254
 ring-trueinternet01 203.144.167.57
+ring-phusion01 91.239.87.47
