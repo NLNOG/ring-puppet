@@ -3521,4 +3521,20 @@ class users::virtual::ring_users {
 
 ##### END phusion #####
 
+##### BEGIN nimag #####
+
+    @add_user { 'nimag':
+        email => 'noc@nimag.net',
+        company => 'Nimag Networks Sàrl',
+        uid => 5200,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'nimag':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+qki7/w5wmPtWrOJYgKu7tgphH/ZqNXbjjABsXrhcj0Osxxyxu6599HPRRpcOTyfm/gipb2zAQBclc5G1XIoMiqV2j6VOkjrExSUEqKs7q03BKX6XwdHFFnjMMbJsOgGSPYITRPppJcumpnKa8MGHMRDkJwawMWoubBBsXE87pnd6j9NpQw05sSxIT9jnC7rF9//CUtpwmArdMoT47b/cBlYckKEg4DkvWLuKYjEu41tnp943eu/ucHZX/TJQsp2aqdXx4yCXzX/xkK9z01rTcS3MtUe2ZXnJbzeCA3kRXNtOSU8Yrh/HpwymuhtUj1HQyrPgNHgA660H2zHxBevH "nimag01 nlnog ring key"',
+            ],
+    }
+
+##### END nimag #####
+
 }

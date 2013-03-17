@@ -713,3 +713,6 @@ ff02::2 ip6-allrouters
 2001:67c:105c:800::2  phusion01 phusion01.ring.nlnog.net
 91.239.87.47    phusion01 phusion01.ring.nlnog.net
 
+2001:788:2:143::2  nimag01 nimag01.ring.nlnog.net
+62.220.128.73    nimag01 nimag01.ring.nlnog.net
+

@@ -846,6 +846,10 @@ ring-phusion01:v6,icmp,D,0,86400000,60000
 ring-phusion01:v6,icmp,D,0,86400000,60000, -s 576
 ring-phusion01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-nimag01:v6,icmp,D,0,86400000,60000
+ring-nimag01:v6,icmp,D,0,86400000,60000, -s 576
+ring-nimag01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging02,icmp,D,0,86400000,60000
 ring-staging02,icmp,D,0,86400000,60000, -s 576
 ring-staging02,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1685,4 +1689,8 @@ ring-trueinternet01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-phusion01,icmp,D,0,86400000,60000
 ring-phusion01,icmp,D,0,86400000,60000, -s 576
 ring-phusion01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-nimag01,icmp,D,0,86400000,60000
+ring-nimag01,icmp,D,0,86400000,60000, -s 576
+ring-nimag01,scamper,D,0,86400000,900000, -P udp-paris -M
 

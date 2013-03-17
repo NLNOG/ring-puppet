@@ -3067,3 +3067,13 @@ node 'phusion01' inherits ringnode {
     include users
 }
 
+node 'nimag01' inherits ringnode {
+    $owner = "nimag"
+    $location = "46.524,6.604"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
