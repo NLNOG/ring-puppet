@@ -564,8 +564,8 @@ ff02::2 ip6-allrouters
 2a02:2f0c:8000:f::2  rcsrds01 rcsrds01.ring.nlnog.net
 82.76.255.222    rcsrds01 rcsrds01.ring.nlnog.net
 
-2a01:298:f001:a::7  indit01 indit01.ring.nlnog.net
-178.16.220.7    indit01 indit01.ring.nlnog.net
+2a01:298:f001:a700::9  indit01 indit01.ring.nlnog.net
+185.9.166.9    indit01 indit01.ring.nlnog.net
 
 81.94.161.36    itmastaren01    itmastaren01.ring.nlnog.net
 2a00:7800:8000::36    itmastaren01    itmastaren01.ring.nlnog.net
