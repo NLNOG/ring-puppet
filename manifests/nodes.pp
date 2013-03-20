@@ -670,6 +670,7 @@ node 'lg01.infra' inherits infranode {
 node 'worker01' inherits infranode {
     $nagios_ping_rate = '!180.0,20%!300.0,60%'
     include users
+    include backup::client
     include syslog_ng::client
     include apache2
     include nagios_services
@@ -684,6 +685,7 @@ node 'worker01' inherits infranode {
 
 node 'worker02' inherits infranode {
     $nagios_ping_rate = '!180.0,20%!300.0,60%'
+    include backup::client
     include users
     include syslog_ng::client
     include apache2
@@ -699,6 +701,7 @@ node 'worker02' inherits infranode {
 node 'worker03' inherits infranode {
     $nagios_ping_rate = '!180.0,20%!300.0,60%'
     include users
+    include backup::client
     include syslog_ng::client
     include apache2
     include nagios_services
