@@ -27,7 +27,7 @@ class backup::client {
     @@cron { "backup_${name}":
         command => "rdiff-backup --exclude /proc --exclude /dev --exclude /sys root@${name}::/ /backups/${name}/",
         user => root,
-        hour => [ fqdn_rand(12), fqdn_rand(12) + 12 ]
+        hour => [ fqdn_rand(12), fqdn_rand(12) + 12 ],
         minute => fqdn_rand(50),
         tag => 'rdiff',
     }
