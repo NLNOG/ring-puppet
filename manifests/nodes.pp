@@ -89,6 +89,7 @@ node 'master01.infra' inherits infranode {
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
     Exec <<| tag == "destroy_virtual_machines" |>>
+    include backup::client
 }
 
 # container01 is hosted at XS4ALL
@@ -103,6 +104,7 @@ node 'container01.infra' inherits infranode {
     include nagios_services
     include nagios::target::fqdn
     include kvm
+    include backup::client
     munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
     }
     
@@ -189,6 +191,7 @@ node 'container02.infra' inherits infranode {
     include nagios_services
     include nagios::target::fqdn
     include kvm
+    include backup::client
     munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
     }
 
@@ -234,6 +237,7 @@ node 'container03.infra' inherits infranode {
     include nagios_services
     include nagios::target::fqdn
     include kvm
+    include backup::client
     munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
     }
 
@@ -319,6 +323,7 @@ node 'container04.infra' inherits infranode {
     include nagios_services
     include nagios::target::fqdn
     include kvm
+    include backup::client
     munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
     }
     kvm::virtual_machine { 'db04':
@@ -376,9 +381,11 @@ node 'container05.infra' inherits infranode {
     include nagios_services
     include nagios::target::fqdn
     include kvm
+    include backup::client
     munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
     }
     $nagios_ping_rate = '!180.0,20%!300.0,60%'
+    include backup::client
     
     kvm::virtual_machine { 'db05':
         fqdn        => 'db05.infra.ring.nlnog.net',
@@ -425,6 +432,7 @@ node 'bgpmon.infra' inherits infranode {
     authorized_keys { 'dave':
         sshkeys => ['ssh-dss AAAAB3NzaC1kc3MAAACBANA+2Nq9N9IQfPqgmHhdYl932sxJb45PB/UgE/ATxOiP5Ev9sz6Vi+85WrD3kwYvszbRmdm6nIR6a5O861K8B+DKsYoWuE1tFxWgSszlbYzuTMXfPg+zI2IAen/YtzgsATnJPIKUub5bO18O3qGX5f/Xf21kJUsGdDx/F13Bb1UlAAAAFQC8JQHI/PW8wmZwmJKoLDHjb9W1XQAAAIEAq7/xIeDcg4FYiZeUl7VZxrB7HhMwBePOuBgpVyghYsJIM1wyWULN99aMxVQphZa77Y0I6UeaXoQu4Mt52O7Q8oq8FtxfCxUguFh0O+5qKZ66PjNmu/BC5s/GioxnoZ2baT/ka0xV3pQ01wZknk1Eb0ze750OdDs143Tq9eos2IkAAACBAJxziC4dxXJ6mOKYHdnEWRC57UFYxLwk5fKMemP0xJZk2/2Wahq+2pNoCWZvnUk6jWHMVhIV8BG7Bq37B1Qq/XuiEfkc+E1gCEYjwIhvvKYsR+SMeejCv1Bv7HV39ZPoGUjdYyQgciBrDCG13R1QShWNRcTK5liOTbyCcxI2QzTK david.freedman@uk.clara.net(RING)'],
     }
+    include backup::client
 }
 
 node 'us01.irr.infra' inherits infranode {
@@ -435,6 +443,7 @@ node 'us01.irr.infra' inherits infranode {
     include syslog_ng::client
     include nodesonlycron
     include users
+    include backup::client
     $nagios_ping_rate = '!180.0,20%!300.0,60%'
 }
 
@@ -504,6 +513,7 @@ node 'dbmaster.infra' inherits infranode {
 #        }
 #    }
     include local_binaries_dbmaster
+    include backup::client
 }
 
 node 'db01.infra' inherits dbslaves {
@@ -569,12 +579,7 @@ node 'db06.infra' inherits dbslaves {
     include syslog_ng::client
     include nodesonlycron
     include users
-#    mysql::server { "mysql":
-#        config_hash => {
-#            'root_password' => trocla("mysql_${fqdn}",'plain'),
-#            'server-id'     => '5',
-#        }
-#    }
+    include mysql::server
 }
 
 
@@ -602,6 +607,7 @@ node 'public01.infra' inherits infranode {
     }
     include local_binaries_pdnsmaster
     include pdnscronjobs
+    include backup::client
 }
 
 node 'public02.infra' inherits infranode {
@@ -619,6 +625,7 @@ node 'public02.infra' inherits infranode {
         check_domain => "${name}"
     }
     include powerdns
+    include backup::client
 }
 
 node 'backup.infra' inherits infranode {
