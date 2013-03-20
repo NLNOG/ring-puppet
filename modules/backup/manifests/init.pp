@@ -24,8 +24,8 @@ class backup::client {
         ensure => latest,
     }
 
-    @@cron { "backup_${name}":
-        command => "rdiff-backup --exclude /proc --exclude /dev --exclude /sys root@${name}::/ /backups/${name}/",
+    @@cron { "backup_${fqdn}":
+        command => "rdiff-backup --exclude /proc --exclude /dev --exclude /sys root@${fqdn}::/ /backups/${fqdn}/",
         user => root,
         hour => [ fqdn_rand(12), fqdn_rand(12) + 12 ],
         minute => fqdn_rand(50),
