@@ -629,6 +629,7 @@ node 'backup.infra' inherits infranode {
     include syslog_ng::client
     include nodesonlycron
     include users
+    include backup::server
 }
 
 
@@ -646,6 +647,7 @@ node 'lg01.infra' inherits infranode {
     include bird-lg-proxy 
     munin::plugin { ["bird", "bird6"]:
     }
+    include backup::client
     add_user { 'dave':                                                                                                                                                                                                 
         email    => 'dave@claranet',
         company => 'Claranet',
