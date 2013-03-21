@@ -161,7 +161,7 @@ ring-bahnhof01:v6 2001:9b0:01:1107::2
 ring-nicchile01:v6 2001:1398:3:120:200:1:120:28
 ring-glesys01:v6 2a02:750:7::392
 ring-rcsrds01:v6 2a02:2f0c:8000:f::2
-ring-indit01:v6 2a01:298:f001:a::7
+ring-indit01:v6 2a01:298:f001:a700::9
 ring-itmastaren01:v6 2a00:7800:8000::36
 ring-openminds01:v6 2a02:d08:1001:201::1000
 ring-one01:v6 2a02:2350:1:1201::1
@@ -211,6 +211,7 @@ ring-dyn01:v6 2001:df0:258:300::beef
 ring-trueinternet01:v6 2001:fb0:100:ffff:211:25ff:fe40:9468
 ring-phusion01:v6 2001:67c:105c:800::2
 ring-nimag01:v6 2001:788:2:143::2
+ring-vancis01:v6 2001:4d60:10:1200::4
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
 ring-netground01 87.250.146.52
@@ -373,7 +374,7 @@ ring-bahnhof01 195.178.185.171
 ring-nicchile01 200.1.120.28
 ring-glesys01 109.74.6.228
 ring-rcsrds01 82.76.255.222
-ring-indit01 178.16.220.7
+ring-indit01 185.9.166.9
 ring-itmastaren01 81.94.161.36
 ring-openminds01 188.93.100.32
 ring-one01 46.30.209.1
@@ -422,3 +423,4 @@ ring-dyn01 103.11.200.254
 ring-trueinternet01 203.144.167.57
 ring-phusion01 91.239.87.47
 ring-nimag01 62.220.128.73
+ring-vancis01 85.90.94.148

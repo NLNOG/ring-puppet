@@ -716,3 +716,6 @@ ff02::2 ip6-allrouters
 2001:788:2:143::2  nimag01 nimag01.ring.nlnog.net
 62.220.128.73    nimag01 nimag01.ring.nlnog.net
 
+2001:4d60:10:1200::4  vancis01 vancis01.ring.nlnog.net
+85.90.94.148    vancis01 vancis01.ring.nlnog.net
+

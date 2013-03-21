@@ -3548,4 +3548,19 @@ class users::virtual::ring_users {
 
 ##### END nimag #####
 
+##### BEGIN vancis #####
+
+    @add_user { 'vancis':
+        email => 'noc@vancis.nl',
+        company => 'Vancis',
+        uid => 5201,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'vancis':
+        sshkeys => [
+            ],
+    }
+
+##### END vancis #####
+
 }
