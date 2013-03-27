@@ -17,6 +17,7 @@ class master_software {
 class nettools {
     # for BGPmon stuff (requested by dave) 
     package { "libxml2-dev": ensure => latest }
+    package { "python-libxml2": ensure => latest }
     package { "socat": ensure => latest }
     package { "htop": ensure => latest }
 
