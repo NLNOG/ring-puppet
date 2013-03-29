@@ -43,8 +43,8 @@ ff02::2 ip6-allrouters
 54.247.167.176  worker02    worker02.ring.nlnog.net
 2a01:578:3::36f7:a7b0   worker02    worker02.ring.nlnog.net
 
-46.137.152.118  worker03    worker03.ring.nlnog.net
-2a01:578:3::2e89:9876   worker03    worker03.ring.nlnog.net
+79.125.41.103   worker03    worker03.ring.nlnog.net
+2a01:578:0003::4f7d:2967   worker03 worker03.ring.nlnog.net
 
 82.94.230.130   lg01.infra lg01.infra.ring.nlnog.net
 2001:888:2001::130  lg01.infra lg01.infra.ring.nlnog.net
