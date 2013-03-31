@@ -600,11 +600,14 @@ node 'public01.infra' inherits infranode {
         check_domain => "${name}"
     }
     include powerdns
-    class { 'mysql::server':
-        config_hash => {
-            'root_password' => trocla("mysql_${fqdn}",'plain'),
-        }
-    }
+# FIXME
+# we moved to new puppet mysql module, but I can't predict what happens
+# if we just use it here, especially with passwords. 
+#    class { 'mysql::server':
+#        config_hash => {
+#            'root_password' => trocla("mysql_${fqdn}",'plain'),
+#        }
+#    }
     include local_binaries_pdnsmaster
     include pdnscronjobs
     include backup::client
