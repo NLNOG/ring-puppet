@@ -34,6 +34,15 @@ class amp_client {
         require => Package["amplet-client"],
     }
 
+    file { "/etc/default/amp":
+        ensure  => file,
+        mode    => 0644,
+        owner   => root,
+        group   => root,
+        source  => "puppet:///amp/amp-default",
+        require => Package["amplet-client"],
+    }
+
     file { "/etc/amp/ampnameprefix":
         ensure  => file,
         mode    => 0644,
