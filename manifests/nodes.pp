@@ -26,7 +26,7 @@ node basenode {
 
 node ringnode inherits basenode {
     include users::virtual::ring_users
-    include no-apache2
+#    include no-apache2
     include syslog_ng::client
     include nodesonlycron
     include etcfiles_ring
