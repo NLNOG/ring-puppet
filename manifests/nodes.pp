@@ -3102,3 +3102,13 @@ node 'vancis01' inherits ringnode {
     include users
 }
 
+node 'es01' inherits ringnode {
+    $owner = "es"
+    $location = "37.8752777778,-122.253055556"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+    $nagios_ping_rate = '!250.0,20%!400.0,60%'
+}

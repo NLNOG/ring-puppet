@@ -3570,4 +3570,18 @@ class users::virtual::ring_users {
 
 ##### END vancis #####
 
+##### BEGIN es #####
+
+    @add_user { 'es':
+        email => 'trouble@es.net',
+        company => 'Energy Sciences Network (US Department of Energy)',
+        uid => 5202,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'es':
+        sshkeys => [
+            ],
+    }
+
+##### END es #####
 }

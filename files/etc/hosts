@@ -719,3 +719,5 @@ ff02::2 ip6-allrouters
 2001:4d60:10:1200::4  vancis01 vancis01.ring.nlnog.net
 85.90.94.148    vancis01 vancis01.ring.nlnog.net
 
+2001:400:201:8000::2  es01 es01.ring.nlnog.net
+198.129.33.90    es01 es01.ring.nlnog.net
