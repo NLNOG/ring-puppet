@@ -3450,6 +3450,7 @@ class users::virtual::ring_users {
     @authorized_keys { 'onet':
         sshkeys => [
                 'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA1ZTETLWSdZh39n/r3lYPzhm7NL3r5lAD/cBJivCEJ+9fsqIKtq5/SjX7Uqv/UVqhdisqSY23vBfJsOHw0y+6MA+mtPyXy+uPtZ0VXrEQ46dyLPSiv+eFCXMTcr+fgBjk/NYVys/17xTMpViGbjp7orrF/pE9OXMqgTUbq3JVSNMAQbHGPSXBwhT8qEjlTXuZYCfmT+jyYani9s0TPj9pnMfUhX7iviHo7XP5RWpvE8VnjyekjHrFGvZOGeCQbC9bq5ySDOLeaUjbHl4uNeZY2T3ro3pUvouSTLeX6yXK7lEKfRzsI3l/mOgIWJxzHPyokeQM7CFikuOH6h2e+NVmyQ== root@maya.onet',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAxb6sdGg+d5LMiteOj7Ujr4AMl7d1tpkcYMhluj2gZsD2E5CYRhy+vJcKkVOe+PDP2H8Uyc2JJAyUVBzH6IUYq3UvVYhnv/FRA1O75JdGIJ7wT/qWPobXcjje2+mF5eLia4n45nHQg0jS/GyrCT9CJk4SZIrgE1UGbLkwpGIcS7RPv+j8pUWixZYhAXKiQnYFfS3yqRTKVQ5N8asoes0Q7MdDAJXtHzpskFnujeHU2/yz9xROKCQUk5U+j7LrmXL5usA5Mxw442JvIa3Zi3omADRUnsVlYX+T9xoQ1AZZsuXlNqnPFS6/aHHCUIeZYkZzCYcqBCkj+52+eiYmXU6wwQ== root@maya.m7r2.onet',
             ],
     }
 
@@ -3611,5 +3612,36 @@ class users::virtual::ring_users {
     }
 
 ##### END es #####
+
+##### BEGIN world4you #####
+
+    @add_user { 'world4you':
+        email => 'noc@world4you.com',
+        company => 'World4You Internet Services GmbH',
+        uid => 5203,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'world4you':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIB6X0eGa5YLwvfM3I71z91l2EL8OStKBY48VBFQk2QMOeimg4MUflJG3d5y+js6ag3ZzuOmnI3aT2BArKXIxh/h5QLpJB+GP6rMtDzE56teQ/aPAKIW4j3waKb47/jGIlo1xaeyU5mmjEbZ3VJ9dwhNj1feiDVHSt4QHBobtJhpLw== "rsa-key-20130408 world4you01.ring.nlnog.net"',
+            ],
+    }
+
+##### END world4you #####
+
+##### BEGIN 4ddc #####
+
+    @add_user { '4ddc':
+        email => 'networkops@4d-dc.com',
+        company => '4D Data Centres Ltd',
+        uid => 5204,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { '4ddc':
+        sshkeys => [
+            ],
+    }
+
+##### END 4ddc #####
 
 }

@@ -3112,3 +3112,34 @@ node 'es01' inherits ringnode {
     include users
     $nagios_ping_rate = '!250.0,20%!400.0,60%'
 }
+
+node 'world4you01' inherits ringnode {
+    $owner = "world4you"
+    $location = "48.3191068,14.3082231"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'onet02' inherits ringnode {
+    $owner = "onet"
+    $location = "50.034678,20.013635"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node '4ddc01' inherits ringnode {
+    $owner = "4ddc"
+    $location = "51.347304,-0.480730"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

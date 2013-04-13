@@ -858,6 +858,18 @@ ring-es01:v6,icmp,D,0,86400000,60000
 ring-es01:v6,icmp,D,0,86400000,60000, -s 576
 ring-es01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-world4you01:v6,icmp,D,0,86400000,60000
+ring-world4you01:v6,icmp,D,0,86400000,60000, -s 576
+ring-world4you01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-onet02:v6,icmp,D,0,86400000,60000
+ring-onet02:v6,icmp,D,0,86400000,60000, -s 576
+ring-onet02:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-4ddc01:v6,icmp,D,0,86400000,60000
+ring-4ddc01:v6,icmp,D,0,86400000,60000, -s 576
+ring-4ddc01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging02,icmp,D,0,86400000,60000
 ring-staging02,icmp,D,0,86400000,60000, -s 576
 ring-staging02,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1709,4 +1721,16 @@ ring-vancis01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-es01,icmp,D,0,86400000,60000
 ring-es01,icmp,D,0,86400000,60000, -s 576
 ring-es01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-world4you01,icmp,D,0,86400000,60000
+ring-world4you01,icmp,D,0,86400000,60000, -s 576
+ring-world4you01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-onet02,icmp,D,0,86400000,60000
+ring-onet02,icmp,D,0,86400000,60000, -s 576
+ring-onet02,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-4ddc01,icmp,D,0,86400000,60000
+ring-4ddc01,icmp,D,0,86400000,60000, -s 576
+ring-4ddc01,scamper,D,0,86400000,900000, -P udp-paris -M
 

@@ -721,3 +721,13 @@ ff02::2 ip6-allrouters
 
 2001:400:201:8000::2  es01 es01.ring.nlnog.net
 198.129.33.90    es01 es01.ring.nlnog.net
+
+2a00:1a68:3:1::5d18:b819  world4you01 world4you01.ring.nlnog.net
+81.19.156.22    world4you01 world4you01.ring.nlnog.net
+
+2a02:c10:3f00:7::2  onet02 onet02.ring.nlnog.net
+141.105.16.133    onet02 onet02.ring.nlnog.net
+
+2a00:1c18:0:101::5  4ddc01 4ddc01.ring.nlnog.net
+46.245.255.5    4ddc01 4ddc01.ring.nlnog.net
+
