@@ -3640,6 +3640,7 @@ class users::virtual::ring_users {
     }
     @authorized_keys { '4ddc':
         sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAlPWLHZo5maoEu84ZEXSZ5X2HlTQYi7NgMSeUtcYJxvTHr/43rjgEtloeO9uoKqjUfo6fTqMuPeyEH7lCKP0vc8HogJFdK3kbnGnnnsnT30adZAFxzXLXPjN37XVoAaE+GGZXs1fm1BY7quYKV9haN7DrSpkvdeL3tltr3mfEX0c= rsa-key-20130415',
             ],
     }
 
