@@ -125,7 +125,7 @@ ff02::2 ip6-allrouters
 212.83.212.122  interconnect01  interconnect01.ring.nlnog.net
 
 2a01:1b0:7999:453::50   duocast01   duocast01.ring.nlnog.net
-89.188.27.50    duocast01   duocast01.ring.nlnog.net
+89.188.27.98    duocast01   duocast01.ring.nlnog.net
 
 2a02:728:e:83::185  easyhosting01   easyhosting01.ring.nlnog.net
 80.247.162.185  easyhosting01   easyhosting01.ring.nlnog.net
