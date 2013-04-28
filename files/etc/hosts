@@ -731,3 +731,6 @@ ff02::2 ip6-allrouters
 2a00:1c18:0:101::5  4ddc01 4ddc01.ring.nlnog.net
 46.245.255.5    4ddc01 4ddc01.ring.nlnog.net
 
+2a00:59c0:1:3::130  rackfish01 rackfish01.ring.nlnog.net
+194.169.225.130    rackfish01 rackfish01.ring.nlnog.net
+

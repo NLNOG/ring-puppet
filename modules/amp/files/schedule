@@ -870,6 +870,10 @@ ring-4ddc01:v6,icmp,D,0,86400000,60000
 ring-4ddc01:v6,icmp,D,0,86400000,60000, -s 576
 ring-4ddc01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-rackfish01:v6,icmp,D,0,86400000,60000
+ring-rackfish01:v6,icmp,D,0,86400000,60000, -s 576
+ring-rackfish01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging02,icmp,D,0,86400000,60000
 ring-staging02,icmp,D,0,86400000,60000, -s 576
 ring-staging02,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1733,4 +1737,8 @@ ring-onet02,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-4ddc01,icmp,D,0,86400000,60000
 ring-4ddc01,icmp,D,0,86400000,60000, -s 576
 ring-4ddc01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-rackfish01,icmp,D,0,86400000,60000
+ring-rackfish01,icmp,D,0,86400000,60000, -s 576
+ring-rackfish01,scamper,D,0,86400000,900000, -P udp-paris -M
 
