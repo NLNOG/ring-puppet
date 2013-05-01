@@ -3641,6 +3641,9 @@ class users::virtual::ring_users {
     @authorized_keys { '4ddc':
         sshkeys => [
                 'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAlPWLHZo5maoEu84ZEXSZ5X2HlTQYi7NgMSeUtcYJxvTHr/43rjgEtloeO9uoKqjUfo6fTqMuPeyEH7lCKP0vc8HogJFdK3kbnGnnnsnT30adZAFxzXLXPjN37XVoAaE+GGZXs1fm1BY7quYKV9haN7DrSpkvdeL3tltr3mfEX0c= rsa-key-20130415',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAz0AjI4UGEvpBJYfGR2+UqyCyC7XYbyUdo7bEmOeF8zUEmfSyrOZ0lKhY8A+OGpZNXQzjH9DzzZndNZ4qZRfGAH32YbtlbiKJNJBuJJuWsOIUbWKJLIhF8X1MoZa+0AfLGiuQJmVS+O8lZcTEekoNEGtlHWXZKFgVBNFhwJHrVGs= rsa-key-20130417',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEArf79Ochu1jjP7VAuzGQKwwVoBdbUaL5Ca4siarVADV2+e/mytqVkrkZnLk/AW3hDUVtI71HZF/v19cxnCWhV1f+7S627suqh6Fc6MqfjggevFkkq4ZG4xmNcDydtlz3QWHWqDT05k9VmKOh7m1ITgBQz0hEaf9/S73NW/y4xleM= rsa-key-20130416',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIBr1dKFECQ7hsaEqPRSd9MTZfSsfcDBGr3QFOUC4s3oP6Qj3eZTvIIUwRml90PHgpCYMWCjx5HmeUPz3r6jo6OJ5WgMTsm0WYnAMnfoSsnjqHsNEXkGFWDTqccmSEheNRiYpvuqd0/7spB80AkeB+RUR9hZcsdfuFex4OEbFiYI1Q== rsa-key-20130415',
             ],
     }
 
