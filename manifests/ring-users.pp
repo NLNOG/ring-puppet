@@ -3029,8 +3029,13 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'linxtelecom':
         sshkeys => [
-                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD8ovJ9bQLXHMzq8HGK2Ez/MlJiYxLGdD2IFih/xHxIkWdl3fs4XAuki7z4+NhC8hiZ43ApRqYZzTR26bMKkAPQMiL97VSPM5GGM9cPFp6yGfEMAamQ2zyqSnj/ems4X0hDBCfetTrkMTWkGwN7FgIvbyaAoQQPuoRmP4kMZUsRYSEDAVd4C9zxAYFKPOUM3c/+lixARdbK3IvBxXDhrAFZG55PZnXrnqqg3/LUlloeqOfhHEEe4kiMnTE9kIhg+f3DKa1nyf2bmg8xW24VobimU8EIsYiaXMpzrZu+HukyiRC+RWBizn2mwFUXZ37xeR+ukgvJ4PPXS1PYSwnXq7P/ "Daniel Verlouw <daniel.verlouw@linxtelecom.com>"',
-            ],
+            'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEAzimivnvvclR2m2SYHnB5TgFaCTbM5+lQYOa21rXVXbVxV3xHvS6+1PzxukehUzGotV+IEM0C0ei7gYINZB/mmiEbAmzICGA2p7m9S3c8tGIid5JLnZ6AMGAjWn5gAI8frjuacawVRMKa6Ub1tFL58JF9GF8TFonuYuBzPpbYl6s= "Gren Kass gren.kass@linxtelecom.com"',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEA1O6PlgwByK+M3Vwd+BRUdz2JbhuH3sS2+B749UMV19jOtzfK/X9rLPzIDfDr4YshzUd4IiFplQcb9mfM4HsziUnJXAqW/sQQb1oRk/sumQXsbA+Du2XHoPVX3+VWYCj5ZjXg7OW4viwhJ2QjjvYFHdYDtdVaLoPp3I0Muj+Au78= "Marko Korv marko.korv@linxtelecom.com"',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAryaSSc9fVB8XobrySf9BhXTtng1eqCngAnBpQaeM+XWrLFdKs371pEjnh1UyoJTU3TznT5Hj+7c7L2eOPRdbIIG4cnQnjbIeU69kp1TAkfPSssg1092CnFRvaJxqKdV9ymOe1qIGHmBHYOesnmSf/ACuBawe302WdG2pybzC/uY72/ohJ3iqrTJuUqWVuxZ07Eyl06qqvJmjGxouwETAXGK7Kbp+Bmr11+1T5QsngwIX+5gznRauAtfN6aJ/Tdebj1DQYoz65erKfG7l7dJK7t6QIXzRXGJE1oPy8qrpU9EHSsxlh03eeTKssyKkqBX0JHav1ccDTq7aPp9NQMs5kQ== "Martin Tonusoo martin.tonusoo@linxtelecom.com"',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBC0Lb1QwVF8qJi6sFuXNOIPvdy7rv45PeD1ByaMIdb9YzpCtkYX2yyMMqzs7/PBHrf1pZk/hHfEU8hYwOWC880aeX4BACvS4buUOJ7QB2VXM47VY0HML0edbY231Q37k+0rivje8nmHYTZsOPy5VgWQUbnK85StjKKMvfAZ8faQhHcZiXfhN7fAzlCmHyLtmj5rR1nz29lb2u79e4caj1cMELONr36m7QJNnaFXUiEDawssFQ5x0Hvt8po6/J/NAPZF+oCpXTMzlaW3s2zH3lq7MU0BxE2nu59XZkeJIjtwzlHONYnKuLeame2iTB6szyNlF9jb40i2NmReESk7Xz "Pavel Abin <pavel.abin@linxtelecom.com>"',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDA3Yvg933aydA5xukXoNDdWJG7bz+39yMByJUiI7B68VsIsG/hKyindSkZomJf1fBHPbKAT+oBcY4dk/wGnEroJHtXiGaT/KU3hlzSAQegV2QAb2rFw4Qq9eaOZs39CUozms6dxfMbiSFhE8auasoGzdCWae9VaTUvY7kj13Xdb4UwY5hzavj0zN4J+jg081/vO/9CKNsj/HrpVaDyJtunmDfKqr+6maOmdZEZia5GaND45rlOTrt+R1nN1OOcv0nyjz1Bp/crnMInyDp3AELL87/ysouCxN5Ia5wnyRwoHbt2RiD8f+sB2bRk6JTheVmKf75Sk3ndphsVacfIqrqX "Siim Kobin <siim.kobin@linxtelecom.com>"',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD8ovJ9bQLXHMzq8HGK2Ez/MlJiYxLGdD2IFih/xHxIkWdl3fs4XAuki7z4+NhC8hiZ43ApRqYZzTR26bMKkAPQMiL97VSPM5GGM9cPFp6yGfEMAamQ2zyqSnj/ems4X0hDBCfetTrkMTWkGwN7FgIvbyaAoQQPuoRmP4kMZUsRYSEDAVd4C9zxAYFKPOUM3c/+lixARdbK3IvBxXDhrAFZG55PZnXrnqqg3/LUlloeqOfhHEEe4kiMnTE9kIhg+f3DKa1nyf2bmg8xW24VobimU8EIsYiaXMpzrZu+HukyiRC+RWBizn2mwFUXZ37xeR+ukgvJ4PPXS1PYSwnXq7P/ "Daniel Verlouw <daniel.verlouw@linxtelecom.com>"',
+        ],
     }
 
 ##### END linxtelecom #####
