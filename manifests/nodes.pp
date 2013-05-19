@@ -3193,3 +3193,13 @@ node 'hostvirtual02' inherits ringnode {
     include users
 }
 
+node 'mozilla01' inherits ringnode {
+    $owner = "mozilla"
+    $location = "37.37389,-121.97224"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

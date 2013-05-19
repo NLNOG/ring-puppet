@@ -746,3 +746,6 @@ ff02::2 ip6-allrouters
 2403:2500:8000:1::c72  hostvirtual02 hostvirtual02.ring.nlnog.net
 103.6.86.254    hostvirtual02 hostvirtual02.ring.nlnog.net
 
+2620:101:8016:20::1:37  mozilla01 mozilla01.ring.nlnog.net
+63.245.223.37    mozilla01 mozilla01.ring.nlnog.net
+

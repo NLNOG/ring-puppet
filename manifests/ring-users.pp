@@ -3718,4 +3718,20 @@ class users::virtual::ring_users {
 
 ##### END hostvirtual #####
 
+##### BEGIN mozilla #####
+
+    @add_user { 'mozilla':
+        email => 'noc@mozilla.com',
+        company => 'Mozilla',
+        uid => 5209,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'mozilla':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAweEnau/EYh0Hdyon4KoT/WRnEUBwdh8Cw+1Mvs1wOxSzBqPg2M9U5JADm20WG+SfyeCyrMXlIDjG5SyBTfALKwez4ExonQ5FyGvt8v4ipQRx+U+tdewIu9n2aAdmZia+0pS1ZgbyhkJtwNO8D95axlmeOab46HyQqZs0BVxPPdXM4ysPUgPZpSIyQ3rfFVerrVClLBNxqHvi7ZuyKH1zBAxSURhT60oRRNGI74G0+78nAA1c/cTeY/DbEKsJNpo7VK5slh9XQNUS2/6X4mgYg5IUK3AtaXIDnA6H5HCgghba0pZN4AmVR4dwVmILWeb8HpMInlLowQUQ5jNXM+hnYQ== xionox@laptop',
+            ],
+    }
+
+##### END mozilla #####
+
 }
