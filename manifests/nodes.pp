@@ -3163,3 +3163,13 @@ node 'doruknet01' inherits ringnode {
     include users
 }
 
+node 'vocus01' inherits ringnode {
+    $owner = "vocus"
+    $location = "-33.91474,151.19302"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

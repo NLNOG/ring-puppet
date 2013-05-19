@@ -3686,4 +3686,20 @@ class users::virtual::ring_users {
 
 ##### END doruknet #####
 
+##### BEGIN vocus #####
+
+    @add_user { 'vocus':
+        email => 'network@vocus.com.au',
+        company => 'Vocus Communications',
+        uid => 5207,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'vocus':
+        sshkeys => [
+                'ssh-dss AAAAB3NzaC1kc3MAAACBANObzatsNRaDa/Z3z0pnzNUPS4xdWbdFJuEzNbFSZqe3x9p+RZNxpxonceAnpsVzuUMqY1qxP1zrsiiAWZwlv4ALc0ihVKdu5/Bw2FjWqPu3blWYufzHIEQSsr05esITyXXbkALOwnXf34YlSBe1sCJeQMT+uHHyZUJ/zIZpQpu7AAAAFQCqSK9yBbtkZEcKmvLnD6Kc4hnY2QAAAIABRyzGanCGKo+DR6Nshg2jxhLX7Sy5wTsdsgsPLiOo+jxbWJIx8/1+IUFlIfxe36kzy1cLJxlTG4kGBHYHmUDJwOyGBNRQ5kyHHonh5x2RNLJqugHKhFIbyaiJTJ2egwrt/iV7leinz0CQIw2/cnyIG8vOWY5K8KXxLFxsmX40JwAAAIARsbQA/3GHMBx7ZHoJk8EBrRaES1HOmDVGRZFAYrMnsQJTPGtBg/Fd79mO818TL2WUwyY6zGiQi0ojLu/bz+1L5ftASXu72aweHKdME3RovOWtskCs2gNbDcxb6+Z2oc6P1eDHufNqdFC9Zn5jks/0wNzxucyL1BjdMqPszCoAiw== damien@BrassMonkey',
+            ],
+    }
+
+##### END vocus #####
+
 }
