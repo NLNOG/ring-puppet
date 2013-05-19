@@ -3670,4 +3670,20 @@ class users::virtual::ring_users {
 
 ##### END rackfish #####
 
+##### BEGIN doruknet #####
+
+    @add_user { 'doruknet':
+        email => 'noc@doruk.net.tr',
+        company => 'Doruknet',
+        uid => 5206,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'doruknet':
+        sshkeys => [
+                'ssh-dss AAAAB3NzaC1kc3MAAACBAPOLoDJolO3RcneDDglGSXjumhp+d3yJejIrFDZnl+q9XtHeaaEuWotSZlHuHQCjmFPuD/j2Kr2OmMfvsfBqZlZdrvSYSiSF/+JsvbzHEXdHTjSAQm4sw8mxI/2y6u7i6XGxCyml8Nh4ijlaHh/ZnZ5Ao5UyLVBPMYHT30A0hbLVAAAAFQC81JL1F0OswksZI8Ny+xbjG7bT/QAAAIEA6zBH3pH+aczjhFY6O0fBqVTc/kQDW5qcI/zrkOMJpWIUTvNNvRQYYjptNelFDc7iI7gTdXQUFz4v543a7XT/Bdrkrsgsjdzl5kqikz8bK2qY3m1fpCCkEjS959SdADeG/Pf16LleTTOn2zDK4jXCYShajig91Q3gSU3P6ELzHtIAAACAWkIOGcFyQ42XbLjWXc0Vg7m03AFlxiUNU9SfgxHvzieU8iGCMOzAgzTyu754RipheAmUCpTvfELwPys2ZoFfopB10+4HD37q1UsdZ4isbfABm2/cyw69OUhnG1mpXKrEGh8cy2tfXugwLdSrE0MK5XKAUtTuSzNfeYdGiHn69wo= nlnog@nlnog',
+            ],
+    }
+
+##### END doruknet #####
+
 }

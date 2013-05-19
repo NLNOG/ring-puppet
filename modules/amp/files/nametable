@@ -217,6 +217,7 @@ ring-world4you01:v6 2a00:1a68:3:1::5d18:b819
 ring-onet02:v6 2a02:c10:3f00:7::2
 ring-4ddc01:v6 2a00:1c18:0:101::5
 ring-rackfish01:v6 2a00:59c0:1:3::130
+ring-doruknet01:v6 2a02:480:3411:6::2
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
 ring-netground01 87.250.146.52
@@ -434,3 +435,4 @@ ring-world4you01 81.19.156.22
 ring-onet02 141.105.16.133
 ring-4ddc01 46.245.255.5
 ring-rackfish01 194.169.225.130
+ring-doruknet01 212.58.0.250
