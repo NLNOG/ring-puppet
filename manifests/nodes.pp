@@ -3185,7 +3185,7 @@ node 'hostvirtual01' inherits ringnode {
 
 node 'hostvirtual02' inherits ringnode {
     $owner = "hostvirtual"
-    $location = "114.13502,22.36187"
+    $location = "22.36187,114.13502"
     include amp_client
     include nagios::target::fqdn
     include nagios_services
