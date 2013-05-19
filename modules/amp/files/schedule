@@ -882,6 +882,14 @@ ring-vocus01:v6,icmp,D,0,86400000,60000
 ring-vocus01:v6,icmp,D,0,86400000,60000, -s 576
 ring-vocus01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-hostvirtual01:v6,icmp,D,0,86400000,60000
+ring-hostvirtual01:v6,icmp,D,0,86400000,60000, -s 576
+ring-hostvirtual01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-hostvirtual02:v6,icmp,D,0,86400000,60000
+ring-hostvirtual02:v6,icmp,D,0,86400000,60000, -s 576
+ring-hostvirtual02:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging02,icmp,D,0,86400000,60000
 ring-staging02,icmp,D,0,86400000,60000, -s 576
 ring-staging02,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1757,4 +1765,12 @@ ring-doruknet01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-vocus01,icmp,D,0,86400000,60000
 ring-vocus01,icmp,D,0,86400000,60000, -s 576
 ring-vocus01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-hostvirtual01,icmp,D,0,86400000,60000
+ring-hostvirtual01,icmp,D,0,86400000,60000, -s 576
+ring-hostvirtual01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-hostvirtual02,icmp,D,0,86400000,60000
+ring-hostvirtual02,icmp,D,0,86400000,60000, -s 576
+ring-hostvirtual02,scamper,D,0,86400000,900000, -P udp-paris -M
 

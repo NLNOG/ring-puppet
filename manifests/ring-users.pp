@@ -3702,4 +3702,20 @@ class users::virtual::ring_users {
 
 ##### END vocus #####
 
+##### BEGIN hostvirtual #####
+
+    @add_user { 'hostvirtual':
+        email => 'tech@vr.org',
+        company => 'Host Virtual, Inc',
+        uid => 5208,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'hostvirtual':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEAvWI+nYIaJvoOJPjz2T2HdZXdY+0qjB57lmqahDOA5o2QnYqEIVSzGGkOkQkdKzpXP1npTgemQK0yR7ucDFyPqSyg5edJB7KQaqSo0OLQlaKcpfr4EGA3weQe8+qHpc0ea+xq+yoRh3zRwMKO/ZGEhlmJygbgK1/PppTcwpaF1as= root@smt1',
+            ],
+    }
+
+##### END hostvirtual #####
+
 }

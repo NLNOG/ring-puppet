@@ -3173,3 +3173,23 @@ node 'vocus01' inherits ringnode {
     include users
 }
 
+node 'hostvirtual01' inherits ringnode {
+    $owner = "hostvirtual"
+    $location = "13.042466,80.157013"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'hostvirtual02' inherits ringnode {
+    $owner = "hostvirtual"
+    $location = "114.13502,22.36187"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
