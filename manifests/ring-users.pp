@@ -3721,7 +3721,7 @@ class users::virtual::ring_users {
 ##### BEGIN mozilla #####
 
     @add_user { 'mozilla':
-        email => 'noc@mozilla.com',
+        email => 'netops@mozilla.com',
         company => 'Mozilla',
         uid => 5209,
         groups => ['ring-users'],
