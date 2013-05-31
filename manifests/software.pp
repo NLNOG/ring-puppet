@@ -19,7 +19,9 @@ class nettools {
     package { "libxml2-dev": ensure => latest }
     package { "python-libxml2": ensure => latest }
     package { "socat": ensure => latest }
-    package { "htop": ensure => latest }
+
+    # debugging stuff
+    package { ["htop", "sysstat", "iotop"]: ensure => latest }
 
     package { "libcache-cache-perl": ensure => latest }
     package { "httping": ensure => latest }
