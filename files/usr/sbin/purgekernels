@@ -35,6 +35,7 @@ if (-e $virt_what) {
 }
 
 my $kernels = {};
+my $headers = {};
 my $kernel_version = "";
 my $current_kernel_version = "";
 
@@ -45,7 +46,12 @@ while ($dpkg =~ m#^[ri][ci]\s+(linux\-image\-\d+\.\d+\.\d+\-[\.\d]+(?:\-\w+)+)\s
     my $package_name = $1;
     $package_name =~ m#^linux\-image\-(\d+\.\d+\.\d+\-[\.\d]+)(?:\-\w+)+$#gm;
     $kernel_version = $1;
+    my $header_name = $package_name;
+    $header_name =~ s#^linux\-image#linux-headers#;
+    my $header_base = $header_name;
+    $header_base =~ s#-generic$##;
     $$kernels{$kernel_version} = $package_name;
+    $$headers{$kernel_version} = "$header_name $header_base";
     dprint("found installed $kernel_version");
 }
 
@@ -67,6 +73,8 @@ dprint("---- \$kernels ----");
 dprint("".Dumper($kernels));
 dprint("---- \@sorted_kernels -----");
 dprint("".Dumper(@sorted_kernels));
+dprint("---- \$headers ----");
+dprint("".Dumper($headers));
 
 # Strip off the top three, keeping these installed.
 my $keep1 = shift @sorted_kernels; # at least one kernel should be installed
@@ -86,6 +94,16 @@ foreach my $remove_kernel_version (@sorted_kernels) {
     print "\n\nremoving $remove_kernel_version\n";
 
     my @cmd = ("/usr/bin/dpkg", "--purge", $$kernels{$remove_kernel_version});
+    system(@cmd) == 0 or warn "Forking dpkg failed: $!\n";
+    if ($? == -1) {
+        print "failed to execute: $!\n";
+    } elsif ($? & 127) {
+        printf "child died with signal %d, %s coredump\n", ($? & 127),  ($? & 128) ? 'with' : 'without';
+    } else {
+        printf "child exited with value %d\n", $? >> 8;
+    }
+    
+    @cmd = ("/usr/bin/dpkg", "--purge", $$headers{$remove_kernel_version});
     system(@cmd) == 0 or warn "Forking dpkg failed: $!\n";
     if ($? == -1) {
         print "failed to execute: $!\n";
