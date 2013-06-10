@@ -3753,4 +3753,22 @@ class users::virtual::ring_users {
 
 ##### END lightstorm #####
 
+##### BEGIN iccn #####
+
+    @add_user { 'iccn':
+        email => 'buraglio@illinois.edu',
+        company => 'ICCN',
+        uid => 5211,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'iccn':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEArAVEOYF8qGTLIzA6yerBNv8E6d86BBToxxFQMb8oIoiJCuCJGFgDUFB0xL9IuuyQGHcLakb+OuH2civORW6ftdtpEL2Yy+mUn+/3KiIDxnHJrXqnoTNFEvkXEfq8W8nAIztEe2wMt4g0xWvATWCGuPl9iOtw7YYMypY9Ga5YctE= buraglio@heelflip.209.buraglio.com',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIB1I5vH933f+lhT0jxeJUS7YarpeQdDimT2SotKosdXOg0UUKjwGbICnQWjK1wYY6efPu30vvqAprQ6gjzZiDhcfINC+IfbSIiP1GmAlOre9gJeSAqqz6m17DVgB2n3Qr5IFwQWQQrx3c3Bvers6I8sqNDmadrfuE8T4zi+7NMI1Q== rsa-key-20040611',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAxu3WUQ1IIsIeyQN4HAQrUuL1hufwOfbzeWupHgmtdA0Ig17V/iyVppcmS+9osKpXhJBCanFYFYrgf+eyW6X/ebJ1MgEVYMsrOD65gchJ3Elmbxxp6/RrZ8kmv7VnoB49nHvQjOSFwJUER9LVB3lOlGFBb2tmgMoriUbLxb0Pznvzo33zFmWdpbC2hN9assh5vvCrvZsPV+OuZ4t/+qIyqgXKtirRplQOaL7tTPozj7t/+8qfzBqpBpPHApzJ8quWOzAThVa8rtjI1u+5RS/8LcXw56vh1IpcY2Hhkakvki4fhd+edq4k6G0hmHoxU/kbVCBLolOeYr3qSyG90GkpMQ== buraglio@tardis.ncsa.uiuc.edu',
+            ],
+    }
+
+##### END iccn #####
+
 }

@@ -3217,3 +3217,13 @@ node 'lightstorm01' inherits ringnode {
     include users
 }
 
+node 'iccn01' inherits ringnode {
+    $owner = "iccn"
+    $location = "40.1131082,-88.2265234"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
