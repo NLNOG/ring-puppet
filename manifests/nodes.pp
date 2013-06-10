@@ -3207,3 +3207,13 @@ node 'mozilla01' inherits ringnode {
     include users
 }
 
+node 'lightstorm01' inherits ringnode {
+    $owner = "lightstorm"
+    $location = "48.147874,17.132733"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

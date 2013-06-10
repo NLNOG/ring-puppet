@@ -749,3 +749,6 @@ ff02::2 ip6-allrouters
 2620:101:8016:20::1:37  mozilla01 mozilla01.ring.nlnog.net
 63.245.223.37    mozilla01 mozilla01.ring.nlnog.net
 
+2a00:10d8:11::3:0:1  lightstorm01 lightstorm01.ring.nlnog.net
+92.240.232.158    lightstorm01 lightstorm01.ring.nlnog.net
+

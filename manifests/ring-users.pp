@@ -3738,4 +3738,19 @@ class users::virtual::ring_users {
 
 ##### END mozilla #####
 
+##### BEGIN lightstorm #####
+
+    @add_user { 'lightstorm':
+        email => 'csc@lightstorm.sk',
+        company => 'LightStorm Communications s.r.o.',
+        uid => 5210,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'lightstorm':
+        sshkeys => [
+            ],
+    }
+
+##### END lightstorm #####
+
 }
