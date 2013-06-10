@@ -3227,3 +3227,13 @@ node 'iccn01' inherits ringnode {
     include users
 }
 
+node 'popsc01' inherits ringnode {
+    $owner = "popsc"
+    $location = "-27.599548,-48.522928"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

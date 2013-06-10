@@ -3771,4 +3771,19 @@ class users::virtual::ring_users {
 
 ##### END iccn #####
 
+##### BEGIN popsc #####
+
+    @add_user { 'popsc':
+        email => 'noc@pop-sc.rnp.br',
+        company => 'PoP-SC',
+        uid => 5212,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'popsc':
+        sshkeys => [
+            ],
+    }
+
+##### END popsc #####
+
 }

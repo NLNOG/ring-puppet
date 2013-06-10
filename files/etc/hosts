@@ -755,3 +755,6 @@ ff02::2 ip6-allrouters
 2620:0:e10:400a::5  iccn01 iccn01.ring.nlnog.net
 72.36.126.205    iccn01 iccn01.ring.nlnog.net
 
+2001:12f0:200:4017:20c:29ff:fede:b178  popsc01 popsc01.ring.nlnog.net
+200.237.196.2    popsc01 popsc01.ring.nlnog.net
+
