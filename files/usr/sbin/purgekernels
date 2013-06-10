@@ -103,7 +103,7 @@ foreach my $remove_kernel_version (@sorted_kernels) {
         printf "child exited with value %d\n", $? >> 8;
     }
     
-    @cmd = ("/usr/bin/dpkg", "--purge", $$headers{$remove_kernel_version});
+    @cmd = ("/usr/bin/dpkg", "--purge", split(/ /,$$headers{$remove_kernel_version}));
     system(@cmd) == 0 or warn "Forking dpkg failed: $!\n";
     if ($? == -1) {
         print "failed to execute: $!\n";
