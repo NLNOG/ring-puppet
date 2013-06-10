@@ -3781,6 +3781,7 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'popsc':
         sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDSS9Q2QB2ealOuC43KwKuHclEdVxszEixrPliGbkIeYo+oRa+kKC8sOKkphva2L1jcQF3y8ZsZXUSGeGbvkZ2dtijodHbKXTV3odX+rtxzt2F3LW2SynG6kYHqP705fVhZ9U4saFQdckd6j5nDOC/pb7iGdpjFAy+vkjRwa3ilQZ9Kp+QSVtcAcTO24vMoE/RCByA/yS2ky8fKiOpmDl2pYMaLGxY7ENOWqwH+qGOSw0J1vvuqxjZ/CaISQx9rWuxvCQ9KQNNCNTbs2WkqhonKL1Pl+sHRvv051M6q3MsOqX03I19KY7Mqg/1UR3W2pMulZWi4YFWFcLBRrgnOGdVH pescador@pescador',
             ],
     }
 
