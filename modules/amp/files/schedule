@@ -894,6 +894,22 @@ ring-mozilla01:v6,icmp,D,0,86400000,60000
 ring-mozilla01:v6,icmp,D,0,86400000,60000, -s 576
 ring-mozilla01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-lightstorm01:v6,icmp,D,0,86400000,60000
+ring-lightstorm01:v6,icmp,D,0,86400000,60000, -s 576
+ring-lightstorm01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-iccn01:v6,icmp,D,0,86400000,60000
+ring-iccn01:v6,icmp,D,0,86400000,60000, -s 576
+ring-iccn01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-popsc01:v6,icmp,D,0,86400000,60000
+ring-popsc01:v6,icmp,D,0,86400000,60000, -s 576
+ring-popsc01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-sargasso01:v6,icmp,D,0,86400000,60000
+ring-sargasso01:v6,icmp,D,0,86400000,60000, -s 576
+ring-sargasso01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging02,icmp,D,0,86400000,60000
 ring-staging02,icmp,D,0,86400000,60000, -s 576
 ring-staging02,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1781,4 +1797,20 @@ ring-hostvirtual02,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-mozilla01,icmp,D,0,86400000,60000
 ring-mozilla01,icmp,D,0,86400000,60000, -s 576
 ring-mozilla01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-lightstorm01,icmp,D,0,86400000,60000
+ring-lightstorm01,icmp,D,0,86400000,60000, -s 576
+ring-lightstorm01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-iccn01,icmp,D,0,86400000,60000
+ring-iccn01,icmp,D,0,86400000,60000, -s 576
+ring-iccn01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-popsc01,icmp,D,0,86400000,60000
+ring-popsc01,icmp,D,0,86400000,60000, -s 576
+ring-popsc01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-sargasso01,icmp,D,0,86400000,60000
+ring-sargasso01,icmp,D,0,86400000,60000, -s 576
+ring-sargasso01,scamper,D,0,86400000,900000, -P udp-paris -M
 

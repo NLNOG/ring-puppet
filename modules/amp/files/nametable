@@ -222,6 +222,10 @@ ring-vocus01:v6 2402:7800:0:2::1CE
 ring-hostvirtual01:v6 2403:2500:4000::d77
 ring-hostvirtual02:v6 2403:2500:8000:1::c72
 ring-mozilla01:v6 2620:101:8016:20::1:37
+ring-lightstorm01:v6 2a00:10d8:11::3:0:1
+ring-iccn01:v6 2620:0:e10:400a::5
+ring-popsc01:v6 2001:12f0:200:4017:20c:29ff:fede:b178
+ring-sargasso01:v6 2A01:550:0:402::1
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
 ring-netground01 87.250.146.52
@@ -265,7 +269,7 @@ ring-msp01 94.228.79.58
 ring-inotel01 212.67.131.20
 ring-fremaks01 46.19.92.60
 ring-netability01 46.182.9.20
-ring-blix01 91.205.185.146
+ring-blix01 178.255.148.131
 ring-solido01 109.238.49.65
 ring-portlane01 80.67.10.228
 ring-digmia01 91.210.181.185
@@ -444,3 +448,7 @@ ring-vocus01 175.45.73.66
 ring-hostvirtual01 103.6.87.36
 ring-hostvirtual02 103.6.86.254
 ring-mozilla01 63.245.223.37
+ring-lightstorm01 92.240.232.158
+ring-iccn01 72.36.126.205
+ring-popsc01 200.237.196.2
+ring-sargasso01 78.158.65.68
