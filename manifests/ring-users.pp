@@ -3786,4 +3786,23 @@ class users::virtual::ring_users {
 
 ##### END popsc #####
 
+##### BEGIN sargasso #####
+
+    @add_user { 'sargasso':
+        email => 'noc@sargasso.net',
+        company => 'Sargasso Networks',
+        uid => 5213,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'sargasso':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAs0A0n3tE0GpfHTOb8mK7yK2uQz0YLgGUizDMROnmYDPNpkeXhJWe1lGweues6v6hDkgOy04F3p1SkH4Pe2kN0JqcZoN7AWxZKLb31mjwvwG8NkTk7StlZpT1etl1VsVQArH25czefrP1iAGfwQy6YkoflJZchqacby3zSUDaXyiLZvO0/pi4SUafkYsNQ3eRqIa3/aE3ZOvAOw3AhuHKT3X+vXV4zbYtTG1OiK2ag94FjTAbndmPUQSv40qFDFn/QAl64ykqnlGR5Kt1I5jH05Wlw97HmQIjcoOMyMVZi0YykIj3f3kjsy50Od2kNHSIyqaN2RMw80OFZ0QC6Xcx4Q== david@netman1.uk.sargasso.net',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAmBL083ezADbamt0NUsQrJzmMPQhPloufuuzq+x72pQa/iZQm+fEDiAs2FSZ5CWNmq5Kyxfvgu0IFuITB/avZPATiRDQ1tjzf0Z/KXkDbksnFH+KCI1Sz+aE3Rsh1aF9MOyMo63pC5FJGpnsisZHirPE0IcVKb+bT0MWxzsf+vFGxTDNFvxwxdrPgulkrFF4gWDlpWe9YdH/6f8Nx4LW9iIFM4+FanGye4/F/VcI/QHtv7jUGzVsanQxwEwtkfJgKZjjgMXEz40UiZxoqWIeZIj2QFmNl5UWuLilQGLx7i/0y9olTpBFTxvhS1bSJpJTHDGU0gUCSREWPXjYhI/7Qzw== david@netman1.us.sargasso.net',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAnbHMjwh+6uDP4HJOmnfuWHmXs3kpzJffiDd8rRZ8ebj2d8AtIpIrugKiHk9O48G+GmgZnH2nj+uJmcaxwiw+CT/6mhnf0LRYekO5xhkUyvfRJkiGuv24yh5C012AjVpGdRS8OGdewfky36xFxHiJNnrc2QBf+S0Jjt20yfHfzfvPWmSq9QTRffHhhLH6F3AaI1b8ICsYQzoCg/YsxediXKGTjW/W5g78GePdo5qkCn6GsbYBF7ALHrsSOl7i34iJ63B7RZ8AuVjcGrA0py6B4HJfWsPf8VpNVZsStwWuwxEToUIqAvYBy+CZ2Ek2+YuTSpq2My71iE8X5C94V45jb/K+u0U1vBHPQ+7Ez+ZVfbIitnvwM3FRoSzP/J5cVBdzxnWI5Uh3wjMC8QIw2Gs6nuDWyokqqHkD3GscmqLVleezdL3xmygjdNVXg4hxPoAG0mUnp4wePwAu41L7iErKD+YbATK8fAl3cJ/Irdyg2yYRi5rtEko32oOj55okdigzuD5t2ietjOJzluSRzfG7Sp6VW/LJPy0AbW/rZ4nzmb2YAXqSh189AHfTAlf2Z7Ah1YwOhynK7bsJn91RpuXmoMReIFu4kHKANfgcmCsxwMUHU/K5j7aM4WPFsRJBYhWCS1yPUiC7zN2AsZeP1S2RXHBa4N8x7UxtyHrxLL7T5+U= flamingo-20111231',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAlvNyCANSbKk10hNbEVDKF8/suZsfdk6SYYakvIr35c8yNREGM6A5sY62je88CK6W33SzKsosS+xi8n1b5w/FTDlB8hcPNIHiO/XEnQk3zqxUxeWKDi8w1i19qaCoV7LRYprBhZr5AyOH+aAAL/hRuwxfgZl3PsfZ16H7Xedx9pED/old2X/esluKcKhl5UoOS6dwKcutvaWyuIHY2eF8bKcJovjApRzGjtYrU4SKibIPQpsPDTA0POi/jnNRCzrWcV3+eiV2sm8aX92OtYAnnzPp81fgSxQs0pFaFe+dqJhdXXupUprpCFP3wAv/Lypf6YNq3tm26Jw2kRyHsN0oeQ== albatross-20120706',
+            ],
+    }
+
+##### END sargasso #####
+
 }

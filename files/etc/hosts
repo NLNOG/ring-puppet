@@ -758,3 +758,6 @@ ff02::2 ip6-allrouters
 2001:12f0:200:4017:20c:29ff:fede:b178  popsc01 popsc01.ring.nlnog.net
 200.237.196.2    popsc01 popsc01.ring.nlnog.net
 
+2A01:550:0:402::1  sargasso01 sargasso01.ring.nlnog.net
+78.158.65.68    sargasso01 sargasso01.ring.nlnog.net
+
