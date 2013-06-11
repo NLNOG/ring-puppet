@@ -188,7 +188,7 @@ ff02::2 ip6-allrouters
 2a03:8900:100:711::20   netability01    netability01.ring.nlnog.net
 
 178.255.148.131  blix01  blix01.ring.nlnog.net
-2a02:20c8:14:0:2e0:81ff:fe33:9766   blix01  blix01.ring.nlnog.net
+2a02:20c8:14::2  blix01  blix01.ring.nlnog.net
 
 109.238.49.65   solido01    solido01.ring.nlnog.net
 2a02:9d0:3023:1::2  solido01    solido01.ring.nlnog.net
