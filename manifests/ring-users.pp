@@ -3748,6 +3748,7 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'lightstorm':
         sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAv3m06xfBZ8gnYXbC/WYA9UuzOmvbcAaxvyG8HcVFziFFv0ONtcDcM7L8Cwog8iVq7zMv7HqJ8zNbSB312JpVJtVqEmODFx4BXmiV/sxY+jX7lFRYEKDTHxu6ZXJnjHFlzFx3mO4cqR+C890TyejJyBhRvhVmCo/bMrH/DDgO4p+ug2PSfmhzdk20Uw1Vbg0EwINqVkDYLMMN4Sx0psbcgqofkujdOY1AhuAT53IgRFYTD+4C2n2qFINAm7RoDrasDTUBCGDDvj05JWz5vGpP91IvdgNxX+ehzan0snuXKIcgGvqKbl/Ldn7kT6kHZLTRhZaL5CKGyx8yjGFrENkqZw== dante@angel',
             ],
     }
 
