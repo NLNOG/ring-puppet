@@ -41,7 +41,7 @@ ring-msp01:v6 2a00:1068:ffff:402:2e0:81ff:fe44:eaaa
 ring-inotel01:v6 2a02:78:d443:8314::1
 ring-fremaks01:v6 2a02:2918:0:fc00::a6a0:81d6
 ring-netability01:v6 2a03:8900:100:711::20
-ring-blix01:v6 2a02:20c8:14:0:2e0:81ff:fe33:9766
+ring-blix01:v6 2a02:20c8:14::2
 ring-solido01:v6 2a02:9d0:3023:1::2
 ring-portlane01:v6 2a00:1a28:0:1::10:228
 ring-digmia01:v6 2a01:5200:100::7269:6b67:3031
@@ -226,6 +226,7 @@ ring-lightstorm01:v6 2a00:10d8:11::3:0:1
 ring-iccn01:v6 2620:0:e10:400a::5
 ring-popsc01:v6 2001:12f0:200:4017:20c:29ff:fede:b178
 ring-sargasso01:v6 2A01:550:0:402::1
+ring-mythicbeasts01:v6 2a00:1098:0:80:1000:1d:0:1
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
 ring-netground01 87.250.146.52
@@ -452,3 +453,4 @@ ring-lightstorm01 92.240.232.158
 ring-iccn01 72.36.126.205
 ring-popsc01 200.237.196.2
 ring-sargasso01 78.158.65.68
+ring-mythicbeasts01 93.93.129.145

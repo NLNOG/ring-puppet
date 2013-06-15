@@ -3810,4 +3810,20 @@ class users::virtual::ring_users {
 
 ##### END sargasso #####
 
+##### BEGIN mythicbeasts #####
+
+    @add_user { 'mythicbeasts':
+        email => 'support@mythic-beasts.com',
+        company => 'Mythic Beasts Ltd',
+        uid => 5214,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'mythicbeasts':
+        sshkeys => [
+                'ssh-dss AAAAB3NzaC1kc3MAAACBAMt9XMmjp1T+5uUP8y+wTe2jpQT0QfIr6uUJIUId5U/Jc92Rk6jma35dSCMDG1e8YwJJtZ5PtPDir4+zvFBiKYhJ87hhzg3F3N+5wN6mPKn/oRmbdLnLgM7ssLOhH49JcbYfY6qvlOFcH0OBRNeSqvUBsIuAcmRD/I+7Iw9FjpuVAAAAFQCQNPKfsCtHPmQ1VJXZYJdp+f9UpQAAAIBpV1tsBLy/Y/Y6uAk7ZXeRv1W1BBXAJZsLa484nIcnGFhx9Af8SUsitVdEIL6g5o8RN0RbSYQB0HHx0d5V4SVOjYrVkwOAbMpOxDjmdXpdF9e2wteBL84WSKz9icn08URDJ7qSodieYe9wVV0MVt6GFjvB8dSjt1bW9+mq2fgxCQAAAIB6FekcqQ8JmU9nunp53Ae64dXDWdP1PGlk2+3Au0ARkPwjjdiEMSEE/pkrXgQVJUgwZjIHtDG+zuG9KG7g4cuJDQ++PiHzol+VuSghZ3qVDc6opN4lwYGX3TdPIf+ibs5+VgBU8kfIscxtoHAznBth/3AnVw2Z/357cyC9J5hq2g== "Mythic Beasts admin key"',
+            ],
+    }
+
+##### END mythicbeasts #####
+
 }

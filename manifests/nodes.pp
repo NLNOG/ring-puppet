@@ -3247,3 +3247,13 @@ node 'sargasso01' inherits ringnode {
     include users
 }
 
+node 'mythicbeasts01' inherits ringnode {
+    $owner = "mythicbeasts"
+    $location = "51.49964,-0.01074"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

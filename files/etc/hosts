@@ -761,3 +761,6 @@ ff02::2 ip6-allrouters
 2A01:550:0:402::1  sargasso01 sargasso01.ring.nlnog.net
 78.158.65.68    sargasso01 sargasso01.ring.nlnog.net
 
+2a00:1098:0:80:1000:1d:0:1  mythicbeasts01 mythicbeasts01.ring.nlnog.net
+93.93.129.145    mythicbeasts01 mythicbeasts01.ring.nlnog.net
+
