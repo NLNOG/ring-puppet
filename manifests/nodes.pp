@@ -3257,3 +3257,13 @@ node 'mythicbeasts01' inherits ringnode {
     include users
 }
 
+node 'transip01' inherits ringnode {
+    $owner = "transip"
+    $location = "52.393233,4.848914"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

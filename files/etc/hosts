@@ -764,3 +764,6 @@ ff02::2 ip6-allrouters
 2a00:1098:0:80:1000:1d:0:1  mythicbeasts01 mythicbeasts01.ring.nlnog.net
 93.93.129.145    mythicbeasts01 mythicbeasts01.ring.nlnog.net
 
+2a01:7c8:aab1:3f8::1  transip01 transip01.ring.nlnog.net
+149.210.130.136    transip01 transip01.ring.nlnog.net
+

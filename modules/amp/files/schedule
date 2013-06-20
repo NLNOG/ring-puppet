@@ -914,6 +914,10 @@ ring-mythicbeasts01:v6,icmp,D,0,86400000,60000
 ring-mythicbeasts01:v6,icmp,D,0,86400000,60000, -s 576
 ring-mythicbeasts01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-transip01:v6,icmp,D,0,86400000,60000
+ring-transip01:v6,icmp,D,0,86400000,60000, -s 576
+ring-transip01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging02,icmp,D,0,86400000,60000
 ring-staging02,icmp,D,0,86400000,60000, -s 576
 ring-staging02,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1821,4 +1825,8 @@ ring-sargasso01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-mythicbeasts01,icmp,D,0,86400000,60000
 ring-mythicbeasts01,icmp,D,0,86400000,60000, -s 576
 ring-mythicbeasts01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-transip01,icmp,D,0,86400000,60000
+ring-transip01,icmp,D,0,86400000,60000, -s 576
+ring-transip01,scamper,D,0,86400000,900000, -P udp-paris -M
 
