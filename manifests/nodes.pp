@@ -3267,3 +3267,12 @@ node 'transip01' inherits ringnode {
     include users
 }
 
+node 'sapphire01' inherits ringnode {
+    $owner = "sapphire"
+    $location = "36.142092,-5.358946"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}

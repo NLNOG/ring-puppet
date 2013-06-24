@@ -767,3 +767,5 @@ ff02::2 ip6-allrouters
 2a01:7c8:aab1:3f8::1  transip01 transip01.ring.nlnog.net
 149.210.130.136    transip01 transip01.ring.nlnog.net
 
+2a02:638:8:1::4 sapphire01  sapphire01.ring.nlnog.net
+195.166.195.252 sapphire01  sapphire01.ring.nlnog.net

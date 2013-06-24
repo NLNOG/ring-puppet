@@ -3851,4 +3851,18 @@ class users::virtual::ring_users {
 
 ##### END transip #####
 
+##### BEGIN sapphire #####
+
+    @add_user { 'sapphire':
+        email => 'noc@sapphire.gi',
+        company => 'Sapphire Networks',
+        uid => 5216,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'sapphire':
+        sshkeys => [
+            ],
+    }
+
+##### END sapphire #####
 }
