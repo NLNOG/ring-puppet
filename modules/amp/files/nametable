@@ -229,6 +229,7 @@ ring-sargasso01:v6 2A01:550:0:402::1
 ring-mythicbeasts01:v6 2a00:1098:0:80:1000:1d:0:1
 ring-transip01:v6 2a01:7c8:aab1:3f8::1
 ring-sapphire01:v6 2a02:638:8:1::4
+ring-octopuce01:v6 2001:67c:288::185
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
 ring-netground01 87.250.146.52
@@ -458,3 +459,4 @@ ring-sargasso01 78.158.65.68
 ring-mythicbeasts01 93.93.129.145
 ring-transip01 149.210.130.136
 ring-sapphire01 195.166.195.252
+ring-octopuce01 91.194.60.185

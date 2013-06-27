@@ -922,6 +922,10 @@ ring-sapphire01:v6,icmp,D,0,86400000,60000
 ring-sapphire01:v6,icmp,D,0,86400000,60000, -s 576
 ring-sapphire01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-octopuce01:v6,icmp,D,0,86400000,60000
+ring-octopuce01:v6,icmp,D,0,86400000,60000, -s 576
+ring-octopuce01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging02,icmp,D,0,86400000,60000
 ring-staging02,icmp,D,0,86400000,60000, -s 576
 ring-staging02,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1837,4 +1841,8 @@ ring-transip01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-sapphire01,icmp,D,0,86400000,60000
 ring-sapphire01,icmp,D,0,86400000,60000, -s 576
 ring-sapphire01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-octopuce01,icmp,D,0,86400000,60000
+ring-octopuce01,icmp,D,0,86400000,60000, -s 576
+ring-octopuce01,scamper,D,0,86400000,900000, -P udp-paris -M
 

@@ -3276,3 +3276,14 @@ node 'sapphire01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'octopuce01' inherits ringnode {
+    $owner = "octopuce"
+    $location = "48.79609,2.412572"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

@@ -769,3 +769,7 @@ ff02::2 ip6-allrouters
 
 2a02:638:8:1::4 sapphire01  sapphire01.ring.nlnog.net
 195.166.195.252 sapphire01  sapphire01.ring.nlnog.net
+
+2001:67c:288::185  octopuce01 octopuce01.ring.nlnog.net
+91.194.60.185    octopuce01 octopuce01.ring.nlnog.net
+
