@@ -773,3 +773,6 @@ ff02::2 ip6-allrouters
 2001:67c:288::185  octopuce01 octopuce01.ring.nlnog.net
 91.194.60.185    octopuce01 octopuce01.ring.nlnog.net
 
+2400:c300:1::17  udomain01 udomain01.ring.nlnog.net
+103.15.194.17    udomain01 udomain01.ring.nlnog.net
+

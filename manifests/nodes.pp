@@ -3287,3 +3287,13 @@ node 'octopuce01' inherits ringnode {
     include users
 }
 
+node 'udomain01' inherits ringnode {
+    $owner = "udomain"
+    $location = "22.352507,114.124324"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
