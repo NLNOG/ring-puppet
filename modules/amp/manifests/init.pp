@@ -105,7 +105,7 @@ class amp_client {
     }
 
     service { "amp":
-        ensure      => running,
+        ensure      => "stopped",
         subscribe   => File["/etc/amp/collectors", "/etc/amp/nametable", "/etc/amp/schedule", "/etc/amp/ampnameprefix"],
         require     => Package["amplet-client", "amplet-common"],
         hasstatus   => false,
