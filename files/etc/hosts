@@ -776,3 +776,5 @@ ff02::2 ip6-allrouters
 2400:c300:1::17  udomain01 udomain01.ring.nlnog.net
 103.15.194.17    udomain01 udomain01.ring.nlnog.net
 
+2a01:8580:103:1::108  ipvisie01 ipvisie01.ring.nlnog.net
+141.136.120.48    ipvisie01 ipvisie01.ring.nlnog.net
