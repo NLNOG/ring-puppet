@@ -3306,3 +3306,14 @@ node 'ipvisie01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'citynetwork01' inherits ringnode {
+    $owner = "citynetwork"
+    $location = "56.16122,15.58690"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

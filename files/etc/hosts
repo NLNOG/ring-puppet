@@ -778,3 +778,7 @@ ff02::2 ip6-allrouters
 
 2a01:8580:103:1::108  ipvisie01 ipvisie01.ring.nlnog.net
 141.136.120.48    ipvisie01 ipvisie01.ring.nlnog.net
+
+2a00:16d8:0:8::2  citynetwork01 citynetwork01.ring.nlnog.net
+91.123.206.254    citynetwork01 citynetwork01.ring.nlnog.net
+
