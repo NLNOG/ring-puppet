@@ -782,3 +782,6 @@ ff02::2 ip6-allrouters
 2a00:16d8:0:8::2  citynetwork01 citynetwork01.ring.nlnog.net
 91.123.206.254    citynetwork01 citynetwork01.ring.nlnog.net
 
+2800:40:c06::0001  iplan01 iplan01.ring.nlnog.net
+190.210.175.57    iplan01 iplan01.ring.nlnog.net
+

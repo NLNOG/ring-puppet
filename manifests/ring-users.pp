@@ -3940,4 +3940,20 @@ class users::virtual::ring_users {
 
 ##### END citynetwork #####
 
+##### BEGIN iplan #####
+
+    @add_user { 'iplan':
+        email => 'parduino@iplan.com.ar',
+        company => 'IPLAN',
+        uid => 5221,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'iplan':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIBJgwi9/rurSxaqbmoavrm/iTSaOixhm9GHv2BXW3e0iCoRK9TcxsZSgge6WkqX7V9kO5CP/qvHpyv7w50p+P9F/eJ8aMqau4jLygj5k2OvL2mHhv2aMaquymyPXlELtjTF8I2QT337OOqpYjPPdqFgmtVcUB/VMfob9dbc2HnjrQ== rsa-key-20130715',
+            ],
+    }
+
+##### END iplan #####
+
 }

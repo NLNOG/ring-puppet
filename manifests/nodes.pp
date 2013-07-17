@@ -3317,3 +3317,13 @@ node 'citynetwork01' inherits ringnode {
     include users
 }
 
+node 'iplan01' inherits ringnode {
+    $owner = "iplan"
+    $location = "-34.640633,-58.404018"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

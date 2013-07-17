@@ -930,6 +930,18 @@ ring-udomain01:v6,icmp,D,0,86400000,60000
 ring-udomain01:v6,icmp,D,0,86400000,60000, -s 576
 ring-udomain01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-ipvisie01:v6,icmp,D,0,86400000,60000
+ring-ipvisie01:v6,icmp,D,0,86400000,60000, -s 576
+ring-ipvisie01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-citynetwork01:v6,icmp,D,0,86400000,60000
+ring-citynetwork01:v6,icmp,D,0,86400000,60000, -s 576
+ring-citynetwork01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-iplan01:v6,icmp,D,0,86400000,60000
+ring-iplan01:v6,icmp,D,0,86400000,60000, -s 576
+ring-iplan01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging02,icmp,D,0,86400000,60000
 ring-staging02,icmp,D,0,86400000,60000, -s 576
 ring-staging02,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1853,4 +1865,16 @@ ring-octopuce01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-udomain01,icmp,D,0,86400000,60000
 ring-udomain01,icmp,D,0,86400000,60000, -s 576
 ring-udomain01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-ipvisie01,icmp,D,0,86400000,60000
+ring-ipvisie01,icmp,D,0,86400000,60000, -s 576
+ring-ipvisie01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-citynetwork01,icmp,D,0,86400000,60000
+ring-citynetwork01,icmp,D,0,86400000,60000, -s 576
+ring-citynetwork01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-iplan01,icmp,D,0,86400000,60000
+ring-iplan01,icmp,D,0,86400000,60000, -s 576
+ring-iplan01,scamper,D,0,86400000,900000, -P udp-paris -M
 
