@@ -3955,4 +3955,20 @@ class users::virtual::ring_users {
 
 ##### END iplan #####
 
+##### BEGIN magyar #####
+
+    @add_user { 'magyar':
+        email => 'noc.fix@telekom.hu',
+        company => 'Magyar Telekom',
+        uid => 5222,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'magyar':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCwWu+U2qGpVdhaLgffOouMYY/FBwrDZt5amqjCHzcIsDxsCeCFgKDwq725N6cVZuM6CvRKjkF6QgICnZpUb0sZUFJKSjyqvQLhCWD+KqOAKemawNIbUQbIGhXAS4s9ii6MGDmRM3Xtt3WdFNCJLGU4QsoC8+yhhi3Bu3DBtgnSf200U4KkHn5UE2bPPbS3BFWAdDxQcYBgQrZkbNOYhDAq4dMGtNY3QEzaTbBJXU6knh3eU5OC/Q14/pg91iqp2VMAMLURJkaO0fWY62Wz4N56EsXMPDvuWAMpSLvIA4l4d1HRhC3Kf3tInUSL182lhiQAlMYmnUtyy+NUg79fBxb9 mt@ring',
+            ],
+    }
+
+##### END magyar #####
+
 }

@@ -785,3 +785,6 @@ ff02::2 ip6-allrouters
 2800:40:c06::0001  iplan01 iplan01.ring.nlnog.net
 190.210.175.57    iplan01 iplan01.ring.nlnog.net
 
+2001:4c48:2:71::ffff  magyar01 magyar01.ring.nlnog.net
+84.2.33.51    magyar01 magyar01.ring.nlnog.net
+

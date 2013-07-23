@@ -234,6 +234,7 @@ ring-udomain01:v6 2400:c300:1::17
 ring-ipvisie01:v6 2a01:8580:103:1::108
 ring-citynetwork01:v6 2a00:16d8:0:8::2
 ring-iplan01:v6 2800:40:c06::0001
+ring-magyar01:v6 2001:4c48:2:71::ffff
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
 ring-netground01 87.250.146.52
@@ -468,3 +469,4 @@ ring-udomain01 103.15.194.17
 ring-ipvisie01 141.136.120.48
 ring-citynetwork01 91.123.206.254
 ring-iplan01 190.210.175.57
+ring-magyar01 84.2.33.51
