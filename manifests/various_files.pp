@@ -9,6 +9,10 @@ class etcfiles {
         include_src => false,
     }
 
+    file { ['/etc/apt/sources.list.d/master.ring.nlnog.net.list', '/etc/apt/sources.list.d/amp.list']:
+        ensure  => absent,
+    }
+
 # in case of problems this can force my key everywhere
 #     file { "/home/job/.ssh/authorized_keys":
 #        owner   => job,
