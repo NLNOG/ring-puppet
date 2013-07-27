@@ -2,6 +2,13 @@
 #
 class etcfiles {
 
+    apt::source { 'nlnog_ring_repo':
+        location    => 'http://apt.ring.nlnog.net/deb/',
+        release     => 'maverick',
+        repos       => 'main',
+        include_src => false,
+    }
+
 # in case of problems this can force my key everywhere
 #     file { "/home/job/.ssh/authorized_keys":
 #        owner   => job,

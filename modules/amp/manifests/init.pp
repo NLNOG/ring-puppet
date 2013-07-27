@@ -4,13 +4,6 @@ class amp_client {
         ensure => latest,
     }
  
-    apt::source { 'amp':
-        location    => 'http://apt.ring.nlnog.net/deb/',
-        release     => 'maverick',
-        repos       => 'main',
-        include_src => false,
-    }
-
     package { ["amplet-common"]:
         ensure => latest,
     }
