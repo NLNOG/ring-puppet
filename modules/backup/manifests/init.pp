@@ -17,6 +17,8 @@ class backup::server {
         ensure  => directory,
     }
 
+    <<| tag == "backup_target" |>>
+
 }
 
 class backup::client {
@@ -24,6 +26,7 @@ class backup::client {
     @@line { "candidate_backup_target":
         file    => "/backups/backup-hosts",
         line    => "${fqdn}",
+        tag     => "backup_target",
         ensure  => present,
     }
 
