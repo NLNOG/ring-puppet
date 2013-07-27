@@ -101,19 +101,6 @@ class etcfiles {
         source  => "puppet:///files/etc/pam.d/su",
     } 
 
-    exec { "apt-get update":
-        path    => ["/usr/bin", "/usr/sbin"],
-        subscribe => File["/etc/apt/sources.list"],
-        refreshonly => true
-    }
-
-   file { "/etc/apt/sources.list":
-        owner   => root,
-        group   => root,
-        mode    => 644,
-        source  => "puppet:///files/etc/apt/sources.list.${lsbdistcodename}",
-    }
-
     file { "/etc/apt/sources.list.d/master.ring.nlnog.net.list":
         owner => root,
         group => root,
