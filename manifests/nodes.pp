@@ -12,7 +12,7 @@ node basenode {
     include munin::client
     include nlnogrepokey
     include lang
-    munin::plugin { ["users", "tcp", "ntp_offset", "uptime", "threads", "ntp_kernel_pll_off", "diskstats", "proc_pri", "iostat_ios", "if_eth0"]:
+    munin::plugin { ["users", "tcp", "ntp_offset", "uptime", "threads", "ntp_kernel_pll_off", "diskstats", "proc_pri", "iostat_ios"]: }
     }
     include ssh
     include timezone
