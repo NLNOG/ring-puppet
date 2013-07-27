@@ -654,6 +654,7 @@ node 'lg01.infra' inherits infranode {
     include syslog_ng::client
     include nodesonlycron
     include users
+    include backup::client
 # FIXME
 # bird is nu distributed over meerdere processen
 # met een smerige iptables hack. Ik moet de puppet
@@ -662,7 +663,6 @@ node 'lg01.infra' inherits infranode {
 #    include bird-lg-proxy 
     munin::plugin { ["bird", "bird6"]:
     }
-    include backup::client
     add_user { 'dave':                                                                                                                                                                                                 
         email    => 'dave@claranet',
         company => 'Claranet',
@@ -3338,3 +3338,12 @@ node 'magyar01' inherits ringnode {
     include users
 }
 
+node 'luna01' inherits ringnode {
+    $owner = "luna"
+    $location = "51.92609,4.41863"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}

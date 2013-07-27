@@ -52,6 +52,10 @@ class backup::client {
         ensure  => present,
     }
 
+    file { '/root/.ssh':
+        ensure  => directory,
+    }
+
     file { '/root/validate-rsync-backup':
         source  => 'puppet:///files/root/validate-rsync-backup',
         owner   => 'root',
