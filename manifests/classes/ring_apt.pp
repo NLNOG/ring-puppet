@@ -1,5 +1,4 @@
 class ring::apt {
-    class { 'apt': }
     
     apt::source { "ubuntu_archiv_precise":
         location        => "mirror://mirrors.ubuntu.com/mirrors.txt",
