@@ -946,6 +946,10 @@ ring-magyar01:v6,icmp,D,0,86400000,60000
 ring-magyar01:v6,icmp,D,0,86400000,60000, -s 576
 ring-magyar01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-luna01:v6,icmp,D,0,86400000,60000
+ring-luna01:v6,icmp,D,0,86400000,60000, -s 576
+ring-luna01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging02,icmp,D,0,86400000,60000
 ring-staging02,icmp,D,0,86400000,60000, -s 576
 ring-staging02,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1885,4 +1889,8 @@ ring-iplan01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-magyar01,icmp,D,0,86400000,60000
 ring-magyar01,icmp,D,0,86400000,60000, -s 576
 ring-magyar01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-luna01,icmp,D,0,86400000,60000
+ring-luna01,icmp,D,0,86400000,60000, -s 576
+ring-luna01,scamper,D,0,86400000,900000, -P udp-paris -M
 
