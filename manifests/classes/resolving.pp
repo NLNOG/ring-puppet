@@ -24,7 +24,7 @@ nameserver ::1
     file { "/etc/init.d/unbound":
         owner   => root,
         group   => root,
-        mode    => 644,
+        mode    => 0755,
         source  => "puppet:///files/etc/init.d/unbound",
     }
 
