@@ -239,22 +239,10 @@ class nettools {
 
 class nlnogrepokey {
 
-  file { "/etc/apt/nlnogrepopublic.key":
-    mode   => 440,
-    owner  => root,
-    group  => root,
-    source => [
-        "puppet:///files/etc/apt/nlnogrepopublic.key"
-        ],
-  }
-  exec { "install-key":
-     command => "/usr/bin/apt-key add /etc/apt/nlnogrepopublic.key",
-     require => File["/etc/apt/nlnogrepopublic.key"],
-     unless  => "/usr/bin/apt-key list | /bin/grep -q 'ring-admins@ring.nlnog.net'";
-  }
-#  exec { "key-update":
-#     command => "/usr/bin/apt-get update",
-#     require => Exec["install-key"],
-#  }
+    apt::key { 'nlnog_ring_repo':
+        key     => '853E2940',
+        key_source  => "https://ring.nlnog.net/nlnogrepopublic.key",
+    }
 }
 
+}

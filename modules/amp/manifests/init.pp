@@ -4,7 +4,14 @@ class amp_client {
         ensure => latest,
     }
  
-   package { ["amplet-common"]:
+    apt::source { 'amp':
+        location    => 'http://apt.ring.nlnog.net/deb/',
+        release     => 'maverick',
+        repos       => 'main',
+        include_src => false,
+    }
+
+    package { ["amplet-common"]:
         ensure => latest,
     }
 
@@ -105,7 +112,7 @@ class amp_client {
     }
 
     service { "amp":
-        ensure      => "stopped",
+        ensure      => "running",
         subscribe   => File["/etc/amp/collectors", "/etc/amp/nametable", "/etc/amp/schedule", "/etc/amp/ampnameprefix"],
         require     => Package["amplet-client", "amplet-common"],
         hasstatus   => false,
