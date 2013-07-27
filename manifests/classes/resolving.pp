@@ -34,6 +34,7 @@ nameserver ::1
         require     => [ Package["unbound"], File["/etc/init.d/unbound"] ],
         subscribe   => File["/etc/unbound/unbound.conf"],
         hasrestart  => true,
+        hasstatus   => false,
     }
 
     file { "/etc/unbound/unbound.conf":
