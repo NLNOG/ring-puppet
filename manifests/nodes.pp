@@ -22,6 +22,7 @@ node basenode {
     $postfix_myorigin = ""
     include postfix
     include resolving
+    class { 'apt': }
 }
 
 node ringnode inherits basenode {

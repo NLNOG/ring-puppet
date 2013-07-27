@@ -13,6 +13,10 @@ class backup::server {
         require => Package['linux-headers-virtual'],
     }
 
+    file { '/var/lib/syslog-ng':
+        ensure  => directory,
+    }
+
 }
 
 class backup::client {
