@@ -483,7 +483,7 @@ node 'container06.infra' inherits infranode {
         netmask     => '255.255.255.240',
         dns         => '8.8.8.8',
         gateway     => '109.72.93.33',
-        memory      => '1024',
+        memory      => '8192',
         disksize    => '20',
         rootsize    => '19968',
         bridge      => 'virbr1',
