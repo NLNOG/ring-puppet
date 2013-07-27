@@ -638,8 +638,7 @@ node 'backup.infra' inherits infranode {
     include syslog_ng::client
     include nodesonlycron
     include users
-    package { 'linux-headers-virtual': ensure   => latest }
-#    include backup::server
+    include backup::server
 }
 
 
