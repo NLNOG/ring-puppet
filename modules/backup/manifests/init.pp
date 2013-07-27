@@ -17,7 +17,11 @@ class backup::server {
         ensure  => directory,
     }
 
-    <<| tag == "backup_target" |>>
+    file { '/backups/backup-hosts':
+        ensure  => present.
+
+    }
+    Line <<| tag == "backup_target" |>>
 
 }
 
