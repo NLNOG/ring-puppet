@@ -499,7 +499,6 @@ node dbslaves inherits infranode {
 
 node 'dbmaster.infra' inherits infranode {
     $owner = "job"
-    include backup
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
