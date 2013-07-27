@@ -639,7 +639,7 @@ node 'backup.infra' inherits infranode {
     include syslog_ng::client
     include nodesonlycron
     include users
-    include backup::server
+#    include backup::server
 }
 
 
