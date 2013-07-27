@@ -27,7 +27,7 @@ class backup::server {
 
 class backup::client {
 
-    @@line { "candidate_backup_target":
+    @@line { "candidate_backup_target_${fqdn}":
         file    => "/backups/backup-hosts",
         line    => "${fqdn}",
         tag     => "backup_target",
