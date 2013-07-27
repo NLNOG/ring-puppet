@@ -43,6 +43,13 @@ node ringnode inherits basenode {
 
 node infranode inherits basenode {
     include etcfiles_infra
+    file { "/etc/puppet/puppet.conf":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/puppet/puppet.conf"
+    }
+
 }
 
 node 'master01.infra' inherits infranode {

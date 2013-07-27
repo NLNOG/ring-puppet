@@ -33,14 +33,6 @@ class cronjobs {
     $cron2 = (fqdn_rand(50) + 5)
     $cron3 = (fqdn_rand(50) + 3)
 
-    cron { weeklyreboot:
-        command => "/sbin/reboot",
-        weekday => "sunday",
-        hour => "4",
-        user => "root",
-        ensure => absent,
-    }
-
     cron { update_motd:
         command => "run-parts --lsbsysinit /etc/update-motd.d > /var/run/motd",
         hour => "7",
@@ -67,17 +59,6 @@ class cronjobs {
         command => "/usr/local/bin/puppet_zombiecleanup > /dev/null 2>&1",
         user => root,
         minute => "42",
-    }
-
-# our munin module makes this useless
-# see msp01 example in nodes.pp if you want to enable specific plugins on a host
-    cron { "munin-configure":
-        command => "/usr/sbin/munin-node-configure --shell | bash > /dev/null 2>&1",
-        user => root,
-        hour => "3",
-        weekday => "1",
-        minute => $cron3,
-        ensure => absent,
     }
 
 }
