@@ -24,12 +24,6 @@ node basenode {
     include resolving
     class { 'apt': }
     include ring::apt
-    file { "/etc/puppet/puppet.conf":
-        owner   => root,
-        group   => root,
-        mode    => 644,
-        source  => "puppet:///files/etc/puppet/puppet.conf"
-    }
 }
 
 node ringnode inherits basenode {
@@ -39,13 +33,27 @@ node ringnode inherits basenode {
     include nodesonlycron
     include etcfiles_ring
     package { "munin": ensure => purged, }
+    file { "/etc/puppet/puppet.conf":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/puppet/puppet.conf"
+    }
+
 }
 
 node infranode inherits basenode {
     include etcfiles_infra
+    file { "/etc/puppet/puppet.conf":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/puppet/puppet.conf"
+    }
 }
 
-node 'master01.infra' inherits infranode {
+node 'master01.infra' inherits basenode {
+    include etcfiles_infra
     include users
     include master_software
     include syslog_ng::server
