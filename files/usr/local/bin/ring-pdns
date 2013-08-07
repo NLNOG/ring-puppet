@@ -228,6 +228,7 @@ class commands(object):
         self.dbdo(query)
 
     def add_record(self,name,rtype,content,ttl,prio,zone=ZONE):
+        rtype = rtype.upper()
         query = "insert into records (domain_id, name,type,content,ttl,prio) select id ,'%s', '%s', '%s', %s, %s " \
                 "from domains where name='%s'" % (name,rtype,content,ttl,prio,zone)
         _, rowid = self.dbdo(query)
