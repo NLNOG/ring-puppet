@@ -790,3 +790,7 @@ ff02::2 ip6-allrouters
 
 2001:9c0:1:4::130:230  luna01 luna01.ring.nlnog.net
 217.77.130.230    luna01 luna01.ring.nlnog.net
+
+2a00:1c98:10:7::2  combell01 combell01.ring.nlnog.net
+37.148.176.54    combell01 combell01.ring.nlnog.net
+
