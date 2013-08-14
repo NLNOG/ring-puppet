@@ -3035,12 +3035,12 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'linxtelecom':
         sshkeys => [
-            'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEAzimivnvvclR2m2SYHnB5TgFaCTbM5+lQYOa21rXVXbVxV3xHvS6+1PzxukehUzGotV+IEM0C0ei7gYINZB/mmiEbAmzICGA2p7m9S3c8tGIid5JLnZ6AMGAjWn5gAI8frjuacawVRMKa6Ub1tFL58JF9GF8TFonuYuBzPpbYl6s= "Gren Kass gren.kass@linxtelecom.com"',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD8ovJ9bQLXHMzq8HGK2Ez/MlJiYxLGdD2IFih/xHxIkWdl3fs4XAuki7z4+NhC8hiZ43ApRqYZzTR26bMKkAPQMiL97VSPM5GGM9cPFp6yGfEMAamQ2zyqSnj/ems4X0hDBCfetTrkMTWkGwN7FgIvbyaAoQQPuoRmP4kMZUsRYSEDAVd4C9zxAYFKPOUM3c/+lixARdbK3IvBxXDhrAFZG55PZnXrnqqg3/LUlloeqOfhHEEe4kiMnTE9kIhg+f3DKa1nyf2bmg8xW24VobimU8EIsYiaXMpzrZu+HukyiRC+RWBizn2mwFUXZ37xeR+ukgvJ4PPXS1PYSwnXq7P/ "Daniel Verlouw <daniel.verlouw@linxtelecom.com>"',
+            'ssh-dss AAAAB3NzaC1kc3MAAACBAILY+b0anSPsf+RJM91g6PBLb4JOo56mJIQI7haAIyS+JL3LgkMd5BktM82aH1J90DlxFjvjhStDTUPMmbHC8JUBUjK7JS0JJnzYjiGGqx1eJaq/uqRN2Y1l4dOEWMxWPazbczRSfkIw3dNH4jqdhqgEweVzVI6cXO42tPPgBLFLAAAAFQCUOsoDvxWtjz6DbfSnt24iJdZWoQAAAIAtFgqKvOeUIaRYbiw1DswTO0ysxmUYA9Jizb8LRDKYfyUYQGZC5VWSZ1f+Xq05YiWmBuBfUYKDexROgUilZn7Rv0wrg5sJrbxvWvBefJnqWVc5VOO2YgxhNeWnN4dXQ0++1j+fHAziH4AKRuEKHuBvbnOrIxcDqSSvTliIwpJ3FwAAAIAFMW6WZN7quIaGps2M5UOXejG6AtHuNo9jPoksuA49pDluh/j9kCKA6QgeTekCA9PzNaKnZTvFOVZByLeAlB8qYxzCjm8wXNTl+auP6hIgo5C7aHb1nnJKTSZD3cnF9ZbmEa8xfWlwQvMgU65MrFVY/whl7Fw01MC7nqr6j3kPdg== "Gren-C. Kass gren.kass@linxtelecom.com"',
             'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEA1O6PlgwByK+M3Vwd+BRUdz2JbhuH3sS2+B749UMV19jOtzfK/X9rLPzIDfDr4YshzUd4IiFplQcb9mfM4HsziUnJXAqW/sQQb1oRk/sumQXsbA+Du2XHoPVX3+VWYCj5ZjXg7OW4viwhJ2QjjvYFHdYDtdVaLoPp3I0Muj+Au78= "Marko Korv marko.korv@linxtelecom.com"',
             'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAryaSSc9fVB8XobrySf9BhXTtng1eqCngAnBpQaeM+XWrLFdKs371pEjnh1UyoJTU3TznT5Hj+7c7L2eOPRdbIIG4cnQnjbIeU69kp1TAkfPSssg1092CnFRvaJxqKdV9ymOe1qIGHmBHYOesnmSf/ACuBawe302WdG2pybzC/uY72/ohJ3iqrTJuUqWVuxZ07Eyl06qqvJmjGxouwETAXGK7Kbp+Bmr11+1T5QsngwIX+5gznRauAtfN6aJ/Tdebj1DQYoz65erKfG7l7dJK7t6QIXzRXGJE1oPy8qrpU9EHSsxlh03eeTKssyKkqBX0JHav1ccDTq7aPp9NQMs5kQ== "Martin Tonusoo martin.tonusoo@linxtelecom.com"',
             'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBC0Lb1QwVF8qJi6sFuXNOIPvdy7rv45PeD1ByaMIdb9YzpCtkYX2yyMMqzs7/PBHrf1pZk/hHfEU8hYwOWC880aeX4BACvS4buUOJ7QB2VXM47VY0HML0edbY231Q37k+0rivje8nmHYTZsOPy5VgWQUbnK85StjKKMvfAZ8faQhHcZiXfhN7fAzlCmHyLtmj5rR1nz29lb2u79e4caj1cMELONr36m7QJNnaFXUiEDawssFQ5x0Hvt8po6/J/NAPZF+oCpXTMzlaW3s2zH3lq7MU0BxE2nu59XZkeJIjtwzlHONYnKuLeame2iTB6szyNlF9jb40i2NmReESk7Xz "Pavel Abin <pavel.abin@linxtelecom.com>"',
             'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDA3Yvg933aydA5xukXoNDdWJG7bz+39yMByJUiI7B68VsIsG/hKyindSkZomJf1fBHPbKAT+oBcY4dk/wGnEroJHtXiGaT/KU3hlzSAQegV2QAb2rFw4Qq9eaOZs39CUozms6dxfMbiSFhE8auasoGzdCWae9VaTUvY7kj13Xdb4UwY5hzavj0zN4J+jg081/vO/9CKNsj/HrpVaDyJtunmDfKqr+6maOmdZEZia5GaND45rlOTrt+R1nN1OOcv0nyjz1Bp/crnMInyDp3AELL87/ysouCxN5Ia5wnyRwoHbt2RiD8f+sB2bRk6JTheVmKf75Sk3ndphsVacfIqrqX "Siim Kobin <siim.kobin@linxtelecom.com>"',
-            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD8ovJ9bQLXHMzq8HGK2Ez/MlJiYxLGdD2IFih/xHxIkWdl3fs4XAuki7z4+NhC8hiZ43ApRqYZzTR26bMKkAPQMiL97VSPM5GGM9cPFp6yGfEMAamQ2zyqSnj/ems4X0hDBCfetTrkMTWkGwN7FgIvbyaAoQQPuoRmP4kMZUsRYSEDAVd4C9zxAYFKPOUM3c/+lixARdbK3IvBxXDhrAFZG55PZnXrnqqg3/LUlloeqOfhHEEe4kiMnTE9kIhg+f3DKa1nyf2bmg8xW24VobimU8EIsYiaXMpzrZu+HukyiRC+RWBizn2mwFUXZ37xeR+ukgvJ4PPXS1PYSwnXq7P/ "Daniel Verlouw <daniel.verlouw@linxtelecom.com>"',
         ],
     }
 
@@ -3991,4 +3991,30 @@ class users::virtual::ring_users {
     }
 
 ##### END luna #####
+
+##### BEGIN combell #####
+
+    @add_user { 'combell':
+        email => 'abuse@combell.com',
+        company => 'COMBELLGROUP NV',
+        uid => 5224,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'combell':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAuZWOXHUPNWuHWGU5DGmoT8WOVhTf+3/MecPiha8bKxsMVjqwgX1D7TrVy1vF/HiXwzsxcBJYejUBPYWwzRBXcSSA4Er1FLxugCeYdl7V1b92mgBXbfX5OniRBAEowF0QjRQXMSfgFmnj0/H1AJ3m3R0zN4+lYEJbaT4D6JmHiybWlxWk45c9qe/n/jBRd2/4RvRT29x0zkzaCOLNHcf2j+xcrK9blmQIFMjnzCmbP62WjaXVBGB/k7ncGoTmL7rvmpEwy08jIOyF/2ciXRyF+L0DxXDDvy/2w2Oa6QL3gUpuQgQSzoWwe8gaqQDzw8b9FkyQ05qSgtXYrqkqJcGiOQ== "Wesley Hof"',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAi2Ak42T+QePQVvovLPUS8FIQqEEeqOx6mrt9IsGtJahE04EzphVZhAkcKzk5krL5oWouCP9lmvQkcNnR4eDcPJ+HEJ1Vaw0LDv6sNsmDdT1y8hCPokUYwLbIMEJuL3b+cmlCWHIpXZNB9ktHrInAHuxjRuBWA7G0/2oSR0Bbvq/zoIxXw+4954FcUiCfCFy/gtVohEJr+rOjyvTHJH4KzcnnCVsEpkEC6DcKgNv6pxMb44+EPrY7S6WcWJ0/S+w/8TKvm6EK4Ru/IYm2CIIu7JoPHegX742iCyqw3hBBhKYDacLwvGDImsoSdKgcC2Fq6yFtTYxdvkdn2u388SuRCw== "Tom Poppe"',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQBrFMBTucGVelGl8r2RIiUe3vlzeUzmFqQpMg/VRniurCw8Of8Q3lzo5HJAgi2VHNCG/WkGc9L8SB1vqnj9jz6CcqFfmIDpRhz5PuhSV4jcwveGdxOQLLfyi5FPGRGC8xrmdBuHojM0XpRHJRM7n9YLriMf4m2ArOFiJ5zpF4ugmzteDpU1vLAXKIauKLgVzwOy+UEYAq52yZGDHvLnjwPhopCf039oVuqUucCoPfyjsb9ExNRG15IlCsem/GJc5gl25NOwD5DyGHW7JkYbQHNN8LQOHQbUTxnDdV04fokJa/mG7JD5PtmuHqo40hDIzo6N7bm0yv3Kdw1FM6n7gIfN "Stijn Van de Bossche"',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAjWDNVWVcYouu0e74gGDNjTdNrQU/aebWNE6Cn8QdeAlwOOQjhytkMVeudUXxq3yoNavFOMqS3VDjprkcC1WdZS9wAJ9GyehwDeS8H6BCZt8HeevexFKyfWhyEfn2CRmd5I5IxRmrC9iDVhJzM5RrLm82VqLMnNgxtPayhDZ/nWUH+JKINLJC6ftHBWzxaq6Co+zyw0CRK9bNW+FicQ6+N2/seQDt1Gmnw2iiho6NxK0E1cSwMZtktR4V4e9U+Ws0ODhV0vXuAwWqTSAMlbFqO3dCW7UQqY57inEsisClD7KD48FDbYOleRkI9WRaORUBmRJMsChmbRrr9tjN2GnI8w== "Melissa De Witte@COMBELL"',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEApyNPFxJxqaApPqtlHgPZLwayY+cRs9OThI2Ybn0WjLTYxyaOo/eyDThi08zDIWhMcKT4CqZAUbuKKcr5SBbV9XOjX6CuHQ0K6EPRcYLLFxdF5+UA9FgMGM2NfPiViRgbBOlS53kSGR6tqagIWCeUZCLKeKfQCNdL8fUM1Bfz4i3JI9PjFnB9LxWKpkHNpTlgIkJpfLptbyzOe128dmFA2IdawMj8heYU4zWLdeX88mtk/MN1eZkDCveRy/be/vJfiPQ+Jxsr4QnSruh+UgMSI7kKFFnD1F403/v8NQymbWsVYQq4b2lBeD5mJeTZixbrYNOM2GFogfMnAxZV5BZmbQ== "Stijn Claerhout@COMBELL"',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQB2tZ7l62JQCTgr88sZseQp6L7syhg+atYzkU5FkZtkA2Xgag6aBdrH34trPiHhB6JL157pgVq2if5mO7ycknxVnieBYJZ02lbFNy0y3uwYaSonAE0MDFf3DLcmEOSp7sMEP/tt0LsqpSKxyfhB7Q3zD3EEBjfblmEd2EmTFHDoGuI27DIaK8aoTgmmPd4xuQV8Gj5iBecUngKuvP3/cfuxe10d8Os3Hpq8FDKbGsEfXdq7oMTC9aNlcsxHaeczNC9ZniS5ayb/2rUppa+QyKhh5PgsyDISaKYEuaNgnFBzrUEEmwNjSGNo/vUDt8iFxtISDKYApOjGFla2i3QrEf97 "Gregory Storme@COMBELL"',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAwjxgyR9Y4bYGGeZXERoAi37K1pFB2sHMGRaDFWLC0G6tAG35JkTe3O3ITbca1k0fqpJ/jOLpmNw1uy5IMxG9ZH77xdV9HX5rMWt3cuCrMGm9kYAyc3xnjOxWi8pIzntwWDlXycDfHkMzdaY32AZJH2Q4zBpBFpXpcQ0v5Gwt2f3JR6D8Fs+eHgMoxhFyqMf6SLf3hit99rYzqlV42UCRkRzVqbKDUu7sGSIeuDfu6tcLu2kLWCbjdbHaPE6unLKrynJC0MBUGpRP8WH5jhlN8v1mjf7fZlcWugvFvxJyp2viIQ4UNvWJydag+EYQd2AY7FfccWvw6BMqJ3538OWTWw== API@COMBELL',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQB8TbhnYVZ72rRoFy9sblqz0IlxjW/+YhZAZbyAdiDIgFsR5kU1Nivsq5K7UMoC8e6LJ6i9dtWeJEEQ9iKe9BU4PfLOR6X69c63Ci8ruk1/UKVaWJxY5IXkCUGDGIyM2rUL87aTZ4KixBnjUcm76k6E37+rO1HVEymISLv4qUcNdg1/HOWsDICpVBK+6oxLk4StLDWpr4FP5Zjymxx9Y6ReKVvrv4RimWyrJyKwbyqDGaFbztJ5cnZlrrMPi8nHOZbVK1VMbpl7xwZnGsmnW3c8PVXkiZn1D6/39SqL7zjPefQFt2TAdM8ugMv3TiJjnsVWuMsSo4+tv9lQiZOun1kV Pascal@COMBELL',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAjWDNVWVcYouu0e74gGDNjTdNrQU/aebWNE6Cn8QdeAlwOOQjhytkMVeudUXxq3yoNavFOMqS3VDjprkcC1WdZS9wAJ9GyehwDeS8H6BCZt8HeevexFKyfWhyEfn2CRmd5I5IxRmrC9iDVhJzM5RrLm82VqLMnNgxtPayhDZ/nWUH+JKINLJC6ftHBWzxaq6Co+zyw0CRK9bNW+FicQ6+N2/seQDt1Gmnw2iiho6NxK0E1cSwMZtktR4V4e9U+Ws0ODhV0vXuAwWqTSAMlbFqO3dCW7UQqY57inEsisClD7KD48FDbYOleRkI9WRaORUBmRJMsChmbRrr9tjN2GnI8w== "Melissa De Witte@COMBELL"',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAi2Ak42T+QePQVvovLPUS8FIQqEEeqOx6mrt9IsGtJahE04EzphVZhAkcKzk5krL5oWouCP9lmvQkcNnR4eDcPJ+HEJ1Vaw0LDv6sNsmDdT1y8hCPokUYwLbIMEJuL3b+cmlCWHIpXZNB9ktHrInAHuxjRuBWA7G0/2oSR0Bbvq/zoIxXw+4954FcUiCfCFy/gtVohEJr+rOjyvTHJH4KzcnnCVsEpkEC6DcKgNv6pxMb44+EPrY7S6WcWJ0/S+w/8TKvm6EK4Ru/IYm2CIIu7JoPHegX742iCyqw3hBBhKYDacLwvGDImsoSdKgcC2Fq6yFtTYxdvkdn2u388SuRCw== "Tom Poppe"',
+            ],
+    }
+
+##### END combell #####
+
 }
