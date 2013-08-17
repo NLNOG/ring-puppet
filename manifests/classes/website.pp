@@ -41,5 +41,6 @@ class website {
         group   => root,
         mode    => 644,
         source  => "puppet:///files/var/www/ring.nlnog.net/api/ring_api.py",
+        notify  => Service["apache2"]
     }
 }
