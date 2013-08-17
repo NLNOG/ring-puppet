@@ -1,0 +1,38 @@
+<VirtualHost *:80>
+ServerName ring.nlnog.net
+ServerAdmin job@snijders-it.nl
+Redirect / https://ring.nlnog.net/
+CustomLog /var/www/ring.nlnog.net/logs/access_log combined
+ErrorLog /var/www/ring.nlnog.net/logs/error_log
+</VirtualHost>
+
+<VirtualHost *:443>
+ServerName ring.nlnog.net
+ServerAdmin job@snijders-it.nl
+DocumentRoot /var/www/ring.nlnog.net/HTML
+CustomLog /var/www/ring.nlnog.net/logs/access_log combined
+ErrorLog /var/www/ring.nlnog.net/logs/error_log
+SSLEngine On
+SSLCertificateFile /etc/apache2/ssl/ring_nlnog_net.crt
+SSLCertificateKeyFile /etc/apache2/ssl/ring_nlnog_net.key
+SSLCertificateChainFile /etc/apache2/ssl/AddTrustExternalCARoot.crt
+SSLCertificateChainFile /etc/apache2/ssl/PositiveSSLCA2.crt
+
+WSGIDaemonProcess ring_api processes=2 threads=15
+WSGIProcessGroup ring_api
+WSGIScriptAlias /api /var/www/ring.nlnog.net/api/api.wsgi
+
+</VirtualHost>
+
+<Directory /var/www/ring.nlnog.net>
+         Options            FollowSymLinks
+         AllowOverride      All
+</Directory>
+
+<Directory /var/www/ring.nlnog.net/api>
+    WSGIProcessGroup ring_api
+    WSGIApplicationGroup %{GLOBAL}
+    Order deny,allow
+    Allow from all
+</Directory>
+
