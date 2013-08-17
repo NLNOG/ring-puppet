@@ -45,6 +45,7 @@ CREATE TABLE machines
     geo VARCHAR(255),
     owner INTEGER NOT NULL,
     tstamp INTEGER,
+    active BOOLEAN,
     FOREIGN KEY(owner) REFERENCES users(id)
 );
 CREATE TABLE sshkeys
@@ -448,7 +449,8 @@ class commands(object):
             v4=v4,
             v6=v6,
             state=state,
-            tstamp=tstamp)
+            tstamp=tstamp,
+            active=0)
         print "Added machine %s ('%s' at '%s') for user %s" % (machineid, hostname, country, username)
     
     def cmd_delete_machine(self,hostname):
@@ -472,6 +474,26 @@ class commands(object):
             sys.exit('machine %s not found' % hostname)
         self.dbupdate('machines',machid,**{attribute:value});
         print 'attribute %s for machine %s updated' % (attribute,hostname)
+    
+    def cmd_activate_machine(self,hostname):
+        """mark machine as active"""
+        if not (re.match(r'.*%s$' % ZONE,hostname)):
+            hostname=hostname + "." + ZONE
+        machid=self.hostname2mid(hostname)
+        if not machid:
+            sys.exit('machine %s not found' % hostname)
+        self.dbupdate('machines',machid,**{'active':1});
+        print 'machine %s marked as active' % (hostname)
+    
+    def cmd_deactivate_machine(self,hostname):
+        """mark machine as inactive"""
+        if not (re.match(r'.*%s$' % ZONE,hostname)):
+            hostname=hostname + "." + ZONE
+        machid=self.hostname2mid(hostname)
+        if not machid:
+            sys.exit('machine %s not found' % hostname)
+        self.dbupdate('machines',machid,**{'active':0});
+        print 'machine %s marked as inactive' % (hostname)
 
     def cmd_list_machines(self,username=None):
         """list machines"""
