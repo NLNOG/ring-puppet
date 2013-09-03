@@ -797,3 +797,6 @@ ff02::2 ip6-allrouters
 2a03:fc01:0:105::21  infostrada01 infostrada01.ring.nlnog.net
 176.58.30.6    infostrada01 infostrada01.ring.nlnog.net
 
+2a00:ed0:2000:4800::2  claranet07 claranet07.ring.nlnog.net
+81.171.183.186    claranet07 claranet07.ring.nlnog.net
+
