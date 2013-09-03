@@ -950,6 +950,7 @@ ring-luna01:v6,icmp,D,0,86400000,60000
 ring-luna01:v6,icmp,D,0,86400000,60000, -s 576
 ring-luna01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+<<<<<<< HEAD
 ring-combell01:v6,icmp,D,0,86400000,60000
 ring-combell01:v6,icmp,D,0,86400000,60000, -s 576
 ring-combell01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -962,6 +963,8 @@ ring-claranet07:v6,icmp,D,0,86400000,60000
 ring-claranet07:v6,icmp,D,0,86400000,60000, -s 576
 ring-claranet07:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+=======
+>>>>>>> e54e54c4b29cac028f04932a7952257056c166a4
 ring-staging02,icmp,D,0,86400000,60000
 ring-staging02,icmp,D,0,86400000,60000, -s 576
 ring-staging02,scamper,D,0,86400000,900000, -P udp-paris -M

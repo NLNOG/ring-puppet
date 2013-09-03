@@ -236,9 +236,12 @@ ring-citynetwork01:v6 2a00:16d8:0:8::2
 ring-iplan01:v6 2800:40:c06::0001
 ring-magyar01:v6 2001:4c48:2:71::ffff
 ring-luna01:v6 2001:9c0:1:4::130:230
+<<<<<<< HEAD
 ring-combell01:v6 2a00:1c98:10:7::2
 ring-infostrada01:v6 2a03:fc01:0:105::21
 ring-claranet07:v6 2a00:ed0:2000:4800::2
+=======
+>>>>>>> e54e54c4b29cac028f04932a7952257056c166a4
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
 ring-netground01 87.250.146.52
