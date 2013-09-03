@@ -954,6 +954,10 @@ ring-combell01:v6,icmp,D,0,86400000,60000
 ring-combell01:v6,icmp,D,0,86400000,60000, -s 576
 ring-combell01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-infostrada01:v6,icmp,D,0,86400000,60000
+ring-infostrada01:v6,icmp,D,0,86400000,60000, -s 576
+ring-infostrada01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging02,icmp,D,0,86400000,60000
 ring-staging02,icmp,D,0,86400000,60000, -s 576
 ring-staging02,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1901,4 +1905,8 @@ ring-luna01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-combell01,icmp,D,0,86400000,60000
 ring-combell01,icmp,D,0,86400000,60000, -s 576
 ring-combell01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-infostrada01,icmp,D,0,86400000,60000
+ring-infostrada01,icmp,D,0,86400000,60000, -s 576
+ring-infostrada01,scamper,D,0,86400000,900000, -P udp-paris -M
 

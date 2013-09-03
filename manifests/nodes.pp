@@ -3366,3 +3366,13 @@ node 'combell01' inherits ringnode {
     include users
 }
 
+node 'infostrada01' inherits ringnode {
+    $owner = "infostrada"
+    $location = "52.303081,4.937886"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

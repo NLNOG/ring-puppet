@@ -4018,4 +4018,20 @@ class users::virtual::ring_users {
 
 ##### END combell #####
 
+##### BEGIN infostrada #####
+
+    @add_user { 'infostrada':
+        email => 'noc@infostrada.com',
+        company => 'Infostrada',
+        uid => 5225,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'infostrada':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAsK6sw50XxFKHgnMTsV8xjhuOJuRdagMJgmYMq4jsndS/U1mwOvbwSgX/yhBBa/KPEmJYx1ZB1eqgY2Tdxs3tCLNxOkhUyuCY4c06l4n3r/DvMCMulevJmQ8FEa4oX16jew7blibbAwfg5HLXsjCrFBDxCSIwF3LZp0QRXJ3y7F7zRexOUEh0/tQBMNZA7YQcc4ei8uxh74eG2v6KMVhggt/Ycz3GVh6bqgJWvukB9cb5JMNsz56qGPIZZnAu2O97xo1Fidl94t/DlzG8VAdSkPkZptsTy115PN9j+w7fIF4wDLSy/XEW1VN49mVIeVryzxH/ItbUg4AGp62qyKjKqw== airwolf@Airwolf.local',
+            ],
+    }
+
+##### END infostrada #####
+
 }

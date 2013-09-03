@@ -794,3 +794,6 @@ ff02::2 ip6-allrouters
 2a00:1c98:10:7::2  combell01 combell01.ring.nlnog.net
 37.148.176.54    combell01 combell01.ring.nlnog.net
 
+2a03:fc01:0:105::21  infostrada01 infostrada01.ring.nlnog.net
+176.58.30.6    infostrada01 infostrada01.ring.nlnog.net
+
