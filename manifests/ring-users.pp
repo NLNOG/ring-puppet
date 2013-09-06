@@ -4039,4 +4039,20 @@ class users::virtual::ring_users {
 
 ##### END infostrada #####
 
+##### BEGIN blacklotus #####
+
+    @add_user { 'blacklotus':
+        email => 'noc@blacklotus.net',
+        company => 'Black Lotus Communications',
+        uid => 5226,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'blacklotus':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAwlv7EYyNDOv+NefzPkRVHy8MDkAsoaDaSQkFJwEPeaPnb/94eCileT1LTM1t7gkQv3rlW+XbXC75/BvNO2JVfqUjXgILvsQEqR7qjgGeQ+0t+iQuBt7akY89o1Wc5DR+8Eyfdn4skF/kHZd55MMXavaO3E3FL6XytMf1+uqJC82zS0ODlnTWBA/9maKz86BU22jmAKlNuBMjuXNGS5qj8uhlS5skdrwZzO8YVA7nj6UYCsHahV2R4lalRetZ1YmHn+eaUIQWqRrFFFwyh0iZYryHTAlM95BtQUplINzKvSsKBQ9scgNYxFMRsNyWZ8e5U9NVQEJg4HiLJ/qxoe8WnQ== root@lampcontoller.blacklotus.net',
+            ],
+    }
+
+##### END blacklotus #####
+
 }
