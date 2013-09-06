@@ -3690,7 +3690,7 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'doruknet':
         sshkeys => [
-                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMMnmCTphprISV0lTfz1f8/0HPJUBUh5PLdcWGLCDaZqnP+v2UlxXc+SOA9Yl4qg26bXhUDhVb5jYhtyeVpkYNhK0XisPbFFN7V5eewUbILvG2eaZn1Z+1BZQ4E1ECuQxUlagLuWWa8RUf6fPNAu4+JI1TXVPgYdovRsw1tmjhvM2LqKxAEWH75uv4cpnHHXyddG1lFJRU/IT95OPmDuEDldyl/dsLJIB2YFhFaNAaNElsqQcr+6S9XMHPYvSs1+XMY0nR0l+SqGeeVmDHIsvgOUcV4RJeMvD5/cOu62fWyAHTZRDKnkmTd1nmDf25rYJu2nsLSQlowgCFqO46XjtR root@doruknet01.ring.nlnog.net',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCziOIM9VOylgMMkIvzzbMJKWIEje6l2UaoBPE+3svX6YNu2V1kttkSwBGvNehX7IY+NP8wX9DDSzSQvIbAV2YI2hiIl9dcouE2s+ZDiej7XnMkdSy+DUVT9r91oPQHvjRuO+ySG1wb1xELowVb02wqi2IJIP9WfUV82kcOaCLk/xExQ5jKrRsqk/iS0il3L9HGw1gspCxPH8E5iFHxxfrgDbaq5/HhDPq/YFB7uv6MyCPXtSAoQ1QY5zs66hLE0neBaWj1PvBWRPaMgYCB7eTGqxxqtCVMiNP49aLGDoofJKDO41v0obQoi90UxwW2ZjJaZ+Ga7qaTWWMO7c5vvv6B root@doruknet01.ring.nlnog.net',
             ],
     }
 
