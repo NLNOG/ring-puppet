@@ -3690,7 +3690,7 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'doruknet':
         sshkeys => [
-                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9I2AT9f8tUMS4KRv5kfddNtZUZ34o4F0R9/xu843nVMLm0SX5CUb4pJmAc5VtlEoZtqoyf/T0hUne3eSnUoZL8JCFtYcAunV7XQIKQlHDp6skq0YySJsIXlBC0bgzi456HEpBMraIJr3ewU+ZC6sdeZm9cYEfGGjZA606HV/Anu8TDuV8+4xGtnvB7BGfKhpaCxATIFsyoSABAnH5hCs8jZHl9qgJOI6CilgpEWwh43lA23BfS3oBUhWtBFYYU/GHQO9RS1siYjIL13mR8gkEUyezHjWDf6e8wm95qXHLvTVy8GZdFF7n3hZHyAuZw42+1UaLiZb0HEld2USFszrp doruknet',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDWMheTsY4X2njTDYQap1RsFCC9RErS8/8H3s3xvM7GVAaRPJU50z6GbuNNN1oTYkH0YQ3m1oLGGpHGM6aDFELFSmoPp1fbRqV9dJ4ZlWGiuoBJJMQl2WjPcdIt6qxTbxp0ef1sCzS7Z+2zDP5glXHU4ahG3Kr5xbofOdaixXx3skUbV4b0+1gwcgiZto+jTfwpn8AsRD3QQW7bYRHasEznorPsxoyr9yroZKlwE+bpJoLqHxjJvpYIXrOqy/5cxa1nSTwdpUAapiQVq5+A5w2g70bhZSHcxMMu2xSosRjo14OK+ildnJyBIgQEJaaNVta+n0JT8RSpPx2sm0Qvt1vv doruknet',
             ],
     }
 
