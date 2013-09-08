@@ -3396,3 +3396,13 @@ node 'blacklotus01' inherits ringnode {
     include users
 }
 
+node 'stargate01' inherits ringnode {
+    $owner = "stargate"
+    $location = "49.2436891,-122.9695433"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

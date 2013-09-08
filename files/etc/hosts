@@ -803,3 +803,6 @@ ff02::2 ip6-allrouters
 2604:8300:100:1000::1e  blacklotus01 blacklotus01.ring.nlnog.net
 199.59.162.174    blacklotus01 blacklotus01.ring.nlnog.net
 
+2607:4100:0000:0200::2  stargate01 stargate01.ring.nlnog.net
+98.143.95.34    stargate01 stargate01.ring.nlnog.net
+
