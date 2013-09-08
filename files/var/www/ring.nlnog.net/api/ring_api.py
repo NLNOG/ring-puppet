@@ -53,6 +53,19 @@ def dbget_participants():
     random.shuffle(pl)
     return pl
 
+def dbget_participantid(owner):
+    query = "select participant from users where id=%s" % (owner)
+    res = list(dbquery(query))
+    if set_error():
+        return
+    try:
+        for u in res:
+            return u['participant']
+    except KeyError as err:
+        set_error("Key %s not found in database" % err)
+        return
+    return null
+
 def dbget_nodes():
     nl = []
     query = "select * from machines"
@@ -61,6 +74,9 @@ def dbget_nodes():
         return
     try:
         for n in res:
+            participant = dbget_participantid(n['owner'])
+            if set_error():
+                return
             nl.append({'id':n['id'], 
                        'hostname':n['hostname'],
                        'ipv4':n['v4'],
@@ -71,7 +87,7 @@ def dbget_nodes():
                        'datacenter':n['dc'],
                        'geo':n['geo'],
                        'active':n['active'],
-                       'participant':n['owner']
+                       'participant':participant
                       })
     except KeyError as err:
         set_error("Key %s not found in database" % err)
@@ -330,5 +346,5 @@ def get_statecodes(country):
     return mk_json(results={'statecodes':statelist},count=len(statelist))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0',debug=True)
 
