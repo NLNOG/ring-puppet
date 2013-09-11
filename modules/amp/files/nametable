@@ -241,6 +241,7 @@ ring-infostrada01:v6 2a03:fc01:0:105::21
 ring-claranet07:v6 2a00:ed0:2000:4800::2
 ring-blacklotus01:v6 2604:8300:100:1000::1e
 ring-stargate01:v6 2607:4100:0000:0200::2
+ring-etop01:v6 2a00:c90:0:3::1:2
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
 ring-netground01 87.250.146.52
@@ -482,3 +483,4 @@ ring-infostrada01 176.58.30.6
 ring-claranet07 81.171.183.186
 ring-blacklotus01 199.59.162.174
 ring-stargate01 98.143.95.34
+ring-etop01 80.72.36.210

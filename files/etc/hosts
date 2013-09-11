@@ -806,3 +806,6 @@ ff02::2 ip6-allrouters
 2607:4100:0000:0200::2  stargate01 stargate01.ring.nlnog.net
 98.143.95.34    stargate01 stargate01.ring.nlnog.net
 
+2a00:c90:0:3::1:2  etop01 etop01.ring.nlnog.net
+80.72.36.210    etop01 etop01.ring.nlnog.net
+

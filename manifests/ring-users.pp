@@ -4073,4 +4073,20 @@ class users::virtual::ring_users {
 
 ##### END stargate #####
 
+##### BEGIN etop #####
+
+    @add_user { 'etop':
+        email => 'noc@etop.pl',
+        company => 'Etop Sp. z o.o.',
+        uid => 5228,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'etop':
+        sshkeys => [
+                'ssh-dss AAAAB3NzaC1kc3MAAACBALDUxOirj/cp5SDQ2Dm26iwkM6LZIbuwEYd8E7L/RONf8SO8TV556plyRp7igxH/UHVQHZeNFzvNwYmCnKZrlZxVyvSdAu9WclmKsGlQKPzwUA6CTvbbzTdFfRuXpi9zmZ4YA2fYQ/vT+dqtOOcOfmF8tpZGP5nFgAYW2CO1ZxmpAAAAFQDPV/V3Fk0yUlbnjwgCwMjmpyIAbQAAAIAdKEfDprgKDLMB429p97CRv9U8ZV3SBtQpa3D6dL00s2QQvc71UMpxiQLSlVkG3SHtGjNqUa9BlwAKy5y1bsQm7AfQjHO/CMeG7yFzv00iVCkU9UWGQESCyJgylNZDUuytGccRHHoZv4GVkwqG6iVnZZHPtdEjj8NHIDJuM1KmdwAAAIEArd/cjbdu5grkgTJTZKahwAE3Nyh9kXzRtG68wh8YpWFYkk/RxRlbQFXJgeXhRU8DSgjIzicOcei7geGB2sMhNBIMQJuWeWihI0DaiSaqiCctjKdccZJL45+bV748U8f7QsW/+LiWBqY7CsiBjgbBmrzFpiesZe0SUnDvSiLbeZg=Michal@Michal-Komputer.biuro.etop.pl',
+            ],
+    }
+
+##### END etop #####
+
 }

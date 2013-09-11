@@ -3406,3 +3406,13 @@ node 'stargate01' inherits ringnode {
     include users
 }
 
+node 'etop01' inherits ringnode {
+    $owner = "etop"
+    $location = "52.194675,20.925358"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
