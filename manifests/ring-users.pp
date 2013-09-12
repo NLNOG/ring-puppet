@@ -4083,7 +4083,7 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'etop':
         sshkeys => [
-                'ssh-dss AAAAB3NzaC1kc3MAAACBALDUxOirj/cp5SDQ2Dm26iwkM6LZIbuwEYd8E7L/RONf8SO8TV556plyRp7igxH/UHVQHZeNFzvNwYmCnKZrlZxVyvSdAu9WclmKsGlQKPzwUA6CTvbbzTdFfRuXpi9zmZ4YA2fYQ/vT+dqtOOcOfmF8tpZGP5nFgAYW2CO1ZxmpAAAAFQDPV/V3Fk0yUlbnjwgCwMjmpyIAbQAAAIAdKEfDprgKDLMB429p97CRv9U8ZV3SBtQpa3D6dL00s2QQvc71UMpxiQLSlVkG3SHtGjNqUa9BlwAKy5y1bsQm7AfQjHO/CMeG7yFzv00iVCkU9UWGQESCyJgylNZDUuytGccRHHoZv4GVkwqG6iVnZZHPtdEjj8NHIDJuM1KmdwAAAIEArd/cjbdu5grkgTJTZKahwAE3Nyh9kXzRtG68wh8YpWFYkk/RxRlbQFXJgeXhRU8DSgjIzicOcei7geGB2sMhNBIMQJuWeWihI0DaiSaqiCctjKdccZJL45+bV748U8f7QsW/+LiWBqY7CsiBjgbBmrzFpiesZe0SUnDvSiLbeZg=Michal@Michal-Komputer.biuro.etop.pl',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDHwx/oTpvUAAhN/ZwFo+V2qlqRQp6BxhZl7yYZtkAoeTG6GyCyO4qyy46znnnVh1WetF/JYUCo8sGbANOTFOHyzxxLo9zR6Zu6OoPY5NCbUloWTT1TnVQTtJGr9zUYUtURLq8YQCxXmbsuTPMSI53+ijewPLQM2y0vieLV0uq2GxAMOt9duAKhj9/PF7D7QgddxyW/u0neE24fTaRCM+6pDP0TcxB0lcoMXvjlxw2CWKH1x8SahOmxqV91IfXvmVtPcp7nI9fKfbRDqWPa9zCT1N/2T4f6Q/5lczqExly/jfPsB8iWQHEnlBVGLYLLLyUQd2VUdMaVnMLlhP/4pfvZ root@observium',
             ],
     }
 
