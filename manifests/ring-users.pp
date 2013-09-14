@@ -3776,7 +3776,7 @@ class users::virtual::ring_users {
 ##### BEGIN iccn #####
 
     @add_user { 'iccn':
-        email => 'buraglio@illinois.edu',
+        email => 'ICCN-SUPPORT-L@LISTSERV.ILLINOIS.EDU',
         company => 'ICCN',
         uid => 5211,
         groups => ['ring-users'],
