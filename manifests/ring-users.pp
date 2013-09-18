@@ -2273,8 +2273,8 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'initseven':
         sshkeys => [
-            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDY6hor4dw1/ilt9/YoGQqU4tIUz8/9cUM0s26TWvql4sdawINEPcu1IDVKdiTY3bXH0vv7Vq61k6aDUVmTp+cfkUeLUOCTTxsE4YZ6JBGsUND+RD91sqih1eovvNWXGEzFQJlB2kx5f7njhbu1v6umaZF35J2eXfqYRWyKCGHNl9PslskGGne2ewqSchugIhRs/KOzvIqwlGTB0hKSpmrQ40Due9ELKqP/GUE1hmxkogq6Y9B9elirnSAF8/Nqk9KFKR5kXVsQ0X7mcMBV4Y4HHsLd4gECLnoRO838wopmu6qICw3Q1NMb9sRj8VlbMYWwLoDsKox6d+XlZMyTTeWx waller@init7.net',
             'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCkNngg/7tWDYKQDdw6ULUTfhL5tNTLBTY6Uz/JEXxqOiFlUe4hY9LMReuB8sAwdmWGEe4dvSb8sXRAY7qKmayAntKGK6PaqtsD1jQfP6/XmEgiGdJBkUBeF1amCB9yUnuBldse7tT1kv/HtLTHSsy+OToll1aSi5jLrrJgOx6ct1DeNoRuGA2QKMfqaAG3R/fSK7Y9kOs91CrrFDLxobEslPXRtKXgGmd8aCOiAV6jLi7J3bFEC2iUuT1PkpPVtTdlu3KshNWsWWA2sXZ2neYGAzNRBIP1Fz3yalVh1WUGpNufBFZt2Hf6ZbDxwdPPdggiF6yNZ7G47+1XDtC1eORz markus@nb-mw-t61',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1XNjN6rPBnG4HffYvzjlO6b6wBNVO6upXCLimDY6I8I883ZXaBORETYeKBkiKfx4jGBfgrZLz353Q2vCuJvO3Jtex6HoIKDky+kIZ4ub9i9cqD+tt7JCqtVwv9bR2s+xgA3OxhgzSgtxD3YAqOyB1lREcO5PjJ6CbEtPT22sKWWvElGUQVLfeb8B4WWosAiBHIrB3qVk6JO4fUD4Vq3Djeh8hkIyJTsOjwqzYvv+hnnprD8gCIf1Gho5QHpVDkTV/VoV8BPMYoP+lemWEYMKJ5eT9Nib7ubwsB3oRlknSP7vANwBUITNDStJXap1qHXvgos8Cs5bjeFMVLeF7T1zT Lino Moragon (init7)',
         ],
     }
 ##### END initseven #####
