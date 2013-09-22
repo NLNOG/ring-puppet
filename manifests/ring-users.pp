@@ -4092,4 +4092,20 @@ class users::virtual::ring_users {
 
 ##### END etop #####
 
+##### BEGIN dragon #####
+
+    @add_user { 'dragon':
+        email => 'noc@dragon.cz',
+        company => 'Dragon Internet a.s.',
+        uid => 5229,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'dragon':
+        sshkeys => [
+                'ssh-dss AAAAB3NzaC1kc3MAAACBAP6yQeXQDHj+tJCqOgIt8w2MsLwKGGb5AogcsmK/lG9rPU4kquWYs56yRGcyZzg4IxbR3GalnyyLb2i6tLQU1vj04qNUqi3xG3JVplclr97ke4QPdigFB/Dwbs4ec1N+cFL4yJTbX3Xwysysnulmmc5mqDY6D9BgBMR2HSlgIL9bAAAAFQC6XWkPuDUGnpnQYrULRxUKnL/yGQAAAIBnw9PXGcn3BNCntVyR1+zgVDz3PHyiyUE9xfM5m0Gl55pqw3h1ngg6KEvJDQA/SDAq8IDaWenapqdJ8rAH2lD03FL06Jv/sso2oN44o7feaImwEQ/qLPS+bMu9Wg+XQZZrRKeHUTItpT//P5L5HTnjFo9XyIjn1iEiqWPnAavp3gAAAIAzB32wtUH8u6tSrv/trlWhRKEc4FaQ6in7ASWEXIFwIlDdB9dUfh/JL+hnZOm26G3Bz77S0mJaqjQOI1YYXdl15qHmORTVHsppf/Q53zozOyWdwfVvVaoXkoIOjouqSIoQDiaTojEgCPxVjy5MMSLHjt4BTlnVEu7XWwnbkv1UkQ== volf@valinor',
+            ],
+    }
+
+##### END dragon #####
+
 }
