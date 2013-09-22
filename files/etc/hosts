@@ -812,3 +812,6 @@ ff02::2 ip6-allrouters
 2a02:13b8:7800::2  dragon01 dragon01.ring.nlnog.net
 213.168.176.84    dragon01 dragon01.ring.nlnog.net
 
+2a00:1238:4:2c:3::2  2connect01 2connect01.ring.nlnog.net
+109.205.75.161    2connect01 2connect01.ring.nlnog.net
+

@@ -974,6 +974,14 @@ ring-etop01:v6,icmp,D,0,86400000,60000
 ring-etop01:v6,icmp,D,0,86400000,60000, -s 576
 ring-etop01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-dragon01:v6,icmp,D,0,86400000,60000
+ring-dragon01:v6,icmp,D,0,86400000,60000, -s 576
+ring-dragon01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-2connect01:v6,icmp,D,0,86400000,60000
+ring-2connect01:v6,icmp,D,0,86400000,60000, -s 576
+ring-2connect01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging02,icmp,D,0,86400000,60000
 ring-staging02,icmp,D,0,86400000,60000, -s 576
 ring-staging02,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1941,4 +1949,12 @@ ring-stargate01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-etop01,icmp,D,0,86400000,60000
 ring-etop01,icmp,D,0,86400000,60000, -s 576
 ring-etop01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-dragon01,icmp,D,0,86400000,60000
+ring-dragon01,icmp,D,0,86400000,60000, -s 576
+ring-dragon01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-2connect01,icmp,D,0,86400000,60000
+ring-2connect01,icmp,D,0,86400000,60000, -s 576
+ring-2connect01,scamper,D,0,86400000,900000, -P udp-paris -M
 

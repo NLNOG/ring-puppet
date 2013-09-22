@@ -3426,3 +3426,13 @@ node 'dragon01' inherits ringnode {
     include users
 }
 
+node '2connect01' inherits ringnode {
+    $owner = "2connect"
+    $location = "50.0601906,14.4830350"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

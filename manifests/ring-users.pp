@@ -4108,4 +4108,20 @@ class users::virtual::ring_users {
 
 ##### END dragon #####
 
+##### BEGIN 2connect #####
+
+    @add_user { '2connect':
+        email => 'noc@2connect.cz',
+        company => '2 connect',
+        uid => 5230,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { '2connect':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6yIFHlxB5fjRN+tAvvasGazXhRy8DAsQA3hc7QOW5Mqatyjnk97+zMhONAoYzAtO2vtL4H06AAM9OFXZ1bP8NTAXfeVp+I30wiLsqLSbxHu+1ZCF6Tphu7kM8M5D+dltU6YVssoVMgkE+ErvMONN4z3jHr03kXxCMkWnZH+coklFWx2Q3xXmTk1I84Td56PVyNHoNyGKKRNKITvDUrZ/HXcwVGt5zuphoRyktZBQ+fkfusyC5ScenI5ImtzBkuVHamK+Nhgps+NjWFOevvaX8HrZEBTjwKjmSWFycVO1/uFmOA/wCM9k3hY1cRl+9yAhjBbpnUsAB91B4nWn4QgtN dan@zarja.linux.uvt.cz',
+            ],
+    }
+
+##### END 2connect #####
+
 }
