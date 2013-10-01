@@ -22,7 +22,7 @@ echo "Rejected"
 *\|*) 
 echo "Rejected" 
 ;; 
-rsync\ --server --sender*) 
+rsync\ --server\ --sender*) 
 $SSH_ORIGINAL_COMMAND 
 ;; 
 cat\ /etc/mtab)
