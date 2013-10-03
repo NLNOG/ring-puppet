@@ -9,6 +9,13 @@ clean_up() {
 }
 
 launch_bird() {
+
+if [ $1 ]; then
+  socket="/var/run/bird_$1.ctl"
+else
+  socket="/var/run/bird.ctl"
+fi
+
 clear 
 echo -e "
 NLNOG RING Looking Glass - ${HOSTNAME}
@@ -34,9 +41,9 @@ Equivalent of 'show bgp sum':
 
 have fun!
 ==============================================
-$(birdc show status | grep -vi ready )
+$(birdc -s $socket show status | grep -vi ready )
 "
-/usr/sbin/birdc -r
+/usr/sbin/birdc -s $socket -r
 }
 
 launch_bird6() {
@@ -73,15 +80,17 @@ $(birdc6 show status | grep -vi ready )
 main_menu() {
 	dialog \
 	--backtitle "NLNOG RING Looking Glass: ${HOSTNAME}" \
-	--menu "Choose a Looking Glass :" 10 60 3 \
-	1 IPv4 \
-	2 IPv6 \
-	3 Logout 2>$TEMP
+	--menu "Choose a Looking Glass :" 10 70 4 \
+	1 IPv4_lg01 \
+	2 IPv4_lg02 \
+	3 IPv6 \
+	4 Logout 2>$TEMP
 	choice=$(cat $TEMP)
 	case $choice in
-	    1) launch_bird;;
-	    2) launch_bird6;;
-	    3) clean_up;;
+	    1) launch_bird 1;;
+	    2) launch_bird 2;;
+	    3) launch_bird6;;
+	    4) clean_up;;
 	esac
 }
 
