@@ -1,25 +1,30 @@
 #!/usr/bin/perl -wT
 BEGIN { $ENV{PATH} = "/bin:/sbin:/usr/bin:/usr/sbin"; }
 use strict;
-use IPC::Open3;
 use Data::Dumper;
-sub isnewer ($$);   # prototype for sort{} usage
+sub isnewer ($$); # prototype for sort{} usage
+
 #
-# $Id: purgekernels 211 2012-08-10 18:07:32Z sanders $
+# $Id: purgekernels 307 2013-08-20 18:29:13Z sanders $
 #
 # Run as Post-Invoke:
 # $ cat /etc/apt/apt.conf.d/88local
 # DPkg::Post-Invoke { "/usr/local/sbin/purgekernels --debug"; };
 #
 # Or manual:
-# root@host:~# /usr/sbin/purgekernels --debug
+# root@host:~# /usr/local/sbin/purgekernels --debug
+#
+# --debug makes it verbose
 #
 
-die "Run this as root.\n" if ($< != 0);
+my $debug = 0; $debug++ if grep(/--debug/, @ARGV);
+$ENV{DEBCONF_FRONTEND} = 'noninteractive' if grep(/--non-interactive/, @ARGV);
+$ENV{COLUMNS} = 240; # Older dpkg's dont show the entire package/version
+                     # for dpkg -l queries even in piped constructs.
 
-my $debug = 0;
-$debug++ if grep(/--debug/, @ARGV);
+die "$0: Run this as root.\n" if ($< != 0 and not $debug);
 print "$0: cleaning up kernels ..\n";
+
 
 my $virt_what = "/usr/sbin/virt-what";
 if (-e $virt_what) {
@@ -34,55 +39,40 @@ if (-e $virt_what) {
     dprint("$0: could not find 'virt-what' utility, can't check if openvz or not.");
 }
 
+
+# Find kernels
 my $kernels = {};
-my $headers = {};
-my $kernel_version = "";
 my $current_kernel_version = "";
 
-# Installed kernels
-my $dpkg = `dpkg -l linux-image-\*`;
-dprint("cmd out: '$dpkg'");
-while ($dpkg =~ m#^[ri][ci]\s+(linux\-image\-\d+\.\d+\.\d+\-[\.\d]+(?:\-\w+)+)\s#gm) {
-    my $package_name = $1;
-    $package_name =~ m#^linux\-image\-(\d+\.\d+\.\d+\-[\.\d]+)(?:\-\w+)+$#gm;
-    $kernel_version = $1;
-    my $header_name = $package_name;
-    $header_name =~ s#^linux\-image#linux-headers#;
-    my $header_base = $header_name;
-    $header_base =~ s#-generic$##;
-    $$kernels{$kernel_version} = $package_name;
-    $$headers{$kernel_version} = "$header_name $header_base";
-    dprint("found installed $kernel_version");
+my $dpkg = `dpkg -l linux-image-\* linux-headers-\* linux-restricted-modules-\* linux-ubuntu-modules-\* 2>&1`;
+#dprint("cmd out: '$dpkg'");
+
+while ($dpkg =~ m#^[ri][ci]\s+(linux\-\S+)\s+(\d+\.\d+\.\d+\-\S+)\s#gm) {
+    push @{$$kernels{$2}}, "$1";
+    dprint("found kernel version $2 (package $1)");
 }
 
-if (! scalar(keys(%$kernels))) {
-        print STDERR "parsing failed? no kernels installed?\n";
-        exit;
-}
+die "parsing failed? no kernels installed?\n" if not scalar(keys(%$kernels));
+
 
 # Current kernel
 my $uname = `uname -r`; chomp($uname);
-dprint("cmd out: '$uname'");
+#dprint("cmd out: '$uname'");
 ($current_kernel_version) = $uname =~ m#(\d+\.\d+\.\d+\-\d+)\-#;
 dprint("currently running $current_kernel_version");
 
+
 # Rinse dem proper
-my @sorted_kernels = reverse sort { isnewer($a, $b) } keys %$kernels;
-
-dprint("---- \$kernels ----");
-dprint("".Dumper($kernels));
-dprint("---- \@sorted_kernels -----");
-dprint("".Dumper(@sorted_kernels));
-dprint("---- \$headers ----");
-dprint("".Dumper($headers));
-
 # Strip off the top three, keeping these installed.
+my @sorted_kernels = reverse sort { isnewer($a, $b) } keys %$kernels;
+dprint("---- \$kernels ----");         dprint("" . Dumper($kernels));
+dprint("---- \@sorted_kernels -----"); dprint("" . Dumper(@sorted_kernels));
 my $keep1 = shift @sorted_kernels; # at least one kernel should be installed
 my $keep2 = shift @sorted_kernels; $keep2 ||= "";
-#my $keep3 = shift @sorted_kernels; $keep3 ||= "";
-#dprint("keeping [$keep1]  [$keep2]  [$keep3]");
-dprint("keeping [$keep1]  [$keep2]");
+my $keep3 = shift @sorted_kernels; $keep3 ||= "";
+dprint("keeping  [$keep1]  [$keep2]  [$keep3]");
 print("reboot to activate newer kernel $keep1\n") if isnewer($keep1, $current_kernel_version);
+
 
 # Current kernel could be in the remainder of the list!
 foreach my $remove_kernel_version (@sorted_kernels) {
@@ -93,36 +83,38 @@ foreach my $remove_kernel_version (@sorted_kernels) {
 
     print "\n\nremoving $remove_kernel_version\n";
 
-    my @cmd = ("/usr/bin/dpkg", "--purge", $$kernels{$remove_kernel_version});
-    system(@cmd) == 0 or warn "Forking dpkg failed: $!\n";
-    if ($? == -1) {
-        print "failed to execute: $!\n";
-    } elsif ($? & 127) {
-        printf "child died with signal %d, %s coredump\n", ($? & 127),  ($? & 128) ? 'with' : 'without';
-    } else {
-        printf "child exited with value %d\n", $? >> 8;
+    my @cmd = ("/usr/bin/dpkg", "--purge");
+    foreach my $pkg (@{$$kernels{$remove_kernel_version}}) {
+        dprint("package '".$pkg."'");
+        push @cmd, $_ foreach (@{$$kernels{$remove_kernel_version}});
     }
-    
-    @cmd = ("/usr/bin/dpkg", "--purge", split(/ /,$$headers{$remove_kernel_version}));
-    system(@cmd) == 0 or warn "Forking dpkg failed: $!\n";
-    if ($? == -1) {
-        print "failed to execute: $!\n";
-    } elsif ($? & 127) {
-        printf "child died with signal %d, %s coredump\n", ($? & 127),  ($? & 128) ? 'with' : 'without';
-    } else {
-        printf "child exited with value %d\n", $? >> 8;
-    }
+
+    do {
+        system(@cmd) == 0 or warn "Forking dpkg failed: $!\n";
+        if ($? == -1) {
+            print "failed to execute: $!\n";
+        } elsif ($? & 127) {
+            printf "child died with signal %d, %s coredump\n", ($? & 127),  ($? & 128) ? 'with' : 'without';
+        } else {
+            printf "child exited with value %d\n", $? >> 8;
+        }
+    } unless ($debug);
 
     print "done.\n";
 }
 
+
 print "$0: done.\n";
 exit 0;
+
+
 
 ##  ##
 # ## #
 #bwub#
 ######
+
+
 
 sub dprint {
     my ($msg, $level) = @_;
@@ -132,11 +124,15 @@ sub dprint {
     print $msg . "\n" if $level <= $debug;
 }
 
+
+
 sub isnewer ($$) {
     my ($astr, $bstr) = @_;
 
     $astr =~ s/-/./g; my ($aver, $amaj, $amin, $arev) = split /\./, $astr;
     $bstr =~ s/-/./g; my ($bver, $bmaj, $bmin, $brev) = split /\./, $bstr;
+    $aver ||= 0; $amaj ||= 0; $amin ||= 0; $arev ||= 0;
+    $bver ||= 0; $bmaj ||= 0; $bmin ||= 0; $brev ||= 0;
 
     return 1 if $aver > $bver; return -1 if $bver > $aver;
     return 1 if $amaj > $bmaj; return -1 if $bmaj > $amaj;
