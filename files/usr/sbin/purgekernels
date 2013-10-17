@@ -5,7 +5,7 @@ use Data::Dumper;
 sub isnewer ($$); # prototype for sort{} usage
 
 #
-# $Id: purgekernels 307 2013-08-20 18:29:13Z sanders $
+# $Id: purgekernels 59 2013-10-17 07:36:11Z sanders $
 #
 # Run as Post-Invoke:
 # $ cat /etc/apt/apt.conf.d/88local
@@ -42,12 +42,9 @@ if (-e $virt_what) {
 
 # Find kernels
 my $kernels = {};
-my $current_kernel_version = "";
-
-my $dpkg = `dpkg -l linux-image-\* linux-headers-\* linux-restricted-modules-\* linux-ubuntu-modules-\* 2>&1`;
+my $dpkg = `dpkg -l linux-image-\* linux-headers-\* linux-restricted-modules-\* linux-ubuntu-modules-\* linux-backports-modules-\* 2>&1`;
 #dprint("cmd out: '$dpkg'");
-
-while ($dpkg =~ m#^[ri][ci]\s+(linux\-\S+)\s+(\d+\.\d+\.\d+\-\S+)\s#gm) {
+while ($dpkg =~ m#^[pri][ci]\s+(linux\-\S+)\s+(\d+\.\d+\.\d+[\-\.]\S+)\s#gm) {
     push @{$$kernels{$2}}, "$1";
     dprint("found kernel version $2 (package $1)");
 }
@@ -58,7 +55,7 @@ die "parsing failed? no kernels installed?\n" if not scalar(keys(%$kernels));
 # Current kernel
 my $uname = `uname -r`; chomp($uname);
 #dprint("cmd out: '$uname'");
-($current_kernel_version) = $uname =~ m#(\d+\.\d+\.\d+\-\d+)\-#;
+my ($current_kernel_version) = $uname =~ m#(\d+\.\d+\.\d+\-\d+)\-#;
 dprint("currently running $current_kernel_version");
 
 
@@ -75,34 +72,35 @@ print("reboot to activate newer kernel $keep1\n") if isnewer($keep1, $current_ke
 
 
 # Current kernel could be in the remainder of the list!
+# Build package hash to uniquify pkgnames
+my $pkghash = {};
 foreach my $remove_kernel_version (@sorted_kernels) {
     if ($remove_kernel_version eq $current_kernel_version) {
         print "not removing current kernel.\n";
         next;
     }
 
-    print "\n\nremoving $remove_kernel_version\n";
-
-    my @cmd = ("/usr/bin/dpkg", "--purge");
     foreach my $pkg (@{$$kernels{$remove_kernel_version}}) {
-        dprint("package '".$pkg."'");
-        push @cmd, $_ foreach (@{$$kernels{$remove_kernel_version}});
+        next if $$pkghash{$pkg}++;
+        print "removing $remove_kernel_version ($pkg)\n";
     }
-
-    do {
-        system(@cmd) == 0 or warn "Forking dpkg failed: $!\n";
-        if ($? == -1) {
-            print "failed to execute: $!\n";
-        } elsif ($? & 127) {
-            printf "child died with signal %d, %s coredump\n", ($? & 127),  ($? & 128) ? 'with' : 'without';
-        } else {
-            printf "child exited with value %d\n", $? >> 8;
-        }
-    } unless ($debug);
-
-    print "done.\n";
 }
 
+
+# Launch dpkg to purge the kernels and extra packages
+print "\n-- dpkg output --\n\n";
+my @cmd = ("/usr/bin/dpkg", "--purge");
+push @cmd, $_ foreach keys %$pkghash;
+do {
+    system(@cmd) == 0 or warn "Forking dpkg failed: $!\n";
+    if ($? == -1) {
+        print "failed to execute: $!\n";
+    } elsif ($? & 127) {
+        printf "child died with signal %d, %s coredump\n", ($? & 127),  ($? & 128) ? 'with' : 'without';
+    } else {
+        printf "child exited with value %d\n", $? >> 8;
+    }
+} unless ($debug);
 
 print "$0: done.\n";
 exit 0;
