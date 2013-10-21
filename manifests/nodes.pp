@@ -3436,3 +3436,13 @@ node '2connect01' inherits ringnode {
     include users
 }
 
+node 'syseleven01' inherits ringnode {
+    $owner = "syseleven"
+    $location = "52.502038,13.369331"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

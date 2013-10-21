@@ -4124,4 +4124,23 @@ class users::virtual::ring_users {
 
 ##### END 2connect #####
 
+##### BEGIN syseleven #####
+
+    @add_user { 'syseleven':
+        email => 'ip@syseleven.de',
+        company => 'SysEleven GmbH',
+        uid => 5231,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'syseleven':
+        sshkeys => [
+                'ssh-dss AAAAB3NzaC1kc3MAAACBAJL2NPdSrmMkh0HCHa2Ud3JJ4v2cRpAXZ/p40v35KnOhiU93iq6Ik9jQ5A/AewaEbqp3Ky3ONMMn3rwxfjThlmu5aGGR8KCCP6xh2fjB9uvuwH0+Uf1b2Xds4Lpq4bvq1UwZAxVoTeJOSOplueC5yRH2qP0m535CScxc8OqK3XZtAAAAFQCJ4AHFsal+dDbZE69I/jCOxYQ+FwAAAIAWGMnPblii4cstuqbenI6PAi/9u4XJl/zpj1nWs5q4NRWlFAr8tzgw6O7skKUZ5QS2SIMwvv2c68hyqccwKQOaKFqBQuGCU7jZGzqrbJX60X+Hm4yoL911rXTeNCEFlXbuvyEa8IHp/7lXsevvlnT747gI/3tOwtOuBQb+M7/5LQAAAIAbfcKLAjCb515LT8l3dIfmlyOT4HsVrkUtVVPbkWlbtPPinlPFck5o+6DCQD8Px3dyhJzy5+8QxcvxE0zJtg3/aDtOJ/ZiyXGFp9wVKr25L3wpsdXQP9/FwOfO6D2UQ5wXrQzxQqTVdLiay1snagvPSEHoFbEByM6XBsUozPcyaw== teichhorn@ssh',
+                'ssh-dss AAAAB3NzaC1kc3MAAACBALrd6hn+zC6pbpnwf6iiNSt4rqSdGNr3n9qsWYWO4Rak39mujYs4vVfFQc8CFeVVjSPBHdnm+y+Iqsxf1QGdJPtZbh+ZM4cIY3QC4NL9BwFeLLVAIt/2ionnD+BISALSh/yR8Kb7va5SeTMbWrYjkDcQ2jBfTySvk7JTSdH7DNLzAAAAFQDzZmmYidQbhl2+CvaBUcsadfh4gQAAAIAHShotkUWMu3yDeQQrq7RyHj0X5QveHCL6cwLquLIRPXIAa9XNA9cxb5fiR5lVTpJcYphHzWHbHwSk5qbCynuxMrJQ/aWNmshSNpSE0tG5CZdeoAGr4mKXzWf7vo1DK99aD3S0riAr7/xKXwNfd8FdGVHq7eFboHei8csUYB6J7gAAAIEAjw3pR5TvBkarV8u6iZY/1rtBYDo0cqUVKyYCHVKfmyCqxmjYu47dK0YDE46XcjhZEvZTTgtB9ZDh9JNsyo+P+573aCXZxE8hGQQg9t/onr6m9eq3pFN7yuLQZ6yZxAdDcs19CLFv+cxpliHXIuI5wMTUw+VA5gadd7nocv4XPyE= rbrunka@ws167.sys11.net',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAohzydFfoOI5MOPZrnml1bbYjlD0rSYy7VsD4+a2l81Vlvb5VPveAWxyQTwx9+RYjNIaJbezJ8foIe1kWf/ZuFK1k9j8ZVcN0Nxch7dEoojm+RCgzk1z1yXr9Au//hDt9BXMxTN6Unwpql7Jwtivhzlfria4BJ4HP6Or6OLMwsS78J0jc6Z7SCOsnr5qCpjq1UDA3eTYAvTEzaQXC2v0QIwgklhwcuf4YoyyT0AJTMwxUZMvy5FbIb7g4PsTryqkdHexEqb0z/+2dEWBD2rRTx7I/Qp6Oz2E7iYGMCVndpX8mFSYylXBbAiKuk3evTKQAeA4HC/561g1F7nBXlOKaNQ== jens@ssh.syseleven.de',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAwwM+IzJBBMw/xE4c+PR7aB+4uC7Y+50KRbRO3mf0x/8J+rhqAiB2Poc86tsWgOPq8rDLJQ1fAdAzbb5Wq82cKVuxvGpayEijW6Cy4F0jDXNliHWCyT2zGgBvoXpnTGt/uyWXsNXtLX6gdFAPSh/nWRIdgPnxC90XBHnhzlmisAj+U/jAgvAeWKMDiUDT3i02Ixbaw+zi1l3pnGTfGaCAtXq57pZznlE/eZCCzrW23iSGpge8Ydbh8laEqIdz4tzCy74yXRQth5GhMwVLX6/sfii2C9p8FP99N8c15WRLRf6e8nXdPqM/eU/ykVMH+BpQdHixC/ShlZwggOHB47AxbQ== jens@miniMac.local',
+            ],
+    }
+
+##### END syseleven #####
+
 }
