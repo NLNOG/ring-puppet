@@ -818,3 +818,6 @@ ff02::2 ip6-allrouters
 2a00:7fc0:4000:12::10  syseleven01 syseleven01.ring.nlnog.net
 37.123.105.109    syseleven01 syseleven01.ring.nlnog.net
 
+2a01:a680:a1:10:1:60::  vertixo01 vertixo01.ring.nlnog.net
+92.63.161.60    vertixo01 vertixo01.ring.nlnog.net
+
