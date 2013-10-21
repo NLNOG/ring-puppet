@@ -4175,4 +4175,20 @@ class users::virtual::ring_users {
 
 ##### END inerail #####
 
+##### BEGIN kwaoo #####
+
+    @add_user { 'kwaoo':
+        email => 'noc@kwaoo.net',
+        company => 'Kwaoo',
+        uid => 5234,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'kwaoo':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQChWsvmG7lezEXdt7qJF5MkWC55WQZ19FF/QaMyLKaz4gbf5ZfiMc95UydmTrKG1tdHatTHPzy01ojumomIhLFYt1IhqomvOOIgVmqE/uh65LNBEq5R39Y8uH8PmgzZIYXYC2Uzn+cGix5Rx2ZmCrZUsIfPWI4uY9LoK7MLHRmSa4VZBjAW9e0NaBS1PvezuGgVwHPLVFIhfhCAO1NI1YZyHJYHil30zgOK5pt98xL8GeMjnP5ps/5++9Ez+RECWQrh65WOZOmbeMjYr8Z/Ab9hRY4K2a9I33ItFUDrEchSVRvRiQy68wsqY05gZ9Mp5BF23Vs8gTTHczwxjP+hGuab root@ksup',
+            ],
+    }
+
+##### END kwaoo #####
+
 }

@@ -3466,3 +3466,13 @@ node 'inerail01' inherits ringnode {
     include users
 }
 
+node 'kwaoo01' inherits ringnode {
+    $owner = "kwaoo"
+    $location = "46.203391,6.144675"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

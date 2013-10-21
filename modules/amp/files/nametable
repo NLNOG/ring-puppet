@@ -245,6 +245,9 @@ ring-etop01:v6 2a00:c90:0:3::1:2
 ring-dragon01:v6 2a02:13b8:7800::2
 ring-2connect01:v6 2a00:1238:4:2c:3::2
 ring-syseleven01:v6 2a00:7fc0:4000:12::10
+ring-vertixo01:v6 2a01:a680:a1:10:1:60::
+ring-inerail01:v6 2604:5980:1001:d::4
+ring-kwaoo01:v6 2a03:4980::10:0:15
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
 ring-netground01 87.250.146.52
@@ -490,3 +493,6 @@ ring-etop01 80.72.36.210
 ring-dragon01 213.168.176.84
 ring-2connect01 109.205.75.161
 ring-syseleven01 37.123.105.109
+ring-vertixo01 92.63.161.60
+ring-inerail01 192.92.237.76
+ring-kwaoo01 178.250.209.33
