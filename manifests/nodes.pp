@@ -3456,3 +3456,13 @@ node 'vertixo01' inherits ringnode {
     include users
 }
 
+node 'inerail01' inherits ringnode {
+    $owner = "inerail"
+    $location = "40.743384,-74.008027"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

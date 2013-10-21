@@ -4159,4 +4159,20 @@ class users::virtual::ring_users {
 
 ##### END vertixo #####
 
+##### BEGIN inerail #####
+
+    @add_user { 'inerail':
+        email => 'noc@inerail.net',
+        company => 'Inerail',
+        uid => 5233,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'inerail':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCUKY7dhtoRYXQM7VnnM6jRebL24+SMghVoCqFJgkYqRRKGQo/025PkGZrBNFBMTSmVPPRtrNlxwjKY4x4iD2W9mhezy3mxHZNcOCSku19G9RfaOwPlGO3gd+hNjRvi1BqS9U5/2Ndzfz1ot9bv9YmrTAJTzu6Ih4VVChIQYYRzxBAJ9gZJ4cf4oxYleE0yESwMY18wra/HgfAojqzGzcT3xMobSQmJhIsPUSfY5IfQxYPAo/A7AUZSfhjeUEWxFrMqCcFOSpsL0lAO9wTaS7bYHGFct64G5WujhZHZ46n+yc+CVrxFaV3Ag/OrYpd5IBUDQYqb57p9sfS8C+p+ptyP crogers@inerail.net',
+            ],
+    }
+
+##### END inerail #####
+
 }
