@@ -1539,6 +1539,7 @@ class users::virtual::ring_users {
             'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAoB4gKVwPnsAox4fkh/tUgXZLlPwQUtVyA3+/qNzZUaqkJkA/MfrHsqkvljvFB9jGWR6E4AwGus8mDeyGUUhIl6VH/N5UXCmRuoGhZbiF6KJhC8Z4346rPQj5YKtGPUp0aViQXnyBAA16cgqF4TO8mTi8Zr3hDZwCb1MxjIs8/8k= Dan Offord',
             'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDDV04ViUEQkX6kARmy7B2LYkLwDjIFhAE4UVI+VLZl5QtRd67cpV6DAA3yBFZwdn2fCJaQN4LaVi/ByWmfyAhPmwans9KXfTmVhn8mTyzuVAzmLvSESPuWnxDxbC+RuPvE6PBW/HKoDpn1SBX22zYc1s2AVPQ0W0zJxJY4G/5UCC40/NR07FZ3Slx+F4BAPvYUPaxTXQo5jEoLYRywO+ugf2pi6mhwp9NOaRGMRZ6inpYLpH8A2YNDhselyzkEp7kCEJFfQMFR9Kusnx3j5YNbVijjrUX6yqn642969tlTVB1j4k9mYR7i7TlRobY3q/6nrKLt4LrxoZHfDpadQCSB DavidGroves@eve',
             'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEA2gMbw0m5GR/FKBf9oeln5seL3SkcTPXiolpIYSDBnDCr+/BTKPjfx6bAgibpZYPJym0WlXwGCKWXLX93gz3EjJY8rFJ0XgjmSmvaiHG9XLb5Z9Epcb3Xak0M/wX6Fy0xtgGjPf1K8/NjC9bDdvhlz7Xb1hYpPWhDoNZBZM7sxGs= "Tom Penrose"',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEA4r6SfjoodhytHvDLw0aNczxZaKcsCEKA5xyxTagBOpxBFpW6gubfcnu6wo97iznHWMsnuVGH1VHjdUIkcNBgmWaIls+Ra6c16XQ9rujif29KIcrDlRldHakN2vXwwjc1SZ+ZNbONFrbG+DjsUnTXahFIq65c7b2neRoGJRw9+Jk= K Online',
         ],
     }
 
