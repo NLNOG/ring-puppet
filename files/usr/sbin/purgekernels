@@ -88,10 +88,10 @@ foreach my $remove_kernel_version (@sorted_kernels) {
 
 
 # Launch dpkg to purge the kernels and extra packages
-print "\n-- dpkg output --\n\n";
 my @cmd = ("/usr/bin/dpkg", "--purge");
 push @cmd, $_ foreach keys %$pkghash;
 do {
+    print "\n-- dpkg output --\n\n";
     system(@cmd) == 0 or warn "Forking dpkg failed: $!\n";
     if ($? == -1) {
         print "failed to execute: $!\n";
@@ -100,8 +100,7 @@ do {
     } else {
         printf "child exited with value %d\n", $? >> 8;
     }
-} unless ($debug);
-
+} unless ($debug or not scalar keys %$pkghash);
 print "$0: done.\n";
 exit 0;
 
