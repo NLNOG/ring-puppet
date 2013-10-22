@@ -4154,7 +4154,7 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'vertixo':
         sshkeys => [
-                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUpLsJcMP20on73FLe/NIjIerB4JwamUIBqX41/Vngv/OIVxcsEwbsd239DJDx/l1X4Xjz/H24lGEtSJ1xB1Nwpn3fQnhxptyIHnqjRc3QrUwXC5HpXxi/L9d2pi9z4C3Dmk3wqIi4/YiVsK2/n/oKO0EU4OoTEibvYojmfw5b7SgUbgo5OGUKb2Z6kcpR4lHdbB4UP77vvezCWQEajw+5AQ7MKSOpRIbY9jz3nJE1Idcjoxn7dgH8GWu+JGSer50JfyL5922xBbmfFegn9pCbsWQdZyTqx/+pd2zsjQvdQjjmdybcDBx3jRWw8dILTAU6qDv43mJPCF9BquT+DSrB vertixo',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1iIlcpXrwo0OqTRmjq3Jlt5GrOPO4wwVYhJtrOooCCORClpFyvSkFjauQbGXYQ/ZahdDH+YmMuhFvJiQxuPE5xWIGC1eiB/g8AAxrcoEe1mEnmLUNbjqpzr14XY31398nbBDEPU4q5Q3e3cyRlRo1ETJBW1YOa1DQznBNWRcz8XUl2QIR+y8f0MkrzT9vq2KRmesROwQaCFhAkG65VBeAMx4Z2GCNOYvOVhqNiUozYYgX847GIULdReK5OEvtBUI1nMi91w0UVJ3UwdiShvfyeKxOKWr1gS8vYr4y1m/7UzlXzc0aYyGpnPepuWPBVjW6kBFgSUN9j+tRKxTWPeIr cyberbootje@cyberbootje-desktop',
             ],
     }
 
