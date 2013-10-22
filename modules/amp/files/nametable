@@ -248,6 +248,7 @@ ring-syseleven01:v6 2a00:7fc0:4000:12::10
 ring-vertixo01:v6 2a01:a680:a1:10:1:60::
 ring-inerail01:v6 2604:5980:1001:d::4
 ring-kwaoo01:v6 2a03:4980::10:0:15
+ring-atlanticmetro01:v6 2001:1980:fc:3::2
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
 ring-netground01 87.250.146.52
@@ -496,3 +497,4 @@ ring-syseleven01 37.123.105.109
 ring-vertixo01 92.63.161.60
 ring-inerail01 192.92.237.76
 ring-kwaoo01 178.250.209.33
+ring-atlanticmetro01 108.60.128.14

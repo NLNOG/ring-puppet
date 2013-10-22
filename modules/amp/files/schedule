@@ -998,6 +998,10 @@ ring-kwaoo01:v6,icmp,D,0,86400000,60000
 ring-kwaoo01:v6,icmp,D,0,86400000,60000, -s 576
 ring-kwaoo01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-atlanticmetro01:v6,icmp,D,0,86400000,60000
+ring-atlanticmetro01:v6,icmp,D,0,86400000,60000, -s 576
+ring-atlanticmetro01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging02,icmp,D,0,86400000,60000
 ring-staging02,icmp,D,0,86400000,60000, -s 576
 ring-staging02,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -1989,4 +1993,8 @@ ring-inerail01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-kwaoo01,icmp,D,0,86400000,60000
 ring-kwaoo01,icmp,D,0,86400000,60000, -s 576
 ring-kwaoo01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-atlanticmetro01,icmp,D,0,86400000,60000
+ring-atlanticmetro01,icmp,D,0,86400000,60000, -s 576
+ring-atlanticmetro01,scamper,D,0,86400000,900000, -P udp-paris -M
 

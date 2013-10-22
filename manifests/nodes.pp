@@ -3476,3 +3476,13 @@ node 'kwaoo01' inherits ringnode {
     include users
 }
 
+node 'atlanticmetro01' inherits ringnode {
+    $owner = "atlanticmetro"
+    $location = "40.7267165,-74.0075896"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

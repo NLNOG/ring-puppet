@@ -827,3 +827,6 @@ ff02::2 ip6-allrouters
 2a03:4980::10:0:15  kwaoo01 kwaoo01.ring.nlnog.net
 178.250.209.33    kwaoo01 kwaoo01.ring.nlnog.net
 
+2001:1980:fc:3::2  atlanticmetro01 atlanticmetro01.ring.nlnog.net
+108.60.128.14    atlanticmetro01 atlanticmetro01.ring.nlnog.net
+
