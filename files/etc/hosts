@@ -10,6 +10,9 @@ ff02::2 ip6-allrouters
 # hopefully a temp fix for ipv6-only hosts
 2001:7b8:3:37:213:136:29:218 nl.archive.ubuntu.com
 
+2a02:d28:666::69    master01 master01.ring.nlnog.net puppet master master.ring.nlnog.net
+78.152.42.69   master01 master01.ring.nlnog.net puppet master master.ring.nlnog.net
+
 78.152.42.68    bgpmon.infra bgpmon.infra.ring.nlnog.net
 2a02:d28:666::68    bgpmon.infra    bgpmon.infra.ring.nlnog.net
 
