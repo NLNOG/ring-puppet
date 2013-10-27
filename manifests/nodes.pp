@@ -2314,17 +2314,6 @@ node 'kordia01' inherits ringnode {
     $nagios_ping_rate = '!400.0,20%!600.0,60%'
 }
 
-node 'isc01' inherits ringnode {
-    $owner = "isc"
-    $location = "37.48570,-122.21109"
-    include amp_client                                                    
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
-    include set_local_settings                                             
-    include users
-    $nagios_ping_rate = '!250.0,20%!300.0,60%'
-}
-
 node 'backbone01' inherits ringnode {
     $owner = "backbone"
     $location = "47.515065,7.617669"
@@ -2420,16 +2409,6 @@ node 'merit01' inherits ringnode {
 node 'poznan01' inherits ringnode {
     $owner = "poznan"
     $location = "52.411433,16.917933"
-    include amp_client                                                    
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
-    include set_local_settings                                                  
-    include users
-}
-
-node 'nuqe01' inherits ringnode {
-    $owner = "nuqe"
-    $location = "51.511507,-0.00118"
     include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     

@@ -2311,25 +2311,6 @@ class users::virtual::ring_users {
     }
 ##### END kordia #####
 
-##### BEGIN isc #####
-
-    @add_user { 'isc':
-        email => 'ops@safdef.isc.org',
-        company => 'Internet Systems Consortium, Inc.',
-        uid => 5130,
-        groups => ['ring-users'],
-    }
-    @authorized_keys { 'isc':
-        sshkeys => [
-            "ssh-dss AAAAB3NzaC1kc3MAAACBAII2sqb3kNCfWcfbXEuRsDt9n53ziQkZTHglhMT2EQUvCUeQk5/Jv0sm0FjjLFzcoF5tvIg9g9b2hFzbyPVtL47CG4TtfTs811/jMirhjrKUG+tfpQW+sibo6N0KGVEk5sB0gUanXhswm3m+dVn5j6P6Syz6cvaTsJ8tmjHyJ7SdAAAAFQDdTajtJKTOuQvAXolBVLbCnci+uwAAAIBD2H3d8ma6d54rpxo/66XHs2heOZifb2gE+JbJz5rxn5QAaVoWTiL1UdG38h/cEZDrTxz37Vr9RVZyUC2a7lmpdzvXCMxhK9r3FVnKEdlOkWzdzA5YfIRFxgvDqik8YOB2VSuLEZweHuuMqLusVbNAzyOx0dX3m2/KK7OEfAj46wAAAIAi75q26kBPwQUQqPhHHo0o7Mtv7IISLeXjJFH0ILZiY5Cn0CVKA2wnJEO3a+NwoexuGZo2JUEAj68RxFk5hY9CfhU02IEV9WtPLI2tgvkidwjkoL4F+QTYkWsNPfbTJ9ZzQmE1aSmE+BsskzGvt761b7mItPHQAFiUcgUtlcfZZw== jeroen@yomi.ch.unfix.org",
-            "ssh-dss AAAAB3NzaC1kc3MAAACBAICcb6pURF3OhJ1OipTQVd4XM0sM1SG1GX1NxfUdxJfhRfxiLMNSziFOt9Uk/s3QFJogT9/ghFWg+m415+RjObL7dyjqTky1B5PP+W/xaoeqYK82UU6ZASMCLXsqYa+B715vh88ZXQ4SpkUA4ggA0Gyz0SBvGMt8vfg5aTrWRbjVAAAAFQDBINeYuN52vrKM1F+IXMJcDYxMdQAAAIA3E4NmfoeJh4O8LcVE7etoSLMXHZDp7Nv6Lt6avLt566moo6ImOOELIKkIXtflgSUGNs6b/+p2ooEER1AI33udg4zZCzey01vpen5AgmXgd+kveHpkmZI8uFrEFVjZT6m0zYk6OpfGb933eog6XcpFwfObCS+mUGBR9TCkwIFFAQAAAIB3gE2srLt521b2l9/uMYxL+FXGOU/ZfGtin8Iey8/sL8+myXB2bRua66PUc4qtg3JdgxFJrGnREkC4MwvYlhpQRAG/Qyp2Nlblw2evzNvolNT7LObXLenSkcmJib9HiWWm/sc2+zbg0z0GqBaqr3iiLzhuGL92gWAH77/0SbjEqw== jeroen@safdef.isc.org",
-            "ssh-dss AAAAB3NzaC1kc3MAAACBAL6D0F12sN4N3SrZhmYpP4kdCcjOeMH+0MohfwrbiYAIAhWwPyABlColPFgE97MSvDtkFahMdJgf1WQJyTxxRp1WNcXRVovxCWcya3sxNBuoFv4mmEr1jt03OFaQKjene3mMPUQDcTbX38Wha2CFnzYL88fanGkvTsGIvNcVViqxAAAAFQCUUUIAYs4vTTZnUuD9aA/mPLQAiwAAAIEAiG118h0ekZ5T2iZz8NEyBLtUd2jW8K0upSalpGWIOXsqSDaf9kosKKlnvHWciZfFAvczkVJjchbGZ80h5sYHsVVRb/4Hc+/ZrdFxP51lGLu9vOWjM6DssIg017rcomMfjWo5Nyjx+IchKQrd1AyZRSsX1pT4Moyg4QtP6jye4eYAAACBALqkEaXJFTIp4FzldlIuf1HraCnUhzBPWFFvyFJS3QVigl4nmApjxjRzQSSO9MluvQf739KyefyGEQ4Xkf+zLK3sDcMDyR1Nz92q09zhQvmUYlhgsRjJ5HSfyxe75cZKvGGYXUf9BSfwjivDtzpPLdhP/emm0pui2peNGVOhyacJ jeroen@kami.ch.unfix.org",
-            "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEA1PZK1iixZ/P7/MYquyOIP3OpBG6Zw0YY6oZa6GAbdLLQxPBCf4GNZjJbW2AWSV87Y5jcba2zwNqNEKo60GCOTmHYtp6C0KrRQMG+UZvtC1goPSAh9c1gwQ7bNbPIwDAHPWfyPrVvHbg2J2ukXNzqjrQcXIyhFt6fS3nwtKtU3+ri7+ML3w9AoFXDDoSBsBDe9sN6MauGcshHJIlDpd45xgUqZwQ4TQb6wXRWX8GpbMOMekPsGA9Ek6+uLMCd463I9Yaf3aI7CJFbFIv+e7fK1nia/NBrp/TB6OPqkPqbM5HKoaoosEt6f014vN6P4zx9pzxtcYtE5Pgc/ZbKIbs+AviXMEsJqgaJhl5z/7wHubqXHt5j1WWOtroU88luAw68zJqHA5AYMI9oRyD77584Y7Audqs9UgQ/Ad3gIMNBEV3tNuHiPJcJKZAXT/zU2GpZ1m6QcnsQDzlKD4M20SDotEyL38YQckrUf3Xp1webNRYB/NQWm87Nyd7LsjEQkM7efpM4j+1XneD2tfCqL44VVOSecP0jA0snv49uIHLHYVwXl5tChoxr/pblV5A4ws6WZz95E08PBrP8cCUscKU4Xf4HyspIDDdzx1BdoCgJzAXMiBMMF0Sw2VTeiKgvdiDwvfhTLfq2N7zJTl/i3SvVULhGb8HfV6BHq918yUFSgw8= vixie@ww",
-            "ssh-dss AAAAB3NzaC1kc3MAAACBAJOiPKd3zaV3JQ3T8OY/MHZLGNr73X2urXRAvFtHzlNMtC1+PUcZoFt4Sg+6p6g7rDyqWL3R7onesi2/RLtum6f+J4683rSjhFBIkjNoni9Qvn/5EurykkkTEyLGvdUdSmPPRN8BZYNaICjdkoKqIks1JkudGsuH/STMm3x7nSg3AAAAFQDTTHBNWpvWQO6PZ1Gq4Bi8zhOYlwAAAIBQnyOyhw7dzt1Enluvrq5D1iqdWpMGU4vonyXcWA8olLEh4aqUSEm3sdjlhlgO+i1W4TBnLwzfqFL7/oEoOtZZPLdPvZZb1Um8dvIHtd6dK2C6cChDRBBfRjBnu+rZrjIqqFYvdGokxD8gN1mI8xHkOMzsVkmVHn86G1kRFmQOKwAAAIB/aop74mefxK4UjW5KnrojriqKzFisAQMM8dm8YgbiGzGAFivsAjZXz05VxJTSKmNWc+peB1as0syv+z3/0OJf95xlwspdIa9Nn9yFV0kFgHEy1Q7nc6K7BP27BcUwFpH3Vv+UiUQxGLii6Z8rFDIFG9fUjTHPFOGU3LKo6LyjzQ== joao@core.c-l-i.net",
-        ],
-    }
-##### END isc #####
-
 ##### BEGIN backbone #####
 
     @add_user { 'backbone':
@@ -2478,23 +2459,6 @@ class users::virtual::ring_users {
     }
 
 ##### END poznan #####
-
-##### BEGIN nuqe #####
-
-    @add_user { 'nuqe':
-        email => 'nat@nuqe.net',
-        company => 'AS30746',
-        uid => 5139,
-        groups => ['ring-users'],
-    }
-    @authorized_keys { 'nuqe':
-        sshkeys => [
-                'ssh-dss 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 nat-key-20091209',
-                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAtmairACvJxC4dMNc7Os80205bU5UmnExxaZ0qnbdC+cJ8Aqgai7lnq8ge0vVc2yUZRhM7ke3sjwxVpDs1956dNxLv2EUQLb3qcgOLW9zOs/68eOOh952d65AOklnPEMpGPA8g/+7EsxUPnXXJAohPdjY/+cTiTc6DwKaayR29BtUBf2q3egM+7SXoHrR9DpTteMInK9N5nWOjQWw+/b2QEa5NfQzyRq3mmJP0fBX9gjphgbo/7xVp8KM0W3AgFZ2qs9i0jp4kx+YrwnEVIqZiC278BQHzBiVf9uTKZTij0qFVh/7sEZcfnh59g6QokxIwpRnoTyYpalSTZE/dr+SAw== will@newsshkey.harg.net',
-            ],
-    }
-
-##### END nuqe #####
 
 ##### BEGIN bluezonejordan #####
 
