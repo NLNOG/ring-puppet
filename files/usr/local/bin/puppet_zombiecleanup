@@ -1,16 +1,33 @@
-#!/bin/bash
+#!/usr/bin/perl -T
+use strict; use warnings;
 
-file='/var/lib/puppet/state/puppetdlock'
-puppetd='puppetd'
-maxage=7200
+# THIS SCRIPT IS DEDICATED TO MARK DROOG ;-)
 
-if [ -e $file ]; then
-    filemtime=`stat -c %Y $file`
-    currtime=`date +%s`
-    diff=$((currtime - filemtime))
+$ENV{"PATH"} = "/usr/bin:/bin";
 
-    if [ "$diff" -gt "$maxage" ]; then
-        pkill -9 $puppetd
-        rm $file
-    fi
-fi
+my (undef,undef,$hour) = localtime(time);
+my $target = $hour - 2; # Flag process before this hour
+my $grep = '/usr/bin/puppet';
+
+my @proclist = `ps -ef | grep $grep | grep -v grep`;
+foreach my $proc (@proclist)
+{
+    $proc =~ /(\w+)\s+(\d+)\s+\d+\s+\d+\s+(.*?).*/;
+    my $user = $1;
+    my $pid = $2;
+    my $stime = $3;
+
+    $stime =~ s/(\d+):(\d+)/$1/;
+
+    # We're going to do a numeric compare against strings that
+    # potentially compare things like 'Aug01' when the STIME is old
+    # enough.  We don't care, and we want to catch those old pids, so
+    # we just turn the warnings off inside this foreach.
+    no warnings 'numeric';
+
+    unless ($stime > $target)
+    {
+        print "killing $pid\n";
+        kill 9, $pid;
+    }
+}
