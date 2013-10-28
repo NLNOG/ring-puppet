@@ -81,6 +81,8 @@ ring-amazon03:v6 2400:6500:ff00::2e89:f429
 ring-amazon04:v6 2400:6700:ff00::b022:3975
 ring-amazon05:v6 2620:108:700f::3270:6d9a
 ring-amazon06:v6 2620:107:300f::b8a9:9245
+ring-amazon07:v6 2804:800:0:3::36e8:6b05
+ring-amazon08:v6 2403:b300::36fd:7525
 ring-equinixnl01:v6 2001:1540:801:19:20c:29ff:fe8f:8feb
 ring-lchost01:v6 2a01:70:1:217:2::125
 ring-hostway01:v6 2606:6a00::a:c
@@ -138,7 +140,6 @@ ring-initseven01:v6 2001:1620:2777:36::98
 ring-hosting90systems01:v6 2a03:b780:1:1:216:3eff:fe00:512
 ring-claranet05:v6 2001:a70:ff:5::4
 ring-kordia01:v6 2404:6c00:1:f::2
-ring-isc01:v6 2001:4f8:3:2e::36
 ring-backbone01:v6 2001:4b28:198:0:21c:42ff:fe2a:d38a
 ring-backbone02:v6 2a01:528:2000:0:21c:42ff:fe4a:c3a0
 ring-nexellent01:v6 2001:4168:babe:2::2
@@ -149,7 +150,6 @@ ring-netflix01:v6 2a00:86c0:ff0a:2906::12
 ring-ipmax01:v6 2a02:2528:404:1::200
 ring-merit01:v6 2001:48a8:6880:63::64
 ring-poznan01:v6 2001:808:2:3003::5
-ring-nuqe01:v6 2001:67C:188:12::12
 ring-bluezonejordan01:v6 2a01:8e40:1:12::2
 ring-zeronet01:v6 2001:67c:3e0:c5::58
 ring-claranet06:v6 2a02:a0:1:1::9
@@ -249,6 +249,7 @@ ring-vertixo01:v6 2a01:a680:a1:10:1:60::
 ring-inerail01:v6 2604:5980:1001:d::4
 ring-kwaoo01:v6 2a03:4980::10:0:15
 ring-atlanticmetro01:v6 2001:1980:fc:3::2
+ring-esgob01:v6 2001:67c:1b40:162::162
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
 ring-netground01 87.250.146.52
@@ -332,6 +333,8 @@ ring-amazon03 46.137.244.41
 ring-amazon04 176.34.57.117
 ring-amazon05 50.112.109.154
 ring-amazon06 184.169.146.69
+ring-amazon07 54.232.107.5
+ring-amazon08 54.253.117.37
 ring-equinixnl01 217.114.111.202
 ring-lchost01 213.230.217.125
 ring-hostway01 64.40.105.244
@@ -388,7 +391,6 @@ ring-initseven01 82.197.163.98
 ring-hosting90systems01 130.193.9.18
 ring-claranet05 62.240.228.4
 ring-kordia01 124.157.73.94
-ring-isc01 149.20.52.36
 ring-backbone01 85.195.198.15
 ring-backbone02 79.134.255.159
 ring-nexellent01 217.147.213.237
@@ -399,7 +401,6 @@ ring-netflix01 198.45.56.12
 ring-ipmax01 46.20.247.200
 ring-merit01 198.108.63.64
 ring-poznan01 150.254.166.148
-ring-nuqe01 195.177.253.104
 ring-bluezonejordan01 31.222.236.6
 ring-zeronet01 194.0.58.58
 ring-claranet06 92.54.7.29
@@ -498,3 +499,4 @@ ring-vertixo01 92.63.161.60
 ring-inerail01 192.92.237.76
 ring-kwaoo01 178.250.209.33
 ring-atlanticmetro01 108.60.128.14
+ring-esgob01 195.177.253.162

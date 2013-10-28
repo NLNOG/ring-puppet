@@ -1710,6 +1710,50 @@ node 'amazon06' inherits ringnode {
     }
 }
 
+node 'amazon07' inherits ringnode {
+    $owner = "amazon"
+    $location = "-23.54894,-46.63882"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    $nagios_ping_rate = '!300.0,20%!500.0,60%'
+    include set_local_settings
+	include users
+
+    # hopefully a temp fix because of:
+    # https://bugs.launchpad.net/ubuntu/+source/linux/+bug/613273
+    file { "/usr/share/initramfs-tools/scripts/init-bottom/udev":
+        ensure  => present,
+        mode    => 0755,
+        owner   => root,
+        group   => root,
+        source  => "puppet:///files/usr/share/initramfs-tools/scripts/init-bottom/udev",
+    }
+}
+
+node 'amazon08' inherits ringnode {
+    $owner = "amazon"
+    $location = "-33.86749,151.20699"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    $nagios_ping_rate = '!300.0,20%!500.0,60%'
+    include set_local_settings
+	include users
+
+    # hopefully a temp fix because of:
+    # https://bugs.launchpad.net/ubuntu/+source/linux/+bug/613273
+    file { "/usr/share/initramfs-tools/scripts/init-bottom/udev":
+        ensure  => present,
+        mode    => 0755,
+        owner   => root,
+        group   => root,
+        source  => "puppet:///files/usr/share/initramfs-tools/scripts/init-bottom/udev",
+    }
+}
+
+
+
 node 'equinixnl01' inherits ringnode {
     $owner = "equinixnl"
     $location = "52.2373,6.8496"
