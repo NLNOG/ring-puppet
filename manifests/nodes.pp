@@ -338,7 +338,7 @@ node 'container04.infra' inherits infranode {
     }
     kvm::virtual_machine { 'db04':
         fqdn        => 'db04.infra.ring.nlnog.net',
-        ip          => '213.154.249.162', # ipv6 address is 2001:7b8:d05::162
+        ip          => '213.154.249.162', # ipv6 address is 2001:7b8:d05:1::162
         netmask     => '255.255.255.240',
         dns         => '8.8.8.8',
         gateway     => '213.154.249.161',
@@ -351,7 +351,7 @@ node 'container04.infra' inherits infranode {
     }
     kvm::virtual_machine { 'bit01':
         fqdn        => 'bit01.ring.nlnog.net',
-        ip          => '213.154.249.163', # ipv6 address is 2001:7b8:d05::163
+        ip          => '213.154.249.163', # ipv6 address is 2001:7b8:d05:1::163
         netmask     => '255.255.255.240',
         dns         => '8.8.8.8',
         gateway     => '213.154.249.161',
@@ -364,7 +364,7 @@ node 'container04.infra' inherits infranode {
     }
     kvm::virtual_machine { 'staging01':
         fqdn        => 'staging01.ring.nlnog.net',
-        ip          => '213.154.249.164', # ipv6 address is 2001:7b8:d05::164
+        ip          => '213.154.249.164', # ipv6 address is 2001:7b8:d05:1::164
         netmask     => '255.255.255.240',
         dns         => '8.8.8.8',
         gateway     => '213.154.249.161',
@@ -375,8 +375,19 @@ node 'container04.infra' inherits infranode {
         container   => "${hostname}",
         ensure      => present,
     }
-
-
+    kvm::virtual_machine { 'graphite':
+        fqdn        => 'graphite.infra.ring.nlnog.net',
+        ip          => '213.154.249.165', # ipv6 address is 2001:7b8:d05:1::165
+        netmask     => '255.255.255.240',
+        dns         => '8.8.8.8',
+        gateway     => '213.154.249.161',
+        memory      => '1024',
+        disksize    => '20',
+        rootsize    => '19968',
+        bridge      => 'virbr1',
+        container   => "${hostname}",
+        ensure      => present,
+    }
 }
 
 # container05 is hosted at Softlayer in Dallas 
