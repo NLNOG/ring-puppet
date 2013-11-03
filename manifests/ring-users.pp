@@ -4193,4 +4193,19 @@ class users::virtual::ring_users {
 
 ##### END esgob #####
 
+##### BEGIN itsbrasil #####
+
+    @add_user { 'itsbrasil':
+        email => 'redes@itsbrasil.net',
+        company => 'ITS Telecomunicacoes',
+        uid => 5237,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'itsbrasil':
+        sshkeys => [
+            ],
+    }
+
+##### END itsbrasil #####
+
 }

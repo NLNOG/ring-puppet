@@ -836,3 +836,6 @@ ff02::2 ip6-allrouters
 2001:67c:1b40:162::162  esgob01 esgob01.ring.nlnog.net
 195.177.253.162    esgob01 esgob01.ring.nlnog.net
 
+2804:204:500::40  itsbrasil01 itsbrasil01.ring.nlnog.net
+189.89.131.40    itsbrasil01 itsbrasil01.ring.nlnog.net
+

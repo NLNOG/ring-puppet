@@ -1006,6 +1006,10 @@ ring-esgob01:v6,icmp,D,0,86400000,60000
 ring-esgob01:v6,icmp,D,0,86400000,60000, -s 576
 ring-esgob01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-itsbrasil01:v6,icmp,D,0,86400000,60000
+ring-itsbrasil01:v6,icmp,D,0,86400000,60000, -s 576
+ring-itsbrasil01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging02,icmp,D,0,86400000,60000
 ring-staging02,icmp,D,0,86400000,60000, -s 576
 ring-staging02,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -2005,4 +2009,8 @@ ring-atlanticmetro01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-esgob01,icmp,D,0,86400000,60000
 ring-esgob01,icmp,D,0,86400000,60000, -s 576
 ring-esgob01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-itsbrasil01,icmp,D,0,86400000,60000
+ring-itsbrasil01,icmp,D,0,86400000,60000, -s 576
+ring-itsbrasil01,scamper,D,0,86400000,900000, -P udp-paris -M
 

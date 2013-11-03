@@ -3519,3 +3519,13 @@ node 'esgob01' inherits ringnode {
     include users
 }
 
+node 'itsbrasil01' inherits ringnode {
+    $owner = "itsbrasil"
+    $location = "-12.980163,-38.450617"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
