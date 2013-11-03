@@ -1010,6 +1010,10 @@ ring-itsbrasil01:v6,icmp,D,0,86400000,60000
 ring-itsbrasil01:v6,icmp,D,0,86400000,60000, -s 576
 ring-itsbrasil01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-finecom01:v6,icmp,D,0,86400000,60000
+ring-finecom01:v6,icmp,D,0,86400000,60000, -s 576
+ring-finecom01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging02,icmp,D,0,86400000,60000
 ring-staging02,icmp,D,0,86400000,60000, -s 576
 ring-staging02,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -2013,4 +2017,8 @@ ring-esgob01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-itsbrasil01,icmp,D,0,86400000,60000
 ring-itsbrasil01,icmp,D,0,86400000,60000, -s 576
 ring-itsbrasil01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-finecom01,icmp,D,0,86400000,60000
+ring-finecom01,icmp,D,0,86400000,60000, -s 576
+ring-finecom01,scamper,D,0,86400000,900000, -P udp-paris -M
 

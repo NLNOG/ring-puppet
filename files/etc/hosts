@@ -839,3 +839,6 @@ ff02::2 ip6-allrouters
 2804:204:500::40  itsbrasil01 itsbrasil01.ring.nlnog.net
 189.89.131.40    itsbrasil01 itsbrasil01.ring.nlnog.net
 
+2001:1a88:10:3:202::1  finecom01 finecom01.ring.nlnog.net
+212.60.60.202    finecom01 finecom01.ring.nlnog.net
+

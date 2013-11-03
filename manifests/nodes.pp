@@ -3529,3 +3529,13 @@ node 'itsbrasil01' inherits ringnode {
     include users
 }
 
+node 'finecom01' inherits ringnode {
+    $owner = "finecom"
+    $location = "47.131732,7.24166"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
