@@ -662,6 +662,16 @@ node 'backup.infra' inherits infranode {
     include backup::server
 }
 
+node 'graphite.infra' inherits infranode {
+    $owner = "martin"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include syslog_ng::client
+    include nodesonlycron
+    include users
+    include backup::client
+}
 
 # looking glass 1
 node 'lg01.infra' inherits infranode {
