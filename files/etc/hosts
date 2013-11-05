@@ -842,3 +842,6 @@ ff02::2 ip6-allrouters
 2001:1a88:10:3:202::1  finecom01 finecom01.ring.nlnog.net
 212.60.60.202    finecom01 finecom01.ring.nlnog.net
 
+2a02:cdc5:9715:0:185:5:201:240  sbtap01 sbtap01.ring.nlnog.net
+185.5.201.240    sbtap01 sbtap01.ring.nlnog.net
+

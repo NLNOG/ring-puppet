@@ -252,6 +252,7 @@ ring-atlanticmetro01:v6 2001:1980:fc:3::2
 ring-esgob01:v6 2001:67c:1b40:162::162
 ring-itsbrasil01:v6 2804:204:500::40
 ring-finecom01:v6 2001:1a88:10:3:202::1
+ring-sbtap01:v6 2a02:cdc5:9715:0:185:5:201:240
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
 ring-netground01 87.250.146.52
@@ -504,3 +505,4 @@ ring-atlanticmetro01 108.60.128.14
 ring-esgob01 195.177.253.162
 ring-itsbrasil01 189.89.131.40
 ring-finecom01 212.60.60.202
+ring-sbtap01 185.5.201.240

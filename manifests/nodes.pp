@@ -3560,3 +3560,13 @@ node 'finecom01' inherits ringnode {
     include users
 }
 
+node 'sbtap01' inherits ringnode {
+    $owner = "sbtap"
+    $location = "42.94334338754859,13.882770538330078"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
