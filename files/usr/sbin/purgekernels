@@ -5,7 +5,7 @@ use Data::Dumper;
 sub isnewer ($$); # prototype for sort{} usage
 
 #
-# $Id: purgekernels 59 2013-10-17 07:36:11Z sanders $
+# $Id: purgekernels 329 2013-11-10 19:51:00Z sanders $
 #
 # Run as Post-Invoke:
 # $ cat /etc/apt/apt.conf.d/88local
@@ -75,7 +75,7 @@ print("reboot to activate newer kernel $keep1\n") if isnewer($keep1, $current_ke
 # Build package hash to uniquify pkgnames
 my $pkghash = {};
 foreach my $remove_kernel_version (@sorted_kernels) {
-    if ($remove_kernel_version eq $current_kernel_version) {
+    if ($remove_kernel_version =~ m#^$current_kernel_version#) {
         print "not removing current kernel.\n";
         next;
     }
@@ -101,6 +101,8 @@ do {
         printf "child exited with value %d\n", $? >> 8;
     }
 } unless ($debug or not scalar keys %$pkghash);
+
+
 print "$0: done.\n";
 exit 0;
 
