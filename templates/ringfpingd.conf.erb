@@ -5,7 +5,7 @@ myname       = 'ringfping'
 # Graphite Server running UDP listener
 server       = 'graphite.infra.ring.nlnog.net'
 # Graphite UDP Listener Secret key
-key          = '<%= scope.function_trocla("graphite_graphite.infra.ring.nlnog.net",'plain') %>'
+key          = '<%= scope.function_trocla("graphite",'plain') %>'
 # Secret key type (none|sha1)
 keytype      = 'sha1'
 # Root of Server metric tree
