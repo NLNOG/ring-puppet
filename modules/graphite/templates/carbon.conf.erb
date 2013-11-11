@@ -76,7 +76,7 @@ ENABLE_UDP_LISTENER = True
 UDP_RECEIVER_INTERFACE = 0.0.0.0
 UDP_RECEIVER_PORT = 2003
 # Set this to enable checking of a key to be set in the udp receiver for simple security
-UDP_RECEIVER_KEY = secretkey
+UDP_RECEIVER_KEY = <%= scope.function_trocla("graphite_${fqdn}",'plain') %>
 # By default this key is transmitted in plain text, set this to ensure it is hashed instead (more secure)
 UDP_RECEIVER_KEY_TYPE = sha1
 
