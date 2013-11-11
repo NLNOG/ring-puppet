@@ -9,12 +9,37 @@
 
 class graphite {
 
-    # Install packages
-    package { "ring-python-ceres": ensure => latest }
-    package { "ring-python-whisper": ensure => latest }
-    package { "ring-carbon": ensure => latest }
-    package { "ring-python-graphite-web": ensure => latest }
-
+    # Carbon service
+    service { "carbon":
+        ensure     => running,
+        hasrestart => true,
+    }
+    
+    # File permissions
+    file { 'graphite_storage':
+        path => '/opt/graphite/storage',
+        ensure => directory,
+        group  => 'graphite',
+        mode   => 0664,
+        recurse => true,
+    }
+    
+    # Users and groups
+    user { "carbon":
+        comment => "Graphite - Carbon user",
+        home    => "/opt/graphite",
+        shell   => "/bin/false/",
+        groups  => [ "carbon", "graphite" ],
+        ensure  => present,
+    }
+    user { "www-data":
+        groups  => "graphite",
+    }
+    
+    group { "graphite": 
+        ensure => present,
+    }
+    
     # Carbon files
     file { "/opt/graphite/conf/aggregation-rules.conf":
         mode    => 644,
@@ -97,31 +122,10 @@ class graphite {
         content => template("graphite/graphite-vhost.conf.erb")
     }
 
-    # Users and groups
-    group { "graphite": }
-    user { "carbon":
-        comment => "Graphite - Carbon user",
-        home    => "/opt/graphite",
-        shell   => "/bin/false/",
-        groups  => [ "carbon", "graphite" ],
-        ensure  => present,
-    }
-    user { "www-data":
-        groups  => "graphite",
-    }
+    # Install packages
+    package { "ring-python-ceres": ensure => latest }
+    package { "ring-python-whisper": ensure => latest }
+    package { "ring-carbon": ensure => latest }
+    package { "ring-python-graphite-web": ensure => latest }
 
-    # File permissions
-    file { 'graphite_storage':
-        path => '/opt/graphite/storage',
-        ensure => directory,
-        group  => 'graphite',
-        mode   => 0664,
-        recurse => true,
-    }
-
-    # Carbon service
-    service { "carbon":
-        ensure     => running,
-        hasrestart => true,
-    }
 }
