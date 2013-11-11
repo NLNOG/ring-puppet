@@ -121,6 +121,10 @@ class graphite {
         ensure  => present,
         content => template("graphite/graphite-vhost.conf.erb")
     }
+    file { '/etc/apache2/sites-enabled/graphite':
+        ensure => 'link',
+        target => '/etc/apache2/sites-available/graphite',
+    }
 
     # Install packages
     package { "ring-python-ceres": ensure => latest }
