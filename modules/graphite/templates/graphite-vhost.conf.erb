@@ -1,6 +1,6 @@
 # This needs to be in your server's config somewhere, probably
 # the main httpd.conf
- NameVirtualHost *:80
+NameVirtualHost *
 
 # This line also needs to be in your server's config.
 # LoadModule wsgi_module modules/mod_wsgi.so
@@ -20,7 +20,7 @@
 #WSGISocketPrefix run/wsgi
 WSGISocketPrefix /var/run/apache2/wsgi
 
-<VirtualHost <%= ipaddress %>:80>
+<VirtualHost *>
         ServerName <%= fqdn %>
         DocumentRoot "/opt/graphite/webapp"
         ErrorLog /opt/graphite/storage/log/webapp/error.log

@@ -780,6 +780,9 @@ class apache2 {
         enable => true,
         ensure => running,
     }
+    file { '/etc/apache2/sites-enabled/000-default':
+        ensure => absent,
+    }
 }
 
 class no-apache2 {
