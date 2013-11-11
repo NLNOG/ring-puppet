@@ -11,8 +11,6 @@ class master_software {
     package { "puppetmaster": ensure => latest }
     package { "etckeeper": ensure => latest }
     package { "puppetmaster-common": ensure => latest }
-    package { "apache2-mpm-prefork": ensure => latest }
-    package { "libapache2-mod-wsgi": ensure => latest }
 }
 
 class nettools {
