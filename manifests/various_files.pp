@@ -160,6 +160,9 @@ class etcfiles_ring {
         hasrestart => true,
     }
 
+    file { "/etc/ringfpingd.conf":
+        content => template("ringfpingd.conf.erb");
+    }
 }
 
 class etcfiles_infra {

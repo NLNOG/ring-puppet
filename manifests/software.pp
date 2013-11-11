@@ -212,6 +212,7 @@ class nettools {
     package { "vim": ensure => latest }
     package { "language-pack-en-base": ensure => latest }
     package { "sshfp": ensure => latest }
+    package { "ringfpingd": ensure => latest }
 
     # packages we don't like
     package { "pppoe": ensure => purged }
