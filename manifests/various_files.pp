@@ -163,6 +163,10 @@ class etcfiles_ring {
     file { "/etc/ringfpingd.conf":
         content => template("ringfpingd.conf.erb");
     }
+    service { "ringfpingd":
+        ensure => running,
+        subscribe => File["/etc/ringfpingd.conf"],
+    }
 }
 
 class etcfiles_infra {
