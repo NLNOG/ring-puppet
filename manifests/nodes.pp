@@ -671,6 +671,7 @@ node 'graphite.infra' inherits infranode {
     include nodesonlycron
     include users
     include backup::client
+    include apache2
     include graphite
 }
 
