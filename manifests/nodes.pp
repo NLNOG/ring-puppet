@@ -772,6 +772,9 @@ node 'worker03' inherits infranode {
 # we don't want apache running on regular ringnodes. smokeping installs 
 # apache, so we just force it down here. 
 class apache2 {
+    package { "apache2-mpm-prefork": ensure => latest }
+    package { "libapache2-mod-wsgi": ensure => latest }
+
     service { "apache2":
         alias => "apache",
         enable => true,
