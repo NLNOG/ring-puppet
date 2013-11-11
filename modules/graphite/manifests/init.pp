@@ -29,7 +29,7 @@ class graphite {
         comment => "Graphite - Carbon user",
         home    => "/opt/graphite",
         shell   => "/bin/false/",
-        groups  => [ "carbon", "graphite" ],
+        groups  => "graphite",
         ensure  => present,
     }
     user { "www-data":
