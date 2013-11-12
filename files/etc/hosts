@@ -61,6 +61,9 @@ ff02::2 ip6-allrouters
 95.211.149.18   public02.infra public02.infra.ring.nlnog.net
 2001:1AF8:4013::18  public02.infra public02.infra.ring.nlnog.net
 
+213.154.249.165 graphite graphite.infra.ring.nlnog.net
+2001:7b8:d05:1::165 graphite graphite.infra.ring.nlnog.net
+
 84.241.136.51   staging02   staging02.ring.nlnog.net
 2001:1690:4:115::51 staging02   staging02.ring.nlnog.net
 

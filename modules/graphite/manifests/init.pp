@@ -83,6 +83,12 @@ class graphite {
         ensure  => present,
         source  => "puppet:///graphite/rewrite-rules.conf"
     }
+    file { "/opt/graphite/conf/storage-aggregation.conf":
+        mode    => 644,
+        require => Package['ring-carbon'],
+        ensure  => present,
+        source  => "puppet:///graphite/storage-aggregation.conf"
+    }
     file { "/opt/graphite/conf/storage-schemas.conf":
         mode    => 644,
         require => Package['ring-carbon'],
