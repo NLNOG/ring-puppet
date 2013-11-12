@@ -110,6 +110,7 @@ node 'master01.infra' inherits basenode {
 #   IPv6 prefix: 2001:888:2001::/48
 node 'container01.infra' inherits infranode {
     include users
+    include containercronjobs
     include syslog_ng::client
     include nagios_services
     include nagios::target::fqdn
@@ -197,6 +198,7 @@ node 'container01.infra' inherits infranode {
 #   IPv6 prefix: 2001:1AF8:4013::/48
 node 'container02.infra' inherits infranode {
     include users
+    include containercronjobs
     include syslog_ng::client
     include nagios_services
     include nagios::target::fqdn
@@ -243,6 +245,7 @@ node 'container02.infra' inherits infranode {
 #   IPv6 prefix: 2a02:d28:666:0:0:0:0:0/48
 node 'container03.infra' inherits infranode {
     include users
+    include containercronjobs
     include syslog_ng::client
     include nagios_services
     include nagios::target::fqdn
@@ -329,6 +332,7 @@ node 'container03.infra' inherits infranode {
 
 node 'container04.infra' inherits infranode {
     include users
+    include containercronjobs
     include syslog_ng::client
     include nagios_services
     include nagios::target::fqdn
@@ -398,6 +402,7 @@ node 'container04.infra' inherits infranode {
 #   IPv6 prefix: 16 x /64
 node 'container05.infra' inherits infranode {
     include users
+    include containercronjobs
     include syslog_ng::client
     include nagios_services
     include nagios::target::fqdn
@@ -477,6 +482,7 @@ node 'us01.irr.infra' inherits infranode {
 #   IPv6 prefix: 2a00:0f10:0122::/48
 node 'container06.infra' inherits infranode {
     include users
+    include containercronjobs
     include syslog_ng::client
     include nagios_services
     include nagios::target::fqdn

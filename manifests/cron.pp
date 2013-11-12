@@ -10,6 +10,16 @@ class mastercronjobs {
     }
 }
 
+# Ugly workaround to keep IPv6 on VMs alive
+class containercronjobs {
+    cron { flush_ipv6_cache:
+        command => "/sbin/ip -6 route flush cache > /dev/null 2>&1",
+        minute  => "*/2",
+        user    => root,
+        ensure  => present,
+    }
+}
+
 class pdnscronjobs {
     cron {
         "update-sshfp":
