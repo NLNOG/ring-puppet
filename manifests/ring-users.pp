@@ -3749,9 +3749,9 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'iccn':
         sshkeys => [
-                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEArAVEOYF8qGTLIzA6yerBNv8E6d86BBToxxFQMb8oIoiJCuCJGFgDUFB0xL9IuuyQGHcLakb+OuH2civORW6ftdtpEL2Yy+mUn+/3KiIDxnHJrXqnoTNFEvkXEfq8W8nAIztEe2wMt4g0xWvATWCGuPl9iOtw7YYMypY9Ga5YctE= buraglio@heelflip.209.buraglio.com',
-                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIB1I5vH933f+lhT0jxeJUS7YarpeQdDimT2SotKosdXOg0UUKjwGbICnQWjK1wYY6efPu30vvqAprQ6gjzZiDhcfINC+IfbSIiP1GmAlOre9gJeSAqqz6m17DVgB2n3Qr5IFwQWQQrx3c3Bvers6I8sqNDmadrfuE8T4zi+7NMI1Q== rsa-key-20040611',
-                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAxu3WUQ1IIsIeyQN4HAQrUuL1hufwOfbzeWupHgmtdA0Ig17V/iyVppcmS+9osKpXhJBCanFYFYrgf+eyW6X/ebJ1MgEVYMsrOD65gchJ3Elmbxxp6/RrZ8kmv7VnoB49nHvQjOSFwJUER9LVB3lOlGFBb2tmgMoriUbLxb0Pznvzo33zFmWdpbC2hN9assh5vvCrvZsPV+OuZ4t/+qIyqgXKtirRplQOaL7tTPozj7t/+8qfzBqpBpPHApzJ8quWOzAThVa8rtjI1u+5RS/8LcXw56vh1IpcY2Hhkakvki4fhd+edq4k6G0hmHoxU/kbVCBLolOeYr3qSyG90GkpMQ== buraglio@tardis.ncsa.uiuc.edu',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDapPISAS8vhDdLCsltzdvr6RPvbleDztbQL6f2PJdiQjXPTDNsEUhYJtE1XG7zBPtl9b4uughcNLKNWkfpM59oIuZlL6FOoVh7T30ce70cZCKWbd2nMm8TRigdkBpRLsqRXWwHGQeZzHSNWogmArhpD7Gqrqb8kU1o/qk5ahaVkVktEv4+P2nDRrlKAv5a0AsDH6U18Nh3lVObWrENAPCo+PSTMgnMbxlClcm3e3sxK/NZbzLl+okAmilHplevxst3aVnCh26dQ5MU/yuLoRNnxKmRFFOBMQHpGS138iGPCk6j3/AKYM2cTnskhlg8EiQrrDsR5UjNOpzwKH1qNorV',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEArAVEOYF8qGTLIzA6yerBNv8E6d86BBToxxFQMb8oIoiJCuCJGFgDUFB0xL9IuuyQGHcLakb+OuH2civORW6ftdtpEL2Yy+mUn+/3KiIDxnHJrXqnoTNFEvkXEfq8W8nAIztEe2wMt4g0xWvATWCGuPl9iOtw7YYMypY9Ga5YctE=',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1wJuw4L+FFA2Ey6kH0We9ERbsICU3jm9nfls1V6AyvaeUDVsjGiZ9v0H9srXNX/thz09+eIdFchAcPf+fuA4OAdETAeDwevWgqFUgEfssPg4lj+bowLrCeecqhQz/zgKYsxRjStqZ/31kozWJWuN80uptiRwwXwf+Kdz8aBeFb5j8jCTrIB8da9kmuheG7WHQ0UE3IxHMeHU7Sjjt/G+V1IoY7glWzhjw6AMxjZeYXXKnSgeO7pF7DmFThStSUgF93PIwM0j7DX7J5gkESGaTvlf1fB41nlYF75Q9dCMX2/l6buXO7Kb2m4wXsUgH18YQZgYW3cvGJNO/daypOaOn Phil@pawmbp',
             ],
     }
 
