@@ -166,6 +166,7 @@ class etcfiles_ring {
     service { "ringfpingd":
         ensure => running,
         subscribe => File["/etc/ringfpingd.conf"],
+        hasrestart => true,
     }
 }
 
