@@ -3584,3 +3584,13 @@ node 'sbtap01' inherits ringnode {
     include users
 }
 
+node 'spotify01' inherits ringnode {
+    $owner = "spotify"
+    $location = "59.263504,18.105463"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

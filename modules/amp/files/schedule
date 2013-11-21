@@ -1018,6 +1018,10 @@ ring-sbtap01:v6,icmp,D,0,86400000,60000
 ring-sbtap01:v6,icmp,D,0,86400000,60000, -s 576
 ring-sbtap01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
 
+ring-spotify01:v6,icmp,D,0,86400000,60000
+ring-spotify01:v6,icmp,D,0,86400000,60000, -s 576
+ring-spotify01:v6,scamper,D,0,86400000,900000, -P udp-paris -M
+
 ring-staging02,icmp,D,0,86400000,60000
 ring-staging02,icmp,D,0,86400000,60000, -s 576
 ring-staging02,scamper,D,0,86400000,900000, -P udp-paris -M
@@ -2029,4 +2033,8 @@ ring-finecom01,scamper,D,0,86400000,900000, -P udp-paris -M
 ring-sbtap01,icmp,D,0,86400000,60000
 ring-sbtap01,icmp,D,0,86400000,60000, -s 576
 ring-sbtap01,scamper,D,0,86400000,900000, -P udp-paris -M
+
+ring-spotify01,icmp,D,0,86400000,60000
+ring-spotify01,icmp,D,0,86400000,60000, -s 576
+ring-spotify01,scamper,D,0,86400000,900000, -P udp-paris -M
 

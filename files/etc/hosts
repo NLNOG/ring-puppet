@@ -848,3 +848,6 @@ ff02::2 ip6-allrouters
 2a02:cdc5:9715:0:185:5:201:240  sbtap01 sbtap01.ring.nlnog.net
 185.5.201.240    sbtap01 sbtap01.ring.nlnog.net
 
+2a01:280:104:2308:1b:21ff:fe62:b1a0  spotify01 spotify01.ring.nlnog.net
+194.132.162.83    spotify01 spotify01.ring.nlnog.net
+
