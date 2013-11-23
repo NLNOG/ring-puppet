@@ -3,7 +3,7 @@
 # My own name
 myname       = 'ringfping'
 # Graphite Server running UDP listener
-server       = 'graphite.infra.ring.nlnog.net'
+server       = 'graphite01.infra.ring.nlnog.net'
 # Graphite UDP Listener Secret key
 key          = '<%= scope.function_trocla("graphite",'plain') %>'
 # Secret key type (none|sha1)
@@ -11,9 +11,9 @@ keytype      = 'sha1'
 # Root of Server metric tree
 dispatch_root= 'nlnog.ring.ping'
 # Maximum number of threads (excluding boss)
-maxthreads   = 2
+maxthreads   = 1
 # Interval in seconds between pings
-pinginterval = 300
+pinginterval = 900
 # Interval in seconds to re-read the hosts file (1 hr)
 hostinterval = 3600 
 
