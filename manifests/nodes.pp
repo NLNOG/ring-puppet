@@ -743,6 +743,7 @@ node 'worker02' inherits infranode {
 #    }
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
+    $graphite_servername = 'graphite01.infra.ring.nlnog.net'
     include graphite
 }
 
