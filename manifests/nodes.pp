@@ -731,8 +731,10 @@ node 'worker01' inherits infranode {
 node 'worker02' inherits infranode {
     $nagios_ping_rate = '!180.0,20%!300.0,60%'
     include backup::client
-    include users
+    include set_local_settings
     include syslog_ng::client
+    include nodesonlycron
+    include users
     include apache2
     include nagios_services
     include nagios::target::fqdn
@@ -741,6 +743,7 @@ node 'worker02' inherits infranode {
 #    }
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
+    include graphite
 }
 
 node 'worker03' inherits infranode {
