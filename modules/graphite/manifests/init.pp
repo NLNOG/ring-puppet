@@ -21,6 +21,13 @@ class graphite {
         ensure => directory,
         group  => 'graphite',
         mode   => 0664,
+        recurse => false,
+    }
+    file { 'graphite_storage_log':
+        path => '/opt/graphite/storage/log',
+        ensure => directory,
+        group  => 'graphite',
+        mode   => 0664,
         recurse => true,
     }
     
