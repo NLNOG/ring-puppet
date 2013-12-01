@@ -379,19 +379,6 @@ node 'container04.infra' inherits infranode {
         container   => "${hostname}",
         ensure      => present,
     }
-    kvm::virtual_machine { 'graphite':
-        fqdn        => 'graphite.infra.ring.nlnog.net',
-        ip          => '213.154.249.165', # ipv6 address is 2001:7b8:d05:1::165
-        netmask     => '255.255.255.240',
-        dns         => '8.8.8.8',
-        gateway     => '213.154.249.161',
-        memory      => '4096',
-        disksize    => '40',
-        rootsize    => '39936',
-        bridge      => 'virbr1',
-        container   => "${hostname}",
-        ensure      => absent,
-    }
 }
 
 # container05 is hosted at Softlayer in Dallas 
