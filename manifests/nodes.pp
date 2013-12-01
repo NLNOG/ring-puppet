@@ -390,7 +390,7 @@ node 'container04.infra' inherits infranode {
         rootsize    => '39936',
         bridge      => 'virbr1',
         container   => "${hostname}",
-        ensure      => present,
+        ensure      => absent,
     }
 }
 
@@ -666,19 +666,6 @@ node 'backup.infra' inherits infranode {
     include nodesonlycron
     include users
     include backup::server
-}
-
-node 'graphite.infra' inherits infranode {
-    $owner = "martin"
-    include nagios::target::fqdn
-    include nagios_services
-    include set_local_settings
-    include syslog_ng::client
-    include nodesonlycron
-    include users
-    include backup::client
-    include apache2
-    include graphite
 }
 
 # looking glass 1
