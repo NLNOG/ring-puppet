@@ -23,6 +23,13 @@ class graphite {
         mode   => 0664,
         recurse => false,
     }
+    
+    file { 'graphite_storage_db':
+        path => '/opt/graphite/storage/graphite.db',
+        group  => 'graphite',
+        mode   => 0660,
+    }
+    
     file { 'graphite_storage_log':
         path => '/opt/graphite/storage/log',
         ensure => directory,
@@ -137,6 +144,13 @@ class graphite {
     file { '/etc/apache2/sites-enabled/graphite':
         ensure => 'link',
         target => '/etc/apache2/sites-available/graphite',
+    }
+
+    # Admin tool    
+    file { "/usr/local/bin/ring-graphite":
+        mode    => 755,
+        ensure  => present,
+        source  => "puppet:///graphite/ring-graphite"
     }
 
     # Install packages
