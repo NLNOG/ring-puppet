@@ -130,7 +130,10 @@ class commands(object):
             if attribute=='email':
                 u.email = value
             elif attribute=='password':
-                u.password = value
+                print value
+                u.set_password(value)
+            else:
+                sys.exit('unsupported attribute' % (attribute))
             u.save()
         except User.DoesNotExist:
             sys.exit('user %s does not exist' % (username))
