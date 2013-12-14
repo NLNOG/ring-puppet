@@ -130,7 +130,6 @@ class commands(object):
             if attribute=='email':
                 u.email = value
             elif attribute=='password':
-                print value
                 u.set_password(value)
             else:
                 sys.exit('unsupported attribute' % (attribute))
