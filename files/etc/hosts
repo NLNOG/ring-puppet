@@ -854,3 +854,6 @@ ff02::2 ip6-allrouters
 2a02:20b0:165::4  amsio01 amsio01.ring.nlnog.net
 5.100.229.206    amsio01 amsio01.ring.nlnog.net
 
+2a01:348:0:42::10  goscomb01 goscomb01.ring.nlnog.net
+46.17.60.106    goscomb01 goscomb01.ring.nlnog.net
+

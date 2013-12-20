@@ -4298,4 +4298,20 @@ class users::virtual::ring_users {
 
 ##### END amsio #####
 
+##### BEGIN goscomb #####
+
+    @add_user { 'goscomb':
+        email => 'noc@goscomb.net',
+        company => 'HighSpeed Office t/a Goscomb',
+        uid => 5243,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'goscomb':
+        sshkeys => [
+                'ssh-dss AAAAB3NzaC1kc3MAAACBAJpd8HN1oLq0xbIhjtfa3zfLKAwxsUzLGR6siOVcKH0ctzso4qUM6pdj15O6mOGTyrECUTXnjaQtF4dj9IwPnyYnj9UhkMHAVWIgmuoOCaKewgTNIQjyvhoCqHhoqvX0ulkU81glVzTrqHGDvYxiNIIrvm37KHSIe7IywqMj+mH1AAAAFQDCtwJyKJ31i191HLGnD7coktcZvwAAAIBOtGV2cjbKWvoin0aF0IOiLGEVHg3LY4XVYBBHO6UZttdgIr6FAFmELX5IjiX1mP0BDMiMcN+EXbjm8BRHoY/5NaH6xC4U5eP3tMOOl9QfviD5eKVbpmOqy+hThB776EGNamE3YZI9D/A0gREIeGl4BQkVfpwYnQC2jnmxqjWwRQAAAIBbXofRis0AUETyAFGZ5iAs7o3PTjReIfio1V3BHb6R0Y64V2nke7m2/RPPJ04mU91stn1YrJJd/fN7Hyufn3pXxLMg0gA7zAI0Ro1p2ulzj6OfgRLmYAKBU1sCqzG69R23IFdA0hPoGNXpwYmhUyjsczJzHfCKU4vz4f3bXbh6iQ== dang@whore.arcbox.com',
+            ],
+    }
+
+##### END goscomb #####
+
 }

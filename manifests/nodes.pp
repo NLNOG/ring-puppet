@@ -3595,3 +3595,13 @@ node 'amsio01' inherits ringnode {
     include users
 }
 
+node 'goscomb01' inherits ringnode {
+    $owner = "goscomb"
+    $location = "51.512078,-0.002035"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
