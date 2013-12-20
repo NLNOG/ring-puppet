@@ -4281,4 +4281,24 @@ pels@fizzix:~/projects/ring/git/ring-puppet$ ring-admin generate puppet user xco
 
 ##### END xconnect #####
 
+##### BEGIN amsio #####
+
+    @add_user { 'amsio':
+        email => 'noc@amsio.com',
+        company => 'Amsio B.V.',
+        uid => 5242,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'amsio':
+        sshkeys => [
+                'ssh-dss AAAAB3NzaC1kc3MAAACBANCf9MoO80UEq1O+j9go5sWW3wOc1oxSeV7zSLKkKly3krv8czG7mQnevO3sQZZcrLhg4DMiMa3ydrypnlRnQupvRQ4wYbfLGf3hbvjzrKAtNcr4z3nWcQo33PCwN9icRaqFiqYqP9lOAehqY5gzIYqktB7GJWXInsYKh7a7YjvfAAAAFQDwSEfXTaAM16n502iMVzQPUn21RwAAAIAHgr/OEGMhsAEafJyP+PyW1ZXC5cxrtjk/GaDmxFJs1VnFo3/qOkyNKB0KR3mOdMPJnbJW7lsw7Y7gzZLL5OgcA8Vi0g6eoCvovwjcWr56eEQUXaDApc4BgBnn0chqPTnsEPRA7cUMLz1SbMKGoSx0votASKgEAuqN0OLTW7f7hQAAAIBUNtCWQA5dlevRzVu8QYdch6QKc3rBPDECp7ZWQr+CSxn7cMBbbSeSgJc0zAVu4ET1luAZONrG87dhFjPkicZMbpjzOVPPkQhv72eL38tlV1QzuHf8zSmZKYJcKPe0J4ezuyNvsOCXJmYBVR9Qw7kuf5himyY05nW9ohNrf896Ww== amsio-dennis',
+                'ssh-rsa AAAAB3NzaC1kc3MAAACBANCf9MoO80UEq1O+j9go5sWW3wOc1oxSeV7zSLKkKly3krv8czG7mQnevO3sQZZcrLhg4DMiMa3ydrypnlRnQupvRQ4wYbfLGf3hbvjzrKAtNcr4z3nWcQo33PCwN9icRaqFiqYqP9lOAehqY5gzIYqktB7GJWXInsYKh7a7YjvfAAAAFQDwSEfXTaAM16n502iMVzQPUn21RwAAAIAHgr/OEGMhsAEafJyP+PyW1ZXC5cxrtjk/GaDmxFJs1VnFo3/qOkyNKB0KR3mOdMPJnbJW7lsw7Y7gzZLL5OgcA8Vi0g6eoCvovwjcWr56eEQUXaDApc4BgBnn0chqPTnsEPRA7cUMLz1SbMKGoSx0votASKgEAuqN0OLTW7f7hQAAAIBUNtCWQA5dlevRzVu8QYdch6QKc3rBPDECp7ZWQr+CSxn7cMBbbSeSgJc0zAVu4ET1luAZONrG87dhFjPkicZMbpjzOVPPkQhv72eL38tlV1QzuHf8zSmZKYJcKPe0J4ezuyNvsOCXJmYBVR9Qw7kuf5himyY05nW9ohNrf896Ww== amsio-onno',
+                'ssh-dss AAAAB3NzaC1kc3MAAACBANkT3xsQjz3tfrONPx4GTWeJ8LC0RssAFNbp/pOICp43Gbd+L0Nvg1yyjtVywMi54ulB9jaumjcxp2fDJF61OPMKbx+B9nqj7LmgK0RvflnyUojVfchG20JifLu+bb+eZRlud3vfeHkIaAZVBV+GjKCjSOkUY/wnqL3GK1gqajEZAAAAFQC8gNn1VJuXj7XP72ihSR30ToH6NQAAAIEAjIBhGtVK9mWgPCI856GxbhhdIuFEZZUTXAEekeTWwpjOFo5pMvUolxGY6Hmx4LboWZkxVhtD2uB/YhtdxeBpaHfi9eC30pjttFWQgCGfkAqEDTTOc+p7yXYli9lWMdymDAKS38weWl2j1rnBU9dYmxp+RdOcO4oevNl3CsQBQNsAAACBAJngLyUl+dKAkhZXAKQ0mP2RUOFgCpQ96quC+HrMnhrjd+I7PtwgiZfp7B1XO9kn/NP63DRDl4PuX261ctw79KvX97uZ5WeUklcl9LK8qN4aOG4n1TDJpVgyoIKiHuGb5v+JME9xyjoIz86OuaMtY4IrI9SwwZgsmwjIMckqfjiS amsio-ivo',
+                'ssh-dss AAAAB3NzaC1kc3MAAACBAPQVzIefSBYoweyNmE8DGSXxo0YwO2fG3I6tvQg1TisBRgI4YK3eEM6q6JAV5OnxwwWrd/tsOOgT4uOvCniyH+FKdd3YBNlIcMq9gKtCLU4eD8ZStu21GVeUy5caG03N3jKLdhnghmiAEE6U9adrz0XlbQ/gbiQkI2hTF4VHK6klAAAAFQDdKsCQ+xhYUihEsxgGw6m6U3bpGwAAAIEAzWRkuDxzJfpCzSK59iUo6JxlsCQ1Ri3ZjODHdvCkEs095z2tyR827CApTQZX88fwvqolx5w3G6VoHI1a4f6Zi3hfPHoQDXvMLhBUfUYv4d/FQ5Q8hwFifYFU7eJ6uvmcBMdRvzqNjrIPf1ZI8Ccm1EF5mJlOARF6uLPpEu8MaRIAAACBAK2zconPwrzBJ2ssljORho8Vrr7P/SJ0wNipIaYqlNy/U04rgoZ3yGKNLqP9L8aUCrFDpjuUeA0WsBkKdPyuHh3NfADh1GadEohAcGUeAHBJMq9tZDciC4N2cNG2W8SLg4vRL7+6I2lYoMUlQLrR/hi9+HbxBNS9HX/QXQKIz+Qd amsio-richard',
+                'ssh-dss AAAAB3NzaC1kc3MAAACBAKaJkEC1Vfpg+5+vBGsTGeKbLQd/8+QoO4OQw9ex487+deZzc+sQdycb+SI23v4a1MxBMYEP0Je7vgYNYAq1CkU6YqT46X3M8VqupY9hzZ1WysARhcOcgI2WxD2z8dZUYW+EpioSpdS9f/BpmKd0+jd4ronrPdaT6u4079Wg8lAvAAAAFQDHs4R5ceWNopofNiKz9Qr/UFwoxQAAAIEAnMLvsq5NFIh1llL0ntJQ7otKgtYSZ4y1gNoAgYfn+a9BziMCvemt8kR9Qb0Q0qs40Cjsd90z2KUTTFfoNPmj4TBla9/PE5HRdD7cVSU2+AFqO8PuWFds+otLXl4hKZyVPS5MyFtNRkYo3QjzHzktdVPLAWlpVIlp2EDivAJZBScAAACAWrC7KjMVjJH7LhFJi+0ryJJk72PzkX5k/1yz200i71OxyDA9F19X240iY6GMxWDJG4IDz2l3hTiB4VUG73AnuPOIcEXQ3hF735cXOvpsJSW2u6IYtN5C7Wzb+luJx5CIXmySVWeBAI6EQ2IhZu/aut0aStCiFa7ecgJFjjakwCU= amsio-ruben',
+            ],
+    }
+
+##### END amsio #####
+
 }

@@ -3585,3 +3585,13 @@ node 'xconnect01' inherits ringnode {
     include users
 }
 
+node 'amsio01' inherits ringnode {
+    $owner = "amsio"
+    $location = "52.280312,4.753851"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

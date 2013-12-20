@@ -851,3 +851,6 @@ ff02::2 ip6-allrouters
 2a04:1120:1::58  xconnect01 xconnect01.ring.nlnog.net
 185.19.100.58    xconnect01 xconnect01.ring.nlnog.net
 
+2a02:20b0:165::4  amsio01 amsio01.ring.nlnog.net
+5.100.229.206    amsio01 amsio01.ring.nlnog.net
+
