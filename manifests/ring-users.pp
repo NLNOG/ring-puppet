@@ -4262,9 +4262,6 @@ class users::virtual::ring_users {
 
 ##### END spotify #####
 
-##### END xconnect #####
-Connection to dbmaster.infra.ring.nlnog.net closed.
-pels@fizzix:~/projects/ring/git/ring-puppet$ ring-admin generate puppet user xconnect
 ##### BEGIN xconnect #####
 
     @add_user { 'xconnect':
