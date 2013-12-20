@@ -254,6 +254,7 @@ ring-itsbrasil01:v6 2804:204:500::40
 ring-finecom01:v6 2001:1a88:10:3:202::1
 ring-sbtap01:v6 2a02:cdc5:9715:0:185:5:201:240
 ring-spotify01:v6 2a01:280:104:2308:1b:21ff:fe62:b1a0
+ring-xconnect01:v6 2a04:1120:1::58
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
 ring-netground01 87.250.146.52
@@ -508,3 +509,4 @@ ring-itsbrasil01 189.89.131.40
 ring-finecom01 212.60.60.202
 ring-sbtap01 185.5.201.240
 ring-spotify01 194.132.162.83
+ring-xconnect01 185.19.100.58
