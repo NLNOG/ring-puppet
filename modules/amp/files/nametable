@@ -257,6 +257,7 @@ ring-spotify01:v6 2a01:280:104:2308:1b:21ff:fe62:b1a0
 ring-xconnect01:v6 2a04:1120:1::58
 ring-amsio01:v6 2a02:20b0:165::4
 ring-goscomb01:v6 2a01:348:0:42::10
+ring-kinber01:v6 2001:550:501:3::1ce:c01d:bee2
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
 ring-netground01 87.250.146.52
@@ -514,3 +515,4 @@ ring-spotify01 194.132.162.83
 ring-xconnect01 185.19.100.58
 ring-amsio01 5.100.229.206
 ring-goscomb01 46.17.60.106
+ring-kinber01 162.223.16.247

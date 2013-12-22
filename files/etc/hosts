@@ -857,3 +857,6 @@ ff02::2 ip6-allrouters
 2a01:348:0:42::10  goscomb01 goscomb01.ring.nlnog.net
 46.17.60.106    goscomb01 goscomb01.ring.nlnog.net
 
+2001:550:501:3::1ce:c01d:bee2  kinber01 kinber01.ring.nlnog.net
+162.223.16.247    kinber01 kinber01.ring.nlnog.net
+

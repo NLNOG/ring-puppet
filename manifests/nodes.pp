@@ -3605,3 +3605,13 @@ node 'goscomb01' inherits ringnode {
     include users
 }
 
+node 'kinber01' inherits ringnode {
+    $owner = "kinber"
+    $location = "40.7914,-77.8586"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
