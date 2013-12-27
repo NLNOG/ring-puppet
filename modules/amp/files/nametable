@@ -259,6 +259,7 @@ ring-amsio01:v6 2a02:20b0:165::4
 ring-goscomb01:v6 2a01:348:0:42::10
 ring-kinber01:v6 2001:550:501:3::1ce:c01d:bee2
 ring-afilias02:v6 2a01:8840:c:500::229
+ring-nonattached01:v6 2001:67c:26f4::8
 ring-staging02 84.241.136.51
 ring-in2ip01 217.198.20.135
 ring-netground01 87.250.146.52
@@ -518,3 +519,4 @@ ring-amsio01 5.100.229.206
 ring-goscomb01 46.17.60.106
 ring-kinber01 162.223.16.247
 ring-afilias02 65.22.12.229
+ring-nonattached01 193.160.39.8

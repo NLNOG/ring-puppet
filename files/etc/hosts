@@ -863,3 +863,6 @@ ff02::2 ip6-allrouters
 2a01:8840:c:500::229  afilias02 afilias02.ring.nlnog.net
 65.22.12.229    afilias02 afilias02.ring.nlnog.net
 
+2001:67c:26f4::8  nonattached01 nonattached01.ring.nlnog.net
+193.160.39.8    nonattached01 nonattached01.ring.nlnog.net
+

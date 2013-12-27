@@ -3625,3 +3625,13 @@ node 'afilias02' inherits ringnode {
     include users
 }
 
+node 'nonattached01' inherits ringnode {
+    $owner = "nonattached"
+    $location = "50.102565,8.633623"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
