@@ -130,6 +130,7 @@ sub add_logins {
         my $event = join(" ",@rest);
 
         my $pid = $sshd;
+        next LINE unless $pid;
         $pid =~ s/sshd\[//;
         $pid =~ s/\]://;
 
