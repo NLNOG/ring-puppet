@@ -3615,3 +3615,13 @@ node 'kinber01' inherits ringnode {
     include users
 }
 
+node 'afilias02' inherits ringnode {
+    $owner = "afilias"
+    $location = "25.773914,-80.188007"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
