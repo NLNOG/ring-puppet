@@ -59,4 +59,10 @@ WSGISocketPrefix /var/run/apache2/wsgi
                 Allow from all
         </Directory>
 
+        <IfModule mod_headers.c>
+            Header set Access-Control-Allow-Origin "*"
+            Header set Access-Control-Allow-Methods "GET, OPTIONS"
+            Header set Access-Control-Allow-Headers "origin, accept"
+        </IfModule>
+
 </VirtualHost>

@@ -128,12 +128,18 @@ class graphite {
         content => template("graphite/carbon.conf.erb")
     }
 
-    # Graphiteweb files
+    # Graphiteweb settings file
     file { "/opt/graphite/webapp/graphite/local_settings.py":
         mode    => 644,
         require => Package['ring-python-graphite-web'],
         ensure  => present,
         content => template("graphite/local_settings.py.erb")
+    }
+
+    # Apache stuff
+    file { '/etc/apache2/mods-enabled/headers.load':
+        ensure => 'link',
+        target => '/etc/apache2/mods-available/headers.load',
     }
     file { "/etc/apache2/sites-available/graphite":
         mode    => 644,
