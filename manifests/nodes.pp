@@ -666,12 +666,8 @@ node 'lg01.infra' inherits infranode {
     include nodesonlycron
     include users
     include backup::client
-# FIXME
-# bird is nu distributed over meerdere processen
-# met een smerige iptables hack. Ik moet de puppet
-# manifesten nog aanpassen dat de nieuwe setup werkt
-#    include bird
-#    include bird-lg-proxy 
+    include bird
+    include bird-lg-proxy 
     munin::plugin { ["bird", "bird6"]:
     }
     add_user { 'dave':                                                                                                                                                                                                 
