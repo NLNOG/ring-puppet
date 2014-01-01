@@ -38,14 +38,14 @@ def check_accesslist():
 @app.route("/traceroute6")
 def traceroute():
     check_accesslist()
-    
+
     src = []
-    if request.path == '/traceroute6': 
+    if request.path == '/traceroute6':
 	o = "-6"
 	if app.config.get("IPV6_SOURCE",""):
 	     src = [ "-s",  app.config.get("IPV6_SOURCE") ]
 
-    else: 
+    else:
 	o = "-4"
 	if app.config.get("IPV4_SOURCE",""):
 	     src = [ "-s",  app.config.get("IPV4_SOURCE") ]
@@ -55,7 +55,7 @@ def traceroute():
 
     command = [ 'traceroute' , o ] + src + [ '-A', '-q1', '-N32', '-w1', '-m15', query ]
     result = subprocess.Popen( command , stdout=subprocess.PIPE).communicate()[0].decode('utf-8', 'ignore').replace("\n","<br>")
-    
+
     return result
 
 
@@ -65,8 +65,8 @@ def traceroute():
 def bird():
     check_accesslist()
 
-    if request.path == "/bird": b = BirdSocket(file="/var/run/bird.ctl")
-    elif request.path == "/bird6": b = BirdSocket(file="/var/run/bird6.ctl")
+    if request.path == "/bird": b = BirdSocket(file="/run/bird/bird.ctl")
+    elif request.path == "/bird6": b = BirdSocket(file="/run/bird/bird6.ctl")
     else: return "No bird socket selected"
 
     query = request.args.get("q","")
@@ -76,7 +76,7 @@ def bird():
     b.close()
     # FIXME: use status
     return result
-	
+
 
 if __name__ == "__main__":
     app.debug = True
