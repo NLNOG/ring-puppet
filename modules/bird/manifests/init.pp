@@ -135,30 +135,9 @@ class bird {
         ensure => latest,
     }
     
-   file { ["/etc/init.d/bird","/etc/init.d/bird6"]:
-        ensure  => absent,
-    }
-
-    file { "/etc/init/bird.conf":
-        ensure  => file,
-        mode    => 0644,
-        owner   => root,
-        group   => root,
-        source  => "puppet:///bird/upstart-bird.conf",
-    }
-
-    file { "/etc/init/bird6.conf":
-        ensure  => file,
-        mode    => 0644,
-        owner   => root,
-        group   => root,
-        source  => "puppet:///bird/upstart-bird6.conf",
-    }
-
     service { "bird":
         ensure      => running,
-        subscribe   => File["/etc/bird.conf"],
-        require     => File["/etc/init/bird.conf"],
+        subscribe   => File["/etc/bird/bird.conf"],
         provider    => "upstart",
         hasstatus   => true,
         restart     => "service bird reload",
@@ -166,14 +145,13 @@ class bird {
 
     service { "bird6":
         ensure      => running,
-        subscribe   => File["/etc/bird6.conf"],
-        require     => File["/etc/init/bird6.conf"],
+        subscribe   => File["/etc/bird/bird6.conf"],
         provider    => "upstart",
         restart     => "service bird6 reload",
         hasstatus   => true,
     }
 
-    file { "/etc/bird.conf":
+    file { "/etc/bird/bird.conf":
         owner   => root,
         group   => root,
         mode    => 0755,
@@ -181,7 +159,7 @@ class bird {
         ensure  => file,
     }
     
-    file { "/etc/bird6.conf":
+    file { "/etc/bird/bird6.conf":
         owner   => root,
         group   => root,
         mode    => 0755,
