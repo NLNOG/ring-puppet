@@ -1,27 +1,27 @@
 class bird-lg-proxy {
         
-        file { "/home/nlnogbot/bird-lg":
+        file { "/usr/local/bird-lg":
             ensure  => directory,
             owner   => root,
             group   => root,
             mode    => 0755,
         }
 
-        file { "/home/nlnogbot/bird-lg/lg-proxy.cfg":
+        file { "/usr/local/bird-lg/lg-proxy.cfg":
             owner       => root,
             group       => root,
             mode        => 0755,
             content     => template("bird-lg/lg-proxy.cfg.rb"),
         }
 
-        file { "/home/nlnogbot/bird-lg/lg-proxy.py":
+        file { "/usr/local/bird-lg/lg-proxy.py":
             owner       => root,
             group       => root,
             mode        => 0755,
             source      => "puppet:///bird-lg/lg-proxy.py",
         }
 
-        file { "/home/nlnogbot/bird-lg/bird.py":
+        file { "/usr/local/bird-lg/bird.py":
             owner       => root,
             group       => root,
             mode        => 0755,
@@ -33,7 +33,7 @@ class bird-lg-proxy {
             group       => root,
             mode        => 0755,
             source      => "puppet:///bird-lg/upstart-bird-lg-proxy.conf",
-            require     => File["/home/nlnogbot/bird-lg/bird.py","/home/nlnogbot/bird-lg/lg-proxy.py","/home/nlnogbot/bird-lg/lg-proxy.cfg","/home/nlnogbot/bird-lg"],
+            require     => File["/usr/local/bird-lg/bird.py","/usr/local/bird-lg/lg-proxy.py","/usr/local/bird-lg/lg-proxy.cfg","/usr/local/bird-lg"],
         }
 
         service { "bird-lg-proxy":
