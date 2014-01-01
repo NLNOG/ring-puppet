@@ -5,8 +5,8 @@
 
 router id <%= ipaddress %>; 
 
-mrtdump "/var/run/mrtdump6";
-mrtdump protocols all;
+#mrtdump "/var/run/mrtdump6";
+#mrtdump protocols all;
 
 timeformat protocol iso long;
 
