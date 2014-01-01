@@ -199,7 +199,10 @@ sub last_month {
     my (@now) = localtime;
     my $month = $now[4];
     my $year  = $now[5] +1900;
-    $year-- unless ($month);
+    if (! $month) {
+        $year--;
+        $month = 12;
+    }
     return ($month,$year);
 }
 
