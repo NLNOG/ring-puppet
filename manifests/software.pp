@@ -176,6 +176,7 @@ class nettools {
     package { "mercurial": ensure => latest }
     package { "w3m": ensure => latest }
     package { "curl": ensure => latest }
+    package { "moreutils": ensure => latest }
     package { "bc": ensure => latest }
     package { "dbndns": ensure => latest }
     package { "bind9-host": ensure => latest }
