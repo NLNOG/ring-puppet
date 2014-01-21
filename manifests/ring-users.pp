@@ -4345,4 +4345,36 @@ class users::virtual::ring_users {
 
 ##### END nonattached #####
 
+##### BEGIN kpn #####
+
+    @add_user { 'kpn':
+        email => 'noc-international@kpn.com',
+        company => 'KPN International',
+        uid => 5247,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'kpn':
+        sshkeys => [
+                'ssh-dss AAAAB3NzaC1kc3MAAACBALEWUhyUC0dXjuN0epqc0/0l9InU6MBe2J6MtqTSHnv6uEeN9QJpCJsU9LDN+4tkotnaaUqcaRMl4EXoHlFeELZX+XUl3JVENAlu9gfTro5yUa8/LdfPASZ9FFYm8XM/8wMu/bNxvoUufqqSodQmm3maj4PaBndeQmN9H5V3NKk/AAAAFQCoHRjqEXtYVvWtiZMHeCcJH7MJ7QAAAIAyvg/zwKVUo5VAy7QHEVArX+Qrld09LowEMQKz9key1vW6iPMXNuPEu+y2Eucyflwcyqpn+5/qn+5mZJ4zklobRESO5857EwfPzWD0+uf94hHpUYvvBpN0FURKx4QD5vPmoR/zcuepE/tuG8gLu95DzyOoYNtD9RTp0mgOTzUezAAAAIEAoyzgH1oz6TQDnG6cLB35AK98mMAJoVu7NQPCHpu+Eg44iZn7nFCmsmMnPd/jqeHZhBbcroBWYqT/ShB3h6Ilavjcgn8ItxZL4XFhiERmlv+/TzoAomTs/RwDZmtqZ58TNis34H3oc6dBnmYwQ62yXaJHM4e+HArvsNtJhrxGQAE= "Mark Weijers"',
+            ],
+    }
+
+##### END kpn #####
+
+##### BEGIN suomi #####
+
+    @add_user { 'suomi':
+        email => 'noc@suomicom.fi',
+        company => 'Suomi Communications oy',
+        uid => 5246,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'suomi':
+        sshkeys => [
+            ],
+    }
+
+##### END suomi #####
+
+
 }

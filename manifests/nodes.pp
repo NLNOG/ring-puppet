@@ -3631,3 +3631,22 @@ node 'nonattached01' inherits ringnode {
     include users
 }
 
+node 'kpn01' inherits ringnode {
+    $owner = "kpn"
+    $location = "52.33661,4.88685"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'suomi01' inherits ringnode {
+    $owner = "suomi"
+    $location = "60.20336,24.923601"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
