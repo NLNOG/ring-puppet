@@ -4377,7 +4377,7 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'suomi':
         sshkeys => [
-                'ssh-dss AAAAB3NzaC1kc3MAAACBAI+jTD/w1jPGQslvpmF/IW0V3XdmE5JQcKXiCT7UGhtNRzbz1Hfijgji9erS70m0J9zOpxRpha00eAcSvwkv/UywDMAE8/7I8sGXvVj9uVFBV2g/0C6dmb4epWWzONdyuq1TzQ79XCQQba6vogK5micjXO4yuE38IM98SWncOhRNAAAAFQCeBv/iP/Y2N18LQ5wPdCB9VOwpcwAAAIB/9ynnBGZ9cN/8FMpA0UjKmvGrCzXNUduEpzU+kuUbXkeeugp/hu0/cHeP49zum33++MYspiAnwhLjpkw1KR4AEcQOFSJSnekDBNUAa76JkHgMd2orVW6/WeOzp8Xf9dyUZnfbDdgHXMeQSmQgg8qYHDH0DyHgR/xFJ0PFpoASwAAAAIBnMzG0fP/JWz+ofAeC1wkRCflVOd3W9eghHUDRmZk+niweQT2J3ZAZJ4lZKz/XQa/7X90MTYLK6L/Fid3aBoIIkzPyiPziThnkGTQlO9ePvFKroVPXB5XtfQ/7ElVLN7XMeVbvJhmzx6IGVPCh6Nuvo5KwRWjYI7Go3SOWuN9c/A==',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDsGsdRaVmCE8THeyJoWWzg1I0/sFIEvHSJHNFxea+imhXFqSkcjreUvAH2bjHhhTWE60fdGxEmiAwMunISi7LI9O6Bdk6rp8WUO/UmQbCSRGgxAJXAoT92chXGJmAxGGo4xfqhnsSfpharX1fcG+/QgWT6KDEaHWEABjGFySheohS6BhOivkmSHVpa5UfLRlm4rFjXtn50Ql7ukCwbecrP6FQobQ0Hd89nkif38++rmgh1zO2joWW0+Ef7OAh0twbHPLedVf6nEjLqLoniSCPUm2hUXjL3ScBlXFcRKmdzX5nJOnPUl3xhvP53H1wsAFoObul8McPNWAz5UM9mqsVT',
             ],
     }
 
