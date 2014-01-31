@@ -3650,3 +3650,13 @@ node 'suomi01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'maxitel01' inherits ringnode {
+    $owner = "maxitel"
+    $location = "51.85615,4.29722"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
