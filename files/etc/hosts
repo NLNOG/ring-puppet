@@ -875,3 +875,6 @@ ff02::2 ip6-allrouters
 2606:2400:223:4::6  flhsi01 flhsi01.ring.nlnog.net
 208.90.223.6    flhsi01 flhsi01.ring.nlnog.net
 
+2a01:a000:0:5::10  virtualone01 virtualone01.ring.nlnog.net
+128.127.31.126    virtualone01 virtualone01.ring.nlnog.net
+

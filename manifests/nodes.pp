@@ -3671,3 +3671,13 @@ node 'flhsi01' inherits ringnode {
     include users
 }
 
+node 'virtualone01' inherits ringnode {
+    $owner = "virtualone"
+    $location = "51.51138,-0.00180"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

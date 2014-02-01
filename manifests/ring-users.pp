@@ -4405,4 +4405,20 @@ class users::virtual::ring_users {
 
 ##### END flhsi #####
 
+##### BEGIN virtualone #####
+
+    @add_user { 'virtualone':
+        email => 'ninjas@virtual1.com',
+        company => 'Virtual1',
+        uid => 5250,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'virtualone':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAxUvIMZLZ+a1A17LZP7/FwuUhxI5jQens+qHe356tezIAxcDk+3ojm/1VliST6p5Wes60eLKOZOj3lyrUbSbdtNLQeEKlCmXLw7VayvGNMf1A4nHZyig9TRkpCvCqdQCva+4xpmZn5sQsbxIbF4OW9ACjYfUqhGew9XBene2C8FP33gtW6VSPlpqkNpBtwmEVtbi8vKQQVvBlKludzuQG7zlc5wj71ak1tdL8P+IpcGGxy87HJ8KwJji2cYKyS72tBDtaeBwnGY/IwCZp/b3W38yzU8k537IVVbZg7jKVoiHZDjU5V7l2YkhzUpZeCVem2Pt/nw1l/O9rF7TnFSmMTw== rich@virtual1.com',
+            ],
+    }
+
+##### END virtualone #####
+
 }
