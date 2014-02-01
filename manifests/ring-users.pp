@@ -4389,4 +4389,20 @@ class users::virtual::ring_users {
 
 ##### END suomi #####
 
+##### BEGIN flhsi #####
+
+    @add_user { 'flhsi':
+        email => 'noc@flhsi.com',
+        company => 'Florida High Speed Internet',
+        uid => 5249,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'flhsi':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAjUPqxNV2PsYorOH5QARDA+lqtzs8W+a0xXM9tK/1RyA3tyOCfngvpY8sFa4EZPJ+QDgu2dL0/3/pGUEEavTj4K+TkVFaD425/JYVoNnOvuXbwxiHvTnKlA8m3VZqUka98TrRrvGZcCYAMuXPfqLm/Yd2KJj8NAkdwb3DxOn1FrU= FLHSI-RING',
+            ],
+    }
+
+##### END flhsi #####
+
 }

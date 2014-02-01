@@ -872,3 +872,6 @@ ff02::2 ip6-allrouters
 2a00:1190:0:1003::2  suomi01 suomi01.ring.nlnog.net
 217.119.42.194    suomi01 suomi01.ring.nlnog.net
 
+2606:2400:223:4::6  flhsi01 flhsi01.ring.nlnog.net
+208.90.223.6    flhsi01 flhsi01.ring.nlnog.net
+
