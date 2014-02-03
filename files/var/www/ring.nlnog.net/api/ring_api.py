@@ -151,6 +151,7 @@ def get_api_1_0():
         'participants/[id]':'Participant by id',
         'nodes':'List of nodes',
         'nodes/[id]':'Node by id',
+        'nodes/hostname/[hostname]':'Node by hostname',
         'nodes/country/[countrycode]':'Nodes by country',
         'nodes/country/[countrycode]/state/[statecode]':'Nodes by country/state',
         'nodes/active':'Active nodes',
@@ -229,6 +230,20 @@ def get_node(node_id):
     nodelist = dbget_nodes()
     try:
         nodelist = filter(lambda n: n['id'] == node_id, nodelist)
+    except TypeError:
+        pass
+    except KeyError as err:
+        set_error("Filter key %s not found" % err)
+
+    if set_error():
+        return mk_json(errormsg=set_error())
+    return mk_json(results={'nodes':nodelist},count=len(nodelist))
+
+@app.route('/1.0/nodes/hostname/<string:node_hostname>', methods = ['GET'])
+def get_node_by_name(node_hostname):
+    nodelist = dbget_nodes()
+    try:
+        nodelist = filter(lambda n: n['hostname'] == node_hostname, nodelist)
     except TypeError:
         pass
     except KeyError as err:
