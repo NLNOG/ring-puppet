@@ -1,47 +1,107 @@
-#!/bin/sh
+#!/usr/bin/env python
+import os, re, socket, sys, simplejson, time, urllib, pycountry
 
-NODEFQDN=$(hostname)
-NODE=$(hostname -s)
-ORG=$(echo $NODE |sed 's/..$//')
-LOCALADMIN=$(getent passwd $ORG | cut -d : -f 5)
+API='https://ring.nlnog.net/api/1.0'
+HOSTNAME=socket.gethostname()
+BANNER='/etc/update-motd.d/ring.nlnog.net-logo'
+CACHE='/var/run/motd.cached'
 
-# ASN Info
-IPV4ADDR=$(ip -4 route get 255.255.255.255 2>/dev/null | grep src | sed 's/.*src //' | sed 's/ $//')
-#IPV4ADDR=$(dig +short A $NODEFQDN | grep -v '\.$')
-IPV6ADDR=$(ip -6 route get 2001:6e0:100:4001::3 2>/dev/null | grep src | sed 's/.*src //' | sed 's/ *metric.*$//')
+def get_api_object(url):
+    response = simplejson.load(urllib.urlopen(url))
+    returncode = response['info']['success'];
+    if (returncode != 1):
+        sys.exit("unable to retrieve api object '"+url+"'")
+    rescount   = response['info']['resultcount'];
+    if (rescount < 1):
+        return undef
+    else:
+        return response['results']
 
-if [ -n "$IPV4ADDR" ];
-then
-	ASN=$(dig +short TXT $(echo $IPV4ADDR | awk -F . '{print $4"."$3"."$2"."$1".asn.routeviews.org"}') | awk '{print $1}' | sed 's/"//g')
-	CYMRUASINFO=$(dig +short TXT AS$ASN.asn.cymru.com | sed 's/"//g')
-	REGION=$(echo $CYMRUASINFO | cut -d \| -f 3 | sed 's/^ //' | sed 's/ $//')
-	ASINFO=$(echo $CYMRUASINFO | cut -d \| -f 5 | sed 's/^ //' | sed 's/ $//')
-fi
-LOCATION=$(whois $(echo $IPV6ADDR) 2>/dev/null|grep -i ^country)
-if [ -n "$LOCATION" ]; then
-        LOCATION=$(grep $(echo "$LOCATION "|head -n1|awk '{print "^"$2}') /usr/share/zoneinfo/iso3166.tab|cut -f2)
-fi
+def get_admininfo(pid):
+    node=socket.gethostbyaddr(HOSTNAME)[0]
+    org = re.sub('..$','',node)
+    return os.popen("getent passwd "+org+" | cut -d : -f 5").read().strip()
 
-# NLNOG RING Logo - can be disabled :)
-cat /etc/update-motd.d/ring.nlnog.net-logo
+def get_countryname(country,state):
+    cname=''
+    try:
+        c=pycountry.countries.get(alpha2=country)
+        cname=c.name
+    except KeyError:
+        cname='Unknown'
+    if state:
+        try:
+            s=pycountry.subdivisions.get(code=country+'-'+state)
+            cname=s.name+', '+cname                
+        except KeyError:
+            cname='Unknown, '+cname
+    return cname
 
-echo
-echo "  Welcome on $NODEFQDN, an NLNOG RING Node!"
-echo "  System operated by $LOCALADMIN"
-if [ -n "$ASN" ];
-then
-	echo "  Location: $LOCATION, $REGION - AS$ASN ($ASINFO)"
-else	
-	echo "  Location: $LOCATION"
-fi
+def get_cymruinfo(asn):
+    cymruinfo=os.popen("dig +short TXT AS"+asn+".asn.cymru.com").read()
+    return re.sub('"','',cymruinfo,count=0)
 
-# Munin / Nagios / Smokeping
+def store_nodeinfo(asn,localadmin,location,cymruasinfo):
+    c = open(CACHE, 'w')
 
-echo 
-echo "  Smokeping / Nagios / Munin:"
-echo
-echo "  https://ring.nlnog.net/cgi-bin/nagios3/status.cgi?host=$NODEFQDN"
-echo "  https://ring.nlnog.net/munin/ring.nlnog.net/$NODEFQDN"
+    # NLNOG RING Logo - can be disabled :)
+    try:
+        f = open(BANNER, 'r')
+        c.write(f.read(),)
+        f.close()
+    except IOError:
+        c.write("Banner not found.\n")
 
-echo
-echo "  For more information, please visit https://ring.nlnog.net/"
+    c.write("\n")
+    c.write("  Welcome on "+HOSTNAME+", an NLNOG RING Node!\n")
+    c.write("  System operated by "+localadmin+"\n")
+    if cymruasinfo:
+	cymrulist=cymruasinfo.split("|")
+	region=cymrulist[2].strip()
+	asinfo=cymrulist[4].strip()
+        c.write("  Location: "+location+" - AS"+asn+" ("+region+", "+asinfo+")\n")
+    else:
+        c.write("  Location: "+location+" - AS"+asn+"\n")
+
+    # Munin / Nagios / Smokeping
+    c.write("\n")
+    c.write("  Munin / Graphite:\n")
+    c.write("\n")
+    c.write("  https://ring.nlnog.net/munin/ring.nlnog.net/"+HOSTNAME+"\n")
+    c.write("  http://graphite.ring.nlnog.net/\n")
+
+    c.write("\n")
+    c.write("  For more information, please visit https://ring.nlnog.net/\n")
+    c.close()
+
+def print_nodeinfo():
+    try:
+        c = open(CACHE, 'r')
+        print c.read(),
+        c.close()
+    except IOError:
+        print "Unable to open motd file"
+
+if __name__ == "__main__":
+    mtime=0
+    if (os.path.exists(CACHE)):
+        mtime=os.path.getmtime(CACHE)
+    if (mtime < (time.time() - 86400)):
+        url=API+'/nodes/hostname/'+HOSTNAME
+        result=get_api_object(url)
+        if not result:
+            sys.exit("unable to retrieve node info")
+        
+        nodeinfo = result['nodes'][0]
+        asn=str(nodeinfo['asn'])
+        pid=nodeinfo['participant']
+        country=nodeinfo['countrycode']
+        state=nodeinfo['statecode']
+
+        localadmin=get_admininfo(pid)
+        location=get_countryname(country,state)
+        cymruasinfo=get_cymruinfo(asn)
+    	store_nodeinfo(asn,localadmin,location,cymruasinfo)
+
+    print_nodeinfo()
+
