@@ -3681,3 +3681,12 @@ node 'virtualone01' inherits ringnode {
     include users
 }
 
+node 'swisscom01' inherits ringnode {
+    $owner = "swisscom"
+    $location = "46.9503047,7.4415524"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}

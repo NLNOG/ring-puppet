@@ -878,3 +878,5 @@ ff02::2 ip6-allrouters
 2a01:a000:0:5::10  virtualone01 virtualone01.ring.nlnog.net
 128.127.31.126    virtualone01 virtualone01.ring.nlnog.net
 
+2001:918:0:64::2  swisscom01 swisscom01.ring.nlnog.net
+193.247.170.254    swisscom01 swisscom01.ring.nlnog.net
