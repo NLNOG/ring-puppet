@@ -47,6 +47,9 @@ class nettools {
     package { "python-pycountry":
         ensure  => latest,
     }
+    package { "python-simplejson":
+        ensure  => latest,
+    }
     package { "psmisc":
         ensure => latest,
     }
