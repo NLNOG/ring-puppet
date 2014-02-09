@@ -13,7 +13,7 @@ def get_api_object(url):
         sys.exit("unable to retrieve api object '"+url+"'")
     rescount   = response['info']['resultcount'];
     if (rescount < 1):
-        return undef
+        return None
     else:
         return response['results']
 
