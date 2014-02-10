@@ -648,7 +648,6 @@ node 'backup.infra' inherits infranode {
     $owner = "job"
     include nagios::target::fqdn
     include nagios_services
-    include set_local_settings
     include syslog_ng::client
     include nodesonlycron
     include users
@@ -703,7 +702,6 @@ node 'worker02' inherits infranode {
     $owner = "martin"
     $nagios_ping_rate = '!180.0,20%!300.0,60%'
     include backup::client
-    include set_local_settings
     include syslog_ng::client
     include nodesonlycron
     include users
