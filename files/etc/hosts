@@ -884,9 +884,6 @@ ff02::2 ip6-allrouters
 2001:918:0:64::2  swisscom01 swisscom01.ring.nlnog.net
 193.247.170.254    swisscom01 swisscom01.ring.nlnog.net
 
-2a04:4340:1:1::2  maxitel01 maxitel01.ring.nlnog.net
-185.29.203.222    maxitel01 maxitel01.ring.nlnog.net
-
 2001:56A:2:3::f2  telus01 telus01.ring.nlnog.net
 154.11.253.242    telus01 telus01.ring.nlnog.net
 
