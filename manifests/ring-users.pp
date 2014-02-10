@@ -4438,6 +4438,22 @@ class users::virtual::ring_users {
 
 ##### END swisscom #####
 
+##### BEGIN maxitel #####
+
+    @add_user { 'maxitel':
+        email => 'noc@maxitel.nl',
+        company => 'MaxiTEL Telecom B.V.',
+        uid => 5248,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'maxitel':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDjgeuK3oIjgYLon9BZfN+ZpbBeXorDWuJdpTQ0UmYh7CSXjzLBdZAKHcBstk5Ag9X7JD02DskBZbxoEbggoXU5Zvcqx5/ovOGJX19/JBVOTryFfed4fh9axsh8xZGb4qc99AU3C7OsLnblsjR8CcvfSbboJ7ezfKN1FjUtP4zB0yZ0mi4qwo1fgNgqtQktnQQyGhxEW+iuZp/CVimxtaAg3izkwpMTRzYp90uizP+EwENRfVOapbKBdFGMNUSBLCsyAwmyid+viy4mXOO3wXe69c/5ZNV07M6lvIWX9RD2wcZv/7YrZxIUC1kIkKNtukVo5kn0zQ4UcoYlu+3Trtz bernard@noc.as61349.net',
+            ],
+    }
+
+##### END maxitel #####
+
 ##### BEGIN telus #####
 
     @add_user { 'telus':
