@@ -887,3 +887,6 @@ ff02::2 ip6-allrouters
 2001:56A:2:3::f2  telus01 telus01.ring.nlnog.net
 154.11.253.242    telus01 telus01.ring.nlnog.net
 
+2a00:ab00:104:37:200:65:15:0  selectel01 selectel01.ring.nlnog.net
+37.200.65.15    selectel01 selectel01.ring.nlnog.net
+

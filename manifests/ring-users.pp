@@ -4470,4 +4470,20 @@ class users::virtual::ring_users {
 
 ##### END telus #####
 
+##### BEGIN selectel #####
+
+    @add_user { 'selectel':
+        email => 'akme@selectel.ru',
+        company => 'Selectel Ltd',
+        uid => 5253,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'selectel':
+        sshkeys => [
+                'ssh-dss AAAAB3NzaC1kc3MAAACBAM1eCOVxtN1fIRa1JYcklxZ0KeEKKFGbCG1DExxTQJLurKcvUveHQ+2S0iRUtPeMWOQlKVA1hkCCOv5F4UvuzYizB8jOkpvbzxL+jVU3czwPPpUxdsIrZ3kCwovRgb8hagCspMx1kVKzObx0ZPENLLWzDgGSjUlskvVxMJoui0hrAAAAFQCKw3TBg97gZTSUnJKjwMJVgtvsqwAAAIEAl35D0Gtg1C9KFq+C7fDCpZ5dxwx8m/IZWBHAUKYDj/o8JWzM2G5DD37Rte1hjLlo6nGmYoqu7lsCjxsbKSoJLCFYIdCbXqPDSRSkbjjclxC/7DxUvMeq3dzb+ZW2QvAMzvdPPo17PMabf3Fa7QSHSVkDd+0fybDHH1XNwj4xiC0AAACAV+6DKSTvJrkgM69s51vat/138WvyfKs5Qa1JO5K0c3iwmgW9beHSEv86BvgGkslU/nBCOoE47f7y/zxsiZkFgF16Y97IuqlPSzW6sTd/fU7T76U4Y9iw6r2Oqh/TrL47tyhNqBZyQV7wbkWjHIh0RYhZdoMlSgQZPBo04OC6rzQ= akme@akme',
+            ],
+    }
+
+##### END selectel #####
+
 }
