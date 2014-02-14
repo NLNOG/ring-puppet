@@ -674,6 +674,7 @@ class users::virtual::ring_users {
             'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC89pm1BEJTwXiEpcBik5zV3K//V56wonQTIH91sYrjKwK+IRshzoKj8GKwnmCjOtBvyNCuA6T6acj8nEABSITH4ClsumYLQmLeU0mePDC1YRbFuXMA8Xc0+pEX/a4Ux/D62JUMtRT3oDlPBFTYKvzNiDKabtfoLz/+Bg3JJuz+ltPNEEwRZoHkpjMoMylS0BFTTIJbb+LssN34K7+banxjuzH9P6X++YECQBRvrx0lkeDVcFuQHPDaqHrpgZmzqUMcbuvNyiOoZTyM4olfCPs4JA/N5w4AkDN/nZB2pq1sVdV7KbKoPfHmG+DaJCd10fR9I4h0ZRID5X+FM96iHvzd nihb@psyduck.local',
             'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6AN76uz4GieJgMPle9fYcwjAzZQp276Ua2T3+5ageVX2XoAykyjbBVf9JUJECwUPCQN7ZSjaYOUJ/xDDc0LWPhojMElgx3/AQqJQReZSM47bA/8JB901FUNIOPrgDAH2ppVsT8qJot5fHhCFxx17agIXV7QNa4IGj5dy9TCmNJqhYhD1mKqcSbFk/dC4N1iCWI8gsRlMLBR1UlcVAYgcOW48IXNcoxe5OSLT2/Kpe19DAmf9NOLpvW/dqxm2Z2eGuS3k7n9E30TmuFKUu/ScBjfgtkhR/H1vxjRPJ34NgthqLmP2xLeUZ/YFvpdwsJNjHqWczr5lB0SZvJtkIjzQB nosvetje@umma.tdc.no',
             'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEAzZ2REhHmlJlH5tsUc9df9x3ll2YECRanN2w9h49gvevZZDioXCE7YuROSz5cLjdfCvSwpvqPsR6hjSeMPQzZOGO/KKshBTlerJR7v4kEcymBkXS0fngJMz2mLdvXy7N6BPxPjZANhrwZVDQ4L1NWAfFpDORsEcLqdeQbS87IlDM= nokenkjo@grieg.tdc.no',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDLf27iiFKJkVNWKh2S0TVsFQOPL/xiuSPnJ41Y0eutRTc3o0MOF0+XcCxfz1scZspMShVhrpVwxuP0vEF0dsR/81ipuS/h88rvqrNhynDmmi8CWqGcbbfNr5mZ21r0g7U4EtHpg3VITowynWn7eVIYad4qt79lxTclE0mo+60PS4HH5YXw+IOtkRa2xlyaH0esi9o5oXlwHBVrrqoNQj9s4nzjPx7lBotrLoP0v49RGNJv/mvSvl/kL7bFBXTpXSUorGZEO+dIBfdJe2KfOa36zuvPjFYT1yuQLEBI+0vyO9He+sn6RHeJXs5oXv9oMbZBuU8OVDf2a8wFFQG7rvmt nosvetje@umma.tdc.no',
         ],
     }
 #### END tdc #####
