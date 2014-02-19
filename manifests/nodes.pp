@@ -233,8 +233,32 @@ node 'container02.infra' inherits infranode {
         container   => "${hostname}",
         ensure      => present,
     }
-
-
+    kvm::virtual_machine { 'sne01':
+        fqdn        => 'sne01.ring.nlnog.net',
+        ip          => '95.211.149.20', # ipv6 address is 2001:1AF8:4013::20
+        netmask     => '255.255.255.240',
+        dns         => '8.8.8.8',
+        gateway     => '95.211.149.17',
+        memory      => '1024',
+        disksize    => '20',
+        rootsize    => '19968',
+        bridge      => 'virbr1',
+        container   => "${hostname}",
+        ensure      => present,
+    }
+    kvm::virtual_machine { 'sne02':
+        fqdn        => 'sne02.ring.nlnog.net',
+        ip          => '95.211.149.21', # ipv6 address is 2001:1AF8:4013::21
+        netmask     => '255.255.255.240',
+        dns         => '8.8.8.8',
+        gateway     => '95.211.149.17',
+        memory      => '1024',
+        disksize    => '20',
+        rootsize    => '19968',
+        bridge      => 'virbr1',
+        container   => "${hostname}",
+        ensure      => present,
+    }
 }
 
 # container03 is hosted at Atrato in Frankfurt
@@ -3702,6 +3726,26 @@ node 'telus01' inherits ringnode {
 node 'selectel01' inherits ringnode {
     $owner = "selectel"
     $location = "59.886598,30.329322"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'sne01' inherits ringnode {
+    $owner = "sne"
+    $location = "1,1"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'sne02' inherits ringnode {
+    $owner = "sne"
+    $location = "1,1"
     include amp_client
     include nagios::target::fqdn
     include nagios_services
