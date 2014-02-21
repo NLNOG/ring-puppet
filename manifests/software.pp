@@ -124,6 +124,12 @@ class nettools {
     package { "sl": ensure => purged }
     package { "mtr": ensure => latest}
     package { "nmap": ensure => latest }
+    
+    exec { "setcap cap_net_raw,cap_net_admin=eip /usr/bin/nmap":
+        onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/bin/nmap`\" != \"/usr/bin/nmap = cap_net_admin,cap_net_raw+eip\"",
+        require => [ Package["nmap"] ],
+    }
+
     package { "traceroute": ensure => latest }
     
     package { "python-mysqldb": ensure => latest }
