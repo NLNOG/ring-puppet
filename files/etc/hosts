@@ -890,3 +890,5 @@ ff02::2 ip6-allrouters
 2a00:ab00:104:37:200:65:15:0  selectel01 selectel01.ring.nlnog.net
 37.200.65.15    selectel01 selectel01.ring.nlnog.net
 
+2604:2C00:0:110::2  infowest01 infowest01.ring.nlnog.net
+209.33.215.106    infowest01 infowest01.ring.nlnog.net

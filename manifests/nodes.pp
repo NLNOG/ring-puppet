@@ -3753,3 +3753,13 @@ node 'sne02' inherits ringnode {
     include users
 }
 
+node 'infowest01' inherits ringnode {
+    $owner = "infowest"
+    $location = "37.081474,-113.607170"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
