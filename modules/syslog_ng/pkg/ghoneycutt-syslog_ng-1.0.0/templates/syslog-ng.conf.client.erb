@@ -30,8 +30,8 @@ source s_sys {
 };
 
 #destination d_net_udp_list {
-#    <% logServerList.each do |LogServer| -%>
-#    udp("<%= LogServer %>" port(514));
+#    <% logServerList.each do |logServer| -%>
+#    udp("<%= logServer %>" port(514));
 #    <% end -%>
 #};
 

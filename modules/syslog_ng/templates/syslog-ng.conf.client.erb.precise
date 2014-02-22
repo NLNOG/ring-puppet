@@ -155,8 +155,8 @@ log { source(s_src); filter(f_crit); destination(d_console); };
 #log { source(s_src); destination(d_net); };
 
 destination d_net_tcp_list {
-    <% logServerList.each do |LogServer| -%>
-    tcp6("<%= LogServer %>" port(514));
+    <% logServerList.each do |logServer| -%>
+    tcp6("<%= logServer %>" port(514));
     <% end -%>
 };
 
