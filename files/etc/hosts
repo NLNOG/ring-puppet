@@ -896,3 +896,6 @@ ff02::2 ip6-allrouters
 2001:708:0:b::2  funet01 funet01.ring.nlnog.net
 193.166.255.250    funet01 funet01.ring.nlnog.net
 
+2a00:e800:10::55  dcenterpl01 dcenterpl01.ring.nlnog.net
+213.5.10.55    dcenterpl01 dcenterpl01.ring.nlnog.net
+

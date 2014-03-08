@@ -4547,5 +4547,20 @@ class users::virtual::ring_users {
 
 ##### END funet #####
 
+##### BEGIN dcenterpl #####
+
+    @add_user { 'dcenterpl':
+        email => 'noc@dcenter.pl',
+        company => 'dcenter.pl sp. z o. o.',
+        uid => 5257,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'dcenterpl':
+        sshkeys => [
+            ],
+    }
+
+##### END dcenterpl #####
+
 }
 
