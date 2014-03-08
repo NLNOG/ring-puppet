@@ -4531,5 +4531,21 @@ class users::virtual::ring_users {
 
 ##### END infowest #####
 
+##### BEGIN funet #####
+
+    @add_user { 'funet':
+        email => 'noc@funet.fi',
+        company => 'CSC/Funet',
+        uid => 5256,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'funet':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC290Z2yCpi3Wi7z4ZCJZFo8IS5trcVjLFY9i049z8R+dl7A0Z0OrJJkqtFqisRD0IjlX55sIzELP0qE8wFk/ZNTJhfZpOTMRouSNxjlc4DM190VapgbdzFDXHe3XkzDLygsYjYdRSCuZ32rBc3nzq9XPeXWGqjbFuEoEak5+CeAq//fgpEecv2uZhKN19kO0YHGkRuoZP6CyUaG8NgZnxZvZs33ehFx/rXEeSx5nVvLYblGyj1RRtduqdjvROnU1N1Iql+eQ7QGXVnn23d648/sRdS6aA7yWbPbNjN/+NU0mNBHRaq/sjhOISK4F59ImK94QQwQn0MVto0pUW4QsQ+uLVjb+K7J2iGRUglukEr7a3AWaTHCHQioYe8F0wcqg3hwnwbKyfQVYuM2JPHfXW4PVGmUKl0d9Sr+BB2X+V61kgrpplH5zA7L0kao+6WpqyhIvj4kh9EKSMwJK6NoryaaWaPDdIFO5O1KCXbAZBv3Evew+k9NJHmSrclDe8MenvH1ce65+562APNFcwZWft0BQ+jdPpd3+KhhHgEJymn1vGNZjU35XR6U5OMmsX0Whw6V2k/WDqqpyrrib3qzgwWZi0KSrMUcl4A1rmXEedWDagoo/hZsRa6atTp9vJ9sWJ/CdwxiomisUnLCrCIF92nmQTKdRin0cKwtRVTjYjl8w== antti.ristimaki@csc.fi',
+            ],
+    }
+
+##### END funet #####
+
 }
 

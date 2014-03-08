@@ -892,3 +892,7 @@ ff02::2 ip6-allrouters
 
 2604:2C00:0:110::2  infowest01 infowest01.ring.nlnog.net
 209.33.215.106    infowest01 infowest01.ring.nlnog.net
+
+2001:708:0:b::2  funet01 funet01.ring.nlnog.net
+193.166.255.250    funet01 funet01.ring.nlnog.net
+
