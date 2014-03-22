@@ -3741,6 +3741,7 @@ node 'sne01' inherits ringnode {
     include nagios_services
     include set_local_settings
     include users
+    include deckard::node
 }
 
 node 'sne02' inherits ringnode {
