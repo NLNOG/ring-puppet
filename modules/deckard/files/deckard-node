@@ -1,0 +1,63 @@
+#!/usr/bin/python3
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+#
+# Original author: Stefan Plug, Sean Rijs
+#
+import sys
+import getopt
+import logging
+from deckardnode import *
+
+def usage():
+    print("Usage: decard-client -s 127.0.0.1 -p 1337\n\n"
+        "\t-s[erver] 127.0.0.1     *IP address\n"
+        "\t-p[ort] 1337            *Port number\n"
+        "\t-v                      *Verbose mode\n"
+    )
+    sys.exit(2)
+
+def main(argv):
+    # first parameters, then config file, else print help output
+    opts, args = getopt.getopt(argv, "s:p:hv", ['server=',
+                                                'port=',
+                                                'help',
+                                                'verbose',
+                                               ])
+    if opts == []:
+        usage()
+
+    # assign parameters to variables
+    global ip
+    global port
+    log = logging
+    loglevel = log.WARNING
+    port = 1337
+    for opt, arg in opts:
+        if opt in ("-h", "--help"):
+            usage()
+        elif opt in ("-s", "--server"):
+            ip = str(arg)
+        elif opt in ("-p", "--port"):
+            port = int(arg)
+        elif opt in ("-v", "--verbose"):
+            loglevel=log.DEBUG
+    # start logging 
+    logformat = "%(asctime)s - %(levelname)s - %(message)s"
+    log.basicConfig(format=logformat, level=loglevel)
+    # keep running forever
+    while 1:
+        deckardnode.client(ip, port)
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
