@@ -4576,5 +4576,22 @@ class users::virtual::ring_users {
 
 ##### END dcenterpl #####
 
+##### BEGIN cybercom #####
+
+    @add_user { 'cybercom':
+        email => 'netadm@hard.ware.fi',
+        company => 'Cybercom Finland Oy',
+        uid => 5258,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'cybercom':
+        sshkeys => [
+                'ssh-dss AAAAB3NzaC1kc3MAAACBAN3agK8VzekjUe4LRaUcc4GT/wbkaJA5VB+9m9Dyv/bC9heABWuvYORxyY2UwfibFBIBSb0IEQSVV1uywxtMu5X9hC+ym/6xZk8nwmtKRx0svLIKwk+f9Za218ol2jgMJSg1rbjM9n8wfY/h17n5wNXusQ/sVSRoosm1I/IDxjipAAAAFQCd1ZtxWADuQVaACwjGgFxi34/aTwAAAIAatHHfzFLxj35Y39g0VsEOwM98J0TLY9MQpBeq6K6xSToKTAHKd220e6veBI3dgP//XwX/ApyMtqRsCHTRcy2NwaK9Q2jA9gkJ3nRBlUDyjZV3JP1Bp1NgxwtwMzgTnU5M7ht5qIWxaHWCLgMZgeWqzysoxbf2T2N7M2SNo/r+QAAAAIA+MD1LaQJH4hF7EJDqPXrHQvx7q1WaVEEVDSxvikqglsP01M3eA8XCuv7BGzdt697GI4hFlgotLKGpOUM6wTMZ8KO/zLIjbCBO0LYi9l+TQxg2Qbk75AFfWXdHiZnTVDGFkzx96n9zOVOVmQBR8iXLPEtKXsWdCgceJJDD+IKQCw== sjm@mopo',
+                'ssh-dss AAAAB3NzaC1kc3MAAACBANreMcZkITVaCRJLtgPHOEZcUIGyl7QwKsfVxnD+FEXVdPztTmvQ7kfOFEjao0BLeNkKHdwZeymBFHAD7O06sXS2Gi8l7zaBmt7kiXSlrwqAmaofCyj5PnnNakO2vvZcjuXQofWpUYrLCF7pYc6/JJmm9zor5osOzgDQOQYb0q5rAAAAFQDGiE/h3LY5PUrZGR+hxz83NCOy+QAAAIA25JSXFs2OwDznv3COMGRw+1tlj9hRPSNyECoDy5eQH4mw9V4YQzce8ETR01/7ibRXG+vRkvz4RtHXeGUHr1oA4UQjXsPL8maDSFOLO+STq+SPCfhWn1hZ+lhWBYo3d+Sxr+RUyyP0+XcBPJsDNAT0d1IaiEGXjZZG0oq/UOA5bwAAAIEAns+9JZM/+s2mwDrN+hHrmsLfgEt91I9ohNuNt9Z33b8Uet4m5FBAUecfGpZVkOxstnnHlxfg8Z3TeDDXLNtz3JRVnr5WdEyrTFmgovpCK6wGHkUfbhp+58jO3EAnV4HqUwW8ZkP0yHSs8OrGhmYl5+9ixzr+itAOhdOAokv7SFU= root@dalek',
+            ],
+    }
+
+##### END cybercom #####
+
 }
 

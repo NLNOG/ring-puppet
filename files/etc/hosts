@@ -900,3 +900,6 @@ ff02::2 ip6-allrouters
 2a00:e800:10::55  dcenterpl01 dcenterpl01.ring.nlnog.net
 213.5.10.55    dcenterpl01 dcenterpl01.ring.nlnog.net
 
+2001:67c:224:13::1337  cybercom01 cybercom01.ring.nlnog.net
+178.217.129.212    cybercom01 cybercom01.ring.nlnog.net
+
