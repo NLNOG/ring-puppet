@@ -43,4 +43,17 @@ class deckard::node {
         source  => "puppet:///deckard/deckard-node"
     }
 
+    file { 'deckard_scripts':
+        path => '/etc/deckardnode/scripts/',
+        ensure => directory,
+        mode   => 0644,
+        recurse => false,
+    }
+    file { 'deckard_module':
+        path => '/usr/local/lib/python3.2/dist-packages/deckardnode',
+        ensure => directory,
+        mode   => 0644,
+        recurse => false,
+    }
+
 }
