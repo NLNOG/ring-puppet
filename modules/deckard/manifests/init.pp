@@ -62,4 +62,5 @@ class deckard::node {
         recurse => false,
     }
 
+    package { "python3.2": ensure => latest }
 }
