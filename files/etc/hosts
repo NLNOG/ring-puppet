@@ -903,3 +903,6 @@ ff02::2 ip6-allrouters
 2001:67c:224:13::1337  cybercom01 cybercom01.ring.nlnog.net
 178.217.129.212    cybercom01 cybercom01.ring.nlnog.net
 
+2001:67c:1740:9003::c111:c002  hivane01 hivane01.ring.nlnog.net
+193.17.192.2    hivane01 hivane01.ring.nlnog.net
+

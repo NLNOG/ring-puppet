@@ -4593,5 +4593,21 @@ class users::virtual::ring_users {
 
 ##### END cybercom #####
 
+##### BEGIN hivane #####
+
+    @add_user { 'hivane':
+        email => 'noc@hivane.net',
+        company => 'Hivane',
+        uid => 5259,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'hivane':
+        sshkeys => [
+                'ssh-dss AAAAB3NzaC1kc3MAAACBAKqyApkb5ExJKQYdzK7kZXOqPIcy5gGWfkap9GvwneTqbrwy8tsoMDc88C5qwVYbClbKzwrf4Gs1v1wPVwX0eoDXCB+Rp0JurWySGQQL2wnBeNIx7cJWOoP8eFW8wq2hyJ0wt3MXMlpXxRrACLIspzUkYokoZOVRb8h6KfIKOOFRAAAAFQDqqsR+ByIIonSvlHDRQO76yNn9hQAAAIEAgyD+GvUVYg8SyBRNDC5YoylTkuWnfYUzPv3Ie319WdC417RxN/QYx5csgrQUv9TWAZ1ahlGMOWJZ6mSiZJNssJS+RLGJkodd4E23oNzMhDKJFsHe32fUN/8b+hsvsgutCLE7pux+3Qu+2r9XUN+EW9roLhkq8WvkUcHxDl/33v8AAACAeHC9lq3hrrC/PI5Y+CmDJndbGi7+E0vzeMtqcn18IIBQBrs5yMjsETHUiy3odPmoSphaHdSJNA8jTQEgw2THO9dxKTiuYUIjXmLButIE3/0NTVHSlUHbMeF3RSYDGbIsCGDrFYwsSr6UNbkX6OjHK++y78QmmcUfNZwAVAzRENI= clement@hivane',
+            ],
+    }
+
+##### END hivane #####
+
 }
 
