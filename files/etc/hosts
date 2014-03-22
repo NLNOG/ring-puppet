@@ -906,3 +906,6 @@ ff02::2 ip6-allrouters
 2001:67c:1740:9003::c111:c002  hivane01 hivane01.ring.nlnog.net
 193.17.192.2    hivane01 hivane01.ring.nlnog.net
 
+2a01:6600:10c0:808::1  fullsave01 fullsave01.ring.nlnog.net
+141.0.202.201    fullsave01 fullsave01.ring.nlnog.net
+
