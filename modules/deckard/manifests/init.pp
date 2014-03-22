@@ -47,7 +47,7 @@ class deckard::node {
         path => '/etc/deckardnode/scripts/',
         ensure => directory,
         mode   => 0644,
-        recurse => false,
+        recurse => true,
     }
     file { 'deckard_module':
         path => '/usr/local/lib/python3.2/dist-packages/deckardnode',
