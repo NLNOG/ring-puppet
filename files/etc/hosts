@@ -408,7 +408,7 @@ ff02::2 ip6-allrouters
 212.227.126.43  oneandone01 oneandone01.ring.nlnog.net
 2001:8d8:580:400::1:0   oneandone01 oneandone01.ring.nlnog.net
 
-129.143.4.237   belwue01    belwue01.ring.nlnog.net
+129.143.4.179   belwue01    belwue01.ring.nlnog.net
 2001:7c0:701:23::2  belwue01    belwue01.ring.nlnog.net
 
 82.94.249.163   container01.infra container01.infra.ring.nlnog.net
