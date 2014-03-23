@@ -132,20 +132,6 @@ node 'container01.infra' inherits infranode {
         container   => "${hostname}",
         ensure      => present,
     }
-    kvm::virtual_machine { 'public01':
-        fqdn        => 'public01.infra.ring.nlnog.net',
-        ip          => '82.94.230.131', # ipv6 address is 2001:888:2001::131
-        netmask     => '255.255.255.240',
-        dns         => '8.8.8.8',
-        gateway     => '82.94.230.129',
-        memory      => '1024',
-        disksize    => '20',
-        rootsize    => '19968',
-        bridge      => 'virbr1',
-        container   => "${hostname}",
-        ensure      => present,
-    }
-
     kvm::virtual_machine { 'xs4all01':
         fqdn        => 'xs4all01.ring.nlnog.net',
         ip          => '82.94.249.162', # ipv6 address is 2001:888:2000:3e::1337
@@ -350,6 +336,21 @@ node 'container04.infra' inherits infranode {
         container   => "${hostname}",
         ensure      => present,
     }
+    kvm::virtual_machine { 'public01':
+        fqdn        => 'public01.infra.ring.nlnog.net',
+        ip          => '213.154.249.167', # ipv6 address is 2001:7b8:d05:1::167
+        netmask     => '255.255.255.240',
+        dns         => '8.8.8.8',
+        gateway     => '213.154.249.161',
+        memory      => '1024',
+        disksize    => '20',
+        rootsize    => '19968',
+        bridge      => 'virbr1',
+        container   => "${hostname}",
+        ensure      => present,
+    }
+
+
 }
 
 # container05 is hosted at Softlayer in Dallas 
