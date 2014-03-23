@@ -174,20 +174,6 @@ node 'container01.infra' inherits infranode {
         ensure      => present,
     }
 
-    kvm::virtual_machine { 'db01':
-        fqdn        => 'db01.infra.ring.nlnog.net',
-        ip          => '82.94.230.133', # ipv6 address is 2001:888:2001::133
-        netmask     => '255.255.255.248',
-        dns         => '8.8.8.8',
-        gateway     => '82.94.230.129',
-        memory      => '512',
-        disksize    => '20',
-        rootsize    => '19968',
-        bridge      => 'virbr1',
-        container   => "${hostname}",
-        ensure      => present,
-    }
-
 }
 
 # container02 is hosted at Leaseweb
@@ -210,19 +196,6 @@ node 'container02.infra' inherits infranode {
     kvm::virtual_machine { 'public02':
         fqdn        => 'public02.infra.ring.nlnog.net',
         ip          => '95.211.149.18', # ipv6 address is 2001:1AF8:4013::18 
-        netmask     => '255.255.255.240',
-        dns         => '8.8.8.8',
-        gateway     => '95.211.149.17',
-        memory      => '1024',
-        disksize    => '20',
-        rootsize    => '19968',
-        bridge      => 'virbr1',
-        container   => "${hostname}",
-        ensure      => present,
-    }
-    kvm::virtual_machine { 'db02':
-        fqdn        => 'db02.infra.ring.nlnog.net',
-        ip          => '95.211.149.19', # ipv6 address is 2001:1AF8:4013::19
         netmask     => '255.255.255.240',
         dns         => '8.8.8.8',
         gateway     => '95.211.149.17',
@@ -281,19 +254,6 @@ node 'container03.infra' inherits infranode {
     kvm::virtual_machine { 'dbmaster':
         fqdn        => 'dbmaster.infra.ring.nlnog.net',
         ip          => '78.152.42.66', # ipv6 address is 2a02:d28:666::66
-        netmask     => '255.255.255.240',
-        dns         => '8.8.8.8',
-        gateway     => '78.152.42.65',
-        memory      => '1024',
-        disksize    => '20',
-        rootsize    => '19968',
-        bridge      => 'virbr1',
-        container   => "${hostname}",
-        ensure      => present,
-    }
-    kvm::virtual_machine { 'db03':
-        fqdn        => 'db03.infra.ring.nlnog.net',
-        ip          => '78.152.42.67', # ipv6 address is 2a02:d28:666::67
         netmask     => '255.255.255.240',
         dns         => '8.8.8.8',
         gateway     => '78.152.42.65',
@@ -364,19 +324,6 @@ node 'container04.infra' inherits infranode {
     include backup::client
     munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
     }
-    kvm::virtual_machine { 'db04':
-        fqdn        => 'db04.infra.ring.nlnog.net',
-        ip          => '213.154.249.162', # ipv6 address is 2001:7b8:d05:1::162
-        netmask     => '255.255.255.240',
-        dns         => '8.8.8.8',
-        gateway     => '213.154.249.161',
-        memory      => '1024',
-        disksize    => '20',
-        rootsize    => '19968',
-        bridge      => 'virbr1',
-        container   => "${hostname}",
-        ensure      => present,
-    }
     kvm::virtual_machine { 'bit01':
         fqdn        => 'bit01.ring.nlnog.net',
         ip          => '213.154.249.163', # ipv6 address is 2001:7b8:d05:1::163
@@ -424,19 +371,6 @@ node 'container05.infra' inherits infranode {
     $nagios_ping_rate = '!180.0,20%!300.0,60%'
     include backup::client
     
-    kvm::virtual_machine { 'db05':
-        fqdn        => 'db05.infra.ring.nlnog.net',
-        ip          => '108.168.252.130', # ipv6 address is 2607:f0d0:1103:f0::130
-        netmask     => '255.255.255.240',
-        dns         => '8.8.8.8',
-        gateway     => '108.168.252.129',
-        memory      => '1024',
-        disksize    => '20',
-        rootsize    => '19968',
-        bridge      => 'virbr1',
-        container   => "${hostname}",
-        ensure      => present,
-    }
     kvm::virtual_machine { 'us':
         fqdn        => 'us01.irr.infra.ring.nlnog.net',
         ip          => '108.168.252.131', # ipv6 address is 2607:f0d0:1103:f0::131
@@ -552,73 +486,6 @@ node 'dbmaster.infra' inherits infranode {
     include local_binaries_dbmaster
     include backup::client
 }
-
-node 'db01.infra' inherits dbslaves {
-    $owner = "job"
-    include nagios::target::fqdn
-    include nagios_services
-    include set_local_settings
-    include syslog_ng::client
-    include nodesonlycron
-    include users
-    include mysql::server
-}
-
-node 'db02.infra' inherits dbslaves {
-    $owner = "job"
-    include nagios::target::fqdn
-    include nagios_services
-    include set_local_settings
-    include syslog_ng::client
-    include nodesonlycron
-    include users
-    include mysql::server 
-}
-
-node 'db03.infra' inherits dbslaves {
-    $owner = "job"
-    include nagios::target::fqdn
-    include nagios_services
-    include set_local_settings
-    include syslog_ng::client
-    include nodesonlycron
-    include users
-    include mysql::server
-}
-node 'db04.infra' inherits dbslaves {
-    $owner = "job"
-    include nagios::target::fqdn
-    include nagios_services
-    include set_local_settings
-    include syslog_ng::client
-    include nodesonlycron
-    include users
-    include mysql::server
-}
-
-node 'db05.infra' inherits dbslaves {
-    $owner = "job"
-    include nagios::target::fqdn
-    include nagios_services
-    include set_local_settings
-    include syslog_ng::client
-    include nodesonlycron
-    include users
-    $nagios_ping_rate = '!180.0,20%!300.0,60%'
-    include mysql::server
-}
-
-node 'db06.infra' inherits dbslaves {
-    $owner = "job"
-    include nagios::target::fqdn
-    include nagios_services
-    include set_local_settings
-    include syslog_ng::client
-    include nodesonlycron
-    include users
-    include mysql::server
-}
-
 
 # website, dns, mailing-list etc
 node 'public01.infra' inherits infranode {
