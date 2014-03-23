@@ -276,21 +276,6 @@ node 'container03.infra' inherits infranode {
         container   => "${hostname}",
         ensure      => present,
     }
-    kvm::virtual_machine { 'atrato03':
-        fqdn        => 'atrato03.ring.nlnog.net',
-        ip          => '78.152.42.70', # ipv6 address is 2a02:d28:666::70
-        netmask     => '255.255.255.240',
-        dns         => '8.8.8.8',
-        gateway     => '78.152.42.65',
-        memory      => '512',
-        disksize    => '20',
-        rootsize    => '19968',
-        bridge      => 'virbr1',
-        container   => "${hostname}",
-        ensure      => present,
-    }
-
-
 }
 
 # container04 is hosted at Bit in Ede
@@ -1272,9 +1257,9 @@ node 'apnic01' inherits ringnode {
 	include users
 }
 
-node 'atrato02' inherits ringnode {
-    $owner = "atrato"
-    $location = "40.717884,-74.008938"
+node 'hibernia01' inherits ringnode {
+    $owner = "hibernia"
+    $location = "41.87811,-87.62980"
     $nagios_ping_rate = '!200.0,20%!400.0,60%'
     include amp_client
     include nagios::target::fqdn
@@ -1283,9 +1268,9 @@ node 'atrato02' inherits ringnode {
 	include users
 }
 
-node 'atrato03' inherits ringnode {
-    $owner = "atrato"
-    $location = "50.11092,8.68213"
+node 'hibernia02' inherits ringnode {
+    $owner = "hibernia"
+    $location = "51.50852,-0.12549"
     include amp_client
     include nagios::target::fqdn
     include nagios_services
