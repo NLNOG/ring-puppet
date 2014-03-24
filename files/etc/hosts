@@ -19,24 +19,6 @@ ff02::2 ip6-allrouters
 78.152.42.66    dbmaster.infra    dbmaster.infra.ring.nlnog.net
 2a02:d28:666::66    dbmaster.infra    dbmaster.infra.ring.nlnog.net
 
-82.94.230.133   db01.infra  db01.infra.ring.nlnog.net
-2001:888:2001::133  db01.infra  db01.infra.ring.nlnog.net
-
-95.211.149.19   db02.infra  db02.infra.ring.nlnog.net
-2001:1AF8:4013::19  db02.infra  db02.infra.ring.nlnog.net
-
-78.152.42.67    db03.infra  db03.infra.ring.nlnog.net
-2a02:d28:666::67    db03.infra  db03.infra.ring.nlnog.net
-
-213.154.249.162 db04.infra  db04.infra.ring.nlnog.net
-2001:7b8:d05:1::162   db04.infra  db04.infra.ring.nlnog.net
-
-108.168.252.130 db05.infra  db05.infra.ring.nlnog.net
-2607:f0d0:1103:f0::130  db05.infra  db05.infra.ring.nlnog.net
-
-109.72.93.34    db06.infra  db06.infra.ring.nlnog.net
-2a00:f10:122::34    db06.infra  db06.infra.ring.nlnog.net
-
 109.72.93.35    backup.infra  backup.infra.ring.nlnog.net
 2a00:f10:122::35    backup.infra  backup.infra.ring.nlnog.net
 
@@ -51,9 +33,6 @@ ff02::2 ip6-allrouters
 
 82.94.230.130   lg01.infra lg01.infra.ring.nlnog.net
 2001:888:2001::130  lg01.infra lg01.infra.ring.nlnog.net
-
-95.211.149.19   lg01.infra lg01.infra.ring.nlnog.net
-2001:1AF8:4013::19  lg01.infra lg01.infra.ring.nlnog.net
 
 82.94.230.131   public01.infra public01.infra.ring.nlnog.net
 2001:888:2001::131  public01.infra public01.infra.ring.nlnog.net
