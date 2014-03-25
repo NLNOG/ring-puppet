@@ -18,13 +18,13 @@ class users::virtual::ring_users {
 
 ##### BEGIN former users #####
 
-@add_user { 'ic-hosting':
-    email   => 'info@ic-hosting.nl',
-    company => 'IC Hosting',
-    uid => 5014,
-    groups  => ['ring-users'],
-    ensure => absent,
-}
+#@add_user { 'ic-hosting':
+#    email   => 'info@ic-hosting.nl',
+#    company => 'IC Hosting',
+#    uid => 5014,
+#    groups  => ['ring-users'],
+#    ensure => absent,
+#}
 
 ##### END former users #####
 

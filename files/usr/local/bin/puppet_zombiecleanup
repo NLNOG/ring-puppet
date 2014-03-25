@@ -1,8 +1,6 @@
 #!/usr/bin/perl -T
 use strict; use warnings;
 
-# THIS SCRIPT IS DEDICATED TO MARK DROOG ;-)
-
 $ENV{"PATH"} = "/usr/bin:/bin";
 
 my (undef,undef,$hour) = localtime(time);
