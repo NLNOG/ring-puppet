@@ -16,7 +16,6 @@ template bgp peers {
     hold time 240;
     startup hold time 240;
     connect retry time 120;
-    keepalive time 80;              # defaults to hold time / 3
     start delay time 5;             # How long do we wait before initial connect
     error forget time 0;            # ... until this timeout expires)
     source address <%= ipaddress %>;   # What local address we use for the TCP connection
