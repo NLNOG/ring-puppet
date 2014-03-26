@@ -4634,5 +4634,20 @@ class users::virtual::ring_users {
 
 ##### END fullsave #####
 
+##### BEGIN telecityfi #####
+
+    @add_user { 'telecityfi':
+        email => 'fi.noc@telecity.com',
+        company => 'TelecityGroup Finland Oy',
+        uid => 5261,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'telecityfi':
+        sshkeys => [
+            ],
+    }
+
+##### END telecityfi #####
+
 }
 

@@ -3668,3 +3668,13 @@ node 'fullsave01' inherits ringnode {
     include users
 }
 
+node 'telecityfi01' inherits ringnode {
+    $owner = "telecityfi"
+    $location = "60.169,24.959"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
