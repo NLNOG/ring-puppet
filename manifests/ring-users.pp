@@ -4644,6 +4644,7 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'telecityfi':
         sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDkAXPjFalc5G1HeZlbws+psyR3aSx1pNm8A3JhqOGJcTxRGbsxvi8OrsaTijHvhFnETbCGD2m3NM/H0k4wShKUBkwbRdXTabHyyPf6vxz+JgfD5yWCslazvthBm2H70DM8IiwQEsFg0uS59eDxAD2ehSaNsoeewPH/iZ4abg6pG+oyHoG+pBi63xIu/02ROhAH2LUp5qepzUzfgfPeXuUT6X+DJ3Ue/5bzBf0QGiomdsr3zUrnhiNDXB1r9rhEG8v/l7morcVTwEsq3qBflOK5UI84A69vF4vpmd4s6x12IQjBrNnBcD9esCxbZmNIUwSuUO1SIt9KjnUko95JNVDz telecityfi@localhost',
             ],
     }
 
