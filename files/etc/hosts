@@ -894,3 +894,6 @@ ff02::2 ip6-allrouters
 2A03:7F80:42:1051::93  itps01 itps01.ring.nlnog.net
 128.65.97.93    itps01 itps01.ring.nlnog.net
 
+2001:500:a:500::229  afilias03 afilias03.ring.nlnog.net
+199.19.52.229    afilias03 afilias03.ring.nlnog.net
+
