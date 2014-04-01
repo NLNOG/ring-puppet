@@ -4647,5 +4647,20 @@ class users::virtual::ring_users {
 
 ##### END telecityfi #####
 
+##### BEGIN itps #####
+
+    @add_user { 'itps':
+        email => 'peering@itps.co.uk',
+        company => 'IT Professional Services Ltd',
+        uid => 5262,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'itps':
+        sshkeys => [
+            ],
+    }
+
+##### END itps #####
+
 }
 

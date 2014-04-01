@@ -3678,3 +3678,13 @@ node 'telecityfi01' inherits ringnode {
     include users
 }
 
+node 'itps01' inherits ringnode {
+    $owner = "itps"
+    $location = "51.49934,-0.01442"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

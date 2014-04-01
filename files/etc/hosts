@@ -891,3 +891,6 @@ ff02::2 ip6-allrouters
 2001:a68:1:d:87:108:57:169  telecityfi01 telecityfi01.ring.nlnog.net
 87.108.57.169    telecityfi01 telecityfi01.ring.nlnog.net
 
+2A03:7F80:42:1051::93  itps01 itps01.ring.nlnog.net
+128.65.97.93    itps01 itps01.ring.nlnog.net
+
