@@ -36,7 +36,7 @@ document.write('</td><td style="vertical-align: middle;">');
 document.write('<h3>' + participant[0] + '</h3>');
 document.write('<ul>');
 document.write('        <li>website: <a title="' + participant[0] + '" href="' + participant[2] + '" target="_blank">' + participant[2] + '</a></li>');
-document.write('        <li>machine: ' + participant[3] + '</li>');
+document.write('        <li>machines: ' + participant[3] + '</li>');
 document.write('        <li>ASN: <a href="http://www.ris.ripe.net/dashboard/AS' + participant[4] + '">' + participant[4] + '</a></li>');
 document.write('</ul></td></tr></table>');
 
@@ -92,9 +92,12 @@ for p in participants:
             continue
 
         for m in machines:
+            hostname=re.sub('\..+$','',m['hostname'])
             if not node:
-                node=m['hostname']
+                node=hostname
                 asn=str(m['autnum'])
+            else:
+                node=node+", "+hostname
             machinecount=machinecount+1
             asnlist[str(m['autnum'])]=1
             countrylist[m['country']]=1
