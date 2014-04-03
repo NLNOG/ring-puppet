@@ -4483,6 +4483,7 @@ class users::virtual::ring_users {
     @authorized_keys { 'telus':
         sshkeys => [
                 'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA47jQxLu1ddXvRFYBQ663TH3qhLjJMyaY/9LOtPbI0OLnb19s3pYorNQ/ITOPG0eA9M3ZbfN4JGi1/UUR1cGu6d8TOekr4mQMZwJTPEW1MYKIbrUpTqHlEMjRK/1UKvKAwHpEyGCuKVjimEnTg44+PZLyPWgH3vq9ArpGkvwukO4OJJpM0fPZ6k1GNicr4ITihKWyWAU5sln+kCa3kF6zl9wUOiKsui5WFfnlOY+II8QZkwBeiBFIqvkKxmhaCjl6kGYaTd6ARI2uqqnH/H+KBaFmea/WFODmLcuIuu3EQa87ruwSoo8UkWWWB4A0LOVgv8RWjB6D/+6zF7WE04tmyw== cwork1',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDYY0QTFLkDiJHlnVXaDdjTQd9FD43UUPzOmNBDqAQkLMQIN4DB52M4rnxdCpl5aeNPr8iQPL6P7kEyDSDYZVRYj2v/8lcmd7HjVayDGmQYqVtMs3wJczB3pdN2iUywUtMoniFw/MH6JXKLueqqwjUhLV9T9kcG80qBUf2n4kyOy6RUF9HLRcSzpWAzQ7p+0lC39xVw7S0Oi+ziQDDboumFGZBQGWsE3UuzxTf/uZe16wLdJIotOf/ZQoFdJRbmPiDGg/CZUDGbwpwubyoPcyHcp3A8A4xsMqlivDDRuVuNUEkW3CuQHtNU+a2z34sP7InyavYLCvMLJu4C/RiHFQ1b novakovsky@aspa',
             ],
     }
 
