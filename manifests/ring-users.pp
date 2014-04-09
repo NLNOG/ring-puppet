@@ -1995,8 +1995,8 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'melbourne':
         sshkeys => [
-           'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAnmfKyLOqMsSLKgxxZNYPoCFI4QuwYicmt0F6MsN07VV0rpDbr6Wp1hewP3PKIEs77Gec+CW/tRE4wY0BJlCK6uCG7qgV19wkPu/XfQZuDx3198VhEC6fYo8qYds1yWblk35aVsGfvU+u5YJ2LHOE6qalS+e9314KeSFmeORij7IRf2JYM2sbL3f8AG5m9YdUDnsj+V2WP9zWZ4eicovYsavGLWfxMUHkjfV7m5oWEIfYVqbUNooCq2yl0cZWt8rGmTGyINJppDx2IvedLzg8G7xFyVsqLtY9fpXu2yKLCGN4H1WX87f3hEAZj8uzT/q4P1IVazWHSJt2MsChA3E+LQ== rob',
            'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAzb+dZAKl9x41+654Rl175FkOFjLpev2D0OlJ29OYkN+hnoO3WwW44S3n0cULjrMBBVBStDHf5bQbCO8hFzjTl+WKyzLI0lVrf7W167dVqWbFn3zcyuaujuES8Mr1RKKYlCWVP4nwZsLvBc/tEjUpKo++jdps6qdO9MRzjp/y5liBlUa58wrUT4MrGz9APlh3vrKvciezGeoJQK7AFzaW/e1K7Ebf6555fh+JwQITGxgPr91uwNtM1b2d4bo6v+VddrbN+gukX/ptiJPZzwzHEwWtrQHeAga/11PfE+EAWjajDWuss5lkoPGNPYIAr54ezJMdqUJ20Ij1O7QXdr8j0w== tom',
+           'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAktsRRJX0XR6Z4Kg3RAIs4QgTa3qziIfGG3IJuRdTzRCrsaWNNCsF3uO3GUfNZPvYXKg4oVFNbQiAOhqmtcFeW8BT+L1V5KckxueadgFU7PeylIvPdwh4tykmHjKukOrEm2qxYfr8R1IZWE9ieKdJLanNJj7E0mZEOMs4Snn8YEs= shane',
         ],
     }
 ##### END melbourne #####
