@@ -952,6 +952,7 @@ class users::virtual::ring_users {
         sshkeys => [
             'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAyRNgoniiGQbtJ8YOuKfWkK+1x3YELpVhfexNlPQbF7j+tbHIkuSP4RC1vo9XsmGhFN7co8jWAmZPtXx+peyXT8QDl5BPzbzjPlK+C0WTkIl74zqAwb51JHwo/TaRlDsrI6JR9gVO41q+ExtWcNmTVQRXzRJ+oo8DeuWt30r0kPrTGhyuJC5L7X/xW6vCBGVSXso2Ck0yv4xCUtWJYL70vt3qsvoEmgQY70XMHooZj3A7qMEITJ6akAzajLukCAjbhMrk9melANx1B9FxoYUxIAO7SJyn9J/Kh2TzZ3Hg4G8KYy4HJ0wFFOcm2O0WXdghZIK8RoiLPo5S1tkyGll2xQ== shafez@jumper.uk.gbxs.net',
             'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDSmIykA6o/1gtFYHHs3Vj/YtVxX7Fc0PMoxgNs09H0bZI4ebg7o9oyHS8QvD1/AD7ndB0s5krDbEMMNXFTv3vRLQIVvQcO4tD3LlqQDx8Dk4WsO4RZdljlQczbTC0V1w43J/72y6fgTkFvELVNUgg3Tcs7VqdyQm3n2MHUxYWMIpji0qSyx0vkfNlz4nK63GdV+aNdkk7MeE0bf3m83MFoRnzuAgZ1tRtU+ZzYYgvGp6ZDPwKFy+Q9zwlKierTbn+ybrrGb1XMPlRpsszh89F0UKXHksRRc2M0xZUJttmm9d3bTrxRXczqCEkMuYB2Hb1YwVTZFIz05nXmYQdvWN4h shafez@jumper',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDc4uhID36VAytioUU7Z43wKL5cgUxUc+lsLrsMvdgIp34j61H/e5mGjE6Wkp4+01QkP3a+fSsaHPUxHEnbhjkBUD+4VZk42G5fQRv7KznRg4o1W9ubGMlqyGf/9+ylkJYjPEAVl/zcuKZrcwuOn2qC/eb9NtVbNXeSYhiwQRuPq6stKB6bflNIjJ2VLVjBV0F3kJcL+Vk4tIOAFY/wvhCUMsPg+Es+lH/e5ELFwy/kA0k32d0r3N9/43AHV0VzFPlJhdAQHT7pGYPxUJ1LcQ99gcysFD98GYf4Zd1Y05KJWAGPcZZm8EzGimYeN2vI72Qw4ZIns88nT63JceQp+RRp globalaxs@globalaxs01.ring.nlnog.net',
         ],
     }
 ##### END globalaxs #####
