@@ -421,20 +421,6 @@ node 'container06.infra' inherits infranode {
     munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
     }
     
-    kvm::virtual_machine { 'db06':
-        fqdn        => 'db06.infra.ring.nlnog.net',
-        ip          => '109.72.93.34', # ipv6 address is 2a00:0f10:0122::34
-        netmask     => '255.255.255.240',
-        dns         => '8.8.8.8',
-        gateway     => '109.72.93.33',
-        memory      => '1024',
-        disksize    => '20',
-        rootsize    => '19968',
-        bridge      => 'virbr1',
-        container   => "${hostname}",
-        ensure      => present,
-    }
-
     kvm::virtual_machine { 'backup':
         fqdn        => 'backup.infra.ring.nlnog.net',
         ip          => '109.72.93.35', # ipv6 address is 2a00:0f10:0122::35
