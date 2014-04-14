@@ -3684,3 +3684,13 @@ node 'afilias03' inherits ringnode {
     include users
 }
 
+node 'cyberverse01' inherits ringnode {
+    $owner = "cyberverse"
+    $location = "34.0473,-118.2573"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

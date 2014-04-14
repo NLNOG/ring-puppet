@@ -897,3 +897,6 @@ ff02::2 ip6-allrouters
 2001:500:a:500::229  afilias03 afilias03.ring.nlnog.net
 199.19.52.229    afilias03 afilias03.ring.nlnog.net
 
+2607:f820:104::106  cyberverse01 cyberverse01.ring.nlnog.net
+209.151.242.106    cyberverse01 cyberverse01.ring.nlnog.net
+
