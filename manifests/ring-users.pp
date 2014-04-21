@@ -2094,7 +2094,7 @@ class users::virtual::ring_users {
     @add_user { 'viatel':
         email => 'noc@viatel.com',
         company => 'Viatel',
-        uid => 5115,
+        uid => 5264,
         groups => ['ring-users'],
     }
     @authorized_keys { 'viatel':
