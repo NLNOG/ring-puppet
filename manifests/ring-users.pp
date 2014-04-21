@@ -2089,15 +2089,15 @@ class users::virtual::ring_users {
 
 ##### END i3d #####
 
-##### BEGIN digiweb #####
+##### BEGIN viatel #####
 
-    @add_user { 'digiweb':
-        email => 'noc@digiweb.ie',
-        company => 'Digiweb Ltd',
+    @add_user { 'viatel':
+        email => 'noc@viatel.com',
+        company => 'Viatel',
         uid => 5115,
         groups => ['ring-users'],
     }
-    @authorized_keys { 'digiweb':
+    @authorized_keys { 'viatel':
         sshkeys => [
             'ssh-dss AAAAB3NzaC1kc3MAAACBAN4JdpmSG7Eheg68AWQ9QSR6x/75E+zUyVjsHk0J35bgWBEedDJueSq7raszeDgvUasM1OQh0+6LsGYQPJQaoUWt+cuZTHacuIPGO6YmQsAFfM2VaZ9jsGBggKPze4MWI1tgJ/A7RHFCkDV/n8Qiiq1TQbpHao1kEPVc54x7mn8dAAAAFQCjHq0vPGzUrdBzNCB6tFHznAEGuQAAAIBl68t38O8piT+ON1C5L484EnkXYKnfWlGzXnCG7HCAfeU/1niCzb7oYUcTeTt+bdyXIwncAJV6HP8enUgp/IcFEz9eR+A9KoEsdDcafnCuHKjHJob5sbmNr+5LvPa+yAWy/XE8izzl1OYrRCQTipU2Ng2wJLjBVEn9NuVm/OvVhwAAAIEAobYbQYkadF4cwOrJ+oyBDOGreZKtPazarmzciQ4p0+fbIqht4UBabrJIlE9EZQgBq/P7ujGbgF2ZtQ7S+Y+naim6Q6oHWade334fD4CjnWVuRtDoXUexOqX6fisPOLuSK4gvKeInmljMSTAqoyZGcjPzxq+Dx3LJ+tyzOxGLZbY= acunningham@net-mgmt',
             'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA1+KQI25m7QO7w6do39NvegLOS4fHw8GBTpT6HQ5h2MLDP727l407jL3uV5qD/CAtAQIEEDOEiZZ0tRUlNWoShzYz+jN9sWNGN8rRh+uakfyM9QVlN3t9F4WxBC2owUnHixP6axq36+nUitG6MuOxIE7EiZVO1JoV13VqNNNE8SmdDDBO6u04acAbAk7Dd88+P0zzEmxvuHf/X080M1WrHdbu1r01ek0OLw1vm3hn6aHG4XMA8/5IX0CRtufXa7GxnxCEijelmtaP7F+26GFQ8qWstpIeW0mSAO0lQWeNtLMYxo3fxFllEjq4r33XmKFu2hhyztr4RJEIsJMA9G08tw== asim@net-mgmt',
@@ -2109,7 +2109,7 @@ class users::virtual::ring_users {
         ],
     }
 
-##### END digiweb #####
+##### END viatel #####
 
 ##### BEGIN sidnrd #####
 
