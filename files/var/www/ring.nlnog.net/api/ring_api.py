@@ -21,7 +21,7 @@ def set_error(errmsg=None):
 
 def dbquery(q, v=None):
     try:
-        conn = mdb.connect(DBHOST,DBUSER,DBPASS,DB)
+        conn = mdb.connect(host=DBHOST,user=DBUSER,passwd=DBPASS,db=DB,connect_timeout=5)
         cur = conn.cursor(mdb.cursors.DictCursor)
         if v:
             cur.execute(q, v)
