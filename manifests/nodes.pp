@@ -3694,3 +3694,13 @@ node 'cyberverse01' inherits ringnode {
     include users
 }
 
+node 'viatel02' inherits ringnode {
+    $owner = "viatel"
+    $location = "48.856261,2.383975"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
