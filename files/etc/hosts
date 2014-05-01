@@ -561,7 +561,7 @@ ff02::2 ip6-allrouters
 2a03:c300:ffff:fffe::d  qbranch01 qbranch01.ring.nlnog.net
 217.151.198.151    qbranch01 qbranch01.ring.nlnog.net
 
-2a04:b900:0:1::7  nlnetlabs01 nlnetlabs01.ring.nlnog.net
+2a04:b900:0:100::7  nlnetlabs01 nlnetlabs01.ring.nlnog.net
 185.49.141.7   nlnetlabs01 nlnetlabs01.ring.nlnog.net
 
 2a01:448:1:2008::148  networking4all01 networking4all01.ring.nlnog.net
