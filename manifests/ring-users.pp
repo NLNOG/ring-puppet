@@ -1033,22 +1033,6 @@ class users::virtual::ring_users {
     }
 ##### END voxel #####
 
-##### BEGIN neotelecoms #####
-
-    @add_user { 'neotelecoms':
-        email => 'eng@neotelecoms.com',
-        company => 'Neotelecoms',
-        uid => 5056,
-        groups => ['ring-users'],
-    }
-    @authorized_keys { 'neotelecoms':
-        sshkeys => [
-            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7QsFCzQS+Lf9R5oL8+6Kvb1ZAWmY+UdM5Da+531FIKSUonOPF5aZ6A19/MWMY9OXHZC6GDT5/gnBFiLXNCsxN18+z0CTGBBCezrvnCAqoL26xFv64vqrPRCIzlbTx0m3NGbgEYxbkAKR0g+45WM40Pa4dFg5162Q5YAeoNAgAskE3nF4JTF0/+YI6eHPJ7I0xQv60ltxfSTWyvxb2WYL7YeISsZETuudGO6SLUAK4VFNMuO6dpp4epaAxUosEmJDXfAl3cc3uWNbZNCozGA33HJrf6HmdaxhbPzgUrEGqxtiYgN1aOVb/oZXtJ450ulDWUQibfhDdDAovFQTDkHdr fgabut@orion',
-            ],
-    }
-
-##### END neotelecoms #####
-
 ##### BEGIN apnic #####
 
     @add_user { 'apnic':

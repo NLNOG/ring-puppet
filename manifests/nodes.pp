@@ -1222,16 +1222,6 @@ node 'voxel02' inherits ringnode {
 	include users
 }
 
-node 'neotelecoms01' inherits ringnode {
-    $owner = "neotelecoms"
-    $location = "48.899693,2.296256"
-    include amp_client
-    include nagios::target::fqdn
-    include nagios_services
-    include set_local_settings
-	include users
-}
-
 node 'apnic01' inherits ringnode {
     $owner = "apnic"
     $location = "-27.458248,153.031067"
