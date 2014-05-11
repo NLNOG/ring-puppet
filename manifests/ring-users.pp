@@ -1359,18 +1359,6 @@ class users::virtual::ring_users {
 
 ##### END seeweb #####
 
-##### BEGIN networkdesign #####
-
-    @add_user { 'networkdesign':
-        email => 'noc@ndnet.ch',
-        company => 'Network Design GmbH',
-        uid => 5073,
-        groups => ['ring-users'],
-        ensure  => absent,
-    }
-
-##### END networkdesign #####
-
 ##### BEGIN zensystems #####
 
     @add_user { 'zensystems':
@@ -1385,7 +1373,7 @@ class users::virtual::ring_users {
             ],
     }
 
-##### END networkdesign #####
+##### END zensystems #####
 
 ##### BEGIN westnet #####
 
