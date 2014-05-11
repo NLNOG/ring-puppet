@@ -38,7 +38,7 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
     group { $username:
         gid     => $uid,
         require => User[$username],
-        ensure  => $present,
+        ensure  => $ensure,
     }
 
     file { "/home/$username/":
