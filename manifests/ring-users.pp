@@ -18,13 +18,69 @@ class users::virtual::ring_users {
 
 ##### BEGIN former users #####
 
-#@add_user { 'ic-hosting':
-#    email   => 'info@ic-hosting.nl',
-#    company => 'IC Hosting',
-#    uid => 5014,
-#    groups  => ['ring-users'],
-#    ensure => absent,
-#}
+@add_user { 'ic-hosting':
+    email   => 'info@ic-hosting.nl',
+    company => 'IC Hosting',
+    uid => 5014,
+    groups  => ['ring-users'],
+    ensure => absent,
+}
+
+@add_user { 'bci':
+    email   => 'support@ipv6.ps',
+    company => 'BNET - BCI Telecommunication & Advanced Technology Company',
+    uid => 5121,
+    groups  => ['ring-users'],
+    ensure => absent,
+}
+
+@add_user { 'digiweb':
+    email   => 'noc@digiweb.ie',
+    company => 'Digiweb Ltd',
+    uid => 5115,
+    groups  => ['ring-users'],
+    ensure => absent,
+}
+
+@add_user { 'neotelecoms':
+    email   => 'eng@neotelecoms.com',
+    company => 'Neotelecoms',
+    uid => 5056,
+    groups  => ['ring-users'],
+    ensure => absent,
+}
+
+@add_user { 'nuqe':
+    email   => 'nat@nuqe.net',
+    company => 'AS30746',
+    uid => 5139,
+    groups  => ['ring-users'],
+    ensure => absent,
+}
+
+@add_user { 'rediris':
+    email   => 'cert@rediris.es',
+    company => 'RedIRIS',
+    uid => 5154,
+    groups  => ['ring-users'],
+    ensure => absent,
+}
+
+@add_user { 'yacast':
+    email   => 'noc@yacast.fr',
+    company => 'Yacast Media',
+    uid => 5066,
+    groups  => ['ring-users'],
+    ensure => absent,
+}
+
+@add_user { 'networkdesign':
+    email   => 'noc@ndnet.ch',
+    company => 'Network Design GmbH',
+    uid => 5073,
+    groups  => ['ring-users'],
+    ensure => absent,
+}
 
 ##### END former users #####
 
