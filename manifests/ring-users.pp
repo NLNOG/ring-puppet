@@ -4721,3 +4721,18 @@ class users::virtual::ring_users {
 
 }
 
+##### BEGIN ntt #####
+
+    @add_user { 'ntt':
+        email => 'noc@us.ntt.net',
+        company => 'NTT',
+        uid => 5265,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'ntt':
+        sshkeys => [
+            ],
+    }
+
+##### END ntt #####
+

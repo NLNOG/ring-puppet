@@ -900,3 +900,5 @@ ff02::2 ip6-allrouters
 2a01:8aa0:7f00:0:20c:29ff:fe60:bfac  viatel02 viatel02.ring.nlnog.net
 46.183.108.2    viatel02 viatel02.ring.nlnog.net
 
+2001:418:3f4::20  ntt01 ntt01.ring.nlnog.net
+204.42.254.20    ntt01 ntt01.ring.nlnog.net

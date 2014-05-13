@@ -3694,3 +3694,12 @@ node 'viatel02' inherits ringnode {
     include users
 }
 
+node 'ntt01' inherits ringnode {
+    $owner = "ntt"
+    $location = "41.85286,-87.63448"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
