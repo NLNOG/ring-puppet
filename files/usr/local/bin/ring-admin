@@ -52,7 +52,7 @@ CREATE TABLE sshkeys
 (
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
     keytype VARCHAR(255) NOT NULL,
-    sshkey VARCHAR(2048) NOT NULL,
+    sshkey VARCHAR(16384) NOT NULL,
     keyid VARCHAR(255),
     user INTEGER NOT NULL,
     FOREIGN KEY(user) REFERENCES users(id)
