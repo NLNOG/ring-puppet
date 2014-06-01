@@ -902,3 +902,10 @@ ff02::2 ip6-allrouters
 
 2001:418:3f4::20  ntt01 ntt01.ring.nlnog.net
 204.42.254.20    ntt01 ntt01.ring.nlnog.net
+
+2a02:4b00:1:f99::2  bogalnet01 bogalnet01.ring.nlnog.net
+31.31.162.99    bogalnet01 bogalnet01.ring.nlnog.net
+
+2001:bf8:900:1::808b:c551  iucc01 iucc01.ring.nlnog.net
+128.139.197.81    iucc01 iucc01.ring.nlnog.net
+
