@@ -4395,7 +4395,7 @@ class users::virtual::ring_users {
 ##### BEGIN nonattached #####
 
     @add_user { 'nonattached':
-        email => 'mail@nanstatus.net',
+        email => 'mail@danrl.de',
         company => 'Nonattached Network',
         uid => 5245,
         groups => ['ring-users'],
