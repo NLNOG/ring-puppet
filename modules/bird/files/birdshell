@@ -8,13 +8,9 @@ clean_up() {
 #  pkill -u ${UID}
 }
 
-launch_bird() {
+launch_bird4() {
 
-if [ $1 ]; then
-  socket="/var/run/bird_$1.ctl"
-else
-  socket="/var/run/bird.ctl"
-fi
+socket="/var/run/bird/bird.ctl"
 
 clear 
 echo -e "
@@ -81,14 +77,12 @@ main_menu() {
 	dialog \
 	--backtitle "NLNOG RING Looking Glass: ${HOSTNAME}" \
 	--menu "Choose a Looking Glass :" 10 70 4 \
-	1 IPv4_lg01 \
-	2 IPv4_lg02 \
+	1 IPv4 \
 	3 IPv6 \
 	4 Logout 2>$TEMP
 	choice=$(cat $TEMP)
 	case $choice in
-	    1) launch_bird 1;;
-	    2) launch_bird 2;;
+	    1) launch_bird4;;
 	    3) launch_bird6;;
 	    4) clean_up;;
 	esac
