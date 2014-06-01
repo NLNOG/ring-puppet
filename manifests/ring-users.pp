@@ -4754,3 +4754,18 @@ class users::virtual::ring_users {
 
 ##### END bogalnet #####
 
+##### BEGIN iucc #####
+
+    @add_user { 'iucc':
+        email => 'nocplus@noc.ilan.net.il',
+        company => 'IUCC',
+        uid => 5267,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'iucc':
+        sshkeys => [
+            ],
+    }
+
+##### END iucc #####
+

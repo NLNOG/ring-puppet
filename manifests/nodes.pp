@@ -3714,3 +3714,13 @@ node 'bogalnet01' inherits ringnode {
     include users
 }
 
+node 'iucc01' inherits ringnode {
+    $owner = "iucc"
+    $location = "32.1132,34.8053"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
