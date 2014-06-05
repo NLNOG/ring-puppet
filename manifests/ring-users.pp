@@ -4768,3 +4768,19 @@ class users::virtual::ring_users {
 
 ##### END iucc #####
 
+##### BEGIN nynex #####
+
+    @add_user { 'nynex':
+        email => 'noc@nynex.de',
+        company => 'NYNEX',
+        uid => 5268,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'nynex':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDGl5Lcgoe0GfnzFN8WYhPOltY0eyQdUp+gVFl9+9b0B+RD76Y4Lo3EaY1UaXhCEBOxqXEU8Z03LA5KttHzLpeLba+hrEQDyM1XEGcg2vpTxHoPBm/WMq53PdLXAcBvpumY6EMwP2ZQFzeFR496jT7Sj1EwHoioLArCUdf0COLmXC9Y5Tv6c2wQ1oo+lOOatTxlw1jDPluoM+3MpyFvfV+YcGzFj12UfSdPsZ+IjwXxPENcNTo635mFmj3NTj+AbYhb/evc/v3i+ksW41CxImJJQXFhK4b6NZqA9cUoissjcDXVAaHPsGvBCPQlm+GzyQCNSy0oiwe3e7KI5cra/EYJYHjpMmQYd7Z53PR069NMOQ2w6gwpGwP4I3KUAQ0+LyzNvyto/qp74RlGPi9ipxqFXR0ZQEmMoafJjvnF8L7IDhKX7SWkaqvZG4mVnXuAY7+J2PbkE+YkLMyWD9VvAQFBPpj4LLqyDBUSxhuip5VwJPFqUBm8+gT4ej4DyH7y+myUCjPB2pZ/rWeB2FibSCy8jczeRa2Ur86NNJrdlBDX0OjZnZo33oTgQyEZRieuT126jSSvyaomqCW0COkIlX13sLq/O8HiujTiu7RliGLs5KSWpu9XrmkdIBeN7Nk5cSbmYWDN4dONWdUYK90YUEve5I5n6LMe7apWujNmHgVjeQ== f.kriewitz@nynex.de',
+            ],
+    }
+
+##### END nynex #####
+

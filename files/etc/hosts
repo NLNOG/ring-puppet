@@ -909,3 +909,6 @@ ff02::2 ip6-allrouters
 2001:bf8:900:1::808b:c551  iucc01 iucc01.ring.nlnog.net
 128.139.197.81    iucc01 iucc01.ring.nlnog.net
 
+2a00:e60:7000:1::249:1  nynex01 nynex01.ring.nlnog.net
+109.236.159.249    nynex01 nynex01.ring.nlnog.net
+
