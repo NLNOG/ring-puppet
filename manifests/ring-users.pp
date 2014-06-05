@@ -1998,7 +1998,7 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'fnutt':
         sshkeys => [
-            'ssh-dss AAAAB3NzaC1kc3MAAACBALDh6BuXFhaxrh71HFD9f3O2hn1elEIGNUCI521K95KapmYOS62VXND/3wBFHppIj2xabU9O6NP1cGU2/GSh99DZvTFzT8XuEKz9hmm2VAvFhdh3LWVr72yB3eQPhMALcS9HFGaWUjRR72vNNGK1aP3gHOURpgP4gW9fdMvpGBd/AAAAFQCrUsksAmvHot1Q3uIbCRCAjF9uqQAAAIByTyvTfV4ncuxL/69nm4a+WjgY9Lyboge6RcScvoRBzZz0CfReZmUSd/zJSOswweQitPmJ6RUmaCMte83G8aHees2mQTGQrCXikv5M5qKZE8k8u0EGfNks2qlxBf0upaiN3+K6zwTpYBbndpuBjxMR9ZySBvtOqRlIqyBuawhBxAAAAIBQrxY0XGRg1VmZvtX1M3sUH0LCUtjypx+6xGZtcDIqavhE5IkBJy9ZwhSdamjstBioDsaStQZbYB6LbAXyavlHn7G3i0sxErrtnEAizRm+enIJyhLUckp2KthpNr5nXbM8Qf7e/odyPI6hoH/xr6wtfHmxbl0mVxkLGpf5NgIlVw== danhusan@fnutt'
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDILRUmh4FzISnUxyuCnFFdd6vmtCBShtLyM/UkAFAtS0KI2hm/P6vEj+WH5PW+E9S34d3HLUKKXG0ow2Vmk++vSJfuMAnHlvDwtE7kindYgZUTwIyWQ98JOpje3tWRUX8stwisM67/a6kO6XERPkjB8gZY0HAvBDwjO2lMkRQdzvwCWP+MzqlVXn9+X8y7At7HiK5yh19TLBv5mrEofqjm3DIntdvjszDhotlbUtLEN2e+Y1Tu18rXIJWhnPuYwN1yVEUo1d3prI1wUw+9msp53A5XcOniBQVYPopbtnVTdAX29QjUch01eV4xrdbs1VdMUbTGWblHeht47s1DupUB danhusan@metis',
         ],
     }
 ##### END fnutt #####
