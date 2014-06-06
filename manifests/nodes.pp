@@ -3724,3 +3724,13 @@ node 'iucc01' inherits ringnode {
     include users
 }
 
+node 'nynex01' inherits ringnode {
+    $owner = "nynex"
+    $location = "8.6269,49.8706"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
