@@ -2480,6 +2480,7 @@ class users::virtual::ring_users {
     @authorized_keys { 'merit':
         sshkeys => [
                 "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCql5nngCFAD3Ke7MrlECNrbmJVMGTW4e8fNoCGfAlQFrdT2vQ7Az1KoGisGv3vX5gZ5E1MpyBSTaODTrgwrG6vJ4kP6k1/Xv4L3TVSL0qn0O5AByTI+AnZ7vAqAu+FTWnvauyHAfnCnsjAijmcgA41GLPXUlxyl/x/DqMOvIw5qb6s5Ec+/SKZ3XxeWDN/7z2wACXCZjRms4T2lXOjlZaxagWT/IVBzt447YB8Qc7jMN3PiDL1OzLvSHNa8V82xZ9Er25n2fcyAwS5Y2nj643gQF3DgF0Xzbmbo6aAZ28wVSdA96vX+hFms6D2NsuxfEcLwDED8KAi3QT1R0zksYcRThvFNz/Y9AwJmVn5UM4c5ioKOsOiNOyNSPb7Zl6sbqAFP9NVph9YbpRh+TAb+7UrbbingZ3GvjnlcKP7c0LIaafHXiMNSBEnrdJH3OMKlXJZDJRxf74gAmVLSDmpzB0Zb5Qj6ohwncAHO2vZFd49aQXRM0qAzXfESRzYp1zBjY3RN3Eos5MNiCQTVmdZBvdZVVOMa/ozyd16nWP3ko6ODdhYmGJP2Id+uUHv7Gnr+O9v4Ti3nRXqiISQyg1pzwMHtGjgey6IgFrhsI0YGBHIAJ9OcrFQoYIAoTeYMQeXFoy3gpbg2n+ml7AwpYHnpW+bPkkI4JQEFgPb1bbf/WuNPw== nlnog-ring@merit.edu",
+                "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsjqYQGclhzRCjvtdyD4vs46hw9sVkbN6mtT8hId3AX5LNE4ceAuzELL67fal8j6GIPapwl3w4AxrCvuvak0R7p28BZo0Ylv/W5Za3tBVsGiwci26JtnfrzEpq2oaOrSmw56wBhwrbERiYJxIdA/fMwz4uo+6y8nycefu7WeWZ6U2Dg+MMqssezFUJ+QpPgD7pFKBNio3DLIfoHmEpb/E5Mk4RTxEn+o3zHKKlCqKKoOPXeNTpKUl8fltQv47YRcVNcWcpSCIVABQhbdWLcC/SkP6Zkd/gtvydYoU1baNX0ZP0QFZnCbFfjfeMUdkv4W4yyOnJHeYfANSnIOLG3o+F shuque@airy.huque.com",
             ],
     }
 
