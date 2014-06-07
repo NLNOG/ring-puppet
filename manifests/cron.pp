@@ -29,6 +29,14 @@ class pdnscronjobs {
         hour => "04",
         ensure => present,
     }
+    cron {
+        "regenerate-txt":
+        command => "/usr/local/bin/ring-pdns regenerate txt 3>&1 1>/dev/null 2>&3 | grep -v NSEC 3>&1 1>&2 2>&3",
+        user => root,
+        minute => "04",
+        hour => "04",
+        ensure => present,
+    }
 }
 
 class nodesonlycron {
