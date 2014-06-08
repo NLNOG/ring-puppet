@@ -113,6 +113,7 @@ def dbget_nodes(dbconn=None):
                        'asn':n['autnum'],
                        'countrycode':n['country'],
                        'statecode':n['state'],
+                       'city':n['city'],
                        'datacenter':n['dc'],
                        'geo':n['geo'],
                        'active':n['active'],

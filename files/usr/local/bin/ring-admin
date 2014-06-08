@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import MySQLdb as mdb
-import sys, inspect, re, time, string, pycountry, os
+import sys, inspect, re, time, string, pycountry, os, simplejson, urllib
 from string import Template
 
 DBHOST='localhost'
@@ -8,6 +8,8 @@ DBUSER='ring-admins'
 DBPASS=''
 DB='ring'
 ZONE='ring.nlnog.net'
+
+GEOCODE="https://maps.googleapis.com/maps/api/geocode/json?sensor=false&latlng="
 
 SCHEMA='''
 CREATE TABLE participants
@@ -335,6 +337,49 @@ class commands(object):
                 cname='Unknown, '+cname
         return cname
 
+    def cityname(self,geo):
+        city=None
+        city_opts = {}
+        url=GEOCODE+geo
+        try:
+            response = simplejson.load(urllib.urlopen(url))
+            rcode = response['status']
+            if (rcode == "OK"):
+                resultset = response['results']
+                for result in resultset:
+                    addr = result['address_components']
+                    for component in addr:
+                        if (component['types'][0] == 'administrative_area_level_1'):
+                            city_opts['administrative_area_level_1'] = component['long_name']
+                        elif (component['types'][0] == 'locality'):
+                            city_opts['locality'] = component['long_name']
+                        elif (component['types'][0] == 'postal_town'):
+                            city_opts['postal_town'] = component['long_name']
+                        elif (component['types'][0] == 'administrative_area_level_2'):
+                            city_opts['administrative_area_level_2'] = component['long_name']
+                        elif (component['types'][0] == 'administrative_area_level_3'):
+                            city_opts['administrative_area_level_3'] = component['long_name']
+        except:
+            sys.stderr.write('unable to retrieve city geocoding info\n')
+            return ""
+
+        # Figure out the best value to use for city
+        if ('locality' in city_opts):
+            city = city_opts['locality']
+        elif ('postal_town' in city_opts):
+            city = city_opts['postal_town']
+        elif ('administrative_area_level_3' in city_opts):
+            city = city_opts['administrative_area_level_3']
+        elif ('administrative_area_level_2' in city_opts):
+            city = city_opts['administrative_area_level_2']
+        elif ('administrative_area_level_1' in city_opts):
+            city = city_opts['administrative_area_level_1']
+
+        if city:
+            return city
+        else:
+            return ""
+
     def cmd_add_participant(self,
             company, contact, email, nocemail, username,
             companydesc=None, url=None):
@@ -439,16 +484,18 @@ class commands(object):
         if not uid:
             sys.exit('user %s not found' % username)
         tstamp=time.time()
+        city=self.cityname(geo)
         machineid = self.dbinsert('machines',
             owner=uid,
             hostname=hostname,
             autnum=autnum,
             country=country,
+            state=state,
+            city=city,
             geo=geo,
             dc=dc,
             v4=v4,
             v6=v6,
-            state=state,
             tstamp=tstamp,
             active=0)
         print "Added machine %s ('%s' at '%s') for user %s" % (machineid, hostname, country, username)
