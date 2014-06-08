@@ -4765,6 +4765,8 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'iucc':
         sshkeys => [
+            'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEAs+EEd9Zk1FYv0D8DlOAefizRAJo9GBLPZD4d7qxOYl7cw/sD68kJDCNYbIGb9IAJ1grSvYoeTL4sE82T6bU4kbkudqFAfXFys7XaEfv4dnX3Nrv2+Iyk1m/Ku5qpQTgzyOdwfoA3mPIUdHSsbjh1zRFLuOMN06RalNWYldd7T0k= hank@efes.iucc.ac.il',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA9rb3vX6z1nhSSkzkXy1oUqc9MwYQ+Hc8kyOc9f7iVb6KGn/17jccs313eXSHbsoe1IiZhp0K9SWocDyLbRKLV852EGyq4unqZUxbj63jR3yIGD1+tyuaMxoymaVCOPC5tdtwbEHsDkqvMwrgpsRKfEuVRSuY84emxSCOAjZyy2ic9vsOJvgECGaq2ZcFmUODqpbW+EeMfiDVfUKQkOj4ZtdNzDMe7MUzqd6Idww4FRO7iRfgdUDpgaBbnTJeFcq3J1LYhP5cQ8z8PEkce6+NmJq8YKX1zeYxf0nLE8vVRtIKkMIndwvyYrRXUTzIVpKgGgRfDkU70i/Kye6xuzMCEQ== yehavi@control.huji.ac.il',
             ],
     }
 
