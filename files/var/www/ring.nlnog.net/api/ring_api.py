@@ -19,9 +19,22 @@ def set_error(errmsg=None):
     if ERROR:
         return ERROR
 
-def dbquery(q, v=None):
+def dbconnect():
     try:
-        conn = mdb.connect(host=DBHOST,user=DBUSER,passwd=DBPASS,db=DB,connect_timeout=5)
+        conn = mdb.connect(host=DBHOST,user=DBUSER,passwd=DBPASS,db=DB,connect_timeout=30)
+        return conn
+    except mdb.OperationalError as err:
+        set_error("Error connecting to database: %s" % err)
+        return
+
+def dbclose(conn):
+    try:
+        conn.close()
+    except mdb.OperationalError as err:
+        return
+
+def dbquery(conn, q, v=None):
+    try:
         cur = conn.cursor(mdb.cursors.DictCursor)
         if v:
             cur.execute(q, v)
@@ -29,15 +42,21 @@ def dbquery(q, v=None):
             cur.execute(q)
         for row in cur.fetchall():
             yield row
-        conn.close()
     except mdb.OperationalError as err:
-        set_error("Error connecting to database: %s" % err)
+        set_error("Error in database connection: %s" % err)
         return
 
-def dbget_participants():
+def dbget_participants(dbconn=None):
     pl = []
+    
+    conn = dbconn
+    if not dbconn:
+        conn = dbconnect()
     query = "select * from participants where public!=0 or public is null"
-    res = list(dbquery(query))
+    res = list(dbquery(conn,query))
+    if not dbconn:
+        dbclose(conn)
+
     if set_error():
         return
     try:
@@ -53,9 +72,15 @@ def dbget_participants():
     random.shuffle(pl)
     return pl
 
-def dbget_participantid(owner):
+def dbget_participantid(owner,dbconn=None):
+    conn = dbconn
+    if not dbconn:
+        conn = dbconnect()
     query = "select participant from users where id=%s" % (owner)
-    res = list(dbquery(query))
+    res = list(dbquery(conn,query))
+    if not dbconn:
+        dbclose(conn)
+
     if set_error():
         return
     try:
@@ -66,15 +91,19 @@ def dbget_participantid(owner):
         return
     return null
 
-def dbget_nodes():
+def dbget_nodes(dbconn=None):
     nl = []
+
+    conn = dbconn
+    if not dbconn:
+        conn = dbconnect()
     query = "select * from machines"
-    res = list(dbquery(query))
+    res = list(dbquery(conn,query))
     if set_error():
         return
     try:
         for n in res:
-            participant = dbget_participantid(n['owner'])
+            participant = dbget_participantid(n['owner'],conn)
             if set_error():
                 return
             nl.append({'id':n['id'], 
@@ -91,14 +120,26 @@ def dbget_nodes():
                       })
     except KeyError as err:
         set_error("Key %s not found in database" % err)
+        if not dbconn:
+            dbclose(conn)
         return
+    if not dbconn:
+        dbclose(conn)
+    
     random.shuffle(nl)
     return nl
 
-def dbget_countrycodes():
+def dbget_countrycodes(dbconn=None):
     cl = []
+    
+    conn = dbconn
+    if not dbconn:
+        conn = dbconnect()
     query = "select distinct country from machines where country <>''"
-    res = list(dbquery(query))
+    res = list(dbquery(conn,query))
+    if not dbconn:
+        dbclose(conn)
+
     if set_error():
         return
     try:
@@ -110,10 +151,17 @@ def dbget_countrycodes():
     cl = sorted(cl)
     return cl
 
-def dbget_statecodes():
+def dbget_statecodes(dbconn=None):
     sl = []
+    
+    conn = dbconn
+    if not dbconn:
+        conn = dbconnect()
     query = "select distinct state,country from machines where country<>'' and state<>''"
-    res = list(dbquery(query))
+    res = list(dbquery(conn,query))
+    if not dbconn:
+        dbclose(conn)
+
     if set_error():
         return
     try:
