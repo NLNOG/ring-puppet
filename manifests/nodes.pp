@@ -476,6 +476,7 @@ node 'public01.infra' inherits infranode {
         check_domain => "${name}"
     }
     include powerdns
+    include map
 # FIXME
 # we moved to new puppet mysql module, but I can't predict what happens
 # if we just use it here, especially with passwords. 
