@@ -912,3 +912,6 @@ ff02::2 ip6-allrouters
 2a00:e60:7000:1::249:1  nynex01 nynex01.ring.nlnog.net
 109.236.159.249    nynex01 nynex01.ring.nlnog.net
 
+2a01:8800:0:250::9  businessconnect01 businessconnect01.ring.nlnog.net
+46.183.250.9    businessconnect01 businessconnect01.ring.nlnog.net
+
