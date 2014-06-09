@@ -4767,7 +4767,8 @@ class users::virtual::ring_users {
         sshkeys => [
             'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEAs+EEd9Zk1FYv0D8DlOAefizRAJo9GBLPZD4d7qxOYl7cw/sD68kJDCNYbIGb9IAJ1grSvYoeTL4sE82T6bU4kbkudqFAfXFys7XaEfv4dnX3Nrv2+Iyk1m/Ku5qpQTgzyOdwfoA3mPIUdHSsbjh1zRFLuOMN06RalNWYldd7T0k= hank@efes.iucc.ac.il',
             'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA9rb3vX6z1nhSSkzkXy1oUqc9MwYQ+Hc8kyOc9f7iVb6KGn/17jccs313eXSHbsoe1IiZhp0K9SWocDyLbRKLV852EGyq4unqZUxbj63jR3yIGD1+tyuaMxoymaVCOPC5tdtwbEHsDkqvMwrgpsRKfEuVRSuY84emxSCOAjZyy2ic9vsOJvgECGaq2ZcFmUODqpbW+EeMfiDVfUKQkOj4ZtdNzDMe7MUzqd6Idww4FRO7iRfgdUDpgaBbnTJeFcq3J1LYhP5cQ8z8PEkce6+NmJq8YKX1zeYxf0nLE8vVRtIKkMIndwvyYrRXUTzIVpKgGgRfDkU70i/Kye6xuzMCEQ== yehavi@control.huji.ac.il',
-            ],
+            'ssh-dss AAAAB3NzaC1kc3MAAACBAOdVvO11NINZf+42FwGj6bAkp7qk1AFZeIgainscmZrntSiQ5PjFMcfmnVOagDZRCQVt13xmucbu8RmEJwayTBqCrf+Y8K0tq+pHDKLEbwq01GwOlYioYQw4IqweqW1eUkiIBUgDr9IeyQokN+zcAu1h6UiWneIQS/MY5YJGDiX7AAAAFQDhXIsxjxfhBTZRPXb+CQAKCCpggQAAAIBlAd5jTSTxsqKhIrgW47IMFo8qirF82R2jhhW1niSJOs1k1C+yBAY2TZNTsBVmXoIQEeHFbjdE7rKTMeZwbF7b6yzmmMvBS3uXao8aDRfdt93c//4DRCXTj887QxypNt0Yn65BVzl+4VWzr0nMLHJu9kAGhgKd5wpYhrEa16uXHwAAAIEAxxYvZfTPuo0W7Egl17F996GmKSTjqebIlkiiI/f1Ma++fdx3us6tFsam8CP0jrEJZn08HaDy0c2RJC9FEDV8R/p5oE8TrsW+Iw6JZRZmNXD6w9Vho9bL0HIq6F2y0CtWCcOeKQprP3tGXaui8pjB6thma2a3jScIIG6xklS/zFg= simon@g1.cc.huji.ac.il',
+        ],
     }
 
 ##### END iucc #####
