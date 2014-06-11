@@ -258,28 +258,20 @@ class commands(object):
         query = "insert into records (domain_id, name,type,content,ttl,prio) select id ,'%s', '%s', '%s', %s, %s " \
                 "from domains where name='%s'" % (name,rtype,content,ttl,prio,zone)
         _, rowid = self.dbdo(query)
-        self.update_soa()
-        self.rectify_zone()
         return rowid
     
     def del_record(self,pid):
         query = "delete from records where id=%s" % (pid)
         self.dbdo(query)
-        self.update_soa()
-        self.rectify_zone()
     
     def update_record(self,id,content):
         query = "update records set content='%s' where id=%s" % (content,id)
         _, rowid = self.dbdo(query)
-        self.update_soa()
-        self.rectify_zone()
         return rowid
     
     def update_rtype(self,name,rtype,content):
         query = "update records set content='%s' where name='%s' AND type='%s'" % (content,name,rtype)
         _, rowid = self.dbdo(query)
-        self.update_soa()
-        self.rectify_zone()
         return rowid
 
     def add_to_txt(self,name,subzone=None,zone=ZONE):
@@ -383,13 +375,15 @@ class commands(object):
                 self.add_to_txt(country.lower(),"countries");
             self.add_to_txt(name);
             print 'node %s (%s) activated' % (name,country.lower())
+    
+    def rectify_zone(self,zone=ZONE):
+        call(["pdnssec", "rectify-zone", zone])
 
     def update_soa(self,zone=ZONE):
         query = "update records set content='%s' where name='%s' and type='SOA'" % (SOA,zone);
         self.dbdo(query)
-
-    def rectify_zone(self,zone=ZONE):
-        call(["pdnssec", "rectify-zone", zone])
+        self.rectify_zone(zone)
+        print 'soa updated (%s)' % (SOA)
 
     def get_dbpass(self,pdnsconf):
         f = open(pdnsconf)
@@ -404,11 +398,13 @@ class commands(object):
             name=name + "." + zone
         recid=self.add_record(name=name,rtype=rtype,content=content,ttl=ttl,prio=prio)
         print 'record %s added' % (recid)
+        self.update_soa(zone)
     
-    def cmd_del_record(self,pid):
+    def cmd_del_record(self,pid,zone=ZONE):
         """delete a record"""
         self.del_record(pid)
         print 'record %s deleted' % (pid)
+        self.update_soa(zone)
 
     def cmd_list_records(self,name=None,zone=ZONE):
         """list records"""
@@ -447,6 +443,7 @@ class commands(object):
         else:
             print >> sys.stderr, "Unable to retrieve geo information from ring db"
         print 'node %s added' % (name)
+        self.update_soa(zone)
         
     def cmd_update_node(self,name,attribute,value,zone=ZONE):
         """update record for a node"""
@@ -476,6 +473,7 @@ class commands(object):
                                   content=value,ttl=600,prio=0)
             print 'record %s added' % (recid)
         print 'node %s updated' % (name)
+        self.update_soa(zone)
 
     def cmd_del_node(self,name,zone=ZONE):
         """del records for a node"""
@@ -492,6 +490,7 @@ class commands(object):
         print 'node %s deactivated' % (name)
         self.dbdelete('records',name=fullname);
         print 'node %s deleted' % (name)
+        self.update_soa(zone)
 
     def cmd_activate_node(self,name,zone=ZONE):
         """add the TXT entry for a node"""
@@ -508,6 +507,7 @@ class commands(object):
 
         self.add_to_txt(name);
         print 'node %s activated' % (name)
+        self.update_soa(zone)
     
     def cmd_deactivate_node(self,name,zone=ZONE):
         """remove the TXT entry for a node"""
@@ -523,6 +523,7 @@ class commands(object):
 
         self.del_from_txt(name);
         print 'node %s deactivated' % (name)
+        self.update_soa(zone)
 
     def cmd_update_sshfp(self,filename=None,zone=ZONE):
         """update SSHFP records"""
@@ -569,6 +570,7 @@ class commands(object):
                                     content=value,ttl=600,prio=0)
                 print 'record %s added for %s' % (recid,name)
         f.close()
+        self.update_soa(zone)
 
     def cmd_add_domain(self,zone=ZONE):
         """add a domain"""
@@ -591,10 +593,15 @@ class commands(object):
         """add the SOA for a domain"""
         recid=self.add_record(zone,'SOA',SOA,3600,0)
         print 'record %s added' % (recid)
+    
+    def cmd_update_soa(self,zone=ZONE):
+        """update the SOA for a domain"""
+        self.update_soa(zone)
 
     def cmd_regenerate_txt(self,zone=ZONE):
         print 'regenerating txt records... '
         self.regenerate_txt(zone)
+        self.update_soa(zone)
         print 'done.'
 
     def cmd_initdb(self):
