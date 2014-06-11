@@ -1358,7 +1358,7 @@ node 'solnet01' inherits ringnode {
 
 node 'boxed-it01' inherits ringnode {
     $owner = "boxed-it"
-    $location = "50.881431,4.454129"
+    $location = "50.875425,4.499401"
     include amp_client
     include nagios::target::fqdn
     include nagios_services
