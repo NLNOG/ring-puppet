@@ -915,3 +915,5 @@ ff02::2 ip6-allrouters
 2a01:8800:0:250::9  businessconnect01 businessconnect01.ring.nlnog.net
 46.183.250.9    businessconnect01 businessconnect01.ring.nlnog.net
 
+2001:780:100:115::10  noris01 noris01.ring.nlnog.net
+213.95.10.76    noris01 noris01.ring.nlnog.net

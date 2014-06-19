@@ -4807,3 +4807,18 @@ class users::virtual::ring_users {
 
 ##### END businessconnect #####
 
+##### BEGIN noris #####
+
+    @add_user { 'noris':
+        email => 'noc@noris.net',
+        company => 'noris network AG',
+        uid => 5270,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'noris':
+        sshkeys => [
+                'ssh-dss AAAAB3NzaC1kc3MAAACBANdh/TNw0Fb9+1SoKF0eUvmstUT4D7NuxaDXV24a175eY/zDgNuAMqZ1HM+6AnaoCSjAw/UZdQgWVd2w+s7xrjmbeysc0DWuq3SfqTd5DSH1XG/Fi6399fcs5SeITFEMAvRIKcZbUyDOJ+S+CCQch6qm6CRoI8lu9fRPIvRv46p/AAAAFQDkxZ86GpZov5ItqSLXTsJwOeU46QAAAIBJqI6rfOdZt60gJtx7TMMREHOGJERA5HjzZ9sAi48bZSM+riWNNFcaR2f2DLW1JGyOunMREy4IoZv/msFh0P7GJlxCuDkOpWzeS0VkzH6MHQM6kInSN3DukRocVpAMoyrUYiY3Ayymi626N+J0tGBMn3w72FWEwFIq7xRwsvknXQAAAIEAq2zVyHpzPUq2jBJX5xtB34shZyqlVsk6BH46QLGTbu2YcNtjJ4dU8UGoBDVm6/LAk7cZO/LqnTtf/rXM9gr2e9HtVb1ItUuQz3k5m/gbqdiWrvHiQRevEvAlEarvpucwHqH9YtaYRWtm8E20d0k+BujuVFrRLpuCEqYEeWC93yc=',
+            ],
+    }
+
+##### END noris #####
