@@ -917,3 +917,6 @@ ff02::2 ip6-allrouters
 
 2001:780:100:115::10  noris01 noris01.ring.nlnog.net
 213.95.10.76    noris01 noris01.ring.nlnog.net
+
+2001:1640::55:3  mknetzdienste01 mknetzdienste01.ring.nlnog.net
+85.220.161.84    mknetzdienste01 mknetzdienste01.ring.nlnog.net

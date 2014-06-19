@@ -4822,3 +4822,19 @@ class users::virtual::ring_users {
     }
 
 ##### END noris #####
+
+##### BEGIN mknetzdienste #####
+
+    @add_user { 'mknetzdienste':
+        email => 'noc@mk.de',
+        company => 'MK Netzdienste GmbH & Co. KG',
+        uid => 5271,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'mknetzdienste':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQm0jDFtAZqWth0+0Bruc+Obtc1HCdPhoZpciE+9HSN6XHPaMQ112xsyhJ/fOqa8o2y/dPD+iKogHhLtHh/OulfvT+GBjz8BTeoghLJVeYFcjgBtTrgW5tEH+Cqp9WXyscs2gQimdjH9M50SEAoZySZsygPCKgP9/jeRT1Eb+k4QQscLZQHtJ8ycBUPqUtkGaNx06CF7WP4cVK41T1qlLWpao+XtdpHFsdtXQqK9qJyIyaUY33/waEWVBOGvVI6VOtdX3E9tx/gbOj7N22aBFEkhOG4qcw18LBhouwTuZDTUXuwqlqeoQtQ4m60ybPt8sQGI6thInXA7Sz+aF1fpJ1 MK-Netzdienste-NLNOG',
+            ],
+    }
+
+##### END mknetzdienste #####
