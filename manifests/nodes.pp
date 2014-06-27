@@ -2899,17 +2899,6 @@ node 'masterinternet01' inherits ringnode {
     include users
 }
 
-node 'icanndns01' inherits ringnode {
-    $owner = "icanndns"
-    $location = "33.91918,-118.41647"
-    include amp_client
-    include nagios::target::fqdn
-    include nagios_services
-    include set_local_settings
-    include users
-    $nagios_ping_rate = '!200.0,20%!300.0,60%'
-}
-
 node 'intellit01' inherits ringnode {
     $owner = "intellit"
     $location = "59.942783,10.717142"
@@ -3778,6 +3767,26 @@ node 'suretec01' inherits ringnode {
 node 'cloudnl01' inherits ringnode {
     $owner = "cloudnl"
     $location = "52.343984,4.828712"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'icanndns01' inherits ringnode {
+    $owner = "icanndns"
+    $location = "33.926077,-118.394123"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'icanndns02' inherits ringnode {
+    $owner = "icanndns"
+    $location = "38.9507382,-77.3639041"
     include amp_client
     include nagios::target::fqdn
     include nagios_services

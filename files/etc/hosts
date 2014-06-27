@@ -663,9 +663,6 @@ ff02::2 ip6-allrouters
 2a01:430:100:2::2  masterinternet01 masterinternet01.ring.nlnog.net
 85.118.134.2    masterinternet01 masterinternet01.ring.nlnog.net
 
-199.4.28.222    icanndns01  icanndns01.ring.nlnog.net
-2620:0:22b0:4::222  icanndns01  icanndns01.ring.nlnog.net
-
 2a03:1400:21:1703::66  intellit01 intellit01.ring.nlnog.net
 62.24.55.66    intellit01 intellit01.ring.nlnog.net
 
@@ -926,4 +923,10 @@ ff02::2 ip6-allrouters
 
 2a00:6960:1:1::24:149:1  cloudnl01 cloudnl01.ring.nlnog.net
 185.23.24.149    cloudnl01 cloudnl01.ring.nlnog.net
+
+2620:0:2d0:203::158  icanndns01 icanndns01.ring.nlnog.net
+192.0.33.158    icanndns01 icanndns01.ring.nlnog.net
+
+2620:0:2830:203::158  icanndns02 icanndns02.ring.nlnog.net
+192.0.46.158    icanndns02 icanndns02.ring.nlnog.net
 
