@@ -4869,3 +4869,19 @@ class users::virtual::ring_users {
 
 ##### END suretec #####
 
+##### BEGIN cloudnl #####
+
+    @add_user { 'cloudnl':
+        email => 'support@cloud.nl',
+        company => 'Cloud.nl',
+        uid => 5273,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'cloudnl':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq5fbnXJ4lqQ4LIUQ4GqH2EfIacbHGXpQPqwjk4q5NKbFRoddzfL8O++HCrOPNIXlVcK0Dpoy1psbNoNVNvHM+8oeP3cFUeJAVtgT8G7EysZwSQCHYm/5vLSYNXuGMcG72oLk10ZiHkQCrLM9T+O/K/ZG0N2eNyMVdoKhpzDZBF6K2YspD2TDe1AtBZG/kb6J+h3u42Fbx7RxPvv95Fci3sGjKZvXOXKpxOjvIU1lBUNgeVNLfQcSkep4U1uYdzt8aRWQ1YYyNtgGHNcfU3vWESYPIWJfMd9G+pjmmWF8crXhA3xb9wSLZ4KdoZf/3KKcqa1EfKSAZX+nqUKNmZjz3Q== cloudadmin@bastion.infra.cloud.nl',
+            ],
+    }
+
+##### END cloudnl #####
+
