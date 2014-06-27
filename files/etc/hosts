@@ -920,3 +920,7 @@ ff02::2 ip6-allrouters
 
 2001:1640::55:3  mknetzdienste01 mknetzdienste01.ring.nlnog.net
 85.220.161.84    mknetzdienste01 mknetzdienste01.ring.nlnog.net
+
+2a02:d540::17  suretec01 suretec01.ring.nlnog.net
+185.8.92.17    suretec01 suretec01.ring.nlnog.net
+

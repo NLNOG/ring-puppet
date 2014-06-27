@@ -3764,3 +3764,14 @@ node 'mknetzdienste01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'suretec01' inherits ringnode {
+    $owner = "suretec"
+    $location = "51.511467,-0.001224"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

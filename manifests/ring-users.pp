@@ -4852,3 +4852,20 @@ class users::virtual::ring_users {
     }
 
 ##### END mknetzdienste #####
+
+##### BEGIN suretec #####
+
+    @add_user { 'suretec':
+        email => 'noc@suretec.net',
+        company => 'Suretec Systems Ltd. T/A SureVoIP',
+        uid => 5272,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'suretec':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDjwC0dGX16AZHDa6V6x4a+QbrhnwsGuLAamu6+dOlShYy6hv1J8cH8wn9qnrTKJxn+y3O1kr1x/p5A9CVn5EuhC0muDKU6faFsEB2OJKFGOZwlJQ+TArJ6DrEFM5u9eBCNJZRVey3f7d4NCYXvd0Qnrngh7CP5yWTjosTrgHnjp35lbWf9mZkpbc+KjtxGCs8zjanmfyB8xGCrHHt3MkXBNWpp5PmPj4AKPsfhPf9jXGykQsZ+LhxJhaq2RSUw92VFbCz/kJm6Qud0HYtv59FOT4SvYQuX4HTXKXpqVkf3ch1Kl/MldIlelwX5sMcRTNM2Sy7fLRzsYV2pembwWOsN "Suretec NLNOG RING Account"',
+            ],
+    }
+
+##### END suretec #####
+
