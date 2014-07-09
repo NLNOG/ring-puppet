@@ -930,3 +930,5 @@ ff02::2 ip6-allrouters
 2620:0:2830:203::158  icanndns02 icanndns02.ring.nlnog.net
 192.0.46.158    icanndns02 icanndns02.ring.nlnog.net
 
+2a00:9d80:9000:2::48:97  dacor01 dacor01.ring.nlnog.net
+217.24.48.97    dacor01 dacor01.ring.nlnog.net

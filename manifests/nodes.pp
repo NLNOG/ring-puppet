@@ -3794,3 +3794,12 @@ node 'icanndns02' inherits ringnode {
     include users
 }
 
+node 'dacor01' inherits ringnode {
+    $owner = "dacor"
+    $location = "50.25406,10.96146"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
