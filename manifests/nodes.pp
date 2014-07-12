@@ -3803,3 +3803,14 @@ node 'dacor01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'networkoperations01' inherits ringnode {
+    $owner = "networkoperations"
+    $location = "53.205139,5.765333"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

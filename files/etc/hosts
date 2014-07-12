@@ -932,3 +932,7 @@ ff02::2 ip6-allrouters
 
 2a00:9d80:9000:2::48:97  dacor01 dacor01.ring.nlnog.net
 217.24.48.97    dacor01 dacor01.ring.nlnog.net
+
+2a01:5140:130:123::  networkoperations01 networkoperations01.ring.nlnog.net
+80.73.130.123    networkoperations01 networkoperations01.ring.nlnog.net
+
