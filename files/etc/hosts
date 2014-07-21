@@ -936,3 +936,6 @@ ff02::2 ip6-allrouters
 2a01:5140:130:123::  networkoperations01 networkoperations01.ring.nlnog.net
 80.73.130.123    networkoperations01 networkoperations01.ring.nlnog.net
 
+2a00:4800:0020:6029:0000:0000:0000:0002  blizoo01 blizoo01.ring.nlnog.net
+217.9.226.25    blizoo01 blizoo01.ring.nlnog.net
+

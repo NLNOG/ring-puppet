@@ -3814,3 +3814,13 @@ node 'networkoperations01' inherits ringnode {
     include users
 }
 
+node 'blizoo01' inherits ringnode {
+    $owner = "blizoo"
+    $location = "42.6588705,23.3482014"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

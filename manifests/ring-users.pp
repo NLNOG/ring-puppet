@@ -4918,3 +4918,19 @@ class users::virtual::ring_users {
 
 ##### END networkoperations #####
 
+##### BEGIN blizoo #####
+
+    @add_user { 'blizoo':
+        email => 'noc@blizoo.bg',
+        company => 'Blizoo Media and Broadband',
+        uid => 5276,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'blizoo':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAuan/vkdfbAHgu5YuwPuIg+0Ss97CZsmP9T11UfPoG8KD87UaaTnys/wlIq1UZyuVqmXurZc7q13Mw+P4kHOVxvfuodvEi2PFjs4fSvCK8l39SBhoVquSjENgbgJYLuzWJqGoLBkTz3M8H4P8BX5Ni5SqCtn5CJBA/1XWyJo2eo5ex52++38prOewpevCh6s6kx5kk5ITnkv5KAgtkqXOQXmjIaNEqskgq3AwauaXpzcvfH7oMPc+uXKfF4c4cTY4rHiiUVA9T9u7R9z3GvkR4kQ7iPwewsvD/7lDfxQtpbLUVVVpfxTMO+4SxGmsspaZmLoq/XkdAKzSsOAs7ye1yw== zen0@lunata',
+            ],
+    }
+
+##### END blizoo #####
+
