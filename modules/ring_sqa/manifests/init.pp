@@ -3,7 +3,7 @@ class ring_sqa {
     package { 'ring-sqa':
         ensure      => 'latest',
         provider    => 'gem',
-        require     => [Alternatives['ruby'], Alternatives['gem']],
+        require     => [Alternatives['ruby'], Alternatives['gem'], Package['libsqlite3-dev']],
     }
 
     alternatives { 'ruby':
