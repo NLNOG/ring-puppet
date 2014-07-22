@@ -6,7 +6,7 @@ class ring_sqa {
     }
 
     alternatives { 'ruby':
-        ensure  => '/usr/bin/ruby1.9.1',
+        path    => '/usr/bin/ruby1.9.1',
         require => Package['ruby1.9.3'],
     }
 }
