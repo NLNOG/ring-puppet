@@ -6,6 +6,7 @@ directory: /etc/ring-sqa
 debug: false
 hosts:
     load:
+        - coloclue01
         - viatel02
         - ntt01
         - bogalnet01
