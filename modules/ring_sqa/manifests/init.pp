@@ -18,6 +18,7 @@ class ring_sqa {
 
     file { "/etc/ring-sqa/config":
         source => "puppet:///ring_sqa/config",
+        require => Package['ring-sqa'],
     }
 
     file { "/etc/init/ring-sqa.conf":
