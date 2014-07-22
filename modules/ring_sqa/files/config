@@ -1,0 +1,27 @@
+---
+email:
+to: job@instituut.net
+from: ring_sqa@ring.nlnog.net
+directory: /etc/ring-sqa
+debug: false
+hosts:
+    load:
+        - viatel02
+        - ntt01
+        - bogalnet01
+        - iucc01
+        - nynex01
+        - businessconnect01
+        - noris01
+        - mknetzdienste01
+        - suretec01
+        - cloudnl01
+        - icanndns01
+        - icanndns02
+        - dacor01
+        - networkoperations01
+        - blizoo01
+    ignore:
+        - infra.ring.nlnog.net
+port: 12838
+

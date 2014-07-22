@@ -15,4 +15,8 @@ class ring_sqa {
         path    => '/usr/bin/gem1.9.1',
         require => Package['ruby1.9.3'],
     }
+
+    file { "/etc/ring-sqa/config":
+        source => "puppet:///ring_sqa/config",
+    }
 }
