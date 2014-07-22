@@ -709,6 +709,7 @@ node 'coloclue01' inherits ringnode {
     include nagios_services
     include set_local_settings
 	include users
+    include ring_sqa
 }
 
 node 'widexs01' inherits ringnode {
