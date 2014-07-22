@@ -19,4 +19,13 @@ class ring_sqa {
     file { "/etc/ring-sqa/config":
         source => "puppet:///ring_sqa/config",
     }
+
+    file { "/etc/init/ring-sqa.conf":
+        source => "puppet:///ring_sqa/upstart-ring-sqa.conf",
+    }
+
+    service { "ring-sqa":
+        ensure      => 'running',
+        provider    => 'upstart',
+    }
 }
