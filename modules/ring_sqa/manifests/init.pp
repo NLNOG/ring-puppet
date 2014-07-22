@@ -28,5 +28,6 @@ class ring_sqa {
     service { "ring-sqa":
         ensure      => 'running',
         provider    => 'upstart',
+        require     => Package['ring-sqa'],
     }
 }
