@@ -223,6 +223,7 @@ class nettools {
     package { "language-pack-en-base": ensure => latest }
     package { "sshfp": ensure => latest }
     package { "ringfpingd": ensure => latest }
+    package { "ruby1.9.3": ensure => latest }
 
     # packages we don't like
     package { "pppoe": ensure => purged }
