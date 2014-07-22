@@ -16,10 +16,15 @@ class ring_sqa {
         require => Package['ruby1.9.3'],
     }
 
-    file { "/etc/ring-sqa/config":
-        source => "puppet:///ring_sqa/config",
+    file { "/etc/ring-sqa/main.conf":
+        source => "puppet:///ring_sqa/main.conf",
         require => Package['ring-sqa'],
     }
+
+    file { "/etc/ring-sqa/config":
+        ensure => "absent",
+    }
+
 
     file { "/etc/init/ring-sqa.conf":
         source => "puppet:///ring_sqa/upstart-ring-sqa.conf",
