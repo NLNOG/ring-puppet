@@ -1,0 +1,45 @@
+{
+  "name": "adrien-alternatives",
+  "version": "0.1.1",
+  "source": "https://github.com/adrienthebo/puppet-alternatives",
+  "author": "Adrien Thebo <adrien@somethingsinistral.net>",
+  "license": "Apache 2.0",
+  "summary": "Maintain symbolic links determining default commands",
+  "description": "UNKNOWN",
+  "project_page": "https://github.com/adrienthebo/puppet-alternatives",
+  "dependencies": [
+
+  ],
+  "types": [
+    {
+      "name": "alternatives",
+      "doc": "",
+      "properties": [
+        {
+          "name": "path",
+          "doc": "The path of the desired source for the given alternative"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "name",
+          "doc": "The name of the alternative."
+        }
+      ],
+      "providers": [
+        {
+          "name": "dpkg",
+          "doc": "Required binaries: `/usr/sbin/update-alternatives`."
+        }
+      ]
+    }
+  ],
+  "checksums": {
+    "CHANGELOG": "3211bcdc0f32f0f4050ed37f5ca6f972",
+    "LICENSE": "652041dc5ffe79a9452e7ef577468f7c",
+    "Modulefile": "621373ee406dba456c971d76a741a439",
+    "README.markdown": "7d3bdacb4205bdfd0796c380543779ee",
+    "lib/puppet/provider/alternatives/dpkg.rb": "58a5db39d5924fc8cce0b63a3cabeb2b",
+    "lib/puppet/type/alternatives.rb": "5c0543e96f5e2672c517f2c7b7f4fc6c"
+  }
+}
