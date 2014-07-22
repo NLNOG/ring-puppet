@@ -98,9 +98,6 @@ node 'master01.infra' inherits basenode {
     }
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
-    munin::plugin { ["memcached_bytes", "memcached_counters", "memcached_rates"]:
-        ensure => "memcached_";
-    }
     Exec <<| tag == "destroy_virtual_machines" |>>
     include backup::client
 }
