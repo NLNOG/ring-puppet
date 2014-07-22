@@ -3,6 +3,7 @@ class ring_sqa {
     package { 'ring-sqa':
         ensure      => 'latest',
         provider    => 'gem',
+        require     => Alternatives['ruby'],
     }
 
     alternatives { 'ruby':
