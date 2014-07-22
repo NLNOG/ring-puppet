@@ -23,6 +23,6 @@ class ring_sqa {
 
     alternatives { 'rdoc':
         path    => '/usr/bin/rdoc1.9.1',
-        require => Package['rdoc1.9.3'],
+        require => Package['ruby1.9.3'],
     }
 }
