@@ -50,6 +50,9 @@ class nettools {
     package { "python-simplejson":
         ensure  => latest,
     }
+    package { "python-demjson":
+        ensure  => latest,
+    }
     package { "psmisc":
         ensure => latest,
     }
