@@ -101,6 +101,7 @@ class nettools {
         }
     }
     package { "python-ipaddr": ensure => latest }
+    package { "python-pip": ensure => latest }
     package { "graphviz": ensure => latest }
     package { "hping3": ensure => latest }
     package { "gnutls-bin": ensure => latest }
