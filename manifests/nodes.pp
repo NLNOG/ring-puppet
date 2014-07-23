@@ -860,6 +860,7 @@ node 'ebayclassifiedsgroup01' inherits ringnode {
     include nagios_services
     include set_local_settings
 	include users
+    include ring_sqa
 }
 
 node 'is01' inherits ringnode {
