@@ -4746,6 +4746,7 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'ntt':
         sshkeys => [
+            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOPiSibhYjp36h0m4MRrt3TSlZgHfmyu934phm1IBN9Ybxh7WfUOEKIh0I/wSGGNtUuHijXrBCi75zii8LSrotbG3wBWcYW1QJX+Z/QV1P1K4FWIsuMXMjDbiMy78QlyTCVrbZlwBsgM7DlbrWd6g9ecBgp0V/MsmGYWxRZIcWkvqTz/M9ScPDLfJjPGH4Q7AEupjzthd5xVE6hueJM5A/nKgiL3srVhrqF0t7Elw4os2tjMU5paBU2BTY6kCrOtIuTxY5Hh+Pa+SmRROket4wsbbCks8fzF/r2yx8O9/4LdsJhJHZ1HJGOFrLdHa0EL5Bb/ix8Dol5CgiuA+EGM69 bradd@patton.ameri.ca',
             ],
     }
 
