@@ -156,7 +156,7 @@ log { source(s_src); filter(f_crit); destination(d_console); };
 
 destination d_net_tcp_list {
     <% logServerList.each do |logServer| -%>
-    tcp6("<%= logServer %>" port(514));
+    udp6("<%= logServer %>" port(514));
     <% end -%>
 };
 
