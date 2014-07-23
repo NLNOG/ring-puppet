@@ -79,4 +79,11 @@ class cronjobs {
         minute => "42",
     }
 
+    cron {
+        "nodesjsonfetcher":
+        command => "/usr/local/bin/ring-fetch-nodes-json",
+        user    => root,
+        minute  => $second,
+        require => File["/usr/local/bin/ring-fetch-nodes-json"],
+    }
 }

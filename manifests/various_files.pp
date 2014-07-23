@@ -275,6 +275,13 @@ class local_binaries {
         source  => "puppet:///files/usr/local/bin/puppet_zombiecleanup",
         ensure => present,
     }
+        file { "/usr/local/bin/ring-fetch-nodes-json":
+        owner   => root,
+        group   => root,
+        mode    => 0755,
+        source  => "puppet:///files/usr/local/bin/ring-fetch-nodes-json",
+        ensure => present,
+    }
     file { "/usr/sbin/purgekernel":
         ensure  => absent,
     }
