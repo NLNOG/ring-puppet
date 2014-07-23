@@ -225,7 +225,6 @@ class nettools {
     package { "ringfpingd": ensure => latest }
     package { "ruby1.9.3": ensure => latest }
     package { "libsqlite3-dev": ensure => latest }
-    package { "jq": ensure => latest }
 
     # packages we don't like
     package { "pppoe": ensure => purged }
