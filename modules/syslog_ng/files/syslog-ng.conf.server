@@ -169,7 +169,7 @@ log { source(s_src); destination(d_clients); };
 #----------------------------------------------------------------------
 #  Remote logs sorting by host
 #----------------------------------------------------------------------
-source s_remote { tcp6(ip("::") port(514) max-connections(1000)); };
+source s_remote { udp6(ip("::") port(514) max-connections(1000)); };
 
 destination d_clients { 
     file("/var/log/HOSTS/$R_YEAR/$R_MONTH/$R_DAY/$HOST/$FACILITY" create_dirs(yes) owner("root") group("adm")); 
