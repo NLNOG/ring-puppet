@@ -424,21 +424,23 @@ class commands(object):
 
         v4=self.ring_getnodeattr(name,"v4")
         if v4:
-            recid=self.add_record(name=name,rtype='A',content=v4,ttl=600,prio=0)
+            recid=self.add_record(name=name,rtype='A',content=v4,
+                                  ttl=600,prio=0,zone=zone)
             print 'record %s added' % (recid)
         else:
             print >> sys.stderr, "Unable to retrieve IPv4 address from ring db"
             
         v6=self.ring_getnodeattr(name,"v6")
         if v6:
-            recid=self.add_record(name=name,rtype='AAAA',content=v6,ttl=600,prio=0)
+            recid=self.add_record(name=name,rtype='AAAA',content=v6,
+                                  ttl=600,prio=0,zone=zone)
             print 'record %s added' % (recid)
         else:
             print >> sys.stderr, "Unable to retrieve IPv6 address from ring db"
         geo=self.ring_getnodeattr(name,"geo")
         if geo:
-            recid=self.add_record(name=name,rtype='LOC',
-                                  content=self.getgeo(geo),ttl=600,prio=0)
+            recid=self.add_record(name=name,rtype='LOC',content=self.getgeo(geo),
+                                  ttl=600,prio=0,zone=zone)
             print 'record %s added' % (recid)
         else:
             print >> sys.stderr, "Unable to retrieve geo information from ring db"
@@ -469,8 +471,8 @@ class commands(object):
         if update:
             self.update_rtype(name=name,rtype=rtype,content=value)
         else:    
-            recid=self.add_record(name=name,rtype=rtype,
-                                  content=value,ttl=600,prio=0)
+            recid=self.add_record(name=name,rtype=rtype,content=value,
+                                  ttl=600,prio=0,zone=zone)
             print 'record %s added' % (recid)
         print 'node %s updated' % (name)
         self.update_soa(zone)
@@ -567,7 +569,7 @@ class commands(object):
                 print 'node %s updated' % (name)
             else:
                 recid=self.add_record(name=name,rtype=rtype,
-                                    content=value,ttl=600,prio=0)
+                                    content=value,ttl=600,prio=0,zone=zone)
                 print 'record %s added for %s' % (recid,name)
         f.close()
         self.update_soa(zone)
@@ -591,7 +593,7 @@ class commands(object):
 
     def cmd_add_soa(self,zone=ZONE):
         """add the SOA for a domain"""
-        recid=self.add_record(zone,'SOA',SOA,3600,0,zone)
+        recid=self.add_record(zone,'SOA',SOA,3600,0,zone=zone)
         print 'record %s added' % (recid)
     
     def cmd_update_soa(self,zone=ZONE):
