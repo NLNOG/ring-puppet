@@ -22,9 +22,13 @@ class ring_sqa {
         require => Package['ruby1.9.3'],
     }
 
+    file { "/etc/ring-sqa":
+        ensure  => directory,
+    }
+
     file { "/etc/ring-sqa/main.conf":
-        source => "puppet:///ring_sqa/main.conf",
-        require => Package['ring-sqa'],
+        source  => "puppet:///ring_sqa/main.conf",
+        require => [Package['ring-sqa'], File["/etc/ring-sqa"]],
     }
 
     file { "/etc/init/ring-sqa.conf":
