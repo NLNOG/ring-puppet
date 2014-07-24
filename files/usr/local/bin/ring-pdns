@@ -396,7 +396,7 @@ class commands(object):
         """add a record"""
         if not (re.match(r'.*%s$' % zone,name)):
             name=name + "." + zone
-        recid=self.add_record(name=name,rtype=rtype,content=content,ttl=ttl,prio=prio)
+        recid=self.add_record(name=name,rtype=rtype,content=content,ttl=ttl,prio=prio,zone=zone)
         print 'record %s added' % (recid)
         self.update_soa(zone)
     
@@ -591,7 +591,7 @@ class commands(object):
 
     def cmd_add_soa(self,zone=ZONE):
         """add the SOA for a domain"""
-        recid=self.add_record(zone,'SOA',SOA,3600,0)
+        recid=self.add_record(zone,'SOA',SOA,3600,0,zone)
         print 'record %s added' % (recid)
     
     def cmd_update_soa(self,zone=ZONE):
