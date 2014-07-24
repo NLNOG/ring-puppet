@@ -4943,3 +4943,21 @@ class users::virtual::ring_users {
 
 ##### END blizoo #####
 
+##### BEGIN vibe #####
+
+    @add_user { 'vibe':
+        email => 'noc@vibecommunications.co.nz',
+        company => 'Vibe Communications LTD',
+        uid => 5277,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'vibe':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDITklXnlU/HVT4tJHpffKyY5Q5d1RO1ne/e+zInLEI0akjqUmICRBN9wlRsq+qoGKY6kLF/VbR9Wx5SqJ2u8OB9iqdR5lr2+JDwmZXtlrc7A+hb+KTdB6duXUxkcp9rxTu8aD38p+2cbssJacK+Dk8kdQ7DiggbGHzb80ET3jgfPaTV7yjC288gM019Uqj3Jami2MApT5XcQ6WDzQPiSdlo/+hielCgUqocGoMPxqdj3X2IVuUmwNgUZEhjqZQiJOua6K7cEBzl7LZcJqbSWvmF5OhmtJLsOlQuRXOlCzazmw6JCyPmvW67FxSsw/VDM2hpflGslrNZ8LoU/D0g1Zr davey@djgmac',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUr1SgnSYQfmU2pipsuxHjvSjffGwtVlekFR5S7T3rt3J6Bmh/BSLXSSOxywDBHGaU5bwETBB13WB1xILlr1swE/ORSGFJgYHYeBBxppVoV2rEH/OGoNCyzVMKt4Q9vePLlV5wlfAXJdcCVjADiehcfXn1d4xJJzJ0ugx3UFNxsY0UKP+6XToeOlfLR7Un4nr1AHWC6V3WJtHe17vxIaLjGMSO9xVWQcmO3PO3EAgFeViNxSuZJhvUA3rm5CeXl9Bk8OGXNtvYD5Y49gHX9yUiyaO6NTecBLlA1P2gTFi6ATVKB+j5+++0aL0I4VYlyCdFkPDUpwrl3ohmI6DFw01B barry@Barry-Murphys-MacBook-Pro.local',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDThadK8xt4wKFpR0cYBWVGADIF9Yxt4J3UQTujIeJ301EORBf3gGGN9nOSLasRVtzQHGJ0h5RVrNzk9sW2jZK/lJOjM+fyBVGg40OzqELxd7+Scsi7Q+RbOLF5Z6wx12V4TCBMtLCrRlJsEPbnJRpF8l++Q2KDyO+0YLYmaEYnBluAAkEM7gHYRBKvf37vpDaxRwa2Uu43WbKBvUvavyU3ZPqPR1Tlc+1zdDeoXvXegkhvrJOwlqCgEiAQ5+6yXRSMH3QDiB5YUkGh3qtMFaHgYS0iJMk947n70AAAU7B8cclSxUtRnTnmxf/p8Q6qz1IwqQbyNLFVofIKJ9dKAIdd callumb@Callums-MacBook-Pro.local',
+            ],
+    }
+
+##### END vibe #####
+

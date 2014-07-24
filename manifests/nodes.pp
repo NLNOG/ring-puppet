@@ -3842,3 +3842,13 @@ node 'blizoo01' inherits ringnode {
     include ring_sqa
 }
 
+node 'vibe01' inherits ringnode {
+    $owner = "vibe"
+    $location = "-36.849346,174.765412"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
