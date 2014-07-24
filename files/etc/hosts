@@ -939,3 +939,6 @@ ff02::2 ip6-allrouters
 2a00:4800:0020:6029:0000:0000:0000:0002  blizoo01 blizoo01.ring.nlnog.net
 217.9.226.25    blizoo01 blizoo01.ring.nlnog.net
 
+2401:7000:1:2::2  vibe01 vibe01.ring.nlnog.net
+14.1.44.230    vibe01 vibe01.ring.nlnog.net
+
