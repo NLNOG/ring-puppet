@@ -39,7 +39,7 @@ node ringnode inherits basenode {
         mode    => 644,
         source  => "puppet:///files/etc/puppet/puppet.conf"
     }
-
+    include ring_sqa
 }
 
 node infranode inherits basenode {
@@ -709,7 +709,6 @@ node 'coloclue01' inherits ringnode {
     include nagios_services
     include set_local_settings
 	include users
-    include ring_sqa
 }
 
 node 'widexs01' inherits ringnode {
@@ -860,7 +859,6 @@ node 'ebayclassifiedsgroup01' inherits ringnode {
     include nagios_services
     include set_local_settings
 	include users
-    include ring_sqa
 }
 
 node 'is01' inherits ringnode {
@@ -993,7 +991,6 @@ node 'tdc01' inherits ringnode {
     include nagios_services
     include set_local_settings
 	include users
-    include ring_sqa
 }
 
 node 'netability01' inherits ringnode {
@@ -3685,7 +3682,6 @@ node 'viatel02' inherits ringnode {
     include nagios_services
     include set_local_settings
     include users
-    include ring_sqa
 }
 
 node 'ntt01' inherits ringnode {
@@ -3696,7 +3692,6 @@ node 'ntt01' inherits ringnode {
     include nagios_services
     include set_local_settings
     include users
-    include ring_sqa
 }
 
 node 'bogalnet01' inherits ringnode {
@@ -3707,7 +3702,6 @@ node 'bogalnet01' inherits ringnode {
     include nagios_services
     include set_local_settings
     include users
-    include ring_sqa
 }
 
 node 'iucc01' inherits ringnode {
@@ -3718,7 +3712,6 @@ node 'iucc01' inherits ringnode {
     include nagios_services
     include set_local_settings
     include users
-    include ring_sqa
 }
 
 node 'nynex01' inherits ringnode {
@@ -3729,7 +3722,6 @@ node 'nynex01' inherits ringnode {
     include nagios_services
     include set_local_settings
     include users
-    include ring_sqa
 }
 
 node 'businessconnect01' inherits ringnode {
@@ -3740,7 +3732,6 @@ node 'businessconnect01' inherits ringnode {
     include nagios_services
     include set_local_settings
     include users
-    include ring_sqa
 }
 
 node 'noris01' inherits ringnode {
@@ -3751,7 +3742,6 @@ node 'noris01' inherits ringnode {
     include nagios_services
     include set_local_settings
     include users
-    include ring_sqa
 }
 
 node 'mknetzdienste01' inherits ringnode {
@@ -3762,7 +3752,6 @@ node 'mknetzdienste01' inherits ringnode {
     include nagios_services
     include set_local_settings
     include users
-    include ring_sqa
 }
 
 node 'suretec01' inherits ringnode {
@@ -3773,7 +3762,6 @@ node 'suretec01' inherits ringnode {
     include nagios_services
     include set_local_settings
     include users
-    include ring_sqa
 }
 
 node 'cloudnl01' inherits ringnode {
@@ -3784,7 +3772,6 @@ node 'cloudnl01' inherits ringnode {
     include nagios_services
     include set_local_settings
     include users
-    include ring_sqa
 }
 
 node 'icanndns01' inherits ringnode {
@@ -3795,7 +3782,6 @@ node 'icanndns01' inherits ringnode {
     include nagios_services
     include set_local_settings
     include users
-    include ring_sqa
 }
 
 node 'icanndns02' inherits ringnode {
@@ -3806,7 +3792,6 @@ node 'icanndns02' inherits ringnode {
     include nagios_services
     include set_local_settings
     include users
-    include ring_sqa
 }
 
 node 'dacor01' inherits ringnode {
@@ -3817,7 +3802,6 @@ node 'dacor01' inherits ringnode {
     include nagios_services
     include set_local_settings
     include users
-    include ring_sqa
 }
 
 node 'networkoperations01' inherits ringnode {
@@ -3828,7 +3812,6 @@ node 'networkoperations01' inherits ringnode {
     include nagios_services
     include set_local_settings
     include users
-    include ring_sqa
 }
 
 node 'blizoo01' inherits ringnode {
@@ -3839,7 +3822,6 @@ node 'blizoo01' inherits ringnode {
     include nagios_services
     include set_local_settings
     include users
-    include ring_sqa
 }
 
 node 'vibe01' inherits ringnode {

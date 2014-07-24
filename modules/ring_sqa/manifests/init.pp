@@ -27,11 +27,6 @@ class ring_sqa {
         require => Package['ring-sqa'],
     }
 
-    file { "/etc/ring-sqa/config":
-        ensure => "absent",
-    }
-
-
     file { "/etc/init/ring-sqa.conf":
         source => "puppet:///ring_sqa/upstart-ring-sqa.conf",
     }
@@ -40,5 +35,7 @@ class ring_sqa {
         ensure      => 'running',
         provider    => 'upstart',
         require     => [Package['ring-sqa'], File["/etc/ring-sqa/config"]],
+        subscribe   => File["/etc/ring-sqa/main.conf"],
+        restart     => "restart ring-sqa",
     }
 }
