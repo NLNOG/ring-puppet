@@ -228,6 +228,7 @@ class nettools {
     package { "sshfp": ensure => latest }
     package { "ringfpingd": ensure => latest }
     package { "ruby1.9.3": ensure => latest }
+    package { "ruby1.9.1-dev": ensure => latest }
     package { "libsqlite3-dev": ensure => latest }
 
     # packages we don't like
