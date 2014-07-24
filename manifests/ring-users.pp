@@ -2917,6 +2917,7 @@ class users::virtual::ring_users {
                 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDLOTNkM8wMehgBN2UyVEfucHxq9n6AMAiy5/TpBXXjGYTmtCYCyVLo/iLUSkRgHN43+uoKiFA3X+TDDE+8jsz9bPZfCvFvvi3rM+zj1G3BpalJRU9wbUiGj2rqJpRxaWxDFdJ4mWFwwUwVy4567cysTOF8SmPXSKu94NE8xeLcuQp8d0MMhLjpUOhYgiw2o953Pl1uXQPjOlKOAarxzAAGO9N5L2tf4/jK7kiilcZnqWBLRcWyRmRtGNYHeEsnsHpgmQYD/7l/IFUGGVCrI94GrtcCqU67ytmroQOPH4AT+sksriEsLir3RPHvGkwvThD7jMBKdNAQtfaCseC33s7tIafs8zriWvhPzvsfZgZQhJJ3s6oiTMQS3DVuSfH4/hjqqtQvdbKweIGumFA88CMqoLWREVHv0Y7tS9J+0cs3SdGKMUPOh3ae+m9k/Fzy2AFvCrjMG5ZOfds2fxAwTRhMGK5dgQgAc5OZt/+mZt2kTE7AWVkxk9mi4/YD/p4VE3OFBxRp2Dr+nQ/HNvLsirUQYAAiv6cQNDtnxqwtM0ccZ4zsZ9vBd9JxWul5rMFPpg6rUL8QYQXbKSh1XI6MMKueWcMVXb/yf8/GgmPrFETWajRPIzbJO7qJDPs9LoKzBwbnQzSXmzK4drSTzMcvKzs1p+ozj09eO9sOJ1Nc44SJ5Q== sst@hosteurope.de',
                 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDGxdJwrL1GiclaQvFfC9SFYbc43WPowcqCMiPft/vJUt1X2v1Qnx/6l7gRnkd3Hi+ob27Ny0Sb2HTemeQzR2laE0lIHGafNhCK0ya5r/ufAJOJMHOTrRQGgk4dep1xueLB+idKDGsf5FOanT7A0B6/2LVNr3VrGt5eUKloqUyFFXNiX6PXGlFVN/ZbJIdPZspumVYBYxhzVx3m8n47Wm9Cws2tdTQJM6MyQ6hMWv1ZfxOirL/t4bqhS6FOnmD2gLPZwxE9OOIVIjtrNWcBjtDzMQZVcR8aNYpP6aCEmaV7VNqN3na8OTGS7L4w0DwZyX0PptMZposFfLaVIaFhMOlW7Mq8/BO32V3MuxT+HxQ9CDBmIyKQnpxzDcfI6XFYp+8/VYDYVaOCQY9Q0mikrV7xVZyGhEPOpwDpamp5dzmRt/D7+zarxipzC1qDZzCGbM6Dg59vT0SMJFGp2fK5ccbm0zkOyp0cXGMEfDRF1LuvojgB395DcoDWdPWC+2gLCyof9L3qurvdpdha8QnStiO+XuEBtYp/2NifFpUhgeZp4Dn5pMPLK0KPdGNj2jg5Ue0k5jcnxJ1gdWhlJWI+bkIeC3RnUNPJnbGL9hdCg/B0CLU1XSiJl4qcfE1axEpCdCjndhDOcRG9fkKYDP/by1luTH64oPMl6WQuV+OvPE3njQ== sk@hosteurope.de',
                 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC208Ak81AOks23lpkcQYMSL2peRKPKmrufAxB8D4He1R17s8hsTFoZk/CT23g3baYJFjMsK9eXiri9b9SN4NNMkClEzKQBcV/sRePSNMHA+9Wf5iXErbwzoj7W58WxUWwEX58EN7dIaMOeiP4x9jZdQPMLkyT1g/LWrP26TXJcQD/KcdcHzEmO0CwZD7tDPBuaEzqcbwXRzX5Sv76rTgY3Qqhql7Ya7ElG0SMxFyBetM4AJRePhga5BkbUVPc0RUATrBpEsu5/51muWm9E+Ro2/utHMMEA/vPDAzr+Kogw+ddbuaJR3agQ/Wb2C7yeWC7M8+AcgEc84n2jVLpg1Pr0YOu4nL/qjwB0Sbd9jEzvcC5erz1iarrmnUy/gGRZfcVNdfUJHvPaBrOsW4OSnE6O37CM6aPNBvZ9zA5kCg/5I3oZS0A9KbASHB8Z8YmP/tdqdboctl28pJ5ziYuNeFQWaw3YbsyaSzXl6TnzIbvcCKpluiggxLqRUK17w5b9U3I18FAKn0uAGd8rW91IjvaZEPcMDDMh5C5ri5vf4C9pJkNFDCoFvLtjsXZqC1y2Oe/spiXwkyS6RpjPnk9/57Q6q2F8SJ72BuEBZ+V1+Xinx7IcisLUqp8AVu+j4vZTKpJt53JHUPfyZDZLxLV9444ts0Iq8FsAwn/P7Z/C7UaiWQ== rpa@hosteurope.de',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAxF0TOquclU7RkmwB5Wu5VUNhiGOSoUqBhgHzffrHv6hQfz3h4zOBN5+CjN6PRPtGdfMhQiyGgvRsL7y+OnvJxxkor1MS4HWs6nFTTkurMIk0+nY0wSvcFj2wUQI5wveFlu9E+x7TmlQ1L2ydZSoVl7dnF4LnFGvF3N4UOq6k/Nz/kyznC8VKx28VyebpXJUJKsZnt5Tl0xTwKnl8/O1o3gKcuqUoMgUq2loXojwgpv2JtnITtbBEfa/Y4Okt6fxuHFaPI6MM5itA6aVtDfKyuO60FL63w+cg0TAqDttEXVNrIROtKFibeCGSzw+VBsF8dxOiGED+I5Wj+X9HeGBfZOHn2QBgh5CyYrsoDadzQx5VQEOnEABxlSJhseqEdtiDjnWErmRMQN6eGaGreRqSnGpoNdtnJjotqnD92phOFgkmSS/92gFhBDch6VTYR5dWALBA0l2/UBqWMS0BobLDOSSHNjHKa7bFr3svPZTjAM6BCZUf5mm2eQ89ICXW0EEeL6Q383XRlx9aXFVOQhqU9xwX5qW1gtvgNXOkq6yWk2orKlWtiokTpg0M2O8nbNwP9hag5luHF5+hr7GiwgHWwPHwVG7KB2wi1otuTmTtMLFy6liwNgDzqdssk3rc5yn5E6So9WHYUaIcXARQ616hy2vkc5NbcA835+dxQzxMBBM= th',
             ],
     }
 
@@ -4942,4 +4943,22 @@ class users::virtual::ring_users {
     }
 
 ##### END blizoo #####
+
+##### BEGIN vibe #####
+
+    @add_user { 'vibe':
+        email => 'noc@vibecommunications.co.nz',
+        company => 'Vibe Communications LTD',
+        uid => 5277,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'vibe':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDITklXnlU/HVT4tJHpffKyY5Q5d1RO1ne/e+zInLEI0akjqUmICRBN9wlRsq+qoGKY6kLF/VbR9Wx5SqJ2u8OB9iqdR5lr2+JDwmZXtlrc7A+hb+KTdB6duXUxkcp9rxTu8aD38p+2cbssJacK+Dk8kdQ7DiggbGHzb80ET3jgfPaTV7yjC288gM019Uqj3Jami2MApT5XcQ6WDzQPiSdlo/+hielCgUqocGoMPxqdj3X2IVuUmwNgUZEhjqZQiJOua6K7cEBzl7LZcJqbSWvmF5OhmtJLsOlQuRXOlCzazmw6JCyPmvW67FxSsw/VDM2hpflGslrNZ8LoU/D0g1Zr davey@djgmac',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUr1SgnSYQfmU2pipsuxHjvSjffGwtVlekFR5S7T3rt3J6Bmh/BSLXSSOxywDBHGaU5bwETBB13WB1xILlr1swE/ORSGFJgYHYeBBxppVoV2rEH/OGoNCyzVMKt4Q9vePLlV5wlfAXJdcCVjADiehcfXn1d4xJJzJ0ugx3UFNxsY0UKP+6XToeOlfLR7Un4nr1AHWC6V3WJtHe17vxIaLjGMSO9xVWQcmO3PO3EAgFeViNxSuZJhvUA3rm5CeXl9Bk8OGXNtvYD5Y49gHX9yUiyaO6NTecBLlA1P2gTFi6ATVKB+j5+++0aL0I4VYlyCdFkPDUpwrl3ohmI6DFw01B barry@Barry-Murphys-MacBook-Pro.local',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDThadK8xt4wKFpR0cYBWVGADIF9Yxt4J3UQTujIeJ301EORBf3gGGN9nOSLasRVtzQHGJ0h5RVrNzk9sW2jZK/lJOjM+fyBVGg40OzqELxd7+Scsi7Q+RbOLF5Z6wx12V4TCBMtLCrRlJsEPbnJRpF8l++Q2KDyO+0YLYmaEYnBluAAkEM7gHYRBKvf37vpDaxRwa2Uu43WbKBvUvavyU3ZPqPR1Tlc+1zdDeoXvXegkhvrJOwlqCgEiAQ5+6yXRSMH3QDiB5YUkGh3qtMFaHgYS0iJMk947n70AAAU7B8cclSxUtRnTnmxf/p8Q6qz1IwqQbyNLFVofIKJ9dKAIdd callumb@Callums-MacBook-Pro.local',
+            ],
+    }
+
+##### END vibe #####
 

@@ -6,6 +6,12 @@ class ring_sqa {
         require     => [Alternatives['ruby'], Alternatives['gem'], Package['libsqlite3-dev']],
     }
 
+    package { 'SyslogLogger':
+        ensure      => 'latest',
+        provider    => 'gem',
+        require     => Alternatives['gem'],
+    }
+
     alternatives { 'ruby':
         path    => '/usr/bin/ruby1.9.1',
         require => Package['ruby1.9.3'],
@@ -34,5 +40,7 @@ class ring_sqa {
         ensure      => 'running',
         provider    => 'upstart',
         require     => [Package['ring-sqa'], File["/etc/ring-sqa/config"]],
+        subscribe   => File["/etc/ring-sqa/main.conf"],
+        restart     => "restart ring-sqa",
     }
 }
