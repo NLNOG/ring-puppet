@@ -645,9 +645,6 @@ ff02::2 ip6-allrouters
 2001:828:100:82:11:104:0:1  proserve01 proserve01.ring.nlnog.net
 83.96.195.104    proserve01 proserve01.ring.nlnog.net
 
-2001:470:10:29::2  teletalk01 teletalk01.ring.nlnog.net
-177.21.0.58    teletalk01 teletalk01.ring.nlnog.net
-
 2801:82:0:3::54  poppr01 poppr01.ring.nlnog.net
 200.134.255.54    poppr01 poppr01.ring.nlnog.net
 
