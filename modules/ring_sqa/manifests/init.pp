@@ -51,7 +51,7 @@ class ring_sqa {
     service { "ring-sqa4":
         ensure      => 'running',
         provider    => 'upstart',
-        require     => [Package['ring-sqa'], File['/etc/init/ring-sqa4.conf']]
+        require     => [Package['ring-sqa'], File['/etc/init/ring-sqa4.conf']],
         subscribe   => File["/etc/ring-sqa/main.conf"],
         restart     => "restart ring-sqa4",
     }
@@ -59,7 +59,7 @@ class ring_sqa {
     service { "ring-sqa6":
         ensure      => 'running',
         provider    => 'upstart',
-        require     => [Package['ring-sqa'], File['/etc/init/ring-sqa6.conf']]
+        require     => [Package['ring-sqa'], File['/etc/init/ring-sqa6.conf']],
         subscribe   => File["/etc/ring-sqa/main.conf"],
         restart     => "restart ring-sqa6",
     }
