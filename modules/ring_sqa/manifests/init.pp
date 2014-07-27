@@ -32,14 +32,36 @@ class ring_sqa {
     }
 
     file { "/etc/init/ring-sqa.conf":
-        source => "puppet:///ring_sqa/upstart-ring-sqa.conf",
+        ensure  => absent,
+    }
+
+    file { "/etc/init/ring-sqa4.conf":
+        source => "puppet:///ring_sqa/upstart-ring-sqa4.conf",
+    }
+
+    file { "/etc/init/ring-sqa6.conf":
+        source => "puppet:///ring_sqa/upstart-ring-sqa6.conf",
     }
 
     service { "ring-sqa":
+        ensure      => 'stopped',
+        provider    => 'upstart',
+    }
+    
+    service { "ring-sqa4":
         ensure      => 'running',
         provider    => 'upstart',
-        require     => Package['ring-sqa'],
+        require     => [Package['ring-sqa'], File['/etc/init/ring-sqa4.conf']]
         subscribe   => File["/etc/ring-sqa/main.conf"],
-        restart     => "restart ring-sqa",
+        restart     => "restart ring-sqa4",
     }
+
+    service { "ring-sqa6":
+        ensure      => 'running',
+        provider    => 'upstart',
+        require     => [Package['ring-sqa'], File['/etc/init/ring-sqa6.conf']]
+        subscribe   => File["/etc/ring-sqa/main.conf"],
+        restart     => "restart ring-sqa6",
+    }
+
 }
