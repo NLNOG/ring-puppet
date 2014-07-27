@@ -32,7 +32,7 @@ class ring_sqa {
     }
 
     file { "/etc/init/ring-sqa.conf":
-        ensure  => absent,
+        source => "puppet:///ring_sqa/upstart-ring-sqa4.conf",
     }
 
     file { "/etc/init/ring-sqa4.conf":
