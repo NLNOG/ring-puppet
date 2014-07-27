@@ -82,6 +82,14 @@ class users::virtual::ring_users {
     ensure => absent,
 }
 
+@add_user { 'networking4all':
+    email => 'noc@networking4all.com',
+    company => 'Networking4all',
+    uid => 5153,
+    groups => ['ring-users'],
+    ensure => absent,
+}
+
 ##### END former users #####
 
 ##### BEGIN intouch #####
@@ -2758,25 +2766,6 @@ class users::virtual::ring_users {
     }
 
 ##### END one #####
-
-##### BEGIN networking4all #####
-
-    @add_user { 'networking4all':
-        email => 'noc@networking4all.com',
-        company => 'Networking4all',
-        uid => 5153,
-        groups => ['ring-users'],
-    }
-    @authorized_keys { 'networking4all':
-        sshkeys => [
-                'ssh-dss AAAAB3NzaC1kc3MAAACBAMg580Z4SL2KWtPNeicc/Zhiwqrd3iNAeAIl3mXosTEI+CvinILL7+e7VasJhhxi+6gPPu4QPdROeRHwVESMFCjYYU0c9kfU8Da2RnZpZGnzRicGw8QD5jxNTUw7SVLN0zzpFwufHLMW8OM0Yv8fScGjwcepRvmRITyxKNv98mM1AAAAFQCDh0IVU9ta32oQu0d99IH96AeXLQAAAIEAtqGVhCHqezk+aPfW1wYLZzv0OgND6hFjeO73hC09oxBRlgFBxEAyjz//pV4afFBjuXXd7M6HrWdBMs/toTnWpYugHE8fMl156fVw0sjWW2Qsdwtv646Axauo+LPAxBXg6Eb3614015FwMQz3MoKdgphCJXHGNZXW+xtar96GJ3YAAACBALteS4ciNfuvHAN8qIEkvX6fNVgcQVkpfpfX4Ywt70o5m1Wd/6gb855dXw4A/Zy8m0oYadbE0KyGJVZ+XMWxyTVwjrwge3wPJ/M8aKkLI038Hl7TTzzYbJoZ5L1KZmeR6Vzy0u3bw/YpAXSG3f+Zfir3J+KZpFSUIih0K5MrpeBM evharten@evertje.net',
-                'ssh-dss AAAAB3NzaC1kc3MAAACBALp6+NPhTsDJt6saOhgD2JdBBvfxS2UtZXQDGRqNBSFgMWVE57fZHOrfSl96r82A8NlWBbDiiub1zxmRMRNiSFooMWeaBlQwLibEAirq/kFkFUfC3t7sAlZOsDyy2mHGQ9FSyzV3XNafExbCE0EW8UAiK6PT2/p18VMzGo8BPDWjAAAAFQCLhbudwhhr+HW4DNweILLem8UsHwAAAIB76ZEpl17Sg4SSkA3qoQj/1/NH21TpP/KU2tsOCkHsE7YR11tVm3KpgwJnMvuD72RpPMTBTGllMYM12pyRgvwSSHiAedPGkHyJHjXvncLKFPrTCREDpGUaUBaBDQ6bYlMTE0jV8K0LoA4cX57PmjfNmnoBauSrzgElNj7PckQWeQAAAIBgb9rOEq1Wy61sCkFWQHvCd8mkmpJhdfzbKyAoI7Qpg9Oyn8QHKKNk0oF8fC3IaX9/8ZO4tJ46IpoZrNxcA4V3KXO9UeJVKpqVAsGb0GyKEOZsYZAahEDbNkyaVm5ccNDPapHIzFUMIsLVnJNh5kfkND/q9+VAQZ2sRuftSS/fyg== evharten@j',                                                                                                                                                                                                                   'ssh-dss AAAAB3NzaC1kc3MAAACBAKTFilmSanNh+C7T5b/QWR7H4CfZvBLgxlDeG3oBhTlcz0mLGRIeOeIR+DLzLCZRmlju/FHXePdTuglFvOg8tz1pw3pINgBzJgiNRoo6OdiAPRRaPhwgEtvB488uPiPAfaMLjU0bdX6RDRzfv2cSAQwBsWjqe45rQpIP7X4ipRSfAAAAFQDtkksduAoz40oqQYfZouj+6HUySQAAAIB/fFwp8zOw8hm82Wemy1r4U7WMhBx3xgsHJNgp6tozTIBZ+dhrXNEPb15wCjBB40FO0oFYTxIPWJ5N0TkRHQDLJRTozqJ1/5t0xI95eGyU2BONk5YFdBGkvtWibt6cH6lZsnwMjVQs/rkEKUuyWT0ktr08f5Vi6cuUKEKJrZ6qMgAAAIBRumA/0iFQfpbzDtgJRFFW3EkO+2C3Vks+9gQ+SP5xAJea7cP2pymcBcUXilwQQNWkczUOZdGzEsT9ExKLKLleLHCBLvZ3a6GedEki7sTfcMimP+DhiJ62c1LhOgnu8Dex1E3ZFM6I4YBsJ6Fj2FOhdKhSCum9NIblFzpVjLSCYw== leestf@j',
-                'ssh-dss AAAAB3NzaC1kc3MAAACBAKEo1DAqE1Jqyz6yyAkovLdBQPG8/jNiIBbpd3zZ2o8KOougyCdQEasomZg31gs/pfaTD/dz8C4tbiO+12o5/cdi2k7l4M9o/Mg5O5b9KsxAiA8GCwF6/UkeIu+EyPorGAX8J6WYL/s8sa7cCvg/KEKcTGM7ZUwBLcg5tZjOAv/JAAAAFQCyPuntKiXwYeGNmXm7LLOdv1kXmQAAAIAMNvr74elu+0iESRvspPHmRTho9FrfSw02rWUeYcRwjhk1Y4Z1GqmfkRVCltzJ/y1b2XKGIhTRA6rBln8okmrR4H7R8C1BnfQRAbaYOxLbw0zL3BeEHlWLLmF4VaDo3EnGlXscFAfx6XDIZx05aCOQ+jm9kjkqpbaDHWwa2mAZZAAAAIB5GtseLE45NbxLxirkrZ+xXC5czcMX7NPhL0CcSobZzgHRGYvJZu52HVLDROWcE6xCJudydF1Exot4H38tUis/zUsL/XjFulG1rO7bYQ0koaNiTjpM8XbF4C1/r12vm0oyBsw+pq34GF4sRKzVw0z0i8AblDm4F0VAJDLKhk8rxQ== janse02@j',
-                'ssh-dss AAAAB3NzaC1kc3MAAACBAIh5edE6Do3epBTXP+Rx7pPgL2grog8hbSN2uEOUbjGV//u3pG7Bgpzagt5fpY8dT9iSprJYdW9JmuKkSn2iphQ28cLUJWCz75Lvj+5qCYRb9XfhImr8XA1BA5ebYIDahGh/+it7YpEFmyb99EzznJW7IA6fQC3U5LVaLRFkDt2nAAAAFQCsg+YLzPk7xWFTG2CvCkttaK94IwAAAIA7gTCnv3KPUWVCN7AjkvQYkyc27x3s3sCoIpCDtCdq8H58QE3+k8irEF4pO/c5CKMzB0X8prNjvZHlwK4MMpzFiy8FmI8WwXpu/f7LESToclz+1jUu/UYTgBnaT9Ty/2LJUtSj5uHuw0TbPW3GWqTiK0fsahLhTA/oHfZSL4zlnQAAAIBdjV5zyXsVZ3XKVq7FymNyeORT05VIuFBEvD3u7IbZYi62KOIsogJ7/lDUnymJ0hAgH86/leRreI5U3TenkzR5W74lmxc94+p88a61mMh0FN0F43M2BtsIuIx66iRszICJCEJ3KL+DmJ/LO7EMu3jf95WqdeC9LhJgbtpDi2haRA== niels@j',
-            ],
-    }
-
-##### END networking4all #####
 
 ##### BEGIN heanet #####
 

@@ -169,7 +169,6 @@ ring-heanet01:v6 2001:770:1c:7::c101:2117
 ring-algar01:v6 2001:1291:400:e::b
 ring-qbranch01:v6 2a03:c300:ffff:fffe::d
 ring-nlnetlabs01:v6 2001:67c:14c0:0:213:72ff:fefb:12d1
-ring-networking4all01:v6 2a01:448:1:2008::148
 ring-entanet01:v6 2001:4d48:face:e::2
 ring-ripe01:v6 2001:67c:2e8:3::c100:b4
 ring-hosteurope01:v6 2a01:488:ded::d973:8c3d
@@ -429,7 +428,6 @@ ring-one01 46.30.209.1
 ring-heanet01 193.1.33.23
 ring-algar01 187.72.248.26
 ring-qbranch01 217.151.198.151
-ring-networking4all01 213.249.68.148
 ring-entanet01 78.33.35.246
 ring-ripe01 193.0.0.180
 ring-hosteurope01 217.115.140.61
