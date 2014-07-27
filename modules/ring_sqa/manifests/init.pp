@@ -30,7 +30,10 @@ class ring_sqa {
         source  => "puppet:///ring_sqa/main.conf",
         require => [Package['ring-sqa'], File["/etc/ring-sqa"]],
     }
-
+    
+    # FIXME in a few weeks from now this has to be set to 
+    # ensure => absent
+    # in August 2014 
     file { "/etc/init/ring-sqa.conf":
         source => "puppet:///ring_sqa/upstart-ring-sqa4.conf",
     }
