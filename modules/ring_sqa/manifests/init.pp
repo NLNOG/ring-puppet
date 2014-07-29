@@ -30,6 +30,11 @@ class ring_sqa {
         source  => "puppet:///ring_sqa/main.conf",
         require => [Package['ring-sqa'], File["/etc/ring-sqa"]],
     }
+
+    file { "/etc/ring-sqa/hosts.conf":
+        source  => "puppet:///ring_sqa/hosts.conf",
+        require => [Package['ring-sqa'], File["/etc/ring-sqa"]],
+    }
     
     file { "/etc/init/ring-sqa.conf":
         ensure  => absent,
