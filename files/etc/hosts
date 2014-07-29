@@ -284,7 +284,7 @@ ff02::2 ip6-allrouters
 2804:800:ff::36e8:6b05  amazon07    amazon07.ring.nlnog.net
 
 54.253.117.37   amazon08    amazon08.ring.nlnog.net
-2403:b300::36fd:7525    amazon08    amazon08.ring.nlnog.net
+2403:b300:ff00::36fd:7525   amazon08    amazon08.ring.nlnog.net
 
 217.114.111.202 equinixnl01 equinixnl01.ring.nlnog.net
 2001:1540:801:19:20c:29ff:fe8f:8feb equinixnl01 equinixnl01.ring.nlnog.net
