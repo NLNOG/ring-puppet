@@ -503,16 +503,17 @@ class users::virtual::ring_users {
 ##### BEGIN in2ip #####
 
     @add_user { 'in2ip':
-        email   => 'noc@in2ip.nl',
+        email => 'noc@in2ip.nl',
         company => 'IN2IP',
-        uid     => 5024,
-        groups  => ['ring-users'],
+        uid => 5024,
+        groups => ['ring-users'],
     }
     @authorized_keys { 'in2ip':
         sshkeys => [
-            'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCrDK+oklbpw27vY28Jr8qmxAgiZy386qHSndxCjNdkMh4svm7qde6Caw4pbh4nH8aC5+jB0LoHatCwM5NG64tT8OqG66+VcyXKDD76+nvX24chI/Jv+S1rri+KkFjQ1umWWJ7gu4G2qYvVjVtqcgJU0EpbS2Mr5JxGCSt6sWZSOwGBwfcgVSs0X0+IwCifiTtN2sVphMPvi74qwEx9CeyKcuAm0xm19aB2GyOnpBtLAzc9ZCMU8ne7gY3liH9n4ARw+z0M9U0fAlYr8FG0VuAsR/8I5SxIg1CR4aFQwa4TjVQ30m3OpvszkRj3kUk5bitp98RRTcz2LksbJjZ+mLHH dirkjan@nmc',
-        ],
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDYfnUYvMf7GkrRe1uCGrb5D8J8VYMJAo0vSWHQ9UjhAgDWuWIfgRhYV0Sp4zS1s7LG3Z0hpapjtxN5FpuZwfCy16FfeXX7/u/pENnKI8bDw7bl/FIQ4rQVaDoR/LutcUkEObC+7mSsKTpSbE4piRA0KQFRWaGhR9n1PRGqZ+xLBma7LxBJn6oenAtgF3gl8PUHrY6bUY+u9q2zU8enA9xHMYbGzXdYQ8ZaaEZITnjgyn33XLl9dLsxCtqxPqccVLwCO2404eROuGVarM8JP8j0Tgh2+SCy+qsLfvGdhhlnwePjgILz0/pDEB0gU/IF6YacHofYampgDgZF5gDEdt8P in2ip@nmc',
+            ],
     }
+
 ##### END in2ip #####
 
 ##### BEGIN netground #####
