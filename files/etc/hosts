@@ -936,3 +936,5 @@ ff02::2 ip6-allrouters
 2401:7000:1:2::2  vibe01 vibe01.ring.nlnog.net
 14.1.44.230    vibe01 vibe01.ring.nlnog.net
 
+2a01:8aa0:0:ffff:20c:29ff:fe3f:d8e7  viatel03 viatel03.ring.nlnog.net
+212.126.61.70    viatel03 viatel03.ring.nlnog.net
