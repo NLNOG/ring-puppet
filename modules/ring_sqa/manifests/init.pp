@@ -31,11 +31,8 @@ class ring_sqa {
         require => [Package['ring-sqa'], File["/etc/ring-sqa"]],
     }
     
-    # FIXME in a few weeks from now this has to be set to 
-    # ensure => absent
-    # in August 2014 
     file { "/etc/init/ring-sqa.conf":
-        source => "puppet:///ring_sqa/upstart-ring-sqa4.conf",
+        ensure  => absent,
     }
 
     file { "/etc/init/ring-sqa4.conf":
@@ -46,11 +43,6 @@ class ring_sqa {
         source => "puppet:///ring_sqa/upstart-ring-sqa6.conf",
     }
 
-    service { "ring-sqa":
-        ensure      => 'stopped',
-        provider    => 'upstart',
-    }
-    
     service { "ring-sqa4":
         ensure      => 'running',
         provider    => 'upstart',
