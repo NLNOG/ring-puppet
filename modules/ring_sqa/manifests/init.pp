@@ -36,7 +36,7 @@ class ring_sqa {
         require => [Package['ring-sqa'], File["/etc/ring-sqa"]],
     }
     
-    file { "/etc/init/ring-sqa.conf":
+    file { ["/etc/init/ring-sqa.conf", "/etc/ring-sqa/ipv4.db"]:
         ensure  => absent,
     }
 
