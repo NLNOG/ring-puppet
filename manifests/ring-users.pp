@@ -4980,3 +4980,4 @@ class users::virtual::ring_users {
 
 ##### END atw #####
 
+}
