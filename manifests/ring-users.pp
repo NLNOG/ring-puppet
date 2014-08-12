@@ -1048,8 +1048,8 @@ class users::virtual::ring_users {
 ##### BEGIN tilaa #####
 
     @add_user { 'tilaa':
-        email => 'noc@tilaa.nl',
-        company => 'Tilaa',
+        email => 'noc@tilaa.net',
+        company => 'Tilaa B.V.',
         uid => 5053,
         groups => ['ring-users'],
     }
