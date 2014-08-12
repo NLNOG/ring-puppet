@@ -1048,16 +1048,18 @@ class users::virtual::ring_users {
 ##### BEGIN tilaa #####
 
     @add_user { 'tilaa':
-        email => 'noc@tilaa.nl',
-        company => 'Tilaa',
+        email => 'noc@tilaa.net',
+        company => 'Tilaa B.V.',
         uid => 5053,
         groups => ['ring-users'],
     }
     @authorized_keys { 'tilaa':
         sshkeys => [
-        'ssh-dss AAAAB3NzaC1kc3MAAACBAIEoXfQtARWvxrJZM+xseVIdFfVhGXJERIZEg9tSmVf8ojsmc2OEszLqU9olkoiEt+rrrw5hmQt9iKN3Wu1xo6EEH6A2idmX73jkH2AttHlRbQ4ugzXUeRdlQNTIsR8X45cek6/yrFRQORZCd0wlL1/r6WGWYsV1wvdPYxRCETHfAAAAFQDIFV1iKo6tAPgWTaUXHzq5tkGyUQAAAIB6mpIYyFhTMOikwWLub3XfEm6LC8Z/wD4Wwd5YTQvUKfNjFeDZ5wOtB8beDoSC/ZHr/lT/U6MH1On7UTnKnUqniYkZrwyrbc9nYjsEnY77x8/CCgArRsPvVIOfUlX5Ea9Td1dVHLNcrEKAc9ylcVDG+w4A1MIQ7OA0cTmoyI+TDAAAAIBcXOEOkFAf62cjR6YoGfavchRAeRYdhkCrRVGWYLNANFtO/uaUb79+ZsmSAjqQ9tZtz+g6PAIZgddyUGU19gQhHdH0w+jMhJdNzJnwj+ujZd0tzTw6NwK3Vd7qD9pyE4+uCl1H9Os/7bn+BNlwk080W/biazvKU19MBhwO/f1Jlw== dennis@tilaa.nl',
-        'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAw5k6B/Qri11fQut8NuZ81N2SiUBcbEi+RVaaGTJlwMpze1OdcdYNpD2BQv14D99rU8LETALnSBGyhn2ZEEmVWfKJErcToSLXADVEm4Bnfu4PYROLlky4EOuZgxJ0V+2h9EUmO8Udrl+b4GDj/XGIJJDswr8JvZPuBcDCtKQqI1F0n+mFXCwbXflQbAf0O+Vuu1A3nKP/OCOwRs8znt77FHqEwQb4qGzfdH3yWexSXvbiuG6eA7D0b5vFmz0i4tei1BdMBXdurgM/LK8bTzGGwoSwknq4M2SjM736VogvqXLQ6eHPe23dKICZ0wOeEszBpdjW/YeCBnMp8K0vn+yy2w== ruben@tilaa.nl',
-        'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDdEaFHEs6/25XGx0MxQMOf/ImyUdDq6rHtoUmqK2YbkacybF5FrFzQsQ50nZlzt9OeSQSeL5p12ZPQyKP20NJ4qWLNrDaynjBhbaPwJCr1B8n1y6ZfM+05869rJlfI179CNp5HUY2AUphX0fuvUwUX1URzLUbUL4/CK1Z+tux5kK1qYpsgH4yA5qvTVx5aUNBeMBkRy37N4svqP0HuuNPKUdNoIfAmvq2He48yTf18icWJhF0M/BFKH7/y5UWY09VrjLrGs3vscRNg7rskVFA5rYU/Mx/vW7DNUbGZlCacLYC0Ocnu1S1pXo2de9ba/wHfI6FP0PGf8M7EXulkobnV gerben@tilaa.nl',
+        'ssh-dss AAAAB3NzaC1kc3MAAACBAIEoXfQtARWvxrJZM+xseVIdFfVhGXJERIZEg9tSmVf8ojsmc2OEszLqU9olkoiEt+rrrw5hmQt9iKN3Wu1xo6EEH6A2idmX73jkH2AttHlRbQ4ugzXUeRdlQNTIsR8X45cek6/yrFRQORZCd0wlL1/r6WGWYsV1wvdPYxRCETHfAAAAFQDIFV1iKo6tAPgWTaUXHzq5tkGyUQAAAIB6mpIYyFhTMOikwWLub3XfEm6LC8Z/wD4Wwd5YTQvUKfNjFeDZ5wOtB8beDoSC/ZHr/lT/U6MH1On7UTnKnUqniYkZrwyrbc9nYjsEnY77x8/CCgArRsPvVIOfUlX5Ea9Td1dVHLNcrEKAc9ylcVDG+w4A1MIQ7OA0cTmoyI+TDAAAAIBcXOEOkFAf62cjR6YoGfavchRAeRYdhkCrRVGWYLNANFtO/uaUb79+ZsmSAjqQ9tZtz+g6PAIZgddyUGU19gQhHdH0w+jMhJdNzJnwj+ujZd0tzTw6NwK3Vd7qD9pyE4+uCl1H9Os/7bn+BNlwk080W/biazvKU19MBhwO/f1Jlw== dennis@tilaa.com',
+        'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAw5k6B/Qri11fQut8NuZ81N2SiUBcbEi+RVaaGTJlwMpze1OdcdYNpD2BQv14D99rU8LETALnSBGyhn2ZEEmVWfKJErcToSLXADVEm4Bnfu4PYROLlky4EOuZgxJ0V+2h9EUmO8Udrl+b4GDj/XGIJJDswr8JvZPuBcDCtKQqI1F0n+mFXCwbXflQbAf0O+Vuu1A3nKP/OCOwRs8znt77FHqEwQb4qGzfdH3yWexSXvbiuG6eA7D0b5vFmz0i4tei1BdMBXdurgM/LK8bTzGGwoSwknq4M2SjM736VogvqXLQ6eHPe23dKICZ0wOeEszBpdjW/YeCBnMp8K0vn+yy2w== ruben@tilaa.com',
+        'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDdEaFHEs6/25XGx0MxQMOf/ImyUdDq6rHtoUmqK2YbkacybF5FrFzQsQ50nZlzt9OeSQSeL5p12ZPQyKP20NJ4qWLNrDaynjBhbaPwJCr1B8n1y6ZfM+05869rJlfI179CNp5HUY2AUphX0fuvUwUX1URzLUbUL4/CK1Z+tux5kK1qYpsgH4yA5qvTVx5aUNBeMBkRy37N4svqP0HuuNPKUdNoIfAmvq2He48yTf18icWJhF0M/BFKH7/y5UWY09VrjLrGs3vscRNg7rskVFA5rYU/Mx/vW7DNUbGZlCacLYC0Ocnu1S1pXo2de9ba/wHfI6FP0PGf8M7EXulkobnV gerben@tilaa.com',
+	'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/laJq2w3lx85Rre8iQ6KbBWruiRCP89w0u/lHwMAnlFZ+/lPwVXd/8PqKtWKrDRZqFyQuR4frUIpkb1kVP1bgrbORto1VUELpPrSRjFDOPlDuJkXuHHqQ37sC/8dNXBD3aLnsaKLxJRrsxIJ8pGgQmKBDmCgHmmReV9Z3exhPYhBheKTmYMbvgLbkjcNdeudfdeooZv2xvBUOixwMOkNZeBzSATAmeijtlPM0F+RXZMrD/o+5HE5BVQdzpV/3ZBInnqNR8mIJg8l4Mk0NlmumQEZCpMtTnSnMgvhD9AM71YSTzbkGEaSscfxbt0+m3ykx+fvYBoNMrD2WzCdBNFhz sven@tilaa.com',
+	'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDhXw5wLkn+SHrG88UfKJgkdrJX+lHvwe8lfLnVH8QQ/SJSHzYxIcQeYOjWpDr+T4Tlb/8tIDKG+x1kQsmSXlamiOX1us0ts9W65MiyqbaxzFRd2usS1KummchyWpGvpIltFMIlFTp+OfrDq6Xdv+WZQGBUM7GkjzfgI/pmxY/XK8vce7jwgF8r1GEMc0D6+fe5wn7+RIbyTX3v27yOUcn1MRy6YLybI+87bNCU4h2v5poGxAYyBdykoQvXqyIfrySRXlgbfzjSjO/npKgqRkBWEM4inHcjAKNSSsBhFJ276bh2zDtL/gjulxDkSeBiSd7bQu2Cdv9LmDkc2ikRuD8F patrick@tilaa.com',
         ],
     }
 ##### END tilaa #####
