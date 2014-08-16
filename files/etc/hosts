@@ -942,3 +942,6 @@ ff02::2 ip6-allrouters
 2a01:270:91fd::1  atw01 atw01.ring.nlnog.net
 88.151.99.253    atw01 atw01.ring.nlnog.net
 
+2001:bc8:3::3  onlinesas01 onlinesas01.ring.nlnog.net
+62.210.156.8    onlinesas01 onlinesas01.ring.nlnog.net
+

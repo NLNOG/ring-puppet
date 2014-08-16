@@ -3844,3 +3844,13 @@ node 'atw01' inherits ringnode {
     include users
 }
 
+node 'onlinesas01' inherits ringnode {
+    $owner = "onlinesas"
+    $location = "48.774881,2.380689"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

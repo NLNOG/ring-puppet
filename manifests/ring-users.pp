@@ -4988,4 +4988,20 @@ class users::virtual::ring_users {
 
 ##### END atw #####
 
+##### BEGIN onlinesas #####
+
+    @add_user { 'onlinesas':
+        email => 'noc@as12876.net',
+        company => 'Online S.A.S.',
+        uid => 5279,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'onlinesas':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAvNUOrYQCmc3v2RAlqQzKsacmnmc+jjNEmbUmbCAj0DzUOgmwBeQiPYug/TuBBZywq1ej/9oA3GpI3AB7PptXqE6zABXITnP/X7nyalbbEIAFGUvAx8f4qcL48/oNVrTWJbWZ/jU1nRwAq6kCuFmtZl8IK/eVIIU6V2ZzqfSPOmUJ47Ud+Vlapn8zNCxf1Mq54xZQm6YpTNmt4cTYLpOeyPxpYrzurAJNg/fCTzR9dpJEU1XeS60z1iT0FYRthGDsi1wNW8nT4ARpxB1WrS1/soPgHpr25zPVw+5ksoOJjDAcZsrMa1pfE4fBsKihc22ngN2hA0sCIvD16JfkV4z9fw== mm@lya',
+            ],
+    }
+
+##### END onlinesas #####
+
 }
