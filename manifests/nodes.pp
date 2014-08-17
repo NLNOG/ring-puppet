@@ -1065,19 +1065,6 @@ node 'hosteam01' inherits ringnode {
 	include users
 }
 
-node 'msp01' inherits ringnode {
-    $owner = "msp"
-    $location = "51.525089,-0.072224"
-    include amp_client
-    munin::plugin { ["sensors_volt", "sensors_temp", "sensors_fan"]:
-        ensure => "sensors_" 
-    }
-    include nagios::target::fqdn
-    include nagios_services
-    include set_local_settings
-	include users
-}
-
 node 'inotel01' inherits ringnode {
     $owner = "inotel"
     $location = "52.391102,16.897284"
