@@ -30,6 +30,8 @@ class nettools {
         ensure => latest,
     }
 
+    package { "python-networkx": ensure => latest }
+
     # requested by teun
     package { ["snmp"]:
         ensure => latest,
