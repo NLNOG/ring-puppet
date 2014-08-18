@@ -95,7 +95,7 @@ class users::virtual::ring_users {
     company => 'Media Service Provider',
     uid => 5043,
     groups => ['ring-users'],
-    ensure  => absent.
+    ensure  => absent,
 }
 ##### END msp #####
 
