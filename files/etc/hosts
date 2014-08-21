@@ -942,3 +942,8 @@ ff02::2 ip6-allrouters
 2001:bc8:3::3  onlinesas01 onlinesas01.ring.nlnog.net
 62.210.156.8    onlinesas01 onlinesas01.ring.nlnog.net
 
+2001:67c:174c:1::103  citynetwork02 citynetwork02.ring.nlnog.net
+185.2.152.103    citynetwork02 citynetwork02.ring.nlnog.net
+
+2a03:b000:1:1::103  citynetwork03 citynetwork03.ring.nlnog.net
+185.52.156.103    citynetwork03 citynetwork03.ring.nlnog.net
