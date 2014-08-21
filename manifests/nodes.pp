@@ -3843,7 +3843,7 @@ node 'onlinesas01' inherits ringnode {
 
 node 'citynetwork02' inherits ringnode {
     $owner = "citynetwork"
-    $location = "0,0"
+    $location = "59.422471,17.918073"
     include amp_client
     include nagios::target::fqdn
     include nagios_services
@@ -3853,7 +3853,7 @@ node 'citynetwork02' inherits ringnode {
 
 node 'citynetwork03' inherits ringnode {
     $owner = "citynetwork"
-    $location = "0,0"
+    $location = "51.520251,-0.071555"
     include amp_client
     include nagios::target::fqdn
     include nagios_services
