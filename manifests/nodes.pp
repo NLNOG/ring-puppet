@@ -3861,3 +3861,12 @@ node 'citynetwork03' inherits ringnode {
     include users
 }
 
+node 'hibernia03' inherits ringnode {
+    $owner = "hibernia"
+    $location = "48.86987,2.34424"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
