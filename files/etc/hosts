@@ -947,3 +947,6 @@ ff02::2 ip6-allrouters
 
 2a03:b000:1:1::103  citynetwork03 citynetwork03.ring.nlnog.net
 185.52.156.103    citynetwork03 citynetwork03.ring.nlnog.net
+
+2a02:d28:5580:e:1000::416  hibernia03 hibernia03.ring.nlnog.net
+78.152.54.74    hibernia03 hibernia03.ring.nlnog.net
