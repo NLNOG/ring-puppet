@@ -3870,3 +3870,23 @@ node 'hibernia03' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'redpilllinpro02' inherits ringnode {
+    $owner = "redpilllinpro"
+    $location = "59.949443,10.771563"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'redpilllinpro03' inherits ringnode {
+    $owner = "redpilllinpro"
+    $location = "59.305445,13.537273"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}

@@ -950,3 +950,9 @@ ff02::2 ip6-allrouters
 
 2a02:d28:5580:e:1000::416  hibernia03 hibernia03.ring.nlnog.net
 78.152.54.74    hibernia03 hibernia03.ring.nlnog.net
+
+2a02:c0:300:102::1  redpilllinpro03 redpilllinpro03.ring.nlnog.net
+87.238.57.254    redpilllinpro03 redpilllinpro03.ring.nlnog.net
+
+2a02:c0:400:108::1  redpilllinpro02 redpilllinpro02.ring.nlnog.net
+87.238.39.42    redpilllinpro02 redpilllinpro02.ring.nlnog.net
