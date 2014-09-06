@@ -97,8 +97,14 @@ class users::virtual::ring_users {
     groups => ['ring-users'],
     ensure  => absent,
 }
-##### END msp #####
 
+@add_user { 'indit':
+    email => 'noc@indithosting.se',
+    company => 'Indit Hosting AB',
+    uid => 5149,
+    groups => ['ring-users'],
+    ensure  => absent,
+}
 
 ##### END former users #####
 
@@ -2704,25 +2710,6 @@ class users::virtual::ring_users {
 
 ##### END rcsrds #####
 
-##### BEGIN indit #####
-
-    @add_user { 'indit':
-        email => 'noc@indithosting.se',
-        company => 'Indit Hosting AB',
-        uid => 5149,
-        groups => ['ring-users'],
-    }
-    @authorized_keys { 'indit':
-        sshkeys => [
-                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUlBgBNG1FVxKmvXtwoYKhMkONI4hmahgHEAOYZQ9iDjbdnPwjwOtm6m13yY3dlg68ZgpDAT2sBfCqB+531VtcQ/eP7jaRYKATwQJ3C7CpbsQN6ymR/UWcSq+NM5USPVxFfFV//jdZEsJP1pKu5L7eFO9Yas9l8XJcgQ7SA3GPBDYXUf4gEnEoRAfVt+xnwsXqIDGTVqPiVxeq7KVVm+9iAjgDOaB84FDBtqLzRAXNvopaDyPMPQb2cfYE4Wr+F/5zFaL8Q2afTCCj5+mhpcMJjjBxsRNEgMGK9uh+DwT7YCUI+8idjEZKbxqy8hf8ND6iWIcSAoQHx0q4p6fXWWh9 indit@indit01.ring.nlnog.net',
-                'ssh-dss AAAAB3NzaC1kc3MAAACBAM2v1IZE/voVQTJGjnRtVWb6y0QekYDt4LtWz5PG2+Vh9MOkQU0T1OTW6kedp2iPzMtPFmd37KyFF1Jh9Aey4elquTRMMHmaS9LqLM6mKKU+KaaZEP95/6OPkwAZJ0q20ef63eXyQy/2WBishy8K/EKmFedesL+NSJtS4aX2kCm5AAAAFQDv9ggurJeiGTgTGVCmeAfGWOsJLwAAAIAok0FJiiev6t9fJ+uzTF7vWGMif2l5gITVMQD8loyWpbIM9EcOLZkbzY5vkt5yqAoK6YUVhdq3l3qcwNy0P/rBnA29MrycPzKNUCzAT6n/1kVzXWWxi9gSfeZB4JzXGTyhRcnz5/mHDivyRXBxAdQU9yw7bJ7f5UI42D8uHo0VnwAAAIB1vRQelI9XPNJwtgP3u2wVGtX/o5isSeopdnWfHWInfsN5r3uUL/xMK7EvcbQmHVy9HYLQ2fy/M5muWzbzlqlli3r4eG97TuhSnLQgTVx12LkGD88hKjDOzLzoT0BulmYdbvNbARhaJ+sZfzV57Q6Hl2EyEwxRRjASX3kHcDogYg== mikael@laptop',
-                'ssh-dss AAAAB3NzaC1kc3MAAACBAPgKs+KiPB+YllCQizOHmE7VD0d+JlVHWInpFddimgFSFjm1Hfc3ZTUlzHETVHF4ON2a8be3T6rpXCBvfvqiO89NAUn6UPsOIsoLf86WNWe6NdM6Bli//eQssHmcRBbLXmcI9jF7h7QBDRtL3jtTz6Gi2mFGbjJHI73RnLfu2PbjAAAAFQCYbnQ6z2z3GdVAghPuWZdwD+kxVwAAAIB3Y7h1nSYgovRTCRhfHKXXCoqj9/lojyo8n9dbFzZOmbatsiUMEI9EiikS8YG127Zvn6i96QpP3wqbO1yxGZlrNu7+gu9/onk6VPslTDCKchbrsrYhbFlz5ldOS372+CWBQLk9ygZE9gkyLv9QCt5fca1AUF5KBGcG//IaLRapjgAAAIEA2jo7g07ti5MKjF2HxcPMCalwfHgHxsSbkrF30pv+Bdtvc/mboGdh83jqp2Kpb73FNfetEv9LtKiom8FgZVzg7ijF0UMNZU2U1XHCDZZ3K9ywvltUeMsyusSsU4V4ejzd5ZcnE+OeHwWodGVGUe+jAsExFbOoQQaFcZuM13165b8= mikael@admin',
-                'ssh-dss AAAAB3NzaC1kc3MAAACBANGq9NYrdmCshV0ByJWuVu1nwBQshxm9AchmpUZiBxIeQCEp5UcPkOitcmvLudm50hfWn2A3RBfLtF94WPdnBPk6Q8j/aIRw/5p2PxtDz9iBQvtJrHBcvf2vaiLZSNrGxXtYOQiTDeK6ye3uxZH9xhjYvGwOqb3sf9YHMRJJnXV3AAAAFQC8ezlxxdLCZQPdspj+auzCpME8DwAAAIBWsK04Zbd3hHLOu1nwVPwmJOJ36kF5nEWz6Hfx8AugttqvFkzFCeObrLBh67yDVsZ2zmxScqMaLGXherwbdUiF5SHJQFRXa+/hX0sglF3rwVXZ5MxOzS9rSj0qC/4PwKWr27jSCX5vmtxHG47Dne/A59QJLuar',
-            ],
-    }
-
-##### END indit #####
-
 ##### BEGIN itmastaren #####
 
     @add_user { 'itmastaren':
@@ -5000,5 +4987,24 @@ class users::virtual::ring_users {
     }
 
 ##### END onlinesas #####
+
+##### BEGIN mainloop #####
+
+    @add_user { 'mainloop':
+        email => 'support@mainstreamhosting.se',
+        company => 'Mainloop Solutions AB',
+        uid => 5280,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'mainloop':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUlBgBNG1FVxKmvXtwoYKhMkONI4hmahgHEAOYZQ9iDjbdnPwjwOtm6m13yY3dlg68ZgpDAT2sBfCqB+531VtcQ/eP7jaRYKATwQJ3C7CpbsQN6ymR/UWcSq+NM5USPVxFfFV//jdZEsJP1pKu5L7eFO9Yas9l8XJcgQ7SA3GPBDYXUf4gEnEoRAfVt+xnwsXqIDGTVqPiVxeq7KVVm+9iAjgDOaB84FDBtqLzRAXNvopaDyPMPQb2cfYE4Wr+F/5zFaL8Q2afTCCj5+mhpcMJjjBxsRNEgMGK9uh+DwT7YCUI+8idjEZKbxqy8hf8ND6iWIcSAoQHx0q4p6fXWWh9 indit@indit01.ring.nlnog.net',
+                'ssh-dss AAAAB3NzaC1kc3MAAACBAM2v1IZE/voVQTJGjnRtVWb6y0QekYDt4LtWz5PG2+Vh9MOkQU0T1OTW6kedp2iPzMtPFmd37KyFF1Jh9Aey4elquTRMMHmaS9LqLM6mKKU+KaaZEP95/6OPkwAZJ0q20ef63eXyQy/2WBishy8K/EKmFedesL+NSJtS4aX2kCm5AAAAFQDv9ggurJeiGTgTGVCmeAfGWOsJLwAAAIAok0FJiiev6t9fJ+uzTF7vWGMif2l5gITVMQD8loyWpbIM9EcOLZkbzY5vkt5yqAoK6YUVhdq3l3qcwNy0P/rBnA29MrycPzKNUCzAT6n/1kVzXWWxi9gSfeZB4JzXGTyhRcnz5/mHDivyRXBxAdQU9yw7bJ7f5UI42D8uHo0VnwAAAIB1vRQelI9XPNJwtgP3u2wVGtX/o5isSeopdnWfHWInfsN5r3uUL/xMK7EvcbQmHVy9HYLQ2fy/M5muWzbzlqlli3r4eG97TuhSnLQgTVx12LkGD88hKjDOzLzoT0BulmYdbvNbARhaJ+sZfzV57Q6Hl2EyEwxRRjASX3kHcDogYg== mikael@laptop',
+                'ssh-dss AAAAB3NzaC1kc3MAAACBAPgKs+KiPB+YllCQizOHmE7VD0d+JlVHWInpFddimgFSFjm1Hfc3ZTUlzHETVHF4ON2a8be3T6rpXCBvfvqiO89NAUn6UPsOIsoLf86WNWe6NdM6Bli//eQssHmcRBbLXmcI9jF7h7QBDRtL3jtTz6Gi2mFGbjJHI73RnLfu2PbjAAAAFQCYbnQ6z2z3GdVAghPuWZdwD+kxVwAAAIB3Y7h1nSYgovRTCRhfHKXXCoqj9/lojyo8n9dbFzZOmbatsiUMEI9EiikS8YG127Zvn6i96QpP3wqbO1yxGZlrNu7+gu9/onk6VPslTDCKchbrsrYhbFlz5ldOS372+CWBQLk9ygZE9gkyLv9QCt5fca1AUF5KBGcG//IaLRapjgAAAIEA2jo7g07ti5MKjF2HxcPMCalwfHgHxsSbkrF30pv+Bdtvc/mboGdh83jqp2Kpb73FNfetEv9LtKiom8FgZVzg7ijF0UMNZU2U1XHCDZZ3K9ywvltUeMsyusSsU4V4ejzd5ZcnE+OeHwWodGVGUe+jAsExFbOoQQaFcZuM13165b8= mikael@admin',
+                'ssh-dss AAAAB3NzaC1kc3MAAACBANGq9NYrdmCshV0ByJWuVu1nwBQshxm9AchmpUZiBxIeQCEp5UcPkOitcmvLudm50hfWn2A3RBfLtF94WPdnBPk6Q8j/aIRw/5p2PxtDz9iBQvtJrHBcvf2vaiLZSNrGxXtYOQiTDeK6ye3uxZH9xhjYvGwOqb3sf9YHMRJJnXV3AAAAFQC8ezlxxdLCZQPdspj+auzCpME8DwAAAIBWsK04Zbd3hHLOu1nwVPwmJOJ36kF5nEWz6Hfx8AugttqvFkzFCeObrLBh67yDVsZ2zmxScqMaLGXherwbdUiF5SHJQFRXa+/hX0sglF3rwVXZ5MxOzS9rSj0qC/4PwKWr27jSCX5vmtxHG47Dne/A59QJLuar',
+            ],
+    }
+
+##### END mainloop #####
 
 }

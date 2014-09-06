@@ -2424,16 +2424,6 @@ node 'rcsrds01' inherits ringnode {
     include users
 }
 
-node 'indit01' inherits ringnode {
-    $owner = "indit"
-    $location = "59.422474,17.918095"
-    include amp_client                                                    
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
-    include set_local_settings                                                  
-    include users
-}
-
 node 'itmastaren01' inherits ringnode {
     $owner = "itmastaren"
     $location = "59.2722,15.2088"
@@ -3890,3 +3880,14 @@ node 'redpilllinpro03' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'mainloop01' inherits ringnode {
+    $owner = "mainloop"
+    $location = "59.422474,17.918095"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
