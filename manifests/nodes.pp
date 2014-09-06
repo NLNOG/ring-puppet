@@ -3891,3 +3891,13 @@ node 'mainloop01' inherits ringnode {
     include users
 }
 
+node 'tigron01' inherits ringnode {
+    $owner = "tigron"
+    $location = "50.887383,4.455481"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

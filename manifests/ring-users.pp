@@ -5007,4 +5007,23 @@ class users::virtual::ring_users {
 
 ##### END mainloop #####
 
+##### BEGIN tigron #####
+
+    @add_user { 'tigron':
+        email => 'noc@tigron.net',
+        company => 'Tigron bvba',
+        uid => 5281,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'tigron':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC9elRfKng8PE79qFbt0lLBVOg44r/dx63ykZAl99YGkjGdEKPzParZ8RUUS40x5+Q2l5Anyj3d6HNbBs86K1ziUyz07xI1FsM0oLh/if0NPZP4z102e5qG3l8xypcMzUBngFtU0Ye/fivlKj483XRcDvbTOvrwAStN/L1viARcLCBEU5clESzqi0E/8Ds3u0Ngit7IxNc5Mgo90RMDxhiklIrJ1b19RGqRONECEKlv76xG2F8PpifDibwcK1XLPt4KXSgEWnfu/dGs4qOEHGZwX8r15xQI59bUCPlcbBfH/JYw8d1T24IlR3l1Lw68fcgQkua6L+Kten08Q9oL7kO1yN9ckwPyiIStdM17PplPCG6Arh9aK7p1Bc3Zgl7MUlG+b3gMp5l4pcHLf9Rju8yJ3aPqoxoaP65O+J1C0gBM/+8bg2gzjj43xv/mY5XleU/ImBmQRGvHbC/v61A4cXlGq2m5SpwiBqdK74dPbYZuwoZr0yOYPXDBUENOEYEgCcJtkWclZxc93POWUqfgDImZ9eVr9p/WanOkzeFBPY5JwamOHimUAkhVm5QE1Lq9lCcZ9SX86A7uy+pkvI0XEoFw4fHu7/RqJLvI3uMJwsCx6vH/hQFqi/JMmYDv/ilY+clP3Ox876wKP00ayvO3yzVBSJ0z/MsoBbNw/5bllmvq8w== gerry@tigron.be',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+6nBEZLqfYDoz5n48dSeBVuCi5MniEneHeSO/5/fvAJUvDm9Czehn2l/CtWC/b4dz7ScR5yI14350//l2YCnsPkTe6aj+sz2/nYCV6vco6IZOBPtVa4/zD5TUy46Gqz2DUAFsdCWoMkY5jyopIaaG3PPeA60Rn003MLjscHgRdnsMp8KMgFVIgVU9BM35yy/b2wKvozqBDpxy9irJTrAxZ+RX3tojNkkoiFNnv8C85W7knz3TLExTQxlg3O048HFEtbbTLJAukxsPrPFT/22U5H2WZYczYkDo+LyUqwAFXRn8jhgdjv4ITrvg2JCPnKk0P4BMZKkWp2CjXQxDw0ET christophe@tigron.be',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA28fhh1hd6pfwF7ZaQY9SJ9g5J1FxxGj/c+s0gsLZkTnrWhmLHd5+4RJQm3kDbM76zwdpwwFhOVHR5ntAEKZlmSyMCrAvTfWNYOKq8rQXYc8/tRh0fQb0j7FIjxjBRr7i6RwqFluUgsDon70loG0QG1cYh+bmeoxHA5BfVr8uddTFAEfIiF5TkZK3AQ878ldM/I/GC081CXDw1Y27Bc0XvY6uI3w44EqiSVU61D7dSHvOXVdSO0e/7yzFDtzLnL98BK493f/qxxpXfFoc5bTirNZvCLW3WglSw0n0ijW5bEHvm5QszFQ6y3pCYFy0V87po1nW5Iwi0faMGm6GXZNrLQ== michael@tigron.be',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIWzAjd5WCxNqxk32laC+T64uxRIf4tB3MFuSJPb3+121/qguxPZtOlpCDJfoj/0hRukzu6WqIamCs3YQxGBVaGNhMmqA+Iv5Sn47feq9pk6d++8f18RbqfeHn5Q5551KAWY8TP/mHgm4VsKW4nPYzzsfz9Dvbs7jn/yEdmC9xYgosGe2QHwqAtDqT7zAsfQz7T36DgiDBmAARI65GhCOHRWjDze8WjG8jUIIuTOrYXtiaxoPWhmXQZ0Uduah4TB8dqFlmvDp1EyY0ukiVDYOsdtuTQ5noQueB41BSga2wjg2MrA4j8LvJ2nnqluwPb0TIDu3zYjHEWKwqPBrUiym/ david.bosman@tigron.be',
+            ],
+    }
+
+##### END tigron #####
+
 }
