@@ -960,3 +960,6 @@ ff02::2 ip6-allrouters
 2a00:6ec0:101:1:0:11::  tigron01 tigron01.ring.nlnog.net
 86.39.65.11    tigron01 tigron01.ring.nlnog.net
 
+2a01:7f8:0:10f:102::1  nexiu01 nexiu01.ring.nlnog.net
+46.21.1.102    nexiu01 nexiu01.ring.nlnog.net
+

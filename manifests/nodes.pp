@@ -3901,3 +3901,13 @@ node 'tigron01' inherits ringnode {
     include users
 }
 
+node 'nexiu01' inherits ringnode {
+    $owner = "nexiu"
+    $location = "50.1192924,8.7355652"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

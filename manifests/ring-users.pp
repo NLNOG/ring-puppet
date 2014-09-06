@@ -5026,4 +5026,20 @@ class users::virtual::ring_users {
 
 ##### END tigron #####
 
+##### BEGIN nexiu #####
+
+    @add_user { 'nexiu':
+        email => 'noc@nexiu.net',
+        company => 'nexiu',
+        uid => 5282,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'nexiu':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCshWuo/5BcHhJ4LnF58h4c8fHlizVMOP4rsZbzo+G4/+nE6TQuhHev6bq6Zn1MtXKUSwxOqAC1TvEETzFwtsKeWJWqmTveuikpY7YkXImcT0/oDJ6TNUedYSLnB8r/N2e0WsbioUZ9nrlon4Ud7LD2PRfyBUqRIK+jJJ/toobtC88oVDqg0OcQq4DYjCMjIR+CP5V1qM1ShQwQOdBdaDR3BoqwOHDNsAFCZwiZTuk3AfvPFCUyam7Cud4VBgo9Td6ia6HbxGgsUoTKfpQijDLFMSmI9aM8L474C7+AK71xuPkCaSZ1V3b4M12uANvhc7kCi092eKJbLZ8TNUYJfbAH mhandsche@ring',
+            ],
+    }
+
+##### END nexiu #####
+
 }
