@@ -5042,4 +5042,19 @@ class users::virtual::ring_users {
 
 ##### END nexiu #####
 
+##### BEGIN digitalocean #####
+
+    @add_user { 'digitalocean':
+        email => 'noc@digitalocean.com',
+        company => 'DigitalOcean',
+        uid => 5283,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'digitalocean':
+        sshkeys => [
+            ],
+    }
+
+##### END digitalocean #####
+
 }
