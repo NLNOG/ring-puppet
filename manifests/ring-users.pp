@@ -5052,6 +5052,7 @@ class users::virtual::ring_users {
     }
     @authorized_keys { 'digitalocean':
         sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6MrA6Dsm3YavOFbEEZbiuF0drXEXMoQNyLnBibWwvYjLTO2XI+8wozaB1VI7JYZOaXa8sRztCVsCeGkQhaipAoIBjaUL2SC6rBfhO80OH3NAh3Tqm6DmF0Xu/q588LFJUzY55ZXFlpnW+8zPXgULvgXPKjeZAfxvMoqWOwBF7OhYYiQ+/MKMtBKhN1VxYxglUeIsZtLYnwmQbwkKouucx0+otrqZ+Ba5v8EkHUPsBLBRmjDos/rRDLb8wm2r6fEQj5JnWqD6xHt/x7GIkwi9g3HnUCEa8gdpSZXNQvrLEaSQeXKPaTWDVR3F+xxzezXexIX40wviLVlgH/hRsEhO5 Luca@Lucas-MacBook-Pro.local',
             ],
     }
 
