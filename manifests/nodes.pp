@@ -3931,3 +3931,13 @@ node 'digitalocean02' inherits ringnode {
     include users
 }
 
+node 'digitalocean03' inherits ringnode {
+    $owner = "digitalocean"
+    $location = "52.356156,4.955187"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

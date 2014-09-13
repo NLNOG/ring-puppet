@@ -969,3 +969,6 @@ ff02::2 ip6-allrouters
 2400:6180:0000:00D0:0000:0000:0147:A001  digitalocean02 digitalocean02.ring.nlnog.net
 128.199.190.202    digitalocean02 digitalocean02.ring.nlnog.net
 
+2A03:B0C0:0002:00D0:0000:0000:0004:E001  digitalocean03 digitalocean03.ring.nlnog.net
+178.62.253.214    digitalocean03 digitalocean03.ring.nlnog.net
+
