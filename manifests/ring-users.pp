@@ -5060,6 +5060,7 @@ class users::virtual::ring_users {
         sshkeys => [
                 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6MrA6Dsm3YavOFbEEZbiuF0drXEXMoQNyLnBibWwvYjLTO2XI+8wozaB1VI7JYZOaXa8sRztCVsCeGkQhaipAoIBjaUL2SC6rBfhO80OH3NAh3Tqm6DmF0Xu/q588LFJUzY55ZXFlpnW+8zPXgULvgXPKjeZAfxvMoqWOwBF7OhYYiQ+/MKMtBKhN1VxYxglUeIsZtLYnwmQbwkKouucx0+otrqZ+Ba5v8EkHUPsBLBRmjDos/rRDLb8wm2r6fEQj5JnWqD6xHt/x7GIkwi9g3HnUCEa8gdpSZXNQvrLEaSQeXKPaTWDVR3F+xxzezXexIX40wviLVlgH/hRsEhO5 Luca@Lucas-MacBook-Pro.local',
                 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUJS/MWukjGZdcf9dF6/r6371JHo9Q9lh9j80VF5QXTNCnijrez/S2taZ5PCWDvqkIqGBh43ldbsOBI7vRxBStuRzeFge8+8nVKUVr971xE9tdkVfVZhUJKn7JdqenLmIFSGQPC8zFddcwcs/NTALyOGcTexbFBwY8RcE3ANB1Jz0R4zEOdFocgjEJDfWWiryqUd13/nGukQxMo1fviSp2juval3tF/Y0xg8WmaEjQzl0A6/wtoRh06zCUlOfc6tndoKLTios4ZSo1haym25gESIyc24JIGpbk09C+s41orOr6ZqS0KVx0CJiFH6lHw+WYMzE9IpRAw7Uy3HAvYou/ jstretch@digitalocean.com',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6zRnGRVaznAz6sWBpMjd+8Q/gw713NIdE0Xly3S2Pn/AItiywOubiTtEHje/TZuE/SDaNEOV72Gs6qekjub0ailk9YNQ6aOVnQZsYlPLWFjxOV570Ujyqe5mXgo9mvPPNyq5HtPTI8VNwawgPNL34NuOjtEUZ4hzDDstqACeuEPaVtksT2oLpWo2zlAw3aY6PrlfxuWdStaAjvIeaLbVlGY3jdVD93cHA4CAh/maFIB4/Oqi+FwpXJW63rn5nykofSn4jHOj14B7dTM6cVxyAtgQwSt1EGwTr8EWlsGqtGeqZ+dK01fkZ6X0IqjU2kgTjJUpFHhIyCztcvB8OtAOP BS',
             ],
     }
 
