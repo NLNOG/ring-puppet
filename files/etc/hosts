@@ -975,3 +975,6 @@ ff02::2 ip6-allrouters
 2604:a880:800:10::ed:6001  digitalocean04 digitalocean04.ring.nlnog.net
 104.131.59.72    digitalocean04 digitalocean04.ring.nlnog.net
 
+2404:d900:0:a::48  bdhub01 bdhub01.ring.nlnog.net
+103.12.179.48    bdhub01 bdhub01.ring.nlnog.net
+

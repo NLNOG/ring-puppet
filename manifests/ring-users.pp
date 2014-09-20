@@ -5066,4 +5066,20 @@ class users::virtual::ring_users {
 
 ##### END digitalocean #####
 
+##### BEGIN bdhub #####
+
+    @add_user { 'bdhub':
+        email => 'noc@bdhub.com',
+        company => 'bdHUB Limited',
+        uid => 5284,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'bdhub':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDdliWVgWD1G3cA93QTljvW0x5ebv/L2L2IzeDl2/WUVQOEvYDMTJSq4wWcW7GXIxde8U/wdeBba/rhMbx4hlGQ0oNhBxTYghsOksIc2c9xLHmn8ymlMy7q1S+E7ozz3xAjWrVzyq+RLEH98PWnAmE04SnZ5eIP0+2Kr3glKsusycHXUaJbTxKBTRc019mT9bgbHbBWYSSeo3YqJULtEgvg4gjp9IQSQlRLlKuEoldGRonx68FaUivuhfogkCMWkpG1X6aWPIJgVqsK86FjvntPWreHQmYWg+sO5ahRvShaBO+1r6EGpnWZI6Q/HyiL83CxD4cVmoCBMRRfbg2N3M8Z dhakacom@ring',
+            ],
+    }
+
+##### END bdhub #####
+
 }
