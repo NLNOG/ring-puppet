@@ -942,8 +942,11 @@ class users::virtual::ring_users {
     @authorized_keys { 'portlane':
         sshkeys => [
             'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9hFwclD6VWkrQBAY0DHWTdLBmX5eHbByPdFI/x/L6YmnrCBBXpCyiQLJLaIU05i/iCNw/hhAdph4/DvPy1vX3Il4koYklL15RJqLB4vIymb7Xiw6YdS9e6orr1Yh86Z4RxEK3OE9p0LCh5ZGtNjmuW3Hg5XIuklE9jrkdmJKQ927cAhomxFc7AGH2Uu3g8OCIG4TD3EZkAiYOa/kEF47nL+0PlpdPYXdqT8+EItyH1enuOcLeD2joe8LC+/zul9VPWmvM/7EiKdFDMkWlbj+JgZOeVkR2ebxsr/mmmvzCUdwmBEeQnJp1kr7QnVJn32NWsFFEisHqJjMuNCRXL5fJ tobias@irc',
+            'ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAGEwOkpjxzNOsXTgVVt1leyEGXmc2dRhwgBpxH2oiDzwIDxB8dsjyIf/F3ptgFeEELR9X5oamXIYoi/UUENW9KMfAEIrh/UQu6A3xsKwlefQzzYcpFyJuraDbxzPdy4mvkYAAasQByScSPQHkeQZEA+5zpchiIAK1WILEvyEmSW3Mqu5g== infe@shaco',
+            'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAs4Ou/SkgA5P6QM3sVPr/5dEBZcpHFPnjRXYK1OegU4jkNHZR4JG87add10ArMC6ZlQ3tvzW5WRaimQFkbV2J3hLFMR1IJvpOQIYn5e/38FMKzM+f7Tlc9n/UpWXICMvzvR3rZ+TTIl769MEUXVDrEmfemfUjXuzeyyb1UMtkPs3ejaFUnK2lH30bE/gaAlbIVmDjT65mJfJ7Ouzu5eiTf6FUK/CpcvkhG3nj2DvtBopX25/dHKnmEZlBczSgN08hJg/29ISVikiI77Qm1RbACDdG+an8aTb4EmK8pi9mSozGzvaztznFCBDkbyW3emqg1/cxfmUwFKGgCfDcFPN9gw== jine-nlnog',
         ],
     }
+
 ##### END portlane #####
 
 ##### BEGIN solido #####
@@ -5037,9 +5040,47 @@ class users::virtual::ring_users {
     @authorized_keys { 'nexiu':
         sshkeys => [
                 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCshWuo/5BcHhJ4LnF58h4c8fHlizVMOP4rsZbzo+G4/+nE6TQuhHev6bq6Zn1MtXKUSwxOqAC1TvEETzFwtsKeWJWqmTveuikpY7YkXImcT0/oDJ6TNUedYSLnB8r/N2e0WsbioUZ9nrlon4Ud7LD2PRfyBUqRIK+jJJ/toobtC88oVDqg0OcQq4DYjCMjIR+CP5V1qM1ShQwQOdBdaDR3BoqwOHDNsAFCZwiZTuk3AfvPFCUyam7Cud4VBgo9Td6ia6HbxGgsUoTKfpQijDLFMSmI9aM8L474C7+AK71xuPkCaSZ1V3b4M12uANvhc7kCi092eKJbLZ8TNUYJfbAH mhandsche@ring',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAx3SY9Cx0bZ6sdcQz/Scf6OlIYAwis2zfbMLq9jMwuoBdhSAEuwqu21ykUMBKgvM280RhYNzEQAzypUWP9idkpbPNTEQZSXy7vgb4GbEyWbowCvaZWrPlZDKnzTDA7nI0qFfSo457YlbfnUQCtUfgrJUIoGQQ7AJ2Lu1YyIyGcGuYv1/PykuhnDCRzUStpykI2YPujJ3285dqVF3IQYL2LXzzEWWmZzuXWnEcIH6oipyMV3WktG8u51tM6BdciysraTolHqC0qEe/IvRfciNtx+KlCVYC2OxUTuhZxkz3boXIi7hha6rEiPOvA16cmToA6J0bM2YyETiDhEXhbhgozw== bernd.spiess@ip-it.com',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCshWuo/5BcHhJ4LnF58h4c8fHlizVMOP4rsZbzo+G4/+nE6TQuhHev6bq6Zn1MtXKUSwxOqAC1TvEETzFwtsKeWJWqmTveuikpY7YkXImcT0/oDJ6TNUedYSLnB8r/N2e0WsbioUZ9nrlon4Ud7LD2PRfyBUqRIK+jJJ/toobtC88oVDqg0OcQq4DYjCMjIR+CP5V1qM1ShQwQOdBdaDR3BoqwOHDNsAFCZwiZTuk3AfvPFCUyam7Cud4VBgo9Td6ia6HbxGgsUoTKfpQijDLFMSmI9aM8L474C7+AK71xuPkCaSZ1V3b4M12uANvhc7kCi092eKJbLZ8TNUYJfbAH mhandsche@ring',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAtZ0sPKyY3gy411nrNZCeF7/wjObbc4heK0M4lOPag4qz5zCKS1o8hIVgdQ23XqGerjmJObQz9iaKiMfxU1jof4pcnyjvkhK7Q7k5kOD/mNNpDPbpKcvL7+Cv8AoSd4nsURbg6AZCivh87+1qXq81LBsANP1833ix44I0ySSGefyO6+YfJW13m44UoqbfspA2S/bzzIokHpH+zd4d3Lb5hMTbdsCN/SL7MkiZ95by/I0o6RPsQ82U3h/+LeWL6HnWU+rGpn2Hi6bU3u7fzNEgEJYmqx0vEpGKhWnuxUpjBCxcQy0iyJxQI5CBihna4xGEq/aIn8RaBuy0requys6ZgaYF475D+AAdV7ehi53l315UVT5wCpITWSQBk8GUZYHlizIj5FMqa6+5SjrKO8kJCQD+yB2+jDIEW0WUFJKGvGyjfYBHMbVw1C1HqSaN8HV2RHe+CKSJWKl/fIas1SnlWpTXYXG+pPvfn3PlTGzzL/F2V4/wTT4hfv5x1Od6lbbbHRX2dB6CTaRWI3zpChEpLhFjrM59n305Gg6d0AuACsXQpEsZVX6S4+9YvG1pbngKlUbU9lILoo0iF1qfX9CWuWsTz0L2A1JVV2rczkce/fJpSCxhdT6E0WlQe3fv3ln9+m4w0BXSKhs7SFVl7btYcRStiA+1V+WsNPuMStsPjqE= "landi rsa-key-20121210"',
             ],
     }
 
 ##### END nexiu #####
+
+##### BEGIN digitalocean #####
+
+    @add_user { 'digitalocean':
+        email => 'noc@digitalocean.com',
+        company => 'DigitalOcean',
+        uid => 5283,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'digitalocean':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6MrA6Dsm3YavOFbEEZbiuF0drXEXMoQNyLnBibWwvYjLTO2XI+8wozaB1VI7JYZOaXa8sRztCVsCeGkQhaipAoIBjaUL2SC6rBfhO80OH3NAh3Tqm6DmF0Xu/q588LFJUzY55ZXFlpnW+8zPXgULvgXPKjeZAfxvMoqWOwBF7OhYYiQ+/MKMtBKhN1VxYxglUeIsZtLYnwmQbwkKouucx0+otrqZ+Ba5v8EkHUPsBLBRmjDos/rRDLb8wm2r6fEQj5JnWqD6xHt/x7GIkwi9g3HnUCEa8gdpSZXNQvrLEaSQeXKPaTWDVR3F+xxzezXexIX40wviLVlgH/hRsEhO5 Luca@Lucas-MacBook-Pro.local',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUJS/MWukjGZdcf9dF6/r6371JHo9Q9lh9j80VF5QXTNCnijrez/S2taZ5PCWDvqkIqGBh43ldbsOBI7vRxBStuRzeFge8+8nVKUVr971xE9tdkVfVZhUJKn7JdqenLmIFSGQPC8zFddcwcs/NTALyOGcTexbFBwY8RcE3ANB1Jz0R4zEOdFocgjEJDfWWiryqUd13/nGukQxMo1fviSp2juval3tF/Y0xg8WmaEjQzl0A6/wtoRh06zCUlOfc6tndoKLTios4ZSo1haym25gESIyc24JIGpbk09C+s41orOr6ZqS0KVx0CJiFH6lHw+WYMzE9IpRAw7Uy3HAvYou/ jstretch@digitalocean.com',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6zRnGRVaznAz6sWBpMjd+8Q/gw713NIdE0Xly3S2Pn/AItiywOubiTtEHje/TZuE/SDaNEOV72Gs6qekjub0ailk9YNQ6aOVnQZsYlPLWFjxOV570Ujyqe5mXgo9mvPPNyq5HtPTI8VNwawgPNL34NuOjtEUZ4hzDDstqACeuEPaVtksT2oLpWo2zlAw3aY6PrlfxuWdStaAjvIeaLbVlGY3jdVD93cHA4CAh/maFIB4/Oqi+FwpXJW63rn5nykofSn4jHOj14B7dTM6cVxyAtgQwSt1EGwTr8EWlsGqtGeqZ+dK01fkZ6X0IqjU2kgTjJUpFHhIyCztcvB8OtAOP BS',
+            ],
+    }
+
+##### END digitalocean #####
+
+##### BEGIN bdhub #####
+
+    @add_user { 'bdhub':
+        email => 'noc@bdhub.com',
+        company => 'bdHUB Limited',
+        uid => 5284,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'bdhub':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDdliWVgWD1G3cA93QTljvW0x5ebv/L2L2IzeDl2/WUVQOEvYDMTJSq4wWcW7GXIxde8U/wdeBba/rhMbx4hlGQ0oNhBxTYghsOksIc2c9xLHmn8ymlMy7q1S+E7ozz3xAjWrVzyq+RLEH98PWnAmE04SnZ5eIP0+2Kr3glKsusycHXUaJbTxKBTRc019mT9bgbHbBWYSSeo3YqJULtEgvg4gjp9IQSQlRLlKuEoldGRonx68FaUivuhfogkCMWkpG1X6aWPIJgVqsK86FjvntPWreHQmYWg+sO5ahRvShaBO+1r6EGpnWZI6Q/HyiL83CxD4cVmoCBMRRfbg2N3M8Z dhakacom@ring',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyKJQj7TJo+/j3uSjXQ2OlF3vvlhP9vvq2ya9AeVjuf9tUUdG1VE2WjTfvuw/E/uFaqfJtHTueRy21qtQPbamWNHtKzHBVDngyGeT9SwR4Ab+X8UQNKSQaJaMi2rboBR3JAOxQaRwNPnuAXHMJEykdUA1xnwSFdGMM6NX+RF4DqK9GoR2s8Btd2d/RCfHDgvNIBpSHi2obhVZSCVThIo2MGpDd9Nq6iA0zYGGHk8cq9wjQSKAqyizPjnIGenjijU7cqDGb6p6C1/muybLqe4nCaTPtgknkFlwpcLVTqY+ZOFDnKjh5zUSvICL0/ibk86/H1Z2i6xl32IeYqMgpvyO1 fakrulalam@Fakruls-MacBook-Air.local',
+            ],
+    }
+
+##### END bdhub #####
 
 }

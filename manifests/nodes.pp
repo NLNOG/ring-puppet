@@ -3911,3 +3911,53 @@ node 'nexiu01' inherits ringnode {
     include users
 }
 
+node 'digitalocean01' inherits ringnode {
+    $owner = "digitalocean"
+    $location = "51.521187,-0.62416"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'digitalocean02' inherits ringnode {
+    $owner = "digitalocean"
+    $location = "1.321075,103.695026"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'digitalocean03' inherits ringnode {
+    $owner = "digitalocean"
+    $location = "52.356156,4.955187"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'digitalocean04' inherits ringnode {
+    $owner = "digitalocean"
+    $location = "40.82993,-74.126728"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'bdhub01' inherits ringnode {
+    $owner = "bdhub"
+    $location = "23.7805838,90.4162568"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
