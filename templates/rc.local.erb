@@ -12,7 +12,7 @@
 # By default this script does nothing.
 
 # Override hostname. Some VM systems (OpenVZ) mess this up
-echo "<%= hostname %>" > /etc/hostname
+echo "<%= hostname %>.ring.nlnog.net" > /etc/hostname
 hostname -F /etc/hostname
 
 exit 0
