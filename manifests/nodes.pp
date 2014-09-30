@@ -3961,3 +3961,12 @@ node 'bdhub01' inherits ringnode {
     include users
 }
 
+node 'blacknight01' inherits ringnode {
+    $owner = "blacknight"
+    $location = "53.34981,-6.26031"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
