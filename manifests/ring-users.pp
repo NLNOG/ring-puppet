@@ -5107,4 +5107,21 @@ class users::virtual::ring_users {
 
 ##### END blacknight #####
 
+##### BEGIN globalways #####
+
+    @add_user { 'globalways':
+        email => 'noc@globalways.net',
+        company => 'Globalways AG',
+        uid => 5286,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'globalways':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAABAEAqpdwaqMKF19WTzgL2rMKnVGIHV6IK4DBWbnZrrecOjTsM63+29tV5J1E68yxzzRClMAkw1e+P0yxlGxy63FHlzV4CyYrRiQCKGXVe95KPVgXUN1D4YUK7SeFg/IVaZX66NmtNv27hYZ8srf4jalcZjBRI+ydR3afSml1h76Z25RjCf+dZBSv1ZRm2D4/K++8S3b1KD6VVa07VBszrudS1QBnwS61ojJhyJTRmN0ai/YthEpwhZcL+akN5M/k60X7me2S3x/TaUPuo8xEYbm8M7qnxV5LoE2l2ggRB4Y2kJwquMsXwl1xypznZmXFWwmoZq8vW8CPf3lCoCG45UJYrTU9kOipgfGmADfFRqZJkrOMP8e2LVUl/ykK/rZ6RdD4bONzkZD2dMtbnknBaFGQdx6QnHOowcBM9IoLt6gW4T3N8vbNb5bsuMmvBzKIcOBlKi9GGhVisnBuERoqJv8KkORBjSFiMDH9j/PbuSpviH0LwL/ak1ago/QQXKhfGf6K2SWv7VR1I7eCK+TYR/YIjmEmQBVMcxvyJEbFjTS5owEF2sTL7dofD+s4zsRobAmQubdvvyKfYUs0XvUAkt2th/prU0Ioq3HBl6chyPhGutFl6iW1QpX9tDr4mdgMuIMrELr9qwbl0HBxsGGIdzea5bR8uSgzSLGhag8hE+CFsgNrwyCR5t7e0b0U1PiUsAaqH0EV3mdI1qN5rNPH0qGLHj8VfEw3R1O+1wr07RYrzZD6rNUiVdJS00RwohsWgwU5xYnYKGBme5SKhEiE51uHSLp4aROIm/ZARCRDx2SNHa720IIbQJ/HfYInJLjZ0pJpWT/tUqbRuF2S81wKKYDmzeOVhzd/htbjewZkedBxzuayil3vMR2xbXq9Qf+JoRiqdeJX5+YA7p4MLK+mdOsQuy8a8lkygFMkPzAQzAVBTnIDH7ojup1cjOM9IaxR18cnc5o+/HGInphNs0FOwMDgtLVEv6XTLGB+9/lzI+Vxi5xV5hmrb+al5Ry1ppT72vOTC5o6V7Z6cGp9gN4BIDMTkDnubu6/wZU701/d4PAGTyTRVq3/ERkxLaRlSYFCjK1U1717zyNlx04GqKRMsKoLX158+Lh8wpqQMwivwTIqoLgaYPAEBmJoxLiURVfa9jAtbRqj0EIibm41ydCxGVaVWgX3LcfYvstAfl5CIIg38fHrywXtwBfuQuQK9lwHlDBu1/RzEZJTFYR4pwLqmFEwb8+WtWbiy2lzfBCkNEbAivlSL5ghZX8XWGUyHgWxCijui3BXUGcGAP42bFSjeg7CxRz0ta2dMWdOGR6617s4s2Bt/7GQn3ize93Rz88z1EzyZaNE4lyiLREhtiqFm6/HVw== richih@galactica',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEAyqyy0hwe0G8+icUhsPqbXgjXXmCopk0nnoiGe+K4q666XenKXU2tzvedGXy4eWZIvc30smQFNr4aI2rynIUPAtBrV3UTydMcKT84FDLBQX0w8pk6YGob+BAUetu1fYuxEnDXFZzqBKZ4jEpO0I/ohKiwppEaAfw/yI5VmiT2/Vu6j2Q8T6r0BjRO5A77+wkQTT0Jk/shsr+bNBqpyIHRby+e6JUKDDY4QnDTxE4CEfPsavO/RsR8BimaugLNJGH+557dcP7bVHl3/wydJXg5COSgy/sZJAS5VezipyFeizKoMTpPDporrL/Q+EM5Mj8larN9fTX9gTssF4G7rKfLAbusqWyPTLyOPQeFXWvmUipq5hkbGmCAT/5Y1Y+NlDcPpxjYmtDPftULRaBC8tm7wIxThU7GsUsEACva1BCXf/q3Uu8ZX0NzFXHoB1pz31qJgLaExkbGts395RPnWbRxtmU9L6CHGZGrizTG6LVT+5LDO8RWJenMOP1y7KNU46DE9Dt1j5Y9U4zzSjgc12OaBmFal7+2UBg4mE2WEcyVRP8zmCqfVBOuGw+/GAnr54tqZDSnOLbxRxIBOB1tzZcz0fPg9FxE4ruNufYmp/HjBThYCYy1iweLuYzPTAPKCBdcjAk1aHWnTW7Sfod0+edq1HKWxYhRngnKJ4+CepyPnZk= richih@sss-stgt',
+            ],
+    }
+
+##### END globalways #####
+
 }

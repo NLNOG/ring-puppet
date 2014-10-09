@@ -980,3 +980,6 @@ ff02::2 ip6-allrouters
 
 2a01:a8:dc2:40::aaaa  blacknight01 blacknight01.ring.nlnog.net
 78.153.194.4    blacknight01 blacknight01.ring.nlnog.net
+
+2a02:c98:ffff:ff00::2  globalways01 globalways01.ring.nlnog.net
+94.186.187.3    globalways01 globalways01.ring.nlnog.net
