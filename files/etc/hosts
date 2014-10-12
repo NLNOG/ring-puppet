@@ -987,3 +987,6 @@ ff02::2 ip6-allrouters
 2001:638:d:c402::1:1  dfn01 dfn01.ring.nlnog.net
 194.95.236.10    dfn01 dfn01.ring.nlnog.net
 
+2607:fad0:32:a021::4  liquidweb01 liquidweb01.ring.nlnog.net
+209.59.185.5    liquidweb01 liquidweb01.ring.nlnog.net
+

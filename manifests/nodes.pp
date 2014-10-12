@@ -3991,3 +3991,13 @@ node 'dfn01' inherits ringnode {
     include users
 }
 
+node 'liquidweb01' inherits ringnode {
+    $owner = "liquidweb"
+    $location = "42.705619,-84.666429"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

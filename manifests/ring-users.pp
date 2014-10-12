@@ -5141,4 +5141,20 @@ class users::virtual::ring_users {
 
 ##### END dfn #####
 
+##### BEGIN liquidweb #####
+
+    @add_user { 'liquidweb':
+        email => 'noc@liquidweb.com',
+        company => 'Liquid Web',
+        uid => 5288,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'liquidweb':
+        sshkeys => [
+            ],
+    }
+
+##### END liquidweb #####
+
+
 }
