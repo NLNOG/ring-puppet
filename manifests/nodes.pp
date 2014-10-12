@@ -3980,3 +3980,14 @@ node 'globalways01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'dfn01' inherits ringnode {
+    $owner = "dfn"
+    $location = "49.5738,11.0272"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

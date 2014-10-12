@@ -5123,4 +5123,22 @@ class users::virtual::ring_users {
 
 ##### END globalways #####
 
+##### BEGIN dfn #####
+
+    @add_user { 'dfn':
+        email => 'noc@noc.dfn.de',
+        company => 'DFN',
+        uid => 5287,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'dfn':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEAuiDG0njvhqo3zHyjaOD9+Gn/ZmPZAMPZv/qZbUAhqYhWWxuToO9Gsi+85qQ0rk4UMdszHvAvY+6DCvHzEg2KyET3NqFjwnxNM1spKf9biK3eMaG2kTp2OnV2B3NPXm/OfRUVpBPf+6A8po7YzgmsnCu/Y0+zv8Mp1l3JDHClBu0= schmid@achat',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9hzEPhvZ5XxAKNTjIv+XmGsO42GbqQJQNnZEmU8hwlw5OHEvpXpvM7ea8/upXcVc4VIqs44xaZJRP4bLz8XvKnqVWQrzsfgJj7DGtiKSd/XAoIeZaSGXzmTB9CnDWmRW4x3hOxwyP6kzISgfupJLGNEwYbnqDL+YMbgtW0GxcGu6bFyE+dDMDj6g5uc5GVuzEYM2rXHEEIrTha4pXVqjP6w7ejG98UjALAOsIcaHO6Acr7YraP0wcfkBoAMle1//G2hGQgHT9tq8oAkcQS4k/QERlS5f0yttZfIltDQN8ikP8V3IYzD5kKMjBaE9CMnhsc9dVwW6RBoVPf94vfoB/ stoy-20130807',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEA7iUvrCrZAphCiMoR1zoRmBJVxLPs9CTudUlX9e20gTTrOrNLh2k+K60n4e9hE+3klwqb6sGcLPkxFI7NrOxtPOw6S1GmNz4rZ2RBpVu/TxKJft2qs6EujAKoNw6NzknvcaUrMKGmXSoqbwecPtLODgfhoyKWLuqokNWsdzsvA+8= waibel@onyx',
+            ],
+    }
+
+##### END dfn #####
+
 }
