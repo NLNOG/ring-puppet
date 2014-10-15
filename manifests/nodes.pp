@@ -3991,3 +3991,13 @@ node 'liquidweb01' inherits ringnode {
     include users
 }
 
+node 'riseup01' inherits ringnode {
+    $owner = "riseup"
+    $location = "47.614353,-122.338864"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

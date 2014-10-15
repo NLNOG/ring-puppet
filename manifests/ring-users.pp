@@ -5154,5 +5154,22 @@ class users::virtual::ring_users {
 
 ##### END liquidweb #####
 
+##### BEGIN riseup #####
+
+    @add_user { 'riseup':
+        email => 'root@riseup.net',
+        company => 'Riseup Networks',
+        uid => 5289,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'riseup':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCx5Mo91TQoTMb1tTpX8sqVXkZXTHvRfvj3m9Tzq1M+W+uBInaZG8KYfws+qzyfzKrJYC9sNK1NW83TEyefdCON78dLkOyEft2DIZ8/2FAtjGYBA9DiUPlgHvRMsoYxk8E2KhGK6GAHO8rD/6aewyu9/REtmzcm059lj5qMpASv1x+fQb/9tLJbwJ/PEfw9a0UgpPqSNTrFGAoxNcRgSWOT6NfTEmAM5VS3V6nZaI+wLS649YrqaxIQOTUgLREBVermepyyteavXJJfT8gTv9diBKyHC7rjlDF5Aca4b1PYBwYnxLVUr6onPJBqrmfKvJ3G5F4RfaerizW+txcL9iSou9Mk3FIzV0E5Uj8tpVdCqp19w/w/N0eiDroez0WpBdO/pqjcRGLctrGYzjEPtrOE2KUsAgdmVqGFbcL+DBpN/oILPv4CbnJeQWySBtsOoHaawvB0ZFbMwrCffHsgGfqTEhh3XGevtObCLN2RjZQ5cq1uH5J9iXkg914XK4f/ODZVVT2IPcv5KJLiu0XFDSfIME+GRSZG0pMVdgik/FtjazxwZTCAvRjd5chbI52QSUhp/lxPI0pZKMw+U9b2e4fKB92j72C4Ynjpn7eN5UKv/deWgQohFhaGeBvK93tHQdNmnjYXGu7mCsQdXOgdopdMmeZmmW5mm5FoVUZl8Jl3tw== micah@muck',
+                'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEd6mVFTeXZ2xsKNKScnx82tkXsRZofRFwqI/2T1l2mF micah@muck',
+            ],
+    }
+
+##### END riseup #####
+
 
 }
