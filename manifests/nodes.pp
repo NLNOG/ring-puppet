@@ -2239,16 +2239,6 @@ node 'nexellent01' inherits ringnode {
     include users
 }
 
-node 'rbnetwork02' inherits ringnode {
-    $owner = "rbnetwork"
-    $location = "47.387639,8.519944"
-    include amp_client                                                    
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
-    include set_local_settings                                                  
-    include users
-}
-
 node 'afilias01' inherits ringnode {
     $owner = "afilias"
     $location = "52.34398,4.82871"

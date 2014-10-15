@@ -480,9 +480,6 @@ ff02::2 ip6-allrouters
 217.147.213.237 nexellent01 nexellent01.ring.nlnog.net
 2001:4168:babe:2::2 nexellent01 nexellent01.ring.nlnog.net
 
-91.199.218.92   rbnetwork02 rbnetwork02.ring.nlnog.net
-2001:67c:88:60::5c:1   rbnetwork02 rbnetwork02.ring.nlnog.net
-
 199.10.66.229   afilias01  afilias01.ring.nlnog.net
 2001:500:f1:500::229    afilias01   afilias01.ring.nlnog.net
 
