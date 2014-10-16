@@ -2239,16 +2239,6 @@ node 'nexellent01' inherits ringnode {
     include users
 }
 
-node 'rbnetwork02' inherits ringnode {
-    $owner = "rbnetwork"
-    $location = "47.387639,8.519944"
-    include amp_client                                                    
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
-    include set_local_settings                                                  
-    include users
-}
-
 node 'afilias01' inherits ringnode {
     $owner = "afilias"
     $location = "52.34398,4.82871"
@@ -3994,6 +3984,16 @@ node 'dfn01' inherits ringnode {
 node 'liquidweb01' inherits ringnode {
     $owner = "liquidweb"
     $location = "42.705619,-84.666429"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'riseup01' inherits ringnode {
+    $owner = "riseup"
+    $location = "47.614353,-122.338864"
     include amp_client
     include nagios::target::fqdn
     include nagios_services
