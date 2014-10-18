@@ -1,5 +1,5 @@
 # site.pp
-$munin_cidr_allow = ['2001:7b8:d05:1::167/128', '165.254.255.13/32']
+$munin_cidr_allow = ['2001:7b8:d05:1::167/128']
 
 $logServerList = ['master01.infra.ring.nlnog.net']
 
