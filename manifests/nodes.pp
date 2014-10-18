@@ -469,7 +469,6 @@ node 'public01.infra' inherits infranode {
     include nodesonlycron
     include users
     include apache2
-    include munin::host
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
     nagios::service::http { $name:
@@ -489,6 +488,23 @@ node 'public01.infra' inherits infranode {
     include pdnscronjobs
     include backup::client
 }
+
+# munin
+node 'munin.infra' inherits infranode {
+    $owner = "job"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include syslog_ng::client
+    include nodesonlycron
+    include users
+    include apache2
+    include munin::host
+    munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
+    }
+    include backup::client
+}
+
 
 node 'public02.infra' inherits infranode {
     $owner = "job"
