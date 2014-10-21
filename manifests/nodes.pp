@@ -279,64 +279,7 @@ node 'container03.infra' inherits infranode {
 }
 
 # container04 is hosted at Bit in Ede
-# 8 cores / 16GB RAM / 146GB disk
-# virbr0 is bridged to eth0 (uplink)
-# virbr1 is virtual switch on the box with this IP space:
-#   IPv4 prefix: 213.154.249.160/28
-#   IPv6 prefix: 2001:7b8:d05::/48
-
-node 'container04.infra' inherits infranode {
-    include users
-    include containercronjobs
-    include syslog_ng::client
-    include nagios_services
-    include nagios::target::fqdn
-    include kvm
-    include backup::client
-    munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
-    }
-    kvm::virtual_machine { 'bit01':
-        fqdn        => 'bit01.ring.nlnog.net',
-        ip          => '213.154.249.163', # ipv6 address is 2001:7b8:d05:1::163
-        netmask     => '255.255.255.240',
-        dns         => '8.8.8.8',
-        gateway     => '213.154.249.161',
-        memory      => '512',
-        disksize    => '20',
-        rootsize    => '19968',
-        bridge      => 'virbr1',
-        container   => "${hostname}",
-        ensure      => present,
-    }
-    kvm::virtual_machine { 'staging01':
-        fqdn        => 'staging01.ring.nlnog.net',
-        ip          => '213.154.249.164', # ipv6 address is 2001:7b8:d05:1::164
-        netmask     => '255.255.255.240',
-        dns         => '8.8.8.8',
-        gateway     => '213.154.249.161',
-        memory      => '512',
-        disksize    => '10',
-        rootsize    => '9984',
-        bridge      => 'virbr1',
-        container   => "${hostname}",
-        ensure      => present,
-    }
-    kvm::virtual_machine { 'public01':
-        fqdn        => 'public01.infra.ring.nlnog.net',
-        ip          => '213.154.249.167', # ipv6 address is 2001:7b8:d05:1::167
-        netmask     => '255.255.255.240',
-        dns         => '8.8.8.8',
-        gateway     => '213.154.249.161',
-        memory      => '1024',
-        disksize    => '20',
-        rootsize    => '19968',
-        bridge      => 'virbr1',
-        container   => "${hostname}",
-        ensure      => present,
-    }
-
-
-}
+# died in october 2014
 
 # container05 is hosted at Softlayer in Dallas 
 # 12 cores / 32GB RAM / 1000GB RAID1
@@ -464,7 +407,6 @@ node 'public01.infra' inherits infranode {
     $owner = "job"
     include nagios::target::fqdn
     include nagios_services
-    include set_local_settings
     include syslog_ng::client
     include nodesonlycron
     include users
