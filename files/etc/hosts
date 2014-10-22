@@ -97,8 +97,8 @@ ff02::2 ip6-allrouters
 2001:888:2000:3e::1337  xs4all01    xs4all01.ring.nlnog.net
 82.94.249.162   xs4all01    xs4all01.ring.nlnog.net
 
-2001:7b8:d05:1::163   bit01   bit01.ring.nlnog.net
-213.154.249.163 bit01   bit01.ring.nlnog.net
+2001:7b8:62b:0:400:d4ff:fe72:7145  bit01   bit01.ring.nlnog.net
+212.114.113.69  bit01   bit01.ring.nlnog.net
 
 2001:7b8:d05:1::164   staging01   staging01.ring.nlnog.net
 213.154.249.164 staging01   staging01.ring.nlnog.net
