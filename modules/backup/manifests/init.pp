@@ -40,6 +40,13 @@ class backup::client {
         ensure  => present,
     }
 
+    line { 'backup02_rsa_key':
+        file    => '/root/.ssh/authorized_keys',
+        line    => 'from="165.254.255.19,2001:728:1808::19",command="/root/validate-rsync-backup" ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDhqCJ5ep0oV9U+EirJVHDfqcpdqyDwMgKMcUiat5n62n5H9/oB7/q1A+QNYNWSKxWF9bfU+SwsO2p940AMoYdl9vxLi99mVAvE++pltSKm72KiEyVoasjq3BBHzn37W3nBg86Iqi7QEaH1pgVOIA+LRDesphRXih+4SfrPmAvg1jMfEN39iXDc2kQ+x2sqBy+Z17zd5y5nphBbE8tQK9Wr4eXk17ULtnkg6OpHcMhX8Zo/Khwqb5NC+ShfY2OPKYaSEjWSB+owXo5EWfaLCB6CWxXH/OhAheMaFOHuSz/3ZATQEBAS6h9bESIaTyZ20K7bn5taoDxs0UzernfiXfiJ root@backup02.infra.ring.nlnog.net",
+        ensure  => present,
+    }
+
+
     file { '/root/.ssh':
         ensure  => directory,
     }
