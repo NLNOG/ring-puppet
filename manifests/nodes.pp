@@ -538,7 +538,7 @@ node 'worker02' inherits infranode {
     include graphite
 }
 
-node 'worker03' inherits infranode {
+node 'worker03.infra' inherits infranode {
     $owner = "job"
     $nagios_ping_rate = '!180.0,20%!300.0,60%'
     include users
