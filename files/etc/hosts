@@ -995,3 +995,6 @@ ff02::2 ip6-allrouters
 
 165.254.255.12  ntt02   ntt02.ring.nlnog.net
 2001:728:1808::12   ntt02   ntt02.ring.nlnog.net
+
+2a01:578:13::365d:9ef7  amazon09 amazon09.ring.nlnog.net
+54.93.158.247    amazon09 amazon09.ring.nlnog.net
