@@ -3988,3 +3988,13 @@ node 'amazon09' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'immense01' inherits ringnode {
+    $owner = "immense"
+    $location = "30.45229,-91.11560"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
