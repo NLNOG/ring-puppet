@@ -5184,5 +5184,21 @@ class users::virtual::ring_users {
 
 ##### END riseup #####
 
+##### BEGIN immense #####
+
+    @add_user { 'immense':
+        email => 'support@immense.net',
+        company => 'Immense Networks, LLC',
+        uid => 5290,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'immense':
+        sshkeys => [
+                'ssh-dss AAAAB3NzaC1kc3MAAACBAKsRMp3txD6DtK0bvkLRm43wIptO3NcvxITJ9/OPPY8ZIitH0uYjERsKbadbb5Yg+1Kk6X+4Ei7TFfpC4p8D5De6cJW/yxJLrqjN3Fxj/XDCPXWizinAF9wouXt9YDiGMJ08BtQ0o0dSH4Qvjy+/AaCsnImUksbozyt9N334lRB5AAAAFQC8uweJ+uM8O+3zts91BrfjKUTLTQAAAIBBK9UDEqG8huh79OcHeKiM5nNvbjG3s/hEqb8cSGKORVs+fISbVmggSX9fVqotRUmTxdNW/zp67KCBB/946O5kmXhNB8joAGw7AvQdPOMiesu2VVBMzBxusSoRV/jJOaRbA9X2fitI5s2w3Cx+Ew+IXvk6xfjE1PjHlQXefuxxogAAAIEAjlYCvrdA0dnSp5OBMdjxxy4rLwpwb3V4giaiOmgNFt1SyMZGFYEhoGvFjLqrxWevgPDmPQLw14WLmy3/DOtgLBPCWoltlfD6y6FHoBCjYC8nt7LWcb06KpbOlSd+y+KFTKaQSarkKXsbOTg15GG13SrccqMBh3ZKwY+kDLmeEtg= besquivel@netops.immense.net',
+                'ssh-dss AAAAB3NzaC1kc3MAAACBAIF1cPrB01qootrBHZvOYEV8qUTgTdLKHtH66IVsxp4Clg1phj0mB0BkSO45v+NuqEg2RBKtA4TZSZ+L+XpapJDwfvdMGTY4XePK+uqTeydDgyGJ80SPszWEIFHpCvFkwQ+HdE7vOBgvZGiChyTgobjlJVcR+GooVpeUIrLCNm+FAAAAFQCg7smP8wXy5KZBUwpRP9Ght3E+jQAAAIBvfD4yGzZalsVsHyQ/F5J8LAZcUGJiX4VW3t5g+k3Dn5aFBPA9bRoyzgP/4YGBE70kmajuRMVq1NYG+34zuNRTreM/xnJ/EZSmuOlp35WdQ6lg+19M/tny+FJEmyLT+klfUeAyzkfkEie86OvIptpbRw3RyGkr8MtKesKb7vUCbwAAAIAmHMXr8oUHmUDJwvsA9bqzFOdQTqJSWXycDY2MK3z4ZQ3fgIfmbPtu/OE3viAxYsnZwXySbSngqtGOR3SppS0kNAZTtHFD47YaZjcqL5EYcfh7JfwRnt1MmfilHMH1KWNFIzRBj6fCEuYELDou2MgcHyR+P9nTAkxk8+V/ukoYqQ== BESQUIVEL-WS',
+            ],
+    }
+
+##### END immense #####
 
 }
