@@ -149,7 +149,7 @@ class postfix {
     group => "root",
     mode => "0644",
     source  => "puppet:///modules/postfix/main.cf",
-    replace => false,
+    replace => true,
     seltype => $postfix_seltype,
     notify  => Service["postfix"],
     require => Package["postfix"],
