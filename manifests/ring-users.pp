@@ -5201,4 +5201,52 @@ class users::virtual::ring_users {
 
 ##### END immense #####
 
+##### BEGIN bchnetwork #####
+
+    @add_user { 'bchnetwork':
+        email => 'noc@as35701.net',
+        company => 'BCH Network',
+        uid => 5291,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'bchnetwork':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMKr135Fn7G1lVCg2cAbefMDw286HkhYaafat6d6e5PCN8SOuxd+71DOmRSlXR192zfn0bbCK1x6oWF16CQRb/HJptjRqqdpBkU5aax7WopnAB5+Ncomh71ZbkodZJIXa6AcLiqdRwMOB6ybk7nZVuy1MjGKb3AP/cBBLiIOLHGgyIKOFb9miU3mjQBt0d9wRKMTIATcGIIwT5EfX3yB+oHrVUcGfmJsRRc2QAQijlsdSjJ0Q2B1Xkps2jvd2WYd7KoFAAuzdKZ8VkE6qKSOsVsmPnPVWOjGHkqCMfor+YVH77Ny7HB0tM5GsOCcy8C82a0Wuvd23e1KRhYuNRAIsR bart@jumper',
+            ],
+    }
+
+##### END bchnetwork #####
+
+##### BEGIN cesnet #####
+
+    @add_user { 'cesnet':
+        email => 'noc@cesnet.cz',
+        company => 'CESNET',
+        uid => 5292,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'cesnet':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQWNim7Ht7K6X/JuLgCMybciCxg/nawQ+N96qwliaepb3XHQ6UgF410PTs4zIfN4lk+IS9SDwXcpP8BfMTHspUzrY8PWlRCssd6FH0sV2GAqulCUBwAjbsx+0lkHJBlliPlhynlXMJL03NoR0WA8pXrX+2t3mZgJEwbKxSc1Tw8gsw3BYtrl1CZD8MlLDGoa4y48GPayfIDZ4TMDc0AJdvSmmW2NQDEWnGNDEzXR9kFpydDAPsT82OViYzC2kHEXW5lDMyazdVOptAmVs7rCwcbBtXY0M+NfLkVKzt0Bjfqo8r0xQdcAlacE55h4qRJTTo7wpR5UNEQxOc96RmhZ/P nlnogring@CESNET',
+            ],
+    }
+
+##### END cesnet #####
+
+##### BEGIN adix #####
+
+    @add_user { 'adix':
+        email => 'noc@adix.nl',
+        company => 'Adix BV',
+        uid => 5293,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'adix':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDqQ5jwVaQPxotqMHJugvkh6b2Y8pupoYtdoKX3H6ukl7aWCXcXCBV5SKiQNxSwvCVrySxZJqvXwL3UR7LovlvAckuW/+DsBUAALDOXh/UQCbJAI8G5KW6r8dvP0eg0OF5wrmTNqqGnkAAy4MwsE/xceWQqY06M2pwo7AUC0aaxuPvyUb6KunBcKT0J6ywP24LtxrS8KFm8kYggqKnXx+wY4k7v/gJXMPbOOT0Ldqv52HNCaONyYrFW/cHEzvnd95kJsd1lgKev5k0dV+/sZQo3L/BdtrViJj8BcX6u0gD7h7NEkhhOk2aQmFj8EUt2fCixGRxNZ/9MzdcXFDOU3uHx',
+            ],
+    }
+
+##### END adix #####
+
 }

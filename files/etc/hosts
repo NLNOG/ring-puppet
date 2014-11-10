@@ -1001,3 +1001,13 @@ ff02::2 ip6-allrouters
 
 2620:8D:4000:1002::10  immense01 immense01.ring.nlnog.net
 72.194.128.201    immense01 immense01.ring.nlnog.net
+
+2a01:70:ffff:3::2  bchnetwork01 bchnetwork01.ring.nlnog.net
+195.234.45.126    bchnetwork01 bchnetwork01.ring.nlnog.net
+
+2001:718:1:1f:50:56ff:feee:50  cesnet01 cesnet01.ring.nlnog.net
+78.128.211.50    cesnet01 cesnet01.ring.nlnog.net
+
+2001:67C:6B8:100::138  adix01 adix01.ring.nlnog.net
+89.200.203.138    adix01 adix01.ring.nlnog.net
+

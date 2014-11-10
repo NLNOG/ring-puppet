@@ -3998,3 +3998,34 @@ node 'immense01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'bchnetwork01' inherits ringnode {
+    $owner = "bchnetwork"
+    $location = "50.881702,4.453926"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'cesnet01' inherits ringnode {
+    $owner = "cesnet"
+    $location = "50.101886,14.39173"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'adix01' inherits ringnode {
+    $owner = "adix"
+    $location = "53.2459559,6.5280274"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
