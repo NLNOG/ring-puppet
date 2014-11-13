@@ -58,7 +58,7 @@ ff02::2 ip6-allrouters
 2001:4cb8:1:ff03::2 signet01    signet01.ring.nlnog.net
 81.21.136.3 signet01    signet01.ring.nlnog.net
 
-2a00:1f00:dc06:11::10   tripleit01  tripleit01.ring.nlnog.net
+2a00:1f00:dc06:12::10   tripleit01  tripleit01.ring.nlnog.net
 93.187.11.10    tripleit01  tripleit01.ring.nlnog.net
 
 2a01:240:101::24    jaguarnetwork01 jaguarnetwork01.ring.nlnog.net
