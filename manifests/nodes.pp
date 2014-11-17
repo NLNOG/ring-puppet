@@ -517,7 +517,7 @@ node 'worker01' inherits infranode {
     $owner = "job"
     $nagios_ping_rate = '!180.0,20%!300.0,60%'
     include users
-    include backup::client
+    #    include backup::client
     include syslog_ng::client
     include apache2
     include nagios_services
@@ -533,7 +533,7 @@ node 'worker01' inherits infranode {
 node 'worker02' inherits infranode {
     $owner = "martin"
     $nagios_ping_rate = '!180.0,20%!300.0,60%'
-    include backup::client
+    # include backup::client
     include syslog_ng::client
     include nodesonlycron
     include users
@@ -553,7 +553,7 @@ node 'worker03.infra' inherits infranode {
     $owner = "job"
     $nagios_ping_rate = '!180.0,20%!300.0,60%'
     include users
-    include backup::client
+    # include backup::client
     include syslog_ng::client
     include apache2
     include nagios_services
