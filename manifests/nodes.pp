@@ -4029,3 +4029,22 @@ node 'adix01' inherits ringnode {
     include users
 }
 
+node 'sasag01' inherits ringnode {
+    $owner = "sasag"
+    $location = "47.6933420,8.6294460"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'ovh01' inherits ringnode {
+    $owner = "ovh"
+    $location = "50.98707,2.12554"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}

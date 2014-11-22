@@ -1011,3 +1011,8 @@ ff02::2 ip6-allrouters
 2001:67C:6B8:100::138  adix01 adix01.ring.nlnog.net
 89.200.203.138    adix01 adix01.ring.nlnog.net
 
+2a00:d80::1:185  sasag01 sasag01.ring.nlnog.net
+87.245.64.187    sasag01 sasag01.ring.nlnog.net
+
+2001:41d0:a:643a::137  ovh01 ovh01.ring.nlnog.net
+37.187.111.58    ovh01 ovh01.ring.nlnog.net

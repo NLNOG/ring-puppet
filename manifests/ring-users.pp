@@ -5250,4 +5250,35 @@ class users::virtual::ring_users {
 
 ##### END adix #####
 
+##### BEGIN sasag #####
+
+    @add_user { 'sasag':
+        email => 'noc@sasag.ch',
+        company => 'sasag Kabelkommunikation AG',
+        uid => 5294,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'sasag':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDLT2TJYla4c/QjPMD2hsl1rMziB05dSaRluNec81I3wCoetBVCbFNow7xbABrDjZJikbVU4d+SDM42w8/9R+5ZuFRt02kAvFbTpEqMMwG36JMFl2ZB9iUVCaViMBHD2Ac6jRbaomeniWRY45nffhr2WCgBAxbz9Iu3On3iKSUDcgLdr+nfGFxsurgnLjoMnud9mxh2YpAoAZ7tkg9FeyMmmUCDCQrJdo8o/dsMFdvKbEYfoaq8EI9B4dtGc3cRm+kOwYdSku0OzZk5ofMC7Xo2J49diXfOYEIRp3tfTM4M0KB7lCosXC/qDjs9hsn+ghDMzmOOqxsn9nE7GCE8YCph mrichter@ws-mrichter-linux',
+            ],
+    }
+
+##### END sasag #####
+
+##### BEGIN ovh #####
+
+    @add_user { 'ovh':
+        email => 'noc@ovh.net',
+        company => 'OVH',
+        uid => 5295,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'ovh':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDJmEcV74/XoXL3cYE0v9kEWhNSKlCdEIe1yPfTb89636z9MJ4ffKsi+8KsCK1HAR0NLaDxMl/rFE54tmBtm7CXRIG/G1U2FjoT0PSUjLK1VQfC1mTYB7n0waJQHMoq9gRjGDeuqkS8R/t4Kqyan51G1wEObQ9lHpXl57ggl6y1M5eGqiYf7XFY2FT5Uvc8Wy1qSJooH9XbGkjMvYhOQ+aoQtRKi8vzKAOU52jCMPsgxZlC4WtourBeIgN9wuMdGo2LYm/KOr+aYN8nGlnRQTbqtn62meoi4qAdi/MDHjWKC7eOcdAyGQUiuTblOuBPDb+SIDQZRqv1aVHdgPmTSeWb1xQ1ne1px/q9AN6nm9x1E8jQ2ufwWEzrSweXcfhc0BFgEaBzgb7UJ5kVvkzxYg7i0FHKRWv53q9RT3w9K0Y9ATBjdeQnp5JDHHjUNKVLkcTJdb6Qm6XzapPxB6s52+HIdGXxiWUBAh6/USKnYv+9So2p7R4c7Z1UES++8q1U0QWlSofcGI02lFWoj88NuWpCF/cpUhNjJJHUYAXXVwnGFy3A1TtkROwegHIDoJSG0eUFT9dfbgViI9FBsvrOHP8T8HWlmTPVJPwzNMHTevtj8qISdKR9QP2JUkb1UQI1z4aYTNsVZ6cscY4lyBRk721+NasqgI+rcK/ScSdvCdDsCw== root@z3',
+            ],
+    }
+
+##### END ovh #####
 }
