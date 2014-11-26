@@ -5293,6 +5293,7 @@ class users::virtual::ring_users {
     @authorized_keys { 'btireland':
         sshkeys => [
                 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDULUEb16gTJhcVrf8iPkiGs8cL0OhzQKvvCWn2OsJn+rE3sQcIMKHgI/zQoGwssZAxd3MjNHzK/4vByzP0nWUmL85Mv49LAUx/SONsC7L+ZQrP1YdpTECgoQypsq2b4WH/Uglvjbmle6St5hrWZtR6upZ3kWNs8MVDRCsyFzJGq2IHJ37W518fNm8jblbvKXMsRKGRwAfCIGivZqnLS6Y+Xy+CrbUXWoodDaFVnO0K3LU3jBeO0u/SWSSePNAfCX4hWjCgVKqvvH0Hth5ZxHde10x9OhIa4KjJx+VpRBgMIaO/hMZ4D3O/060Mj8zkUSR4INE1Ualor1V1Wy2lTC97 modonovan@supporthost.esat.net',
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDS7buimStPEOcjp0SG7Z+9RaCFSQWyUSy0icQFbqCj1UXbjQ/9i6tbMd3UNFc4zj+YB7MgisUsneSx9zbSP2lSOrG5FLVnStWQzo+RebYiasz6CpfUAGETKl5cCd/AOHbRExhmNdaiXokHdoUNEhUKg01wLDJSQOZvZUFY6bsUeezLM7nq3c1PJ/mvRGIdn+7SzB5vL7M7XfaY4pEvWXapC0o2vBRKKV8cW4HeG/Df+LkZ+SfWP1KNyuFkf+kmjFhkw3hLmeVfD6WjwnD5zmpwSozeZx/GLm8I/HemQjV7/534RdNq4aOopcqk+OSwcT2wn5ez1f++5utS/LtK2LQh guych@supporthost.esat.net',
             ],
     }
 
