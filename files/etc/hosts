@@ -1016,3 +1016,6 @@ ff02::2 ip6-allrouters
 
 2001:41d0:a:643a::137  ovh01 ovh01.ring.nlnog.net
 37.187.111.58    ovh01 ovh01.ring.nlnog.net
+
+2001:7c8:1000:5::1  btireland01 btireland01.ring.nlnog.net
+193.95.190.212    btireland01 btireland01.ring.nlnog.net

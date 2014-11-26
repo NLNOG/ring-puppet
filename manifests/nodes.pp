@@ -4048,3 +4048,13 @@ node 'ovh01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'btireland01' inherits ringnode {
+    $owner = "btireland"
+    $location = "53.291844,-6.415470"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
