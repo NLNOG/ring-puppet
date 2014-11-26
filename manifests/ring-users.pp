@@ -5281,4 +5281,21 @@ class users::virtual::ring_users {
     }
 
 ##### END ovh #####
+
+##### BEGIN btireland #####
+
+    @add_user { 'btireland':
+        email => 'networksirl@bt.com',
+        company => 'BT Ireland',
+        uid => 5296,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'btireland':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDULUEb16gTJhcVrf8iPkiGs8cL0OhzQKvvCWn2OsJn+rE3sQcIMKHgI/zQoGwssZAxd3MjNHzK/4vByzP0nWUmL85Mv49LAUx/SONsC7L+ZQrP1YdpTECgoQypsq2b4WH/Uglvjbmle6St5hrWZtR6upZ3kWNs8MVDRCsyFzJGq2IHJ37W518fNm8jblbvKXMsRKGRwAfCIGivZqnLS6Y+Xy+CrbUXWoodDaFVnO0K3LU3jBeO0u/SWSSePNAfCX4hWjCgVKqvvH0Hth5ZxHde10x9OhIa4KjJx+VpRBgMIaO/hMZ4D3O/060Mj8zkUSR4INE1Ualor1V1Wy2lTC97 modonovan@supporthost.esat.net',
+            ],
+    }
+
+##### END btireland #####
 }
+
