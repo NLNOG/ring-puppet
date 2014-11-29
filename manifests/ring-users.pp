@@ -5320,6 +5320,22 @@ class users::virtual::ring_users {
 
 ##### END larsendata #####
 
+##### BEGIN firstcolo #####
+
+    @add_user { 'firstcolo':
+        email => 'noc@first-colo.net',
+        company => 'First Colo GmbH',
+        uid => 5298,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'firstcolo':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6/97dsbPGoesJiDdLvAvjZQ1ALdtiynJDFo2pYsoLCrI30G0dItSONXko+nSmNfm5SIx+F0vY6XHLx/wb4pqkr99hXwdeTh82OlAomx56ulSFa+0tbhRQoqYAMnx9hsInoV4FHURShrTI658m54wjx9HBCoSlI1sFvVAipkiTZo1/4eThkK+Loe3/zI65lV3h4WSVsm1EoWb9yBQhTClcAsCA8fMdjDkRUtLUBqtl74ctEOPHyAvkjpC2IDF/jOhlrZ+Rz2XQM89CRpLxQuVIFavE3vELPwtiJBBJiU1efTdc/6+CuEgImzaWccGYRbw+KpsiZ+KpC2K8zneWhK5GQ== "First Colo GmbH - Dennis Hohmann"',
+                'ssh-dss AAAAB3NzaC1kc3MAAACBAMXcs5p/P67fUBD5DH4g9Nw3pGnn65t/y0JQwGxZm9nOxlVwV6X1vHnuOlZrt65A9Auu95UqilBkplq113CyII+qvCNf0d6NrZwZe8+MPSs/dMsXa3jUqpCgyyaf0yfvAnI0yiTWlQMkM4L8ZwxaGMJooIMfeninc7+18SzthoKVAAAAFQC7WuSCt4JjF+O+mnWjezXWxemFWQAAAIEAjQuA8ZhpcKms6NyQ15zNbiXNvHhbpV0A+rVAgm8hpakaCc0bmuniofCeIiiyBjEKYYtl6YXr/zwAbtacvVhhv5tuNDP/cVHYCo2Euxz9nCE3p7Cf8rhO/Z03v0OgO1VIJ4kwajmubAe+OaYWtp2JW9bXLwk9EBbB8Ukf+KSlQ74AAACAdRL60AiqbrfRAUaZOLupf1e0LWiOTcbS4rAHAZY+0JqSxf9qOCsbRCY+CYh697ut0bDV1H3paM6zPWhu+U9trAjtbYTr3MLHtA5zQHq0WmeP05eXdCU9zM5LvCxsuX8892YfQbyddFX//d2S+xQ9tarhcsP00uGHxWgEggDRsTw= "First Colo GmbH - Leon Kramer"',
+            ],
+    }
+
+##### END firstcolo #####
 
 }
 

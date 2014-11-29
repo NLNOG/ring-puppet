@@ -1023,3 +1023,6 @@ ff02::2 ip6-allrouters
 2001:67c:3c0:13::181  larsendata01 larsendata01.ring.nlnog.net
 91.221.196.181    larsendata01 larsendata01.ring.nlnog.net
 
+2a01:7e0::212:224:71:117  firstcolo01 firstcolo01.ring.nlnog.net
+212.224.71.117    firstcolo01 firstcolo01.ring.nlnog.net
+
