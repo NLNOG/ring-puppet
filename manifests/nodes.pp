@@ -4058,3 +4058,14 @@ node 'btireland01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'larsendata01' inherits ringnode {
+    $owner = "larsendata"
+    $location = "55.728018,12.380919"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
