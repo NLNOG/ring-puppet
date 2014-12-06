@@ -4079,3 +4079,13 @@ node 'firstcolo01' inherits ringnode {
     include users
 }
 
+node 'tumuenchen01' inherits ringnode {
+    $owner = "tumuenchen"
+    $location = "48.262413,11.668332"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

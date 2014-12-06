@@ -5340,3 +5340,19 @@ class users::virtual::ring_users {
 
 }
 
+##### BEGIN tumuenchen #####
+
+    @add_user { 'tumuenchen':
+        email => 'lir-admin@net.in.tum.de',
+        company => 'Chair for Network Architectures and Services at the Technische Universitaet Muenchen',
+        uid => 5299,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'tumuenchen':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCv6RXb/iNdtFz7JX+Fq2uoVoUps34hBMveQxo4WYQ0NWvTgf3HDby1gehX0waS6/aS5AJZz8bOPFKg24JpduMTGaBbE0f4kMcbELTdU0FJNv0e0rLBEZtHyQGCa9Ir9EC7pisVd7IjnDoCk71TMWckFRwd8Rfyuft8kHz76X/q6fI3KHrK+i6mh/HXMDLljsUAQPqvXW+cVkHmWoJ4xEuduh5psXyr8go/rWPqJjkKe0jVIol8v/0tx0k9IFSSNgWJ1hCu3Zz+sUAg5iMtsNaiRq8TCzb2tFRl/g4MQixzcDzP6rnflnciikMxmSJbmhrBCMYJVucFOGvg7LouKWkv gasser@intumde',
+            ],
+    }
+
+##### END tumuenchen #####
+

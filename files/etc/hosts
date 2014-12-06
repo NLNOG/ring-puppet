@@ -1026,3 +1026,6 @@ ff02::2 ip6-allrouters
 2a01:7e0::212:224:71:117  firstcolo01 firstcolo01.ring.nlnog.net
 212.224.71.117    firstcolo01 firstcolo01.ring.nlnog.net
 
+2a00:4700:0:2:2e0:81ff:fe2f:facb  tumuenchen01 tumuenchen01.ring.nlnog.net
+188.95.233.9    tumuenchen01 tumuenchen01.ring.nlnog.net
+
