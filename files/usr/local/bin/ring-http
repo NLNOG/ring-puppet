@@ -87,10 +87,6 @@ while read line; do
 done < <(echo "$SERVERS" | xargs -P10 -n1 -I{} sh -c "${ssh_cmd}||:")
 
 if [ "${replies[*]}" ]; then
-    total=0
-    for t in ${replies[@]}; do
-    	total=$(echo $total + $t | bc)
-    done
     echo ${#replies[@]} servers: OK 
 fi
 
