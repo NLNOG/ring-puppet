@@ -5356,3 +5356,19 @@ class users::virtual::ring_users {
 
 ##### END tumuenchen #####
 
+##### BEGIN kudelski #####
+
+    @add_user { 'kudelski':
+        email => 'rndoi-noc@nagra.com',
+        company => 'Kudelski Security',
+        uid => 5300,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'kudelski':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbwicIlodiuvJIZQLF0W0/t0eQ92X7vARm+2eU4rzd5v4FOQyHqCXCAkfYA+Q/MS9R88yg9ED3YPtSW2X6ftKsA9UjICzA8S0nRGzs6n+FFSFbX5KaHyo/NXOKcyCVUiowCCscDIoGxsR+37LhdY5doVKByLz7vmit8YTXOj7a+tEbpktje+WcHXDPGvYFYBIXrF/5HVMHZGZfBY4mSbI3epXxtm5lkWR01zfPuFVYGfKUqxbM2hXAf4rSBW3cR5Vzy0Kb9gKQwcOjkMjYGCUDDVW2X4AEBW2IGglfd4JbV7l8FU2tU+8mzCEBtNMrg0LVQUrRJKgdowNvg3Y6FgJ3',
+            ],
+    }
+
+##### END kudelski #####
+
