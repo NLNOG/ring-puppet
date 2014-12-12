@@ -1032,3 +1032,6 @@ ff02::2 ip6-allrouters
 2a04:5c87:8b00:1211:5054:ff:fe65:ff80  kudelski01 kudelski01.ring.nlnog.net
 185.35.61.74    kudelski01 kudelski01.ring.nlnog.net
 
+2001:40B0:1:1122:CE5C:A007:0:2  csuc01 csuc01.ring.nlnog.net
+84.88.14.229    csuc01 csuc01.ring.nlnog.net
+

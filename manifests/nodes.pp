@@ -4099,3 +4099,13 @@ node 'kudelski01' inherits ringnode {
     include users
 }
 
+node 'csuc01' inherits ringnode {
+    $owner = "csuc"
+    $location = "41.387549,2.111557"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
