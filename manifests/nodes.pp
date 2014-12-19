@@ -4109,3 +4109,12 @@ node 'csuc01' inherits ringnode {
     include users
 }
 
+node 'qcom01' inherits ringnode {
+    $owner = "qcom"
+    $location = "45.67361,9.67697"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
