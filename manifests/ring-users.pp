@@ -5431,5 +5431,21 @@ class users::virtual::ring_users {
     }
 
 ##### END qcom #####
+
+##### BEGIN jointtransit #####
+
+    @add_user { 'jointtransit':
+        email => 'noc@jointtransit.nl',
+        company => 'Joint Transit',
+        uid => 5303,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'jointtransit':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDXg/Qm7bMWMaanlDkkpd6hC5f2SselCfhCXhiIf7DjJbllhlS9Ry0P3Qh974wyo8qu1grXS3krKcWHkWTsGheVNUDu6lkxJIbyaEXjTyZ7qeeOz1JNX5Ldn4yleSgxtIYN8cULbrejfytdqEdN/1pGgkv9Ff/oiaI9b3YM1SRwAPHMvhzLGYLakUQ5/ksDl013iCkPmo22cZ5cuLewa0VcN1Jty0k99uskZ9n6YwYMZ+M7DKf9P+4RS5qVfgnax23EtoXXZdwgxbyoWUV473YJmvuTKVHJ0LG/UHpPZ7sUsKSV92MGKJxsmLYcDYNTn/v/WGA9f2eEVnFF700/viPh lucas@vanschouwen.nl',
+            ],
+    }
+
+##### END jointtransit #####
 }
 
