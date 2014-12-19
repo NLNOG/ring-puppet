@@ -136,6 +136,11 @@ class nettools {
         require => [ Package["nmap"] ],
     }
 
+    exec { "setcap cap_net_raw,cap_net_admin=eip /usr/bin/nping":
+        onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/bin/nping`\" != \"/usr/bin/nping = cap_net_admin,cap_net_raw+eip\"",
+        require => [ Package["nmap"] ],
+    }
+
     package { "traceroute": ensure => latest }
     
     package { "python-mysqldb": ensure => latest }
