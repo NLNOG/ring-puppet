@@ -1035,5 +1035,5 @@ ff02::2 ip6-allrouters
 2001:40B0:1:1122:CE5C:A007:0:2  csuc01 csuc01.ring.nlnog.net
 84.88.14.229    csuc01 csuc01.ring.nlnog.net
 
-2001:4bb0:d:8::29  qcom01 qcom01.ring.nlnog.net
-80.76.80.29    qcom01 qcom01.ring.nlnog.net
+2001:4bb0:d:8::28 qcom01 qcom01.ring.nlnog.net
+80.76.80.28    qcom01 qcom01.ring.nlnog.net
