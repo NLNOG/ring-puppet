@@ -627,15 +627,6 @@ class users {
 
 #### staging #####
 
-node 'staging01' inherits ringnode {
-    $owner = "job"
-    include amp_client
-    include nagios::target::fqdn
-    include nagios_services
-    include set_local_settings
-	include users
-}
-
 node 'staging02' inherits ringnode {
     $owner = "previder"
     include amp_client

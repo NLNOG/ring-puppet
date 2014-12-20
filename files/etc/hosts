@@ -100,9 +100,6 @@ ff02::2 ip6-allrouters
 2001:7b8:62b:0:400:d4ff:fe72:7145  bit01   bit01.ring.nlnog.net
 212.114.113.69  bit01   bit01.ring.nlnog.net
 
-2001:7b8:d05:1::164   staging01   staging01.ring.nlnog.net
-213.154.249.164 staging01   staging01.ring.nlnog.net
-
 2a02:58:3:110::23:1 cambrium01  cambrium01.ring.nlnog.net
 217.19.17.23    cambrium01  cambrium01.ring.nlnog.net
 
