@@ -1037,3 +1037,7 @@ ff02::2 ip6-allrouters
 
 2a02:10:0:1::90:10  jointtransit01 jointtransit01.ring.nlnog.net
 213.207.9.61    jointtransit01 jointtransit01.ring.nlnog.net
+
+2a04:c000:ed51:919:247::1  edsitech01 edsitech01.ring.nlnog.net
+185.50.191.247    edsitech01 edsitech01.ring.nlnog.net
+

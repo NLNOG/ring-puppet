@@ -5447,5 +5447,22 @@ class users::virtual::ring_users {
     }
 
 ##### END jointtransit #####
+
+##### BEGIN edsitech #####
+
+    @add_user { 'edsitech':
+        email => 'noc@edsi-tech.com',
+        company => 'EDSI-Tech Sarl',
+        uid => 5304,
+        groups => ['ring-users'],
+    }
+    @authorized_keys { 'edsitech':
+        sshkeys => [
+                'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC50AdEb7STZqt9LQhkh4SMlkPZWlTJWXnRjW1D09l7VP/oVL6OqhymSzqc/KWJKxrPhN5X3bVbRPCufmLShYwncGbiCFw7/PUWF535JpQwJ+2kc3cbu3LntxFCYIb/HyoLbq6Fd+kuky8+IoRuuCYO5Lj7u0H2ZEAJoGLPZK2RRqGhTxNojV8GmslHkzfAkVDrgklOc9eDXHOWcmkOeqhI6Xo5poLmwg3OGdxDtbgZyubd6TeHs6nyKPesIjcY+qqY7ITUsvxhD7rk/Jn0H2Ygx0IPhEroXGdTNNjuVhxkpIFRqKvR4TCQ9FRtsuOd00Tr8FdY6/0eiEi7QT55HWjh p.bonvin@edsi-tech.com',
+            ],
+    }
+
+##### END edsitech #####
+
 }
 
