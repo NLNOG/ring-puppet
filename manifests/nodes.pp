@@ -218,6 +218,19 @@ node 'container02.infra' inherits infranode {
         container   => "${hostname}",
         ensure      => present,
     }
+    kvm::virtual_machine { 'auth':
+        fqdn        => 'auth.infra.ring.nlnog.net',
+        ip          => '95.211.149.22', # ipv6 address is 2001:1AF8:4013::21
+        netmask     => '255.255.255.240',
+        dns         => '8.8.8.8',
+        gateway     => '95.211.149.17',
+        memory      => '1024',
+        disksize    => '20',
+        rootsize    => '19968',
+        bridge      => 'virbr1',
+        container   => "${hostname}",
+        ensure      => present,
+    }
 }
 
 # container03 is hosted at Atrato in Frankfurt
@@ -511,6 +524,19 @@ node 'lg01.infra' inherits infranode {
         sshkeys => ['ssh-dss AAAAB3NzaC1kc3MAAACBANA+2Nq9N9IQfPqgmHhdYl932sxJb45PB/UgE/ATxOiP5Ev9sz6Vi+85WrD3kwYvszbRmdm6nIR6a5O861K8B+DKsYoWuE1tFxWgSszlbYzuTMXfPg+zI2IAen/YtzgsATnJPIKUub5bO18O3qGX5f/Xf21kJUsGdDx/F13Bb1UlAAAAFQC8JQHI/PW8wmZwmJKoLDHjb9W1XQAAAIEAq7/xIeDcg4FYiZeUl7VZxrB7HhMwBePOuBgpVyghYsJIM1wyWULN99aMxVQphZa77Y0I6UeaXoQu4Mt52O7Q8oq8FtxfCxUguFh0O+5qKZ66PjNmu/BC5s/GioxnoZ2baT/ka0xV3pQ01wZknk1Eb0ze750OdDs143Tq9eos2IkAAACBAJxziC4dxXJ6mOKYHdnEWRC57UFYxLwk5fKMemP0xJZk2/2Wahq+2pNoCWZvnUk6jWHMVhIV8BG7Bq37B1Qq/XuiEfkc+E1gCEYjwIhvvKYsR+SMeejCv1Bv7HV39ZPoGUjdYyQgciBrDCG13R1QShWNRcTK5liOTbyCcxI2QzTK david.freedman@uk.clara.net(RING)'],
     }
 
+}
+
+# machine to manage auth material for ring users
+node 'auth.infra' inherits infranode {
+    $owner = "job"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users::virtual::ring_users
+    include syslog_ng::client
+    include nodesonlycron
+    include users
+    include backup::client
 }
 
 node 'worker01' inherits infranode {
