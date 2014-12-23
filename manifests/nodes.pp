@@ -62,6 +62,7 @@ node 'master01.infra' inherits basenode {
     include trocla::config
     include usage_statistics
     include website
+    include auth::deployer
     include nagios::defaults
     include nagios::headless
     include nagios_services
@@ -537,6 +538,7 @@ node 'auth.infra' inherits infranode {
     include nodesonlycron
     include users
     include backup::client
+    include auth::landing
 }
 
 node 'worker01' inherits infranode {

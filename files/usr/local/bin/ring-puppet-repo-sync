@@ -8,5 +8,5 @@ if [[ $HOSTNAME =~ ^master.* ]]; then
     /usr/bin/git reset  --hard && \
     /usr/bin/git clean  -d -x -f && \
     git submodule update --init && \
-    touch .puppet-sync-stamp 
+    touch manifests/site.pp .puppet-sync-stamp manifests/ring-users.pp
 fi;

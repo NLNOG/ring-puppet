@@ -58,6 +58,37 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
     }
 
     Authorized_keys <| title == "${title}" |>
+
+    # on the manage server drop a copy of the user contributed ssh-keys file
+    # with a specific filename in a easy-to-rsync location
+    # (and ensure that if a user is deleted, the file disappears)
+    if ($fqdn == "auth.infra.ring.nlnog.net") and ($groups !~ /ring-admins/) and ($ensure == "present") {
+        exec { "auth_copy_sshkey_${username}":
+            command => "/usr/bin/install -m 0444 /home/${username}/ssh-keys /opt/keys/${username}.sshkeys",
+        }
+    }
+    elsif ($fqdn == "auth.infra.ring.nlnog.net") and ($groups !~ /ring-admins/) and ($ensure == "absent") {
+        file { "auth_/opt/keys/${username}.sshkeys":
+            path => "/opt/keys/${username}.sshkeys",
+            ensure => absent,
+        }
+    }
+
+    # for regular users use the ssh key file that comes from 
+    # auth.infra.ring.nlnog.net
+    if ($groups !~ /ring-admins/) and ($ensure == "present") {
+        $file_sshkeys = "/opt/keys/${username}.sshkeys"
+        $tmp_sshkeys = inline_template("<%= `/bin/cat #{file_sshkeys}` %>")
+        $array_sshkeys = split($tmp_sshkeys, "\n")
+        @authorized_keys { "$username":
+            sshkeys => $array_sshkeys,
+        }
+    } elsif ($groups !~ /ring-admins/) and ($ensure == "absent") {
+        # delete the ssh key file if they are not part of the ring
+        file { "/home/${username}/.ssh/authorized_keys":
+            ensure  => absent,    
+        }
+    }
 }
 
 define authorized_keys ($sshkeys, $ensure = "present", $home = '') {
