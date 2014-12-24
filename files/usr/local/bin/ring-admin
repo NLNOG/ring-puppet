@@ -1,17 +1,27 @@
 #!/usr/bin/env python
-import MySQLdb as mdb
-import sys, inspect, re, time, string, pycountry, os, simplejson, urllib
+
 from string import Template
+import MySQLdb as mdb
+import inspect
+import os
+import pycountry
+import re
+import simplejson
+import string
+import sys
+import time
+import urllib
 
-DBHOST='localhost'
-DBUSER='ring-admins'
-DBPASS=''
-DB='ring'
-ZONE='ring.nlnog.net'
+DBHOST = 'localhost'
+DBUSER = 'ring-admins'
+DBPASS = ''
+DB = 'ring'
+ZONE = 'ring.nlnog.net'
 
-GEOCODE="https://maps.googleapis.com/maps/api/geocode/json?sensor=false&latlng="
+GEOCODE = \
+    "https://maps.googleapis.com/maps/api/geocode/json?sensor=false&latlng="
 
-SCHEMA='''
+SCHEMA = '''
 CREATE TABLE participants
 (
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
@@ -77,7 +87,7 @@ CREATE TABLE mremarks
 );
 '''
 
-WEBSITETEXT='''
+WEBSITETEXT = '''
 Title: $company ($countrycode) joined the RING
 
 $company - AS $autnum - joined the RING today. $companydesc
@@ -85,7 +95,7 @@ $company - AS $autnum - joined the RING today. $companydesc
 Users can connect to $hostname, which is located in $country.
 '''
 
-WELCOMEMAIL='''
+WELCOMEMAIL = '''
 From: ring-admins@ring.nlnog.net
 To: $nocemail
 Cc: ring-admins@ring.nlnog.net
@@ -100,14 +110,24 @@ The following information is vital:
     - Your company's username is "$username"
     - The user "$username" has sudo rights on $hostname (please don't break puppet :-)
 
-If you want to add additional ssh keys, place them on $hostname in /home/$username/ssh-keys file and notify one of the ring-admins. One of the ring-admins will then import the file into the configuration management system.
+If you want to add additional SSH keys, update the 'ssh-keys' file located on
+'manage.ring.nlnog.net' in your home directory. Please contact a RING Admin if
+you cannot login to manage.ring.nlnog.net. If you update the 'ssh-keys' file
+the changes are usually propagated within 30 to 60 minutes.
+
 For further instruction on how to use the ring, see: https://ring.nlnog.net/user-guide/
 
-You are welcome to join the ring-users mailinglist, which is used for announcements and discussions among RING users. You can find the list at http://mailman.ring.nlnog.net/cgi-bin/mailman/listinfo/ring-users
+You are welcome to join the ring-users mailinglist, which is used for
+announcements and discussions among RING users. You can find the list at
+http://mailman.ring.nlnog.net/cgi-bin/mailman/listinfo/ring-users
+
 We also operate an IRC channel: #ring on IRCnet.
 
-Finally, you are invited to peer with our looking glass. The looking glass service is available for all RING members via ssh on lg01.infra.ring.nlnog.net, and web on http://lg.ring.nlnog.net/.
-Peering with this Looking Glass is optional for ring users. If you want to peer with NLNOG RING, send us your details and setup a session with the following information:
+Finally, you are invited to peer with our looking glass. The looking glass
+service is available for all RING members via ssh on lg01.infra.ring.nlnog.net,
+and web on http://lg.ring.nlnog.net/.  Peering with this Looking Glass is
+optional for ring users. If you want to peer with NLNOG RING, send us your
+details and setup a session with the following information:
 
     AS: 199036
     IPv4: 82.94.230.130
@@ -128,7 +148,7 @@ Host *.ring.nlnog.net
     IdentitiesOnly yes
 '''
 
-ANNOUNCEMAIL='''
+ANNOUNCEMAIL = '''
 From: ring-admins@ring.nlnog.net
 To: ring-users@mailman.ring.nlnog.net
 Subject: $company ($countrycode) joined the RING
@@ -139,12 +159,15 @@ $company - AS $autnum - joined the RING today. $companydesc
 
 Users can connect to $hostname, which is located in $country.
 
-Your ssh keys have been distributed to the new ring node, and the ssh host keys of $hostname have been added to /etc/ssh/ssh_known_hosts on all ring nodes.
+Your ssh keys have been distributed to the new ring node, and the ssh host
+keys of $hostname have been added to /etc/ssh/ssh_known_hosts on all RING
+nodes.
 
 Kind regards,
 
 NLNOG RING Admins
 '''
+
 
 class commands(object):
     def __init__(self):
@@ -154,9 +177,9 @@ class commands(object):
         func = None
         for i in reversed(range(len(argv))):
             try:
-                func = getattr(self, 'cmd_'+'_'.join(argv[0:i+1]))
+                func = getattr(self, 'cmd_' + '_'.join(argv[0:i + 1]))
 
-                args, kwargs = self.splitargv(argv[i+1:])
+                args, kwargs = self.splitargv(argv[i + 1:])
                 break
             except AttributeError:
                 pass
@@ -167,22 +190,22 @@ class commands(object):
             return self.usage()
 
         spec = inspect.getargspec(func)
-        reqcount = len(spec.args)-1
+        reqcount = len(spec.args) - 1
         if spec.defaults:
             reqcount = reqcount - len(spec.defaults)
         if reqcount and not len(args) and not len(kwargs):
-            kwargs=self.ask(func)
+            kwargs = self.ask(func)
         return func(*args, **kwargs)
-    
+
     def ask(self, func):
         spec = inspect.getargspec(func)
-        d=dict()
-        for i,k in enumerate(spec.args[1:]):
+        d = dict()
+        for i, k in enumerate(spec.args[1:]):
             print "%s:" % k,
-            if i >= (len(spec.args)-len(spec.defaults)-1):
+            if i >= (len(spec.args) - len(spec.defaults) - 1):
                 print "(optional)",
-            v=raw_input()
-            d[k]=v
+            v = raw_input()
+            d[k] = v
         return d
 
     def splitargv(self, argv):
@@ -190,20 +213,20 @@ class commands(object):
         kwargs = dict()
         for arg in argv:
             if '=' in arg:
-                k,v = arg.split('=',1)
-                kwargs[k]=v
+                k, v = arg.split('=', 1)
+                kwargs[k] = v
             else:
                 if kwargs:
                     raise SyntaxError
                 args.append(arg)
-        
+
         return args, kwargs
 
     def usage(self):
         cmds = []
         for k, v in sorted(inspect.getmembers(self)):
             if k.startswith('cmd_'):
-                cmd = k[4:].replace('_',' ')
+                cmd = k[4:].replace('_', ' ')
                 argspec = inspect.getargspec(v)
                 args = []
                 if argspec.defaults:
@@ -215,18 +238,18 @@ class commands(object):
                 else:
                     for arg in argspec.args[1:]:
                         args.append('<%s>' % arg)
-                doc=v.__doc__
+                doc = v.__doc__
                 if not doc:
-                    doc=''
+                    doc = ''
                 cmds.append(('%s %s' % (cmd, ' '.join(args)), doc))
 
         maxcmdlen = max(len(cmd[0]) for cmd in cmds)
         for cmd, doc in cmds:
-            print '%-*s %s' % (maxcmdlen+2, cmd, doc)
+            print '%-*s %s' % (maxcmdlen + 2, cmd, doc)
         return 1
-    
+
     def dbdo(self, q, v=None, script=False):
-        conn = mdb.connect(DBHOST,DBUSER,DBPASS,DB)
+        conn = mdb.connect(DBHOST, DBUSER, DBPASS, DB)
         cur = conn.cursor()
         if v:
             cur.execute(q, v)
@@ -238,7 +261,7 @@ class commands(object):
         return cur.rowcount, cur.lastrowid
 
     def dbquery(self, q, v=None):
-        conn = mdb.connect(DBHOST,DBUSER,DBPASS,DB)
+        conn = mdb.connect(DBHOST, DBUSER, DBPASS, DB)
         cur = conn.cursor(mdb.cursors.DictCursor)
         if v:
             cur.execute(q, v)
@@ -250,49 +273,54 @@ class commands(object):
 
     def dbselect(self, table, **kwargs):
         cols, vals = zip(*kwargs.items())
-        query = 'SELECT * FROM %s WHERE %s' % (table, ' '.join('%s=%%s AND' % col for col in cols))
-        query=re.sub(' AND$','',query)
+        query = 'SELECT * FROM %s WHERE %s' % \
+            (table, ' '.join('%s=%%s AND' % col for col in cols))
+        query = re.sub(' AND$', '', query)
         return self.dbquery(query, vals)
- 
+
     def dbselectmax(self, table, counter, where):
         query = 'SELECT MAX(%s) FROM %s WHERE %s' % (counter, table, where)
         res = list(self.dbquery(query))
-        if len(res)>1:
+        if len(res) > 1:
             raise KeyError
         elif res:
-            return res[0]['MAX(%s)'% (counter)]
+            return res[0]['MAX(%s)' % (counter)]
         else:
             return None
 
     def dbselectone(self, table, **kwargs):
         res = list(self.dbselect(table, **kwargs))
-        if len(res)>1:
+        if len(res) > 1:
             raise KeyError
         elif res:
             return res[0]
         else:
             return None
-        
+
     def dbinsert(self, table, **kwargs):
         cols, vals = zip(*kwargs.items())
-        query = 'INSERT INTO %s (%s) VALUES(%s)' % (table, ','.join(cols), ','.join(['%s']*len(vals)))
+        query = 'INSERT INTO %s (%s) VALUES(%s)' % \
+            (table, ','.join(cols), ','.join(['%s'] * len(vals)))
         print vals
         _, rowid = self.dbdo(query, vals)
         return rowid
-   
+
     def dbinsertlist(self, table, cols, vals):
-        query = 'INSERT INTO %s (%s) VALUES(%s)' % (table, ','.join(cols), ','.join(['%s']*len(vals)))
+        query = 'INSERT INTO %s (%s) VALUES(%s)' % \
+            (table, ','.join(cols), ','.join(['%s'] * len(vals)))
         _, rowid = self.dbdo(query, vals)
         return rowid
- 
+
     def dbdelete(self, table, **kwargs):
         cols, vals = zip(*kwargs.items())
-        query = 'DELETE FROM %s WHERE %s' % (table, ' '.join('%s=%%s' % col for col in cols))
+        query = 'DELETE FROM %s WHERE %s' % \
+            (table, ' '.join('%s=%%s' % col for col in cols))
         self.dbdo(query, vals)
-    
+
     def dbupdate(self, table, id, **kwargs):
         cols, vals = zip(*kwargs.items())
-        query = 'UPDATE %s SET %s WHERE id=%s' % (table, ' '.join('%s=%%s' % col for col in cols), id)
+        query = 'UPDATE %s SET %s WHERE id=%s' % \
+            (table, ' '.join('%s=%%s' % col for col in cols), id)
         self.dbdo(query, vals)
 
     def dblist(self, table):
@@ -302,45 +330,45 @@ class commands(object):
             print row
 
     def username2uid(self, username):
-        user=self.dbselectone('users', username=username)
+        user = self.dbselectone('users', username=username)
         uid = None
         if user:
-            uid=user['id'];
+            uid = user['id']
         return uid
-    
+
     def username2pid(self, username):
-        user=self.dbselectone('users', username=username)
+        user = self.dbselectone('users', username=username)
         pid = None
         if user:
-            pid=user['participant'];
+            pid = user['participant']
         return pid
-    
+
     def hostname2mid(self, hostname):
-        machine=self.dbselectone('machines', hostname=hostname)
+        machine = self.dbselectone('machines', hostname=hostname)
         mid = None
         if machine:
-            mid=machine['id'];
+            mid = machine['id']
         return mid
 
     def countryname(self, country, state):
-        cname=''
+        cname = ''
         try:
-            c=pycountry.countries.get(alpha2=country)
-            cname=c.name
+            c = pycountry.countries.get(alpha2=country)
+            cname = c.name
         except KeyError:
-            cname='Unknown'
+            cname = 'Unknown'
         if state:
             try:
-                s=pycountry.subdivisions.get(code=country+'-'+state)
-                cname=s.name+', '+cname
+                s = pycountry.subdivisions.get(code=country + '-' + state)
+                cname = s.name + ', ' + cname
             except KeyError:
-                cname='Unknown, '+cname
+                cname = 'Unknown, ' + cname
         return cname
 
-    def cityname(self,geo):
-        city=None
+    def cityname(self, geo):
+        city = None
         city_opts = {}
-        url=GEOCODE+geo
+        url = GEOCODE + geo
         try:
             response = simplejson.load(urllib.urlopen(url))
             rcode = response['status']
@@ -348,17 +376,17 @@ class commands(object):
                 resultset = response['results']
                 for result in resultset:
                     addr = result['address_components']
-                    for component in addr:
-                        if (component['types'][0] == 'administrative_area_level_1'):
-                            city_opts['administrative_area_level_1'] = component['long_name']
-                        elif (component['types'][0] == 'locality'):
-                            city_opts['locality'] = component['long_name']
-                        elif (component['types'][0] == 'postal_town'):
-                            city_opts['postal_town'] = component['long_name']
-                        elif (component['types'][0] == 'administrative_area_level_2'):
-                            city_opts['administrative_area_level_2'] = component['long_name']
-                        elif (component['types'][0] == 'administrative_area_level_3'):
-                            city_opts['administrative_area_level_3'] = component['long_name']
+                    for part in addr:
+                        if (part['types'][0] == 'administrative_area_level_1'):
+                            city_opts['administrative_area_level_1'] = part['long_name']
+                        elif (part['types'][0] == 'locality'):
+                            city_opts['locality'] = part['long_name']
+                        elif (part['types'][0] == 'postal_town'):
+                            city_opts['postal_town'] = part['long_name']
+                        elif (part['types'][0] == 'administrative_area_level_2'):
+                            city_opts['administrative_area_level_2'] = part['long_name']
+                        elif (part['types'][0] == 'administrative_area_level_3'):
+                            city_opts['administrative_area_level_3'] = part['long_name']
         except:
             sys.stderr.write('unable to retrieve city geocoding info\n')
             return ""
@@ -381,193 +409,178 @@ class commands(object):
             return ""
 
     def cmd_add_participant(self,
-            company, contact, email, nocemail, username,
-            companydesc=None, url=None):
+                            company, contact, email, nocemail, username,
+                            companydesc=None, url=None):
         """add a participant"""
-        tstamp=time.time()
-        partid=self.dbinsert('participants',
-            company=company,
-            url=url,
-            contact=contact,
-            email=email,
-            nocemail=nocemail,
-            companydesc=companydesc,
-            tstamp=tstamp)
+        tstamp = time.time()
+        partid = self.dbinsert('participants', company=company, url=url,
+                               contact=contact, email=email,
+                               nocemail=nocemail, companydesc=companydesc,
+                               tstamp=tstamp)
         print 'participant %s added' % (partid)
-        userid=self.dbselectmax('users','userid','admin IS NULL OR admin=0')
+        userid = self.dbselectmax('users', 'userid',
+                                  'admin IS NULL OR admin=0')
         if not userid:
-            userid=5000
-        userid=userid+1
-        uid=self.dbinsert('users',username=username,
-                                  participant=partid,
-                                  userid=userid)
-        print 'user %s added for participant %s' % (uid,partid)
-    
-    def cmd_update_participant(self,username,attribute,value):
-        """update participant data"""
-        partid=self.username2pid(username)
-        if not partid:
-           sys.exit('user %s not found' % username) 
-        self.dbupdate('participants',partid,**{attribute:value});
-        print 'attribute %s for participant %s updated' % (attribute,partid)
-    
-    def cmd_delete_participant(self,pid):
-        """delete a participant"""
-        result=self.dbselect('users', participant=pid)
-        for row in result:
-            sys.exit('participant %s still has users' % pid);
+            userid = 5000
+        userid = userid + 1
+        uid = self.dbinsert('users', username=username,
+                            participant=partid, userid=userid)
+        print 'user %s added for participant %s' % (uid, partid)
 
-        self.dbdelete('premarks',participant=pid);
+    def cmd_update_participant(self, username, attribute, value):
+        """update participant data"""
+        partid = self.username2pid(username)
+        if not partid:
+            sys.exit('user %s not found' % username)
+        self.dbupdate('participants', partid, **{attribute: value})
+        print 'attribute %s for participant %s updated' % (attribute, partid)
+
+    def cmd_delete_participant(self, pid):
+        """delete a participant"""
+        result = self.dbselect('users', participant=pid)
+        for row in result:
+            sys.exit('participant %s still has users' % pid)
+
+        self.dbdelete('premarks', participant=pid)
         print 'remarks for participant %s deleted' % (pid)
-        self.dbdelete('participants',id=pid);
+        self.dbdelete('participants', id=pid)
         print 'participant %s deleted' % (pid)
-    
+
     def cmd_list_participants(self, username=None):
         """list participants"""
         if username:
-            partid=self.username2pid(username)
+            partid = self.username2pid(username)
             if not partid:
-                sys.exit('user %s not found' % username) 
+                sys.exit('user %s not found' % username)
             print self.dbselectone('participants', participant=partid)
         else:
             self.dblist('participants')
 
     def cmd_add_user(self, pid, username, userid):
         """add a user"""
-        participant=self.dbselectone('participants', id=pid)
+        participant = self.dbselectone('participants', id=pid)
         if not participant:
             sys.exit('participant %s not found' % pid)
-        uid=self.dbinsert('users',
-            username=username,
-            userid=userid,
-            participant=pid)
+        uid = self.dbinsert('users', username=username,
+                            userid=userid, participant=pid)
         print 'user %s added' % (uid)
-    
-    def cmd_update_user(self,username,attribute,value):
-        """update user data"""
-        uid=self.username2uid(username)
-        if not uid:
-           sys.exit('user %s not found' % username) 
-        self.dbupdate('users',uid,**{attribute:value});
-        print 'attribute %s for user %s updated' % (attribute,username)
-    
-    def cmd_delete_user(self,username):
-        """delete a user"""
-        uid=self.username2uid(username)
-        if not uid:
-           sys.exit('user %s not found' % username) 
-        result=self.dbselect('machines', owner=uid)
-        for row in result:
-            sys.exit('user %s still has machines' % username);
 
-        self.dbdelete('sshkeys',user=uid);
+    def cmd_update_user(self, username, attribute, value):
+        """update user data"""
+        uid = self.username2uid(username)
+        if not uid:
+            sys.exit('user %s not found' % username)
+        self.dbupdate('users', uid, **{attribute: value})
+        print 'attribute %s for user %s updated' % (attribute, username)
+
+    def cmd_delete_user(self, username):
+        """delete a user"""
+        uid = self.username2uid(username)
+        if not uid:
+            sys.exit('user %s not found' % username)
+        result = self.dbselect('machines', owner=uid)
+        for row in result:
+            sys.exit('user %s still has machines' % username)
+
+        self.dbdelete('sshkeys', user=uid)
         print 'sshkeys for user %s deleted' % (username)
-        self.dbdelete('users',username=username);
+        self.dbdelete('users', username=username)
         print 'user %s deleted' % (username)
-    
+
     def cmd_list_users(self, pid=None):
         """list users"""
         if pid:
-            result=self.dbselect('users', participant=pid)
+            result = self.dbselect('users', participant=pid)
             for row in result:
                 print row
         else:
             self.dblist('users')
 
-    def cmd_add_machine(self,
-            username, hostname, autnum, country, geo, dc=None,
-            v4=None, v6=None, state=None):
+    def cmd_add_machine(self, username, hostname, autnum, country, geo,
+                        dc=None, v4=None, v6=None, state=None):
         """add a machine"""
-        if not (re.match(r'.*%s$' % ZONE,hostname)):
-            hostname=hostname + "." + ZONE
-        uid=self.username2uid(username)
+        if not (re.match(r'.*%s$' % ZONE, hostname)):
+            hostname = hostname + "." + ZONE
+        uid = self.username2uid(username)
         if not uid:
             sys.exit('user %s not found' % username)
-        tstamp=time.time()
-        city=self.cityname(geo)
-        machineid = self.dbinsert('machines',
-            owner=uid,
-            hostname=hostname,
-            autnum=autnum,
-            country=country,
-            state=state,
-            city=city,
-            geo=geo,
-            dc=dc,
-            v4=v4,
-            v6=v6,
-            tstamp=tstamp,
-            active=0)
-        print "Added machine %s ('%s' at '%s') for user %s" % (machineid, hostname, country, username)
-    
-    def cmd_delete_machine(self,hostname):
+        tstamp = time.time()
+        city = self.cityname(geo)
+        machineid = self.dbinsert('machines', owner=uid, hostname=hostname,
+                                  autnum=autnum, country=country, state=state,
+                                  city=city, geo=geo, dc=dc, v4=v4, v6=v6,
+                                  tstamp=tstamp, active=0)
+        print "Added machine %s ('%s' at '%s') for user %s" % \
+            (machineid, hostname, country, username)
+
+    def cmd_delete_machine(self, hostname):
         """delete a machine"""
-        if not (re.match(r'.*%s$' % ZONE,hostname)):
-            hostname=hostname + "." + ZONE
-        machid=self.hostname2mid(hostname)
+        if not (re.match(r'.*%s$' % ZONE, hostname)):
+            hostname = hostname + "." + ZONE
+        machid = self.hostname2mid(hostname)
         if not machid:
             sys.exit('machine %s not found' % hostname)
-        self.dbdelete('mremarks',machine=machid);
+        self.dbdelete('mremarks', machine=machid)
         print 'remarks for machine %s deleted' % (hostname)
-        self.dbdelete('machines',hostname=hostname);
+        self.dbdelete('machines', hostname=hostname)
         print 'machine %s deleted' % (hostname)
-    
-    def cmd_update_machine(self,hostname,attribute,value):
+
+    def cmd_update_machine(self, hostname, attribute, value):
         """update machine data"""
-        if not (re.match(r'.*%s$' % ZONE,hostname)):
-            hostname=hostname + "." + ZONE
-        machid=self.hostname2mid(hostname)
+        if not (re.match(r'.*%s$' % ZONE, hostname)):
+            hostname = hostname + "." + ZONE
+        machid = self.hostname2mid(hostname)
         if not machid:
             sys.exit('machine %s not found' % hostname)
-        self.dbupdate('machines',machid,**{attribute:value});
-        print 'attribute %s for machine %s updated' % (attribute,hostname)
-    
-    def cmd_activate_machine(self,hostname):
+        self.dbupdate('machines', machid, **{attribute: value})
+        print 'attribute %s for machine %s updated' % (attribute, hostname)
+
+    def cmd_activate_machine(self, hostname):
         """mark machine as active"""
-        if not (re.match(r'.*%s$' % ZONE,hostname)):
-            hostname=hostname + "." + ZONE
-        machid=self.hostname2mid(hostname)
+        if not (re.match(r'.*%s$' % ZONE, hostname)):
+            hostname = hostname + "." + ZONE
+        machid = self.hostname2mid(hostname)
         if not machid:
             sys.exit('machine %s not found' % hostname)
-        self.dbupdate('machines',machid,**{'active':1});
+        self.dbupdate('machines', machid, **{'active': 1})
         print 'machine %s marked as active' % (hostname)
-    
-    def cmd_deactivate_machine(self,hostname):
+
+    def cmd_deactivate_machine(self, hostname):
         """mark machine as inactive"""
-        if not (re.match(r'.*%s$' % ZONE,hostname)):
-            hostname=hostname + "." + ZONE
-        machid=self.hostname2mid(hostname)
+        if not (re.match(r'.*%s$' % ZONE, hostname)):
+            hostname = hostname + "." + ZONE
+        machid = self.hostname2mid(hostname)
         if not machid:
             sys.exit('machine %s not found' % hostname)
-        self.dbupdate('machines',machid,**{'active':0});
+        self.dbupdate('machines', machid, **{'active': 0})
         print 'machine %s marked as inactive' % (hostname)
 
-    def cmd_list_machines(self,username=None):
+    def cmd_list_machines(self, username=None):
         """list machines"""
         if username:
-            uid=self.username2uid(username)
+            uid = self.username2uid(username)
             if not uid:
                 sys.exit('user %s not found' % username)
-            result=self.dbselect('machines', owner=uid)
+            result = self.dbselect('machines', owner=uid)
             for row in result:
                 print row
         else:
             self.dblist('machines')
-    
-    def cmd_add_sshkeys(self,username,filename=None):
+
+    def cmd_add_sshkeys(self, username, filename=None):
         """add one or more sshkeys"""
-        uid=self.username2uid(username)
+        uid = self.username2uid(username)
         if not uid:
             sys.exit('user %s not found' % username)
 
         file = None
         if filename:
-            file = open(filename,"r")
+            file = open(filename, "r")
         else:
             file = sys.stdin
-        cols = ['keytype','sshkey','keyid','user']
+        cols = ['keytype', 'sshkey', 'keyid', 'user']
         for line in file:
-            if (re.search(r'^#',line)):
+            if (re.search(r'^#', line)):
                 continue
             vals = line.split()
             insert = []
@@ -579,94 +592,91 @@ class commands(object):
             if len(vals) == 2:
                 insert.append(None)
             elif len(vals) > 3:
-                keyid = "\""+string.join(vals[2:])+"\""
+                keyid = "\"" + string.join(vals[2:]) + "\""
                 insert.append(keyid)
             else:
                 insert.append(vals[2])
             insert.append(uid)
-            kid=self.dbinsertlist('sshkeys',cols,insert)
+            kid = self.dbinsertlist('sshkeys', cols, insert)
             print "Added key %s for user %s" % (kid, username)
         file.close()
-    
-    def cmd_replace_sshkeys(self,username,filename=None):
-        """replace sshkeys"""
-        uid=self.username2uid(username)
-        if not uid:
-            sys.exit('user %s not found' % username)
-        self.dbdelete('sshkeys',user=uid);
-        print 'sshkeys for user %s deleted' % (username)
-        self.cmd_add_sshkeys(username,filename)
 
-    def cmd_delete_sshkey(self,id):
-        """delete an sshkey"""
-        self.dbdelete('sshkeys',id=id);
-        print 'key %s deleted' % (id)
-    
-    def cmd_list_sshkeys(self,username):
-        """list sshkeys"""
-        uid=self.username2uid(username)
+    def cmd_replace_sshkeys(self, username, filename=None):
+        """replace sshkeys"""
+        uid = self.username2uid(username)
         if not uid:
             sys.exit('user %s not found' % username)
-        result=self.dbselect('sshkeys', user=uid)
+        self.dbdelete('sshkeys', user=uid)
+        print 'sshkeys for user %s deleted' % (username)
+        self.cmd_add_sshkeys(username, filename)
+
+    def cmd_delete_sshkey(self, id):
+        """delete an sshkey"""
+        self.dbdelete('sshkeys', id=id)
+        print 'key %s deleted' % (id)
+
+    def cmd_list_sshkeys(self, username):
+        """list sshkeys"""
+        uid = self.username2uid(username)
+        if not uid:
+            sys.exit('user %s not found' % username)
+        result = self.dbselect('sshkeys', user=uid)
         for row in result:
             print row
-    
-    def cmd_add_premark(self,username,remark):
+
+    def cmd_add_premark(self, username, remark):
         """add a participant remark"""
-        partid=self.username2pid(username)
+        partid = self.username2pid(username)
         if not partid:
             sys.exit('user %s not found' % username)
-        participant=self.dbselectone('participants', id=partid)
+        participant = self.dbselectone('participants', id=partid)
         if not participant:
             sys.exit('participant %s not found' % partid)
-        tstamp=time.time()
-        rid = self.dbinsert('premarks',
-            participant=partid,
-            remark=remark,
-            tstamp=tstamp)
-        print "Added remark %s for participant '%s'" % (rid, participant['company'])
-    
-    def cmd_delete_premark(self,id):
+        tstamp = time.time()
+        rid = self.dbinsert('premarks', participant=partid, remark=remark,
+                            tstamp=tstamp)
+        print "Added remark %s for participant '%s'" % \
+            (rid, participant['company'])
+
+    def cmd_delete_premark(self, id):
         """delete a participant remark"""
-        self.dbdelete('premarks',id=id);
+        self.dbdelete('premarks', id=id)
         print 'remark %s deleted' % (id)
-    
-    def cmd_list_premarks(self,username):
+
+    def cmd_list_premarks(self, username):
         """list participant remarks"""
-        partid=self.username2pid(username)
+        partid = self.username2pid(username)
         if not partid:
             sys.exit('user %s not found' % username)
-        result=self.dbselect('premarks', participant=partid)
+        result = self.dbselect('premarks', participant=partid)
         for row in result:
             print row
-    
-    def cmd_add_mremark(self,hostname,remark):
+
+    def cmd_add_mremark(self, hostname, remark):
         """add a machine remark"""
-        if not (re.match(r'.*%s$' % ZONE,hostname)):
-            hostname=hostname + "." + ZONE
-        machid=self.hostname2mid(hostname)
+        if not (re.match(r'.*%s$' % ZONE, hostname)):
+            hostname = hostname + "." + ZONE
+        machid = self.hostname2mid(hostname)
         if not machid:
             sys.exit('machine %s not found' % hostname)
-        tstamp=time.time()
-        rid = self.dbinsert('mremarks',
-            machine=machid,
-            remark=remark,
-            tstamp=tstamp)
+        tstamp = time.time()
+        rid = self.dbinsert('mremarks', machine=machid, remark=remark,
+                            tstamp=tstamp)
         print "Added remark %s for machine %s" % (rid, hostname)
-    
-    def cmd_delete_mremark(self,id):
+
+    def cmd_delete_mremark(self, id):
         """delete a machine remark"""
-        self.dbdelete('mremarks',id=id);
+        self.dbdelete('mremarks', id=id)
         print 'remark %s deleted' % (id)
-    
-    def cmd_list_mremarks(self,hostname):
+
+    def cmd_list_mremarks(self, hostname):
         """list machine remarks"""
-        if not (re.match(r'.*%s$' % ZONE,hostname)):
-            hostname=hostname + "." + ZONE
-        machid=self.hostname2mid(hostname)
+        if not (re.match(r'.*%s$' % ZONE, hostname)):
+            hostname = hostname + "." + ZONE
+        machid = self.hostname2mid(hostname)
         if not machid:
             sys.exit('machine %s not found' % hostname)
-        result=self.dbselect('mremarks', machine=machid)
+        result = self.dbselect('mremarks', machine=machid)
         for row in result:
             print row
 
@@ -674,174 +684,177 @@ class commands(object):
         """initialize database"""
         self.dbdo(SCHEMA, None, script=True)
 
-    def cmd_generate_puppet_user(self,username):
+    def cmd_generate_puppet_user(self, username):
         """generate puppet user config"""
-        uid=self.username2uid(username)
-        partid=self.username2pid(username)
+        uid = self.username2uid(username)
+        partid = self.username2pid(username)
         if not partid:
             sys.exit('user %s not found' % username)
-        p=self.dbselectone('participants', id=partid)
-        u=self.dbselectone('users', id=uid)
+        p = self.dbselectone('participants', id=partid)
+        u = self.dbselectone('users', id=uid)
         if not p:
             sys.exit('participant %s not found' % partid)
 
-        print "##### BEGIN "+username+" #####"
+        print "##### BEGIN " + username + " #####"
         print ""
-        print "    @add_user { '"+username+"':"
-        print "        email => '"+p['nocemail']+"',"
-        print "        company => '"+p['company']+"',"
-        print "        uid => "+str(u['userid'])+","
+        print "    @add_user { '" + username + "':"
+        print "        email => '" + p['nocemail'] + "',"
+        print "        company => '" + p['company'] + "',"
+        print "        uid => " + str(u['userid']) + ","
         print "        groups => ['ring-users'],"
         print "    }"
-        print "    @authorized_keys { '"+username+"':"
+        print "    @authorized_keys { '" + username + "':"
         print "        sshkeys => ["
-        
-        keys=self.dbselect('sshkeys', user=uid)
+
+        keys = self.dbselect('sshkeys', user=uid)
         for k in keys:
             if k['keyid']:
-                print "                '"+\
-                      k['keytype']+" "+k['sshkey']+" "+k['keyid']+"',"
+                print "                '" + \
+                    k['keytype'] + " " + k['sshkey'] + " " + k['keyid'] + "',"
             else:
-                print "                '"+\
-                      k['keytype']+" "+k['sshkey']+"',"
+                print "                '" + \
+                    k['keytype'] + " " + k['sshkey'] + "',"
 
         print "            ],"
         print "    }"
         print ""
-        print "##### END "+username+" #####"
-    
-    def cmd_generate_puppet_node(self,hostname):
+        print "##### END " + username + " #####"
+
+    def cmd_generate_puppet_node(self, hostname):
         """generate puppet node config"""
-        if not (re.match(r'.*%s$' % ZONE,hostname)):
-            hostname=hostname + "." + ZONE
-        name=re.sub('.' + ZONE,'',hostname)
-        m=self.dbselectone('machines', hostname=hostname)
+        if not (re.match(r'.*%s$' % ZONE, hostname)):
+            hostname = hostname + "." + ZONE
+        name = re.sub('.' + ZONE, '', hostname)
+        m = self.dbselectone('machines', hostname=hostname)
         if not m:
             sys.exit('machine %s not found' % hostname)
-        u=self.dbselectone('users', id=m['owner'])
+        u = self.dbselectone('users', id=m['owner'])
         if not u:
             sys.exit('user %s not found' % m['owner'])
 
-        print "node '"+name+"' inherits ringnode {"
-        print "    $owner = \""+u['username']+"\""
-        print "    $location = \""+m['geo']+"\""
+        print "node '" + name + "' inherits ringnode {"
+        print "    $owner = \"" + u['username'] + "\""
+        print "    $location = \"" + m['geo'] + "\""
         print "    include amp_client"
         print "    include nagios::target::fqdn"
         print "    include nagios_services"
         print "    include set_local_settings"
         print "    include users"
         print "}"
-    
-    def cmd_generate_hostsfile(self,hostname):
+
+    def cmd_generate_hostsfile(self, hostname):
         """generate hostsfile config"""
-        if not (re.match(r'.*%s$' % ZONE,hostname)):
-            hostname=hostname + "." + ZONE
-        name=re.sub('.' + ZONE,'',hostname)
-        m=self.dbselectone('machines', hostname=hostname)
+        if not (re.match(r'.*%s$' % ZONE, hostname)):
+            hostname = hostname + "." + ZONE
+        name = re.sub('.' + ZONE, '', hostname)
+        m = self.dbselectone('machines', hostname=hostname)
         if not m:
             sys.exit('machine %s not found' % hostname)
 
-        print m['v6']+"  "+name+" "+m['hostname']
+        print m['v6'] + "  " + name + " " + m['hostname']
         if m['v4']:
-            print m['v4']+"    "+name+" "+m['hostname']
-    
-    def cmd_dnscommands(self,hostname):
+            print m['v4'] + "    " + name + " " + m['hostname']
+
+    def cmd_dnscommands(self, hostname):
         """generate dns commands"""
-        if not (re.match(r'.*%s$' % ZONE,hostname)):
-            hostname=hostname + "." + ZONE
-        m=self.dbselectone('machines', hostname=hostname)
+        if not (re.match(r'.*%s$' % ZONE, hostname)):
+            hostname = hostname + "." + ZONE
+        m = self.dbselectone('machines', hostname=hostname)
         if not m:
             sys.exit('machine %s not found' % hostname)
-        print "ring-pdns add node "+ \
-              m['hostname']+" "+m['v4']+" "+m['v6']+" "+m['geo']
-        print "ring-pdns activate node "+ \
-              m['hostname']+" "+m['country']
-    
-    def cmd_generate_webpost(self,username):
+        print "ring-pdns add node " + m['hostname'] + " " + m['v4'] + " " + \
+            m['v6'] + " " + m['geo']
+        print "ring-pdns activate node " + m['hostname'] + " " + m['country']
+
+    def cmd_generate_webpost(self, username):
         """generate text for website post"""
-        partid=self.username2pid(username)
+        partid = self.username2pid(username)
         if not partid:
             sys.exit('user %s not found' % username)
-        p=self.dbselectone('participants', id=partid)
+        p = self.dbselectone('participants', id=partid)
         if not p:
             sys.exit('participant %s not found' % partid)
-        u=self.dbselectone('users', participant=partid)
-        m=self.dbselect('machines', owner=u['id'])
+        u = self.dbselectone('users', participant=partid)
+        m = self.dbselect('machines', owner=u['id'])
         if not m:
             sys.exit('no machines found for %s' % username)
-        hostname=''
-        autnum=''
-        dc=''
-        state=''
-        country=''
+        hostname = ''
+        autnum = ''
+        dc = ''
+        state = ''
+        country = ''
         try:
-            mfirst=m.next()
-            hostname=mfirst['hostname']
-            autnum=str(mfirst['autnum'])
-            dc=mfirst['dc']
-            state=mfirst['state']
-            countrycode=mfirst['country']
+            mfirst = m.next()
+            hostname = mfirst['hostname']
+            autnum = str(mfirst['autnum'])
+            dc = mfirst['dc']
+            state = mfirst['state']
+            countrycode = mfirst['country']
         except StopIteration:
             pass
-        country=self.countryname(countrycode,state)
-        text=Template(WEBSITETEXT)
-        print text.substitute(company=p['company'],companydesc=p['companydesc'],
-                        hostname=hostname,autnum=autnum,
-                        dc=dc,country=country,countrycode=countrycode)
-    
-    def cmd_generate_welcomemail(self,username):
+        country = self.countryname(countrycode, state)
+        text = Template(WEBSITETEXT)
+        print text.substitute(company=p['company'],
+                              companydesc=p['companydesc'], hostname=hostname,
+                              autnum=autnum, dc=dc, country=country,
+                              countrycode=countrycode)
+
+    def cmd_generate_welcomemail(self, username):
         """generate text for welcome mail"""
-        partid=self.username2pid(username)
+        partid = self.username2pid(username)
         if not partid:
             sys.exit('user %s not found' % username)
-        p=self.dbselectone('participants', id=partid)
+        p = self.dbselectone('participants', id=partid)
         if not p:
             sys.exit('participant %s not found' % partid)
-        u=self.dbselectone('users', participant=partid)
-        m=self.dbselect('machines', owner=u['id'])
+        u = self.dbselectone('users', participant=partid)
+        m = self.dbselect('machines', owner=u['id'])
         if not m:
             sys.exit('no machines found for %s' % username)
-        hostname=''
+        hostname = ''
         try:
-            mfirst=m.next()
-            hostname=mfirst['hostname']
+            mfirst = m.next()
+            hostname = mfirst['hostname']
         except StopIteration:
             pass
-        text=Template(WELCOMEMAIL)
-        print text.substitute(company=p['company'],nocemail=p['nocemail'],
-                        hostname=hostname,username=u['username'])
-    
-    def cmd_generate_announcemail(self,username):
+        text = Template(WELCOMEMAIL)
+        print text.substitute(company=p['company'], nocemail=p['nocemail'],
+                              hostname=hostname, username=u['username'])
+
+    def cmd_generate_announcemail(self, username):
         """generate text for announcement mail"""
-        partid=self.username2pid(username)
+        partid = self.username2pid(username)
         if not partid:
             sys.exit('user %s not found' % username)
-        p=self.dbselectone('participants', id=partid)
+        p = self.dbselectone('participants', id=partid)
         if not p:
             sys.exit('participant %s not found' % partid)
-        u=self.dbselectone('users', participant=partid)
-        m=self.dbselect('machines', owner=u['id'])
+        u = self.dbselectone('users', participant=partid)
+        m = self.dbselect('machines', owner=u['id'])
         if not m:
             sys.exit('no machines found for %s' % username)
-        hostname=''
-        autnum=''
-        dc=''
-        state=''
-        country=''
+        hostname = ''
+        autnum = ''
+        dc = ''
+        state = ''
+        country = ''
         try:
-            mfirst=m.next()
-            hostname=mfirst['hostname']
-            autnum=str(mfirst['autnum'])
-            dc=mfirst['dc']
-            state=mfirst['state']
-            countrycode=mfirst['country']
+            mfirst = m.next()
+            hostname = mfirst['hostname']
+            autnum = str(mfirst['autnum'])
+            dc = mfirst['dc']
+            state = mfirst['state']
+            countrycode = mfirst['country']
         except StopIteration:
             pass
-        country=self.countryname(countrycode,state)
-        text=Template(ANNOUNCEMAIL)
-        print text.substitute(company=p['company'],companydesc=p['companydesc'],
-                        hostname=hostname,autnum=autnum,dc=dc,state=state,
-                        country=country,countrycode=countrycode)
+        country = self.countryname(countrycode, state)
+        text = Template(ANNOUNCEMAIL)
+        print text.substitute(company=p['company'],
+                              companydesc=p['companydesc'],
+                              hostname=hostname, autnum=autnum, dc=dc,
+                              state=state, country=country,
+                              countrycode=countrycode)
+
 
 def run(args):
     c = commands()
@@ -849,4 +862,8 @@ def run(args):
 
 if __name__ == "__main__":
     c = commands()
-    sys.exit(c.run([s.decode(sys.stdout.encoding or os.environ.get('LC_CTYPE','.').split('.',1)[1] or 'utf-8') for s in sys.argv[1:]]))
+    sys.exit(
+        c.run(
+            [s.decode(sys.stdout.encoding or
+                      os.environ.get('LC_CTYPE', '.').split('.', 1)[1] or
+                      'utf-8') for s in sys.argv[1:]]))
