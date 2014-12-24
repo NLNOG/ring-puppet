@@ -23,6 +23,21 @@ class auth::landing {
         owner  => 'root',
         group  => 'ring-admins',
     }
+
+    cron { 'auth_sync_keys_to_opt_keys':
+        user    => 'root',
+        minute  => '*/15',
+        command => '/usr/local/bin/auth-copy-keys-to-opt-keys',
+        require => [Package['members'], File['/usr/local/bin/auth-copy-keys-to-opt-keys']],
+    }
+
+    file { '/usr/local/bin/auth-copy-keys-to-opt-keys':
+        owner   => 'root',
+        group   => 'root',
+        mode    => '0755',
+        source  => 'puppet:///auth/auth-copy-keys-to-opt-keys',
+        require => [Package['members'], File['/opt/keys']],
+    }
  
 }
 

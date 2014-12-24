@@ -62,12 +62,7 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
     # on the manage server drop a copy of the user contributed ssh-keys file
     # with a specific filename in a easy-to-rsync location
     # (and ensure that if a user is deleted, the file disappears)
-    if ($fqdn == "auth.infra.ring.nlnog.net") and ($groups !~ /ring-admins/) and ($ensure == "present") {
-        exec { "auth_copy_sshkey_${username}":
-            command => "/usr/bin/install -m 0444 /home/${username}/ssh-keys /opt/keys/${username}.sshkeys",
-        }
-    }
-    elsif ($fqdn == "auth.infra.ring.nlnog.net") and ($groups !~ /ring-admins/) and ($ensure == "absent") {
+    if ($fqdn == "auth.infra.ring.nlnog.net") and ($groups !~ /ring-admins/) and ($ensure == "absent") {
         file { "auth_/opt/keys/${username}.sshkeys":
             path => "/opt/keys/${username}.sshkeys",
             ensure => absent,
