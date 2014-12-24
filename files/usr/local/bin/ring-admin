@@ -674,20 +674,6 @@ class commands(object):
         print "        uid => " + str(u['userid']) + ","
         print "        groups => ['ring-users'],"
         print "    }"
-        print "    @authorized_keys { '" + username + "':"
-        print "        sshkeys => ["
-
-        keys = self.dbselect('sshkeys', user=uid)
-        for k in keys:
-            if k['keyid']:
-                print "                '" + \
-                    k['keytype'] + " " + k['sshkey'] + " " + k['keyid'] + "',"
-            else:
-                print "                '" + \
-                    k['keytype'] + " " + k['sshkey'] + "',"
-
-        print "            ],"
-        print "    }"
         print ""
         print "##### END " + username + " #####"
 
