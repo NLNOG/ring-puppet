@@ -21,5 +21,3 @@ class ring::apt {
         include_src     => false
     }
 }
-
-
