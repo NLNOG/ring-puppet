@@ -35,7 +35,7 @@ class auth::landing {
         owner   => 'root',
         group   => 'root',
         mode    => '0755',
-        source  => 'puppet:///auth/auth-copy-keys-to-opt-keys',
+        source  => 'puppet:///modules/auth/auth-copy-keys-to-opt-keys',
         require => [Package['members'], File['/opt/keys']],
     }
  
