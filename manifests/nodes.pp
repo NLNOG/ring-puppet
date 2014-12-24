@@ -40,6 +40,7 @@ node ringnode inherits basenode {
         source  => "puppet:///files/etc/puppet/puppet.conf"
     }
     include ring_sqa
+    include uninstall_amp
 }
 
 node infranode inherits basenode {
@@ -657,7 +658,6 @@ class users {
 
 node 'staging02' inherits ringnode {
     $owner = "previder"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -671,7 +671,6 @@ node 'staging02' inherits ringnode {
 node 'intouch01' inherits ringnode {
     $owner = "intouch"
     $location = "52.355930,4.951873"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -681,7 +680,6 @@ node 'intouch01' inherits ringnode {
 node 'bit01' inherits ringnode {
     $owner = "bit"
     $location = "52.027596,5.624528"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -691,7 +689,6 @@ node 'bit01' inherits ringnode {
 node 'coloclue01' inherits ringnode {
     $owner = "coloclue"
     $location = "52.332901,4.919525"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -701,7 +698,6 @@ node 'coloclue01' inherits ringnode {
 node 'widexs01' inherits ringnode {
     $owner = "widexs"
     $location = "52.399982,4.842305"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -711,7 +707,6 @@ node 'widexs01' inherits ringnode {
 node 'xlshosting01' inherits ringnode {
     $owner = "xlshosting"
     $location = "52.332912,4.919461"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -721,7 +716,6 @@ node 'xlshosting01' inherits ringnode {
 node 'interconnect01' inherits ringnode {
     $owner = "interconnect"
     $location = "51.686672,5.359043"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -731,7 +725,6 @@ node 'interconnect01' inherits ringnode {
 node 'cambrium01' inherits ringnode {
     $owner = "cambrium"
     $location = "52.340988,5.227518"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -741,7 +734,6 @@ node 'cambrium01' inherits ringnode {
 node 'cyso01' inherits ringnode {
     $owner = "cyso"
     $location = "52.343983,4.828710"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -751,7 +743,6 @@ node 'cyso01' inherits ringnode {
 node 'zylon01' inherits ringnode {
     $owner = "zylon"
     $location = "52.396420,4.851092"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -761,7 +752,6 @@ node 'zylon01' inherits ringnode {
 node 'duocast01' inherits ringnode {
     $owner = "duocast"
     $location = "53.246086,6.528518"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -771,7 +761,6 @@ node 'duocast01' inherits ringnode {
 node 'easyhosting01' inherits ringnode {
     $owner = "easyhosting"
     $location = "52.391132,4.665263"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -781,7 +770,6 @@ node 'easyhosting01' inherits ringnode {
 node 'previder01' inherits ringnode {
     $owner = "previder"
     $location = "52.243954,6.767229"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -791,7 +779,6 @@ node 'previder01' inherits ringnode {
 node 'leaseweb01' inherits ringnode {
     $owner = "leaseweb"
     $location = "52.391224,4.665155"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -801,7 +788,6 @@ node 'leaseweb01' inherits ringnode {
 node 'nxs01' inherits ringnode {
     $owner = "nxs"
     $location = "52.393200,4.847546"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -811,7 +797,6 @@ node 'nxs01' inherits ringnode {
 node 'xs4all01' inherits ringnode {
     $owner = "xs4all"
     $location = "52.336353,4.886652"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -821,7 +806,6 @@ node 'xs4all01' inherits ringnode {
 node 'nedzone01' inherits ringnode {
     $owner = "nedzone"
     $location = "51.587601,4.305047"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -831,7 +815,6 @@ node 'nedzone01' inherits ringnode {
 node 'oxilion01' inherits ringnode {
     $owner = "oxilion"
     $location = "52.243969,6.767278"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -841,7 +824,6 @@ node 'oxilion01' inherits ringnode {
 node 'ebayclassifiedsgroup01' inherits ringnode {
     $owner = "ebayclassifiedsgroup"
     $location = "52.280964,4.754237"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -851,7 +833,6 @@ node 'ebayclassifiedsgroup01' inherits ringnode {
 node 'is01' inherits ringnode {
     $owner = "is"
     $location = "52.396759,4.838742"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -861,7 +842,6 @@ node 'is01' inherits ringnode {
 node 'surfnet01' inherits ringnode {
     $owner = "surfnet"
     $location = "52.090767,5.112371"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -871,7 +851,6 @@ node 'surfnet01' inherits ringnode {
 node 'prolocation01' inherits ringnode {
     $owner = "prolocation"
     $location = "52.343983,4.828710"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -881,7 +860,6 @@ node 'prolocation01' inherits ringnode {
 node 'in2ip01' inherits ringnode {
     $owner = "in2ip"
     $location = "52.395855,4.841133"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -891,7 +869,6 @@ node 'in2ip01' inherits ringnode {
 node 'netground01' inherits ringnode {
     $owner = "netground"
     $location = "52.343983,4.828710"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -901,7 +878,6 @@ node 'netground01' inherits ringnode {
 node 'totaalnet01' inherits ringnode {
     $owner = "totaalnet"
     $location = "51.987831,5.933394"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -911,7 +887,6 @@ node 'totaalnet01' inherits ringnode {
 node 'signet01' inherits ringnode {
     $owner = "signet"
     $location = "51.501537,5.460406"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -921,7 +896,6 @@ node 'signet01' inherits ringnode {
 node 'tripleit01' inherits ringnode {
     $owner = "tripleit"
     $location = "52.303066,4.937898"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -931,7 +905,6 @@ node 'tripleit01' inherits ringnode {
 node 'jaguarnetwork01' inherits ringnode {
     $owner = "jaguarnetwork"
     $location = "43.310226,5.373356"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -941,7 +914,6 @@ node 'jaguarnetwork01' inherits ringnode {
 node 'tuxis01' inherits ringnode {
     $owner = "tuxis"
     $location = "52.027649,5.624506"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -952,7 +924,6 @@ node 'tenet01' inherits ringnode {
     $owner = "tenet"
     $location = "-26.204103,28.047304"
     $nagios_ping_rate = '!300.0,20%!500.0,60%'
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -963,7 +934,6 @@ node 'bigwells01' inherits ringnode {
     $owner = "bigwells"
     $location = "41.892365,-87.634918"
     $nagios_ping_rate = '!250.0,20%!500.0,60%'
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -973,7 +943,6 @@ node 'bigwells01' inherits ringnode {
 node 'tdc01' inherits ringnode {
     $owner = "tdc"
     $location = "60.221024,24.848589"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -983,7 +952,6 @@ node 'tdc01' inherits ringnode {
 node 'netability01' inherits ringnode {
     $owner = "netability"
     $location = "53.405754,-6.372293"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -993,7 +961,6 @@ node 'netability01' inherits ringnode {
 node 'unilogicnetworks01' inherits ringnode {
     $owner = "unilogicnetworks"
     $location = "50.996090,5.845644"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1003,7 +970,6 @@ node 'unilogicnetworks01' inherits ringnode {
 node 'maverick01' inherits ringnode {
     $owner = "maverick"
     $location = "52.393036,16.947895"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1014,7 +980,6 @@ node 'acsystemy01' inherits ringnode {
     $owner = "acsystemy"
     $location = "53.910034,14.247578"
     $nagios_ping_rate = '!180.0,20%!300.0,60%'
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1024,7 +989,6 @@ node 'acsystemy01' inherits ringnode {
 node 'netsign01' inherits ringnode {
     $owner = "netsign"
     $location = "52.465530,13.368666"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1035,7 +999,6 @@ node 'netsign01' inherits ringnode {
 node 'rrbone01' inherits ringnode {
     $owner = "rrbone"
     $location = "51.188271,6.867769"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1045,7 +1008,6 @@ node 'rrbone01' inherits ringnode {
 node 'hosteam01' inherits ringnode {
     $owner = "hosteam"
     $location = "52.227661,21.004250"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1055,7 +1017,6 @@ node 'hosteam01' inherits ringnode {
 node 'inotel01' inherits ringnode {
     $owner = "inotel"
     $location = "52.391102,16.897284"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1065,7 +1026,6 @@ node 'inotel01' inherits ringnode {
 node 'fremaks01' inherits ringnode {
     $owner = "fremaks"
     $location = "53.077320,8.772950"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1075,7 +1035,6 @@ node 'fremaks01' inherits ringnode {
 node 'blix01' inherits ringnode {
     $owner = "blix"
     $location = "59.924725,10.810183"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1085,7 +1044,6 @@ node 'blix01' inherits ringnode {
 node 'portlane01' inherits ringnode {
     $owner = "portlane"
     $location = "59.306946,18.130274"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1095,7 +1053,6 @@ node 'portlane01' inherits ringnode {
 node 'solido01' inherits ringnode {
     $owner = "solido"
     $location = "55.728542,12.376454"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1105,7 +1062,6 @@ node 'solido01' inherits ringnode {
 node 'solido02' inherits ringnode {
     $owner = "solido"
     $location = "49.50481,6.11237"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1115,7 +1071,6 @@ node 'solido02' inherits ringnode {
 node 'digmia01' inherits ringnode {
     $owner = "digmia"
     $location = "48.119209,17.095844"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1125,7 +1080,6 @@ node 'digmia01' inherits ringnode {
 node 'rootlu01' inherits ringnode {
     $owner = "rootlu"
     $location = "49.671227,6.125205"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1137,7 +1091,6 @@ node 'globalaxs01' inherits ringnode {
     $owner = "globalaxs"
     $location = "53.461365,-2.324666"
     $nagios_ping_rate = '!200.0,20%!400.0,60%'
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1147,7 +1100,6 @@ node 'globalaxs01' inherits ringnode {
 node 'nebula01' inherits ringnode {
     $owner = "nebula"
     $location = "60.218018,24.879240"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1157,7 +1109,6 @@ node 'nebula01' inherits ringnode {
 node 'tilaa01' inherits ringnode {
     $owner = "tilaa"
     $location = "52.391090,4.665314"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1168,7 +1119,6 @@ node 'nautile01' inherits ringnode {
     $owner = "nautile"
     $location = "-22.267935,166.462219"
     $nagios_ping_rate = '!450.0,20%!700.0,60%'
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1179,7 +1129,6 @@ node 'voxel01' inherits ringnode {
     $owner = "voxel"
     $location = "37.241619,-121.783218"
     $nagios_ping_rate = '!250.0,20%!500.0,60%'
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1190,7 +1139,6 @@ node 'voxel02' inherits ringnode {
     $owner = "voxel"
     $location = "1.295461,103.789787"
     $nagios_ping_rate = '!550.0,20%!900.0,60%'
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1201,7 +1149,6 @@ node 'apnic01' inherits ringnode {
     $owner = "apnic"
     $location = "-27.458248,153.031067"
     $nagios_ping_rate = '!500.0,20%!800.0,60%'
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1212,7 +1159,6 @@ node 'hibernia01' inherits ringnode {
     $owner = "hibernia"
     $location = "41.87811,-87.62980"
     $nagios_ping_rate = '!200.0,20%!400.0,60%'
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1222,7 +1168,6 @@ node 'hibernia01' inherits ringnode {
 node 'hibernia02' inherits ringnode {
     $owner = "hibernia"
     $location = "51.50852,-0.12549"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1232,7 +1177,6 @@ node 'hibernia02' inherits ringnode {
 node 'man-da01' inherits ringnode {
     $owner = "man-da"
     $location = "49.86170,8.68210"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1242,7 +1186,6 @@ node 'man-da01' inherits ringnode {
 node 'webair01' inherits ringnode {
     $owner = "webair"
     $location = "40.722529,-73.632961"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1252,7 +1195,6 @@ node 'webair01' inherits ringnode {
 node 'concepts-ict01' inherits ringnode {
     $owner = "concepts-ict"
     $location = "51.592992,4.802703"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1263,7 +1205,6 @@ node 'dataoppdrag01' inherits ringnode {
     $owner = "dataoppdrag"
     $location = "60.295349,5.255753"
     $nagios_ping_rate = '!250.0,20%!400.0,60%'
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1273,7 +1214,6 @@ node 'dataoppdrag01' inherits ringnode {
 node 'tetaneutral01' inherits ringnode {
     $owner = "tetaneutral"
     $location = "43.61847,1.42075"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1283,7 +1223,6 @@ node 'tetaneutral01' inherits ringnode {
 node 'jump01' inherits ringnode {
     $owner = "jump"
     $location = "51.5120776,-0.0020345"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1293,7 +1232,6 @@ node 'jump01' inherits ringnode {
 node 'iway01' inherits ringnode {
     $owner = "iway"
     $location = "47.387639,8.519944"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1303,7 +1241,6 @@ node 'iway01' inherits ringnode {
 node 'timico01' inherits ringnode {
     $owner = "timico"
     $location = "53.07897,-0.792212"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1313,7 +1250,6 @@ node 'timico01' inherits ringnode {
 node 'rezopole01' inherits ringnode {
     $owner = "rezopole"
     $location = "45.72289,4.861422"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1323,7 +1259,6 @@ node 'rezopole01' inherits ringnode {
 node 'solnet01' inherits ringnode {
     $owner = "solnet"
     $location = "47.20182,7.52878"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1333,7 +1268,6 @@ node 'solnet01' inherits ringnode {
 node 'boxed-it01' inherits ringnode {
     $owner = "boxed-it"
     $location = "50.875425,4.499401"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1343,7 +1277,6 @@ node 'boxed-it01' inherits ringnode {
 node 'spacenet01' inherits ringnode {
     $owner = "spacenet"
     $location = "48.133333,11.566667"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1353,7 +1286,6 @@ node 'spacenet01' inherits ringnode {
 node 'mironet01' inherits ringnode {
     $owner = "mironet"
     $location = "47.5143,7.616726"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1364,7 +1296,6 @@ node 'seeweb01' inherits ringnode {
     $owner = "seeweb"
     $location = "45.478696,9.105091"
     $nagios_ping_rate = '!180.0,20%!300.0,60%'
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1374,7 +1305,6 @@ node 'seeweb01' inherits ringnode {
 node 'zensystems01' inherits ringnode {
     $owner = "zensystems"
     $location = "55.7284634,12.376985"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1384,7 +1314,6 @@ node 'zensystems01' inherits ringnode {
 node 'westnet01' inherits ringnode {
     $owner = "westnet"
     $location = "53.858024,-9.279904"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1394,7 +1323,6 @@ node 'westnet01' inherits ringnode {
 node 'kantonsschulezug01' inherits ringnode {
     $owner = "kantonsschulezug"
     $location = "47.1744,8.5233"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1404,7 +1332,6 @@ node 'kantonsschulezug01' inherits ringnode {
 node 'filoo01' inherits ringnode {
     $owner = "filoo"
     $location = "50.09676,8.628393"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1414,7 +1341,6 @@ node 'filoo01' inherits ringnode {
 node 'nessus01' inherits ringnode {
     $owner = "nessus"
     $location = "48.179737,16.364007"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1424,7 +1350,6 @@ node 'nessus01' inherits ringnode {
 node 'amazon01' inherits ringnode {
     $owner = "amazon"
     $location = "38.944444,-77.455833"
-    include amp_client
     include nagios::target::fqdn
     $nagios_ping_rate = '!200.0,20%!300.0,60%'
     include nagios_services
@@ -1446,7 +1371,6 @@ node 'amazon02' inherits ringnode {
     $owner = "amazon"
     $location = "53.43333,-6.25000"
     $nagios_ping_rate = '!180.0,20%!300.0,60%'
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1467,7 +1391,6 @@ node 'amazon02' inherits ringnode {
 node 'amazon03' inherits ringnode {
     $owner = "amazon"
     $location = "1.358816,103.9891"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     $nagios_ping_rate = '!550.0,20%!900.0,60%'
@@ -1488,7 +1411,6 @@ node 'amazon03' inherits ringnode {
 node 'amazon04' inherits ringnode {
     $owner = "amazon"
     $location = "35.765278,140.385556"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     $nagios_ping_rate = '!550.0,20%!900.0,60%'
@@ -1509,7 +1431,6 @@ node 'amazon04' inherits ringnode {
 node 'amazon05' inherits ringnode {
     $owner = "amazon"
     $location = "45.588611,-122.5975"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     $nagios_ping_rate = '!300.0,20%!500.0,60%'
@@ -1530,7 +1451,6 @@ node 'amazon05' inherits ringnode {
 node 'amazon06' inherits ringnode {
     $owner = "amazon"
     $location = "37.618889,-122.375"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     $nagios_ping_rate = '!300.0,20%!500.0,60%'
@@ -1551,7 +1471,6 @@ node 'amazon06' inherits ringnode {
 node 'amazon07' inherits ringnode {
     $owner = "amazon"
     $location = "-23.54894,-46.63882"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     $nagios_ping_rate = '!300.0,20%!500.0,60%'
@@ -1572,7 +1491,6 @@ node 'amazon07' inherits ringnode {
 node 'amazon08' inherits ringnode {
     $owner = "amazon"
     $location = "-33.86749,151.20699"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     $nagios_ping_rate = '!300.0,20%!500.0,60%'
@@ -1595,7 +1513,6 @@ node 'amazon08' inherits ringnode {
 node 'equinixnl01' inherits ringnode {
     $owner = "equinixnl"
     $location = "52.2373,6.8496"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1605,7 +1522,6 @@ node 'equinixnl01' inherits ringnode {
 node 'lchost01' inherits ringnode {
     $owner = "lchost"
     $location = "51.496716,-0.017987"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1616,7 +1532,6 @@ node 'hostway01' inherits ringnode {
     $owner = "hostway"
     $location = "49.288462,-123.118197"
     $nagios_ping_rate = '!300.0,20%!500.0,60%'
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1626,7 +1541,6 @@ node 'hostway01' inherits ringnode {
 node 'pcextreme01' inherits ringnode {
     $owner = "pcextreme"
     $location = "52.400483,4.842865"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1636,7 +1550,6 @@ node 'pcextreme01' inherits ringnode {
 node 'antagonist01' inherits ringnode {
     $owner = "antagonist"
     $location = "52.244396,6.767321"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1646,7 +1559,6 @@ node 'antagonist01' inherits ringnode {
 node 'nts01' inherits ringnode {
     $owner = "nts"
     $location = "46.936647,7.429907"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -1656,7 +1568,6 @@ node 'nts01' inherits ringnode {
 node 'multiplay01' inherits ringnode {
     $owner = "multiplay"
     $location = "51.520493,-0.073546"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1667,7 +1578,6 @@ node 'softlayer01' inherits ringnode {
     $owner = "softlayer"
     $location = "32.782778,-96.803889"
     $nagios_ping_rate = '!250.0,20%!400.0,60%'
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1678,7 +1588,6 @@ node 'softlayer02' inherits ringnode {
     $owner = "softlayer"
     $location = "29.76019,-95.36939"
     $nagios_ping_rate = '!250.0,20%!400.0,60%'
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1689,7 +1598,6 @@ node 'softlayer03' inherits ringnode {
     $owner = "softlayer"
     $location = "39.04376,-77.48744"
     $nagios_ping_rate = '!250.0,20%!400.0,60%'
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1700,7 +1608,6 @@ node 'softlayer04' inherits ringnode {
     $owner = "softlayer"
     $location = "37.33939,-121.89496"
     $nagios_ping_rate = '!500.0,20%!600.0,60%'
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1711,7 +1618,6 @@ node 'softlayer05' inherits ringnode {
     $owner = "softlayer"
     $location = "47.60621,-122.33207"
     $nagios_ping_rate = '!250.0,20%!400.0,60%'
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1722,7 +1628,6 @@ node 'softlayer06' inherits ringnode {
     $owner = "softlayer"
     $location = "1.35208,103.81984"
     $nagios_ping_rate = '!500.0,20%!800.0,60%'
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1733,7 +1638,6 @@ node 'imagine01' inherits ringnode {
     $owner = "imagine"
     $location = "53.334224,-6.365538"
     $nagios_ping_rate = '!250.0,20%!400.0,60%'
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1744,7 +1648,6 @@ node 'speedpartner01' inherits ringnode {
     $owner = "speedpartner"
     $location = "51.187842,6.866248"
     $nagios_ping_rate = '!250.0,20%!400.0,60%'
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1755,7 +1658,6 @@ node 'gossamerthreads01' inherits ringnode {
     $owner = "gossamerthreads"
     $location = "49.28496,-123.114411"
     $nagios_ping_rate = '!250.0,20%!400.0,60%'
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1766,7 +1668,6 @@ node 'towardex01' inherits ringnode {
     $owner = "towardex"
     $location = "42.354500508087064,-71.05950593948364"
     $nagios_ping_rate = '!250.0,20%!400.0,60%'
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1776,7 +1677,6 @@ node 'towardex01' inherits ringnode {
 node 'simplytransit01' inherits ringnode {
     $owner = "simplytransit"
     $location = "51.500544,-0.708647"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1786,7 +1686,6 @@ node 'simplytransit01' inherits ringnode {
 node 'isarnet01' inherits ringnode {
     $owner = "isarnet"
     $location = "48.32839,11.74318"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1796,7 +1695,6 @@ node 'isarnet01' inherits ringnode {
 node 'strato01' inherits ringnode {
     $owner = "strato"
     $location = "52.465907,13.369467"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1806,7 +1704,6 @@ node 'strato01' inherits ringnode {
 node 'edutel01' inherits ringnode {
     $owner = "edutel"
     $location = "51.445809,5.495128"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1816,7 +1713,6 @@ node 'edutel01' inherits ringnode {
 node 'sixdegrees01' inherits ringnode {
     $owner = "sixdegrees"
     $location = "52.278551,-1.895770"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1826,7 +1722,6 @@ node 'sixdegrees01' inherits ringnode {
 node 'spacedump01' inherits ringnode {
     $owner = "spacedump"
     $location = "59.34803,18.03916"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1836,7 +1731,6 @@ node 'spacedump01' inherits ringnode {
 node 'rbnetwork01' inherits ringnode {
     $owner = "rbnetwork"
     $location = "47.209726,9.529854"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1846,7 +1740,6 @@ node 'rbnetwork01' inherits ringnode {
 node 'yourorg01' inherits ringnode {
     $owner = "yourorg"
     $location = "42.003056,-87.996389"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     $nagios_ping_rate = '!250.0,20%!400.0,60%'
@@ -1885,7 +1778,6 @@ node 'occaid01' {
 
     $owner = "occaid"
     $location = "47.619428,-122.348535"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     $nagios_ping_rate = '!280.0,20%!400.0,60%'
@@ -1897,7 +1789,6 @@ node 'as250net01' inherits ringnode {
     $owner = "as250net"
     $location = "52.50200,13.37000"
     $nagios_ping_rate = '!180.0,20%!300.0,60%'
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1907,7 +1798,6 @@ node 'as250net01' inherits ringnode {
 node 'redpilllinpro01' inherits ringnode {
     $owner = "redpilllinpro"
     $location = "59.938612,10.83503"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1917,7 +1807,6 @@ node 'redpilllinpro01' inherits ringnode {
 node 'nine01' inherits ringnode {
     $owner = "nine"
     $location = "47.38340,8.49555"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1927,7 +1816,6 @@ node 'nine01' inherits ringnode {
 node 'oneandone01' inherits ringnode {
     $owner = "oneandone"
     $location = "48.99984,8.38574"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1937,7 +1825,6 @@ node 'oneandone01' inherits ringnode {
 node 'belwue01' inherits ringnode {
     $owner = "belwue"
     $location = "48.745500,9.1037"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1947,7 +1834,6 @@ node 'belwue01' inherits ringnode {
 node 'lagis01' inherits ringnode {
     $owner = "lagis"
     $location = "48.30694,14.28583"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1957,7 +1843,6 @@ node 'lagis01' inherits ringnode {
 node 'fnutt01' inherits ringnode {
     $owner = "fnutt"
     $location = "59.924855,10.809541"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1967,7 +1852,6 @@ node 'fnutt01' inherits ringnode {
 node 'sidn01' inherits ringnode {
     $owner = "sidn"
     $location = "51.97696,5.96947"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1977,7 +1861,6 @@ node 'sidn01' inherits ringnode {
 node 'melbourne01' inherits ringnode {
     $owner = "melbourne"
     $location = "53.46517,-2.24686"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1987,7 +1870,6 @@ node 'melbourne01' inherits ringnode {
 node 'go6lab01' inherits ringnode {
     $owner = "go6lab"
     $location = "46.16554,14.30661"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -1997,7 +1879,6 @@ node 'go6lab01' inherits ringnode {
 node 'siminn01' inherits ringnode {
     $owner = "siminn"
     $location = "55.66210,12.30134"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2007,7 +1888,6 @@ node 'siminn01' inherits ringnode {
 node 'a2binternet01' inherits ringnode {
     $owner = "a2binternet"
     $location = "52.62588,4.77044"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2017,7 +1897,6 @@ node 'a2binternet01' inherits ringnode {
 node 'i3d01' inherits ringnode {
     $owner = "i3d"
     $location = "51.92422,4.48178"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2027,7 +1906,6 @@ node 'i3d01' inherits ringnode {
 node 'viatel01' inherits ringnode {
     $owner = "viatel"
     $location = "53.406871,-6.372274"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2037,7 +1915,6 @@ node 'viatel01' inherits ringnode {
 node 'keenondots01' inherits ringnode {
     $owner = "keenondots"
     $location = "52.24416,6.76738"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2047,7 +1924,6 @@ node 'keenondots01' inherits ringnode {
 node 'obenetwork01' inherits ringnode {
     $owner = "obenetwork"
     $location = "59.359621,17.980499"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2057,7 +1933,6 @@ node 'obenetwork01' inherits ringnode {
 node 'infomaniak01' inherits ringnode {
     $owner = "infomaniak"
     $location = "46.21755,6.08268"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2067,7 +1942,6 @@ node 'infomaniak01' inherits ringnode {
 node 'teamix01' inherits ringnode {
     $owner = "teamix"
     $location = "49.42788,11.02210"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2077,7 +1951,6 @@ node 'teamix01' inherits ringnode {
 node 'skyway01' inherits ringnode {
     $owner = "skyway"
     $location = "49.279285,7.107489"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                             
@@ -2087,7 +1960,6 @@ node 'skyway01' inherits ringnode {
 node 'solcon01' inherits ringnode {
     $owner = "solcon"
     $location = "52.53998,5.702248"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                             
@@ -2097,7 +1969,6 @@ node 'solcon01' inherits ringnode {
 node 'claranet01' inherits ringnode {
     $owner = "claranet"
     $location = "51.510901,-0.003482"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                             
@@ -2107,7 +1978,6 @@ node 'claranet01' inherits ringnode {
 node 'claranet02' inherits ringnode {
     $owner = "claranet"
     $location = "50.11529469499107,8.722994327545166"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                             
@@ -2117,7 +1987,6 @@ node 'claranet02' inherits ringnode {
 node 'claranet03' inherits ringnode {
     $owner = "claranet"
     $location = "51.499766912405946,5.456085205078125"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                             
@@ -2127,7 +1996,6 @@ node 'claranet03' inherits ringnode {
 node 'claranet04' inherits ringnode {
     $owner = "claranet"
     $location = "38.788052658004794,-9.123791456222534"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                             
@@ -2137,7 +2005,6 @@ node 'claranet04' inherits ringnode {
 node 'arpnetworks01' inherits ringnode {
     $owner = "arpnetworks"
     $location = "34.058723,-118.235299"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                             
@@ -2148,7 +2015,6 @@ node 'arpnetworks01' inherits ringnode {
 node 'iabg01' inherits ringnode {
     $owner = "iabg"
     $location = "48.05159,11.659881"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                             
@@ -2158,7 +2024,6 @@ node 'iabg01' inherits ringnode {
 node 'initseven01' inherits ringnode {
     $owner = "initseven"
     $location = "47.433647,8.559068"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                             
@@ -2168,7 +2033,6 @@ node 'initseven01' inherits ringnode {
 node 'hosting90systems01' inherits ringnode {
     $owner = "hosting90systems"
     $location = "50.078122,14.472277"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                             
@@ -2178,7 +2042,6 @@ node 'hosting90systems01' inherits ringnode {
 node 'claranet05' inherits ringnode {
     $owner = "claranet"
     $location = "48.905224522197365, 2.2583717107772827"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                             
@@ -2188,7 +2051,6 @@ node 'claranet05' inherits ringnode {
 node 'kordia01' inherits ringnode {
     $owner = "kordia"
     $location = "-41.187501,174.946346"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                             
@@ -2199,7 +2061,6 @@ node 'kordia01' inherits ringnode {
 node 'backbone01' inherits ringnode {
     $owner = "backbone"
     $location = "47.515065,7.617669"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                             
@@ -2209,7 +2070,6 @@ node 'backbone01' inherits ringnode {
 node 'backbone02' inherits ringnode {
     $owner = "backbone"
     $location = "64.145045,-21.907747"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                             
@@ -2219,7 +2079,6 @@ node 'backbone02' inherits ringnode {
 node 'nexellent01' inherits ringnode {
     $owner = "nexellent"
     $location = "47.432544,8.557972"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                             
@@ -2229,7 +2088,6 @@ node 'nexellent01' inherits ringnode {
 node 'afilias01' inherits ringnode {
     $owner = "afilias"
     $location = "52.34398,4.82871"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2239,7 +2097,6 @@ node 'afilias01' inherits ringnode {
 node 'grnet01' inherits ringnode {
     $owner = "grnet"
     $location = "38.04581,23.788446"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2249,7 +2106,6 @@ node 'grnet01' inherits ringnode {
 node 'netflix01' inherits ringnode {
     $owner = "netflix"
     $location = "37.2415096,-121.7817521"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2260,7 +2116,6 @@ node 'netflix01' inherits ringnode {
 node 'ipmax01' inherits ringnode {
     $owner = "ipmax"
     $location = "45.723153,4.862412"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2270,7 +2125,6 @@ node 'ipmax01' inherits ringnode {
 node 'merit01' inherits ringnode {
     $owner = "merit"
     $location = "42.248588,-83.736888"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2281,7 +2135,6 @@ node 'merit01' inherits ringnode {
 node 'poznan01' inherits ringnode {
     $owner = "poznan"
     $location = "52.411433,16.917933"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2292,7 +2145,6 @@ node 'bluezonejordan01' inherits ringnode {
     $owner = "bluezonejordan"
     $location = "31.9579048,35.8697509"
     $nagios_ping_rate = '!350.0,20%!450.0,60%'
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2302,7 +2154,6 @@ node 'bluezonejordan01' inherits ringnode {
 node 'zeronet01' inherits ringnode {
     $owner = "zeronet"
     $location = "52.278519,-1.895536"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2312,7 +2163,6 @@ node 'zeronet01' inherits ringnode {
 node 'claranet06' inherits ringnode {
     $owner = "claranet"
     $location = "41.351884, 2.13707"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2322,7 +2172,6 @@ node 'claranet06' inherits ringnode {
 node 'rgnet01' inherits ringnode {
     $owner = "rgnet"
     $location = "47.61435,-122.33852"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2333,7 +2182,6 @@ node 'rgnet01' inherits ringnode {
 node 'ehsab01' inherits ringnode {
     $owner = "ehsab"
     $location = "59.306946,18.130274"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2343,7 +2191,6 @@ node 'ehsab01' inherits ringnode {
 node 'ehsab02' inherits ringnode {
     $owner = "ehsab"
     $location = "55.606901,12.998484"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2353,7 +2200,6 @@ node 'ehsab02' inherits ringnode {
 node 'yellowfiber01' inherits ringnode {
     $owner = "yellowfiber"
     $location = "38.954003,-77.36392"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2363,7 +2209,6 @@ node 'yellowfiber01' inherits ringnode {
 node 'bahnhof01' inherits ringnode {
     $owner = "bahnhof"
     $location = "59.348034,18.039171"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2373,7 +2218,6 @@ node 'bahnhof01' inherits ringnode {
 node 'nicchile01' inherits ringnode {
     $owner = "nicchile"
     $location = "-33.457582,-70.663118"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2384,7 +2228,6 @@ node 'nicchile01' inherits ringnode {
 node 'glesys01' inherits ringnode {
     $owner = "glesys"
     $location = "59.289688,18.016714"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2394,7 +2237,6 @@ node 'glesys01' inherits ringnode {
 node 'rcsrds01' inherits ringnode {
     $owner = "rcsrds"
     $location = "44.429187,26.079895"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2404,7 +2246,6 @@ node 'rcsrds01' inherits ringnode {
 node 'itmastaren01' inherits ringnode {
     $owner = "itmastaren"
     $location = "59.2722,15.2088"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2414,7 +2255,6 @@ node 'itmastaren01' inherits ringnode {
 node 'openminds01' inherits ringnode {
     $owner = "openminds"
     $location = "50.887222,4.455278"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2424,7 +2264,6 @@ node 'openminds01' inherits ringnode {
 node 'one01' inherits ringnode {
     $owner = "one"
     $location = "55.72687,12.37698"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2435,7 +2274,6 @@ node 'heanet01' inherits ringnode {
     $owner = "heanet"
     $location = "53.333145,-6.369291"
     $nagios_ping_rate = '!180.0,20%!300.0,60%'
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2445,7 +2283,6 @@ node 'heanet01' inherits ringnode {
 node 'algar01' inherits ringnode {
     $owner = "algar"
     $location = "-20.536090,-47.400950"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2456,7 +2293,6 @@ node 'algar01' inherits ringnode {
 node 'qbranch01' inherits ringnode {
     $owner = "qbranch"
     $location = "59.325964,18.00222"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2494,7 +2330,6 @@ node 'nlnetlabs01' {
 
     $owner = "nlnetlabs"
     $location = "52.356387,4.955663"
-    include amp_client                                                    
     include nagios::target::fqdn                                                
     include nagios_services                                                     
     include set_local_settings                                                  
@@ -2504,7 +2339,6 @@ node 'nlnetlabs01' {
 node 'entanet01' inherits ringnode {
     $owner = "entanet"
     $location = "52.67917,-2.41528"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2514,7 +2348,6 @@ node 'entanet01' inherits ringnode {
 node 'ripe01' inherits ringnode {
     $owner = "ripe"
     $location = "52.303062,4.937775"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2524,7 +2357,6 @@ node 'ripe01' inherits ringnode {
 node 'hosteurope01' inherits ringnode {
     $owner = "hosteurope"
     $location = "50.91061,7.06054"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2534,7 +2366,6 @@ node 'hosteurope01' inherits ringnode {
 node 'wirehive01' inherits ringnode {
     $owner = "wirehive"
     $location = "51.347629,-0.479842"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2544,7 +2375,6 @@ node 'wirehive01' inherits ringnode {
 node 'nforce01' inherits ringnode {
     $owner = "nforce"
     $location = "52.3964434,4.8511319"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2554,7 +2384,6 @@ node 'nforce01' inherits ringnode {
 node 'xing01' inherits ringnode {
     $owner = "xing"
     $location = "50.08165,8.62295"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2564,7 +2393,6 @@ node 'xing01' inherits ringnode {
 node 'xing02' inherits ringnode {
     $owner = "xing"
     $location = "50.09760,8.64410"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2574,7 +2402,6 @@ node 'xing02' inherits ringnode {
 node 'serverchoice01' inherits ringnode {
     $owner = "serverchoice"
     $location = "51.889028,-0.204889"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2585,7 +2412,6 @@ node 'bredband201' inherits ringnode {
     $owner = "bredband2"
     $location = "55.574704,12.927673"
     $nagios_ping_rate = '!180.0,20%!300.0,60%'
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2595,7 +2421,6 @@ node 'bredband201' inherits ringnode {
 node 'cdw01' inherits ringnode {
     $owner = "cdw"
     $location = "43.00625847490064,-89.42570149898529"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2606,7 +2431,6 @@ node 'cdw01' inherits ringnode {
 node 'linxtelecom01' inherits ringnode {
     $owner = "linxtelecom"
     $location = "59.43621,24.70500"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2616,7 +2440,6 @@ node 'linxtelecom01' inherits ringnode {
 node 'superonline01' inherits ringnode {
     $owner = "superonline"
     $location = "40.897996,29.193764"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2626,7 +2449,6 @@ node 'superonline01' inherits ringnode {
 node 'underworld01' inherits ringnode {
     $owner = "underworld"
     $location = "63.433333,10.4"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2636,7 +2458,6 @@ node 'underworld01' inherits ringnode {
 node 'adminor01' inherits ringnode {
     $owner = "adminor"
     $location = "59.301498,18.091709"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2646,7 +2467,6 @@ node 'adminor01' inherits ringnode {
 node 'videoplaza01' inherits ringnode {
     $owner = "videoplaza"
     $location = "59.263562,18.104843"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2656,7 +2476,6 @@ node 'videoplaza01' inherits ringnode {
 node 'rnp01' inherits ringnode {
     $owner = "rnp"
     $location = "-23.33167,-46.37119"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2667,7 +2486,6 @@ node 'rnp01' inherits ringnode {
 node 'iij01' inherits ringnode {
     $owner = "iij"
     $location = "35.683191,139.761949"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2678,7 +2496,6 @@ node 'iij01' inherits ringnode {
 node 'beanfield01' inherits ringnode {
     $owner = "beanfield"
     $location = "43.638090,-79.425509"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2689,7 +2506,6 @@ node 'beanfield01' inherits ringnode {
 node 'serioustubes01' inherits ringnode {
     $owner = "serioustubes"
     $location = "59.3268,18.0717"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2699,7 +2515,6 @@ node 'serioustubes01' inherits ringnode {
 node 'direcpath01' inherits ringnode {
     $owner = "direcpath"
     $location = "33.782149,-84.404582"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2710,7 +2525,6 @@ node 'direcpath01' inherits ringnode {
 node 'dcsone01' inherits ringnode {
     $owner = "dcsone"
     $location = "1.31,103.75"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2721,7 +2535,6 @@ node 'dcsone01' inherits ringnode {
 node 'berkeley01' inherits ringnode {
     $owner = "berkeley"
     $location = "37.874871,-122.258335"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2732,7 +2545,6 @@ node 'berkeley01' inherits ringnode {
 node 'ispservices01' inherits ringnode {
     $owner = "ispservices"
     $location = "51.954204,6.300182"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2742,7 +2554,6 @@ node 'ispservices01' inherits ringnode {
 node 'ausregistry01' inherits ringnode {
     $owner = "ausregistry"
     $location = "-37.822633,144.932208"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2753,7 +2564,6 @@ node 'ausregistry01' inherits ringnode {
 node 'switch01' inherits ringnode {
     $owner = "switch"
     $location = "47.38014,8.54459"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2763,7 +2573,6 @@ node 'switch01' inherits ringnode {
 node 'hurricane01' inherits ringnode {
     $owner = "hurricane"
     $location = "37.49012,-121.93130"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2774,7 +2583,6 @@ node 'hurricane01' inherits ringnode {
 node 'proserve01' inherits ringnode {
     $owner = "proserve"
     $location = "51.846185,4.679017"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2784,7 +2592,6 @@ node 'proserve01' inherits ringnode {
 node 'teletalk01' inherits ringnode {
     $owner = "teletalk"
     $location = "-12.984611,-38.467272"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2795,7 +2602,6 @@ node 'teletalk01' inherits ringnode {
 node 'poppr01' inherits ringnode {
     $owner = "poppr"
     $location = "-25.445832,-49.233255"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2806,7 +2612,6 @@ node 'poppr01' inherits ringnode {
 node 'kaiaglobal01' inherits ringnode {
     $owner = "kaiaglobal"
     $location = "53.551004,10.047029"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2816,7 +2621,6 @@ node 'kaiaglobal01' inherits ringnode {
 node 'enestdata01' inherits ringnode {
     $owner = "enestdata"
     $location = "47.432913,8.557448"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2826,7 +2630,6 @@ node 'enestdata01' inherits ringnode {
 node 'ualbany01' inherits ringnode {
     $owner = "ualbany"
     $location = "42.68619,-73.823996"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2836,7 +2639,6 @@ node 'ualbany01' inherits ringnode {
 node 'masterinternet01' inherits ringnode {
     $owner = "masterinternet"
     $location = "49.196986,16.618667"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2846,7 +2648,6 @@ node 'masterinternet01' inherits ringnode {
 node 'intellit01' inherits ringnode {
     $owner = "intellit"
     $location = "59.942783,10.717142"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2856,7 +2657,6 @@ node 'intellit01' inherits ringnode {
 node 'onet01' inherits ringnode {
     $owner = "onet"
     $location = "50.080482,19.892557"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2866,7 +2666,6 @@ node 'onet01' inherits ringnode {
 node 'msu01' inherits ringnode {
     $owner = "msu"
     $location = "55.698164,37.531089"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2876,7 +2675,6 @@ node 'msu01' inherits ringnode {
 node 'robtex01' inherits ringnode {
     $owner = "robtex"
     $location = "38.96350,-77.38076"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2886,7 +2684,6 @@ node 'robtex01' inherits ringnode {
 node 'dyn01' inherits ringnode {
     $owner = "dyn"
     $location = "35.617481,139.749775"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2897,7 +2694,6 @@ node 'dyn01' inherits ringnode {
 node 'trueinternet01' inherits ringnode {
     $owner = "trueinternet"
     $location = "13.759441,100.565325"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2908,7 +2704,6 @@ node 'trueinternet01' inherits ringnode {
 node 'phusion01' inherits ringnode {
     $owner = "phusion"
     $location = "54.973981,-1.600109"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2918,7 +2713,6 @@ node 'phusion01' inherits ringnode {
 node 'nimag01' inherits ringnode {
     $owner = "nimag"
     $location = "46.524,6.604"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2928,7 +2722,6 @@ node 'nimag01' inherits ringnode {
 node 'vancis01' inherits ringnode {
     $owner = "vancis"
     $location = "52.356257,4.952843"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2938,7 +2731,6 @@ node 'vancis01' inherits ringnode {
 node 'es01' inherits ringnode {
     $owner = "es"
     $location = "37.8752777778,-122.253055556"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2949,7 +2741,6 @@ node 'es01' inherits ringnode {
 node 'world4you01' inherits ringnode {
     $owner = "world4you"
     $location = "48.3191068,14.3082231"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2959,7 +2750,6 @@ node 'world4you01' inherits ringnode {
 node 'onet02' inherits ringnode {
     $owner = "onet"
     $location = "50.034678,20.013635"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2969,7 +2759,6 @@ node 'onet02' inherits ringnode {
 node '4ddc01' inherits ringnode {
     $owner = "4ddc"
     $location = "51.347304,-0.480730"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2979,7 +2768,6 @@ node '4ddc01' inherits ringnode {
 node 'rackfish01' inherits ringnode {
     $owner = "rackfish"
     $location = "59.26356,18.10484"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2989,7 +2777,6 @@ node 'rackfish01' inherits ringnode {
 node 'doruknet01' inherits ringnode {
     $owner = "doruknet"
     $location = "41.055149,29.00794"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -2999,7 +2786,6 @@ node 'doruknet01' inherits ringnode {
 node 'vocus01' inherits ringnode {
     $owner = "vocus"
     $location = "-33.91474,151.19302"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3009,7 +2795,6 @@ node 'vocus01' inherits ringnode {
 node 'hostvirtual01' inherits ringnode {
     $owner = "hostvirtual"
     $location = "13.042466,80.157013"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3019,7 +2804,6 @@ node 'hostvirtual01' inherits ringnode {
 node 'hostvirtual02' inherits ringnode {
     $owner = "hostvirtual"
     $location = "22.36187,114.13502"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3029,7 +2813,6 @@ node 'hostvirtual02' inherits ringnode {
 node 'mozilla01' inherits ringnode {
     $owner = "mozilla"
     $location = "37.37389,-121.97224"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3039,7 +2822,6 @@ node 'mozilla01' inherits ringnode {
 node 'lightstorm01' inherits ringnode {
     $owner = "lightstorm"
     $location = "48.147874,17.132733"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3049,7 +2831,6 @@ node 'lightstorm01' inherits ringnode {
 node 'iccn01' inherits ringnode {
     $owner = "iccn"
     $location = "40.1131082,-88.2265234"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3059,7 +2840,6 @@ node 'iccn01' inherits ringnode {
 node 'popsc01' inherits ringnode {
     $owner = "popsc"
     $location = "-27.599548,-48.522928"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3069,7 +2849,6 @@ node 'popsc01' inherits ringnode {
 node 'sargasso01' inherits ringnode {
     $owner = "sargasso"
     $location = "51.521895,-0.07293"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3079,7 +2858,6 @@ node 'sargasso01' inherits ringnode {
 node 'mythicbeasts01' inherits ringnode {
     $owner = "mythicbeasts"
     $location = "51.49964,-0.01074"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3089,7 +2867,6 @@ node 'mythicbeasts01' inherits ringnode {
 node 'transip01' inherits ringnode {
     $owner = "transip"
     $location = "52.393233,4.848914"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3099,7 +2876,6 @@ node 'transip01' inherits ringnode {
 node 'sapphire01' inherits ringnode {
     $owner = "sapphire"
     $location = "36.142092,-5.358946"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3109,7 +2885,6 @@ node 'sapphire01' inherits ringnode {
 node 'octopuce01' inherits ringnode {
     $owner = "octopuce"
     $location = "48.79609,2.412572"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3119,7 +2894,6 @@ node 'octopuce01' inherits ringnode {
 node 'udomain01' inherits ringnode {
     $owner = "udomain"
     $location = "22.352507,114.124324"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3129,7 +2903,6 @@ node 'udomain01' inherits ringnode {
 node 'ipvisie01' inherits ringnode {
     $owner = "ipvisie"
     $location = "51.8756055,4.4480657"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3139,7 +2912,6 @@ node 'ipvisie01' inherits ringnode {
 node 'citynetwork01' inherits ringnode {
     $owner = "citynetwork"
     $location = "56.16122,15.58690"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3149,7 +2921,6 @@ node 'citynetwork01' inherits ringnode {
 node 'iplan01' inherits ringnode {
     $owner = "iplan"
     $location = "-34.640633,-58.404018"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3159,7 +2930,6 @@ node 'iplan01' inherits ringnode {
 node 'magyar01' inherits ringnode {
     $owner = "magyar"
     $location = "47.493275,19.102322"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3169,7 +2939,6 @@ node 'magyar01' inherits ringnode {
 node 'luna01' inherits ringnode {
     $owner = "luna"
     $location = "51.92609,4.41863"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3179,7 +2948,6 @@ node 'luna01' inherits ringnode {
 node 'combell01' inherits ringnode {
     $owner = "combell"
     $location = "50.870572,4.47695"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3189,7 +2957,6 @@ node 'combell01' inherits ringnode {
 node 'infostrada01' inherits ringnode {
     $owner = "infostrada"
     $location = "52.303081,4.937886"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3199,7 +2966,6 @@ node 'infostrada01' inherits ringnode {
 node 'claranet07' inherits ringnode {
     $owner = "claranet"
     $location = "51.760427,-0.003073"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3209,7 +2975,6 @@ node 'claranet07' inherits ringnode {
 node 'blacklotus01' inherits ringnode {
     $owner = "blacklotus"
     $location = "34.047336,-118.257447"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3219,7 +2984,6 @@ node 'blacklotus01' inherits ringnode {
 node 'stargate01' inherits ringnode {
     $owner = "stargate"
     $location = "49.2436891,-122.9695433"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3229,7 +2993,6 @@ node 'stargate01' inherits ringnode {
 node 'etop01' inherits ringnode {
     $owner = "etop"
     $location = "52.194675,20.925358"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3239,7 +3002,6 @@ node 'etop01' inherits ringnode {
 node 'dragon01' inherits ringnode {
     $owner = "dragon"
     $location = "50.0601906,14.4830350"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3249,7 +3011,6 @@ node 'dragon01' inherits ringnode {
 node '2connect01' inherits ringnode {
     $owner = "2connect"
     $location = "50.0601906,14.4830350"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3259,7 +3020,6 @@ node '2connect01' inherits ringnode {
 node 'syseleven01' inherits ringnode {
     $owner = "syseleven"
     $location = "52.502038,13.369331"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3269,7 +3029,6 @@ node 'syseleven01' inherits ringnode {
 node 'vertixo01' inherits ringnode {
     $owner = "vertixo"
     $location = "52.033297,4.497336"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3279,7 +3038,6 @@ node 'vertixo01' inherits ringnode {
 node 'inerail01' inherits ringnode {
     $owner = "inerail"
     $location = "40.743384,-74.008027"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3289,7 +3047,6 @@ node 'inerail01' inherits ringnode {
 node 'kwaoo01' inherits ringnode {
     $owner = "kwaoo"
     $location = "46.203391,6.144675"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3299,7 +3056,6 @@ node 'kwaoo01' inherits ringnode {
 node 'atlanticmetro01' inherits ringnode {
     $owner = "atlanticmetro"
     $location = "40.7267165,-74.0075896"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3309,7 +3065,6 @@ node 'atlanticmetro01' inherits ringnode {
 node 'esgob01' inherits ringnode {
     $owner = "esgob"
     $location = "51.498311,-0.001528"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3319,7 +3074,6 @@ node 'esgob01' inherits ringnode {
 node 'itsbrasil01' inherits ringnode {
     $owner = "itsbrasil"
     $location = "-12.980163,-38.450617"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3329,7 +3083,6 @@ node 'itsbrasil01' inherits ringnode {
 node 'finecom01' inherits ringnode {
     $owner = "finecom"
     $location = "47.131732,7.24166"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3339,7 +3092,6 @@ node 'finecom01' inherits ringnode {
 node 'sbtap01' inherits ringnode {
     $owner = "sbtap"
     $location = "42.94334338754859,13.882770538330078"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3349,7 +3101,6 @@ node 'sbtap01' inherits ringnode {
 node 'spotify01' inherits ringnode {
     $owner = "spotify"
     $location = "59.263504,18.105463"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3359,7 +3110,6 @@ node 'spotify01' inherits ringnode {
 node 'xconnect01' inherits ringnode {
     $owner = "xconnect"
     $location = "52.343984,4.828712"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3369,7 +3119,6 @@ node 'xconnect01' inherits ringnode {
 node 'amsio01' inherits ringnode {
     $owner = "amsio"
     $location = "52.280312,4.753851"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3379,7 +3128,6 @@ node 'amsio01' inherits ringnode {
 node 'goscomb01' inherits ringnode {
     $owner = "goscomb"
     $location = "51.512078,-0.002035"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3389,7 +3137,6 @@ node 'goscomb01' inherits ringnode {
 node 'kinber01' inherits ringnode {
     $owner = "kinber"
     $location = "40.7914,-77.8586"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3399,7 +3146,6 @@ node 'kinber01' inherits ringnode {
 node 'afilias02' inherits ringnode {
     $owner = "afilias"
     $location = "25.773914,-80.188007"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3409,7 +3155,6 @@ node 'afilias02' inherits ringnode {
 node 'nonattached01' inherits ringnode {
     $owner = "nonattached"
     $location = "50.102565,8.633623"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3419,7 +3164,6 @@ node 'nonattached01' inherits ringnode {
 node 'kpn01' inherits ringnode {
     $owner = "kpn"
     $location = "52.33661,4.88685"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3429,7 +3173,6 @@ node 'kpn01' inherits ringnode {
 node 'suomi01' inherits ringnode {
     $owner = "suomi"
     $location = "60.20336,24.923601"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3439,7 +3182,6 @@ node 'suomi01' inherits ringnode {
 node 'maxitel01' inherits ringnode {
     $owner = "maxitel"
     $location = "51.85615,4.29722"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3449,7 +3191,6 @@ node 'maxitel01' inherits ringnode {
 node 'flhsi01' inherits ringnode {
     $owner = "flhsi"
     $location = "28.355719,-80.744278"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3459,7 +3200,6 @@ node 'flhsi01' inherits ringnode {
 node 'virtualone01' inherits ringnode {
     $owner = "virtualone"
     $location = "51.51138,-0.00180"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3469,7 +3209,6 @@ node 'virtualone01' inherits ringnode {
 node 'swisscom01' inherits ringnode {
     $owner = "swisscom"
     $location = "46.9503047,7.4415524"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3479,7 +3218,6 @@ node 'swisscom01' inherits ringnode {
 node 'telus01' inherits ringnode {
     $owner = "telus"
     $location = "51.0471725,-114.0651321"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3489,7 +3227,6 @@ node 'telus01' inherits ringnode {
 node 'selectel01' inherits ringnode {
     $owner = "selectel"
     $location = "59.886598,30.329322"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3499,7 +3236,6 @@ node 'selectel01' inherits ringnode {
 node 'sne01' inherits ringnode {
     $owner = "sne"
     $location = "1,1"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3510,7 +3246,6 @@ node 'sne01' inherits ringnode {
 node 'sne02' inherits ringnode {
     $owner = "sne"
     $location = "1,1"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3521,7 +3256,6 @@ node 'sne02' inherits ringnode {
 node 'infowest01' inherits ringnode {
     $owner = "infowest"
     $location = "37.081474,-113.607170"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3531,7 +3265,6 @@ node 'infowest01' inherits ringnode {
 node 'funet01' inherits ringnode {
     $owner = "funet"
     $location = "60.203863,24.77146"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3541,7 +3274,6 @@ node 'funet01' inherits ringnode {
 node 'dcenterpl01' inherits ringnode {
     $owner = "dcenterpl"
     $location = "52.22694,21.00164"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3551,7 +3283,6 @@ node 'dcenterpl01' inherits ringnode {
 node 'cybercom01' inherits ringnode {
     $owner = "cybercom"
     $location = "61.49791,23.77586"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3561,7 +3292,6 @@ node 'cybercom01' inherits ringnode {
 node 'hivane01' inherits ringnode {
     $owner = "hivane"
     $location = "48.815068,2.403053"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3571,7 +3301,6 @@ node 'hivane01' inherits ringnode {
 node 'fullsave01' inherits ringnode {
     $owner = "fullsave"
     $location = "43.542635,1.509676"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3581,7 +3310,6 @@ node 'fullsave01' inherits ringnode {
 node 'telecityfi01' inherits ringnode {
     $owner = "telecityfi"
     $location = "60.169,24.959"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3591,7 +3319,6 @@ node 'telecityfi01' inherits ringnode {
 node 'itps01' inherits ringnode {
     $owner = "itps"
     $location = "51.49934,-0.01442"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3601,7 +3328,6 @@ node 'itps01' inherits ringnode {
 node 'afilias03' inherits ringnode {
     $owner = "afilias"
     $location = "35.584732,139.748758"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3611,7 +3337,6 @@ node 'afilias03' inherits ringnode {
 node 'cyberverse01' inherits ringnode {
     $owner = "cyberverse"
     $location = "34.0473,-118.2573"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3621,7 +3346,6 @@ node 'cyberverse01' inherits ringnode {
 node 'viatel02' inherits ringnode {
     $owner = "viatel"
     $location = "48.856261,2.383975"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3631,7 +3355,6 @@ node 'viatel02' inherits ringnode {
 node 'viatel03' inherits ringnode {
     $owner = "viatel"
     $location = "51.51218,-0.00208"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3641,7 +3364,6 @@ node 'viatel03' inherits ringnode {
 node 'ntt01' inherits ringnode {
     $owner = "ntt"
     $location = "41.85286,-87.63448"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3651,7 +3373,6 @@ node 'ntt01' inherits ringnode {
 node 'bogalnet01' inherits ringnode {
     $owner = "bogalnet"
     $location = "58.032304,12.808976"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3661,7 +3382,6 @@ node 'bogalnet01' inherits ringnode {
 node 'iucc01' inherits ringnode {
     $owner = "iucc"
     $location = "32.1132,34.8053"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3671,7 +3391,6 @@ node 'iucc01' inherits ringnode {
 node 'nynex01' inherits ringnode {
     $owner = "nynex"
     $location = "8.6269,49.8706"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3681,7 +3400,6 @@ node 'nynex01' inherits ringnode {
 node 'businessconnect01' inherits ringnode {
     $owner = "businessconnect"
     $location = "52.356156,4.955187"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3691,7 +3409,6 @@ node 'businessconnect01' inherits ringnode {
 node 'noris01' inherits ringnode {
     $owner = "noris"
     $location = "49.41022,11.13191"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3701,7 +3418,6 @@ node 'noris01' inherits ringnode {
 node 'mknetzdienste01' inherits ringnode {
     $owner = "mknetzdienste"
     $location = "50.105773,8.647825"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3711,7 +3427,6 @@ node 'mknetzdienste01' inherits ringnode {
 node 'suretec01' inherits ringnode {
     $owner = "suretec"
     $location = "51.511467,-0.001224"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3721,7 +3436,6 @@ node 'suretec01' inherits ringnode {
 node 'cloudnl01' inherits ringnode {
     $owner = "cloudnl"
     $location = "52.343984,4.828712"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3731,7 +3445,6 @@ node 'cloudnl01' inherits ringnode {
 node 'icanndns01' inherits ringnode {
     $owner = "icanndns"
     $location = "33.926077,-118.394123"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3741,7 +3454,6 @@ node 'icanndns01' inherits ringnode {
 node 'icanndns02' inherits ringnode {
     $owner = "icanndns"
     $location = "38.9507382,-77.3639041"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3751,7 +3463,6 @@ node 'icanndns02' inherits ringnode {
 node 'dacor01' inherits ringnode {
     $owner = "dacor"
     $location = "50.25406,10.96146"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3761,7 +3472,6 @@ node 'dacor01' inherits ringnode {
 node 'networkoperations01' inherits ringnode {
     $owner = "networkoperations"
     $location = "53.205139,5.765333"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3771,7 +3481,6 @@ node 'networkoperations01' inherits ringnode {
 node 'blizoo01' inherits ringnode {
     $owner = "blizoo"
     $location = "42.6588705,23.3482014"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3781,7 +3490,6 @@ node 'blizoo01' inherits ringnode {
 node 'vibe01' inherits ringnode {
     $owner = "vibe"
     $location = "-36.849346,174.765412"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3791,7 +3499,6 @@ node 'vibe01' inherits ringnode {
 node 'atw01' inherits ringnode {
     $owner = "atw"
     $location = "47.517702,19.058264"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3801,7 +3508,6 @@ node 'atw01' inherits ringnode {
 node 'onlinesas01' inherits ringnode {
     $owner = "onlinesas"
     $location = "48.774881,2.380689"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3811,7 +3517,6 @@ node 'onlinesas01' inherits ringnode {
 node 'citynetwork02' inherits ringnode {
     $owner = "citynetwork"
     $location = "59.422471,17.918073"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3821,7 +3526,6 @@ node 'citynetwork02' inherits ringnode {
 node 'citynetwork03' inherits ringnode {
     $owner = "citynetwork"
     $location = "51.520251,-0.071555"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3831,7 +3535,6 @@ node 'citynetwork03' inherits ringnode {
 node 'hibernia03' inherits ringnode {
     $owner = "hibernia"
     $location = "48.86987,2.34424"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3841,7 +3544,6 @@ node 'hibernia03' inherits ringnode {
 node 'redpilllinpro02' inherits ringnode {
     $owner = "redpilllinpro"
     $location = "59.949443,10.771563"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3851,7 +3553,6 @@ node 'redpilllinpro02' inherits ringnode {
 node 'redpilllinpro03' inherits ringnode {
     $owner = "redpilllinpro"
     $location = "59.305445,13.537273"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3861,7 +3562,6 @@ node 'redpilllinpro03' inherits ringnode {
 node 'mainloop01' inherits ringnode {
     $owner = "mainloop"
     $location = "59.422474,17.918095"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3871,7 +3571,6 @@ node 'mainloop01' inherits ringnode {
 node 'tigron01' inherits ringnode {
     $owner = "tigron"
     $location = "50.887383,4.455481"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3881,7 +3580,6 @@ node 'tigron01' inherits ringnode {
 node 'nexiu01' inherits ringnode {
     $owner = "nexiu"
     $location = "50.1192924,8.7355652"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3891,7 +3589,6 @@ node 'nexiu01' inherits ringnode {
 node 'digitalocean01' inherits ringnode {
     $owner = "digitalocean"
     $location = "51.521187,-0.62416"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3901,7 +3598,6 @@ node 'digitalocean01' inherits ringnode {
 node 'digitalocean02' inherits ringnode {
     $owner = "digitalocean"
     $location = "1.321075,103.695026"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3911,7 +3607,6 @@ node 'digitalocean02' inherits ringnode {
 node 'digitalocean03' inherits ringnode {
     $owner = "digitalocean"
     $location = "52.356156,4.955187"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3921,7 +3616,6 @@ node 'digitalocean03' inherits ringnode {
 node 'digitalocean04' inherits ringnode {
     $owner = "digitalocean"
     $location = "40.82993,-74.126728"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3931,7 +3625,6 @@ node 'digitalocean04' inherits ringnode {
 node 'bdhub01' inherits ringnode {
     $owner = "bdhub"
     $location = "23.7805838,90.4162568"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3941,7 +3634,6 @@ node 'bdhub01' inherits ringnode {
 node 'blacknight01' inherits ringnode {
     $owner = "blacknight"
     $location = "53.34981,-6.26031"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3951,7 +3643,6 @@ node 'blacknight01' inherits ringnode {
 node 'globalways01' inherits ringnode {
     $owner = "globalways"
     $location = "48.77488,9.17601"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3961,7 +3652,6 @@ node 'globalways01' inherits ringnode {
 node 'dfn01' inherits ringnode {
     $owner = "dfn"
     $location = "49.5738,11.0272"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3971,7 +3661,6 @@ node 'dfn01' inherits ringnode {
 node 'liquidweb01' inherits ringnode {
     $owner = "liquidweb"
     $location = "42.705619,-84.666429"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3981,7 +3670,6 @@ node 'liquidweb01' inherits ringnode {
 node 'riseup01' inherits ringnode {
     $owner = "riseup"
     $location = "47.614353,-122.338864"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -3991,7 +3679,6 @@ node 'riseup01' inherits ringnode {
 node 'ntt02' inherits ringnode {
     $owner = "ntt"
     $location = "52.30309,4.93795"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -4001,7 +3688,6 @@ node 'ntt02' inherits ringnode {
 node 'amazon09' inherits ringnode {
     $owner = "amazon"
     $location = "50.11092,8.68213"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -4011,7 +3697,6 @@ node 'amazon09' inherits ringnode {
 node 'immense01' inherits ringnode {
     $owner = "immense"
     $location = "30.45229,-91.11560"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -4021,7 +3706,6 @@ node 'immense01' inherits ringnode {
 node 'bchnetwork01' inherits ringnode {
     $owner = "bchnetwork"
     $location = "50.881702,4.453926"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -4031,7 +3715,6 @@ node 'bchnetwork01' inherits ringnode {
 node 'cesnet01' inherits ringnode {
     $owner = "cesnet"
     $location = "50.101886,14.39173"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -4041,7 +3724,6 @@ node 'cesnet01' inherits ringnode {
 node 'adix01' inherits ringnode {
     $owner = "adix"
     $location = "53.2459559,6.5280274"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -4051,7 +3733,6 @@ node 'adix01' inherits ringnode {
 node 'sasag01' inherits ringnode {
     $owner = "sasag"
     $location = "47.6933420,8.6294460"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -4061,7 +3742,6 @@ node 'sasag01' inherits ringnode {
 node 'ovh01' inherits ringnode {
     $owner = "ovh"
     $location = "50.98707,2.12554"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -4071,7 +3751,6 @@ node 'ovh01' inherits ringnode {
 node 'btireland01' inherits ringnode {
     $owner = "btireland"
     $location = "53.291844,-6.415470"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -4081,7 +3760,6 @@ node 'btireland01' inherits ringnode {
 node 'larsendata01' inherits ringnode {
     $owner = "larsendata"
     $location = "55.728018,12.380919"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -4091,7 +3769,6 @@ node 'larsendata01' inherits ringnode {
 node 'firstcolo01' inherits ringnode {
     $owner = "firstcolo"
     $location = "50.11648,8.72594"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -4101,7 +3778,6 @@ node 'firstcolo01' inherits ringnode {
 node 'tumuenchen01' inherits ringnode {
     $owner = "tumuenchen"
     $location = "48.262413,11.668332"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -4111,7 +3787,6 @@ node 'tumuenchen01' inherits ringnode {
 node 'kudelski01' inherits ringnode {
     $owner = "kudelski"
     $location = "47.387975,8.520295"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -4121,7 +3796,6 @@ node 'kudelski01' inherits ringnode {
 node 'csuc01' inherits ringnode {
     $owner = "csuc"
     $location = "41.387549,2.111557"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -4131,7 +3805,6 @@ node 'csuc01' inherits ringnode {
 node 'qcom01' inherits ringnode {
     $owner = "qcom"
     $location = "45.67361,9.67697"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -4141,7 +3814,6 @@ node 'qcom01' inherits ringnode {
 node 'jointtransit01' inherits ringnode {
     $owner = "jointtransit"
     $location = "52.34398,4.82871"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings
@@ -4151,7 +3823,6 @@ node 'jointtransit01' inherits ringnode {
 node 'edsitech01' inherits ringnode {
     $owner = "edsitech"
     $location = "46.522611,6.63314"
-    include amp_client
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings

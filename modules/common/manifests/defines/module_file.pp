@@ -21,9 +21,7 @@ define module_file (
     )
 {
     include common::moduledir
-    file {
-        "${common::moduledir::module_dir_path}/${name}":
-
+    file { "${common::moduledir::module_dir_path}/${name}":
             source => $source,
             ensure => $ensure,
             alias => $m_alias,
@@ -34,9 +32,11 @@ define module_file (
 # alias for compatibility
 define modules_file (
     $source,
-	  $ensure = present,
-	  $m_alias = undef,
-    $mode = 0644, $owner = root, $group = 0
+	$ensure = present,
+	$m_alias = undef,
+    $mode = 0644,
+    $owner = root,
+    $group = 0
   )
 {
   module_file { $name:
