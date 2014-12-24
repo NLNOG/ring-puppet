@@ -23,6 +23,7 @@ define module_file (
     include common::moduledir
     file {
         "${common::moduledir::module_dir_path}/${name}":
+
             source => $source,
             ensure => $ensure,
             alias => $m_alias,
