@@ -2,7 +2,7 @@ class uninstall_amp {
 
     file { '/home/measure':
         ensure => absent,
-        path => '/your/directory',
+        path => '/home/measure',
         recurse => true,
         purge => true,
         force => true,
