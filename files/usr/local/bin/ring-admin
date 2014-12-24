@@ -568,38 +568,9 @@ class commands(object):
             self.dblist('machines')
 
     def cmd_add_sshkeys(self, username, filename=None):
-        """add one or more sshkeys"""
-        uid = self.username2uid(username)
-        if not uid:
-            sys.exit('user %s not found' % username)
-
-        file = None
-        if filename:
-            file = open(filename, "r")
-        else:
-            file = sys.stdin
-        cols = ['keytype', 'sshkey', 'keyid', 'user']
-        for line in file:
-            if (re.search(r'^#', line)):
-                continue
-            vals = line.split()
-            insert = []
-            if len(vals) < 2:
-                print >> sys.stderr, "Skipping invalid entry"
-                continue
-            insert.append(vals[0])
-            insert.append(vals[1])
-            if len(vals) == 2:
-                insert.append(None)
-            elif len(vals) > 3:
-                keyid = "\"" + string.join(vals[2:]) + "\""
-                insert.append(keyid)
-            else:
-                insert.append(vals[2])
-            insert.append(uid)
-            kid = self.dbinsertlist('sshkeys', cols, insert)
-            print "Added key %s for user %s" % (kid, username)
-        file.close()
+        print >> sys.stderr, \
+            "DEPRECATED: Update the ssh-keys file on manage.ring.nlnog.net"
+        return
 
     def cmd_replace_sshkeys(self, username, filename=None):
         """replace sshkeys"""
