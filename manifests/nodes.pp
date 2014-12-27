@@ -165,7 +165,7 @@ node 'container01.infra' inherits infranode {
 }
 
 # container02 is hosted at Leaseweb
-# 8 cores / 16GB RAM / 120GB disk
+# 8 cores / 32GB RAM / 120GB disk
 # virbr0 is bridged to eth0 (uplink)
 # virbr1 is virtual switch on the box with this IP space:
 #   IPv4 prefix: 95.211.149.16 /28
@@ -222,7 +222,7 @@ node 'container02.infra' inherits infranode {
     }
     kvm::virtual_machine { 'auth':
         fqdn        => 'auth.infra.ring.nlnog.net',
-        ip          => '95.211.149.22', # ipv6 address is 2001:1AF8:4013::21
+        ip          => '95.211.149.22', # ipv6 address is 2001:1AF8:4013::22
         netmask     => '255.255.255.240',
         dns         => '8.8.8.8',
         gateway     => '95.211.149.17',
@@ -233,6 +233,24 @@ node 'container02.infra' inherits infranode {
         container   => "${hostname}",
         ensure      => present,
     }
+    kvm::virtual_machine { 'prison':
+        fqdn        => 'prison.infra.ring.nlnog.net',
+        ip          => '95.211.149.23', # ipv6 address is 2001:1AF8:4013::23
+        netmask     => '255.255.255.240',
+        dns         => '8.8.8.8',
+        gateway     => '95.211.149.17',
+        memory      => '1024',
+        disksize    => '20',
+        rootsize    => '19968',
+        bridge      => 'virbr1',
+        container   => "${hostname}",
+        ensure      => present,
+    }
+}
+
+node 'prison.infra' inherits basenode {
+    include users
+    include backup::client
 }
 
 # container03 is hosted at Atrato in Frankfurt
@@ -361,7 +379,6 @@ node 'us01.irr.infra' inherits infranode {
     include backup::client
     $nagios_ping_rate = '!180.0,20%!300.0,60%'
 }
-
 
 # container06 is hosted at PCExtreme in Amsterdam
 # 8 cores / 32GB RAM / 2000GB RAID1 + SSD disks
