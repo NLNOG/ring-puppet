@@ -1044,3 +1044,5 @@ ff02::2 ip6-allrouters
 2a04:c000:ed51:919:247::1  edsitech01 edsitech01.ring.nlnog.net
 185.50.191.247    edsitech01 edsitech01.ring.nlnog.net
 
+2001:067c:0578:3::45  1oconsulting01 1oconsulting01.ring.nlnog.net
+91.198.135.45    1oconsulting01 1oconsulting01.ring.nlnog.net

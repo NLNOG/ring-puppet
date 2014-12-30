@@ -3846,3 +3846,12 @@ node 'edsitech01' inherits ringnode {
     include users
 }
 
+node '1oconsulting01' inherits ringnode {
+    $owner = "1oconsulting"
+    $location = "59.290854,18.017407"
+    include amp_client
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}

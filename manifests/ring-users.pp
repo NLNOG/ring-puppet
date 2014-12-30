@@ -3298,5 +3298,16 @@ class users::virtual::ring_users {
 
 ##### END edsitech #####
 
+##### BEGIN 1oconsulting #####
+
+    @add_user { '1oconsulting':
+        email => 'support@1o.se',
+        company => '1o Consulting',
+        uid => 5305,
+        groups => ['ring-users'],
+    }
+
+##### END 1oconsulting #####
+
 }
 
