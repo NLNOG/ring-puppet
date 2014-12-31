@@ -18,10 +18,6 @@ class powerdns {
         name   => "${powerdns::params::packagename}",
         ensure => latest,
     }
-    package { "powerdns_sqlite":
-        name   => "${powerdns::params::packagename_sqlite}",
-        ensure => present,
-    }
 
     service { "powerdns":
         name       => "${powerdns::params::servicename}",
