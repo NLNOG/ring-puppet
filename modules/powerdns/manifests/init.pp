@@ -16,7 +16,7 @@ class powerdns {
     # Basic Package - Service - Configuration file management
     package { "powerdns":
         name   => "${powerdns::params::packagename}",
-        ensure => present,
+        ensure => latest,
     }
     package { "powerdns_sqlite":
         name   => "${powerdns::params::packagename_sqlite}",

@@ -27,7 +27,7 @@ class powerdns::params  {
     $packagename = $operatingsystem ? {
         solaris => "CSWpowerdns",
         debian  => "pdns-server",
-        ubuntu  => "pdns-server",
+        ubuntu  => "pdns-static",
         default => "powerdns",
     }
 
