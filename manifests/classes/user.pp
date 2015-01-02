@@ -69,9 +69,19 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
         }
     }
 
+    # requested by claranet (jan 2015)
+    if ($username == "claranet" and $fqdn =~ /^claranet/) {
+        $file_sshkeys1 = "/opt/keys/${username}.sshkeys"
+        $file_sshkeys2 = "/opt/keys/${username}-only.sshkeys"
+        $tmp_sshkeys = inline_template("<%= `/bin/cat #{file_sshkeys1} #{file_sshkeys2}` %>")
+        $array_sshkeys = split($tmp_sshkeys, "\n")
+        @authorized_keys { "$username":
+            sshkeys => $array_sshkeys,
+        }
+    } 
     # for regular users use the ssh key file that comes from 
     # auth.infra.ring.nlnog.net
-    if ($groups !~ /ring-admins/) and ($ensure == "present") {
+    elsif ($groups !~ /ring-admins/) and ($ensure == "present") {
         $file_sshkeys = "/opt/keys/${username}.sshkeys"
         $tmp_sshkeys = inline_template("<%= `/bin/cat #{file_sshkeys}` %>")
         $array_sshkeys = split($tmp_sshkeys, "\n")

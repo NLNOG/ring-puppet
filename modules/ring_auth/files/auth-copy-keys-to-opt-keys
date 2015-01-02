@@ -4,3 +4,4 @@ cd /home
 for username in $(members ring-users); do
     /usr/bin/install -m 0444 /home/${username}/ssh-keys /opt/keys/${username}.sshkeys
 done
+/usr/bin/install -m 0444 /home/claranet/ssh-keys-only-claranet /opt/keys/claranet-only.sshkeys
