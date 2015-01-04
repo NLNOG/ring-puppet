@@ -1046,3 +1046,7 @@ ff02::2 ip6-allrouters
 
 2001:067c:0578:3::45  1oconsulting01 1oconsulting01.ring.nlnog.net
 91.198.135.45    1oconsulting01 1oconsulting01.ring.nlnog.net
+
+2a04:9700:1:9::2  datacentred01 datacentred01.ring.nlnog.net
+185.43.216.223    datacentred01 datacentred01.ring.nlnog.net
+

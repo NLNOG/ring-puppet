@@ -3854,3 +3854,13 @@ node '1oconsulting01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'datacentred01' inherits ringnode {
+    $owner = "datacentred"
+    $location = "53.475316,-2.294012"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
