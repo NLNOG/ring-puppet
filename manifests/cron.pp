@@ -23,7 +23,7 @@ class containercronjobs {
 class pdnscronjobs {
     cron {
         "update-sshfp":
-        command => "sshfp -k /etc/ssh/ssh_known_hosts -a | ring-pdns update sshfp >/dev/null",
+        command => "cat /etc/ssh/ssh_known_hosts | sed -e 's/^\w*,//' > /tmp/sshfp.$$ && sshfp -k /tmp/sshfp.$$ -a | ring-pdns update sshfp >/dev/null && rm /tmp/sshfp.$$",
         user => root,
         minute => "04",
         hour => "04",

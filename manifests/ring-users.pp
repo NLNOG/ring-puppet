@@ -3309,5 +3309,16 @@ class users::virtual::ring_users {
 
 ##### END 1oconsulting #####
 
+##### BEGIN datacentred #####
+
+    @add_user { 'datacentred':
+        email => 'support@datacentred.co.uk',
+        company => 'DataCentred',
+        uid => 5306,
+        groups => ['ring-users'],
+    }
+
+##### END datacentred #####
+
 }
 
