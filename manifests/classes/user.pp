@@ -81,7 +81,7 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
     } 
     # for regular users use the ssh key file that comes from 
     # auth.infra.ring.nlnog.net
-    elsif ($groups !~ /ring-admins/) and ($ensure == "present") {
+    elsif ($groups !~ /ring-admins/) and ($ensure == "present" and $username != "dave") {
         $file_sshkeys = "/opt/keys/${username}.sshkeys"
         $tmp_sshkeys = inline_template("<%= `/bin/cat #{file_sshkeys}` %>")
         $array_sshkeys = split($tmp_sshkeys, "\n")
