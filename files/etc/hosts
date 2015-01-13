@@ -1050,3 +1050,11 @@ ff02::2 ip6-allrouters
 2a04:9700:1:9::2  datacentred01 datacentred01.ring.nlnog.net
 185.43.216.223    datacentred01 datacentred01.ring.nlnog.net
 
+2001:41d0:52:400:0:0:0:53b  ovh02 ovh02.ring.nlnog.net
+37.187.50.166    ovh02 ovh02.ring.nlnog.net
+
+2001:41d0:52:600:0:0:0:671  ovh03 ovh03.ring.nlnog.net
+5.196.13.221    ovh03 ovh03.ring.nlnog.net
+
+2607:5300:101:0:0:0:0:599  ovh04 ovh04.ring.nlnog.net
+192.99.153.129    ovh04 ovh04.ring.nlnog.net

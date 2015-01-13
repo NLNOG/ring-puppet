@@ -3864,3 +3864,29 @@ node 'datacentred01' inherits ringnode {
     include users
 }
 
+node 'ovh02' inherits ringnode {
+    $owner = "ovh"
+    $location = "50.69265,3.20153"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'ovh03' inherits ringnode {
+    $owner = "ovh"
+    $location = "48.57341,7.75211"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'ovh04' inherits ringnode {
+    $owner = "ovh"
+    $location = "45.3150817,-73.8779033"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
