@@ -1745,15 +1745,6 @@ node 'spacedump01' inherits ringnode {
     include users
 }
 
-node 'rbnetwork01' inherits ringnode {
-    $owner = "rbnetwork"
-    $location = "47.209726,9.529854"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
-    include set_local_settings                                                  
-    include users
-}
-
 node 'yourorg01' inherits ringnode {
     $owner = "yourorg"
     $location = "42.003056,-87.996389"

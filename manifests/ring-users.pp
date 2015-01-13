@@ -25,6 +25,14 @@ class users::virtual::ring_users {
     ensure => absent,
 }
 
+@add_user { 'rbnetwork':
+    email   => 'noc@rbnetwork.ch',
+    company => 'RB Network',
+    uid => 5098,
+    groups  => ['ring-users'],
+    ensure => absent,
+}
+
 @add_user { 'bci':
     email   => 'support@ipv6.ps',
     company => 'BNET - BCI Telecommunication & Advanced Technology Company',
@@ -1108,17 +1116,6 @@ class users::virtual::ring_users {
     }
 
 ##### END spacedump #####
-
-##### BEGIN rbnetwork #####
-
-    @add_user { 'rbnetwork':
-        email => 'noc@rbnetwork.ch',
-        company => 'RBNetwork',
-        uid => 5098,
-        groups => ['ring-users'],
-    }
-
-##### END rbnetwork #####
 
 ##### BEGIN yourorg #####
 
