@@ -3899,3 +3899,12 @@ node 'queryfoundry01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'globalconnect01' inherits ringnode {
+    $owner = "globalconnect"
+    $location = "55.662103,12.301349"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}

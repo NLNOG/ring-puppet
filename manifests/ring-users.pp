@@ -3339,5 +3339,16 @@ class users::virtual::ring_users {
 
 ##### END queryfoundry #####
 
+##### BEGIN globalconnect #####
+
+    @add_user { 'globalconnect':
+        email => 'omc@globalconnect.dk',
+        company => 'GlobalConnect A/S',
+        uid => 5309,
+        groups => ['ring-users'],
+    }
+
+##### END globalconnect #####
+
 }
 

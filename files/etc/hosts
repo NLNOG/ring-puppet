@@ -1061,3 +1061,6 @@ ff02::2 ip6-allrouters
 
 2602:ffe8:200::4d76:a690  queryfoundry01 queryfoundry01.ring.nlnog.net
 107.182.141.199    queryfoundry01 queryfoundry01.ring.nlnog.net
+
+2a01:7e8:1:800::1b2  globalconnect01 globalconnect01.ring.nlnog.net
+212.98.101.6    globalconnect01 globalconnect01.ring.nlnog.net
