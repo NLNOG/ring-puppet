@@ -3881,3 +3881,21 @@ node 'ovh04' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'vshn01' inherits ringnode {
+    $owner = "vshn"
+    $location = "47.45008,8.53988"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'queryfoundry01' inherits ringnode {
+    $owner = "queryfoundry"
+    $location = "34.048164,-118.255697"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}

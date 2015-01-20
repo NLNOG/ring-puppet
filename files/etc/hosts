@@ -1055,3 +1055,9 @@ ff02::2 ip6-allrouters
 
 2607:5300:101:0:0:0:0:599  ovh04 ovh04.ring.nlnog.net
 192.99.153.129    ovh04 ovh04.ring.nlnog.net
+
+2a05:3780:8000:308::108  vshn01 vshn01.ring.nlnog.net
+185.72.20.108    vshn01 vshn01.ring.nlnog.net
+
+2602:ffe8:200::4d76:a690  queryfoundry01 queryfoundry01.ring.nlnog.net
+107.182.141.199    queryfoundry01 queryfoundry01.ring.nlnog.net

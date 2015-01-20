@@ -3317,5 +3317,27 @@ class users::virtual::ring_users {
 
 ##### END datacentred #####
 
+##### BEGIN vshn #####
+
+    @add_user { 'vshn':
+        email => 'tech@vshn.ch',
+        company => 'VSHN AG',
+        uid => 5308,
+        groups => ['ring-users'],
+    }
+
+##### END vshn #####
+
+##### BEGIN queryfoundry #####
+
+    @add_user { 'queryfoundry':
+        email => 'noc@queryfoundry.com',
+        company => 'Query Foundry, LLC',
+        uid => 5307,
+        groups => ['ring-users'],
+    }
+
+##### END queryfoundry #####
+
 }
 
