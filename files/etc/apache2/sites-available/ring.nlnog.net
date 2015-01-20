@@ -14,6 +14,7 @@ CustomLog /var/www/ring.nlnog.net/logs/access_log combined
 ErrorLog /var/www/ring.nlnog.net/logs/error_log
 SSLEngine On
 SSLCertificateFile /etc/apache2/ssl/ring_nlnog_net_2015.crt
+SSLCACertificateFile /etc/apache2/ssl/PositiveSSLCA2.crt
 SSLCertificateKeyFile /etc/apache2/ssl/ring_nlnog_net_2015.key
 
 ProxyPass /lg http://irime.6core.net:3030/internet
