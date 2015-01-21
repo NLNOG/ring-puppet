@@ -3908,3 +3908,12 @@ node 'globalconnect01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'openit01' inherits ringnode {
+    $owner = "openit"
+    $location = "51.188409,6.866153"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}

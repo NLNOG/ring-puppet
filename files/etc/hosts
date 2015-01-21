@@ -1064,3 +1064,6 @@ ff02::2 ip6-allrouters
 
 2a01:7e8:1:800::1b2  globalconnect01 globalconnect01.ring.nlnog.net
 212.98.101.6    globalconnect01 globalconnect01.ring.nlnog.net
+
+2001:aa8:ffeb::2  openit01 openit01.ring.nlnog.net
+217.69.82.190    openit01 openit01.ring.nlnog.net

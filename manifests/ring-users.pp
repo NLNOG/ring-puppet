@@ -3350,5 +3350,16 @@ class users::virtual::ring_users {
 
 ##### END globalconnect #####
 
+##### BEGIN openit #####
+
+    @add_user { 'openit':
+        email => 'noc@openit.de',
+        company => 'OpenIT GmbH',
+        uid => 5310,
+        groups => ['ring-users'],
+    }
+
+##### END openit #####
+
 }
 
