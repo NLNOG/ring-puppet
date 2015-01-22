@@ -3917,3 +3917,12 @@ node 'openit01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'fidonet01' inherits ringnode {
+    $owner = "fidonet"
+    $location = "51.515099,0.001794"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}

@@ -3361,5 +3361,16 @@ class users::virtual::ring_users {
 
 ##### END openit #####
 
+##### BEGIN fidonet #####
+
+    @add_user { 'fidonet':
+        email => 'ops@fido.net',
+        company => 'FidoNet',
+        uid => 5311,
+        groups => ['ring-users'],
+    }
+
+##### END fidonet #####
+
 }
 

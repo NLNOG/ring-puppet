@@ -1067,3 +1067,6 @@ ff02::2 ip6-allrouters
 
 2001:aa8:ffeb::2  openit01 openit01.ring.nlnog.net
 217.69.82.190    openit01 openit01.ring.nlnog.net
+
+2a01:2c0:a::1:102  fidonet01 fidonet01.ring.nlnog.net
+80.252.121.11    fidonet01 fidonet01.ring.nlnog.net
