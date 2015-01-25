@@ -53,6 +53,9 @@ def dbquery(conn, q, v=None):
     except mdb.OperationalError as err:
         set_error("Error in database connection: %s" % err)
         return
+    except AttributeError as err:
+        set_error("Error in database connection: %s" % err)
+        return
 
 def dbget_participants(dbconn=None):
     pl = []
@@ -187,7 +190,7 @@ def dbget_statecodes(dbconn=None):
 def mk_json(results=None,count=None,errormsg=None):
     if not results:
         if not errormsg:
-            errormsg='Unknown error'
+            errormsg='Unable to retrieve results from database'
         return jsonify({'info':{'success':0,'errormessage':errormsg}})
     else:
         return jsonify({'info':{'success':1,'resultcount':count},
