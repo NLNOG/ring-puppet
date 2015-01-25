@@ -13,11 +13,19 @@ DB='ring'
 ERROR=None
 
 def set_error(errmsg=None):
+    global ERROR
     if errmsg:
-        global ERROR
         ERROR=errmsg
+    else:
+        ERROR=None
+
+def reset_error():
+    set_error(None)
+
+def get_error():
     if ERROR:
         return ERROR
+    return None
 
 def dbconnect():
     try:
@@ -57,7 +65,7 @@ def dbget_participants(dbconn=None):
     if not dbconn:
         dbclose(conn)
 
-    if set_error():
+    if get_error():
         return
     try:
         for p in res:
@@ -81,7 +89,7 @@ def dbget_participantid(owner,dbconn=None):
     if not dbconn:
         dbclose(conn)
 
-    if set_error():
+    if get_error():
         return
     try:
         for u in res:
@@ -99,12 +107,12 @@ def dbget_nodes(dbconn=None):
         conn = dbconnect()
     query = "select * from machines"
     res = list(dbquery(conn,query))
-    if set_error():
+    if get_error():
         return
     try:
         for n in res:
             participant = dbget_participantid(n['owner'],conn)
-            if set_error():
+            if get_error():
                 return
             nl.append({'id':n['id'], 
                        'hostname':n['hostname'],
@@ -141,7 +149,7 @@ def dbget_countrycodes(dbconn=None):
     if not dbconn:
         dbclose(conn)
 
-    if set_error():
+    if get_error():
         return
     try:
         for c in res:
@@ -163,7 +171,7 @@ def dbget_statecodes(dbconn=None):
     if not dbconn:
         dbclose(conn)
 
-    if set_error():
+    if get_error():
         return
     try:
         for s in res:
@@ -215,8 +223,9 @@ def get_api_1_0():
 
 @app.route('/1.0/participants', methods = ['GET'])
 def get_participants():
+    reset_error()
     participantlist = dbget_participants()
-    if set_error():
+    if get_error():
         return mk_json(errormsg=set_error())
     return mk_json(results={'participants':participantlist},
                    count=len(participantlist)
@@ -224,6 +233,7 @@ def get_participants():
 
 @app.route('/1.0/participants/<int:participant_id>', methods = ['GET'])
 def get_participant(participant_id):
+    reset_error()
     participantlist = dbget_participants()
     try:
         participantlist = filter(lambda p: p['id'] == participant_id, participantlist)
@@ -232,7 +242,7 @@ def get_participant(participant_id):
     except KeyError as err:
         set_error("Filter key %s not found" % err)
 
-    if set_error():
+    if get_error():
         return mk_json(errormsg=set_error())
     return mk_json(results={'participants':participantlist},
                    count=len(participantlist)
@@ -240,6 +250,7 @@ def get_participant(participant_id):
 
 @app.route('/1.0/participants/<int:participant_id>/nodes', methods = ['GET'])
 def get_nodes_participant(participant_id):
+    reset_error()
     nodelist = dbget_nodes()
     try:
         nodelist = filter(lambda n: n['participant'] == participant_id, nodelist)
@@ -248,12 +259,13 @@ def get_nodes_participant(participant_id):
     except KeyError as err:
         set_error("Filter key %s not found" % err)
 
-    if set_error():
+    if get_error():
         return mk_json(errormsg=set_error())
     return mk_json(results={'nodes':nodelist},count=len(nodelist))
 
 @app.route('/1.0/participants/<int:participant_id>/nodes/active', methods = ['GET'])
 def get_nodes_participant_active(participant_id):
+    reset_error()
     nodelist = dbget_nodes()
     try:
         nodelist = filter(lambda n: n['participant'] == participant_id, nodelist)
@@ -263,19 +275,21 @@ def get_nodes_participant_active(participant_id):
     except KeyError as err:
         set_error("Filter key %s not found" % err)
 
-    if set_error():
+    if get_error():
         return mk_json(errormsg=set_error())
     return mk_json(results={'nodes':nodelist},count=len(nodelist))
 
 @app.route('/1.0/nodes', methods = ['GET'])
 def get_nodes():
+    reset_error()
     nodelist = dbget_nodes()
-    if set_error():
+    if get_error():
         return mk_json(errormsg=set_error())
     return mk_json(results={'nodes':nodelist},count=len(nodelist))
 
 @app.route('/1.0/nodes/<int:node_id>', methods = ['GET'])
 def get_node(node_id):
+    reset_error()
     nodelist = dbget_nodes()
     try:
         nodelist = filter(lambda n: n['id'] == node_id, nodelist)
@@ -284,12 +298,13 @@ def get_node(node_id):
     except KeyError as err:
         set_error("Filter key %s not found" % err)
 
-    if set_error():
+    if get_error():
         return mk_json(errormsg=set_error())
     return mk_json(results={'nodes':nodelist},count=len(nodelist))
 
 @app.route('/1.0/nodes/hostname/<string:node_hostname>', methods = ['GET'])
 def get_node_by_name(node_hostname):
+    reset_error()
     nodelist = dbget_nodes()
     try:
         nodelist = filter(lambda n: n['hostname'] == node_hostname, nodelist)
@@ -298,12 +313,13 @@ def get_node_by_name(node_hostname):
     except KeyError as err:
         set_error("Filter key %s not found" % err)
 
-    if set_error():
+    if get_error():
         return mk_json(errormsg=set_error())
     return mk_json(results={'nodes':nodelist},count=len(nodelist))
 
 @app.route('/1.0/nodes/country/<string:country>', methods = ['GET'])
 def get_nodes_country(country):
+    reset_error()
     country = country.upper()
     nodelist = dbget_nodes()
     try:
@@ -313,12 +329,13 @@ def get_nodes_country(country):
     except KeyError as err:
         set_error("Filter key %s not found" % err)
 
-    if set_error():
+    if get_error():
         return mk_json(errormsg=set_error())
     return mk_json(results={'nodes':nodelist},count=len(nodelist))
 
 @app.route('/1.0/nodes/country/<string:country>/state/<string:state>', methods = ['GET'])
 def get_nodes_country_state(country,state):
+    reset_error()
     country = country.upper()
     state = state.upper()
     nodelist = dbget_nodes()
@@ -330,12 +347,13 @@ def get_nodes_country_state(country,state):
     except KeyError as err:
         set_error("Filter key %s not found" % err)
 
-    if set_error():
+    if get_error():
         return mk_json(errormsg=set_error())
     return mk_json(results={'nodes':nodelist},count=len(nodelist))
 
 @app.route('/1.0/nodes/active', methods = ['GET'])
 def get_nodes_active():
+    reset_error()
     nodelist = dbget_nodes()
     try:
         nodelist = filter(lambda n: n['active'] == 1, nodelist)
@@ -344,12 +362,13 @@ def get_nodes_active():
     except KeyError as err:
         set_error("Filter key %s not found" % err)
 
-    if set_error():
+    if get_error():
         return mk_json(errormsg=set_error())
     return mk_json(results={'nodes':nodelist},count=len(nodelist))
 
 @app.route('/1.0/nodes/active/country/<string:country>', methods = ['GET'])
 def get_nodes_active_country(country):
+    reset_error()
     country = country.upper()
     nodelist = dbget_nodes()
     try:
@@ -360,12 +379,13 @@ def get_nodes_active_country(country):
     except KeyError as err:
         set_error("Filter key %s not found" % err)
 
-    if set_error():
+    if get_error():
         return mk_json(errormsg=set_error())
     return mk_json(results={'nodes':nodelist},count=len(nodelist))
 
 @app.route('/1.0/nodes/active/country/<string:country>/state/<string:state>', methods = ['GET'])
 def get_nodes_active_country_state(country,state):
+    reset_error()
     country = country.upper()
     state = state.upper()
     nodelist = dbget_nodes()
@@ -378,19 +398,21 @@ def get_nodes_active_country_state(country,state):
     except KeyError as err:
         set_error("Filter key %s not found" % err)
 
-    if set_error():
+    if get_error():
         return mk_json(errormsg=set_error())
     return mk_json(results={'nodes':nodelist},count=len(nodelist))
 
 @app.route('/1.0/countries', methods = ['GET'])
 def get_countrycodes():
+    reset_error()
     countrylist = dbget_countrycodes()
-    if set_error():
+    if get_error():
         return mk_json(errormsg=set_error())
     return mk_json(results={'countrycodes':countrylist},count=len(countrylist))
 
 @app.route('/1.0/countries/<string:country>/states', methods = ['GET'])
 def get_statecodes(country):
+    reset_error()
     country = country.upper()
     countrylist = dbget_statecodes()
     try:
@@ -405,7 +427,7 @@ def get_statecodes(country):
     except KeyError as err:
         set_error("Filter key %s not found" % err)
     
-    if set_error():
+    if get_error():
         return mk_json(errormsg=set_error())
     return mk_json(results={'statecodes':statelist},count=len(statelist))
 
