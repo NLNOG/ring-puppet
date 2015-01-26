@@ -3372,5 +3372,26 @@ class users::virtual::ring_users {
 
 ##### END fidonet #####
 
+##### BEGIN atechmedia #####
+
+    @add_user { 'atechmedia':
+        email => 'support@atechmedia.com',
+        company => 'aTech Media',
+        uid => 5312,
+        groups => ['ring-users'],
+    }
+
+##### END atechmedia #####
+
+##### BEGIN cablecom #####
+
+    @add_user { 'cablecom':
+        email => 'noc@cablecomnetworking.co.uk',
+        company => 'Cablecom Networking Ltd',
+        uid => 5313,
+        groups => ['ring-users'],
+    }
+
+##### END cablecom #####
 }
 
