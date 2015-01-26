@@ -69,7 +69,7 @@ class cronjobs {
         "puppetagent":
         command => "/usr/sbin/puppetd --test > /dev/null 2>&1",
         user => root,
-        minute => "*/$hourly",
+        minute => "$hourly",
         hour   => "*/2",
     }
     
