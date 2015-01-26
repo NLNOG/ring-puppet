@@ -47,7 +47,6 @@ class cronjobs {
     $first = fqdn_rand(30)
     $second = (fqdn_rand(30) + 30)
     $hourly = fqdn_rand(60)    
-    $agent = fqdn_rand(90)    
     $cron1 = (fqdn_rand(50) + 1)
     $cron2 = (fqdn_rand(50) + 5)
     $cron3 = (fqdn_rand(50) + 3)
@@ -70,7 +69,7 @@ class cronjobs {
         "puppetagent":
         command => "/usr/sbin/puppetd --test > /dev/null 2>&1",
         user => root,
-        minute => "*/$agent",
+        minute => "*/$hourly */2",
     }
     
     cron {
