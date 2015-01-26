@@ -46,7 +46,7 @@ class nodesonlycron {
 class cronjobs {
     $first = fqdn_rand(30)
     $second = (fqdn_rand(30) + 30)
-    $hourly = fqdn_rand(60)    
+    $minute = fqdn_rand(60)
     $cron1 = (fqdn_rand(50) + 1)
     $cron2 = (fqdn_rand(50) + 5)
     $cron3 = (fqdn_rand(50) + 3)
@@ -57,6 +57,7 @@ class cronjobs {
         minute => "15",
         user => "root",
     }
+
     cron { aptupdate:
         command => "apt-get update > /dev/null 2>&1",
         hour => "3",
@@ -64,13 +65,19 @@ class cronjobs {
         minute => $cron1,
         environment => ["PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"],
     }
-    
+
+    if str2bool(fqdn_rand(1)) {
+        $agent_hour = "*/2"
+    } else {
+        $agent_hour = "1-23/2"
+    }
+
    cron {
         "puppetagent":
         command => "/usr/sbin/puppetd --test > /dev/null 2>&1",
         user => root,
-        minute => "$hourly",
-        hour   => "*/2",
+        minute => "$minute",
+        hour   => "$agent_hour",
     }
     
     cron {
