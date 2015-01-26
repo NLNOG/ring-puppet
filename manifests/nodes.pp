@@ -3926,3 +3926,30 @@ node 'fidonet01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'atechmedia01' inherits ringnode {
+    $owner = "atechmedia"
+    $location = "51.5681242,-0.2309344"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'cablecom01' inherits ringnode {
+    $owner = "cablecom"
+    $location = "51.50735,-0.12776"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'maxitel02' inherits ringnode {
+    $owner = "maxitel"
+    $location = "52.07050,4.30070"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}

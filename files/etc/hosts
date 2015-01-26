@@ -1070,3 +1070,12 @@ ff02::2 ip6-allrouters
 
 2a01:2c0:a::1:102  fidonet01 fidonet01.ring.nlnog.net
 80.252.121.11    fidonet01 fidonet01.ring.nlnog.net
+
+2a04:4344:2:3::2  maxitel02 maxitel02.ring.nlnog.net
+91.205.215.130    maxitel02 maxitel02.ring.nlnog.net
+
+2a01:388:0:f2::10  cablecom01 cablecom01.ring.nlnog.net
+77.244.137.180    cablecom01 cablecom01.ring.nlnog.net
+
+2a00:67a0:a:2::142  atechmedia01 atechmedia01.ring.nlnog.net
+185.22.208.142    atechmedia01 atechmedia01.ring.nlnog.net
