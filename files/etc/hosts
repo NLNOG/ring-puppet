@@ -35,7 +35,7 @@ ff02::2 ip6-allrouters
 2001:888:2001::130  lg01.infra lg01.infra.ring.nlnog.net
 
 165.254.255.18 public01.infra public01.infra.ring.nlnog.net
-2001:728:1808::17   public01.infra  public01.infra.ring.nlnog.net
+2001:728:1808::18   public01.infra  public01.infra.ring.nlnog.net
 
 165.254.255.13  munin.infra munin.infra.ring.nlnog.net
 2001:728:1808::13  munin.infra munin.infra.ring.nlnog.net
