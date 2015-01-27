@@ -66,7 +66,7 @@ class cronjobs {
         environment => ["PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"],
     }
 
-    if str2bool(fqdn_rand(1)) {
+    if str2bool(fqdn_rand(2)) {
         $agent_hour = "*/2"
     } else {
         $agent_hour = "1-23/2"
