@@ -48,8 +48,6 @@ class cronjobs {
     $second = (fqdn_rand(30) + 30)
     $minute = fqdn_rand(60)
     $cron1 = (fqdn_rand(50) + 1)
-    $cron2 = (fqdn_rand(50) + 5)
-    $cron3 = (fqdn_rand(50) + 3)
 
     cron { update_motd:
         command => "run-parts --lsbsysinit /etc/update-motd.d > /var/run/motd",
