@@ -90,7 +90,9 @@ CREATE TABLE mremarks
 WEBSITETEXT = '''
 Title: $company ($countrycode) joined the RING
 
-$company - AS $autnum - joined the RING today. $companydesc
+$company - AS $autnum - joined the RING today.
+
+<blockquote>$companydesc</blockquote>
 
 Users can connect to $hostname, which is located in $country.
 '''
@@ -155,7 +157,9 @@ Subject: $company ($countrycode) joined the RING
 
 Dear All,
 
-$company - AS $autnum - joined the RING today. $companydesc
+$company - AS $autnum - joined the RING today.
+
+    "$companydesc"
 
 Users can connect to $hostname, which is located in $country.
 
