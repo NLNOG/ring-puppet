@@ -3953,3 +3953,12 @@ node 'maxitel02' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'netnod01' inherits ringnode {
+    $owner = "netnod"
+    $location = "59.339511,18.0132642"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}

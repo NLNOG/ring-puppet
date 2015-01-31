@@ -3393,5 +3393,16 @@ class users::virtual::ring_users {
     }
 
 ##### END cablecom #####
+
+##### BEGIN netnod #####
+
+    @add_user { 'netnod':
+        email => 'noc@netnod.se',
+        company => 'Netnod',
+        uid => 5314,
+        groups => ['ring-users'],
+    }
+
+##### END netnod #####
 }
 
