@@ -3404,5 +3404,16 @@ class users::virtual::ring_users {
     }
 
 ##### END netnod #####
+
+##### BEGIN quadranet #####
+
+    @add_user { 'quadranet':
+        email => 'support@quadranet.com',
+        company => 'QuadraNet, Inc',
+        uid => 5315,
+        groups => ['ring-users'],
+    }
+
+##### END quadranet #####
 }
 

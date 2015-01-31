@@ -1079,3 +1079,9 @@ ff02::2 ip6-allrouters
 
 2a00:67a0:a:2::142  atechmedia01 atechmedia01.ring.nlnog.net
 185.22.208.142    atechmedia01 atechmedia01.ring.nlnog.net
+
+2a01:3f0:0:63::4  netnod01 netnod01.ring.nlnog.net
+185.42.136.4    netnod01 netnod01.ring.nlnog.net
+
+2607:fcd0:100:22::2  quadranet01 quadranet01.ring.nlnog.net
+104.223.2.2    quadranet01 quadranet01.ring.nlnog.net

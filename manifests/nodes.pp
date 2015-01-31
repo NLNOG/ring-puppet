@@ -3962,3 +3962,12 @@ node 'netnod01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'quadranet01' inherits ringnode {
+    $owner = "quadranet"
+    $location = "34.04842,-118.25521"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
