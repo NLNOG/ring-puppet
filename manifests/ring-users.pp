@@ -3408,7 +3408,7 @@ class users::virtual::ring_users {
 ##### BEGIN quadranet #####
 
     @add_user { 'quadranet':
-        email => 'support@quadranet.com',
+        email => 'escalations@quadranet.com',
         company => 'QuadraNet, Inc',
         uid => 5315,
         groups => ['ring-users'],
