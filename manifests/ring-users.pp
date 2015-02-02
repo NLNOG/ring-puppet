@@ -3415,5 +3415,17 @@ class users::virtual::ring_users {
     }
 
 ##### END quadranet #####
+
+##### BEGIN xfernet #####
+
+    @add_user { 'xfernet':
+        email => 'netops@xfernet.net',
+        company => 'Xfernet',
+        uid => 5316,
+        groups => ['ring-users'],
+    }
+
+##### END xfernet #####
+
 }
 
