@@ -3393,5 +3393,39 @@ class users::virtual::ring_users {
     }
 
 ##### END cablecom #####
+
+##### BEGIN netnod #####
+
+    @add_user { 'netnod':
+        email => 'noc@netnod.se',
+        company => 'Netnod',
+        uid => 5314,
+        groups => ['ring-users'],
+    }
+
+##### END netnod #####
+
+##### BEGIN quadranet #####
+
+    @add_user { 'quadranet':
+        email => 'escalations@quadranet.com',
+        company => 'QuadraNet, Inc',
+        uid => 5315,
+        groups => ['ring-users'],
+    }
+
+##### END quadranet #####
+
+##### BEGIN xfernet #####
+
+    @add_user { 'xfernet':
+        email => 'netops@xfernet.net',
+        company => 'Xfernet',
+        uid => 5316,
+        groups => ['ring-users'],
+    }
+
+##### END xfernet #####
+
 }
 

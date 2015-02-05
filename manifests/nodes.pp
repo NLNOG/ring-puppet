@@ -3953,3 +3953,30 @@ node 'maxitel02' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'netnod01' inherits ringnode {
+    $owner = "netnod"
+    $location = "59.339511,18.0132642"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'quadranet01' inherits ringnode {
+    $owner = "quadranet"
+    $location = "34.04842,-118.25521"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'xfernet01' inherits ringnode {
+    $owner = "xfernet"
+    $location = "34.0611957,-118.2916508"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
