@@ -64,40 +64,40 @@ node 'master01.infra' inherits basenode {
     include usage_statistics
     include website
     include ring_auth::deployer
-    include nagios::defaults
-    include nagios::headless
-    include nagios_services
-    nagios::service::http { $name:
-        check_domain => "${name}"
-    }
-    include nagios::target::fqdn
-    nagios::service::dnssec::trace { '${name}_a': domain  => 'nlnog.net'; }
-    nagios::service::dnssec::trace { '${name}_b': domain  => 'ring.nlnog.net'; }
-    nagios::service::dnssec::trace { '${name}_c': domain  => 'nlring.net'; }
-    nagios::service::dnssec::exp { 
-        '${name}_1':
-            domain  => 'nlnog.net',
-            dns_ip  => '2001:7b8:3:2c::53', dnsserver   => 'nsauth1.bit.nl-v6';
-        '${name}_2':
-            domain  => 'nlnog.net',
-            dns_ip  => '194.109.9.100', dnsserver   => 'ns2.xs4all.nl-v4';
-        '${name}_3':
-            domain  => 'nlnog.net',
-            dns_ip  => '2001:67c:1a8:100::4', dnsserver   => 'nemix2.ams-ix.net-v6';
-        '${name}_4':
-            domain  => 'ring.nlnog.net',
-            dns_ip  => '94.142.241.53', dnsserver   => 'ns1.6core.net';
-        '${name}_5':
-            domain  => 'ring.nlnog.net',
-            dns_ip  => '165.254.255.18', dnsserver   => 'ns01.infra.ring.nlnog.net';
-        '${name}_6':
-            domain  => 'ring.nlnog.net',
-            dns_ip  => '79.170.90.163', dnsserver   => 'ns.rodecker.nl';
-        '${name}_7':
-            domain  => 'ring.nlnog.net',
-            dns_ip  => '83.247.10.51', dnsserver   => 'a.ns.meerval.net';
-
-    }
+#    include nagios::defaults
+#    include nagios::headless
+#    include nagios_services
+#    nagios::service::http { $name:
+#        check_domain => "${name}"
+#    }
+#    include nagios::target::fqdn
+#    nagios::service::dnssec::trace { '${name}_a': domain  => 'nlnog.net'; }
+#    nagios::service::dnssec::trace { '${name}_b': domain  => 'ring.nlnog.net'; }
+#    nagios::service::dnssec::trace { '${name}_c': domain  => 'nlring.net'; }
+#    nagios::service::dnssec::exp { 
+#        '${name}_1':
+#            domain  => 'nlnog.net',
+#            dns_ip  => '2001:7b8:3:2c::53', dnsserver   => 'nsauth1.bit.nl-v6';
+#        '${name}_2':
+#            domain  => 'nlnog.net',
+#            dns_ip  => '194.109.9.100', dnsserver   => 'ns2.xs4all.nl-v4';
+#        '${name}_3':
+#            domain  => 'nlnog.net',
+#            dns_ip  => '2001:67c:1a8:100::4', dnsserver   => 'nemix2.ams-ix.net-v6';
+#        '${name}_4':
+#            domain  => 'ring.nlnog.net',
+#            dns_ip  => '94.142.241.53', dnsserver   => 'ns1.6core.net';
+#        '${name}_5':
+#            domain  => 'ring.nlnog.net',
+#            dns_ip  => '165.254.255.18', dnsserver   => 'ns01.infra.ring.nlnog.net';
+#        '${name}_6':
+#            domain  => 'ring.nlnog.net',
+#            dns_ip  => '79.170.90.163', dnsserver   => 'ns.rodecker.nl';
+#        '${name}_7':
+#            domain  => 'ring.nlnog.net',
+#            dns_ip  => '83.247.10.51', dnsserver   => 'a.ns.meerval.net';
+#
+#    }
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
     Exec <<| tag == "destroy_virtual_machines" |>>
