@@ -1088,3 +1088,7 @@ ff02::2 ip6-allrouters
 
 2607:f350:1:ffff::1:3  xfernet01 xfernet01.ring.nlnog.net
 72.34.255.127    xfernet01 xfernet01.ring.nlnog.net
+
+2a03:2c60:0:8000::42  speakup01 speakup01.ring.nlnog.net
+185.68.163.254    speakup01 speakup01.ring.nlnog.net
+

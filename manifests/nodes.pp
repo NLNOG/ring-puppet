@@ -3980,3 +3980,13 @@ node 'xfernet01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'speakup01' inherits ringnode {
+    $owner = "speakup"
+    $location = "52.237143,6.849456"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

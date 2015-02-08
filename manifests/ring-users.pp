@@ -3427,5 +3427,16 @@ class users::virtual::ring_users {
 
 ##### END xfernet #####
 
+##### BEGIN speakup #####
+
+    @add_user { 'speakup':
+        email => 'noc@speakup.nl',
+        company => 'SpeakUp',
+        uid => 5317,
+        groups => ['ring-users'],
+    }
+
+##### END speakup #####
+
 }
 
