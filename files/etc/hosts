@@ -79,9 +79,6 @@ ff02::2 ip6-allrouters
 2a01:518:1:58:2::2  cyso01  cyso01.ring.nlnog.net
 93.94.224.87    cyso01  cyso01.ring.nlnog.net
 
-2001:6e8:8c0:100::c tdc01   tdc01.ring.nlnog.net
-194.100.40.53   tdc01   tdc01.ring.nlnog.net
-
 2001:6e0:100:4001::2    intouch01   intouch01.ring.nlnog.net
 212.19.220.58   intouch01   intouch01.ring.nlnog.net
 
@@ -1092,3 +1089,5 @@ ff02::2 ip6-allrouters
 2a03:2c60:0:8000::42  speakup01 speakup01.ring.nlnog.net
 185.68.163.254    speakup01 speakup01.ring.nlnog.net
 
+2001:14b8:1000:1::c:100  dna01 dna01.ring.nlnog.net
+62.78.96.149    dna01 dna01.ring.nlnog.net

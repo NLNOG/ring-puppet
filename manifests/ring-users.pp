@@ -113,6 +113,16 @@ class users::virtual::ring_users {
     ensure  => absent,
 }
 
+
+@add_user { 'tdc':
+    email   => 'noc@tdc.fi',
+    company => 'TDC',
+    uid     => 5035,
+    groups  => ['ring-users'],
+    ensure  => absent,
+}
+
+
 ##### END former users #####
 
 ##### BEGIN intouch #####
@@ -466,17 +476,6 @@ class users::virtual::ring_users {
     }
 
 #### END cyso #####
-
-#### BEGIN tdc #####
-
-    @add_user { 'tdc':
-        email   => 'noc@tdc.fi',
-        company => 'TDC',
-        uid     => 5035,
-        groups  => ['ring-users'],
-    }
-
-#### END tdc #####
 
 #### BEGIN netability #####
 
@@ -3437,6 +3436,17 @@ class users::virtual::ring_users {
     }
 
 ##### END speakup #####
+
+##### BEGIN dna #####
+
+    @add_user { 'dna':
+        email => 'noc@dnaip.fi',
+        company => 'DNA OY',
+        uid => 5318,
+        groups => ['ring-users'],
+    }
+
+##### END dna #####
 
 }
 
