@@ -114,14 +114,6 @@ class users::virtual::ring_users {
 }
 
 
-@add_user { 'tdc':
-    email   => 'noc@tdc.fi',
-    company => 'TDC',
-    uid     => 5035,
-    groups  => ['ring-users'],
-    ensure  => absent,
-}
-
 
 ##### END former users #####
 
@@ -3447,6 +3439,17 @@ class users::virtual::ring_users {
     }
 
 ##### END dna #####
+
+##### BEGIN tdc #####
+
+    @add_user { 'tdc':
+        email   => 'staff@eng.tdc.net',
+        company => 'TDC',
+        uid     => 5035,
+        groups  => ['ring-users'],
+    }
+
+##### END tdc #####
 
 }
 
