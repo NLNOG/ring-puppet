@@ -3989,3 +3989,31 @@ node 'dna01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'leaseweb02' inherits ringnode {
+    $owner = "leaseweb"
+    $location = "52.391224,4.665155"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'leaseweb03' inherits ringnode {
+    $owner = "leaseweb"
+    $location = "38.746461,-77.533079"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'leaseweb04' inherits ringnode {
+    $owner = "leaseweb"
+    $location = "50.096741,8.629677"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

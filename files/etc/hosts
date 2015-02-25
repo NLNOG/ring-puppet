@@ -1091,3 +1091,13 @@ ff02::2 ip6-allrouters
 
 2001:14b8:1000:1::c:100  dna01 dna01.ring.nlnog.net
 62.78.96.149    dna01 dna01.ring.nlnog.net
+
+2001:1af8:4700:a103:baaa::1  leaseweb02 leaseweb02.ring.nlnog.net
+37.48.73.130    leaseweb02 leaseweb02.ring.nlnog.net
+
+2604:9a00:2100:af05:baaa::1  leaseweb03 leaseweb03.ring.nlnog.net
+192.96.206.13    leaseweb03 leaseweb03.ring.nlnog.net
+
+2a00:c98:2200:af0a:baaa::1  leaseweb04 leaseweb04.ring.nlnog.net
+185.17.144.154    leaseweb04 leaseweb04.ring.nlnog.net
+
