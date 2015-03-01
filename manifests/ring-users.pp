@@ -113,6 +113,13 @@ class users::virtual::ring_users {
     ensure  => absent,
 }
 
+@add_user { 'timico':
+    email => 'networks@timico.net',
+    company => 'Timico Ltd.',
+    uid => 5065,
+    groups => ['ring-users'],
+    ensure  => absent,
+}
 
 
 ##### END former users #####
@@ -766,17 +773,6 @@ class users::virtual::ring_users {
     }
 
 ##### END iway #####
-
-##### BEGIN timico  #####
-
-    @add_user { 'timico':
-        email => 'networks@timico.net',
-        company => 'Timico Ltd.',
-        uid => 5065,
-        groups => ['ring-users'],
-    }
-
-##### END timico #####
 
 ##### BEGIN rezopole  #####
 
