@@ -169,7 +169,7 @@ class etcfiles_ring {
         hasrestart => true,
     }
 
-file { "/etc/network/if-up.d/syslog-ng":
+    file { "/etc/network/if-up.d/syslog-ng":
         owner   => root,
         group   => root,
         mode    => 755,
