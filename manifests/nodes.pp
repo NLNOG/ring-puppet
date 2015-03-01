@@ -4017,3 +4017,12 @@ node 'leaseweb04' inherits ringnode {
     include users
 }
 
+node 'tdc01' inherits ringnode {
+    $owner = "tdc"
+    $location = "56.162938,10.203917"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

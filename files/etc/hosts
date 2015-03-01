@@ -1101,3 +1101,6 @@ ff02::2 ip6-allrouters
 2a00:c98:2200:af0a:baaa::1  leaseweb04 leaseweb04.ring.nlnog.net
 185.17.144.154    leaseweb04 leaseweb04.ring.nlnog.net
 
+2001:6c8:2:800::27  tdc01 tdc01.ring.nlnog.net
+193.162.154.27    tdc01 tdc01.ring.nlnog.net
+
