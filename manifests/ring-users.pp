@@ -3443,17 +3443,6 @@ class users::virtual::ring_users {
 ##### BEGIN tdc #####
 
     @add_user { 'tdc':
-        email   => 'staff@eng.tdc.net',
-        company => 'TDC',
-        uid     => 5035,
-        groups  => ['ring-users'],
-    }
-
-##### END tdc #####
-
-##### BEGIN tdc #####
-
-    @add_user { 'tdc':
         email => 'staff@eng.tdc.net',
         company => 'TDC A/S',
         uid => 5319,
