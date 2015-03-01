@@ -168,6 +168,13 @@ class etcfiles_ring {
         subscribe => File["/etc/ringfpingd.conf"],
         hasrestart => true,
     }
+
+file { "/etc/network/if-up.d/syslog-ng":
+        owner   => root,
+        group   => root,
+        mode    => 755,
+        source  => "puppet:///files/etc/if-up.d/syslog-ng"
+    }
 }
 
 class etcfiles_infra {
