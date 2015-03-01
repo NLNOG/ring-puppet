@@ -4035,3 +4035,12 @@ node 'nicbr01' inherits ringnode {
     include users
 }
 
+node 'exnetworks01' inherits ringnode {
+    $owner = "exnetworks"
+    $location = "51.511122,-0.003533"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

@@ -1107,3 +1107,6 @@ ff02::2 ip6-allrouters
 2001:12ff:0:6172::171  nicbr01 nicbr01.ring.nlnog.net
 200.160.6.171    nicbr01 nicbr01.ring.nlnog.net
 
+2a01:b000:5:1::a  exnetworks01 exnetworks01.ring.nlnog.net
+46.30.8.23    exnetworks01 exnetworks01.ring.nlnog.net
+

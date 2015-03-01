@@ -3462,4 +3462,16 @@ class users::virtual::ring_users {
 
 ##### END nicbr #####
 
+##### BEGIN exnetworks #####
+
+    @add_user { 'exnetworks':
+        email => 'noc@exn.co.uk',
+        company => 'EX Networks',
+        uid => 5321,
+        groups => ['ring-users'],
+    }
+
+##### END exnetworks #####
+
+
 }
