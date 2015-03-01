@@ -1104,3 +1104,6 @@ ff02::2 ip6-allrouters
 2001:6c8:2:800::27  tdc01 tdc01.ring.nlnog.net
 193.162.154.27    tdc01 tdc01.ring.nlnog.net
 
+2001:12ff:0:6172::171  nicbr01 nicbr01.ring.nlnog.net
+200.160.6.171    nicbr01 nicbr01.ring.nlnog.net
+

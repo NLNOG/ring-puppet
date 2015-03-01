@@ -3451,8 +3451,6 @@ class users::virtual::ring_users {
 
 ##### END tdc #####
 
-}
-
 ##### BEGIN tdc #####
 
     @add_user { 'tdc':
@@ -3464,3 +3462,15 @@ class users::virtual::ring_users {
 
 ##### END tdc #####
 
+##### BEGIN nicbr #####
+
+    @add_user { 'nicbr':
+        email => 'operador@registro.nic.br',
+        company => 'Nucelo de Informacao e Coordenacao do Ponto BR',
+        uid => 5320,
+        groups => ['ring-users'],
+    }
+
+##### END nicbr #####
+
+}

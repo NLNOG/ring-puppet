@@ -4026,3 +4026,12 @@ node 'tdc01' inherits ringnode {
     include users
 }
 
+node 'nicbr01' inherits ringnode {
+    $owner = "nicbr"
+    $location = "-23.500348,-46.842800"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
