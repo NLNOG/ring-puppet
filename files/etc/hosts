@@ -1113,3 +1113,6 @@ ff02::2 ip6-allrouters
 2607:f758:a080:0:250:56ff:fe85:3098  peakten01 peakten01.ring.nlnog.net
 206.196.5.164    peakten01 peakten01.ring.nlnog.net
 
+2a05:3d80:8000:208::108  vshn02 vshn02.ring.nlnog.net
+185.72.236.108    vshn02 vshn02.ring.nlnog.net
+

@@ -4053,3 +4053,12 @@ node 'peakten01' inherits ringnode {
     include users
 }
 
+node 'vshn02' inherits ringnode {
+    $owner = "vshn"
+    $location = "47.432913,8.557448"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
