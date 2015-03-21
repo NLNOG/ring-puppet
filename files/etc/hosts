@@ -1119,3 +1119,6 @@ ff02::2 ip6-allrouters
 2a02:b0:2011:5::2  kaiaglobal02 kaiaglobal02.ring.nlnog.net
 95.141.20.190    kaiaglobal02 kaiaglobal02.ring.nlnog.net
 
+2a02:188:2:d6::32  nianet01 nianet01.ring.nlnog.net
+87.116.6.32    nianet01 nianet01.ring.nlnog.net
+

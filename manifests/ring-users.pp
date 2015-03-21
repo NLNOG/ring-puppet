@@ -3491,4 +3491,15 @@ class users::virtual::ring_users {
 
 ##### END peakten #####
 
+##### BEGIN nianet #####
+
+    @add_user { 'nianet':
+        email => '3level@nianet.dk',
+        company => 'Nianet A/S',
+        uid => 5324,
+        groups => ['ring-users'],
+    }
+
+##### END nianet #####
+
 }

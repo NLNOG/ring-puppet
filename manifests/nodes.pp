@@ -4071,3 +4071,12 @@ node 'kaiaglobal02' inherits ringnode {
     include users
 }
 
+node 'nianet01' inherits ringnode {
+    $owner = "nianet"
+    $location = "56.07,9.993083"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
