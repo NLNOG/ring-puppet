@@ -3480,4 +3480,15 @@ class users::virtual::ring_users {
 
 ##### END sggs #####
 
+##### BEGIN peakten #####
+
+    @add_user { 'peakten':
+        email => 'networkengineering@peak10.com',
+        company => 'Peak 10',
+        uid => 5323,
+        groups => ['ring-users'],
+    }
+
+##### END peakten #####
+
 }

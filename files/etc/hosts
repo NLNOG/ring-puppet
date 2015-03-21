@@ -1110,3 +1110,6 @@ ff02::2 ip6-allrouters
 2405:4200:100:10::197  sggs01 sggs01.ring.nlnog.net
 203.175.175.197    sggs01 sggs01.ring.nlnog.net
 
+2607:f758:a080:0:250:56ff:fe85:3098  peakten01 peakten01.ring.nlnog.net
+206.196.5.164    peakten01 peakten01.ring.nlnog.net
+

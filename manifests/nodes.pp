@@ -4044,3 +4044,12 @@ node 'sggs01' inherits ringnode {
     include users
 }
 
+node 'peakten01' inherits ringnode {
+    $owner = "peakten"
+    $location = "38.254167,85.759167"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
