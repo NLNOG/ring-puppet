@@ -1116,3 +1116,6 @@ ff02::2 ip6-allrouters
 2a05:3d80:8000:208::108  vshn02 vshn02.ring.nlnog.net
 185.72.236.108    vshn02 vshn02.ring.nlnog.net
 
+2a02:b0:2011:5::2  kaiaglobal02 kaiaglobal02.ring.nlnog.net
+95.141.20.190    kaiaglobal02 kaiaglobal02.ring.nlnog.net
+

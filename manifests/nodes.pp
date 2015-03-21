@@ -4062,3 +4062,12 @@ node 'vshn02' inherits ringnode {
     include users
 }
 
+node 'kaiaglobal02' inherits ringnode {
+    $owner = "kaiaglobal"
+    $location = "40.717787,-74.008773"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
