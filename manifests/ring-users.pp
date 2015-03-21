@@ -3469,5 +3469,15 @@ class users::virtual::ring_users {
 
 ##### END exnetworks #####
 
+##### BEGIN sggs #####
+
+    @add_user { 'sggs':
+        email => 'noc@sg.gs',
+        company => 'SG.GS',
+        uid => 5322,
+        groups => ['ring-users'],
+    }
+
+##### END sggs #####
 
 }
