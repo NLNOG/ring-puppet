@@ -1134,3 +1134,6 @@ ff02::2 ip6-allrouters
 2a00:c380:1337:1::5  lwlcom01 lwlcom01.ring.nlnog.net
 185.55.116.5    lwlcom01 lwlcom01.ring.nlnog.net
 
+2607:bd00:0300:0000:0000:0000:0000:0002  centarra01 centarra01.ring.nlnog.net
+198.52.128.162    centarra01 centarra01.ring.nlnog.net
+

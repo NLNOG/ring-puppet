@@ -4070,3 +4070,12 @@ node 'lwlcom01' inherits ringnode {
     include users
 }
 
+node 'centarra01' inherits ringnode {
+    $owner = "centarra"
+    $location = "32.7830600,-96.8066700"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

@@ -3546,4 +3546,15 @@ class users::virtual::ring_users {
 
 ##### END lwlcom #####
 
+##### BEGIN centarra #####
+
+    @add_user { 'centarra':
+        email => 'noc@centarra.com',
+        company => 'Centarra Networks',
+        uid => 5329,
+        groups => ['ring-users'],
+    }
+
+##### END centarra #####
+
 }
