@@ -1125,3 +1125,6 @@ ff02::2 ip6-allrouters
 2001:7f8:72:200::1  pix01 pix01.ring.nlnog.net
 185.1.1.234    pix01 pix01.ring.nlnog.net
 
+2001:67c:2564:a115:250:56ff:fe89:6d65  utwente01 utwente01.ring.nlnog.net
+130.89.6.17    utwente01 utwente01.ring.nlnog.net
+

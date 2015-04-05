@@ -3513,4 +3513,15 @@ class users::virtual::ring_users {
 
 ##### END pix #####
 
+##### BEGIN utwente #####
+
+    @add_user { 'utwente':
+        email => 'netwerk@utwente.nl',
+        company => 'University of Twente',
+        uid => 5326,
+        groups => ['ring-users'],
+    }
+
+##### END utwente #####
+
 }

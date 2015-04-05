@@ -4043,3 +4043,12 @@ node 'pix01' inherits ringnode {
     include users
 }
 
+node 'utwente01' inherits ringnode {
+    $owner = "utwente"
+    $location = "52.2397661,6.8535898"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
