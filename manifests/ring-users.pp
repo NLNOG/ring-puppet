@@ -3502,4 +3502,15 @@ class users::virtual::ring_users {
 
 ##### END nianet #####
 
+##### BEGIN pix #####
+
+    @add_user { 'pix':
+        email => 'smansour@palestineix.com',
+        company => 'Palestine Internet Exchange Point - PIX',
+        uid => 5325,
+        groups => ['ring-users'],
+    }
+
+##### END pix #####
+
 }

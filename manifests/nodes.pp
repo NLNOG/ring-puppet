@@ -4034,3 +4034,12 @@ node 'nianet01' inherits ringnode {
     include users
 }
 
+node 'pix01' inherits ringnode {
+    $owner = "pix"
+    $location = "31.90707,35.20627"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

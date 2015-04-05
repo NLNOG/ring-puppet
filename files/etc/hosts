@@ -1122,3 +1122,6 @@ ff02::2 ip6-allrouters
 2a02:188:2:d6::32  nianet01 nianet01.ring.nlnog.net
 87.116.6.32    nianet01 nianet01.ring.nlnog.net
 
+2001:7f8:72:200::1  pix01 pix01.ring.nlnog.net
+185.1.1.234    pix01 pix01.ring.nlnog.net
+
