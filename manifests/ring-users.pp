@@ -3524,4 +3524,15 @@ class users::virtual::ring_users {
 
 ##### END utwente #####
 
+##### BEGIN transtelco #####
+
+    @add_user { 'transtelco':
+        email => 'noc@transtelco.net',
+        company => 'Transtelco',
+        uid => 5327,
+        groups => ['ring-users'],
+    }
+
+##### END transtelco #####
+
 }

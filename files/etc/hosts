@@ -1128,3 +1128,6 @@ ff02::2 ip6-allrouters
 2001:67c:2564:a115:250:56ff:fe89:6d65  utwente01 utwente01.ring.nlnog.net
 130.89.6.17    utwente01 utwente01.ring.nlnog.net
 
+2604:d600:302:7::2  transtelco01 transtelco01.ring.nlnog.net
+201.174.85.6    transtelco01 transtelco01.ring.nlnog.net
+

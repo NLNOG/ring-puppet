@@ -4052,3 +4052,12 @@ node 'utwente01' inherits ringnode {
     include users
 }
 
+node 'transtelco01' inherits ringnode {
+    $owner = "transtelco"
+    $location = "31.7333,-106.4833"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
