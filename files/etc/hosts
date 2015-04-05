@@ -1131,3 +1131,6 @@ ff02::2 ip6-allrouters
 2604:d600:302:7::2  transtelco01 transtelco01.ring.nlnog.net
 201.174.85.6    transtelco01 transtelco01.ring.nlnog.net
 
+2a00:c380:1337:1::5  lwlcom01 lwlcom01.ring.nlnog.net
+185.55.116.5    lwlcom01 lwlcom01.ring.nlnog.net
+

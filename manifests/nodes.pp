@@ -4061,3 +4061,12 @@ node 'transtelco01' inherits ringnode {
     include users
 }
 
+node 'lwlcom01' inherits ringnode {
+    $owner = "lwlcom"
+    $location = "53.11066,8.76517"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

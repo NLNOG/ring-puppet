@@ -3535,4 +3535,15 @@ class users::virtual::ring_users {
 
 ##### END transtelco #####
 
+##### BEGIN lwlcom #####
+
+    @add_user { 'lwlcom':
+        email => 'noc@lwlcom.com',
+        company => 'LWLcom GmbH',
+        uid => 5328,
+        groups => ['ring-users'],
+    }
+
+##### END lwlcom #####
+
 }
