@@ -3557,4 +3557,14 @@ class users::virtual::ring_users {
 
 ##### END centarra #####
 
+##### BEGIN ucsc #####
+
+    @add_user { 'ucsc':
+        email => 'noc@ucsc.edu',
+        company => 'University of California, Santa Cruz',
+        uid => 5330,
+        groups => ['ring-users'],
+    }
+
+##### END ucsc #####
 }
