@@ -1139,3 +1139,6 @@ ff02::2 ip6-allrouters
 
 2607:f5f0:103:2::2  ucsc01 ucsc01.ring.nlnog.net
 128.114.126.3    ucsc01 ucsc01.ring.nlnog.net
+
+2001:948:4:6::80  nordunet01 nordunet01.ring.nlnog.net
+109.105.111.80    nordunet01 nordunet01.ring.nlnog.net

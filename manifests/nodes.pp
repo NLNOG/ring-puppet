@@ -4087,3 +4087,12 @@ node 'ucsc01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'nordunet01' inherits ringnode {
+    $owner = "nordunet"
+    $location = "59.341984,18.062366"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}

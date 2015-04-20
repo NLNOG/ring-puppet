@@ -3567,4 +3567,15 @@ class users::virtual::ring_users {
     }
 
 ##### END ucsc #####
+
+##### BEGIN nordunet #####
+
+    @add_user { 'nordunet':
+        email => 'ip@nordu.net',
+        company => 'NORDUnet A/S',
+        uid => 5331,
+        groups => ['ring-users'],
+    }
+
+##### END nordunet #####
 }
