@@ -1142,3 +1142,9 @@ ff02::2 ip6-allrouters
 
 2001:948:4:6::80  nordunet01 nordunet01.ring.nlnog.net
 109.105.111.80    nordunet01 nordunet01.ring.nlnog.net
+
+2a00:14d8:1001:713::2  bkkfiber01 bkkfiber01.ring.nlnog.net
+85.200.239.110    bkkfiber01 bkkfiber01.ring.nlnog.net
+
+2a05:9100:20::15  cloudcenter01 cloudcenter01.ring.nlnog.net
+185.82.144.142    cloudcenter01 cloudcenter01.ring.nlnog.net

@@ -3578,4 +3578,27 @@ class users::virtual::ring_users {
     }
 
 ##### END nordunet #####
+
+##### BEGIN bkkfiber #####
+
+    @add_user { 'bkkfiber':
+        email => 'noc@bkk.no',
+        company => 'BKK Fiber AS',
+        uid => 5332,
+        groups => ['ring-users'],
+    }
+
+##### END bkkfiber #####
+
+##### BEGIN cloudcenter #####
+
+    @add_user { 'cloudcenter':
+        email => 'noc@cloudcenter.fi',
+        company => 'Cloud Center Finland Oy',
+        uid => 5333,
+        groups => ['ring-users'],
+    }
+
+##### END cloudcenter #####
+
 }

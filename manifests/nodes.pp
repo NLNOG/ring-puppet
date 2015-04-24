@@ -4096,3 +4096,21 @@ node 'nordunet01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'bkkfiber01' inherits ringnode {
+    $owner = "bkkfiber"
+    $location = "60.3731,5.3392"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'cloudcenter01' inherits ringnode {
+    $owner = "cloudcenter"
+    $location = "61.496,23.757"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
