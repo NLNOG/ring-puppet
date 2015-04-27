@@ -85,9 +85,6 @@ ff02::2 ip6-allrouters
 2a01:310:8312:1001::19  zylon01 zylon01.ring.nlnog.net
 193.16.154.25   zylon01 zylon01.ring.nlnog.net
 
-2a02:348:5d:5990::1 xlshosting01    xlshosting01.ring.nlnog.net
-178.18.89.144   xlshosting01    xlshosting01.ring.nlnog.net
-
 2a02:898:0:201::2   coloclue01  coloclue01.ring.nlnog.net
 94.142.247.64   coloclue01  coloclue01.ring.nlnog.net
 
@@ -1151,4 +1148,7 @@ ff02::2 ip6-allrouters
 
 2a00:7c80:0:44::2  worldstream01 worldstream01.ring.nlnog.net
 217.23.0.6    worldstream01 worldstream01.ring.nlnog.net
+
+2a02:348:5d:5990::1  cloudvps01 cloudvps01.ring.nlnog.net
+178.18.89.144    cloudvps01 cloudvps01.ring.nlnog.net
 

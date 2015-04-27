@@ -695,15 +695,6 @@ node 'widexs01' inherits ringnode {
 	include users
 }
 
-node 'xlshosting01' inherits ringnode {
-    $owner = "xlshosting"
-    $location = "52.332912,4.919461"
-    include nagios::target::fqdn
-    include nagios_services
-    include set_local_settings
-	include users
-}
-
 node 'interconnect01' inherits ringnode {
     $owner = "interconnect"
     $location = "51.686672,5.359043"
@@ -4118,6 +4109,15 @@ node 'cloudcenter01' inherits ringnode {
 node 'worldstream01' inherits ringnode {
     $owner = "worldstream"
     $location = "52.001225,4.210819"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'cloudvps01' inherits ringnode {
+    $owner = "cloudvps"
+    $location = "52.332912,4.919461"
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings

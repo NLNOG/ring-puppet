@@ -121,6 +121,17 @@ class users::virtual::ring_users {
     ensure  => absent,
 }
 
+##### BEGIN xlshosting #####
+
+    @add_user { 'xlshosting':
+        email    => 'noc@xlshosting.nl',
+        company => 'XLSHosting BV',
+        uid      => 5005,
+        groups   => ['ring-users']
+        ensure  => absent,
+    }
+
+##### END xlshosting #####
 
 ##### END former users #####
 
@@ -168,16 +179,6 @@ class users::virtual::ring_users {
 
 ##### END widexs #####
 
-##### BEGIN xlshosting #####
-
-    @add_user { 'xlshosting':
-        email    => 'noc@xlshosting.nl',
-        company => 'XLSHosting BV',
-        uid      => 5005,
-        groups   => ['ring-users']
-    }
-
-##### END xlshosting #####
 
 ##### BEGIN interconnect #####
 
@@ -3611,5 +3612,16 @@ class users::virtual::ring_users {
     }
 
 ##### END worldstream #####
+
+##### BEGIN cloudvps #####
+
+    @add_user { 'cloudvps':
+        email => 'noc@cloudvps.com',
+        company => 'CloudVPS',
+        uid => 5335,
+        groups => ['ring-users'],
+    }
+
+##### END cloudvps #####
 
 }
