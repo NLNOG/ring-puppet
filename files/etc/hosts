@@ -1148,3 +1148,7 @@ ff02::2 ip6-allrouters
 
 2a05:9100:20::15  cloudcenter01 cloudcenter01.ring.nlnog.net
 185.82.144.142    cloudcenter01 cloudcenter01.ring.nlnog.net
+
+2a00:7c80:0:44::2  worldstream01 worldstream01.ring.nlnog.net
+217.23.0.6    worldstream01 worldstream01.ring.nlnog.net
+

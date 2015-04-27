@@ -4114,3 +4114,13 @@ node 'cloudcenter01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'worldstream01' inherits ringnode {
+    $owner = "worldstream"
+    $location = "52.001225,4.210819"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

@@ -3601,4 +3601,15 @@ class users::virtual::ring_users {
 
 ##### END cloudcenter #####
 
+##### BEGIN worldstream #####
+
+    @add_user { 'worldstream':
+        email => 'noc@worldstream.nl',
+        company => 'WorldStream B.V.',
+        uid => 5334,
+        groups => ['ring-users'],
+    }
+
+##### END worldstream #####
+
 }
