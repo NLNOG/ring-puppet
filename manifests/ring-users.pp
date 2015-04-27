@@ -123,13 +123,13 @@ class users::virtual::ring_users {
 
 ##### BEGIN xlshosting #####
 
-    @add_user { 'xlshosting':
-        email    => 'noc@xlshosting.nl',
-        company => 'XLSHosting BV',
-        uid      => 5005,
-        groups   => ['ring-users']
-        ensure  => absent,
-    }
+@add_user { 'xlshosting':
+    email    => 'noc@xlshosting.nl',
+    company => 'XLSHosting BV',
+    uid      => 5005,
+    groups   => ['ring-users'],
+    ensure  => absent,
+}
 
 ##### END xlshosting #####
 
