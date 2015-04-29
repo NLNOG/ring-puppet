@@ -3624,4 +3624,16 @@ class users::virtual::ring_users {
 
 ##### END cloudvps #####
 
+##### BEGIN veracity #####
+
+    @add_user { 'veracity':
+        email => 'nocgroup@veracitynetworks.com',
+        company => 'Veracity Networks',
+        uid => 5336,
+        groups => ['ring-users'],
+    }
+
+##### END veracity #####
+
+
 }

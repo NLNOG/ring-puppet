@@ -1152,3 +1152,6 @@ ff02::2 ip6-allrouters
 2a02:348:5d:5990::1  cloudvps01 cloudvps01.ring.nlnog.net
 178.18.89.144    cloudvps01 cloudvps01.ring.nlnog.net
 
+2600:7400:e00:1::7  veracity01 veracity01.ring.nlnog.net
+69.169.190.151    veracity01 veracity01.ring.nlnog.net
+

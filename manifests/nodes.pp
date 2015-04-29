@@ -4124,3 +4124,12 @@ node 'cloudvps01' inherits ringnode {
     include users
 }
 
+node 'veracity01' inherits ringnode {
+    $owner = "veracity"
+    $location = "40.479904,-111.904475"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
