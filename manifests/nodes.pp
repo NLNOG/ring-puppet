@@ -4133,3 +4133,12 @@ node 'veracity01' inherits ringnode {
     include users
 }
 
+node 'vellance01' inherits ringnode {
+    $owner = "vellance"
+    $location = "52.332794,4.919612"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

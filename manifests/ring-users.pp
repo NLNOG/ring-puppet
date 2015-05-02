@@ -3635,5 +3635,15 @@ class users::virtual::ring_users {
 
 ##### END veracity #####
 
+##### BEGIN vellance #####
+
+    @add_user { 'vellance':
+        email => 'noc@ppse.net',
+        company => 'Vellance',
+        uid => 5337,
+        groups => ['ring-users'],
+    }
+
+##### END vellance #####
 
 }

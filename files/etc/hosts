@@ -1155,3 +1155,6 @@ ff02::2 ip6-allrouters
 2600:7400:e00:1::7  veracity01 veracity01.ring.nlnog.net
 69.169.190.151    veracity01 veracity01.ring.nlnog.net
 
+2a03:5500:1:2:217:195:114:152  vellance01 vellance01.ring.nlnog.net
+217.195.114.152    vellance01 vellance01.ring.nlnog.net
+
