@@ -1158,3 +1158,6 @@ ff02::2 ip6-allrouters
 2a03:5500:1:2:217:195:114:152  vellance01 vellance01.ring.nlnog.net
 217.195.114.152    vellance01 vellance01.ring.nlnog.net
 
+2a02:2398::9166  cegeka01 cegeka01.ring.nlnog.net
+212.113.66.22    cegeka01 cegeka01.ring.nlnog.net
+

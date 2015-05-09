@@ -3646,4 +3646,15 @@ class users::virtual::ring_users {
 
 ##### END vellance #####
 
+##### BEGIN cegeka #####
+
+    @add_user { 'cegeka':
+        email => 'ns@cegeka.com',
+        company => 'Cegeka',
+        uid => 5338,
+        groups => ['ring-users'],
+    }
+
+##### END cegeka #####
+
 }

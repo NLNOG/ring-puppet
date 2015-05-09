@@ -4142,3 +4142,12 @@ node 'vellance01' inherits ringnode {
     include users
 }
 
+node 'cegeka01' inherits ringnode {
+    $owner = "cegeka"
+    $location = "50.930698,5.370075799999995"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
