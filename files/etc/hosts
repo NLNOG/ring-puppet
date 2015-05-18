@@ -525,8 +525,8 @@ ff02::2 ip6-allrouters
 81.94.161.36    itmastaren01    itmastaren01.ring.nlnog.net
 2a00:7800:8000::36    itmastaren01    itmastaren01.ring.nlnog.net
 
-2a02:d08:1001:201::1000  openminds01 openminds01.ring.nlnog.net
-188.93.100.32    openminds01 openminds01.ring.nlnog.net
+2a02:d08:1002:321:370:7216:2102:1   openminds01 openminds01.ring.nlnog.net
+37.72.162.102   openminds01 openminds01.ring.nlnog.net
 
 2a02:2350:1:1201::1  one01 one01.ring.nlnog.net
 46.30.209.1    one01 one01.ring.nlnog.net
