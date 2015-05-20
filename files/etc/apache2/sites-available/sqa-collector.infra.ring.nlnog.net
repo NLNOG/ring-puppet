@@ -1,8 +1,8 @@
 <VirtualHost *:80>
 ServerName sqa-collector.infra.ring.nlnog.net
 ServerAdmin ring-admins@ring.nlnog.net
-CustomLog /var/www/apache2/sqa_collector-access.log combined
-ErrorLog /var/www/apache2/sqa_collector-error.log
+CustomLog /var/log/apache2/sqa_collector-access.log combined
+ErrorLog /var/log/apache2/sqa_collector-error.log
 
 WSGIDaemonProcess sqa_collector processes=2 threads=15
 WSGIProcessGroup sqa_collector
