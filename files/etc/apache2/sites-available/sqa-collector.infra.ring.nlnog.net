@@ -1,0 +1,19 @@
+<VirtualHost *:80>
+ServerName sqa-collector.infra.ring.nlnog.net
+ServerAdmin ring-admins@ring.nlnog.net
+CustomLog /var/www/apache2/sqa_collector-access.log combined
+ErrorLog /var/www/apache2/sqa_collector-error.log
+
+WSGIDaemonProcess sqa_collector processes=2 threads=15
+WSGIProcessGroup sqa_collector
+WSGIScriptAlias / /var/www/ring.nlnog.net/sqa_collector/sqa.wsgi
+
+</VirtualHost>
+
+<Directory /var/www/ring.nlnog.net/sqa_collector>
+    WSGIProcessGroup sqa_collector
+    WSGIApplicationGroup %{GLOBAL}
+    Order deny,allow
+    Allow from all
+</Directory>
+
