@@ -8,6 +8,15 @@ class website {
         source  => "puppet:///files/etc/apache2/sites-available/ring.nlnog.net",
         notify  => Service["apache2"]
     }
+
+   # central sqa collector
+   file { "/etc/apache2/sites-available/sqa-collector.infra.ring.nlnog.net":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/apache2/sites-available/sqa-collector.infra.ring.nlnog.net",
+        notify  => Service["apache2"]
+    }
     
     # Participants list
     file { "/usr/local/bin/generate-participantsjs":
