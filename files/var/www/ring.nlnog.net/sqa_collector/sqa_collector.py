@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route('/', methods=['POST'])
 def root():
     print request.get_data()
-    blob = open('/tmp/sqacollector/%s-%s'
+    blob = open('/home/sqacollector/%s-%s'
         % (request.remote_addr, time.time()), 'w')
     blob.write(request.get_data())
     blob.close()
