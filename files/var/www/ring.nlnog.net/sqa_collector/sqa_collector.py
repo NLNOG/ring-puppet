@@ -16,7 +16,7 @@ session = DBSession()
 
 @app.route('/', methods=['GET'])
 def display():
-    html = '<html><head><title>Blobs</title></head>' 
+    html = '<html><head><title>Blobs</title></head>'
     html += '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"><style>td { padding: 15px; }</style>'
     html += '<body><table border=1><tr><th>id</th><th>started</th><th>ended</th><th>raised_by</th><th>short</th></tr>'
     for alarm in session.query(SqaCollector).order_by(desc(SqaCollector.started)).limit(50):
@@ -43,7 +43,7 @@ def store():
             session.add(SqaCollector(started=datetime.datetime.today(), raised_by=raised_by, afi=afi, short=short))
             session.commit()
         elif blob['status'] == 'clear':
-            open_alarms = session.query(SqaCollector).filter(and_(SqaCollector.afi==afi, SqaCollector.ended==None))
+            open_alarms = session.query(SqaCollector).filter(and_(SqaCollector.raised_by==raised_by, SqaCollector.afi==afi, SqaCollector.ended==None))
             if open_alarms:
                 for open_alarm in open_alarms:
                     open_alarm.ended=datetime.datetime.today()
