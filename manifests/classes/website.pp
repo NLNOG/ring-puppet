@@ -70,4 +70,13 @@ class website {
         notify  => Service["apache2"]
     }
 
+    file { "/var/www/ring.nlnog.net/sqa_collector/sqa_collector_db.py":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/var/www/ring.nlnog.net/sqa_collector/sqa_collector_db.py",
+        notify  => Service["apache2"]
+    }
+
+
 }
