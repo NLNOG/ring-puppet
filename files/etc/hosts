@@ -16,7 +16,7 @@ ff02::2 ip6-allrouters
 78.152.42.68    bgpmon.infra bgpmon.infra.ring.nlnog.net
 2a02:d28:666::68    bgpmon.infra    bgpmon.infra.ring.nlnog.net
 
-95.211.149.24   dbmaster.infra    dbmaster.infra.ring.nlnog.net
+95.211.149.25   dbmaster.infra    dbmaster.infra.ring.nlnog.net
 2001:1AF8:4013::25    dbmaster.infra    dbmaster.infra.ring.nlnog.net
 
 109.72.93.35    backup.infra  backup.infra.ring.nlnog.net
