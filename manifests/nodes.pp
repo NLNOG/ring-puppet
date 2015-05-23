@@ -220,6 +220,19 @@ node 'container02.infra' inherits infranode {
         container   => "${hostname}",
         ensure      => present,
     }
+#    kvm::virtual_machine { 'master01.infra':
+#        fqdn        => 'master01.infra.ring.nlnog.net',
+#        ip          => '95.211.149.24', # ipv6 address is 2001:1AF8:4013::24
+#        netmask     => '255.255.255.240',
+#        dns         => '8.8.8.8',
+#        gateway     => '95.211.149.17',
+#        memory      => '1024',
+#        disksize    => '20',
+#        rootsize    => '109680',
+#        bridge      => 'virbr1',
+#        container   => "${hostname}",
+#        ensure      => present,
+#    }
 }
 
 node 'prison.infra' inherits basenode {
