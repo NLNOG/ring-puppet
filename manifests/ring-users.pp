@@ -3690,4 +3690,14 @@ class users::virtual::ring_users {
 
 ##### END elisa #####
 
+##### BEGIN corebackbone #####
+
+    @add_user { 'corebackbone':
+        email => 'support@core-backbone.com',
+        company => 'Core-Backbone GmbH',
+        uid => 5340,
+        groups => ['ring-users'],
+    }
+
+##### END corebackbone #####
 }

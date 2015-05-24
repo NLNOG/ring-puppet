@@ -1169,3 +1169,6 @@ ff02::2 ip6-allrouters
 
 2001:998:12:58::719  elisa01 elisa01.ring.nlnog.net
 194.157.148.236    elisa01 elisa01.ring.nlnog.net
+
+2a01:4a0:1cbb::150  corebackbone01 corebackbone01.ring.nlnog.net
+83.142.86.150    corebackbone01 corebackbone01.ring.nlnog.net
