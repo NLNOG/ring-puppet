@@ -3657,4 +3657,15 @@ class users::virtual::ring_users {
 
 ##### END cegeka #####
 
+##### BEGIN choopa #####
+
+    @add_user { 'choopa':
+        email => 'support@choopa.com',
+        company => 'Choopa',
+        uid => 5342,
+        groups => ['ring-users'],
+    }
+
+##### END choopa #####
+
 }
