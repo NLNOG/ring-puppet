@@ -807,8 +807,8 @@ ff02::2 ip6-allrouters
 2a01:8840:c:500::229  afilias02 afilias02.ring.nlnog.net
 65.22.12.229    afilias02 afilias02.ring.nlnog.net
 
-2001:67c:26f4::8  nonattached01 nonattached01.ring.nlnog.net
-193.160.39.8    nonattached01 nonattached01.ring.nlnog.net
+2001:67c:26f4:16::24    nonattached01 nonattached01.ring.nlnog.net
+193.160.39.24   nonattached01 nonattached01.ring.nlnog.net
 
 2001:680:0:800f::15e  kpn01 kpn01.ring.nlnog.net
 134.222.92.50    kpn01 kpn01.ring.nlnog.net
