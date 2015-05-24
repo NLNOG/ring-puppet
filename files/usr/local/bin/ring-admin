@@ -99,7 +99,7 @@ Users can connect to $hostname, which is located in $country.
 
 WELCOMEMAIL = '''
 From: ring-admins@ring.nlnog.net
-To: $nocemail
+To: $nocemail, $email
 Cc: ring-admins@ring.nlnog.net
 Subject: Welcome to the RING, $company
 
@@ -779,6 +779,7 @@ class commands(object):
             pass
         text = Template(WELCOMEMAIL)
         print text.substitute(company=p['company'], nocemail=p['nocemail'],
+                              email=p['email'],
                               hostname=hostname, username=u['username'])
 
     def cmd_generate_announcemail(self, username):
