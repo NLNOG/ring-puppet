@@ -3678,4 +3678,16 @@ class users::virtual::ring_users {
     }
 
 ##### END upcloud #####
+
+##### BEGIN elisa #####
+
+    @add_user { 'elisa':
+        email => 'soc@elisa.fi',
+        company => 'Elisa Oyj',
+        uid => 5339,
+        groups => ['ring-users'],
+    }
+
+##### END elisa #####
+
 }

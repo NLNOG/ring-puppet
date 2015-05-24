@@ -1166,3 +1166,6 @@ ff02::2 ip6-allrouters
 
 2a04:3540:1000:310:a8aa:aaff:fea0:350d  upcloud01 upcloud01.ring.nlnog.net
 185.26.50.99    upcloud01 upcloud01.ring.nlnog.net
+
+2001:998:12:58::719  elisa01 elisa01.ring.nlnog.net
+194.157.148.236    elisa01 elisa01.ring.nlnog.net

@@ -4181,3 +4181,12 @@ node 'upcloud01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'elisa01' inherits ringnode {
+    $owner = "elisa"
+    $location = "60.197486,24.936639"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
