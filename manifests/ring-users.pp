@@ -3668,4 +3668,14 @@ class users::virtual::ring_users {
 
 ##### END choopa #####
 
+##### BEGIN upcloud #####
+
+    @add_user { 'upcloud':
+        email => 'support@upcloud.com',
+        company => 'Upcloud Ltd',
+        uid => 5341,
+        groups => ['ring-users'],
+    }
+
+##### END upcloud #####
 }

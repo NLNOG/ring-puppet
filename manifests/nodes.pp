@@ -4172,3 +4172,12 @@ node 'choopa01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'upcloud01' inherits ringnode {
+    $owner = "upcloud"
+    $location = "60.173324,24.941025"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}

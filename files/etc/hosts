@@ -1163,3 +1163,6 @@ ff02::2 ip6-allrouters
 
 2001:19f0:300:62a8:5400:ff:fe09:a1cd  choopa01 choopa01.ring.nlnog.net
 45.63.14.202    choopa01 choopa01.ring.nlnog.net
+
+2a04:3540:1000:310:a8aa:aaff:fea0:350d  upcloud01 upcloud01.ring.nlnog.net
+185.26.50.99    upcloud01 upcloud01.ring.nlnog.net
