@@ -1,6 +1,6 @@
 <VirtualHost *:80>
 ServerName ring.nlnog.net
-ServerAdmin job@snijders-it.nl
+ServerAdmin ring-admins@ring.nlnog.net
 Redirect / https://ring.nlnog.net/
 CustomLog /var/www/ring.nlnog.net/logs/access_log combined
 ErrorLog /var/www/ring.nlnog.net/logs/error_log
@@ -8,7 +8,7 @@ ErrorLog /var/www/ring.nlnog.net/logs/error_log
 
 <VirtualHost *:443>
 ServerName ring.nlnog.net
-ServerAdmin job@snijders-it.nl
+ServerAdmin ring-admins@ring.nlnog.net
 DocumentRoot /var/www/ring.nlnog.net/HTML
 CustomLog /var/www/ring.nlnog.net/logs/access_log combined
 ErrorLog /var/www/ring.nlnog.net/logs/error_log
@@ -16,15 +16,6 @@ SSLEngine On
 SSLCertificateFile /etc/apache2/ssl/ring_nlnog_net_2015.crt
 SSLCACertificateFile /etc/apache2/ssl/PositiveSSLCA2.crt
 SSLCertificateKeyFile /etc/apache2/ssl/ring_nlnog_net_2015.key
-
-ProxyPass /lg http://irime.6core.net:3030/internet
-ProxyPassReverse /lg http://irime.6core.net:3030/internet
-ProxyPass /assets/ http://irime.6core.net:3030/assets/
-ProxyPassReverse /assets/ http://irime.6core.net:3030/assets/
-ProxyPass /views/ http://irime.6core.net:3030/views/
-ProxyPassReverse /views/ http://irime.6core.net:3030/views/
-ProxyPass /events http://irime.6core.net:3030/events
-ProxyPassReverse /events http://irime.6core.net:3030/events
 
 WSGIDaemonProcess ring_api processes=2 threads=15
 WSGIProcessGroup ring_api
