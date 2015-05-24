@@ -942,7 +942,7 @@ ff02::2 ip6-allrouters
 2a02:c0:400:108::1  redpilllinpro02 redpilllinpro02.ring.nlnog.net
 87.238.39.42    redpilllinpro02 redpilllinpro02.ring.nlnog.net
 
-2a01:298:f001:a700::9  mainloop01 mainloop01.ring.nlnog.net
+2a01:298:f001:a700::10  mainloop01 mainloop01.ring.nlnog.net
 185.9.166.9    mainloop01 mainloop01.ring.nlnog.net
 
 2a00:6ec0:101:1:0:11::  tigron01 tigron01.ring.nlnog.net
