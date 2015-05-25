@@ -3697,4 +3697,16 @@ class users::virtual::ring_users {
     }
 
 ##### END corebackbone #####
+
+##### BEGIN linode #####
+
+    @add_user { 'linode':
+        email => 'netops@linode.com',
+        company => 'Linode, LLC',
+        uid => 5343,
+        groups => ['ring-users'],
+    }
+
+##### END linode #####
+
 }

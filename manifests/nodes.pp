@@ -4190,3 +4190,12 @@ node 'corebackbone01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'linode01' inherits ringnode {
+    $owner = "linode"
+    $location = "1.324256,103.891800"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}

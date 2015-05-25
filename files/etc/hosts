@@ -1169,3 +1169,6 @@ ff02::2 ip6-allrouters
 
 2a01:4a0:1cbb::150  corebackbone01 corebackbone01.ring.nlnog.net
 83.142.86.150    corebackbone01 corebackbone01.ring.nlnog.net
+
+2400:8901::f03c:91ff:fe37:a150  linode01 linode01.ring.nlnog.net
+103.3.60.146    linode01 linode01.ring.nlnog.net
