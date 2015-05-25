@@ -2586,15 +2586,6 @@ node 'kaiaglobal01' inherits ringnode {
     include users
 }
 
-node 'enestdata01' inherits ringnode {
-    $owner = "enestdata"
-    $location = "47.432913,8.557448"
-    include nagios::target::fqdn
-    include nagios_services
-    include set_local_settings
-    include users
-}
-
 node 'ualbany01' inherits ringnode {
     $owner = "ualbany"
     $location = "42.68619,-73.823996"

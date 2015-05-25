@@ -121,6 +121,14 @@ class users::virtual::ring_users {
     ensure  => absent,
 }
 
+@add_user { 'enestdata':
+    email => 'noc@e-nestdata.ch',
+    company => 'e-nestdata SA',
+    uid => 5188,
+    groups => ['ring-users'],
+    ensure  => absent,
+}
+
 ##### BEGIN xlshosting #####
 
 @add_user { 'xlshosting':
@@ -2017,17 +2025,6 @@ class users::virtual::ring_users {
     }
 
 ##### END kaiaglobal #####
-
-##### BEGIN enestdata #####
-
-    @add_user { 'enestdata':
-        email => 'noc@e-nestdata.ch',
-        company => 'e-nestdata SA',
-        uid => 5188,
-        groups => ['ring-users'],
-    }
-
-##### END enestdata #####
 
 ##### BEGIN ualbany #####
 
