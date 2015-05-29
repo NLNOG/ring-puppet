@@ -129,8 +129,6 @@ class users::virtual::ring_users {
     ensure  => absent,
 }
 
-##### BEGIN xlshosting #####
-
 @add_user { 'xlshosting':
     email    => 'noc@xlshosting.nl',
     company => 'XLSHosting BV',
@@ -139,7 +137,13 @@ class users::virtual::ring_users {
     ensure  => absent,
 }
 
-##### END xlshosting #####
+@add_user { 'blacklotus':
+    email => 'noc@blacklotus.net',
+    company => 'Black Lotus Communications',
+    uid => 5226,
+    groups => ['ring-users'],
+    ensure  => absent,
+}
 
 ##### END former users #####
 
@@ -2421,17 +2425,6 @@ class users::virtual::ring_users {
     }
 
 ##### END infostrada #####
-
-##### BEGIN blacklotus #####
-
-    @add_user { 'blacklotus':
-        email => 'noc@blacklotus.net',
-        company => 'Black Lotus Communications',
-        uid => 5226,
-        groups => ['ring-users'],
-    }
-
-##### END blacklotus #####
 
 ##### BEGIN stargate #####
 

@@ -744,9 +744,6 @@ ff02::2 ip6-allrouters
 2a00:ed0:2000:4800::2  claranet07 claranet07.ring.nlnog.net
 81.171.183.186    claranet07 claranet07.ring.nlnog.net
 
-2604:8300:100:1000::1e  blacklotus01 blacklotus01.ring.nlnog.net
-199.59.162.174    blacklotus01 blacklotus01.ring.nlnog.net
-
 2607:4100:0000:0200::2  stargate01 stargate01.ring.nlnog.net
 98.143.95.34    stargate01 stargate01.ring.nlnog.net
 
