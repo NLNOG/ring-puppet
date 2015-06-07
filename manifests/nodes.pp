@@ -4190,3 +4190,13 @@ node 'linode01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'openimp01' inherits ringnode {
+    $owner = "openimp"
+    $location = "51.521259,-0.071998"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

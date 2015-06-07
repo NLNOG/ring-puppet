@@ -1169,3 +1169,7 @@ ff02::2 ip6-allrouters
 
 2400:8901::f03c:91ff:fe37:a150  linode01 linode01.ring.nlnog.net
 103.3.60.146    linode01 linode01.ring.nlnog.net
+
+2a00:1068:ffff:402::1024  openimp01 openimp01.ring.nlnog.net
+94.228.79.60    openimp01 openimp01.ring.nlnog.net
+

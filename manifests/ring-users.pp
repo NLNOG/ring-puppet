@@ -3702,4 +3702,16 @@ class users::virtual::ring_users {
 
 ##### END linode #####
 
+##### BEGIN openimp #####
+
+    @add_user { 'openimp':
+        email => 'noc@openimp.net',
+        company => 'Oscar Music & Media',
+        uid => 5344,
+        groups => ['ring-users'],
+    }
+
+##### END openimp #####
+
+
 }
