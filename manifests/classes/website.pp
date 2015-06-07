@@ -53,4 +53,25 @@ class website {
         notify  => Service["apache2"]
     }
     
+    # Node provisioning files
+    file { "/var/www/ring.nlnog.net/HTML/ring.key":
+        owner   => root,
+        group   => root,
+        mode    => 444,
+        source  => "puppet:///files/var/www/ring.nlnog.net/ring.key",
+    }
+
+    file { "/var/www/ring.nlnog.net/HTML/sources.list":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/var/www/ring.nlnog.net/sources.list",
+    }
+
+    file { "/var/www/ring.nlnog.net/HTML/provision_node.sh":
+        owner   => root,
+        group   => root,
+        mode    => 755,
+        source  => "puppet:///files/var/www/ring.nlnog.net/provision_node.sh",
+    }
 }

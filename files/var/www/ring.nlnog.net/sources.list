@@ -1,0 +1,26 @@
+deb mirror://mirrors.ubuntu.com/mirrors.txt precise main restricted
+deb-src mirror://mirrors.ubuntu.com/mirrors.txt precise main restricted
+
+deb mirror://mirrors.ubuntu.com/mirrors.txt precise-updates main restricted
+deb-src mirror://mirrors.ubuntu.com/mirrors.txt precise-updates main restricted
+
+deb mirror://mirrors.ubuntu.com/mirrors.txt precise universe
+deb-src mirror://mirrors.ubuntu.com/mirrors.txt precise universe
+deb mirror://mirrors.ubuntu.com/mirrors.txt precise-updates universe
+deb-src mirror://mirrors.ubuntu.com/mirrors.txt precise-updates universe
+
+deb mirror://mirrors.ubuntu.com/mirrors.txt precise multiverse
+deb-src mirror://mirrors.ubuntu.com/mirrors.txt precise multiverse
+deb mirror://mirrors.ubuntu.com/mirrors.txt precise-updates multiverse
+deb-src mirror://mirrors.ubuntu.com/mirrors.txt precise-updates multiverse
+
+
+
+deb http://security.ubuntu.com/ubuntu precise-security main restricted
+deb-src http://security.ubuntu.com/ubuntu precise-security main restricted
+deb http://security.ubuntu.com/ubuntu precise-security universe
+deb-src http://security.ubuntu.com/ubuntu precise-security universe
+deb http://security.ubuntu.com/ubuntu precise-security multiverse
+deb-src http://security.ubuntu.com/ubuntu precise-security multiverse
+
+deb http://master01.infra.ring.nlnog.net/deb precise main
