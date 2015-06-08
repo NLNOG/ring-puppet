@@ -4200,3 +4200,12 @@ node 'openimp01' inherits ringnode {
     include users
 }
 
+node 'swiftnode01' inherits ringnode {
+    $owner = "swiftnode"
+    $location = "34.047539,-118.256699"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

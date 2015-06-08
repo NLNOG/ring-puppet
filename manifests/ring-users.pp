@@ -3713,5 +3713,15 @@ class users::virtual::ring_users {
 
 ##### END openimp #####
 
+##### BEGIN swiftnode #####
+
+    @add_user { 'swiftnode':
+        email => 'networking@swiftnode.com',
+        company => 'SwiftNode',
+        uid => 5345,
+        groups => ['ring-users'],
+    }
+
+##### END swiftnode #####
 
 }
