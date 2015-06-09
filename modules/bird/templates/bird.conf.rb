@@ -10,6 +10,14 @@ router id <%= ipaddress %>;
 
 timeformat protocol iso long;
 
+# prefer to expose non-AS23456 paths as primary path when available
+filter lookingglass_in {
+    if (bgp_path.last = 23456) then {
+        bgp_local_pref = 10;
+    }
+    accept;
+}
+
 template bgp peers {
     local as 199036;
     multihop;
@@ -19,7 +27,7 @@ template bgp peers {
     start delay time 5;             # How long do we wait before initial connect
     error forget time 0;            # ... until this timeout expires)
     source address <%= ipaddress %>;   # What local address we use for the TCP connection
-    import all;
+    import filter lookingglass_in;
     export none;
 }
 
