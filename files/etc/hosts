@@ -1176,3 +1176,5 @@ ff02::2 ip6-allrouters
 2605:e980:14:73:7769:6674:6e6f:6465  swiftnode01 swiftnode01.ring.nlnog.net
 104.255.38.130    swiftnode01 swiftnode01.ring.nlnog.net
 
+2a00:a7c0:1000:1303::1303  fusix01 fusix01.ring.nlnog.net
+37.139.139.110    fusix01 fusix01.ring.nlnog.net

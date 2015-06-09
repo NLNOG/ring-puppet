@@ -3724,4 +3724,15 @@ class users::virtual::ring_users {
 
 ##### END swiftnode #####
 
+##### BEGIN fusix #####
+
+    @add_user { 'fusix':
+        email => 'operations@fusix.nl',
+        company => 'Fusix Networks BV',
+        uid => 5346,
+        groups => ['ring-users'],
+    }
+
+##### END fusix #####
+
 }

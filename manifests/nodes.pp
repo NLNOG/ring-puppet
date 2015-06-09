@@ -4209,3 +4209,11 @@ node 'swiftnode01' inherits ringnode {
     include users
 }
 
+node 'fusix01' inherits ringnode {
+    $owner = "fusix"
+    $location = "52.303941,4.939339"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
