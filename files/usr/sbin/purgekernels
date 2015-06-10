@@ -95,10 +95,11 @@ tEnd();
 # Sort kernels by version
 my @kernels_to_purge = reverse sort { isNewer($a, $b) } keys %$kernels;
 
-$$switch{'keep'} = $#kernels_to_purge ? $#kernels_to_purge < $$switch{'keep'} : $$switch{'keep'};
+$$switch{'keep'} = ( $#kernels_to_purge < $$switch{'keep'} ) ? $#kernels_to_purge : $$switch{'keep'};
+
 my $newest = "";
 # Strip off the top three, keeping these installed
-for (my $keeping = 0; $keeping <= $$switch{'keep'}; $keeping++) {
+for (my $keeping = 0; $keeping < $$switch{'keep'}; $keeping++) {
     my $keepvers = shift @kernels_to_purge;
     $newest = $keepvers if isNewer($keepvers, $newest) == 1;
     dprint("Keeping $keepvers");
@@ -130,6 +131,7 @@ if (not scalar keys %$remove_kernel_packages) {
     tEnd();
     exit 0;
 }
+
 
 # If we get here, actually call dpkg...
 my @cmd = ("/usr/bin/dpkg", "--purge");
