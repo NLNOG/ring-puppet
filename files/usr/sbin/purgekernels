@@ -2,142 +2,259 @@
 BEGIN { $ENV{PATH} = "/bin:/sbin:/usr/bin:/usr/sbin"; }
 use strict;
 use Data::Dumper;
-sub isnewer ($$); # prototype for sort{} usage
+use Time::HiRes qw(gettimeofday tv_interval);
+use Getopt::Simple qw($switch);
+eval { require Dpkg::Version; }; if ($@) { print "$0: requires package libdpkg-perl installed.\n"; exit 0; }
+sub isNewer ($$); # prototype for sort{} usage
 
 #
-# $Id: purgekernels 329 2013-11-10 19:51:00Z sanders $
+# Original by Sander Smeenk. He accepts no responsibility whatsoever. Some
+# tweaks by Mark Schouten to make ik a bit more userfriendly. Use this at your
+# own risk.
 #
-# Run as Post-Invoke:
-# $ cat /etc/apt/apt.conf.d/88local
-# DPkg::Post-Invoke { "/usr/local/sbin/purgekernels --debug"; };
+# This now depends on libdpkg-perl and libgetopt-simple-perl:
+#   sudo apt-get install libdpkg-perl libgetopt-simple-perl
 #
-# Or manual:
-# root@host:~# /usr/local/sbin/purgekernels --debug
+# Run as apt-get Post-Invoke:
+#   $ cat /etc/apt/apt.conf.d/88local
+#   DPkg::Post-Invoke { "/usr/local/sbin/purgekernels --debug"; };
 #
-# --debug makes it verbose
+# For more info, run:
+#   # /usr/local/sbin/purgekernels --help
 #
 
-my $debug = 0; $debug++ if grep(/--debug/, @ARGV);
-$ENV{DEBCONF_FRONTEND} = 'noninteractive' if grep(/--non-interactive/, @ARGV);
-$ENV{COLUMNS} = 240; # Older dpkg's dont show the entire package/version
-                     # for dpkg -l queries even in piped constructs.
+my($options) = {
+    debug => {
+        type    => '+',
+        default => '0',
+        env     => '-',
+        verbose => 'Multiple --debug increases verbosity and allow non-root users to toy',
+        order   => 0
+    },
+    keep => {
+        type    => '=i',
+        default => 3,
+        env     => '-',
+        verbose => 'Specify the number of kernels you want to keep',
+        order   => 1
+    },
+    help => {
+        type    => '+',
+        default => '0',
+        env     => '-',
+        verbose => 'Print this help',
+        order   => 2
+    },
+};
 
-die "$0: Run this as root.\n" if ($< != 0 and not $debug);
-print "$0: cleaning up kernels ..\n";
+my($option) = Getopt::Simple -> new();
+
+if (! $option -> getOptions($options, "Usage: purgekernels [options]")) {
+    print $option->helpOptions();
+    exit(-1);
+}
+
+if ($$switch{'help'} > 0) {
+    print $option->helpOptions();
+    exit(-1);
+}
+
+my @timers = (); tStart("main");
+print "$0: Cleaning up kernels.\n";
 
 
+# Do not remove kernels in containters
 my $virt_what = "/usr/sbin/virt-what";
 if (-e $virt_what) {
     my $virt = `$virt_what`; chomp($virt);
-    if ($virt eq "openvz") {
-        dprint("$0: not cleaning in openvz container.");
+    if ($virt =~ m#^(?:openvz|lxc)#) {
+        print "Not cleaning in container: '$virt'";
         exit 0;
-    } else {
-        dprint("$0: virtualization status: '$virt'");
     }
+    dprint("Virtualization status: '$virt'");
 } else {
-    dprint("$0: could not find 'virt-what' utility, can't check if openvz or not.");
+    dprint("Could not find 'virt-what' utility, can't check if container or not.");
 }
 
 
-# Find kernels
-my $kernels = {};
-my $dpkg = `dpkg -l linux-image-\* linux-headers-\* linux-restricted-modules-\* linux-ubuntu-modules-\* linux-backports-modules-\* 2>&1`;
-#dprint("cmd out: '$dpkg'");
-while ($dpkg =~ m#^[pri][ci]\s+(linux\-\S+)\s+(\d+\.\d+\.\d+[\-\.]\S+)\s#gm) {
-    push @{$$kernels{$2}}, "$1";
-    dprint("found kernel version $2 (package $1)");
+# Find running kernel package
+tStart("find_curkerpkg");
+my ($cur_ker_pkg, $cur_ker_pkg_ver) = findCurrentKernelPackage();
+dprint("Running '$cur_ker_pkg' version '$cur_ker_pkg_ver'");
+tEnd();
+
+
+# Find kernel packages
+tStart("find_installedpkgs");
+my $kernels = parseDpkgStatus();
+die "Parsing failed? no kernels installed?\n" if not scalar(keys(%$kernels));
+dprint("Found kernel $_") foreach keys %$kernels;
+tEnd();
+
+
+# Sort kernels by version
+my @kernels_to_purge = reverse sort { isNewer($a, $b) } keys %$kernels;
+
+$$switch{'keep'} = ( $#kernels_to_purge < $$switch{'keep'} ) ? $#kernels_to_purge : $$switch{'keep'};
+
+my $newest = "";
+# Strip off the top three, keeping these installed
+for (my $keeping = 0; $keeping < $$switch{'keep'}; $keeping++) {
+    my $keepvers = shift @kernels_to_purge;
+    $newest = $keepvers if isNewer($keepvers, $newest) == 1;
+    dprint("Keeping $keepvers");
 }
 
-if (not scalar(keys(%$kernels))) {
-    warn "parsing failed? no kernels installed?\n";
-    exit;
-}
-
-# Current kernel
-my $uname = `uname -r`; chomp($uname);
-#dprint("cmd out: '$uname'");
-my ($current_kernel_version) = $uname =~ m#(\d+\.\d+\.\d+\-\d+)\-#;
-dprint("currently running $current_kernel_version");
+print("Reboot to activate newer kernel $newest\n") if isNewer($newest, $cur_ker_pkg_ver);
+dprint("Removing $_") foreach @kernels_to_purge;
 
 
-# Rinse dem proper
-# Strip off the top three, keeping these installed.
-my @sorted_kernels = reverse sort { isnewer($a, $b) } keys %$kernels;
-dprint("---- \$kernels ----");         dprint("" . Dumper($kernels));
-dprint("---- \@sorted_kernels -----"); dprint("" . Dumper(@sorted_kernels));
-my $keep1 = shift @sorted_kernels; # at least one kernel should be installed
-my $keep2 = shift @sorted_kernels; $keep2 ||= "";
-my $keep3 = shift @sorted_kernels; $keep3 ||= "";
-dprint("keeping  [$keep1]  [$keep2]  [$keep3]");
-print("reboot to activate newer kernel $keep1\n") if isnewer($keep1, $current_kernel_version);
-
-
-# Current kernel could be in the remainder of the list!
-# Build package hash to uniquify pkgnames
-my $pkghash = {};
-foreach my $remove_kernel_version (@sorted_kernels) {
-    if ($remove_kernel_version =~ m#^$current_kernel_version#) {
-        print "not removing current kernel.\n";
+# Current kernel could be in the remainder of the list.
+# Use hash to uniquify packagenames.
+my $remove_kernel_packages = {};
+foreach my $remove_kernel_version (@kernels_to_purge) {
+    if ($remove_kernel_version eq $cur_ker_pkg_ver) {
+        dprint("Not removing current kernel '$cur_ker_pkg_ver'");
         next;
     }
 
     foreach my $pkg (@{$$kernels{$remove_kernel_version}}) {
-        next if $$pkghash{$pkg}++;
-        print "removing $remove_kernel_version ($pkg)\n";
+        next if $$remove_kernel_packages{$pkg}++;
+        print "$0: Removing package '$pkg' version '$remove_kernel_version'\n";
     }
 }
 
 
-# Launch dpkg to purge the kernels and extra packages
+# Bail if no packages left
+if (not scalar keys %$remove_kernel_packages) {
+    print "$0: Nothing to do.\n";
+    tEnd();
+    exit 0;
+}
+
+
+# If we get here, actually call dpkg...
 my @cmd = ("/usr/bin/dpkg", "--purge");
-push @cmd, $_ foreach keys %$pkghash;
-do {
-    print "\n-- dpkg output --\n\n";
-    system(@cmd) == 0 or warn "Forking dpkg failed: $!\n";
-    if ($? == -1) {
-        print "failed to execute: $!\n";
-    } elsif ($? & 127) {
-        printf "child died with signal %d, %s coredump\n", ($? & 127),  ($? & 128) ? 'with' : 'without';
-    } else {
-        printf "child exited with value %d\n", $? >> 8;
-    }
-} unless ($debug or not scalar keys %$pkghash);
+push @cmd, $_ foreach keys %$remove_kernel_packages;
+print "$0: exec: " . join(" ", @cmd) . "\n";
+print "\n";
+tEnd();
+exec { $cmd[0] } @cmd or die "Exec failed: $!\n";
+exit 1;
 
 
-print "$0: done.\n";
-exit 0;
-
-
-
-##  ##
-# ## #
-#bwub#
+######
+######
+######
 ######
 
+
+sub findCurrentKernelPackage {
+    # return value init
+    my $cur_ker_pkg = my $cur_ker_pkg_ver = "";
+
+    # find current kernel vmlinuz file
+    my $uname = `uname -r`; chomp($uname);
+    my $vmlinuz = "/boot/vmlinuz-" . $uname;
+    die "$0: Can't find kernel '$vmlinuz'\n" if (not -e $vmlinuz);
+
+    # find file list for packages
+    tStart("readdir_dpkg_status");
+    my $dpkg_info_path = "/var/lib/dpkg/info";
+    opendir(DIR, $dpkg_info_path) or die "$0: Can't opendir '$dpkg_info_path': $!\n";
+    my @files = grep { /^linux-.*\d+\.\d+.*\.list/ } readdir DIR;
+    closedir(DIR);
+    tEnd();
+
+    # Find kernel package name in dpkg info files
+    tStart("find_curkerpkgname");
+    foreach my $file (reverse sort @files) {
+        my $data = "";
+        my $fqp = $dpkg_info_path ."/". $file;
+        open (FD, "<$fqp") or die "$0: Can't read '$fqp': $!\n";
+        { local $/ = undef; $data = <FD>; close(FD); }
+        if ($data =~ m#^${vmlinuz}$#m) { $file =~ s#\.list$##; $cur_ker_pkg = $file; last; }
+    }
+    die "$0: Couldn't find package providing '$vmlinuz' :(\n" if $cur_ker_pkg eq "";
+    tEnd();
+
+    # Look up package version
+    tStart("find_curkerpkgver");
+    my $pkg_ver_tmp = parseDpkgStatus($cur_ker_pkg);
+    my $num_results = scalar(keys(%$pkg_ver_tmp));
+    die "$0: fetching version of package '$cur_ker_pkg' failed.\n$num_results resukts found != 1 result expected.\n" if ($num_results != 1);
+    tEnd();
+
+    # copy current kernel package version, which is the only key in the result hashref
+    $cur_ker_pkg_ver = (keys %$pkg_ver_tmp)[0];
+
+    return ($cur_ker_pkg, $cur_ker_pkg_ver);
+}
+
+
+sub parseDpkgStatus {
+    my ($specific_pkgmatch) = @_;
+    open(FD, "</var/lib/dpkg/status") or die "$0: Can't read '/var/lib/dpkg/status': $!\n";
+    my $pkg = my $ver = ""; my $ret = {};
+    while (my $line = <FD>) {
+        # Reset with each new package.
+        if ($line =~ m#^$#) { $pkg = $ver = ""; next; }
+
+        # Look up version for specific package if requested.
+        # Package name still has to match the regexp below...
+        next if ($pkg eq "" and defined $specific_pkgmatch and $line !~ m#^Package: $specific_pkgmatch$#);
+
+        # Only look for versioned packages, avoid removing meta packages
+        if ($line =~ m#^Package: (linux-(?:image|headers|restricted|ubuntu|backports)(?:-(?:extra|modules))?-\d+\.\d+.*)#) {
+            $pkg = $1;
+            next;
+        }
+
+        next if $pkg eq "";
+
+        next unless $line =~ m#^Version: (.*)$#;
+        $ver = $1;
+        push @{$$ret{$ver}}, $pkg;
+        $pkg = ""; 
+    }
+    close(FD);
+    return $ret;
+}
+
+
+# wrapper sub for sort {} usage needs prototyping
+sub isNewer ($$) {
+    my ($a, $b) = @_;
+    my $v1 = Dpkg::Version->new($a);
+    my $v2 = Dpkg::Version->new($b);
+    return 1 if ($v1 > $v2);
+    return -1 if ($v1 < $v2);
+    return 0;
+}
 
 
 sub dprint {
     my ($msg, $level) = @_;
-    return if not $debug;
+    return if not $$switch{'debug'};
     $level ||= 1;
     $msg =~ s/\n+$//;
-    print $msg . "\n" if $level <= $debug;
+    print STDERR $msg . "\n" if $level <= $$switch{'debug'};
 }
 
 
+sub tStart {
+    return if not $$switch{'debug'} > 1;
+    my ($tag) = @_;
+    push @timers, $tag;
+    push @timers, [gettimeofday];
+}
 
-sub isnewer ($$) {
-    my ($astr, $bstr) = @_;
-
-    $astr =~ s/-/./g; my ($aver, $amaj, $amin, $arev) = split /\./, $astr;
-    $bstr =~ s/-/./g; my ($bver, $bmaj, $bmin, $brev) = split /\./, $bstr;
-    $aver ||= 0; $amaj ||= 0; $amin ||= 0; $arev ||= 0;
-    $bver ||= 0; $bmaj ||= 0; $bmin ||= 0; $brev ||= 0;
-
-    return 1 if $aver > $bver; return -1 if $bver > $aver;
-    return 1 if $amaj > $bmaj; return -1 if $bmaj > $amaj;
-    return 1 if $amin > $bmin; return -1 if $bmin > $amin;
-    return 1 if $arev > $brev; return -1 if $brev > $arev;
-    return 0;
+sub tEnd {
+    return if not $$switch{'debug'} > 1;
+    my $tod_stamp = pop @timers;
+    my $tag = pop @timers;
+    die "$0: tag/tod undefined. internal error in timing system :(\n"
+        if not defined $tag or not defined $tod_stamp;
+    my $elapsed = tv_interval($tod_stamp);
+    printf "[timer %0.3fsec] %s\n", $elapsed, $tag;
 }
