@@ -31,21 +31,30 @@ my($options) = {
         verbose => 'Multiple --debug increases verbosity and allow non-root users to toy',
         order   => 0
     },
+    'non-interactive' => {
+        type    => '',
+        default => 0,
+        env     => '-',
+        verbose => 'Use for DPkg::Post-Invoke',
+        order   => 1
+    },
     keep => {
         type    => '=i',
         default => 3,
         env     => '-',
         verbose => 'Specify the number of kernels you want to keep',
-        order   => 1
+        order   => 2
     },
     help => {
         type    => '+',
         default => '0',
         env     => '-',
         verbose => 'Print this help',
-        order   => 2
+        order   => 3
     },
 };
+
+$ENV{COLUMNS} = 240;
 
 my($option) = Getopt::Simple -> new();
 
@@ -59,6 +68,11 @@ if ($$switch{'help'} > 0) {
     exit(-1);
 }
 
+if ($$switch{'non-interactive'}) {
+    $ENV{DEBCONF_FRONTEND} = 'noninteractive';
+}
+
+die "$0: Run this as root.\n" if ($< != 0 and not $$switch{'debug'});
 my @timers = (); tStart("main");
 print "$0: Cleaning up kernels.\n";
 
