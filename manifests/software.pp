@@ -239,6 +239,8 @@ class nettools {
     package { "libsqlite3-dev": ensure => latest }
     package { "members": ensure => latest }
 
+    packages { ["libdpkg-perl", "libgetopt-simple-perl"]: ensure => latest }
+
     # packages we don't like
     package { "pppoe": ensure => purged }
     package { "ppp": ensure => purged }
