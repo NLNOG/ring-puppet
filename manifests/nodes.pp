@@ -1774,10 +1774,10 @@ node 'redpilllinpro01' inherits ringnode {
 
 node 'nine01' inherits ringnode {
     $owner = "nine"
-    $location = "47.38340,8.49555"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
-    include set_local_settings                                                  
+    $location = "47.383109,8.495504"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
     include users
 }
 
