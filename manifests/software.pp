@@ -128,7 +128,8 @@ class nettools {
     package { "python-setuptools": ensure => latest }
     package { "virt-what": ensure => latest }
     package { "sl": ensure => purged }
-    package { "mtr": ensure => latest}
+    package { "mtr": ensure => purged}
+    package { "mtr-tiny": ensure => latest}
     package { "nmap": ensure => latest }
     
     exec { "setcap cap_net_raw,cap_net_admin=eip /usr/bin/nmap":
