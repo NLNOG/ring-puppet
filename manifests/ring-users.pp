@@ -3735,4 +3735,15 @@ class users::virtual::ring_users {
 
 ##### END fusix #####
 
+##### BEGIN leasewebcdn #####
+
+    @add_user { 'leasewebcdn':
+        email => 'noc@leaseweb.com',
+        company => 'Leaseweb BV',
+        uid => 5347,
+        groups => ['ring-users'],
+    }
+
+##### END leasewebcdn #####
+
 }
