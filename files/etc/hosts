@@ -7,9 +7,6 @@ ff00::0 ip6-mcastprefix
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 
-# hopefully a temp fix for ipv6-only hosts
-2001:7b8:3:37::21:3 nl.archive.ubuntu.com
-
 2001:1AF8:4013::24  master01.infra.ring.nlnog.net master01 puppet master master.ring.nlnog.net sqa-collector.infra.ring.nlnog.net
 95.211.149.24   master01.infra.ring.nlnog.net master01 puppet master master.ring.nlnog.net sqa-collector.infra.ring.nlnog.net
 
