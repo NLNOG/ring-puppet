@@ -9,16 +9,6 @@ class etcfiles {
         include_src => false,
     }
 
-    file { '/etc/apt/sources.list':
-        owner   => root,
-        group   => root,
-        mode    => 0744,
-        source  => $lsbdistcodename ? {
-            maverick    => "puppet:///files/etc/apt/sources.list",
-            precise     => "puppet:///files/etc/apt/sources.list",
-        }
-    }
-
     file { ['/etc/apt/sources.list.d/master.ring.nlnog.net.list', '/etc/apt/sources.list.d/amp.list']:
         ensure  => absent,
     }
