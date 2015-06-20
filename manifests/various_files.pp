@@ -17,7 +17,6 @@ class etcfiles {
             maverick    => "puppet:///files/etc/apt/sources.list",
             precise     => "puppet:///files/etc/apt/sources.list",
         }
-        notify  => Exec['apt_update'],
     }
 
     file { ['/etc/apt/sources.list.d/master.ring.nlnog.net.list', '/etc/apt/sources.list.d/amp.list']:
