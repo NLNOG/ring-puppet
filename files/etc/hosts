@@ -498,9 +498,6 @@ ff02::2 ip6-allrouters
 2001:418:1::89  rgnet01 rgnet01.ring.nlnog.net
 147.28.0.89 rgnet01 rgnet01.ring.nlnog.net
 
-2a02:1610:2000:2::2 ehsab01 ehsab01.ring.nlnog.net
-178.236.65.26 ehsab01 ehsab01.ring.nlnog.net
-
 2a02:1610:1000:2::2 ehsab02 ehsab02.ring.nlnog.net
 178.236.73.122 ehsab02 ehsab02.ring.nlnog.net
 
