@@ -22,7 +22,10 @@ node basenode {
     $postfix_myorigin = ""
     include postfix
     include resolving
-    class { 'apt': }
+    class { 'apt':
+        purge_sources_list => true,
+        purge_sources_list_d => true,
+    }
     include ring::apt
 }
 
