@@ -20,5 +20,3 @@ deb http://security.ubuntu.com/ubuntu precise-security universe
 deb-src http://security.ubuntu.com/ubuntu precise-security universe
 deb http://security.ubuntu.com/ubuntu precise-security multiverse
 deb-src http://security.ubuntu.com/ubuntu precise-security multiverse
-
-deb http://apt.ring.nlnog.net/deb precise main
