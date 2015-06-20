@@ -4220,3 +4220,48 @@ node 'fusix01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'exanetworks01' inherits ringnode {
+    $owner = "exanetworks"
+    $location = "53.4644732,-2.2475544000000127"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'gigabit01' inherits ringnode {
+    $owner = "gigabit"
+    $location = "55.72760,12.37716"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'altibox01' inherits ringnode {
+    $owner = "altibox"
+    $location = "58.934157,5.740233"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'zitcom01' inherits ringnode {
+    $owner = "zitcom"
+    $location = "56.052986,9.950799"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'bytemark01' inherits ringnode {
+    $owner = "bytemark"
+    $location = "53.980114,-1.130090999999993"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}

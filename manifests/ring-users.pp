@@ -3746,4 +3746,58 @@ class users::virtual::ring_users {
 
 ##### END leasewebcdn #####
 
+##### BEGIN exanetworks #####
+
+    @add_user { 'exanetworks':
+        email => 'noc@exa-networks.co.uk',
+        company => 'Exa Networks',
+        uid => 5348,
+        groups => ['ring-users'],
+    }
+
+##### END exanetworks #####
+
+##### BEGIN gigabit #####
+
+    @add_user { 'gigabit':
+        email => 'noc@gigabit.dk',
+        company => 'Gigabit Aps',
+        uid => 5349,
+        groups => ['ring-users'],
+    }
+
+##### END gigabit #####
+
+##### BEGIN altibox #####
+
+    @add_user { 'altibox':
+        email => 'noc-drift@altibox.no',
+        company => 'Altibox AS',
+        uid => 5350,
+        groups => ['ring-users'],
+    }
+
+##### END altibox #####
+
+##### BEGIN zitcom #####
+
+    @add_user { 'zitcom':
+        email => 'noc@zitcom.dk',
+        company => 'Zitcom A/S',
+        uid => 5351,
+        groups => ['ring-users'],
+    }
+
+##### END zitcom #####
+
+##### BEGIN bytemark #####
+
+    @add_user { 'bytemark':
+        email => 'noc@bytemark.co.uk',
+        company => 'Bytemark Limited',
+        uid => 5352,
+        groups => ['ring-users'],
+    }
+
+##### END bytemark #####
 }

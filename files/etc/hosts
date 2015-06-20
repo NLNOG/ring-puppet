@@ -1175,3 +1175,18 @@ ff02::2 ip6-allrouters
 
 2a00:a7c0:1000:1303::1303  fusix01 fusix01.ring.nlnog.net
 37.139.139.110    fusix01 fusix01.ring.nlnog.net
+
+2a02:b80:2:7:1::1  exanetworks01 exanetworks01.ring.nlnog.net
+82.219.48.9    exanetworks01 exanetworks01.ring.nlnog.net
+
+2a00:7660:0:1::23  gigabit01 gigabit01.ring.nlnog.net
+185.24.168.23    gigabit01 gigabit01.ring.nlnog.net
+
+2a01:798:0:8050::75  altibox01 altibox01.ring.nlnog.net
+109.247.116.75    altibox01 altibox01.ring.nlnog.net
+
+2a02:2338:ff00::705:1  zitcom01 zitcom01.ring.nlnog.net
+94.231.110.110    zitcom01 zitcom01.ring.nlnog.net
+
+2001:41c9:1:41c::9  bytemark01 bytemark01.ring.nlnog.net
+5.28.62.9    bytemark01 bytemark01.ring.nlnog.net
