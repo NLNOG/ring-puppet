@@ -149,7 +149,7 @@ class users::virtual::ring_users {
     email   => 'ralph.smit@nxs.nl',
     company => 'NXS',
     uid     => 5013,
-    groups  => ['ring-users']
+    groups  => ['ring-users'],
     ensure => absent,
 }
 
