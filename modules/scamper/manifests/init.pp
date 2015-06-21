@@ -12,7 +12,7 @@ class scamper {
         source => "puppet:///scamper/run-traces.sh",
         owner => "scamper",
         group => "scamper",
-        mode = "0755",
+        mode => "0755",
         require => User["scamper"],
     }
 
