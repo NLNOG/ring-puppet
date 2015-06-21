@@ -23,10 +23,13 @@ class scamper {
         require => User["scamper"],
     }
 
+    $first = fqdn_rand(30)
+    $second = (fqdn_rand(30) + 30)
+
     cron { "collect_all_traces":
         user => "scamper",
         command => "/usr/bin/sc_attach -p 23456 -c 'trace -p 15' -i /etc/ring/node-list.txt -o /home/scamper/collected/$(hostname)-$(date +%s).warts; gzip -9 /home/scamper/collected/*.warts ; chmod +r /home/scamper/collected/*",
-        minute => ["00","30"],
+        minute => [$first, $second],
         hour => "*",
         require => [Service["scamper"], File["/home/scamper/collected/"]],
     }
