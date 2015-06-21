@@ -8,11 +8,19 @@ class scamper {
         source => "puppet:///scamper/upstart-scamper.conf",
     }
 
+    file { "/home/scamper/run-traces.sh":
+        source => "puppet:///scamper/run-traces.sh",
+        owner => "scamper",
+        group => "scamper",
+        mode = "0755",
+        require => User["scamper"],
+    }
+
     service { "scamper":
         ensure      => 'running',
         provider    => 'upstart',
         require     => [Package['scamper'], File['/etc/init/scamper.conf']],
-        restart     => "stop scamper; start scamper",
+        restart     => "restart scamper",
         subscribe   => File["/etc/init/scamper.conf"],
     }
 
@@ -28,10 +36,10 @@ class scamper {
 
     cron { "collect_all_traces":
         user => "scamper",
-        command => "/usr/bin/sc_attach -p 23456 -c trace -i /etc/ring/node-list.txt -o /home/scamper/collected/$(hostname)-$(date +%s).warts; gzip -9 /home/scamper/collected/*.warts ; chmod +r /home/scamper/collected/*",
+        command => "/home/scamper/run-traces.sh",
         minute => [$first, $second],
         hour => "*",
-        require => [Service["scamper"], File["/home/scamper/collected/"]],
+        require => [Service["scamper"], File["/home/scamper/collected/"], File["/home/scamper/run-traces.sh"]],
     }
 
     cron { "clean_scamper":
