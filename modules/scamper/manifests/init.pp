@@ -30,4 +30,12 @@ class scamper {
         hour => "*",
         require => [Service["scamper"], File["/home/scamper/collected/"]],
     }
+
+    cron { "clean_scamper":
+        user => "scamper",
+        command => "find /home/scamper/collected/* -mtime +8 -exec rm {} \;",
+        minute => "10",
+        hour => "00",
+        require => FIle["/home/scamper/collected/"],
+    }
 }
