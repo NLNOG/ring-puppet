@@ -17,6 +17,10 @@ nameserver ::1
         before  => File["/etc/init.d/unbound"],
     }
 
+    package { "bind9":
+        ensure => purged,
+    }
+
     file { "/etc/init/unbound.conf":
         ensure  => absent,
     }
