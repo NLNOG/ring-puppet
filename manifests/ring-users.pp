@@ -145,6 +145,14 @@ class users::virtual::ring_users {
     ensure  => absent,
 }
 
+@add_user { 'nxs':
+    email   => 'ralph.smit@nxs.nl',
+    company => 'NXS',
+    uid     => 5013,
+    groups  => ['ring-users']
+    ensure => absent,
+}
+
 ##### END former users #####
 
 ##### BEGIN intouch #####
@@ -269,17 +277,6 @@ class users::virtual::ring_users {
 
 ##### END leaseweb #####
  
-##### BEGIN nxs #####
-
-    @add_user { 'nxs':
-        email   => 'ralph.smit@nxs.nl',
-        company => 'NXS',
-        uid     => 5013,
-        groups  => ['ring-users']
-    }
-
-##### END nxs #####
- 
 ##### BEGIN xs4all #####
  
     @add_user { 'xs4all':
@@ -312,6 +309,17 @@ class users::virtual::ring_users {
     }
 
 ##### END nlnogbot #####
+
+##### BEGIN scamper #####
+
+    @add_user { 'scamper':
+        email   => 'ring-admins@ring.nlnog.net',
+        company => 'Scamper Collector',
+        uid     => 2001,
+        groups  => ['ring-users'],
+    }
+
+##### END scamper #####
 
 ##### BEGIN oxilion #####
 

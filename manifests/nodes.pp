@@ -784,15 +784,6 @@ node 'leaseweb01' inherits ringnode {
 	include users
 }
 
-node 'nxs01' inherits ringnode {
-    $owner = "nxs"
-    $location = "52.393200,4.847546"
-    include nagios::target::fqdn
-    include nagios_services
-    include set_local_settings
-	include users
-}
-
 node 'xs4all01' inherits ringnode {
     $owner = "xs4all"
     $location = "52.336353,4.886652"
