@@ -30,13 +30,12 @@ class scamper {
         require => User["scamper"],
     }
 
-    $first = fqdn_rand(30)
-    $second = (fqdn_rand(30) + 30)
+    $first = fqdn_rand(60)
 
     cron { "collect_all_traces":
         user => "scamper",
         command => "/home/scamper/run-traces.sh",
-        minute => [$first, $second],
+        minute => $first,
         hour => "*",
         require => [Service["scamper"], File["/home/scamper/collected/"], File["/home/scamper/run-traces.sh"]],
     }
