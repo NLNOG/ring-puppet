@@ -1,6 +1,6 @@
 class scamper {
 
-    package { 'scamper':
+    package { ['scamper', 'libscamperfile0']:
         ensure      => 'latest',
     }
 
