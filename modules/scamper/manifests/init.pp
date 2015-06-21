@@ -28,7 +28,7 @@ class scamper {
 
     cron { "collect_all_traces":
         user => "scamper",
-        command => "/usr/bin/sc_attach -p 23456 -c 'trace -p 15' -i /etc/ring/node-list.txt -o /home/scamper/collected/$(hostname)-$(date +%s).warts; gzip -9 /home/scamper/collected/*.warts ; chmod +r /home/scamper/collected/*",
+        command => "/usr/bin/sc_attach -p 23456 -c trace -i /etc/ring/node-list.txt -o /home/scamper/collected/$(hostname)-$(date +%s).warts; gzip -9 /home/scamper/collected/*.warts ; chmod +r /home/scamper/collected/*",
         minute => [$first, $second],
         hour => "*",
         require => [Service["scamper"], File["/home/scamper/collected/"]],
