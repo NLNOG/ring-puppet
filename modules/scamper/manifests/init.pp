@@ -24,11 +24,19 @@ class scamper {
     }
 
     file { "/home/scamper/collected/":
+        ensure => absent,
+        recurse => true,
+        purge => true,
+        force => true,
+    }
+
+    file { "/home/scamper/traces/":
         ensure => directory,
         owner => "scamper",
         group => "scamper",
         require => User["scamper"],
     }
+
 
     $first = fqdn_rand(60)
 
