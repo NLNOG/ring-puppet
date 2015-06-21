@@ -43,6 +43,7 @@ node ringnode inherits basenode {
         source  => "puppet:///files/etc/puppet/puppet.conf"
     }
     include ring_sqa
+    include scamper
     include uninstall_amp
 }
 

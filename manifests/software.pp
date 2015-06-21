@@ -70,9 +70,7 @@ class nettools {
     package { "iperf":
         ensure => latest,
     }
-    package { "scamper":
-        ensure => latest,
-    }
+
     package { ["iputils-ping", "iputils-tracepath"]:
         ensure => latest,
     }
