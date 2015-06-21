@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-/usr/bin/sc_attach -p 23456 -c 'trace' -i /etc/ring/node-list.txt -o /home/scamper/collected/$(hostname)-$(date +%s).warts
-gzip -9 /home/scamper/collected/*.warts
-chmod +r /home/scamper/collected/*
+filename="$(hostname)-$(date +%s).warts"
 
+/usr/bin/sc_attach -p 23456 -c 'trace' -i /etc/ring/node-list.txt -o /tmp/$$.${filename} && \
+    mv /tmp/$$.${filename} /home/scamper/collected/${filename} && \
+    gzip /home/scamper/collected/${filename}
