@@ -12,7 +12,7 @@ class scamper {
         ensure      => 'running',
         provider    => 'upstart',
         require     => [Package['scamper'], File['/etc/init/scamper.conf']],
-        restart     => "restart scamper",
+        restart     => "stop scamper; start scamper",
         subscribe   => File["/etc/init/scamper.conf"],
     }
 
