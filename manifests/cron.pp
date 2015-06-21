@@ -92,4 +92,11 @@ class cronjobs {
         minute  => $second,
         require => File["/usr/local/bin/ring-fetch-nodes-json"],
     }
+
+    cron {
+        "list_of_nodes":
+        command => "grep ring.nlnog /etc/hosts | grep -v infra.ring.nlnog | cut -d' ' -f1 | sort -V > /etc/ring/node-list.txt",
+        user => root,
+        minute $second,
+    }
 }
