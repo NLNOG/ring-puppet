@@ -15,4 +15,18 @@ class scamper {
         restart     => "restart scamper",
     }
 
+    file { "/home/scamper/collected/":
+        ensure => directory,
+        owner => "scamper",
+        group => "scamper",
+        require => User["scamper"],
+    }
+
+    cron { "collect_all_traces":
+        user => "scamper",
+        command => "/usr/bin/sc_attach -p 23456 -c trace -i /etc/ring/node-list.txt -o /home/scamper/collected/$(hostname)-$(date +%s).warts; chmod +r /home/scamper/collected/*",
+        minute => "00,30",
+        hour => "*",
+        require => [File["/opt/traceroute-archive"], Service["scamper"], File["/home/scamper/collected/"]],
+    }
 }
