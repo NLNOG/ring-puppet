@@ -3808,4 +3808,16 @@ class users::virtual::ring_users {
     }
 
 ##### END bytemark #####
+
+##### BEGIN call27 #####
+
+    @add_user { 'call27':
+        email => 'noc@call27.net',
+        company => 'Call27',
+        uid => 5353,
+        groups => ['ring-users'],
+    }
+
+##### END call27 #####
+
 }

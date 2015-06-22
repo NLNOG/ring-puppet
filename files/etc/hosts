@@ -1181,3 +1181,6 @@ ff02::2 ip6-allrouters
 
 2001:41c9:1:41c::9  bytemark01 bytemark01.ring.nlnog.net
 5.28.62.9    bytemark01 bytemark01.ring.nlnog.net
+
+2a06:2e00::1:0:e0b7:4cda  call2701 call2701.ring.nlnog.net
+91.231.144.121    call2701 call2701.ring.nlnog.net
