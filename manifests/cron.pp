@@ -85,12 +85,17 @@ class cronjobs {
         minute => "42",
     }
 
+    file { "/etc/ring/":
+        ensure => directory,
+    }
+
     cron {
         "nodesjsonfetcher":
         command => "/usr/local/bin/ring-fetch-nodes-json",
         user    => root,
         minute  => $second,
         require => File["/usr/local/bin/ring-fetch-nodes-json"],
+        require => File["/etc/ring/"],
     }
 
     cron {
@@ -98,5 +103,6 @@ class cronjobs {
         command => "grep ring.nlnog /etc/hosts | grep -v infra.ring.nlnog | cut -d' ' -f1 | sort -V > /etc/ring/node-list.txt",
         user => root,
         minute => $second,
+        require => File["/etc/ring/"],
     }
 }
