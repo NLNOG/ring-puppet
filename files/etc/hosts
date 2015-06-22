@@ -1184,3 +1184,6 @@ ff02::2 ip6-allrouters
 
 2a06:2e00::1:0:e0b7:4cda  call2701 call2701.ring.nlnog.net
 91.231.144.121    call2701 call2701.ring.nlnog.net
+
+2a03:5880:101:5::82  iptron01 iptron01.ring.nlnog.net
+188.227.249.82    iptron01 iptron01.ring.nlnog.net

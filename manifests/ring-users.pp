@@ -3820,4 +3820,14 @@ class users::virtual::ring_users {
 
 ##### END call27 #####
 
+##### BEGIN iptron #####
+
+    @add_user { 'iptron':
+        email => 'noc@iptron.net',
+        company => 'IPTRON.NET',
+        uid => 5354,
+        groups => ['ring-users'],
+    }
+
+##### END iptron #####
 }

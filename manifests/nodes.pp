@@ -4266,3 +4266,12 @@ node 'call2701' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'iptron01' inherits ringnode {
+    $owner = "iptron"
+    $location = "59.436219,24.704990"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
