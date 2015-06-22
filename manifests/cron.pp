@@ -94,8 +94,7 @@ class cronjobs {
         command => "/usr/local/bin/ring-fetch-nodes-json",
         user    => root,
         minute  => $second,
-        require => File["/usr/local/bin/ring-fetch-nodes-json"],
-        require => File["/etc/ring/"],
+        require => [File["/usr/local/bin/ring-fetch-nodes-json"], File["/etc/ring/"]],
     }
 
     cron {
