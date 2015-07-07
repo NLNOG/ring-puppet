@@ -3830,4 +3830,17 @@ class users::virtual::ring_users {
     }
 
 ##### END iptron #####
+
+##### BEGIN euronet #####
+
+    @add_user { 'euronet':
+        email => 'dl-network.operations@euronet.com',
+        company => 'Euronet Communications BV',
+        uid => 5355,
+        groups => ['ring-users'],
+    }
+
+##### END euronet #####
+
+
 }

@@ -4275,3 +4275,13 @@ node 'iptron01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'euronet01' inherits ringnode {
+    $owner = "euronet"
+    $location = "52.345587,4.832434"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

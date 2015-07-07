@@ -1187,3 +1187,7 @@ ff02::2 ip6-allrouters
 
 2a03:5880:101:5::82  iptron01 iptron01.ring.nlnog.net
 188.227.249.82    iptron01 iptron01.ring.nlnog.net
+
+2a02:2500:0000:040B::5  euronet01 euronet01.ring.nlnog.net
+194.134.192.4    euronet01 euronet01.ring.nlnog.net
+
