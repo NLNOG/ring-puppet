@@ -289,26 +289,20 @@ class local_binaries {
         source  => "puppet:///files/usr/local/bin/ring-fetch-nodes-json",
         ensure => present,
     }
-    file { "/usr/sbin/purgekernel":
-        ensure  => absent,
+
+    package { "purgekernels":
+        ensure => latest,
     }
-    file { "/usr/sbin/purgekernels":
-        owner   => root,
-        group   => root,
-        mode    => 0755,
-        source  => "puppet:///files/usr/sbin/purgekernels",
-        ensure => present,
-    }
-    file { "/etc/apt/apt.conf.d/88pergekernels":
-        ensure  => absent,
-    }
+
     file { "/etc/apt/apt.conf.d/88purgekernels":
         owner   => root,
         group   => root,
         mode    => 0755,
         source  => "puppet:///files/etc/apt/apt.conf.d/88purgekernels",
         ensure => present,
+        require => Package["purgekernels"],
     }
+
     file { "/etc/dhcp":
         ensure => directory,
         mode   => "755";
