@@ -4285,3 +4285,12 @@ node 'euronet01' inherits ringnode {
     include users
 }
 
+node 'ism01' inherits ringnode {
+    $owner = "ism"
+    $location = "52.40034381020145,4.843141436576843"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

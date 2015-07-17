@@ -3842,5 +3842,15 @@ class users::virtual::ring_users {
 
 ##### END euronet #####
 
+##### BEGIN ism #####
+
+    @add_user { 'ism':
+        email => 'hosting@ism.nl',
+        company => 'ISM eCompany',
+        uid => 5356,
+        groups => ['ring-users'],
+    }
+
+##### END ism #####
 
 }
