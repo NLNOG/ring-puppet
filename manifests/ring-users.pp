@@ -3853,4 +3853,15 @@ class users::virtual::ring_users {
 
 ##### END ism #####
 
+##### BEGIN sonic #####
+
+    @add_user { 'sonic':
+        email => 'noc@sonic.net',
+        company => 'Sonic',
+        uid => 5357,
+        groups => ['ring-users'],
+    }
+
+##### END sonic #####
+
 }

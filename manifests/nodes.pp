@@ -4294,3 +4294,12 @@ node 'ism01' inherits ringnode {
     include users
 }
 
+node 'sonic01' inherits ringnode {
+    $owner = "sonic"
+    $location = "38.419232,-122.751613"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

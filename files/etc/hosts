@@ -1194,3 +1194,6 @@ ff02::2 ip6-allrouters
 2a02:bd0:2:2::2  ism01 ism01.ring.nlnog.net
 178.248.168.142    ism01 ism01.ring.nlnog.net
 
+2001:5a8:201:4::2  sonic01 sonic01.ring.nlnog.net
+70.36.170.6    sonic01 sonic01.ring.nlnog.net
+
