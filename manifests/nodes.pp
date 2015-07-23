@@ -4303,3 +4303,11 @@ node 'sonic01' inherits ringnode {
     include users
 }
 
+node 'sabay01' inherits ringnode {
+    $owner = "sabay"
+    $location = "11.55810,104.92039"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}

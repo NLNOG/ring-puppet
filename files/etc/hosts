@@ -1197,3 +1197,5 @@ ff02::2 ip6-allrouters
 2001:5a8:201:4::2  sonic01 sonic01.ring.nlnog.net
 70.36.170.6    sonic01 sonic01.ring.nlnog.net
 
+2405:aa00:4:298::190  sabay01 sabay01.ring.nlnog.net
+118.67.200.190    sabay01 sabay01.ring.nlnog.net

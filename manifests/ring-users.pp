@@ -3864,4 +3864,15 @@ class users::virtual::ring_users {
 
 ##### END sonic #####
 
+##### BEGIN sabay #####
+
+    @add_user { 'sabay':
+        email => 'engineering.kh@sabay.com',
+        company => 'Sabay Digital Corporation',
+        uid => 5358,
+        groups => ['ring-users'],
+    }
+
+##### END sabay #####
+
 }
