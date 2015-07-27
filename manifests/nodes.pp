@@ -4311,3 +4311,12 @@ node 'sabay01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'coreinternet01' inherits ringnode {
+    $owner = "coreinternet"
+    $location = "50.848180,-1.166411"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}

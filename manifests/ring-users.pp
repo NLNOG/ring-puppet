@@ -3875,4 +3875,15 @@ class users::virtual::ring_users {
 
 ##### END sabay #####
 
+##### BEGIN coreinternet #####
+
+    @add_user { 'coreinternet':
+        email => 'noc@coreinternet.net',
+        company => 'Core Internet Limited',
+        uid => 5359,
+        groups => ['ring-users'],
+    }
+
+##### END coreinternet #####
+
 }

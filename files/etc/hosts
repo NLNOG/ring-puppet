@@ -1199,3 +1199,6 @@ ff02::2 ip6-allrouters
 
 2405:aa00:4:298::190  sabay01 sabay01.ring.nlnog.net
 118.67.200.190    sabay01 sabay01.ring.nlnog.net
+
+2a05:b480:300::2  coreinternet01 coreinternet01.ring.nlnog.net
+185.86.20.92    coreinternet01 coreinternet01.ring.nlnog.net
