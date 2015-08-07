@@ -3897,5 +3897,16 @@ class users::virtual::ring_users {
 
 ##### END teleweb #####
 
+##### BEGIN tfskok #####
+
+    @add_user { 'tfskok':
+        email => 'root@hsoit.pl',
+        company => 'TF SKOK S.A.',
+        uid => 5361,
+        groups => ['ring-users'],
+    }
+
+##### END tfskok #####
+
 
 }

@@ -1215,3 +1215,6 @@ ff02::2 ip6-allrouters
 2a03:1980:d0ff:0:185:77:198:16  teleweb01 teleweb01.ring.nlnog.net
 185.77.198.16    teleweb01 teleweb01.ring.nlnog.net
 
+2001:67c:24c::b  tfskok01 tfskok01.ring.nlnog.net
+91.212.242.244    tfskok01 tfskok01.ring.nlnog.net
+

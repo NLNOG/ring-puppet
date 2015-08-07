@@ -4357,3 +4357,12 @@ node 'teleweb01' inherits ringnode {
     include users
 }
 
+node 'tfskok01' inherits ringnode {
+    $owner = "tfskok"
+    $location = "54.489418,18.545387"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
