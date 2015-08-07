@@ -81,19 +81,19 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
     } 
     # for regular users use the ssh key file that comes from 
     # auth.infra.ring.nlnog.net
-    elsif ($groups !~ /ring-admins/) and ($ensure == "present" and $username != "dave") {
+    elsif ($groups !~ /ring-admins/) and ($ensure == "present" and $username != "dave") and ($username in $fqdn) {
         $file_sshkeys = "/opt/keys/${username}.sshkeys"
         $tmp_sshkeys = inline_template("<%= `/bin/cat #{file_sshkeys}` %>")
         $array_sshkeys = split($tmp_sshkeys, "\n")
         @authorized_keys { "$username":
             sshkeys => $array_sshkeys,
         }
-    } elsif ($groups !~ /ring-admins/) and ($ensure == "absent") {
+    } elsif ($groups !~ /ring-admins/) {
         # delete the ssh key file if they are not part of the ring
         file { "/home/${username}/.ssh/authorized_keys":
             ensure  => absent,    
         }
-    }
+    } 
 }
 
 define authorized_keys ($sshkeys, $ensure = "present", $home = '') {
