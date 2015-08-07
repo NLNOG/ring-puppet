@@ -4320,3 +4320,31 @@ node 'coreinternet01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'upcloud02' inherits ringnode {
+    $owner = "upcloud"
+    $location = "50.097852,8.689811"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'upcloud03' inherits ringnode {
+    $owner = "upcloud"
+    $location = "51.512431,-0.107398"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'upcloud04' inherits ringnode {
+    $owner = "upcloud"
+    $location = "41.862632,-87.666924"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

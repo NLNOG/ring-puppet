@@ -1202,3 +1202,13 @@ ff02::2 ip6-allrouters
 
 2a05:b480:300::2  coreinternet01 coreinternet01.ring.nlnog.net
 185.86.20.92    coreinternet01 coreinternet01.ring.nlnog.net
+
+2a04:3542:1000:910:a8aa:aaff:fea0:4c3a  upcloud02 upcloud02.ring.nlnog.net
+94.237.24.27    upcloud02 upcloud02.ring.nlnog.net
+
+2a04:3541:1000:500:a8aa:aaff:fea0:6ffe  upcloud03 upcloud03.ring.nlnog.net
+83.136.252.93    upcloud03 upcloud03.ring.nlnog.net
+
+2605:7380:1000:1310:a8aa:aaff:fea0:23a4  upcloud04 upcloud04.ring.nlnog.net
+38.100.118.29    upcloud04 upcloud04.ring.nlnog.net
+
