@@ -153,6 +153,14 @@ class users::virtual::ring_users {
     ensure => absent,
 }
 
+@add_user { 'backbone':
+    email => 'afink@backbone.is',
+    company => 'Backbone ehf',
+    uid => 5131,
+    groups => ['ring-users'],
+    ensure => absent,
+}
+
 ##### END former users #####
 
 ##### BEGIN intouch #####
@@ -1454,17 +1462,6 @@ class users::virtual::ring_users {
     }
 
 ##### END kordia #####
-
-##### BEGIN backbone #####
-
-    @add_user { 'backbone':
-        email => 'afink@backbone.is',
-        company => 'Backbone ehf',
-        uid => 5131,
-        groups => ['ring-users'],
-    }
-
-##### END backbone #####
 
 ##### BEGIN nexellent #####
 

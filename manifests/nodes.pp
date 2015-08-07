@@ -2021,24 +2021,6 @@ node 'kordia01' inherits ringnode {
     $nagios_ping_rate = '!400.0,20%!600.0,60%'
 }
 
-node 'backbone01' inherits ringnode {
-    $owner = "backbone"
-    $location = "47.515065,7.617669"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
-    include set_local_settings                                             
-    include users
-}
-
-node 'backbone02' inherits ringnode {
-    $owner = "backbone"
-    $location = "64.145045,-21.907747"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
-    include set_local_settings                                             
-    include users
-}
-
 node 'nexellent01' inherits ringnode {
     $owner = "nexellent"
     $location = "47.432544,8.557972"

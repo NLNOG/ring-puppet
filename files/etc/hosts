@@ -453,12 +453,6 @@ ff02::2 ip6-allrouters
 124.157.73.94   kordia01    kordia01.ring.nlnog.net
 2404:6c00:1:f::2    kordia01    kordia01.ring.nlnog.net
 
-85.195.198.15   backbone01  backbone01.ring.nlnog.net
-2001:4b28:198:0:21c:42ff:fe2a:d38a  backbone01    backbone01.ring.nlnog.net
-
-79.134.255.159  backbone02  backbone02.ring.nlnog.net
-2a01:528:2000:0:21c:42ff:fe4a:c3a0  backbone02  backbone02.ring.nlnog.net
-
 217.147.213.237 nexellent01 nexellent01.ring.nlnog.net
 2001:4168:babe:2::2 nexellent01 nexellent01.ring.nlnog.net
 
