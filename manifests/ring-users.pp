@@ -3886,4 +3886,16 @@ class users::virtual::ring_users {
 
 ##### END coreinternet #####
 
+##### BEGIN teleweb #####
+
+    @add_user { 'teleweb':
+        email => 'tech@teleweb.be',
+        company => 'Teleweb',
+        uid => 5360,
+        groups => ['ring-users'],
+    }
+
+##### END teleweb #####
+
+
 }

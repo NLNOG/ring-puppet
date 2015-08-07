@@ -4348,3 +4348,12 @@ node 'upcloud04' inherits ringnode {
     include users
 }
 
+node 'teleweb01' inherits ringnode {
+    $owner = "teleweb"
+    $location = "51.120123,4.017047"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
