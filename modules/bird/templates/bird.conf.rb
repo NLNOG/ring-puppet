@@ -38,6 +38,8 @@ protocol bgp <%= peer[0] %> from peers {
     neighbor <%= peer[1] %> as <%= peer[2] %>;
 }
 
+<% end %>
+
 protocol bgp nagrafeed1 {
     neighbor 213.244.194.101 as 200584;
     add paths;
@@ -52,6 +54,3 @@ protocol bgp nagrafeed1 {
     import none;
     export all;
 }
-
-<% end %>
-
