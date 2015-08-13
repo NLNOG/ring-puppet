@@ -38,5 +38,20 @@ protocol bgp <%= peer[0] %> from peers {
     neighbor <%= peer[1] %> as <%= peer[2] %>;
 }
 
+protocol bgp nagrafeed1 {
+    neighbor 213.244.194.101 as 200584;
+    add paths;
+    multihop;
+    local as 199036;
+    hold time 240;
+    startup hold time 240;
+    connect retry time 120;
+    start delay time 5;
+    error forget time 0;
+    source address <%= ipaddress %>;
+    import none;
+    export all;
+}
+
 <% end %>
 
