@@ -4348,3 +4348,12 @@ node 'tfskok01' inherits ringnode {
     include users
 }
 
+node 'mtwentyfourseven01' inherits ringnode {
+    $owner = "mtwentyfourseven"
+    $location = "53.4614821,-2.3244391"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

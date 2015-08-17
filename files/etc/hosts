@@ -1212,3 +1212,6 @@ ff02::2 ip6-allrouters
 2001:67c:24c::b  tfskok01 tfskok01.ring.nlnog.net
 91.212.242.244    tfskok01 tfskok01.ring.nlnog.net
 
+2A01:300:666:0::2  mtwentyfourseven01 mtwentyfourseven01.ring.nlnog.net
+176.10.80.18    mtwentyfourseven01 mtwentyfourseven01.ring.nlnog.net
+

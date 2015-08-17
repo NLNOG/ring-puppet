@@ -3905,5 +3905,15 @@ class users::virtual::ring_users {
 
 ##### END tfskok #####
 
+##### BEGIN mtwentyfourseven #####
+
+    @add_user { 'mtwentyfourseven':
+        email => 'noc@m247.com',
+        company => 'M247 Limited',
+        uid => 5362,
+        groups => ['ring-users'],
+    }
+
+##### END mtwentyfourseven #####
 
 }
