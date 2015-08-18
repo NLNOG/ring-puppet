@@ -1068,16 +1068,6 @@ node 'rootlu01' inherits ringnode {
     $nagios_ping_rate = '!300.0,20%!400.0,60%'
 }
 
-node 'globalaxs01' inherits ringnode {
-    $owner = "globalaxs"
-    $location = "53.461365,-2.324666"
-    $nagios_ping_rate = '!200.0,20%!400.0,60%'
-    include nagios::target::fqdn
-    include nagios_services
-    include set_local_settings
-	include users
-}
-
 node 'nebula01' inherits ringnode {
     $owner = "nebula"
     $location = "60.218018,24.879240"
@@ -4342,6 +4332,15 @@ node 'teleweb01' inherits ringnode {
 node 'tfskok01' inherits ringnode {
     $owner = "tfskok"
     $location = "54.489418,18.545387"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'mtwentyfourseven01' inherits ringnode {
+    $owner = "mtwentyfourseven"
+    $location = "53.4614821,-2.3244391"
     include nagios::target::fqdn
     include nagios_services
     include set_local_settings

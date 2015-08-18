@@ -161,6 +161,14 @@ class users::virtual::ring_users {
     ensure => absent,
 }
 
+@add_user { 'globalaxs':
+    email => 'nmc@m247.com',
+    company => 'GlobalAXS Communications Ltd',
+    uid => 5051,
+    groups => ['ring-users'],
+    ensure => absent,
+}
+
 ##### END former users #####
 
 ##### BEGIN intouch #####
@@ -659,17 +667,6 @@ class users::virtual::ring_users {
     }
 
 ##### END rootlu #####
-
-##### BEGIN globalaxs #####
-
-    @add_user { 'globalaxs':
-        email => 'nmc@m247.com',
-        company => 'GlobalAXS Communications Ltd',
-        uid => 5051,
-        groups => ['ring-users'],
-    }
-
-##### END globalaxs #####
 
 ##### BEGIN nebula #####
 
@@ -3905,5 +3902,15 @@ class users::virtual::ring_users {
 
 ##### END tfskok #####
 
+##### BEGIN mtwentyfourseven #####
+
+    @add_user { 'mtwentyfourseven':
+        email => 'noc@m247.com',
+        company => 'M247 Limited',
+        uid => 5362,
+        groups => ['ring-users'],
+    }
+
+##### END mtwentyfourseven #####
 
 }
