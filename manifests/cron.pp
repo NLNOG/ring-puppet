@@ -8,6 +8,12 @@ class mastercronjobs {
         user    => root,
         ensure  => present,
     }
+    cron { correlate_sqa:
+        command => "/var/www/ring.nlnog.net/sqa_collector/sqa_correlator.py",
+        minute  => "*/5",
+        user    => root,
+        ensure  => present,
+    }
 }
 
 # Ugly workaround to keep IPv6 on VMs alive
