@@ -264,6 +264,9 @@ class nettools {
             default => purged,
         }
     }
+
+    # lochii request
+    package { "jq": ensure => latest }
 }
 
 class nlnogrepokey {
