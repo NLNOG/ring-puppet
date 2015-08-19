@@ -10,7 +10,7 @@ class mastercronjobs {
     }
     cron { correlate_sqa:
         command => "/var/www/ring.nlnog.net/sqa_collector/sqa_correlator.py",
-        minute  => "*/15",
+        minute  => "*",
         user    => root,
         ensure  => present,
     }
