@@ -952,7 +952,7 @@ ff02::2 ip6-allrouters
 209.59.185.5    liquidweb01 liquidweb01.ring.nlnog.net
 
 2620:13:4000:8000:e8:d6ff:fec2:dcd5  riseup01 riseup01.ring.nlnog.net
-199.254.237.43    riseup01 riseup01.ring.nlnog.net
+199.254.238.43  riseup01 riseup01.ring.nlnog.net
 
 165.254.255.12  ntt02   ntt02.ring.nlnog.net
 2001:728:1808::12   ntt02   ntt02.ring.nlnog.net
