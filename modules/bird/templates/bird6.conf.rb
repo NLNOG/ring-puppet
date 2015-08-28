@@ -10,11 +10,17 @@ router id <%= ipaddress %>;
 
 timeformat protocol iso long;
 
-# prefer to expose non-AS23456 paths as primary path when available
 filter lookingglass_in {
+    # prefer to expose non-AS23456 paths as primary path when available
     if (bgp_path.last = 23456) then {
         bgp_local_pref = 10;
     }
+
+    # ignore defaults
+    if (net = ::/0) then {
+        reject;
+    }
+
     accept;
 }
 
