@@ -38,7 +38,7 @@ class scamper {
         command => "/home/scamper/run-traces.sh",
         minute => $first,
         hour => "*",
-        require => [Service["scamper"], File["/home/scamper/collected/"], File["/home/scamper/run-traces.sh"]],
+        require => [Service["scamper"], File["/home/scamper/traces/"], File["/home/scamper/run-traces.sh"]],
     }
 
     cron { "clean_scamper":
