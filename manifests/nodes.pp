@@ -601,6 +601,8 @@ node 'worker03.infra' inherits infranode {
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
 
+    include scamper::collector
+
 # give Brendon access for AMP
 ##### BEGIN brendon-wand #####
 
