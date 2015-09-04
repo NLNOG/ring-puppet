@@ -23,13 +23,6 @@ class scamper {
         subscribe   => File["/etc/init/scamper.conf"],
     }
 
-    file { "/home/scamper/collected/":
-        ensure => absent,
-        recurse => true,
-        purge => true,
-        force => true,
-    }
-
     file { "/home/scamper/traces/":
         ensure => directory,
         owner => "scamper",
@@ -54,5 +47,6 @@ class scamper {
         minute => "10",
         hour => "00",
         require => FIle["/home/scamper/collected/"],
+        ensure => absent,
     }
 }
