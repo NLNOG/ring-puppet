@@ -49,4 +49,18 @@ class scamper {
         require => FIle["/home/scamper/collected/"],
         ensure => absent,
     }
+
+    @@line { "scamper_target_${fqdn}":
+        file    => "/home/scamper/scamper-hosts",
+        line    => "${fqdn}",
+        tag     => "scamper_collector",
+        ensure  => present,
+    }
+
+}
+
+class scamper_collector {
+    
+    Line <<| tag == "scamper_collector" |>>
+
 }
