@@ -59,7 +59,7 @@ class scamper {
 
 }
 
-class scamper_collector {
+class scamper::collector {
     
     Line <<| tag == "scamper_collector" |>>
 
