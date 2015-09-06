@@ -735,7 +735,7 @@ ff02::2 ip6-allrouters
 2a00:1238:4:2c:3::2  2connect01 2connect01.ring.nlnog.net
 109.205.75.161    2connect01 2connect01.ring.nlnog.net
 
-2a00:7fc0:4000:12::10  syseleven01 syseleven01.ring.nlnog.net
+2a00:7fc0:4000:13::9    syseleven01 syseleven01.ring.nlnog.net
 37.123.105.109    syseleven01 syseleven01.ring.nlnog.net
 
 2a01:a680:a1:10:1:60::  vertixo01 vertixo01.ring.nlnog.net
