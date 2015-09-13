@@ -1212,3 +1212,9 @@ ff02::2 ip6-allrouters
 2A01:300:666:0::2  mtwentyfourseven01 mtwentyfourseven01.ring.nlnog.net
 176.10.80.18    mtwentyfourseven01 mtwentyfourseven01.ring.nlnog.net
 
+2607:f758:8080:0:250:56ff:feaf:3c80  peakten02 peakten02.ring.nlnog.net
+64.239.240.36    peakten02 peakten02.ring.nlnog.net
+
+2607:f758:d040:0:250:56ff:fe92:544c  peakten03 peakten03.ring.nlnog.net
+68.71.96.252    peakten03 peakten03.ring.nlnog.net
+
