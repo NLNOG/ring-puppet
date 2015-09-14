@@ -1221,3 +1221,6 @@ ff02::2 ip6-allrouters
 2a05:e580:105:1014::2  switchco01 switchco01.ring.nlnog.net
 185.91.9.17    switchco01 switchco01.ring.nlnog.net
 
+2604:4600:b01:6122::2  nodesdirect01 nodesdirect01.ring.nlnog.net
+23.92.92.198    nodesdirect01 nodesdirect01.ring.nlnog.net
+

@@ -3924,4 +3924,15 @@ class users::virtual::ring_users {
 
 ##### END switchco #####
 
+##### BEGIN nodesdirect #####
+
+    @add_user { 'nodesdirect':
+        email => 'noc@nodesdirect.com',
+        company => 'Nodes Direct Holdings, LLC',
+        uid => 5364,
+        groups => ['ring-users'],
+    }
+
+##### END nodesdirect #####
+
 }
