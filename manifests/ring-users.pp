@@ -3913,4 +3913,15 @@ class users::virtual::ring_users {
 
 ##### END mtwentyfourseven #####
 
+##### BEGIN switchco #####
+
+    @add_user { 'switchco':
+        email => 'noc@switch.co',
+        company => 'Switch.co',
+        uid => 5363,
+        groups => ['ring-users'],
+    }
+
+##### END switchco #####
+
 }

@@ -4367,3 +4367,12 @@ node 'peakten03' inherits ringnode {
     include users
 }
 
+node 'switchco01' inherits ringnode {
+    $owner = "switchco"
+    $location = "52.354626,4.961590"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

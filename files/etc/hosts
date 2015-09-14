@@ -1218,3 +1218,6 @@ ff02::2 ip6-allrouters
 2607:f758:d040:0:250:56ff:fe92:544c  peakten03 peakten03.ring.nlnog.net
 68.71.96.252    peakten03 peakten03.ring.nlnog.net
 
+2a05:e580:105:1014::2  switchco01 switchco01.ring.nlnog.net
+185.91.9.17    switchco01 switchco01.ring.nlnog.net
+
