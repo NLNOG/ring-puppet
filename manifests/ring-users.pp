@@ -3935,4 +3935,16 @@ class users::virtual::ring_users {
 
 ##### END nodesdirect #####
 
+##### BEGIN quanza #####
+
+    @add_user { 'quanza':
+        email => 'support@quanza.net',
+        company => 'Quanza Engineering B.V.',
+        uid => 5365,
+        groups => ['ring-users'],
+    }
+
+##### END quanza #####
+
+
 }

@@ -1224,3 +1224,6 @@ ff02::2 ip6-allrouters
 2604:4600:b01:6122::2  nodesdirect01 nodesdirect01.ring.nlnog.net
 23.92.92.198    nodesdirect01 nodesdirect01.ring.nlnog.net
 
+2a04:a500:1337:764:91:208:87:80  quanza01 quanza01.ring.nlnog.net
+91.208.87.80    quanza01 quanza01.ring.nlnog.net
+

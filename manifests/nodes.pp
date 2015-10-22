@@ -4385,3 +4385,12 @@ node 'nodesdirect01' inherits ringnode {
     include users
 }
 
+node 'quanza01' inherits ringnode {
+    $owner = "quanza"
+    $location = "52.332872,4.919522"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
