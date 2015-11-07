@@ -1227,3 +1227,5 @@ ff02::2 ip6-allrouters
 2a04:a500:1337:764:91:208:87:80  quanza01 quanza01.ring.nlnog.net
 91.208.87.80    quanza01 quanza01.ring.nlnog.net
 
+2607:6400:2::3163  fasttrackcomm01 fasttrackcomm01.ring.nlnog.net
+206.123.203.163    fasttrackcomm01 fasttrackcomm01.ring.nlnog.net

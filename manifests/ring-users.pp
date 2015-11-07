@@ -3946,5 +3946,14 @@ class users::virtual::ring_users {
 
 ##### END quanza #####
 
+##### BEGIN fasttrackcomm #####
 
+    @add_user { 'fasttrackcomm':
+        email => 'support@fasttrackcomm.net',
+        company => 'FastTrack Communications',
+        uid => 5366,
+        groups => ['ring-users'],
+    }
+
+##### END fasttrackcomm #####
 }
