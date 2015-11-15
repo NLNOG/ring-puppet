@@ -3969,3 +3969,14 @@ class users::virtual::ring_users {
 
 ##### END amatis #####
 
+##### BEGIN gwu #####
+
+    @add_user { 'gwu':
+        email => 'peering@gwu.edu',
+        company => 'The George Washington University',
+        uid => 5368,
+        groups => ['ring-users'],
+    }
+
+##### END gwu #####
+
