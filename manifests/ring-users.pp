@@ -3957,3 +3957,15 @@ class users::virtual::ring_users {
 
 ##### END fasttrackcomm #####
 }
+
+##### BEGIN amatis #####
+
+    @add_user { 'amatis':
+        email => 'noc@amatisnetworks.com',
+        company => 'amatis Networks',
+        uid => 5367,
+        groups => ['ring-users'],
+    }
+
+##### END amatis #####
+

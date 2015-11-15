@@ -4402,3 +4402,13 @@ node 'fasttrackcomm01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'amatis01' inherits ringnode {
+    $owner = "amatis"
+    $location = "51.46214,-1.00757"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

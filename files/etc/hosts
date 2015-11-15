@@ -1229,3 +1229,7 @@ ff02::2 ip6-allrouters
 
 2607:6400:2::3163  fasttrackcomm01 fasttrackcomm01.ring.nlnog.net
 206.123.203.163    fasttrackcomm01 fasttrackcomm01.ring.nlnog.net
+
+2a00:1990:2727::2726  amatis01 amatis01.ring.nlnog.net
+77.246.27.26    amatis01 amatis01.ring.nlnog.net
+
