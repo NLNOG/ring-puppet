@@ -3956,7 +3956,6 @@ class users::virtual::ring_users {
     }
 
 ##### END fasttrackcomm #####
-}
 
 ##### BEGIN amatis #####
 
@@ -3979,4 +3978,17 @@ class users::virtual::ring_users {
     }
 
 ##### END gwu #####
+
+##### BEGIN communityrack #####
+
+    @add_user { 'communityrack':
+        email => 'support@communityrack.org',
+        company => 'CommunityRack.org',
+        uid => 5369,
+        groups => ['ring-users'],
+    }
+
+##### END communityrack #####
+
+}
 

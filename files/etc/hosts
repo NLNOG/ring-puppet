@@ -1236,3 +1236,6 @@ ff02::2 ip6-allrouters
 2620:106:c005:4f85:3816:8fd:80a4:58b9  gwu01 gwu01.ring.nlnog.net
 128.164.88.185    gwu01 gwu01.ring.nlnog.net
 
+2a05:fc80:2:21::100  communityrack01 communityrack01.ring.nlnog.net
+185.95.216.100    communityrack01 communityrack01.ring.nlnog.net
+
