@@ -1236,3 +1236,8 @@ ff02::2 ip6-allrouters
 2a05:fc80:2:21::100  communityrack01 communityrack01.ring.nlnog.net
 185.95.216.100    communityrack01 communityrack01.ring.nlnog.net
 
+2a00:86c0:7002:32::2  netflix02 netflix02.ring.nlnog.net
+108.175.35.34    netflix02 netflix02.ring.nlnog.net
+
+2a00:86c0:262:32::2  netflix03 netflix03.ring.nlnog.net
+198.45.62.34    netflix03 netflix03.ring.nlnog.net
