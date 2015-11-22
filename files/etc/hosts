@@ -459,9 +459,6 @@ ff02::2 ip6-allrouters
 62.217.125.248  grnet01 grnet01.ring.nlnog.net
 2001:648:2ffc:113:dcdb:eeff:fe35:9c68   grnet01 grnet01.ring.nlnog.net
 
-198.45.56.12    netflix01   netflix01.ring.nlnog.net
-2a00:86c0:ff0a:2906::12 netflix01   netflix01.ring.nlnog.net
-
 46.20.247.200   ipmax01 ipmax01.ring.nlnog.net
 2a02:2528:404:1::200    ipmax01 ipmax01.ring.nlnog.net
 

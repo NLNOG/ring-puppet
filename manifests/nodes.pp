@@ -2040,16 +2040,6 @@ node 'grnet01' inherits ringnode {
     include users
 }
 
-node 'netflix01' inherits ringnode {
-    $owner = "netflix"
-    $location = "37.2415096,-121.7817521"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
-    include set_local_settings                                                  
-    include users
-    $nagios_ping_rate = '!200.0,20%!300.0,60%'
-}
-
 node 'ipmax01' inherits ringnode {
     $owner = "ipmax"
     $location = "45.723153,4.862412"
