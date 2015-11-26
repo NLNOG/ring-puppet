@@ -373,7 +373,7 @@ class users::virtual::ring_users {
 ##### BEGIN surfnet #####
 
     @add_user { 'surfnet':
-        email   => 'surf-ring@prolocation.eu',
+        email   => 'noc@surfnet.nl',
         company => 'SURFNet',
         uid     => 5022,
         groups  => ['ring-users'],
