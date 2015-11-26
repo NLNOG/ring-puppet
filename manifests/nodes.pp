@@ -4437,3 +4437,12 @@ node 'netflix03' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'surfnet02' inherits ringnode {
+    $owner = "surfnet"
+    $location = "52.087963,5.167554"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
