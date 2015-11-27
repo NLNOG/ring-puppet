@@ -462,8 +462,8 @@ ff02::2 ip6-allrouters
 46.20.247.200   ipmax01 ipmax01.ring.nlnog.net
 2a02:2528:404:1::200    ipmax01 ipmax01.ring.nlnog.net
 
-2001:48a8:6880:63::64   merit01 merit01.ring.nlnog.net
-198.108.63.64   merit01 merit01.ring.nlnog.net
+192.122.200.171 merit01 merit01.ring.nlnog.net
+2001:48a8:7fff:13::3    merit01 merit01.ring.nlnog.net
 
 150.254.166.148 poznan01    poznan01.ring.nlnog.net
 2001:808:2:3003::5  poznan01    poznan01.ring.nlnog.net
