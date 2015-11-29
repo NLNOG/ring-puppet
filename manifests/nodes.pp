@@ -4446,3 +4446,13 @@ node 'surfnet02' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'vibe02' inherits ringnode {
+    $owner = "vibe"
+    $location = "-33.869786,151.21911"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
