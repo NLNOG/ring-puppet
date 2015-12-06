@@ -4001,6 +4001,16 @@ class users::virtual::ring_users {
 
 ##### END rackcentral #####
 
+##### BEGIN widenet #####
+
+    @add_user { 'widenet':
+        email => 'noc@wide-net.pl',
+        company => 'Wide-Net Sp. z o.o.',
+        uid => 5371,
+        groups => ['ring-users'],
+    }
+
+##### END widenet #####
 
 }
 

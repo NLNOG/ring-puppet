@@ -4474,3 +4474,12 @@ node 'rackcentral02' inherits ringnode {
     include users
 }
 
+node 'widenet01' inherits ringnode {
+    $owner = "widenet"
+    $location = "49.4297,22.5867"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

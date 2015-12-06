@@ -1254,3 +1254,6 @@ ff02::2 ip6-allrouters
 2400:7180:2:1::70  rackcentral02 rackcentral02.ring.nlnog.net
 163.53.233.70    rackcentral02 rackcentral02.ring.nlnog.net
 
+2a00:fb20:1:fffc::14  widenet01 widenet01.ring.nlnog.net
+5.46.37.20    widenet01 widenet01.ring.nlnog.net
+
