@@ -4456,3 +4456,21 @@ node 'vibe02' inherits ringnode {
     include users
 }
 
+node 'rackcentral01' inherits ringnode {
+    $owner = "rackcentral"
+    $location = "-37.8227346,144.9321503"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
+node 'rackcentral02' inherits ringnode {
+    $owner = "rackcentral"
+    $location = "-37.8227346,144.9321503"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+

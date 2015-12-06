@@ -1248,3 +1248,9 @@ ff02::2 ip6-allrouters
 2400:7180:2:1::c0  vibe02 vibe02.ring.nlnog.net
 163.53.233.171    vibe02 vibe02.ring.nlnog.net
 
+2400:7180:1::65  rackcentral01 rackcentral01.ring.nlnog.net
+45.65.13.65    rackcentral01 rackcentral01.ring.nlnog.net
+
+2400:7180:2:1::70  rackcentral02 rackcentral02.ring.nlnog.net
+163.53.233.70    rackcentral02 rackcentral02.ring.nlnog.net
+

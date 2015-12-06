@@ -3990,5 +3990,17 @@ class users::virtual::ring_users {
 
 ##### END communityrack #####
 
+##### BEGIN rackcentral #####
+
+    @add_user { 'rackcentral':
+        email => 'noc@rackcentral.com',
+        company => 'RackCentral',
+        uid => 5370,
+        groups => ['ring-users'],
+    }
+
+##### END rackcentral #####
+
+
 }
 
