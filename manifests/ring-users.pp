@@ -4014,3 +4014,14 @@ class users::virtual::ring_users {
 
 }
 
+##### BEGIN dhiraagu #####
+
+    @add_user { 'dhiraagu':
+        email => 'noc@dhiraagu.com.mv',
+        company => 'Dhiraagu',
+        uid => 5372,
+        groups => ['ring-users'],
+    }
+
+##### END dhiraagu #####
+

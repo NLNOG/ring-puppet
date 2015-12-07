@@ -1257,3 +1257,6 @@ ff02::2 ip6-allrouters
 2a00:fb20:1:fffc::14  widenet01 widenet01.ring.nlnog.net
 5.46.37.20    widenet01 widenet01.ring.nlnog.net
 
+2406:e400:1:10::10  dhiraagu01 dhiraagu01.ring.nlnog.net
+103.31.84.12    dhiraagu01 dhiraagu01.ring.nlnog.net
+
