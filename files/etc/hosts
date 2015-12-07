@@ -1260,3 +1260,6 @@ ff02::2 ip6-allrouters
 2406:e400:1:10::10  dhiraagu01 dhiraagu01.ring.nlnog.net
 103.31.84.12    dhiraagu01 dhiraagu01.ring.nlnog.net
 
+2a06:340::240  vivor01 vivor01.ring.nlnog.net
+193.189.139.240    vivor01 vivor01.ring.nlnog.net
+

@@ -4012,8 +4012,6 @@ class users::virtual::ring_users {
 
 ##### END widenet #####
 
-}
-
 ##### BEGIN dhiraagu #####
 
     @add_user { 'dhiraagu':
@@ -4025,3 +4023,15 @@ class users::virtual::ring_users {
 
 ##### END dhiraagu #####
 
+##### BEGIN vivor #####
+
+    @add_user { 'vivor':
+        email => 'noc@vivor.net',
+        company => 'Vivor B.V.',
+        uid => 5373,
+        groups => ['ring-users'],
+    }
+
+##### END vivor #####
+
+}

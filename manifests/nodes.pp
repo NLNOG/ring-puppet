@@ -4501,3 +4501,12 @@ node 'dhiraagu01' inherits ringnode {
     include users
 }
 
+node 'vivor01' inherits ringnode {
+    $owner = "vivor"
+    $location = "52.027374,5.624321"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
+
