@@ -4483,3 +4483,11 @@ node 'widenet01' inherits ringnode {
     include users
 }
 
+node 'viatel04' inherits ringnode {
+    $owner = "viatel"
+    $location = "52.293529,4.945530"
+    include nagios::target::fqdn
+    include nagios_services
+    include set_local_settings
+    include users
+}
