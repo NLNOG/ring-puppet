@@ -14,7 +14,6 @@ node basenode {
     include lang
     munin::plugin { ["users", "tcp", "ntp_offset", "uptime", "threads", "ntp_kernel_pll_off", "diskstats", "proc_pri", "iostat_ios"]:
     }
-    include ssh
     include timezone
     include fail2ban-whitelist
     $postfix_smtp_listen = "127.0.0.1"
@@ -69,40 +68,6 @@ node 'master01.infra' inherits basenode {
     include usage_statistics
     include website
     include ring_auth::deployer
-#    include nagios::defaults
-#    include nagios::headless
-#    include nagios_services
-#    nagios::service::http { $name:
-#        check_domain => "${name}"
-#    }
-#    include nagios::target::fqdn
-#    nagios::service::dnssec::trace { '${name}_a': domain  => 'nlnog.net'; }
-#    nagios::service::dnssec::trace { '${name}_b': domain  => 'ring.nlnog.net'; }
-#    nagios::service::dnssec::trace { '${name}_c': domain  => 'nlring.net'; }
-#    nagios::service::dnssec::exp { 
-#        '${name}_1':
-#            domain  => 'nlnog.net',
-#            dns_ip  => '2001:7b8:3:2c::53', dnsserver   => 'nsauth1.bit.nl-v6';
-#        '${name}_2':
-#            domain  => 'nlnog.net',
-#            dns_ip  => '194.109.9.100', dnsserver   => 'ns2.xs4all.nl-v4';
-#        '${name}_3':
-#            domain  => 'nlnog.net',
-#            dns_ip  => '2001:67c:1a8:100::4', dnsserver   => 'nemix2.ams-ix.net-v6';
-#        '${name}_4':
-#            domain  => 'ring.nlnog.net',
-#            dns_ip  => '94.142.241.53', dnsserver   => 'ns1.6core.net';
-#        '${name}_5':
-#            domain  => 'ring.nlnog.net',
-#            dns_ip  => '165.254.255.18', dnsserver   => 'ns01.infra.ring.nlnog.net';
-#        '${name}_6':
-#            domain  => 'ring.nlnog.net',
-#            dns_ip  => '79.170.90.163', dnsserver   => 'ns.rodecker.nl';
-#        '${name}_7':
-#            domain  => 'ring.nlnog.net',
-#            dns_ip  => '83.247.10.51', dnsserver   => 'a.ns.meerval.net';
-#
-#    }
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
     Exec <<| tag == "destroy_virtual_machines" |>>
@@ -119,8 +84,6 @@ node 'container01.infra' inherits infranode {
     include users
     include containercronjobs
     include syslog_ng::client
-    include nagios_services
-    include nagios::target::fqdn
     include kvm
     include backup::client
     munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
@@ -179,8 +142,6 @@ node 'container02.infra' inherits infranode {
     include users
     include containercronjobs
     include syslog_ng::client
-    include nagios_services
-    include nagios::target::fqdn
     include kvm
     include backup::client
     munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
@@ -255,8 +216,6 @@ node 'container03.infra' inherits infranode {
     include users
     include containercronjobs
     include syslog_ng::client
-    include nagios_services
-    include nagios::target::fqdn
     include kvm
     include backup::client
     munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
@@ -316,13 +275,10 @@ node 'container05.infra' inherits infranode {
     include users
     include containercronjobs
     include syslog_ng::client
-    include nagios_services
-    include nagios::target::fqdn
     include kvm
     include backup::client
     munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
     }
-    $nagios_ping_rate = '!180.0,20%!300.0,60%'
     include backup::client
     
     kvm::virtual_machine { 'us':
@@ -342,8 +298,6 @@ node 'container05.infra' inherits infranode {
 
 node 'bgpmon.infra' inherits infranode {
     $owner = "job"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include syslog_ng::client
     include nodesonlycron
@@ -362,14 +316,11 @@ node 'bgpmon.infra' inherits infranode {
 
 node 'us01.irr.infra' inherits infranode {
     $owner = "job"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include syslog_ng::client
     include nodesonlycron
     include users
     include backup::client
-    $nagios_ping_rate = '!180.0,20%!300.0,60%'
 }
 
 # container06 is hosted at PCExtreme in Amsterdam
@@ -382,8 +333,6 @@ node 'container06.infra' inherits infranode {
     include users
     include containercronjobs
     include syslog_ng::client
-    include nagios_services
-    include nagios::target::fqdn
     include kvm
     munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
     }
@@ -410,8 +359,6 @@ node dbslaves inherits infranode {
 
 node 'dbmaster.infra' inherits infranode {
     $owner = "job"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include syslog_ng::client
     include nodesonlycron
@@ -429,16 +376,11 @@ node 'dbmaster.infra' inherits infranode {
 # website, dns, mailing-list etc
 node 'public01.infra' inherits infranode {
     $owner = "job"
-    include nagios::target::fqdn
-    include nagios_services
     include syslog_ng::client
     include nodesonlycron
     include users
     include apache2
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
-    }
-    nagios::service::http { $name:
-        check_domain => "${name}"
     }
     include powerdns
     include map
@@ -458,8 +400,6 @@ node 'public01.infra' inherits infranode {
 # munin
 node 'munin.infra' inherits infranode {
     $owner = "job"
-    include nagios::target::fqdn
-    include nagios_services
     include syslog_ng::client
     include nodesonlycron
     include users
@@ -473,8 +413,6 @@ node 'munin.infra' inherits infranode {
 
 node 'public02.infra' inherits infranode {
     $owner = "job"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include syslog_ng::client
     include nodesonlycron
@@ -482,17 +420,12 @@ node 'public02.infra' inherits infranode {
     include apache2
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
-    nagios::service::http { $name:
-        check_domain => "${name}"
-    }
     include powerdns
     include backup::client
 }
 
 node 'backup.infra' inherits infranode {
     $owner = "job"
-    include nagios::target::fqdn
-    include nagios_services
     include syslog_ng::client
     include nodesonlycron
     include users
@@ -501,8 +434,6 @@ node 'backup.infra' inherits infranode {
 
 node 'backup02.infra' inherits infranode {
     $owner = "job"
-    include nagios::target::fqdn
-    include nagios_services
     include syslog_ng::client
     include nodesonlycron
     include users
@@ -513,8 +444,6 @@ node 'backup02.infra' inherits infranode {
 # looking glass 1
 node 'lg01.infra' inherits infranode {
     $owner = "job"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users::virtual::ring_users
     include syslog_ng::client
@@ -540,8 +469,6 @@ node 'lg01.infra' inherits infranode {
 # machine to manage auth material for ring users
 node 'auth.infra' inherits infranode {
     $owner = "job"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users::virtual::ring_users
     include syslog_ng::client
@@ -553,34 +480,22 @@ node 'auth.infra' inherits infranode {
 
 node 'worker01' inherits infranode {
     $owner = "job"
-    $nagios_ping_rate = '!180.0,20%!300.0,60%'
     include users
     #    include backup::client
     include syslog_ng::client
     include apache2
-    include nagios_services
-    include nagios::target::fqdn
 
-   nagios::service::http { $name:
-        check_domain => "${name}"
-    }
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
 }
 
 node 'worker02' inherits infranode {
     $owner = "martin"
-    $nagios_ping_rate = '!180.0,20%!300.0,60%'
     # include backup::client
     include syslog_ng::client
     include nodesonlycron
     include users
     include apache2
-    include nagios_services
-    include nagios::target::fqdn
-#    nagios::service::http { $name:
-#        check_domain => "${name}"
-#    }
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
     $graphite_servername = 'graphite01.infra.ring.nlnog.net'
@@ -589,16 +504,10 @@ node 'worker02' inherits infranode {
 
 node 'worker03.infra' inherits infranode {
     $owner = "job"
-    $nagios_ping_rate = '!180.0,20%!300.0,60%'
     include users
     # include backup::client
     include syslog_ng::client
     include apache2
-    include nagios_services
-    include nagios::target::fqdn
-    nagios::service::http { $name:
-        check_domain => "${name}"
-    }
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
 
@@ -669,8 +578,6 @@ class users {
 
 node 'staging02' inherits ringnode {
     $owner = "previder"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -682,8 +589,6 @@ node 'staging02' inherits ringnode {
 node 'intouch01' inherits ringnode {
     $owner = "intouch"
     $location = "52.355930,4.951873"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -691,8 +596,6 @@ node 'intouch01' inherits ringnode {
 node 'bit01' inherits ringnode {
     $owner = "bit"
     $location = "52.027596,5.624528"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -700,8 +603,6 @@ node 'bit01' inherits ringnode {
 node 'coloclue01' inherits ringnode {
     $owner = "coloclue"
     $location = "52.332901,4.919525"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -709,8 +610,6 @@ node 'coloclue01' inherits ringnode {
 node 'widexs01' inherits ringnode {
     $owner = "widexs"
     $location = "52.399982,4.842305"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -718,8 +617,6 @@ node 'widexs01' inherits ringnode {
 node 'interconnect01' inherits ringnode {
     $owner = "interconnect"
     $location = "51.686672,5.359043"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -727,8 +624,6 @@ node 'interconnect01' inherits ringnode {
 node 'cambrium01' inherits ringnode {
     $owner = "cambrium"
     $location = "52.340988,5.227518"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -736,8 +631,6 @@ node 'cambrium01' inherits ringnode {
 node 'cyso01' inherits ringnode {
     $owner = "cyso"
     $location = "52.343983,4.828710"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -745,8 +638,6 @@ node 'cyso01' inherits ringnode {
 node 'zylon01' inherits ringnode {
     $owner = "zylon"
     $location = "52.396420,4.851092"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -754,8 +645,6 @@ node 'zylon01' inherits ringnode {
 node 'duocast01' inherits ringnode {
     $owner = "duocast"
     $location = "53.246086,6.528518"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -763,8 +652,6 @@ node 'duocast01' inherits ringnode {
 node 'easyhosting01' inherits ringnode {
     $owner = "easyhosting"
     $location = "52.391132,4.665263"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -772,8 +659,6 @@ node 'easyhosting01' inherits ringnode {
 node 'previder01' inherits ringnode {
     $owner = "previder"
     $location = "52.243954,6.767229"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -781,8 +666,6 @@ node 'previder01' inherits ringnode {
 node 'leaseweb01' inherits ringnode {
     $owner = "leaseweb"
     $location = "52.391224,4.665155"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -790,8 +673,6 @@ node 'leaseweb01' inherits ringnode {
 node 'xs4all01' inherits ringnode {
     $owner = "xs4all"
     $location = "52.336353,4.886652"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -799,8 +680,6 @@ node 'xs4all01' inherits ringnode {
 node 'nedzone01' inherits ringnode {
     $owner = "nedzone"
     $location = "51.587601,4.305047"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -808,8 +687,6 @@ node 'nedzone01' inherits ringnode {
 node 'oxilion01' inherits ringnode {
     $owner = "oxilion"
     $location = "52.243969,6.767278"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -817,8 +694,6 @@ node 'oxilion01' inherits ringnode {
 node 'ebayclassifiedsgroup01' inherits ringnode {
     $owner = "ebayclassifiedsgroup"
     $location = "52.280964,4.754237"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -826,8 +701,6 @@ node 'ebayclassifiedsgroup01' inherits ringnode {
 node 'is01' inherits ringnode {
     $owner = "is"
     $location = "52.396759,4.838742"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -835,8 +708,6 @@ node 'is01' inherits ringnode {
 node 'surfnet01' inherits ringnode {
     $owner = "surfnet"
     $location = "52.090767,5.112371"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -844,8 +715,6 @@ node 'surfnet01' inherits ringnode {
 node 'prolocation01' inherits ringnode {
     $owner = "prolocation"
     $location = "52.343983,4.828710"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -853,8 +722,6 @@ node 'prolocation01' inherits ringnode {
 node 'in2ip01' inherits ringnode {
     $owner = "in2ip"
     $location = "52.395855,4.841133"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -862,8 +729,6 @@ node 'in2ip01' inherits ringnode {
 node 'netground01' inherits ringnode {
     $owner = "netground"
     $location = "52.343983,4.828710"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -871,8 +736,6 @@ node 'netground01' inherits ringnode {
 node 'totaalnet01' inherits ringnode {
     $owner = "totaalnet"
     $location = "51.987831,5.933394"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -880,8 +743,6 @@ node 'totaalnet01' inherits ringnode {
 node 'signet01' inherits ringnode {
     $owner = "signet"
     $location = "51.501537,5.460406"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -889,8 +750,6 @@ node 'signet01' inherits ringnode {
 node 'tripleit01' inherits ringnode {
     $owner = "tripleit"
     $location = "52.303066,4.937898"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -898,8 +757,6 @@ node 'tripleit01' inherits ringnode {
 node 'jaguarnetwork01' inherits ringnode {
     $owner = "jaguarnetwork"
     $location = "43.310226,5.373356"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -907,8 +764,6 @@ node 'jaguarnetwork01' inherits ringnode {
 node 'tuxis01' inherits ringnode {
     $owner = "tuxis"
     $location = "52.027649,5.624506"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -916,9 +771,6 @@ node 'tuxis01' inherits ringnode {
 node 'tenet01' inherits ringnode {
     $owner = "tenet"
     $location = "-26.204103,28.047304"
-    $nagios_ping_rate = '!300.0,20%!500.0,60%'
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -926,9 +778,6 @@ node 'tenet01' inherits ringnode {
 node 'bigwells01' inherits ringnode {
     $owner = "bigwells"
     $location = "41.892365,-87.634918"
-    $nagios_ping_rate = '!250.0,20%!500.0,60%'
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -936,8 +785,6 @@ node 'bigwells01' inherits ringnode {
 node 'netability01' inherits ringnode {
     $owner = "netability"
     $location = "53.405754,-6.372293"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -945,8 +792,6 @@ node 'netability01' inherits ringnode {
 node 'unilogicnetworks01' inherits ringnode {
     $owner = "unilogicnetworks"
     $location = "50.996090,5.845644"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -954,8 +799,6 @@ node 'unilogicnetworks01' inherits ringnode {
 node 'maverick01' inherits ringnode {
     $owner = "maverick"
     $location = "52.393036,16.947895"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -963,9 +806,6 @@ node 'maverick01' inherits ringnode {
 node 'acsystemy01' inherits ringnode {
     $owner = "acsystemy"
     $location = "53.910034,14.247578"
-    $nagios_ping_rate = '!180.0,20%!300.0,60%'
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -973,18 +813,13 @@ node 'acsystemy01' inherits ringnode {
 node 'netsign01' inherits ringnode {
     $owner = "netsign"
     $location = "52.465530,13.368666"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
-    $nagios_ping_rate = '!150.0,20%!250.0,60%'
 }
 
 node 'rrbone01' inherits ringnode {
     $owner = "rrbone"
     $location = "51.188271,6.867769"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -992,8 +827,6 @@ node 'rrbone01' inherits ringnode {
 node 'hosteam01' inherits ringnode {
     $owner = "hosteam"
     $location = "52.227661,21.004250"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1001,8 +834,6 @@ node 'hosteam01' inherits ringnode {
 node 'inotel01' inherits ringnode {
     $owner = "inotel"
     $location = "52.391102,16.897284"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1010,8 +841,6 @@ node 'inotel01' inherits ringnode {
 node 'fremaks01' inherits ringnode {
     $owner = "fremaks"
     $location = "53.077320,8.772950"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1019,8 +848,6 @@ node 'fremaks01' inherits ringnode {
 node 'blix01' inherits ringnode {
     $owner = "blix"
     $location = "59.924725,10.810183"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1028,8 +855,6 @@ node 'blix01' inherits ringnode {
 node 'portlane01' inherits ringnode {
     $owner = "portlane"
     $location = "59.306946,18.130274"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1037,8 +862,6 @@ node 'portlane01' inherits ringnode {
 node 'solido01' inherits ringnode {
     $owner = "solido"
     $location = "55.728542,12.376454"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1046,8 +869,6 @@ node 'solido01' inherits ringnode {
 node 'solido02' inherits ringnode {
     $owner = "solido"
     $location = "49.50481,6.11237"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1055,8 +876,6 @@ node 'solido02' inherits ringnode {
 node 'digmia01' inherits ringnode {
     $owner = "digmia"
     $location = "48.119209,17.095844"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1064,18 +883,13 @@ node 'digmia01' inherits ringnode {
 node 'rootlu01' inherits ringnode {
     $owner = "rootlu"
     $location = "49.671227,6.125205"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
-    $nagios_ping_rate = '!300.0,20%!400.0,60%'
 }
 
 node 'nebula01' inherits ringnode {
     $owner = "nebula"
     $location = "60.218018,24.879240"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1083,8 +897,6 @@ node 'nebula01' inherits ringnode {
 node 'tilaa01' inherits ringnode {
     $owner = "tilaa"
     $location = "52.391090,4.665314"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1092,9 +904,6 @@ node 'tilaa01' inherits ringnode {
 node 'nautile01' inherits ringnode {
     $owner = "nautile"
     $location = "-22.267935,166.462219"
-    $nagios_ping_rate = '!450.0,20%!700.0,60%'
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1102,9 +911,6 @@ node 'nautile01' inherits ringnode {
 node 'voxel01' inherits ringnode {
     $owner = "voxel"
     $location = "37.241619,-121.783218"
-    $nagios_ping_rate = '!250.0,20%!500.0,60%'
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1112,9 +918,6 @@ node 'voxel01' inherits ringnode {
 node 'voxel02' inherits ringnode {
     $owner = "voxel"
     $location = "1.295461,103.789787"
-    $nagios_ping_rate = '!550.0,20%!900.0,60%'
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1122,9 +925,6 @@ node 'voxel02' inherits ringnode {
 node 'apnic01' inherits ringnode {
     $owner = "apnic"
     $location = "-27.458248,153.031067"
-    $nagios_ping_rate = '!500.0,20%!800.0,60%'
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1132,9 +932,6 @@ node 'apnic01' inherits ringnode {
 node 'hibernia01' inherits ringnode {
     $owner = "hibernia"
     $location = "41.87811,-87.62980"
-    $nagios_ping_rate = '!200.0,20%!400.0,60%'
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1142,8 +939,6 @@ node 'hibernia01' inherits ringnode {
 node 'hibernia02' inherits ringnode {
     $owner = "hibernia"
     $location = "51.50852,-0.12549"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1151,8 +946,6 @@ node 'hibernia02' inherits ringnode {
 node 'man-da01' inherits ringnode {
     $owner = "man-da"
     $location = "49.86170,8.68210"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1160,8 +953,6 @@ node 'man-da01' inherits ringnode {
 node 'webair01' inherits ringnode {
     $owner = "webair"
     $location = "40.722529,-73.632961"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1169,8 +960,6 @@ node 'webair01' inherits ringnode {
 node 'concepts-ict01' inherits ringnode {
     $owner = "concepts-ict"
     $location = "51.592992,4.802703"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1178,9 +967,6 @@ node 'concepts-ict01' inherits ringnode {
 node 'dataoppdrag01' inherits ringnode {
     $owner = "dataoppdrag"
     $location = "60.295349,5.255753"
-    $nagios_ping_rate = '!250.0,20%!400.0,60%'
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1188,8 +974,6 @@ node 'dataoppdrag01' inherits ringnode {
 node 'tetaneutral01' inherits ringnode {
     $owner = "tetaneutral"
     $location = "43.61847,1.42075"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1197,8 +981,6 @@ node 'tetaneutral01' inherits ringnode {
 node 'jump01' inherits ringnode {
     $owner = "jump"
     $location = "51.5120776,-0.0020345"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1206,8 +988,6 @@ node 'jump01' inherits ringnode {
 node 'iway01' inherits ringnode {
     $owner = "iway"
     $location = "47.387639,8.519944"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1215,8 +995,6 @@ node 'iway01' inherits ringnode {
 node 'rezopole01' inherits ringnode {
     $owner = "rezopole"
     $location = "45.72289,4.861422"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1224,8 +1002,6 @@ node 'rezopole01' inherits ringnode {
 node 'solnet01' inherits ringnode {
     $owner = "solnet"
     $location = "47.20182,7.52878"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1233,8 +1009,6 @@ node 'solnet01' inherits ringnode {
 node 'boxed-it01' inherits ringnode {
     $owner = "boxed-it"
     $location = "50.875425,4.499401"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1242,8 +1016,6 @@ node 'boxed-it01' inherits ringnode {
 node 'spacenet01' inherits ringnode {
     $owner = "spacenet"
     $location = "48.133333,11.566667"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1251,8 +1023,6 @@ node 'spacenet01' inherits ringnode {
 node 'mironet01' inherits ringnode {
     $owner = "mironet"
     $location = "47.5143,7.616726"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1260,9 +1030,6 @@ node 'mironet01' inherits ringnode {
 node 'seeweb01' inherits ringnode {
     $owner = "seeweb"
     $location = "45.478696,9.105091"
-    $nagios_ping_rate = '!180.0,20%!300.0,60%'
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1270,8 +1037,6 @@ node 'seeweb01' inherits ringnode {
 node 'zensystems01' inherits ringnode {
     $owner = "zensystems"
     $location = "55.7284634,12.376985"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1279,8 +1044,6 @@ node 'zensystems01' inherits ringnode {
 node 'westnet01' inherits ringnode {
     $owner = "westnet"
     $location = "53.858024,-9.279904"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1288,8 +1051,6 @@ node 'westnet01' inherits ringnode {
 node 'kantonsschulezug01' inherits ringnode {
     $owner = "kantonsschulezug"
     $location = "47.1744,8.5233"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1297,8 +1058,6 @@ node 'kantonsschulezug01' inherits ringnode {
 node 'filoo01' inherits ringnode {
     $owner = "filoo"
     $location = "50.09676,8.628393"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1306,8 +1065,6 @@ node 'filoo01' inherits ringnode {
 node 'nessus01' inherits ringnode {
     $owner = "nessus"
     $location = "48.179737,16.364007"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1315,9 +1072,6 @@ node 'nessus01' inherits ringnode {
 node 'amazon01' inherits ringnode {
     $owner = "amazon"
     $location = "38.944444,-77.455833"
-    include nagios::target::fqdn
-    $nagios_ping_rate = '!200.0,20%!300.0,60%'
-    include nagios_services
     include set_local_settings
 	include users
 
@@ -1335,9 +1089,6 @@ node 'amazon01' inherits ringnode {
 node 'amazon02' inherits ringnode {
     $owner = "amazon"
     $location = "53.43333,-6.25000"
-    $nagios_ping_rate = '!180.0,20%!300.0,60%'
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 
@@ -1356,9 +1107,6 @@ node 'amazon02' inherits ringnode {
 node 'amazon03' inherits ringnode {
     $owner = "amazon"
     $location = "1.358816,103.9891"
-    include nagios::target::fqdn
-    include nagios_services
-    $nagios_ping_rate = '!550.0,20%!900.0,60%'
     include set_local_settings
 	include users
 
@@ -1376,9 +1124,6 @@ node 'amazon03' inherits ringnode {
 node 'amazon04' inherits ringnode {
     $owner = "amazon"
     $location = "35.765278,140.385556"
-    include nagios::target::fqdn
-    include nagios_services
-    $nagios_ping_rate = '!550.0,20%!900.0,60%'
     include set_local_settings
 	include users
 
@@ -1396,9 +1141,6 @@ node 'amazon04' inherits ringnode {
 node 'amazon05' inherits ringnode {
     $owner = "amazon"
     $location = "45.588611,-122.5975"
-    include nagios::target::fqdn
-    include nagios_services
-    $nagios_ping_rate = '!300.0,20%!500.0,60%'
     include set_local_settings
 	include users
 
@@ -1416,9 +1158,6 @@ node 'amazon05' inherits ringnode {
 node 'amazon06' inherits ringnode {
     $owner = "amazon"
     $location = "37.618889,-122.375"
-    include nagios::target::fqdn
-    include nagios_services
-    $nagios_ping_rate = '!300.0,20%!500.0,60%'
     include set_local_settings
 	include users
 
@@ -1436,9 +1175,6 @@ node 'amazon06' inherits ringnode {
 node 'amazon07' inherits ringnode {
     $owner = "amazon"
     $location = "-23.54894,-46.63882"
-    include nagios::target::fqdn
-    include nagios_services
-    $nagios_ping_rate = '!300.0,20%!500.0,60%'
     include set_local_settings
 	include users
 
@@ -1456,9 +1192,6 @@ node 'amazon07' inherits ringnode {
 node 'amazon08' inherits ringnode {
     $owner = "amazon"
     $location = "-33.86749,151.20699"
-    include nagios::target::fqdn
-    include nagios_services
-    $nagios_ping_rate = '!300.0,20%!500.0,60%'
     include set_local_settings
 	include users
 
@@ -1478,8 +1211,6 @@ node 'amazon08' inherits ringnode {
 node 'equinixnl01' inherits ringnode {
     $owner = "equinixnl"
     $location = "52.2373,6.8496"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1487,8 +1218,6 @@ node 'equinixnl01' inherits ringnode {
 node 'lchost01' inherits ringnode {
     $owner = "lchost"
     $location = "51.496716,-0.017987"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1496,9 +1225,6 @@ node 'lchost01' inherits ringnode {
 node 'hostway01' inherits ringnode {
     $owner = "hostway"
     $location = "49.288462,-123.118197"
-    $nagios_ping_rate = '!300.0,20%!500.0,60%'
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1506,8 +1232,6 @@ node 'hostway01' inherits ringnode {
 node 'pcextreme01' inherits ringnode {
     $owner = "pcextreme"
     $location = "52.400483,4.842865"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1515,8 +1239,6 @@ node 'pcextreme01' inherits ringnode {
 node 'antagonist01' inherits ringnode {
     $owner = "antagonist"
     $location = "52.244396,6.767321"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1524,8 +1246,6 @@ node 'antagonist01' inherits ringnode {
 node 'nts01' inherits ringnode {
     $owner = "nts"
     $location = "46.936647,7.429907"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
 	include users
 }
@@ -1533,8 +1253,6 @@ node 'nts01' inherits ringnode {
 node 'multiplay01' inherits ringnode {
     $owner = "multiplay"
     $location = "51.520493,-0.073546"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1542,9 +1260,6 @@ node 'multiplay01' inherits ringnode {
 node 'softlayer01' inherits ringnode {
     $owner = "softlayer"
     $location = "32.782778,-96.803889"
-    $nagios_ping_rate = '!250.0,20%!400.0,60%'
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1552,9 +1267,6 @@ node 'softlayer01' inherits ringnode {
 node 'softlayer02' inherits ringnode {
     $owner = "softlayer"
     $location = "29.76019,-95.36939"
-    $nagios_ping_rate = '!250.0,20%!400.0,60%'
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1562,9 +1274,6 @@ node 'softlayer02' inherits ringnode {
 node 'softlayer03' inherits ringnode {
     $owner = "softlayer"
     $location = "39.04376,-77.48744"
-    $nagios_ping_rate = '!250.0,20%!400.0,60%'
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1572,9 +1281,6 @@ node 'softlayer03' inherits ringnode {
 node 'softlayer04' inherits ringnode {
     $owner = "softlayer"
     $location = "37.33939,-121.89496"
-    $nagios_ping_rate = '!500.0,20%!600.0,60%'
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1582,9 +1288,6 @@ node 'softlayer04' inherits ringnode {
 node 'softlayer05' inherits ringnode {
     $owner = "softlayer"
     $location = "47.60621,-122.33207"
-    $nagios_ping_rate = '!250.0,20%!400.0,60%'
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1592,9 +1295,6 @@ node 'softlayer05' inherits ringnode {
 node 'softlayer06' inherits ringnode {
     $owner = "softlayer"
     $location = "1.35208,103.81984"
-    $nagios_ping_rate = '!500.0,20%!800.0,60%'
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1602,9 +1302,6 @@ node 'softlayer06' inherits ringnode {
 node 'imagine01' inherits ringnode {
     $owner = "imagine"
     $location = "53.334224,-6.365538"
-    $nagios_ping_rate = '!250.0,20%!400.0,60%'
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1612,9 +1309,6 @@ node 'imagine01' inherits ringnode {
 node 'speedpartner01' inherits ringnode {
     $owner = "speedpartner"
     $location = "51.187842,6.866248"
-    $nagios_ping_rate = '!250.0,20%!400.0,60%'
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1622,9 +1316,6 @@ node 'speedpartner01' inherits ringnode {
 node 'gossamerthreads01' inherits ringnode {
     $owner = "gossamerthreads"
     $location = "49.28496,-123.114411"
-    $nagios_ping_rate = '!250.0,20%!400.0,60%'
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1632,9 +1323,6 @@ node 'gossamerthreads01' inherits ringnode {
 node 'towardex01' inherits ringnode {
     $owner = "towardex"
     $location = "42.354500508087064,-71.05950593948364"
-    $nagios_ping_rate = '!250.0,20%!400.0,60%'
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1642,8 +1330,6 @@ node 'towardex01' inherits ringnode {
 node 'simplytransit01' inherits ringnode {
     $owner = "simplytransit"
     $location = "51.500544,-0.708647"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1651,8 +1337,6 @@ node 'simplytransit01' inherits ringnode {
 node 'isarnet01' inherits ringnode {
     $owner = "isarnet"
     $location = "48.32839,11.74318"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1660,8 +1344,6 @@ node 'isarnet01' inherits ringnode {
 node 'strato01' inherits ringnode {
     $owner = "strato"
     $location = "52.465907,13.369467"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1669,8 +1351,6 @@ node 'strato01' inherits ringnode {
 node 'edutel01' inherits ringnode {
     $owner = "edutel"
     $location = "51.445809,5.495128"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1678,8 +1358,6 @@ node 'edutel01' inherits ringnode {
 node 'sixdegrees01' inherits ringnode {
     $owner = "sixdegrees"
     $location = "52.278551,-1.895770"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1687,8 +1365,6 @@ node 'sixdegrees01' inherits ringnode {
 node 'spacedump01' inherits ringnode {
     $owner = "spacedump"
     $location = "59.34803,18.03916"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1696,14 +1372,12 @@ node 'spacedump01' inherits ringnode {
 node 'yourorg01' inherits ringnode {
     $owner = "yourorg"
     $location = "42.003056,-87.996389"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
-    $nagios_ping_rate = '!250.0,20%!400.0,60%'
     include set_local_settings                                                  
     include users
 }
 
 node 'occaid01' {
+    include salt
     include users::virtual::ring_admins
     include cronjobs
     include groups
@@ -1718,7 +1392,6 @@ node 'occaid01' {
 #    }
 #    package{ "munin": ensure => purged, }
 
-    include ssh
     include timezone
 #   ipv6 and fail2ban are not ok
 #    include fail2ban-whitelist
@@ -1734,9 +1407,6 @@ node 'occaid01' {
 
     $owner = "occaid"
     $location = "47.619428,-122.348535"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
-    $nagios_ping_rate = '!280.0,20%!400.0,60%'
     include set_local_settings                                                  
     include users
 }
@@ -1744,9 +1414,6 @@ node 'occaid01' {
 node 'as250net01' inherits ringnode {
     $owner = "as250net"
     $location = "52.50200,13.37000"
-    $nagios_ping_rate = '!180.0,20%!300.0,60%'
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1754,8 +1421,6 @@ node 'as250net01' inherits ringnode {
 node 'redpilllinpro01' inherits ringnode {
     $owner = "redpilllinpro"
     $location = "59.938612,10.83503"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1763,8 +1428,6 @@ node 'redpilllinpro01' inherits ringnode {
 node 'nine01' inherits ringnode {
     $owner = "nine"
     $location = "47.383109,8.495504"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -1772,8 +1435,6 @@ node 'nine01' inherits ringnode {
 node 'oneandone01' inherits ringnode {
     $owner = "oneandone"
     $location = "48.99984,8.38574"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1781,8 +1442,6 @@ node 'oneandone01' inherits ringnode {
 node 'belwue01' inherits ringnode {
     $owner = "belwue"
     $location = "48.745500,9.1037"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1790,8 +1449,6 @@ node 'belwue01' inherits ringnode {
 node 'lagis01' inherits ringnode {
     $owner = "lagis"
     $location = "48.30694,14.28583"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1799,8 +1456,6 @@ node 'lagis01' inherits ringnode {
 node 'fnutt01' inherits ringnode {
     $owner = "fnutt"
     $location = "59.924855,10.809541"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1808,8 +1463,6 @@ node 'fnutt01' inherits ringnode {
 node 'sidn01' inherits ringnode {
     $owner = "sidn"
     $location = "51.97696,5.96947"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1817,8 +1470,6 @@ node 'sidn01' inherits ringnode {
 node 'melbourne01' inherits ringnode {
     $owner = "melbourne"
     $location = "53.46517,-2.24686"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1826,8 +1477,6 @@ node 'melbourne01' inherits ringnode {
 node 'go6lab01' inherits ringnode {
     $owner = "go6lab"
     $location = "46.16554,14.30661"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1835,8 +1484,6 @@ node 'go6lab01' inherits ringnode {
 node 'siminn01' inherits ringnode {
     $owner = "siminn"
     $location = "55.66210,12.30134"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1844,8 +1491,6 @@ node 'siminn01' inherits ringnode {
 node 'a2binternet01' inherits ringnode {
     $owner = "a2binternet"
     $location = "52.62588,4.77044"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1853,8 +1498,6 @@ node 'a2binternet01' inherits ringnode {
 node 'i3d01' inherits ringnode {
     $owner = "i3d"
     $location = "51.92422,4.48178"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1862,8 +1505,6 @@ node 'i3d01' inherits ringnode {
 node 'viatel01' inherits ringnode {
     $owner = "viatel"
     $location = "53.406871,-6.372274"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1871,8 +1512,6 @@ node 'viatel01' inherits ringnode {
 node 'keenondots01' inherits ringnode {
     $owner = "keenondots"
     $location = "52.24416,6.76738"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1880,8 +1519,6 @@ node 'keenondots01' inherits ringnode {
 node 'obenetwork01' inherits ringnode {
     $owner = "obenetwork"
     $location = "59.359621,17.980499"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1889,8 +1526,6 @@ node 'obenetwork01' inherits ringnode {
 node 'infomaniak01' inherits ringnode {
     $owner = "infomaniak"
     $location = "46.21755,6.08268"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1898,8 +1533,6 @@ node 'infomaniak01' inherits ringnode {
 node 'teamix01' inherits ringnode {
     $owner = "teamix"
     $location = "49.42788,11.02210"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -1907,8 +1540,6 @@ node 'teamix01' inherits ringnode {
 node 'skyway01' inherits ringnode {
     $owner = "skyway"
     $location = "49.279285,7.107489"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                             
     include users
 }
@@ -1916,8 +1547,6 @@ node 'skyway01' inherits ringnode {
 node 'solcon01' inherits ringnode {
     $owner = "solcon"
     $location = "52.53998,5.702248"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                             
     include users
 }
@@ -1925,8 +1554,6 @@ node 'solcon01' inherits ringnode {
 node 'claranet01' inherits ringnode {
     $owner = "claranet"
     $location = "51.510901,-0.003482"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                             
     include users
 }
@@ -1934,8 +1561,6 @@ node 'claranet01' inherits ringnode {
 node 'claranet02' inherits ringnode {
     $owner = "claranet"
     $location = "50.11529469499107,8.722994327545166"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                             
     include users
 }
@@ -1943,8 +1568,6 @@ node 'claranet02' inherits ringnode {
 node 'claranet03' inherits ringnode {
     $owner = "claranet"
     $location = "51.499766912405946,5.456085205078125"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                             
     include users
 }
@@ -1952,8 +1575,6 @@ node 'claranet03' inherits ringnode {
 node 'claranet04' inherits ringnode {
     $owner = "claranet"
     $location = "38.788052658004794,-9.123791456222534"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                             
     include users
 }
@@ -1961,18 +1582,13 @@ node 'claranet04' inherits ringnode {
 node 'arpnetworks01' inherits ringnode {
     $owner = "arpnetworks"
     $location = "34.058723,-118.235299"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                             
     include users
-    $nagios_ping_rate = '!200.0,20%!300.0,60%'
 }
 
 node 'iabg01' inherits ringnode {
     $owner = "iabg"
     $location = "48.05159,11.659881"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                             
     include users
 }
@@ -1980,8 +1596,6 @@ node 'iabg01' inherits ringnode {
 node 'initseven01' inherits ringnode {
     $owner = "initseven"
     $location = "47.433647,8.559068"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                             
     include users
 }
@@ -1989,8 +1603,6 @@ node 'initseven01' inherits ringnode {
 node 'hosting90systems01' inherits ringnode {
     $owner = "hosting90systems"
     $location = "50.078122,14.472277"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                             
     include users
 }
@@ -1998,8 +1610,6 @@ node 'hosting90systems01' inherits ringnode {
 node 'claranet05' inherits ringnode {
     $owner = "claranet"
     $location = "48.905224522197365, 2.2583717107772827"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                             
     include users
 }
@@ -2007,18 +1617,13 @@ node 'claranet05' inherits ringnode {
 node 'kordia01' inherits ringnode {
     $owner = "kordia"
     $location = "-41.187501,174.946346"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                             
     include users
-    $nagios_ping_rate = '!400.0,20%!600.0,60%'
 }
 
 node 'nexellent01' inherits ringnode {
     $owner = "nexellent"
     $location = "47.432544,8.557972"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                             
     include users
 }
@@ -2026,8 +1631,6 @@ node 'nexellent01' inherits ringnode {
 node 'afilias01' inherits ringnode {
     $owner = "afilias"
     $location = "52.34398,4.82871"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -2035,8 +1638,6 @@ node 'afilias01' inherits ringnode {
 node 'grnet01' inherits ringnode {
     $owner = "grnet"
     $location = "38.04581,23.788446"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -2044,8 +1645,6 @@ node 'grnet01' inherits ringnode {
 node 'ipmax01' inherits ringnode {
     $owner = "ipmax"
     $location = "45.723153,4.862412"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -2053,18 +1652,13 @@ node 'ipmax01' inherits ringnode {
 node 'merit01' inherits ringnode {
     $owner = "merit"
     $location = "42.248588,-83.736888"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
-    $nagios_ping_rate = '!200.0,20%!300.0,60%'
 }
 
 node 'poznan01' inherits ringnode {
     $owner = "poznan"
     $location = "52.411433,16.917933"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -2072,9 +1666,6 @@ node 'poznan01' inherits ringnode {
 node 'bluezonejordan01' inherits ringnode {
     $owner = "bluezonejordan"
     $location = "31.9579048,35.8697509"
-    $nagios_ping_rate = '!350.0,20%!450.0,60%'
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -2082,8 +1673,6 @@ node 'bluezonejordan01' inherits ringnode {
 node 'zeronet01' inherits ringnode {
     $owner = "zeronet"
     $location = "52.278519,-1.895536"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -2091,8 +1680,6 @@ node 'zeronet01' inherits ringnode {
 node 'claranet06' inherits ringnode {
     $owner = "claranet"
     $location = "41.351884, 2.13707"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -2100,18 +1687,13 @@ node 'claranet06' inherits ringnode {
 node 'rgnet01' inherits ringnode {
     $owner = "rgnet"
     $location = "47.61435,-122.33852"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
-    $nagios_ping_rate = '!250.0,20%!300.0,60%'
 }
 
 node 'ehsab01' inherits ringnode {
     $owner = "ehsab"
     $location = "59.306946,18.130274"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -2119,8 +1701,6 @@ node 'ehsab01' inherits ringnode {
 node 'ehsab02' inherits ringnode {
     $owner = "ehsab"
     $location = "55.606901,12.998484"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -2128,8 +1708,6 @@ node 'ehsab02' inherits ringnode {
 node 'yellowfiber01' inherits ringnode {
     $owner = "yellowfiber"
     $location = "38.954003,-77.36392"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -2137,8 +1715,6 @@ node 'yellowfiber01' inherits ringnode {
 node 'bahnhof01' inherits ringnode {
     $owner = "bahnhof"
     $location = "59.348034,18.039171"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -2146,18 +1722,13 @@ node 'bahnhof01' inherits ringnode {
 node 'nicchile01' inherits ringnode {
     $owner = "nicchile"
     $location = "-33.457582,-70.663118"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
-    $nagios_ping_rate = '!300.0,20%!400.0,60%'
 }
 
 node 'glesys01' inherits ringnode {
     $owner = "glesys"
     $location = "59.289688,18.016714"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -2165,8 +1736,6 @@ node 'glesys01' inherits ringnode {
 node 'rcsrds01' inherits ringnode {
     $owner = "rcsrds"
     $location = "44.429187,26.079895"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -2174,8 +1743,6 @@ node 'rcsrds01' inherits ringnode {
 node 'itmastaren01' inherits ringnode {
     $owner = "itmastaren"
     $location = "59.2722,15.2088"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -2183,8 +1750,6 @@ node 'itmastaren01' inherits ringnode {
 node 'openminds01' inherits ringnode {
     $owner = "openminds"
     $location = "50.887222,4.455278"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2192,8 +1757,6 @@ node 'openminds01' inherits ringnode {
 node 'one01' inherits ringnode {
     $owner = "one"
     $location = "55.72687,12.37698"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2201,9 +1764,6 @@ node 'one01' inherits ringnode {
 node 'heanet01' inherits ringnode {
     $owner = "heanet"
     $location = "53.333145,-6.369291"
-    $nagios_ping_rate = '!180.0,20%!300.0,60%'
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2211,18 +1771,13 @@ node 'heanet01' inherits ringnode {
 node 'algar01' inherits ringnode {
     $owner = "algar"
     $location = "-20.536090,-47.400950"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
-    $nagios_ping_rate = '!250.0,20%!400.0,60%'
 }
 
 node 'qbranch01' inherits ringnode {
     $owner = "qbranch"
     $location = "59.325964,18.00222"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2242,7 +1797,6 @@ node 'nlnetlabs01' {
 #    }
 #    package{ "munin": ensure => purged, }
 
-    include ssh
     include timezone
 #   ipv6 and fail2ban are not ok
 #    include fail2ban-whitelist
@@ -2258,8 +1812,6 @@ node 'nlnetlabs01' {
 
     $owner = "nlnetlabs"
     $location = "52.356387,4.955663"
-    include nagios::target::fqdn                                                
-    include nagios_services                                                     
     include set_local_settings                                                  
     include users
 }
@@ -2267,8 +1819,6 @@ node 'nlnetlabs01' {
 node 'entanet01' inherits ringnode {
     $owner = "entanet"
     $location = "52.67917,-2.41528"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2276,8 +1826,6 @@ node 'entanet01' inherits ringnode {
 node 'ripe01' inherits ringnode {
     $owner = "ripe"
     $location = "52.303062,4.937775"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2285,8 +1833,6 @@ node 'ripe01' inherits ringnode {
 node 'hosteurope01' inherits ringnode {
     $owner = "hosteurope"
     $location = "50.91061,7.06054"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2294,8 +1840,6 @@ node 'hosteurope01' inherits ringnode {
 node 'wirehive01' inherits ringnode {
     $owner = "wirehive"
     $location = "51.347629,-0.479842"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2303,8 +1847,6 @@ node 'wirehive01' inherits ringnode {
 node 'nforce01' inherits ringnode {
     $owner = "nforce"
     $location = "52.3964434,4.8511319"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2312,8 +1854,6 @@ node 'nforce01' inherits ringnode {
 node 'xing01' inherits ringnode {
     $owner = "xing"
     $location = "50.08165,8.62295"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2321,8 +1861,6 @@ node 'xing01' inherits ringnode {
 node 'xing02' inherits ringnode {
     $owner = "xing"
     $location = "50.09760,8.64410"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2330,8 +1868,6 @@ node 'xing02' inherits ringnode {
 node 'serverchoice01' inherits ringnode {
     $owner = "serverchoice"
     $location = "51.889028,-0.204889"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2339,9 +1875,6 @@ node 'serverchoice01' inherits ringnode {
 node 'bredband201' inherits ringnode {
     $owner = "bredband2"
     $location = "55.574704,12.927673"
-    $nagios_ping_rate = '!180.0,20%!300.0,60%'
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2349,18 +1882,13 @@ node 'bredband201' inherits ringnode {
 node 'cdw01' inherits ringnode {
     $owner = "cdw"
     $location = "43.00625847490064,-89.42570149898529"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
-    $nagios_ping_rate = '!250.0,20%!400.0,60%'
 }
 
 node 'linxtelecom01' inherits ringnode {
     $owner = "linxtelecom"
     $location = "59.43621,24.70500"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2368,8 +1896,6 @@ node 'linxtelecom01' inherits ringnode {
 node 'superonline01' inherits ringnode {
     $owner = "superonline"
     $location = "40.897996,29.193764"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2377,8 +1903,6 @@ node 'superonline01' inherits ringnode {
 node 'underworld01' inherits ringnode {
     $owner = "underworld"
     $location = "63.433333,10.4"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2386,8 +1910,6 @@ node 'underworld01' inherits ringnode {
 node 'adminor01' inherits ringnode {
     $owner = "adminor"
     $location = "59.301498,18.091709"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2395,8 +1917,6 @@ node 'adminor01' inherits ringnode {
 node 'videoplaza01' inherits ringnode {
     $owner = "videoplaza"
     $location = "59.263562,18.104843"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2404,38 +1924,27 @@ node 'videoplaza01' inherits ringnode {
 node 'rnp01' inherits ringnode {
     $owner = "rnp"
     $location = "-23.33167,-46.37119"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
-    $nagios_ping_rate = '!300.0,20%!400.0,60%'
 }
 
 node 'iij01' inherits ringnode {
     $owner = "iij"
     $location = "35.683191,139.761949"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
-    $nagios_ping_rate = '!300.0,20%!400.0,60%'
 }
 
 node 'beanfield01' inherits ringnode {
     $owner = "beanfield"
     $location = "43.638090,-79.425509"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
-    $nagios_ping_rate = '!200.0,20%!300.0,60%'
 }
 
 node 'serioustubes01' inherits ringnode {
     $owner = "serioustubes"
     $location = "59.3268,18.0717"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2443,38 +1952,27 @@ node 'serioustubes01' inherits ringnode {
 node 'direcpath01' inherits ringnode {
     $owner = "direcpath"
     $location = "33.782149,-84.404582"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
-    $nagios_ping_rate = '!200.0,20%!300.0,60%'
 }
 
 node 'dcsone01' inherits ringnode {
     $owner = "dcsone"
     $location = "1.31,103.75"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
-    $nagios_ping_rate = '!350.0,20%!450.0,60%'
 }
 
 node 'berkeley01' inherits ringnode {
     $owner = "berkeley"
     $location = "37.874871,-122.258335"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
-    $nagios_ping_rate = '!200.0,20%!300.0,60%'
 }
 
 node 'ispservices01' inherits ringnode {
     $owner = "ispservices"
     $location = "51.954204,6.300182"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2482,18 +1980,13 @@ node 'ispservices01' inherits ringnode {
 node 'ausregistry01' inherits ringnode {
     $owner = "ausregistry"
     $location = "-37.822633,144.932208"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
-    $nagios_ping_rate = '!400.0,20%!500.0,60%'
 }
 
 node 'switch01' inherits ringnode {
     $owner = "switch"
     $location = "47.38014,8.54459"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2501,18 +1994,13 @@ node 'switch01' inherits ringnode {
 node 'hurricane01' inherits ringnode {
     $owner = "hurricane"
     $location = "37.49012,-121.93130"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
-    $nagios_ping_rate = '!200.0,20%!300.0,60%'
 }
 
 node 'proserve01' inherits ringnode {
     $owner = "proserve"
     $location = "51.846185,4.679017"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2520,28 +2008,20 @@ node 'proserve01' inherits ringnode {
 node 'teletalk01' inherits ringnode {
     $owner = "teletalk"
     $location = "-12.984611,-38.467272"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
-    $nagios_ping_rate = '!200.0,20%!300.0,60%'
 }
 
 node 'poppr01' inherits ringnode {
     $owner = "poppr"
     $location = "-25.445832,-49.233255"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
-    $nagios_ping_rate = '!300.0,20%!400.0,60%'
 }
 
 node 'kaiaglobal01' inherits ringnode {
     $owner = "kaiaglobal"
     $location = "53.551004,10.047029"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2549,8 +2029,6 @@ node 'kaiaglobal01' inherits ringnode {
 node 'ualbany01' inherits ringnode {
     $owner = "ualbany"
     $location = "42.68619,-73.823996"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2558,8 +2036,6 @@ node 'ualbany01' inherits ringnode {
 node 'masterinternet01' inherits ringnode {
     $owner = "masterinternet"
     $location = "49.196986,16.618667"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2567,8 +2043,6 @@ node 'masterinternet01' inherits ringnode {
 node 'intellit01' inherits ringnode {
     $owner = "intellit"
     $location = "59.942783,10.717142"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2576,8 +2050,6 @@ node 'intellit01' inherits ringnode {
 node 'onet01' inherits ringnode {
     $owner = "onet"
     $location = "50.080482,19.892557"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2585,8 +2057,6 @@ node 'onet01' inherits ringnode {
 node 'msu01' inherits ringnode {
     $owner = "msu"
     $location = "55.698164,37.531089"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2594,8 +2064,6 @@ node 'msu01' inherits ringnode {
 node 'robtex01' inherits ringnode {
     $owner = "robtex"
     $location = "38.96350,-77.38076"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2603,28 +2071,20 @@ node 'robtex01' inherits ringnode {
 node 'dyn01' inherits ringnode {
     $owner = "dyn"
     $location = "35.617481,139.749775"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
-    $nagios_ping_rate = '!300.0,20%!400.0,60%'
 }
 
 node 'trueinternet01' inherits ringnode {
     $owner = "trueinternet"
     $location = "13.759441,100.565325"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
-    $nagios_ping_rate = '!250.0,20%!400.0,60%'
 }
 
 node 'phusion01' inherits ringnode {
     $owner = "phusion"
     $location = "54.973981,-1.600109"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2632,8 +2092,6 @@ node 'phusion01' inherits ringnode {
 node 'nimag01' inherits ringnode {
     $owner = "nimag"
     $location = "46.524,6.604"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2641,8 +2099,6 @@ node 'nimag01' inherits ringnode {
 node 'vancis01' inherits ringnode {
     $owner = "vancis"
     $location = "52.356257,4.952843"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2650,18 +2106,13 @@ node 'vancis01' inherits ringnode {
 node 'es01' inherits ringnode {
     $owner = "es"
     $location = "37.8752777778,-122.253055556"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
-    $nagios_ping_rate = '!250.0,20%!400.0,60%'
 }
 
 node 'world4you01' inherits ringnode {
     $owner = "world4you"
     $location = "48.3191068,14.3082231"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2669,8 +2120,6 @@ node 'world4you01' inherits ringnode {
 node 'onet02' inherits ringnode {
     $owner = "onet"
     $location = "50.034678,20.013635"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2678,8 +2127,6 @@ node 'onet02' inherits ringnode {
 node '4ddc01' inherits ringnode {
     $owner = "4ddc"
     $location = "51.347304,-0.480730"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2687,8 +2134,6 @@ node '4ddc01' inherits ringnode {
 node 'rackfish01' inherits ringnode {
     $owner = "rackfish"
     $location = "59.26356,18.10484"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2696,8 +2141,6 @@ node 'rackfish01' inherits ringnode {
 node 'doruknet01' inherits ringnode {
     $owner = "doruknet"
     $location = "41.055149,29.00794"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2705,8 +2148,6 @@ node 'doruknet01' inherits ringnode {
 node 'vocus01' inherits ringnode {
     $owner = "vocus"
     $location = "-33.91474,151.19302"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2714,8 +2155,6 @@ node 'vocus01' inherits ringnode {
 node 'hostvirtual01' inherits ringnode {
     $owner = "hostvirtual"
     $location = "13.042466,80.157013"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2723,8 +2162,6 @@ node 'hostvirtual01' inherits ringnode {
 node 'hostvirtual02' inherits ringnode {
     $owner = "hostvirtual"
     $location = "22.36187,114.13502"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2732,8 +2169,6 @@ node 'hostvirtual02' inherits ringnode {
 node 'mozilla01' inherits ringnode {
     $owner = "mozilla"
     $location = "37.37389,-121.97224"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2741,8 +2176,6 @@ node 'mozilla01' inherits ringnode {
 node 'lightstorm01' inherits ringnode {
     $owner = "lightstorm"
     $location = "48.147874,17.132733"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2750,8 +2183,6 @@ node 'lightstorm01' inherits ringnode {
 node 'iccn01' inherits ringnode {
     $owner = "iccn"
     $location = "40.1131082,-88.2265234"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2759,8 +2190,6 @@ node 'iccn01' inherits ringnode {
 node 'popsc01' inherits ringnode {
     $owner = "popsc"
     $location = "-27.599548,-48.522928"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2768,8 +2197,6 @@ node 'popsc01' inherits ringnode {
 node 'sargasso01' inherits ringnode {
     $owner = "sargasso"
     $location = "51.521895,-0.07293"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2777,8 +2204,6 @@ node 'sargasso01' inherits ringnode {
 node 'mythicbeasts01' inherits ringnode {
     $owner = "mythicbeasts"
     $location = "51.49964,-0.01074"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2786,8 +2211,6 @@ node 'mythicbeasts01' inherits ringnode {
 node 'transip01' inherits ringnode {
     $owner = "transip"
     $location = "52.393233,4.848914"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2795,8 +2218,6 @@ node 'transip01' inherits ringnode {
 node 'sapphire01' inherits ringnode {
     $owner = "sapphire"
     $location = "36.142092,-5.358946"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2804,8 +2225,6 @@ node 'sapphire01' inherits ringnode {
 node 'octopuce01' inherits ringnode {
     $owner = "octopuce"
     $location = "48.79609,2.412572"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2813,8 +2232,6 @@ node 'octopuce01' inherits ringnode {
 node 'udomain01' inherits ringnode {
     $owner = "udomain"
     $location = "22.352507,114.124324"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2822,8 +2239,6 @@ node 'udomain01' inherits ringnode {
 node 'ipvisie01' inherits ringnode {
     $owner = "ipvisie"
     $location = "51.8756055,4.4480657"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2831,8 +2246,6 @@ node 'ipvisie01' inherits ringnode {
 node 'citynetwork01' inherits ringnode {
     $owner = "citynetwork"
     $location = "56.16122,15.58690"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2840,8 +2253,6 @@ node 'citynetwork01' inherits ringnode {
 node 'iplan01' inherits ringnode {
     $owner = "iplan"
     $location = "-34.640633,-58.404018"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2849,8 +2260,6 @@ node 'iplan01' inherits ringnode {
 node 'magyar01' inherits ringnode {
     $owner = "magyar"
     $location = "47.493275,19.102322"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2858,8 +2267,6 @@ node 'magyar01' inherits ringnode {
 node 'luna01' inherits ringnode {
     $owner = "luna"
     $location = "51.92609,4.41863"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2867,8 +2274,6 @@ node 'luna01' inherits ringnode {
 node 'combell01' inherits ringnode {
     $owner = "combell"
     $location = "50.870572,4.47695"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2876,8 +2281,6 @@ node 'combell01' inherits ringnode {
 node 'infostrada01' inherits ringnode {
     $owner = "infostrada"
     $location = "52.303081,4.937886"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2885,8 +2288,6 @@ node 'infostrada01' inherits ringnode {
 node 'claranet07' inherits ringnode {
     $owner = "claranet"
     $location = "51.760427,-0.003073"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2894,8 +2295,6 @@ node 'claranet07' inherits ringnode {
 node 'stargate01' inherits ringnode {
     $owner = "stargate"
     $location = "49.2436891,-122.9695433"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2903,8 +2302,6 @@ node 'stargate01' inherits ringnode {
 node 'etop01' inherits ringnode {
     $owner = "etop"
     $location = "52.194675,20.925358"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2912,8 +2309,6 @@ node 'etop01' inherits ringnode {
 node 'dragon01' inherits ringnode {
     $owner = "dragon"
     $location = "50.0601906,14.4830350"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2921,8 +2316,6 @@ node 'dragon01' inherits ringnode {
 node '2connect01' inherits ringnode {
     $owner = "2connect"
     $location = "50.0601906,14.4830350"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2930,8 +2323,6 @@ node '2connect01' inherits ringnode {
 node 'syseleven01' inherits ringnode {
     $owner = "syseleven"
     $location = "52.502038,13.369331"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2939,8 +2330,6 @@ node 'syseleven01' inherits ringnode {
 node 'vertixo01' inherits ringnode {
     $owner = "vertixo"
     $location = "52.033297,4.497336"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2948,8 +2337,6 @@ node 'vertixo01' inherits ringnode {
 node 'inerail01' inherits ringnode {
     $owner = "inerail"
     $location = "40.743384,-74.008027"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2957,8 +2344,6 @@ node 'inerail01' inherits ringnode {
 node 'kwaoo01' inherits ringnode {
     $owner = "kwaoo"
     $location = "46.203391,6.144675"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2966,8 +2351,6 @@ node 'kwaoo01' inherits ringnode {
 node 'atlanticmetro01' inherits ringnode {
     $owner = "atlanticmetro"
     $location = "40.7267165,-74.0075896"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2975,8 +2358,6 @@ node 'atlanticmetro01' inherits ringnode {
 node 'esgob01' inherits ringnode {
     $owner = "esgob"
     $location = "51.498311,-0.001528"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2984,8 +2365,6 @@ node 'esgob01' inherits ringnode {
 node 'itsbrasil01' inherits ringnode {
     $owner = "itsbrasil"
     $location = "-12.980163,-38.450617"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -2993,8 +2372,6 @@ node 'itsbrasil01' inherits ringnode {
 node 'finecom01' inherits ringnode {
     $owner = "finecom"
     $location = "47.131732,7.24166"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3002,8 +2379,6 @@ node 'finecom01' inherits ringnode {
 node 'sbtap01' inherits ringnode {
     $owner = "sbtap"
     $location = "42.94334338754859,13.882770538330078"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3011,8 +2386,6 @@ node 'sbtap01' inherits ringnode {
 node 'spotify01' inherits ringnode {
     $owner = "spotify"
     $location = "59.263504,18.105463"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3020,8 +2393,6 @@ node 'spotify01' inherits ringnode {
 node 'xconnect01' inherits ringnode {
     $owner = "xconnect"
     $location = "52.343984,4.828712"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3029,8 +2400,6 @@ node 'xconnect01' inherits ringnode {
 node 'amsio01' inherits ringnode {
     $owner = "amsio"
     $location = "52.280312,4.753851"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3038,8 +2407,6 @@ node 'amsio01' inherits ringnode {
 node 'goscomb01' inherits ringnode {
     $owner = "goscomb"
     $location = "51.512078,-0.002035"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3047,8 +2414,6 @@ node 'goscomb01' inherits ringnode {
 node 'kinber01' inherits ringnode {
     $owner = "kinber"
     $location = "40.7914,-77.8586"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3056,8 +2421,6 @@ node 'kinber01' inherits ringnode {
 node 'afilias02' inherits ringnode {
     $owner = "afilias"
     $location = "25.773914,-80.188007"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3065,8 +2428,6 @@ node 'afilias02' inherits ringnode {
 node 'nonattached01' inherits ringnode {
     $owner = "nonattached"
     $location = "50.102565,8.633623"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3074,8 +2435,6 @@ node 'nonattached01' inherits ringnode {
 node 'kpn01' inherits ringnode {
     $owner = "kpn"
     $location = "52.33661,4.88685"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3083,8 +2442,6 @@ node 'kpn01' inherits ringnode {
 node 'suomi01' inherits ringnode {
     $owner = "suomi"
     $location = "60.20336,24.923601"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3092,8 +2449,6 @@ node 'suomi01' inherits ringnode {
 node 'maxitel01' inherits ringnode {
     $owner = "maxitel"
     $location = "51.85615,4.29722"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3101,8 +2456,6 @@ node 'maxitel01' inherits ringnode {
 node 'flhsi01' inherits ringnode {
     $owner = "flhsi"
     $location = "28.355719,-80.744278"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3110,8 +2463,6 @@ node 'flhsi01' inherits ringnode {
 node 'virtualone01' inherits ringnode {
     $owner = "virtualone"
     $location = "51.51138,-0.00180"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3119,8 +2470,6 @@ node 'virtualone01' inherits ringnode {
 node 'swisscom01' inherits ringnode {
     $owner = "swisscom"
     $location = "46.9503047,7.4415524"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3128,8 +2477,6 @@ node 'swisscom01' inherits ringnode {
 node 'telus01' inherits ringnode {
     $owner = "telus"
     $location = "51.0471725,-114.0651321"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3137,8 +2484,6 @@ node 'telus01' inherits ringnode {
 node 'selectel01' inherits ringnode {
     $owner = "selectel"
     $location = "59.886598,30.329322"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3146,8 +2491,6 @@ node 'selectel01' inherits ringnode {
 node 'infowest01' inherits ringnode {
     $owner = "infowest"
     $location = "37.081474,-113.607170"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3155,8 +2498,6 @@ node 'infowest01' inherits ringnode {
 node 'funet01' inherits ringnode {
     $owner = "funet"
     $location = "60.203863,24.77146"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3164,8 +2505,6 @@ node 'funet01' inherits ringnode {
 node 'dcenterpl01' inherits ringnode {
     $owner = "dcenterpl"
     $location = "52.22694,21.00164"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3173,8 +2512,6 @@ node 'dcenterpl01' inherits ringnode {
 node 'cybercom01' inherits ringnode {
     $owner = "cybercom"
     $location = "61.49791,23.77586"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3182,8 +2519,6 @@ node 'cybercom01' inherits ringnode {
 node 'hivane01' inherits ringnode {
     $owner = "hivane"
     $location = "48.815068,2.403053"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3191,8 +2526,6 @@ node 'hivane01' inherits ringnode {
 node 'fullsave01' inherits ringnode {
     $owner = "fullsave"
     $location = "43.542635,1.509676"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3200,8 +2533,6 @@ node 'fullsave01' inherits ringnode {
 node 'telecityfi01' inherits ringnode {
     $owner = "telecityfi"
     $location = "60.169,24.959"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3209,8 +2540,6 @@ node 'telecityfi01' inherits ringnode {
 node 'itps01' inherits ringnode {
     $owner = "itps"
     $location = "51.49934,-0.01442"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3218,8 +2547,6 @@ node 'itps01' inherits ringnode {
 node 'afilias03' inherits ringnode {
     $owner = "afilias"
     $location = "35.584732,139.748758"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3227,8 +2554,6 @@ node 'afilias03' inherits ringnode {
 node 'cyberverse01' inherits ringnode {
     $owner = "cyberverse"
     $location = "34.0473,-118.2573"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3236,8 +2561,6 @@ node 'cyberverse01' inherits ringnode {
 node 'viatel02' inherits ringnode {
     $owner = "viatel"
     $location = "48.856261,2.383975"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3245,8 +2568,6 @@ node 'viatel02' inherits ringnode {
 node 'viatel03' inherits ringnode {
     $owner = "viatel"
     $location = "51.51218,-0.00208"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3254,8 +2575,6 @@ node 'viatel03' inherits ringnode {
 node 'ntt01' inherits ringnode {
     $owner = "ntt"
     $location = "41.85286,-87.63448"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3263,8 +2582,6 @@ node 'ntt01' inherits ringnode {
 node 'bogalnet01' inherits ringnode {
     $owner = "bogalnet"
     $location = "58.032304,12.808976"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3272,8 +2589,6 @@ node 'bogalnet01' inherits ringnode {
 node 'iucc01' inherits ringnode {
     $owner = "iucc"
     $location = "32.1132,34.8053"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3281,8 +2596,6 @@ node 'iucc01' inherits ringnode {
 node 'nynex01' inherits ringnode {
     $owner = "nynex"
     $location = "8.6269,49.8706"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3290,8 +2603,6 @@ node 'nynex01' inherits ringnode {
 node 'businessconnect01' inherits ringnode {
     $owner = "businessconnect"
     $location = "52.356156,4.955187"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3299,8 +2610,6 @@ node 'businessconnect01' inherits ringnode {
 node 'noris01' inherits ringnode {
     $owner = "noris"
     $location = "49.41022,11.13191"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3308,8 +2617,6 @@ node 'noris01' inherits ringnode {
 node 'mknetzdienste01' inherits ringnode {
     $owner = "mknetzdienste"
     $location = "50.105773,8.647825"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3317,8 +2624,6 @@ node 'mknetzdienste01' inherits ringnode {
 node 'suretec01' inherits ringnode {
     $owner = "suretec"
     $location = "51.511467,-0.001224"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3326,8 +2631,6 @@ node 'suretec01' inherits ringnode {
 node 'cloudnl01' inherits ringnode {
     $owner = "cloudnl"
     $location = "52.343984,4.828712"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3335,8 +2638,6 @@ node 'cloudnl01' inherits ringnode {
 node 'icanndns01' inherits ringnode {
     $owner = "icanndns"
     $location = "33.926077,-118.394123"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3344,8 +2645,6 @@ node 'icanndns01' inherits ringnode {
 node 'icanndns02' inherits ringnode {
     $owner = "icanndns"
     $location = "38.9507382,-77.3639041"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3353,8 +2652,6 @@ node 'icanndns02' inherits ringnode {
 node 'dacor01' inherits ringnode {
     $owner = "dacor"
     $location = "50.25406,10.96146"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3362,8 +2659,6 @@ node 'dacor01' inherits ringnode {
 node 'networkoperations01' inherits ringnode {
     $owner = "networkoperations"
     $location = "53.205139,5.765333"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3371,8 +2666,6 @@ node 'networkoperations01' inherits ringnode {
 node 'blizoo01' inherits ringnode {
     $owner = "blizoo"
     $location = "42.6588705,23.3482014"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3380,8 +2673,6 @@ node 'blizoo01' inherits ringnode {
 node 'vibe01' inherits ringnode {
     $owner = "vibe"
     $location = "-36.849346,174.765412"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3389,8 +2680,6 @@ node 'vibe01' inherits ringnode {
 node 'atw01' inherits ringnode {
     $owner = "atw"
     $location = "47.517702,19.058264"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3398,8 +2687,6 @@ node 'atw01' inherits ringnode {
 node 'onlinesas01' inherits ringnode {
     $owner = "onlinesas"
     $location = "48.774881,2.380689"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3407,8 +2694,6 @@ node 'onlinesas01' inherits ringnode {
 node 'citynetwork02' inherits ringnode {
     $owner = "citynetwork"
     $location = "59.422471,17.918073"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3416,8 +2701,6 @@ node 'citynetwork02' inherits ringnode {
 node 'citynetwork03' inherits ringnode {
     $owner = "citynetwork"
     $location = "51.520251,-0.071555"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3425,8 +2708,6 @@ node 'citynetwork03' inherits ringnode {
 node 'hibernia03' inherits ringnode {
     $owner = "hibernia"
     $location = "48.86987,2.34424"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3434,8 +2715,6 @@ node 'hibernia03' inherits ringnode {
 node 'redpilllinpro02' inherits ringnode {
     $owner = "redpilllinpro"
     $location = "59.949443,10.771563"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3443,8 +2722,6 @@ node 'redpilllinpro02' inherits ringnode {
 node 'redpilllinpro03' inherits ringnode {
     $owner = "redpilllinpro"
     $location = "59.305445,13.537273"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3452,8 +2729,6 @@ node 'redpilllinpro03' inherits ringnode {
 node 'mainloop01' inherits ringnode {
     $owner = "mainloop"
     $location = "59.422474,17.918095"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3461,8 +2736,6 @@ node 'mainloop01' inherits ringnode {
 node 'tigron01' inherits ringnode {
     $owner = "tigron"
     $location = "50.887383,4.455481"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3470,8 +2743,6 @@ node 'tigron01' inherits ringnode {
 node 'nexiu01' inherits ringnode {
     $owner = "nexiu"
     $location = "50.1192924,8.7355652"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3479,8 +2750,6 @@ node 'nexiu01' inherits ringnode {
 node 'digitalocean01' inherits ringnode {
     $owner = "digitalocean"
     $location = "51.521187,-0.62416"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3488,8 +2757,6 @@ node 'digitalocean01' inherits ringnode {
 node 'digitalocean02' inherits ringnode {
     $owner = "digitalocean"
     $location = "1.321075,103.695026"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3497,8 +2764,6 @@ node 'digitalocean02' inherits ringnode {
 node 'digitalocean03' inherits ringnode {
     $owner = "digitalocean"
     $location = "52.356156,4.955187"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3506,8 +2771,6 @@ node 'digitalocean03' inherits ringnode {
 node 'digitalocean04' inherits ringnode {
     $owner = "digitalocean"
     $location = "40.82993,-74.126728"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3515,8 +2778,6 @@ node 'digitalocean04' inherits ringnode {
 node 'bdhub01' inherits ringnode {
     $owner = "bdhub"
     $location = "23.7805838,90.4162568"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3524,8 +2785,6 @@ node 'bdhub01' inherits ringnode {
 node 'blacknight01' inherits ringnode {
     $owner = "blacknight"
     $location = "53.34981,-6.26031"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3533,8 +2792,6 @@ node 'blacknight01' inherits ringnode {
 node 'globalways01' inherits ringnode {
     $owner = "globalways"
     $location = "48.77488,9.17601"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3542,8 +2799,6 @@ node 'globalways01' inherits ringnode {
 node 'dfn01' inherits ringnode {
     $owner = "dfn"
     $location = "49.5738,11.0272"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3551,8 +2806,6 @@ node 'dfn01' inherits ringnode {
 node 'liquidweb01' inherits ringnode {
     $owner = "liquidweb"
     $location = "42.705619,-84.666429"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3560,8 +2813,6 @@ node 'liquidweb01' inherits ringnode {
 node 'riseup01' inherits ringnode {
     $owner = "riseup"
     $location = "47.614353,-122.338864"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3569,8 +2820,6 @@ node 'riseup01' inherits ringnode {
 node 'ntt02' inherits ringnode {
     $owner = "ntt"
     $location = "52.30309,4.93795"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3578,8 +2827,6 @@ node 'ntt02' inherits ringnode {
 node 'amazon09' inherits ringnode {
     $owner = "amazon"
     $location = "50.11092,8.68213"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3587,8 +2834,6 @@ node 'amazon09' inherits ringnode {
 node 'immense01' inherits ringnode {
     $owner = "immense"
     $location = "30.45229,-91.11560"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3596,8 +2841,6 @@ node 'immense01' inherits ringnode {
 node 'bchnetwork01' inherits ringnode {
     $owner = "bchnetwork"
     $location = "50.881702,4.453926"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3605,8 +2848,6 @@ node 'bchnetwork01' inherits ringnode {
 node 'cesnet01' inherits ringnode {
     $owner = "cesnet"
     $location = "50.101886,14.39173"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3614,8 +2855,6 @@ node 'cesnet01' inherits ringnode {
 node 'adix01' inherits ringnode {
     $owner = "adix"
     $location = "53.2459559,6.5280274"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3623,8 +2862,6 @@ node 'adix01' inherits ringnode {
 node 'sasag01' inherits ringnode {
     $owner = "sasag"
     $location = "47.6933420,8.6294460"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3632,8 +2869,6 @@ node 'sasag01' inherits ringnode {
 node 'ovh01' inherits ringnode {
     $owner = "ovh"
     $location = "50.98707,2.12554"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3641,8 +2876,6 @@ node 'ovh01' inherits ringnode {
 node 'btireland01' inherits ringnode {
     $owner = "btireland"
     $location = "53.291844,-6.415470"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3650,8 +2883,6 @@ node 'btireland01' inherits ringnode {
 node 'larsendata01' inherits ringnode {
     $owner = "larsendata"
     $location = "55.728018,12.380919"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3659,8 +2890,6 @@ node 'larsendata01' inherits ringnode {
 node 'firstcolo01' inherits ringnode {
     $owner = "firstcolo"
     $location = "50.11648,8.72594"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3668,8 +2897,6 @@ node 'firstcolo01' inherits ringnode {
 node 'tumuenchen01' inherits ringnode {
     $owner = "tumuenchen"
     $location = "48.262413,11.668332"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3677,8 +2904,6 @@ node 'tumuenchen01' inherits ringnode {
 node 'kudelski01' inherits ringnode {
     $owner = "kudelski"
     $location = "47.387975,8.520295"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3686,8 +2911,6 @@ node 'kudelski01' inherits ringnode {
 node 'csuc01' inherits ringnode {
     $owner = "csuc"
     $location = "41.387549,2.111557"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3695,8 +2918,6 @@ node 'csuc01' inherits ringnode {
 node 'qcom01' inherits ringnode {
     $owner = "qcom"
     $location = "45.67361,9.67697"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3704,8 +2925,6 @@ node 'qcom01' inherits ringnode {
 node 'jointtransit01' inherits ringnode {
     $owner = "jointtransit"
     $location = "52.34398,4.82871"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3713,8 +2932,6 @@ node 'jointtransit01' inherits ringnode {
 node 'edsitech01' inherits ringnode {
     $owner = "edsitech"
     $location = "46.522611,6.63314"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3722,8 +2939,6 @@ node 'edsitech01' inherits ringnode {
 node '1oconsulting01' inherits ringnode {
     $owner = "1oconsulting"
     $location = "59.290854,18.017407"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3731,8 +2946,6 @@ node '1oconsulting01' inherits ringnode {
 node 'datacentred01' inherits ringnode {
     $owner = "datacentred"
     $location = "53.475316,-2.294012"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3740,8 +2953,6 @@ node 'datacentred01' inherits ringnode {
 node 'ovh02' inherits ringnode {
     $owner = "ovh"
     $location = "50.69265,3.20153"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3749,8 +2960,6 @@ node 'ovh02' inherits ringnode {
 node 'ovh03' inherits ringnode {
     $owner = "ovh"
     $location = "48.57341,7.75211"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3758,8 +2967,6 @@ node 'ovh03' inherits ringnode {
 node 'ovh04' inherits ringnode {
     $owner = "ovh"
     $location = "45.3150817,-73.8779033"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3767,8 +2974,6 @@ node 'ovh04' inherits ringnode {
 node 'vshn01' inherits ringnode {
     $owner = "vshn"
     $location = "47.45008,8.53988"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3776,8 +2981,6 @@ node 'vshn01' inherits ringnode {
 node 'queryfoundry01' inherits ringnode {
     $owner = "queryfoundry"
     $location = "34.048164,-118.255697"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3785,8 +2988,6 @@ node 'queryfoundry01' inherits ringnode {
 node 'globalconnect01' inherits ringnode {
     $owner = "globalconnect"
     $location = "55.662103,12.301349"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3794,8 +2995,6 @@ node 'globalconnect01' inherits ringnode {
 node 'openit01' inherits ringnode {
     $owner = "openit"
     $location = "51.188409,6.866153"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3803,8 +3002,6 @@ node 'openit01' inherits ringnode {
 node 'fidonet01' inherits ringnode {
     $owner = "fidonet"
     $location = "51.515099,0.001794"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3812,8 +3009,6 @@ node 'fidonet01' inherits ringnode {
 node 'atechmedia01' inherits ringnode {
     $owner = "atechmedia"
     $location = "51.5681242,-0.2309344"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3821,8 +3016,6 @@ node 'atechmedia01' inherits ringnode {
 node 'cablecom01' inherits ringnode {
     $owner = "cablecom"
     $location = "51.50735,-0.12776"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3830,8 +3023,6 @@ node 'cablecom01' inherits ringnode {
 node 'maxitel02' inherits ringnode {
     $owner = "maxitel"
     $location = "52.07050,4.30070"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3839,8 +3030,6 @@ node 'maxitel02' inherits ringnode {
 node 'netnod01' inherits ringnode {
     $owner = "netnod"
     $location = "59.339511,18.0132642"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3848,8 +3037,6 @@ node 'netnod01' inherits ringnode {
 node 'quadranet01' inherits ringnode {
     $owner = "quadranet"
     $location = "34.04842,-118.25521"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3857,8 +3044,6 @@ node 'quadranet01' inherits ringnode {
 node 'xfernet01' inherits ringnode {
     $owner = "xfernet"
     $location = "34.0611957,-118.2916508"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3866,8 +3051,6 @@ node 'xfernet01' inherits ringnode {
 node 'speakup01' inherits ringnode {
     $owner = "speakup"
     $location = "52.237143,6.849456"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3875,8 +3058,6 @@ node 'speakup01' inherits ringnode {
 node 'dna01' inherits ringnode {
     $owner = "dna"
     $location = "60.2944104,24.9283004"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3884,8 +3065,6 @@ node 'dna01' inherits ringnode {
 node 'leaseweb02' inherits ringnode {
     $owner = "leaseweb"
     $location = "52.391224,4.665155"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3893,8 +3072,6 @@ node 'leaseweb02' inherits ringnode {
 node 'leaseweb03' inherits ringnode {
     $owner = "leaseweb"
     $location = "38.746461,-77.533079"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3902,8 +3079,6 @@ node 'leaseweb03' inherits ringnode {
 node 'leaseweb04' inherits ringnode {
     $owner = "leaseweb"
     $location = "50.096741,8.629677"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3911,8 +3086,6 @@ node 'leaseweb04' inherits ringnode {
 node 'tdc01' inherits ringnode {
     $owner = "tdc"
     $location = "56.162938,10.203917"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3920,8 +3093,6 @@ node 'tdc01' inherits ringnode {
 node 'nicbr01' inherits ringnode {
     $owner = "nicbr"
     $location = "-23.500348,-46.842800"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3929,8 +3100,6 @@ node 'nicbr01' inherits ringnode {
 node 'exnetworks01' inherits ringnode {
     $owner = "exnetworks"
     $location = "51.511122,-0.003533"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3938,8 +3107,6 @@ node 'exnetworks01' inherits ringnode {
 node 'sggs01' inherits ringnode {
     $owner = "sggs"
     $location = "1.351141,103.862008"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3947,8 +3114,6 @@ node 'sggs01' inherits ringnode {
 node 'peakten01' inherits ringnode {
     $owner = "peakten"
     $location = "38.254167,85.759167"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3956,8 +3121,6 @@ node 'peakten01' inherits ringnode {
 node 'vshn02' inherits ringnode {
     $owner = "vshn"
     $location = "47.432913,8.557448"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3965,8 +3128,6 @@ node 'vshn02' inherits ringnode {
 node 'kaiaglobal02' inherits ringnode {
     $owner = "kaiaglobal"
     $location = "40.717787,-74.008773"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3974,8 +3135,6 @@ node 'kaiaglobal02' inherits ringnode {
 node 'nianet01' inherits ringnode {
     $owner = "nianet"
     $location = "56.07,9.993083"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3983,8 +3142,6 @@ node 'nianet01' inherits ringnode {
 node 'pix01' inherits ringnode {
     $owner = "pix"
     $location = "31.90707,35.20627"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -3992,8 +3149,6 @@ node 'pix01' inherits ringnode {
 node 'utwente01' inherits ringnode {
     $owner = "utwente"
     $location = "52.2397661,6.8535898"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4001,8 +3156,6 @@ node 'utwente01' inherits ringnode {
 node 'transtelco01' inherits ringnode {
     $owner = "transtelco"
     $location = "31.7333,-106.4833"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4010,8 +3163,6 @@ node 'transtelco01' inherits ringnode {
 node 'lwlcom01' inherits ringnode {
     $owner = "lwlcom"
     $location = "53.11066,8.76517"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4019,8 +3170,6 @@ node 'lwlcom01' inherits ringnode {
 node 'centarra01' inherits ringnode {
     $owner = "centarra"
     $location = "32.7830600,-96.8066700"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4028,8 +3177,6 @@ node 'centarra01' inherits ringnode {
 node 'ucsc01' inherits ringnode {
     $owner = "ucsc"
     $location = "37.0000,122.0600"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4037,8 +3184,6 @@ node 'ucsc01' inherits ringnode {
 node 'nordunet01' inherits ringnode {
     $owner = "nordunet"
     $location = "59.341984,18.062366"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4046,8 +3191,6 @@ node 'nordunet01' inherits ringnode {
 node 'bkkfiber01' inherits ringnode {
     $owner = "bkkfiber"
     $location = "60.3731,5.3392"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4055,8 +3198,6 @@ node 'bkkfiber01' inherits ringnode {
 node 'cloudcenter01' inherits ringnode {
     $owner = "cloudcenter"
     $location = "61.496,23.757"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4064,8 +3205,6 @@ node 'cloudcenter01' inherits ringnode {
 node 'worldstream01' inherits ringnode {
     $owner = "worldstream"
     $location = "52.001225,4.210819"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4073,8 +3212,6 @@ node 'worldstream01' inherits ringnode {
 node 'cloudvps01' inherits ringnode {
     $owner = "cloudvps"
     $location = "52.332912,4.919461"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4082,8 +3219,6 @@ node 'cloudvps01' inherits ringnode {
 node 'veracity01' inherits ringnode {
     $owner = "veracity"
     $location = "40.479904,-111.904475"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4091,8 +3226,6 @@ node 'veracity01' inherits ringnode {
 node 'vellance01' inherits ringnode {
     $owner = "vellance"
     $location = "52.332794,4.919612"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4100,8 +3233,6 @@ node 'vellance01' inherits ringnode {
 node 'cegeka01' inherits ringnode {
     $owner = "cegeka"
     $location = "50.930698,5.370075799999995"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4109,8 +3240,6 @@ node 'cegeka01' inherits ringnode {
 node 'choopa01' inherits ringnode {
     $owner = "choopa"
     $location = "40.556947,-74.484737"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4118,8 +3247,6 @@ node 'choopa01' inherits ringnode {
 node 'upcloud01' inherits ringnode {
     $owner = "upcloud"
     $location = "60.173324,24.941025"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4127,8 +3254,6 @@ node 'upcloud01' inherits ringnode {
 node 'elisa01' inherits ringnode {
     $owner = "elisa"
     $location = "60.197486,24.936639"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4136,8 +3261,6 @@ node 'elisa01' inherits ringnode {
 node 'corebackbone01' inherits ringnode {
     $owner = "corebackbone"
     $location = "49.4539333,11.0636334"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4145,8 +3268,6 @@ node 'corebackbone01' inherits ringnode {
 node 'linode01' inherits ringnode {
     $owner = "linode"
     $location = "1.324256,103.891800"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4154,8 +3275,6 @@ node 'linode01' inherits ringnode {
 node 'openimp01' inherits ringnode {
     $owner = "openimp"
     $location = "51.521259,-0.071998"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4163,8 +3282,6 @@ node 'openimp01' inherits ringnode {
 node 'swiftnode01' inherits ringnode {
     $owner = "swiftnode"
     $location = "34.047539,-118.256699"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4172,8 +3289,6 @@ node 'swiftnode01' inherits ringnode {
 node 'fusix01' inherits ringnode {
     $owner = "fusix"
     $location = "52.303941,4.939339"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4181,8 +3296,6 @@ node 'fusix01' inherits ringnode {
 node 'exanetworks01' inherits ringnode {
     $owner = "exanetworks"
     $location = "53.4644732,-2.2475544000000127"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4190,8 +3303,6 @@ node 'exanetworks01' inherits ringnode {
 node 'gigabit01' inherits ringnode {
     $owner = "gigabit"
     $location = "55.72760,12.37716"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4199,8 +3310,6 @@ node 'gigabit01' inherits ringnode {
 node 'altibox01' inherits ringnode {
     $owner = "altibox"
     $location = "58.934157,5.740233"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4208,8 +3317,6 @@ node 'altibox01' inherits ringnode {
 node 'zitcom01' inherits ringnode {
     $owner = "zitcom"
     $location = "56.052986,9.950799"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4217,8 +3324,6 @@ node 'zitcom01' inherits ringnode {
 node 'bytemark01' inherits ringnode {
     $owner = "bytemark"
     $location = "53.980114,-1.130090999999993"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4226,8 +3331,6 @@ node 'bytemark01' inherits ringnode {
 node 'call2701' inherits ringnode {
     $owner = "call27"
     $location = "54.960979,-1.631978"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4235,8 +3338,6 @@ node 'call2701' inherits ringnode {
 node 'iptron01' inherits ringnode {
     $owner = "iptron"
     $location = "59.436219,24.704990"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4244,8 +3345,6 @@ node 'iptron01' inherits ringnode {
 node 'euronet01' inherits ringnode {
     $owner = "euronet"
     $location = "52.345587,4.832434"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4253,8 +3352,6 @@ node 'euronet01' inherits ringnode {
 node 'ism01' inherits ringnode {
     $owner = "ism"
     $location = "52.40034381020145,4.843141436576843"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4262,8 +3359,6 @@ node 'ism01' inherits ringnode {
 node 'sonic01' inherits ringnode {
     $owner = "sonic"
     $location = "38.419232,-122.751613"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4271,8 +3366,6 @@ node 'sonic01' inherits ringnode {
 node 'sabay01' inherits ringnode {
     $owner = "sabay"
     $location = "11.55810,104.92039"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4280,8 +3373,6 @@ node 'sabay01' inherits ringnode {
 node 'coreinternet01' inherits ringnode {
     $owner = "coreinternet"
     $location = "50.848180,-1.166411"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4289,8 +3380,6 @@ node 'coreinternet01' inherits ringnode {
 node 'upcloud02' inherits ringnode {
     $owner = "upcloud"
     $location = "50.097852,8.689811"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4298,8 +3387,6 @@ node 'upcloud02' inherits ringnode {
 node 'upcloud03' inherits ringnode {
     $owner = "upcloud"
     $location = "51.512431,-0.107398"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4307,8 +3394,6 @@ node 'upcloud03' inherits ringnode {
 node 'upcloud04' inherits ringnode {
     $owner = "upcloud"
     $location = "41.862632,-87.666924"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4316,8 +3401,6 @@ node 'upcloud04' inherits ringnode {
 node 'teleweb01' inherits ringnode {
     $owner = "teleweb"
     $location = "51.120123,4.017047"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4325,8 +3408,6 @@ node 'teleweb01' inherits ringnode {
 node 'tfskok01' inherits ringnode {
     $owner = "tfskok"
     $location = "54.489418,18.545387"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4334,8 +3415,6 @@ node 'tfskok01' inherits ringnode {
 node 'mtwentyfourseven01' inherits ringnode {
     $owner = "mtwentyfourseven"
     $location = "53.4614821,-2.3244391"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4343,8 +3422,6 @@ node 'mtwentyfourseven01' inherits ringnode {
 node 'peakten02' inherits ringnode {
     $owner = "peakten"
     $location = "35.2269,-80.8433"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4352,8 +3429,6 @@ node 'peakten02' inherits ringnode {
 node 'peakten03' inherits ringnode {
     $owner = "peakten"
     $location = "36.1667,-86.7833"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4361,8 +3436,6 @@ node 'peakten03' inherits ringnode {
 node 'switchco01' inherits ringnode {
     $owner = "switchco"
     $location = "52.354626,4.961590"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4370,8 +3443,6 @@ node 'switchco01' inherits ringnode {
 node 'nodesdirect01' inherits ringnode {
     $owner = "nodesdirect"
     $location = "30.331446,-81.662439"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4379,8 +3450,6 @@ node 'nodesdirect01' inherits ringnode {
 node 'quanza01' inherits ringnode {
     $owner = "quanza"
     $location = "52.332872,4.919522"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4388,8 +3457,6 @@ node 'quanza01' inherits ringnode {
 node 'fasttrackcomm01' inherits ringnode {
     $owner = "fasttrackcomm"
     $location = "37.243937,-107.874365"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4397,8 +3464,6 @@ node 'fasttrackcomm01' inherits ringnode {
 node 'amatis01' inherits ringnode {
     $owner = "amatis"
     $location = "51.46214,-1.00757"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4406,8 +3471,6 @@ node 'amatis01' inherits ringnode {
 node 'gwu01' inherits ringnode {
     $owner = "gwu"
     $location = "38.897575,-77.048053"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4415,8 +3478,6 @@ node 'gwu01' inherits ringnode {
 node 'communityrack01' inherits ringnode {
     $owner = "communityrack"
     $location = "47.383398,8.495548"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4424,8 +3485,6 @@ node 'communityrack01' inherits ringnode {
 node 'netflix02' inherits ringnode {
     $owner = "netflix"
     $location = "-77.4874416,39.0437567"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4433,8 +3492,6 @@ node 'netflix02' inherits ringnode {
 node 'netflix03' inherits ringnode {
     $owner = "netflix"
     $location = "-121.888826,37.329731"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4442,8 +3499,6 @@ node 'netflix03' inherits ringnode {
 node 'surfnet02' inherits ringnode {
     $owner = "surfnet"
     $location = "52.087963,5.167554"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4451,8 +3506,6 @@ node 'surfnet02' inherits ringnode {
 node 'vibe02' inherits ringnode {
     $owner = "vibe"
     $location = "-33.869786,151.21911"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4460,8 +3513,6 @@ node 'vibe02' inherits ringnode {
 node 'rackcentral01' inherits ringnode {
     $owner = "rackcentral"
     $location = "-37.8227346,144.9321503"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4469,8 +3520,6 @@ node 'rackcentral01' inherits ringnode {
 node 'rackcentral02' inherits ringnode {
     $owner = "rackcentral"
     $location = "-37.8227346,144.9321503"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4478,8 +3527,6 @@ node 'rackcentral02' inherits ringnode {
 node 'widenet01' inherits ringnode {
     $owner = "widenet"
     $location = "49.4297,22.5867"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4487,8 +3534,6 @@ node 'widenet01' inherits ringnode {
 node 'viatel04' inherits ringnode {
     $owner = "viatel"
     $location = "52.293529,4.945530"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4496,8 +3541,6 @@ node 'viatel04' inherits ringnode {
 node 'dhiraagu01' inherits ringnode {
     $owner = "dhiraagu"
     $location = "4.166667,73.5"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }
@@ -4505,8 +3548,6 @@ node 'dhiraagu01' inherits ringnode {
 node 'vivor01' inherits ringnode {
     $owner = "vivor"
     $location = "52.027374,5.624321"
-    include nagios::target::fqdn
-    include nagios_services
     include set_local_settings
     include users
 }

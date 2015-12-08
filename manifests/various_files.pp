@@ -9,6 +9,13 @@ class etcfiles {
         include_src => false,
     }
 
+    apt::source { 'salt_repo':
+        location    => 'http://repo.saltstack.com/apt/ubuntu/12.04/amd64/latest',
+        release     => 'precise',
+        repos       => 'main',
+        include_src => false,
+    }
+
     file { ['/etc/apt/sources.list.d/master.ring.nlnog.net.list', '/etc/apt/sources.list.d/amp.list']:
         ensure  => absent,
     }
