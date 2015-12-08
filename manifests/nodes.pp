@@ -1703,6 +1703,7 @@ node 'yourorg01' inherits ringnode {
 }
 
 node 'occaid01' {
+    include salt
     include users::virtual::ring_admins
     include cronjobs
     include groups
