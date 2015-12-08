@@ -27,6 +27,7 @@ node basenode {
         purge_sources_list_d => true,
     }
     include ring::apt
+    include salt
 }
 
 node ringnode inherits basenode {
