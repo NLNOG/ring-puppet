@@ -14,7 +14,6 @@ node basenode {
     include lang
     munin::plugin { ["users", "tcp", "ntp_offset", "uptime", "threads", "ntp_kernel_pll_off", "diskstats", "proc_pri", "iostat_ios"]:
     }
-    include ssh
     include timezone
     include fail2ban-whitelist
     $postfix_smtp_listen = "127.0.0.1"
@@ -1718,7 +1717,6 @@ node 'occaid01' {
 #    }
 #    package{ "munin": ensure => purged, }
 
-    include ssh
     include timezone
 #   ipv6 and fail2ban are not ok
 #    include fail2ban-whitelist
@@ -2242,7 +2240,6 @@ node 'nlnetlabs01' {
 #    }
 #    package{ "munin": ensure => purged, }
 
-    include ssh
     include timezone
 #   ipv6 and fail2ban are not ok
 #    include fail2ban-whitelist
