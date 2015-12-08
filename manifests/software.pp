@@ -14,66 +14,7 @@ class master_software {
 }
 
 class nettools {
-    # for BGPmon stuff (requested by dave) 
-    package { "libxml2-dev": ensure => latest }
-    package { "python-libxml2": ensure => latest }
-    package { "socat": ensure => latest }
-
-    # debugging stuff
-    package { ["htop", "sysstat", "iotop"]: ensure => latest }
-
-    package { "libcache-cache-perl": ensure => latest }
-    package { "httping": ensure => latest }
-
-    # requested by teun
-    package { ["python-beautifulsoup", "python-flask"]:
-        ensure => latest,
-    }
-
-    package { "python-networkx": ensure => latest }
-
-    package { "python-virtualenv": ensure => latest }
-
-    # requested by teun
-    package { ["snmp"]:
-        ensure => latest,
-    }
-
-    package { "command-not-found":
-        ensure => latest,
-    }
-    package { "telnet":
-        ensure  => latest,
-    }
-    package { "python-software-properties":
-        ensure  => latest,
-    }
-    package { "python-pycountry":
-        ensure  => latest,
-    }
-    package { "python-simplejson":
-        ensure  => latest,
-    }
-    package { "python-demjson":
-        ensure  => latest,
-    }
-    package { "psmisc":
-        ensure => latest,
-    }
-    package { "whois":
-        ensure  => latest,
-    }
-   package { "bash-completion":
-        ensure => latest,
-    }
-    package { "update-motd":
-        ensure => latest,
-    }
-    package { "iperf":
-        ensure => latest,
-    }
-
-    package { ["iputils-ping", "iputils-tracepath"]:
+    package { ["iputils-ping"]:
         ensure => latest,
     }
 
@@ -92,21 +33,9 @@ class nettools {
         require => [Package["lft"]],
     }
 
-    package { "libnet-ssh2-ruby1.8": ensure => latest }
     package { "puppet": ensure => latest }
     package { "puppet-common": ensure => latest }
-    package { "python-dnspython": ensure => latest }
-    package { "python-argparse": 
-        ensure => $lsbdistcodename ? {
-            maverick    => latest,
-            precise     => absent,
-        }
-    }
-    package { "python-ipaddr": ensure => latest }
-    package { "python-pip": ensure => latest }
-    package { "graphviz": ensure => latest }
     package { "hping3": ensure => latest }
-    package { "gnutls-bin": ensure => latest }
     exec { "setcap cap_net_raw,cap_net_admin=eip /usr/sbin/hping3":
         onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/sbin/hping3`\" != \"/usr/sbin/hping3 = cap_net_admin,cap_net_raw+eip\"",
         require => Package["hping3", "libcap2-bin"],
@@ -125,36 +54,24 @@ class nettools {
         ensure => running,
         subscribe => File["/etc/ntp.conf"],
     }
-    package { "python-setuptools": ensure => latest }
-    package { "virt-what": ensure => latest }
     package { "sl": ensure => purged }
     package { "mtr": ensure => purged}
-    package { "mtr-tiny": ensure => latest}
+
     package { "nmap": ensure => latest }
-    
     exec { "setcap cap_net_raw,cap_net_admin=eip /usr/bin/nmap":
         onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/bin/nmap`\" != \"/usr/bin/nmap = cap_net_admin,cap_net_raw+eip\"",
         require => [ Package["nmap"] ],
     }
-
     exec { "setcap cap_net_raw,cap_net_admin=eip /usr/bin/nping":
         onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/bin/nping`\" != \"/usr/bin/nping = cap_net_admin,cap_net_raw+eip\"",
         require => [ Package["nmap"] ],
     }
 
     package { "traceroute": ensure => latest }
-    
-    package { "python-mysqldb": ensure => latest }
-
     exec { "setcap cap_net_raw+ep /usr/bin/traceroute.db":
         onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/bin/traceroute.db`\" != \"/usr/bin/traceroute.db = cap_net_raw+ep\"",
         require => Package["traceroute", "libcap2-bin"],
     }
-#    exec { "setcap cap_net_raw+ep /usr/bin/traceroute6":
-#        onlyif  => "/usr/bin/test \"`/sbin/getcap /usr/bin/traceroute6`\" != \"/usr/bin/traceroute6 = cap_net_raw+eip\"",
-#        require => Package["traceroute"],
-#    }
-
 
     package { "tcpdump": ensure => latest }
     package { "libcap2-bin": ensure => latest }
@@ -185,61 +102,11 @@ class nettools {
         require => Package["tshark", "libcap2-bin"],
     }
 
-    package { "build-essential": ensure => latest }
-    package { ["bison", "flex"]: ensure => latest }
-    package { "dnsutils": ensure => latest }
-    package { "ldnsutils": ensure => latest }
-    package { "wget": ensure => latest }
-    package { "netcat-openbsd": ensure => latest }
-    package { "ngrep": ensure => latest }
-    package { "netsed": ensure => latest }
-    package { "git-core": ensure => latest }
-    package { "mercurial": ensure => latest }
-    package { "w3m": ensure => latest }
-    package { "curl": ensure => latest }
-    package { "moreutils": ensure => latest }
-    package { "bc": ensure => latest }
-    package { "dbndns": ensure => latest }
-    package { "bind9-host": ensure => latest }
-    package { "bzr": ensure => latest }
-    package { "cvs": ensure => latest }
-    package { "dsniff": ensure => latest }
-    package { "fpdns": ensure => latest }
-    package { "gnupg": ensure => latest }
-    package { "ipcalc": ensure => latest }
-    package { "sipcalc": ensure => latest }
-    package { "lftp": ensure => latest }
-    package { "python": ensure => latest }
-    package { "ruby": ensure => latest }
-    package { "lynx": ensure => latest }
-    package { "php5-cli": ensure => latest }
-    package { "pv": ensure => latest }
-    package { "rsync": ensure => latest }
-    package { "strace": ensure => latest }
-    package { "lsof": ensure => latest }
-    package { "ltrace": ensure => latest }
-    package { "tcptraceroute": ensure => latest }
-    package { "ndisc6": ensure => latest }
-    package { "tmux": ensure => latest }
-    package { "screen": ensure => latest }
-    package { "ucspi-tcp": ensure => latest }
-    package { "fping": ensure => latest }
-    package { "update-manager-core": ensure => latest }
-    package { "man-db": ensure => latest }
-    package { "landscape-common": ensure => latest }
-    package { "unattended-upgrades": ensure => latest }
-    package { "update-notifier-common": ensure => latest }
-    package { "pastebinit": ensure => latest }
-    package { "markdown": ensure => latest }
-    package { "vim": ensure => latest }
-    package { "language-pack-en-base": ensure => latest }
-    package { "sshfp": ensure => latest }
-    package { "ringfpingd": ensure => latest }
+
+    package { "update-motd": ensure => latest }
     package { "ruby1.9.3": ensure => latest }
-    package { "ruby1.9.1-dev": ensure => latest }
-    package { "libsqlite3-dev": ensure => latest }
+    package { "ruby": ensure => latest }
     package { "members": ensure => latest }
-    package { "apache2-utils": ensure => latest }
 
     # for purgekernels
     package { ["libdpkg-perl", "libgetopt-simple-perl"]: ensure => latest }
@@ -265,9 +132,6 @@ class nettools {
             default => purged,
         }
     }
-
-    # lochii request
-    package { "jq": ensure => latest }
 }
 
 class nlnogrepokey {
