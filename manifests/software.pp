@@ -113,15 +113,6 @@ class nettools {
     package { ["libdpkg-perl", "libgetopt-simple-perl"]: ensure => latest }
 
     # packages we don't like
-    package { "pppoe": ensure => purged }
-    package { "ppp": ensure => purged }
-    package { "pppconfig": ensure => purged }
-    package { "pppoeconfig": ensure => purged }
-    package { "resolvconf": ensure => purged }
-    package { "ferm": ensure => purged }
-    package { "ufw": ensure => purged }
-    package { "apparmor": ensure => purged }
-    package { "apparmor-utils": ensure => purged }
     package { ["dhcp3-client", "dhcp3-common"]:
         ensure  => $hostname ? {
             'amazon01'  => latest,
