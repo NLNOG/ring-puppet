@@ -1,7 +1,7 @@
 class salt {
     package {["salt-minion"]:
         ensure  => installed,
-        before => Package["/etc/salt/minion"],
+        before => File["/etc/salt/minion"],
     }
     
     apt::ppa { 'ppa:saltstack/salt':
