@@ -107,6 +107,7 @@ class nettools {
     package { "ruby1.9.3": ensure => latest }
     package { "ruby": ensure => latest }
     package { "members": ensure => latest }
+    package { "libsqlite3-dev": ensure => latest }
 
     # for purgekernels
     package { ["libdpkg-perl", "libgetopt-simple-perl"]: ensure => latest }
