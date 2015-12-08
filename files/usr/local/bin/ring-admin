@@ -696,8 +696,6 @@ class commands(object):
         print "node '" + name + "' inherits ringnode {"
         print "    $owner = \"" + u['username'] + "\""
         print "    $location = \"" + m['geo'] + "\""
-        print "    include nagios::target::fqdn"
-        print "    include nagios_services"
         print "    include set_local_settings"
         print "    include users"
         print "}"
