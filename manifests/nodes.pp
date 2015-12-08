@@ -508,8 +508,6 @@ node 'worker03.infra' inherits infranode {
     # include backup::client
     include syslog_ng::client
     include apache2
-        check_domain => "${name}"
-    }
     munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
     }
 
