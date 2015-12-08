@@ -16,7 +16,7 @@ class salt {
     service { 'salt-minion':
         ensure  => running,
         enable  => true,
-        subscrube => File["/etc/salt/minion"],
+        subscribe => File["/etc/salt/minion"],
         require => Package["salt-minion"],
     }
 }
