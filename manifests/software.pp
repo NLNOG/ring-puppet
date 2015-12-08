@@ -132,5 +132,11 @@ class nlnogrepokey {
         key     => '853E2940',
         key_source  => "https://ring.nlnog.net/nlnogrepopublic.key",
     }
+
+    apt::key { 'salt_repo_key':
+        key     => 'DE57BFBE',
+        key_source  => "https://repo.saltstack.com/apt/ubuntu/12.04/amd64/latest/SALTSTACK-GPG-KEY.pub",
+    }
+
 }
 
