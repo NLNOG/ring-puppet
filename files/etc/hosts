@@ -825,9 +825,6 @@ ff02::2 ip6-allrouters
 2a02:d28:600:25::134  hibernia01 hibernia01.ring.nlnog.net
 78.152.62.134    hibernia01 hibernia01.ring.nlnog.net
 
-2a02:d28:600:5::251  hibernia02 hibernia02.ring.nlnog.net
-78.152.60.251    hibernia02 hibernia02.ring.nlnog.net
-
 2001:a68:1:d:87:108:57:169  telecityfi01 telecityfi01.ring.nlnog.net
 87.108.57.169    telecityfi01 telecityfi01.ring.nlnog.net
 

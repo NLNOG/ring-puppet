@@ -918,13 +918,6 @@ node 'hibernia01' inherits ringnode {
 	include users
 }
 
-node 'hibernia02' inherits ringnode {
-    $owner = "hibernia"
-    $location = "51.50852,-0.12549"
-    include set_local_settings
-	include users
-}
-
 node 'man-da01' inherits ringnode {
     $owner = "man-da"
     $location = "49.86170,8.68210"
