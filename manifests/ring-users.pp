@@ -3878,4 +3878,15 @@ class users::virtual::ring_users {
 
 ##### END vivor #####
 
+##### BEGIN comcast #####
+
+    @add_user { 'comcast':
+        email => '_CHQ--Backbone-T2E_@cable.comcast.com',
+        company => 'Comcast',
+        uid => 5374,
+        groups => ['ring-users'],
+    }
+
+##### END comcast #####
+
 }

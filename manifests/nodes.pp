@@ -3534,3 +3534,9 @@ node 'vivor01' inherits ringnode {
     include users
 }
 
+node 'comcast01' inherits ringnode {
+    $owner = "comcast"
+    $location = "41.919639N,-87.912075"
+    include set_local_settings
+    include users
+}

@@ -1263,3 +1263,5 @@ ff02::2 ip6-allrouters
 2a06:340::240  vivor01 vivor01.ring.nlnog.net
 193.189.139.240    vivor01 vivor01.ring.nlnog.net
 
+2001:558:6018::4  comcast01 comcast01.ring.nlnog.net
+67.161.224.4    comcast01 comcast01.ring.nlnog.net
