@@ -3088,13 +3088,6 @@ node 'lwlcom01' inherits ringnode {
     include users
 }
 
-node 'centarra01' inherits ringnode {
-    $owner = "centarra"
-    $location = "32.7830600,-96.8066700"
-    include set_local_settings
-    include users
-}
-
 node 'ucsc01' inherits ringnode {
     $owner = "ucsc"
     $location = "37.0000,122.0600"
