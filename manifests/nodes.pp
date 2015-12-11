@@ -2255,13 +2255,6 @@ node 'vertixo01' inherits ringnode {
     include users
 }
 
-node 'inerail01' inherits ringnode {
-    $owner = "inerail"
-    $location = "40.743384,-74.008027"
-    include set_local_settings
-    include users
-}
-
 node 'kwaoo01' inherits ringnode {
     $owner = "kwaoo"
     $location = "46.203391,6.144675"

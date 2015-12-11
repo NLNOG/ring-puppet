@@ -2327,17 +2327,6 @@ class users::virtual::ring_users {
 
 ##### END vertixo #####
 
-##### BEGIN inerail #####
-
-    @add_user { 'inerail':
-        email => 'noc@inerail.net',
-        company => 'Inerail',
-        uid => 5233,
-        groups => ['ring-users'],
-    }
-
-##### END inerail #####
-
 ##### BEGIN kwaoo #####
 
     @add_user { 'kwaoo':

@@ -735,9 +735,6 @@ ff02::2 ip6-allrouters
 2a01:a680:a1:10:1:60::  vertixo01 vertixo01.ring.nlnog.net
 92.63.161.60    vertixo01 vertixo01.ring.nlnog.net
 
-2604:5980:1001:d::4  inerail01 inerail01.ring.nlnog.net
-192.92.237.76    inerail01 inerail01.ring.nlnog.net
-
 2a03:4980::10:0:15  kwaoo01 kwaoo01.ring.nlnog.net
 178.250.209.33    kwaoo01 kwaoo01.ring.nlnog.net
 
