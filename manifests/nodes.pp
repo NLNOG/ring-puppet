@@ -715,13 +715,6 @@ node 'tenet01' inherits ringnode {
 	include users
 }
 
-node 'bigwells01' inherits ringnode {
-    $owner = "bigwells"
-    $location = "41.892365,-87.634918"
-    include set_local_settings
-	include users
-}
-
 node 'netability01' inherits ringnode {
     $owner = "netability"
     $location = "53.405754,-6.372293"

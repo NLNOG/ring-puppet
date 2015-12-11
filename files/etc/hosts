@@ -67,9 +67,6 @@ ff02::2 ip6-allrouters
 2001:4200:fffb::20c:29ff:fe7e:8ea4  tenet01 tenet01.ring.nlnog.net
 155.232.10.18   tenet01 tenet01.ring.nlnog.net
 
-2620:8b:0:3ed::a    bigwells01  bigwells01.ring.nlnog.net
-199.30.196.208  bigwells01  bigwells01.ring.nlnog.net
-
 2a01:518:1:58:2::2  cyso01  cyso01.ring.nlnog.net
 93.94.224.87    cyso01  cyso01.ring.nlnog.net
 

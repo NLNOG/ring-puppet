@@ -324,17 +324,6 @@ class users::virtual::ring_users {
 
 ##### END tenet #####
 
-#### BEGIN bigwells #####
-
-    @add_user { 'bigwells':
-        email   => 'neteng@bigwells.net',
-        company => 'Bigwells',
-        uid     => 5032,
-        groups  => ['ring-users'],
-    }
-
-#### END bigwells #####
-
 #### BEGIN hibernia #####
 
     @add_user { 'hibernia':
