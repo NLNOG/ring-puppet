@@ -204,19 +204,6 @@ node 'container03.infra' inherits infranode {
         container   => "${hostname}",
         ensure      => present,
     }
-    kvm::virtual_machine { 'bgpmon':
-        fqdn        => 'bgpmon.infra.ring.nlnog.net',
-        ip          => '78.152.42.68', # ipv6 address is 2a02:d28:666::68
-        netmask     => '255.255.255.240',
-        dns         => '8.8.8.8',
-        gateway     => '78.152.42.65',
-        memory      => '2048',
-        disksize    => '20',
-        rootsize    => '19968',
-        bridge      => 'virbr1',
-        container   => "${hostname}",
-        ensure      => present,
-    }
     kvm::virtual_machine { 'master01.infra':
         fqdn        => 'master01.infra.ring.nlnog.net',
         ip          => '78.152.42.69', # ipv6 address is 2a02:d28:666::69
@@ -241,54 +228,15 @@ node 'container03.infra' inherits infranode {
 # virbr1 is virtual switch on the box with this IP space:
 #   IPv4 prefix: 108.168.252.128/28
 #   IPv6 prefix: 16 x /64
-node 'container05.infra' inherits infranode {
-    include users
-    include containercronjobs
-    include syslog_ng::client
-    include kvm
-    include backup::client
-    
-    kvm::virtual_machine { 'us':
-        fqdn        => 'us01.irr.infra.ring.nlnog.net',
-        ip          => '108.168.252.131', # ipv6 address is 2607:f0d0:1103:f0::131
-        netmask     => '255.255.255.240',
-        dns         => '8.8.8.8',
-        gateway     => '108.168.252.129',
-        memory      => '5120',
-        disksize    => '20',
-        rootsize    => '19968',
-        bridge      => 'virbr1',
-        container   => "${hostname}",
-        ensure      => present,
-    }
-}
-
-node 'bgpmon.infra' inherits infranode {
-    $owner = "job"
-    include set_local_settings
-    include syslog_ng::client
-    include nodesonlycron
-    include users
-    add_user { 'dave':                                                                                                                                                                                                 
-        email    => 'dave@claranet',
-        company => 'Claranet',
-        uid      => 5124,
-        groups  => ['ring-users', 'admin'],
-    }
-    authorized_keys { 'dave':
-        sshkeys => ['ssh-dss AAAAB3NzaC1kc3MAAACBANA+2Nq9N9IQfPqgmHhdYl932sxJb45PB/UgE/ATxOiP5Ev9sz6Vi+85WrD3kwYvszbRmdm6nIR6a5O861K8B+DKsYoWuE1tFxWgSszlbYzuTMXfPg+zI2IAen/YtzgsATnJPIKUub5bO18O3qGX5f/Xf21kJUsGdDx/F13Bb1UlAAAAFQC8JQHI/PW8wmZwmJKoLDHjb9W1XQAAAIEAq7/xIeDcg4FYiZeUl7VZxrB7HhMwBePOuBgpVyghYsJIM1wyWULN99aMxVQphZa77Y0I6UeaXoQu4Mt52O7Q8oq8FtxfCxUguFh0O+5qKZ66PjNmu/BC5s/GioxnoZ2baT/ka0xV3pQ01wZknk1Eb0ze750OdDs143Tq9eos2IkAAACBAJxziC4dxXJ6mOKYHdnEWRC57UFYxLwk5fKMemP0xJZk2/2Wahq+2pNoCWZvnUk6jWHMVhIV8BG7Bq37B1Qq/XuiEfkc+E1gCEYjwIhvvKYsR+SMeejCv1Bv7HV39ZPoGUjdYyQgciBrDCG13R1QShWNRcTK5liOTbyCcxI2QzTK david.freedman@uk.clara.net(RING)'],
-    }
-    include backup::client
-}
-
-node 'us01.irr.infra' inherits infranode {
-    $owner = "job"
-    include set_local_settings
-    include syslog_ng::client
-    include nodesonlycron
-    include users
-    include backup::client
-}
+#
+# container05 is currently used as irrexplorer.nlnog.net
+#node 'container05.infra' inherits infranode {
+#    include users
+#    include containercronjobs
+#    include syslog_ng::client
+#    include kvm
+#    include backup::client
+#}
 
 # container06 is hosted at PCExtreme in Amsterdam
 # 8 cores / 32GB RAM / 2000GB RAID1 + SSD disks
