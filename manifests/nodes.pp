@@ -9,11 +9,8 @@ node basenode {
     include nettools
     include etcfiles
     include local_binaries
-    include munin::client
     include nlnogrepokey
     include lang
-    munin::plugin { ["users", "tcp", "ntp_offset", "uptime", "threads", "ntp_kernel_pll_off", "diskstats", "proc_pri", "iostat_ios"]:
-    }
     include timezone
     include fail2ban-whitelist
     $postfix_smtp_listen = "127.0.0.1"
@@ -35,7 +32,6 @@ node ringnode inherits basenode {
     include syslog_ng::client
     include nodesonlycron
     include etcfiles_ring
-    package { "munin": ensure => purged, }
     file { "/etc/puppet/puppet.conf":
         owner   => root,
         group   => root,
@@ -68,8 +64,6 @@ node 'master01.infra' inherits basenode {
     include usage_statistics
     include website
     include ring_auth::deployer
-    munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
-    }
     Exec <<| tag == "destroy_virtual_machines" |>>
     include backup::client
 }
@@ -86,8 +80,6 @@ node 'container01.infra' inherits infranode {
     include syslog_ng::client
     include kvm
     include backup::client
-    munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
-    }
     
     kvm::virtual_machine { 'lg01':
         fqdn        => 'lg01.infra.ring.nlnog.net',
@@ -144,8 +136,6 @@ node 'container02.infra' inherits infranode {
     include syslog_ng::client
     include kvm
     include backup::client
-    munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
-    }
 
     kvm::virtual_machine { 'public02':
         fqdn        => 'public02.infra.ring.nlnog.net',
@@ -200,8 +190,6 @@ node 'container03.infra' inherits infranode {
     include syslog_ng::client
     include kvm
     include backup::client
-    munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
-    }
 
     kvm::virtual_machine { 'dbmaster':
         fqdn        => 'dbmaster.infra.ring.nlnog.net',
@@ -259,9 +247,6 @@ node 'container05.infra' inherits infranode {
     include syslog_ng::client
     include kvm
     include backup::client
-    munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
-    }
-    include backup::client
     
     kvm::virtual_machine { 'us':
         fqdn        => 'us01.irr.infra.ring.nlnog.net',
@@ -316,8 +301,6 @@ node 'container06.infra' inherits infranode {
     include containercronjobs
     include syslog_ng::client
     include kvm
-    munin::plugin { ["libvirt", "apache_accesses", "apache_processes", "apache_volume"]:
-    }
     
     kvm::virtual_machine { 'backup':
         fqdn        => 'backup.infra.ring.nlnog.net',
@@ -362,8 +345,6 @@ node 'public01.infra' inherits infranode {
     include nodesonlycron
     include users
     include apache2
-    munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
-    }
     include powerdns
     include map
 # FIXME
@@ -386,9 +367,6 @@ node 'munin.infra' inherits infranode {
     include nodesonlycron
     include users
     include apache2
-    include munin::host
-    munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
-    }
     include backup::client
 }
 
@@ -400,8 +378,6 @@ node 'public02.infra' inherits infranode {
     include nodesonlycron
     include users
     include apache2
-    munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
-    }
     include powerdns
     include backup::client
 }
@@ -434,8 +410,6 @@ node 'lg01.infra' inherits infranode {
     include backup::client
     include bird
     include bird-lg-proxy 
-    munin::plugin { ["bird", "bird6"]:
-    }
     add_user { 'dave':                                                                                                                                                                                                 
         email    => 'dave@claranet',
         company => 'Claranet',
@@ -467,8 +441,6 @@ node 'worker01' inherits infranode {
     include syslog_ng::client
     include apache2
 
-    munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
-    }
 }
 
 node 'worker02' inherits infranode {
@@ -478,8 +450,6 @@ node 'worker02' inherits infranode {
     include nodesonlycron
     include users
     include apache2
-    munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
-    }
     $graphite_servername = 'graphite01.infra.ring.nlnog.net'
     include graphite
 }
@@ -490,8 +460,6 @@ node 'worker03.infra' inherits infranode {
     # include backup::client
     include syslog_ng::client
     include apache2
-    munin::plugin { ["apache_accesses", "apache_processes", "apache_volume"]:
-    }
 
     include scamper::collector
 
@@ -1361,11 +1329,6 @@ node 'occaid01' {
     include local_binaries
     include nlnogrepokey
     include lang
-#   ipv6 and munin no success yet
-#    include munin::client
-#    munin::plugin { ["users", "tcp", "ntp_offset", "uptime", "threads", "ntp_kernel_pll_off", "diskstats", "proc_pri", "iostat_ios"]:
-#    }
-#    package{ "munin": ensure => purged, }
 
     include timezone
 #   ipv6 and fail2ban are not ok
