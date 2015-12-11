@@ -524,16 +524,6 @@ class users {
     Add_user <| groups == "ring-admins" or groups == "ring-users" |>
 }
 
-#### staging #####
-
-node 'staging02' inherits ringnode {
-    $owner = "previder"
-    include set_local_settings
-	include users
-}
-
-#### einde staging #####
-
 #### define all ring nodes ####
 
 node 'intouch01' inherits ringnode {
