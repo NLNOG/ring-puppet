@@ -1651,34 +1651,7 @@ node 'qbranch01' inherits ringnode {
     include users
 }
 
-node 'nlnetlabs01' {
-    include users::virtual::ring_admins
-    include cronjobs
-    include groups
-    include nettools
-    include etcfiles
-    include local_binaries
-    include nlnogrepokey
-    include lang
-#   ipv6 and munin no success yet
-#    include munin::client
-#    munin::plugin { ["users", "tcp", "ntp_offset", "uptime", "threads", "ntp_kernel_pll_off", "diskstats", "proc_pri", "iostat_ios"]:
-#    }
-#    package{ "munin": ensure => purged, }
-
-    include timezone
-#   ipv6 and fail2ban are not ok
-#    include fail2ban-whitelist
-    $postfix_smtp_listen = "127.0.0.1"
-    $root_mail_recipient = "ring-admins@ring.nlnog.net"
-    $postfix_myorigin = ""
-    include postfix
-    include resolving
-    include users::virtual::ring_users
-    include no-apache2
-    include syslog_ng::client
-    include nodesonlycron
-
+node 'nlnetlabs01' inherits ringnode {
     $owner = "nlnetlabs"
     $location = "52.356387,4.955663"
     include set_local_settings                                                  
