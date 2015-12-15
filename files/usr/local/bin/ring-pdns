@@ -349,7 +349,18 @@ class commands(object):
             id= row['id']
             self.del_record(id);
             print 'record %s deleted' % (id)
-    
+
+    def destroy_sshfp(self,subzone=None,zone=ZONE):
+        recordname=zone
+        if subzone:
+            recordname=subzone+'.'+recordname
+
+        result = self.dbselect('records',name=recordname,type='SSHFP')
+        for row in result:
+            id= row['id']
+            self.del_record(id);
+            print 'record %s deleted' % (id)
+
     def regenerate_txt(self,zone=ZONE):
         query ="select hostname,country,active from machines where active=1"
         ringresult=list(self.ring_dbquery(query))
@@ -537,6 +548,7 @@ class commands(object):
         else:
             f = sys.stdin
 
+        self.destroy_sshfp()
         for line in f:
             if (re.search(r'^#',line)):
                 continue
@@ -556,17 +568,8 @@ class commands(object):
                 cname=True
                 break
             
-            result = self.dbselect('records',name=name,type=rtype)
-            update=False
-            for row in result:
-                update=True
-                break
-
             if cname:
                 print 'cname found. skipping %s' % (name)
-            elif update:
-                self.update_rtype(name=name,rtype=rtype,content=value)
-                print 'node %s updated' % (name)
             else:
                 recid=self.add_record(name=name,rtype=rtype,
                                     content=value,ttl=600,prio=0,zone=zone)
