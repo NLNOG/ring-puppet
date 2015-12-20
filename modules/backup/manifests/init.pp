@@ -36,7 +36,7 @@ class backup::client {
 
     line { 'backup_rsa_key':
         file    => '/root/.ssh/authorized_keys',
-        line    => 'from="109.72.93.35,2a00:f10:122::35",command="/root/validate-rsync-backup" ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGpE8I94KX3IWr0URK6DleZvf8d6+3g+3xzfCP+pLQ/TqdRT6ym46AqlDyj5E51tPE3ybW9zXNBd/ynaIQ8rAPzETkYu7OStYTN3253VnLDbxdDcAbLanNWaEn0pMOyJSARQhmIjq04X/ybssM72s069U/+TncTRNKrGfRiBIuv0RKT+NkMRkRto4Goe5DvI2xNviwYVauT5N6JZMJAG2wQpHPZ4MyheI8387Qvk8Ro4YPVCO3+vUiL/1G+yMqILpJL2li9+rHMXKUZ24qERZUP4G7tzY2v4KP4NofkkjaQJWPoQfE+5/SUfU8KNtkv4nhL5/HhZBrgfHKGxBo+ZW7 root@backup.infra.ring.nlnog.net',
+        line    => 'from="109.72.93.35,2a00:f10:122::35",command="/root/validate-rsync-backup" ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9zR9lQ7mr8aWhAzJBUhbTCg6RaMR0aSIpafvXjNiCzZg1yO+QOkw8N8i0lwyxND5xHiT4pgaL4ILqJ7SefocIU9MgcY77YUFHzkpOFjGpSF8I0nY4Q0WlYC0XFJvO4hx7sUXFBQze55Xbe4OBEEJoKCBbfCXEwgiPobXrcKSoCjT49hcz4F3q5MxEHgu1wvXzG7eiOyCtsNW5T/I5vImt0usP7SKGBBnWLZY92pfbtmqDwZ1q1joaM/qADO0E1YiXTL8QTtuhG5PMC8khAjZ9AzljaMi9UX1vjKWG7DL6VVSTv6nI1GNLABg8/Cwq69Dujho6zezWOANega6mEhzh root@backup.infra.ring.nlnog.net',
         ensure  => present,
     }
 
