@@ -355,7 +355,7 @@ class commands(object):
         if subzone:
             recordname=subzone+'.'+recordname
 
-        result = self.dbselect('records',name=recordname,type='SSHFP')
+        result = self.dbselect('records',type='SSHFP')
         for row in result:
             id= row['id']
             self.del_record(id);
