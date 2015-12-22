@@ -1253,3 +1253,7 @@ ff02::2 ip6-allrouters
 
 2001:558:6018::4  comcast01 comcast01.ring.nlnog.net
 67.161.224.4    comcast01 comcast01.ring.nlnog.net
+
+2a00:ac00::132  seltimil01 seltimil01.ring.nlnog.net
+91.190.195.206    seltimil01 seltimil01.ring.nlnog.net
+

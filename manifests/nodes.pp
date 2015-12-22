@@ -3399,3 +3399,11 @@ node 'comcast01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'seltimil01' inherits ringnode {
+    $owner = "seltimil"
+    $location = "62.240889,25.751528"
+    include set_local_settings
+    include users
+}
+

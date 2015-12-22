@@ -3867,4 +3867,16 @@ class users::virtual::ring_users {
 
 ##### END comcast #####
 
+##### BEGIN seltimil #####
+
+    @add_user { 'seltimil':
+        email => 'noc@seltimil.fi',
+        company => 'Seltimil Oy',
+        uid => 5375,
+        groups => ['ring-users'],
+    }
+
+##### END seltimil #####
+
+
 }
