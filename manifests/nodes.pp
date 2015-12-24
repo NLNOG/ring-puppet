@@ -398,15 +398,14 @@ node 'auth.infra' inherits infranode {
 node 'worker01' inherits infranode {
     $owner = "job"
     include users
-    #    include backup::client
     include syslog_ng::client
     include apache2
-
+    include backup::client
 }
 
 node 'worker02' inherits infranode {
     $owner = "martin"
-    # include backup::client
+    include backup::client
     include syslog_ng::client
     include nodesonlycron
     include users
@@ -418,28 +417,10 @@ node 'worker02' inherits infranode {
 node 'worker03.infra' inherits infranode {
     $owner = "job"
     include users
-    # include backup::client
+    include backup::client
     include syslog_ng::client
     include apache2
-
     include scamper::collector
-
-# give Brendon access for AMP
-##### BEGIN brendon-wand #####
-
-    add_user { 'brendon-wand':
-        email => 'brendonj@cs.waikato.ac.nz',
-        company => 'Brendon Jones',
-        uid => '5110',
-        groups => ['ring-users', 'ring-admins'],
-    }
-    authorized_keys { 'brendon-wand':
-        sshkeys => [
-           'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDESb7w1mFquFHO1isMqwBABo+PRhKBtewCYnnKsRLWSlC0EYonnpRWGhZv29P7vgVpv79aUuf8XUtSYx2knMXFlFWZhj5/e71Yhn15Fg7E7Ib2N9kwd0Gizg5KXTSoMR7HUMpDPFXbZY7MkpNZQtC3iyQzptp8q/VlszbFtUvMMK2jlrMRkULR8PCV28WHZnBeIB8+XXgzUwOPrG4sgaZqiiEXnC/eVv8bPPZApwIvv6Ac1ekqMq7HNQaccgYff0c1s6EPZzlMV2vLhvKi3E4NMpFXNRIhvM2Px2QsrnvmV+NMIDB3O5zQkV+Lv1kFoWT1NRb6AfQ0KtDF3zjkiVbX brendonj@voodoo',
-        ],
-    }
-##### END brendon-wand #####
-
 }
 
 # we don't want apache running on regular ringnodes. smokeping installs 
