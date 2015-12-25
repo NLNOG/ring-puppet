@@ -437,7 +437,7 @@ node 'compute02.infra' inherits infranode {
     include syslog_ng::client
 }
 
-node 'compute02.infra' inherits infranode {
+node 'storage01.infra' inherits infranode {
     $owner = "job"
     include users
     include backup::client
