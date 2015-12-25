@@ -440,8 +440,8 @@ node 'compute02.infra' inherits infranode {
 node 'storage01.infra' inherits infranode {
     $owner = "job"
     include users
-    include backup::client
     include syslog_ng::client
+    backup::server
 }
 
 # we don't want apache running on regular ringnodes. smokeping installs 
@@ -3409,3 +3409,9 @@ node 'seltimil01' inherits ringnode {
     include users
 }
 
+node 'amazon10' inherits ringnode {
+    $owner = "amazon"
+    $location = "39.9075000,116.3972300"
+    include set_local_settings
+    include users
+}
