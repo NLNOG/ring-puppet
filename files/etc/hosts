@@ -25,6 +25,15 @@ ff02::2 ip6-allrouters
 46.137.102.170  worker03.infra    worker03.infra.ring.nlnog.net
 2a01:578:3::2e89:66aa   worker03.infra worker03.infra.ring.nlnog.net
 
+52.17.9.249 compute01.infra compute01.infra.ring.nlnog.net
+2a01:578:3::3411:9f9    compuate01.infra    compute01.infra.ring.nlnog.net
+
+54.173.241.225  compute02.infra compute02.infra.ring.nlnog.net
+2406:da00:ff00::36ad:f1e1   compute02.infra compute02.infra.ring.nlnog.net
+
+52.18.186.201   storage01.infra storage01.infra.ring.nlnog.net
+2a01:578:3::3412:bac9   storage01.infra storage01.infra.ring.nlnog.net
+
 82.94.230.130   lg01.infra lg01.infra.ring.nlnog.net
 2001:888:2001::130  lg01.infra lg01.infra.ring.nlnog.net
 
