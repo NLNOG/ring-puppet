@@ -120,21 +120,6 @@ node 'container01.infra' inherits infranode {
         container   => "${hostname}",
         ensure      => present,
     }
-    kvm::virtual_machine { 'munin.infra':
-        fqdn        => 'munin.infra.ring.nlnog.net',
-        ip          => '82.94.230.133', # ipv6 address is 2001:888:2001::133
-        netmask     => '255.255.255.248',
-        dns         => '8.8.8.8',
-        gateway     => '82.94.230.129',
-        memory      => '4096',
-        disksize    => '20',
-        rootsize    => '19968',
-        bridge      => 'virbr1',
-        container   => "${hostname}",
-        ensure      => present,
-    }
-
-
 }
 
 # container02 is hosted at Leaseweb
@@ -320,17 +305,6 @@ node 'public01.infra' inherits infranode {
     include pdnscronjobs
     include backup::client
 }
-
-# munin
-node 'munin.infra' inherits infranode {
-    $owner = "job"
-    include syslog_ng::client
-    include nodesonlycron
-    include users
-    include apache2
-    include backup::client
-}
-
 
 node 'public02.infra' inherits infranode {
     $owner = "job"
