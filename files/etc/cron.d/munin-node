@@ -1,5 +1,0 @@
-#
-# cron-jobs for munin-node
-#
-
-MAILTO=root
