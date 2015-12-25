@@ -325,15 +325,6 @@ node 'backup.infra' inherits infranode {
     include backup::server
 }
 
-node 'backup02.infra' inherits infranode {
-    $owner = "job"
-    include syslog_ng::client
-    include nodesonlycron
-    include users
-    include backup::server
-}
-
-
 # looking glass 1
 node 'lg01.infra' inherits infranode {
     $owner = "job"
