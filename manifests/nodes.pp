@@ -441,7 +441,7 @@ node 'storage01.infra' inherits infranode {
     $owner = "job"
     include users
     include syslog_ng::client
-    backup::server
+    include backup::server
 }
 
 # we don't want apache running on regular ringnodes. smokeping installs 
