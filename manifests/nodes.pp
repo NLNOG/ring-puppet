@@ -423,6 +423,27 @@ node 'worker03.infra' inherits infranode {
     include scamper::collector
 }
 
+node 'compute01.infra' inherits infranode {
+    $owner = "job"
+    include users
+    include backup::client
+    include syslog_ng::client
+}
+
+node 'compute02.infra' inherits infranode {
+    $owner = "job"
+    include users
+    include backup::client
+    include syslog_ng::client
+}
+
+node 'compute02.infra' inherits infranode {
+    $owner = "job"
+    include users
+    include backup::client
+    include syslog_ng::client
+}
+
 # we don't want apache running on regular ringnodes. smokeping installs 
 # apache, so we just force it down here. 
 class apache2 {
