@@ -3878,5 +3878,15 @@ class users::virtual::ring_users {
 
 ##### END seltimil #####
 
+##### BEGIN intermax #####
+
+    @add_user { 'intermax':
+        email => 'noc@intermax.nl',
+        company => 'Intermax BV',
+        uid => 5376,
+        groups => ['ring-users'],
+    }
+
+##### END intermax #####
 
 }

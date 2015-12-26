@@ -1264,3 +1264,7 @@ ff02::2 ip6-allrouters
 91.190.195.206    seltimil01 seltimil01.ring.nlnog.net
 
 54.223.49.236    amazon10 amazon10.ring.nlnog.net
+
+2001:4c10::2:59:0:60  intermax01 intermax01.ring.nlnog.net
+46.22.180.60    intermax01 intermax01.ring.nlnog.net
+
