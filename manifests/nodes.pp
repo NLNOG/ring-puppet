@@ -3381,14 +3381,10 @@ node 'amazon10' inherits ringnode {
     include users
 }
 
-##### BEGIN intermax #####
-
-    @add_user { 'intermax':
-        email => 'noc@intermax.nl',
-        company => 'Intermax BV',
-        uid => 5376,
-        groups => ['ring-users'],
-    }
-
-##### END intermax #####
+node 'intermax01' inherits ringnode {
+    $owner = "intermax"
+    $location = "51.930219,4.413842"
+    include set_local_settings
+    include users
+}
 
