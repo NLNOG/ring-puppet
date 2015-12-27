@@ -49,7 +49,7 @@ class website {
         owner   => root,
         group   => root,
         mode    => 644,
-        source  => "puppet:///files/var/www/ring.nlnog.net/api/ring_api.py",
+        content => template("ring_api.py.erb");
         notify  => Service["apache2"]
     }
     

@@ -1,14 +1,16 @@
 #!/usr/bin/env python
+import ast
 import exceptions
 import json
 import sys, re, string, os, tempfile, random
 import MySQLdb as mdb
-from flask import Flask, jsonify
+import socket
+from flask import Flask, jsonify, request
 from string import Template
 
 DBHOST='dbmaster.infra.ring.nlnog.net'
-DBUSER='ring'
-DBPASS=''
+DBUSER='ansible_master'
+DBPASS='<%= scope.function_trocla("ansibledb",'plain') %>'
 DB='ring'
 ERROR=None
 
@@ -40,6 +42,25 @@ def dbclose(conn):
         conn.close()
     except mdb.OperationalError as err:
         return
+
+def dbdo(q, v=None, script=False):
+    conn = mdb.connect(DBHOST, DBUSER, DBPASS, DB)
+    cur = conn.cursor()
+    if v:
+        cur.execute(q, v)
+    else:
+        cur.execute(q)
+    if not script:
+        conn.commit()
+        conn.close()
+    return cur.rowcount, cur.lastrowid
+
+def dbinsert(table, **kwargs):
+    cols, vals = zip(*kwargs.items())
+    query = 'INSERT INTO %s (%s) VALUES(%s)' % \
+        (table, ','.join(cols), ','.join(['%s'] * len(vals)))
+    _, rowid = dbdo(query, vals)
+    return rowid
 
 def dbquery(conn, q, v=None):
     try:
@@ -186,6 +207,14 @@ def dbget_statecodes(dbconn=None):
         return
     sl = sorted(sl)
     return sl
+
+def dbinsert_ansible_result(hostname,results):
+    dbinsert('ansible', hostname=hostname,
+                  unreachable=results['unreachable'],
+                  ok=results['ok'],
+                  changed=results['changed'],
+                  skipped=results['skipped'],
+                  failures=results['failures'])
 
 def mk_json(results=None,count=None,errormsg=None):
     if not results:
@@ -433,6 +462,22 @@ def get_statecodes(country):
     if get_error():
         return mk_json(errormsg=set_error())
     return mk_json(results={'statecodes':statelist},count=len(statelist))
+
+@app.route('/1.0/ansible_run', methods = ['POST'])
+def register_ansible_run():
+    run_result = request.data
+    client = request.remote_addr
+
+    hostname = None
+    try:
+        hostname = socket.gethostbyaddr(client)[0]
+    except socket.herror:
+        pass
+    if hostname and run_result:
+        #print run_result
+        dbinsert_ansible_result(hostname,ast.literal_eval(run_result))
+        return jsonify({'hostname':hostname,'results':run_result})
+    return '.'
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',debug=True)
