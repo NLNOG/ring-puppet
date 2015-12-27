@@ -4,7 +4,7 @@ class ansible::master {
       ensure => 'directory',
       owner  => 'root',
       group  => 'ring-admins',
-      mode   => '2770',
+      mode   => '2775',
   }
 
 #  vcsrepo { '/var/ring/ansible':
