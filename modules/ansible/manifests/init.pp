@@ -7,11 +7,11 @@ class ansible::master {
       mode   => '2770',
   }
 
-  vcsrepo { '/var/ring/ansible':
-      ensure   => present,
-      provider => git,
-      source   => 'git://example.com/repo.git',
-  }
+#  vcsrepo { '/var/ring/ansible':
+#      ensure   => present,
+#      provider => git,
+#      source   => 'git://example.com/repo.git',
+#  }
 
 }
 
