@@ -49,7 +49,7 @@ class website {
         owner   => root,
         group   => root,
         mode    => 644,
-        content => template("ring_api.py.erb");
+        content => template("ring_api.py.erb"),
         notify  => Service["apache2"]
     }
     
