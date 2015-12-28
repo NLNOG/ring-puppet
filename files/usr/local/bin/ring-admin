@@ -378,7 +378,7 @@ class commands(object):
             else:
                 f.write('    state: present\n')
             f.write('    company: \'' + p['company'] + '\'\n')
-            f.write('    email: \'' + p['email'] + '\'\n')
+            f.write('    email: \'' + p['nocemail'] + '\'\n')
             f.write('    uid: ' + str(u['userid']) + '\n')
             f.write('    groups:\n')
             f.write('      - ring-users\n\n')
