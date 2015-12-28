@@ -102,9 +102,9 @@ Users can connect to $hostname, which is located in $country.
 '''
 
 WELCOMEMAIL = '''
-From: ring-admins@ring.nlnog.net
+From: ring-admins@nlnog.net
 To: $nocemail, $email
-Cc: ring-admins@ring.nlnog.net
+Cc: ring-admins@nlnog.net
 Subject: Welcome to the RING, $company
 
 Dear $company
