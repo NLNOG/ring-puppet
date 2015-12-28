@@ -107,20 +107,6 @@ node 'container01.infra' inherits infranode {
         ensure      => present,
     }
 
-    kvm::virtual_machine { 'mailman.infra':
-        fqdn        => 'mailman.infra.ring.nlnog.net',
-        ip          => '82.94.230.132', # ipv6 address is 2001:888:2001::132
-        netmask     => '255.255.255.248',
-        dns         => '8.8.8.8',
-        gateway     => '82.94.230.129',
-        memory      => '512',
-        disksize    => '20',
-        rootsize    => '19968',
-        bridge      => 'virbr1',
-        container   => "${hostname}",
-        ensure      => present,
-    }
-    
     kvm::virtual_machine { 'staging01':
         fqdn        => 'staging01.ring.nlnog.net',
         ip          => '82.94.230.133', # ipv6 address is 2001:888:2001::133

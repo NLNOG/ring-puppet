@@ -125,7 +125,7 @@ For further instruction on how to use the ring, see: https://ring.nlnog.net/user
 
 You are welcome to join the ring-users mailinglist, which is used for
 announcements and discussions among RING users. You can find the list at
-http://mailman.ring.nlnog.net/cgi-bin/mailman/listinfo/ring-users
+http://mailman.nlnog.net/mailman/listinfo/ring-users
 
 We also operate an IRC channel: #ring on IRCnet.
 
@@ -155,8 +155,8 @@ Host *.ring.nlnog.net
 '''
 
 ANNOUNCEMAIL = '''
-From: ring-admins@ring.nlnog.net
-To: ring-users@mailman.ring.nlnog.net
+From: ring-admins@nlnog.net
+To: ring-users@nlnog.net
 Subject: $company ($countrycode) joined the RING
 
 Dear All,
