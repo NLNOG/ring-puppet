@@ -1268,3 +1268,6 @@ ff02::2 ip6-allrouters
 2001:4c10::2:59:0:60  intermax01 intermax01.ring.nlnog.net
 46.22.180.60    intermax01 intermax01.ring.nlnog.net
 
+2001:888:2001::133  staging01 staging01.ring.nlnog.net
+82.94.230.133   staging01 staging01.ring.nlnog.net
+

@@ -120,6 +120,20 @@ node 'container01.infra' inherits infranode {
         container   => "${hostname}",
         ensure      => present,
     }
+    
+    kvm::virtual_machine { 'staging01':
+        fqdn        => 'staging01.ring.nlnog.net',
+        ip          => '82.94.230.133', # ipv6 address is 2001:888:2001::133
+        netmask     => '255.255.255.248',
+        dns         => '8.8.8.8',
+        gateway     => '82.94.230.129',
+        memory      => '512',
+        disksize    => '20',
+        rootsize    => '19968',
+        bridge      => 'virbr1',
+        container   => "${hostname}",
+        ensure      => present,
+    }
 }
 
 # container02 is hosted at Leaseweb
@@ -316,6 +330,12 @@ node 'public02.infra' inherits infranode {
     include apache2
     include powerdns
     include backup::client
+}
+
+node 'staging01' inherits infranode {
+    $owner = "martin"
+    include set_local_settings
+    include users
 }
 
 node 'backup.infra' inherits infranode {
