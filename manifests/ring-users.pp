@@ -3889,4 +3889,15 @@ class users::virtual::ring_users {
 
 ##### END intermax #####
 
+##### BEGIN test #####
+
+    @add_user { 'test':
+        email => 'ring-admins@ring.nlnog.net',
+        company => 'Test BV',
+        uid => 5377,
+        groups => ['ring-users'],
+    }
+
+##### END test #####
+
 }

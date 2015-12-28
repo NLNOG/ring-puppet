@@ -332,12 +332,6 @@ node 'public02.infra' inherits infranode {
     include backup::client
 }
 
-node 'staging01' inherits infranode {
-    $owner = "martin"
-    include set_local_settings
-    include users
-}
-
 node 'backup.infra' inherits infranode {
     $owner = "job"
     include syslog_ng::client
@@ -3405,6 +3399,12 @@ node 'amazon10' inherits ringnode {
 node 'intermax01' inherits ringnode {
     $owner = "intermax"
     $location = "51.930219,4.413842"
+    include set_local_settings
+    include users
+}
+
+node 'staging01' inherits infranode {
+    $owner = "test"
     include set_local_settings
     include users
 }
