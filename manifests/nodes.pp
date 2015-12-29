@@ -3393,5 +3393,6 @@ node 'staging01' inherits infranode {
     $owner = "test"
     include set_local_settings
     include users
+    include ansible::client
 }
 

@@ -137,6 +137,10 @@ class nlnogrepokey {
         key     => 'DE57BFBE',
         key_source  => "https://repo.saltstack.com/apt/ubuntu/12.04/amd64/latest/SALTSTACK-GPG-KEY.pub",
     }
+    
+    apt::key { 'ansible_repo_key':
+        key     => '7BB9C367',
+    }
 
 }
 

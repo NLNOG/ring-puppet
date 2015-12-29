@@ -15,6 +15,13 @@ class etcfiles {
         repos       => 'main',
         include_src => false,
     }
+    
+    apt::source { 'ansible_repo':
+        location    => 'http://ppa.launchpad.net/ansible/ansible/ubuntu',
+        release     => 'precise',
+        repos       => 'main',
+        include_src => false,
+    }
 
     file { ['/etc/apt/sources.list.d/master.ring.nlnog.net.list', '/etc/apt/sources.list.d/amp.list']:
         ensure  => absent,
