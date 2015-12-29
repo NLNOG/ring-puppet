@@ -3389,7 +3389,7 @@ node 'intermax01' inherits ringnode {
     include users
 }
 
-node 'staging01' inherits infranode {
+node 'staging01' inherits ringnode {
     $owner = "test"
     include set_local_settings
     include users
