@@ -19,7 +19,7 @@ class ansible::client {
 
     $minute = fqdn_rand(60)
 
-    package {["ansible"]:
+    package {["ansible","git"]:
         ensure  => latest,
     }
 
