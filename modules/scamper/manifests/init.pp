@@ -1,5 +1,12 @@
 class scamper {
 
+    @add_user { 'scamper':
+        email   => 'ring-admins@ring.nlnog.net',
+        company => 'Scamper Collector',
+        uid     => 2001,
+        groups  => ['ring-users'],
+    }
+
     package { ['scamper', 'libscamperfile0']:
         ensure      => 'latest',
     }
