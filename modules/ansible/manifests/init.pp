@@ -30,4 +30,9 @@ class ansible::client {
         ensure  => present,
     }
 
+    exec { 'ansible_pull':
+        command => 'ansible-pull -d /etc/ansible/ring -U https://github.com/NLNOG/ring-ansible.git -i nodes playbook.yml',
+        path    => '/usr/bin/',
+    }
+
 }
