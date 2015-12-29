@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import getpass
 from string import Template
 import MySQLdb as mdb
 import inspect
@@ -339,6 +340,7 @@ class commands(object):
 
     def ansible_checkout(self):
         os.system("cd " + ANSIBLEDIR + " && git checkout")
+        os.system("cd " + ANSIBLEDIR + " && git pull")
 
     def ansible_generate_hostfile(self):
         f = open(ANSIBLEDIR + '/' + ANSIBLE_HOSTFILE,'w')
@@ -402,6 +404,8 @@ class commands(object):
         f.close()
 
     def ansible_push(self):
+        username=getpass.getuser()
+        os.system("cd " + ANSIBLEDIR + " && git commit -am 'dbmaster commit by " + username + "'")
         os.system("cd " + ANSIBLEDIR + " && git push")
 
     def username2uid(self, username):
@@ -789,7 +793,7 @@ class commands(object):
         self.ansible_checkout()
         self.ansible_generate_hostfile()
         self.ansible_generate_userfile()
-        #self.ansible_push()
+        self.ansible_push()
 
     def cmd_dnscommands(self, hostname):
         """generate dns commands"""
