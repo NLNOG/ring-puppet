@@ -27,7 +27,6 @@ node basenode {
 }
 
 node ringnode inherits basenode {
-    include users::virtual::ring_users
 #    include no-apache2
     include syslog_ng::client
     include nodesonlycron
@@ -330,7 +329,6 @@ node 'backup.infra' inherits infranode {
 node 'lg01.infra' inherits infranode {
     $owner = "job"
     include set_local_settings
-    include users::virtual::ring_users
     include syslog_ng::client
     include nodesonlycron
     include users
@@ -353,7 +351,6 @@ node 'lg01.infra' inherits infranode {
 node 'auth.infra' inherits infranode {
     $owner = "job"
     include set_local_settings
-    include users::virtual::ring_users
     include syslog_ng::client
     include nodesonlycron
     include users
@@ -1250,7 +1247,6 @@ node 'occaid01' {
     $postfix_myorigin = ""
     include postfix
     include resolving
-    include users::virtual::ring_users
     include no-apache2
     include syslog_ng::client
     include nodesonlycron
@@ -3391,6 +3387,14 @@ node 'intermax01' inherits ringnode {
 
 node 'staging01' inherits ringnode {
     $owner = "test"
+    include set_local_settings
+    include users
+    include ansible::client
+}
+
+node 'pbwcomm01' inherits ringnode {
+    $owner = "pbwcomm"
+    $location = "38.9626498,-77.3802991"
     include set_local_settings
     include users
     include ansible::client
