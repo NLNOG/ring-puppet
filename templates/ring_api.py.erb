@@ -129,7 +129,7 @@ def dbget_nodes(dbconn=None):
     conn = dbconn
     if not dbconn:
         conn = dbconnect()
-    query = "select * from machines"
+    query = "select machines.* from machines,users where machines.owner = users.id and (users.admin is null or users.admin != 1)"
     res = list(dbquery(conn,query))
     if get_error():
         return
@@ -168,7 +168,7 @@ def dbget_countrycodes(dbconn=None):
     conn = dbconn
     if not dbconn:
         conn = dbconnect()
-    query = "select distinct country from machines where country <>''"
+    query = "select distinct country from machines,users where machines.owner = users.id and (users.admin is null or users.admin != 1) and country <> ''"
     res = list(dbquery(conn,query))
     if not dbconn:
         dbclose(conn)
@@ -190,7 +190,7 @@ def dbget_statecodes(dbconn=None):
     conn = dbconn
     if not dbconn:
         conn = dbconnect()
-    query = "select distinct state,country from machines where country<>'' and state<>''"
+    query = "select distinct state, country from machines,users where machines.owner = users.id and (users.admin is null or users.admin != 1) and country <> '' and state <> ''"
     res = list(dbquery(conn,query))
     if not dbconn:
         dbclose(conn)
