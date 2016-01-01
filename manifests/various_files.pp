@@ -55,6 +55,13 @@ class etcfiles {
         source  => "puppet:///files/etc/bash.bashrc"
     }
 
+    file { "/etc/hosts":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/hosts"
+    }
+
     file { "/etc/sudoers":
         owner   => root,
         group   => root,
