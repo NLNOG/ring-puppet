@@ -4,6 +4,7 @@
 
 ID=$1
 OWNER=`echo $ID | sed -e 's/..$//'`
+IP=`ifconfig -a | grep "inet addr" | head -1 | awk '{ print $2; }' | sed -e 's/addr://'`
 
 if [ ! "$ID" ];
 then
@@ -16,6 +17,7 @@ echo "Provisioning $ID (owner: $OWNER)... "
 declare -a commands=(
 "echo \"$ID.ring.nlnog.net\" > /etc/hostname"
 "hostname -F /etc/hostname"
+"echo \"$IP $ID.ring.nlnog.net\" >> /etc/hosts"
 "echo \"95.211.149.24   master01 master01.infra.ring.nlnog.net puppet\" >> /etc/hosts"
 "echo \"2001:1AF8:4013::24 master01 master01.infra.ring.nlnog.net puppet\" >> /etc/hosts"
 "apt-get update"
