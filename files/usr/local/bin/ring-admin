@@ -346,8 +346,8 @@ class commands(object):
         os.system("cd " + ANSIBLEDIR + " && git pull")
 
     def ansible_getsshkeys(self):
-        os.system("rsync -a --delete " + ANSIBLE_KEYORIGIN + " " + ANSIBLE_DIR + "/" + ANSIBLE_KEYBASE)
-        os.system("cd " + ANSIBLEDIR + " && git add " + ANSIBLE_DIR + "/" + ANSIBLE_KEYDIR)
+        os.system("rsync -a --delete " + ANSIBLE_KEYORIGIN + " " + ANSIBLEDIR + "/" + ANSIBLE_KEYBASE)
+        os.system("cd " + ANSIBLEDIR + " && git add " + ANSIBLEDIR + "/" + ANSIBLE_KEYDIR)
 
     def ansible_generate_hostfile(self):
         f = open(ANSIBLEDIR + '/' + ANSIBLE_HOSTFILE,'w')
