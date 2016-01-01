@@ -25,6 +25,9 @@ GEOCODE = \
 ANSIBLEDIR = '/var/ring/ring-ansible'
 ANSIBLE_HOSTFILE = 'nodes'
 ANSIBLE_USERFILE = 'roles/users/vars/ring-users.yml'
+ANSIBLE_KEYORIGIN = 'auth.infra.ring.nlnog.net:/opt/keys'
+ANSIBLE_KEYBASE = 'roles/users/files'
+ANSIBLE_KEYDIR = ANSIBLE_KEYBASE + '/keys'
 
 SCHEMA = '''
 CREATE TABLE participants
@@ -341,6 +344,10 @@ class commands(object):
     def ansible_checkout(self):
         os.system("cd " + ANSIBLEDIR + " && git checkout")
         os.system("cd " + ANSIBLEDIR + " && git pull")
+
+    def ansible_getsshkeys(self):
+        os.system("rsync -a --delete " + ANSIBLE_KEYORIGIN + " " + ANSIBLE_DIR + "/" + ANSIBLE_KEYBASE)
+        os.system("cd " + ANSIBLEDIR + " && git add " + ANSIBLE_DIR + "/" + ANSIBLE_KEYDIR)
 
     def ansible_generate_hostfile(self):
         f = open(ANSIBLEDIR + '/' + ANSIBLE_HOSTFILE,'w')
@@ -791,6 +798,7 @@ class commands(object):
     def cmd_ansible_deploy(self):
         """update ansible repository"""
         self.ansible_checkout()
+        self.ansible_getsshkeys()
         self.ansible_generate_hostfile()
         self.ansible_generate_userfile()
         self.ansible_push()
