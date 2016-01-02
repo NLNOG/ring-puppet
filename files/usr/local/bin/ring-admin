@@ -383,6 +383,11 @@ class commands(object):
                 if m['v6']:
                     line = line + ' V6=' + m['v6']
                 f.write(line + "\n")
+                # Note infra hosts as host.infra as well
+                if (re.search('.infra.ring.nlnog.net', line)):
+                    line = re.sub('.ring.nlnog.net', '', line)
+                    f.write(line + "\n")
+                
         f.close()
 
     def ansible_generate_userfile(self):
