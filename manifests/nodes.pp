@@ -3,7 +3,7 @@
 ## Hosts
 
 node basenode {
-    include users::virtual::ring_admins
+    #include users::virtual::ring_admins
     include cronjobs
     include groups
     include nettools
@@ -12,7 +12,7 @@ node basenode {
     include nlnogrepokey
     include lang
     include timezone
-    include fail2ban-whitelist
+    #include fail2ban-whitelist
     $postfix_smtp_listen = "127.0.0.1"
     $root_mail_recipient = "ring-admins@ring.nlnog.net"
     $postfix_myorigin = ""
