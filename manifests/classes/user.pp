@@ -67,6 +67,13 @@ define add_user($email,$company,$uid,$groups,$ensure="present") {
             path => "/opt/keys/${username}.sshkeys",
             ensure => absent,
         }
+        file { "auth_/opt/keys/${username}":
+            path => "/opt/keys/${username}",
+            ensure => absent,
+            recurse => true,
+            purge => true,
+            force => true,
+        }
     }
 
     # requested by claranet (jan 2015)
