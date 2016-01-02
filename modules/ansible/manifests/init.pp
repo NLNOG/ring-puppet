@@ -7,12 +7,6 @@ class ansible::master {
       mode   => '2775',
   }
 
-#  vcsrepo { '/var/ring/ansible':
-#      ensure   => present,
-#      provider => git,
-#      source   => 'git://example.com/repo.git',
-#  }
-
 }
 
 class ansible::client {
