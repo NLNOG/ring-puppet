@@ -24,6 +24,7 @@ node basenode {
     }
     include ring::apt
     include salt
+    include ansible::client
 }
 
 node ringnode inherits basenode {
@@ -335,7 +336,6 @@ node 'lg01.infra' inherits infranode {
     include backup::client
     include bird
     include bird-lg-proxy
-    include ansible::client 
 #    add_user { 'dave':                                                                                                                                                                                                 
 #        email    => 'dave@claranet',
 #        company => 'Claranet',
@@ -357,7 +357,6 @@ node 'auth.infra' inherits infranode {
     include users
     include backup::client
     include ring_auth::landing
-    include ansible::client
 }
 
 node 'worker01' inherits infranode {
@@ -3391,7 +3390,6 @@ node 'staging01' inherits ringnode {
     $owner = "test"
     include set_local_settings
     include users
-    include ansible::client
 }
 
 node 'pbwcomm01' inherits ringnode {
@@ -3399,6 +3397,5 @@ node 'pbwcomm01' inherits ringnode {
     $location = "38.9626498,-77.3802991"
     include set_local_settings
     include users
-    include ansible::client
 }
 
