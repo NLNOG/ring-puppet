@@ -27,6 +27,7 @@ class ansible::client {
     exec { 'ansible_pull':
         command => 'ansible-pull -o -d /etc/ansible/ring -U https://github.com/NLNOG/ring-ansible.git -i nodes playbook.yml',
         path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+        timeout => 1800,
         require => Package["ansible"]
     }
 
