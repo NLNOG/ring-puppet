@@ -1256,6 +1256,7 @@ node 'occaid01' {
     $location = "47.619428,-122.348535"
     include set_local_settings                                                  
     include users
+    include ansible::client
 }
 
 node 'as250net01' inherits ringnode {
