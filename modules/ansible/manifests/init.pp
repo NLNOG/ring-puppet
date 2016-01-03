@@ -6,6 +6,13 @@ class ansible::master {
       group  => 'ring-admins',
       mode   => '2775',
   }
+    
+  cron { ansible_deploy:
+        command => "/usr/local/bin/ring-admin ansible deploy >/dev/null 2>/dev/null",
+        minute  => "42",
+        user    => ringforger,
+        ensure  => present,
+  }
 
 }
 
