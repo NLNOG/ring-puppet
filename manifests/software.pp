@@ -140,6 +140,7 @@ class nlnogrepokey {
     
     apt::key { 'ansible_repo_key':
         key     => '7BB9C367',
+        key_source  => "https://ring.nlnog.net/ansiblerepopublic.key",
     }
 
 }
