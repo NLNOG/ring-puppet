@@ -3400,3 +3400,9 @@ node 'pbwcomm01' inherits ringnode {
     include users
 }
 
+node 'amazon11' inherits ringnode {
+    $owner = "amazon"
+    $location = "37.56654,126.97797"
+    include set_local_settings
+    include users
+}
