@@ -35,3 +35,10 @@ WSGIScriptAlias /api /var/www/ring.nlnog.net/api/api.wsgi
     Allow from all
 </Directory>
 
+<IfModule mod_headers.c>
+  Header unset X-Powered-By
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header set X-Frame-Options "sameorigin"
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-XSS-Protection "1; mode=block"
+</IfModule>
