@@ -53,3 +53,4 @@ Host *
     GSSAPIDelegateCredentials no
     Compression yes
     VerifyHostKeyDNS yes
+    UseRoaming no # CVE-2016-0777
