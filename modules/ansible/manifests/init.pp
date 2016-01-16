@@ -25,14 +25,14 @@ class ansible::client {
     }
 
     cron { ansible_pull:
-        command => "ansible-pull -d /etc/ansible/ring -U https://github.com/NLNOG/ring-ansible.git -i nodes playbook.yml >/dev/null 2>/dev/null",
+        command => "ansible-pull -d /etc/ansible/ring -U https://github.com/NLNOG/ring-ansible.git -i nodes -l $hostname -c local playbook.yml >/dev/null 2>/dev/null",
         minute  => "$minute",
         user    => root,
         ensure  => absent,
     }
 
     #exec { 'ansible_pull':
-    #    command => 'ansible-pull -o -d /etc/ansible/ring -U https://github.com/NLNOG/ring-ansible.git -i nodes playbook.yml',
+    #    command => 'ansible-pull -o -d /etc/ansible/ring -U https://github.com/NLNOG/ring-ansible.git -i nodes -l $hostname -c local playbook.yml',
     #    path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
     #    timeout => 1800,
     #    require => Package["ansible"]
