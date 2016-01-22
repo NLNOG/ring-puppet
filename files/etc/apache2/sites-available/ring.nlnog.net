@@ -37,7 +37,7 @@ WSGIScriptAlias /api /var/www/ring.nlnog.net/api/api.wsgi
 
 <IfModule mod_headers.c>
   Header unset X-Powered-By
-  Header set Strict-Transport-Security "max-age=31536000
+  Header set Strict-Transport-Security "max-age=31536000"
   Header set X-Frame-Options "sameorigin"
   Header set X-Content-Type-Options "nosniff"
   Header set X-XSS-Protection "1; mode=block"
