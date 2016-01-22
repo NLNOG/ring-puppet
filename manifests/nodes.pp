@@ -384,7 +384,6 @@ node 'worker03.infra' inherits infranode {
     include backup::client
     include syslog_ng::client
     include apache2
-    include scamper::collector
 }
 
 node 'compute01.infra' inherits infranode {

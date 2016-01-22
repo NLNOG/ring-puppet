@@ -384,9 +384,9 @@ class commands(object):
                     line = line + ' V6=' + m['v6']
                 f.write(line + "\n")
                 # Note infra hosts as host.infra as well
-                if (re.search('.infra.ring.nlnog.net', line)):
-                    line = re.sub('.ring.nlnog.net', '', line)
-                    f.write(line + "\n")
+                #if (re.search('.infra.ring.nlnog.net', line)):
+                #    line = re.sub('.ring.nlnog.net', '', line)
+                #    f.write(line + "\n")
                 
         f.close()
 
