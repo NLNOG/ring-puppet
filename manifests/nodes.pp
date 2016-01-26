@@ -3405,3 +3405,10 @@ node 'amazon11' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'peakten04' inherits ringnode {
+    $owner = "peakten"
+    $location = "33.93341,-84.21638"
+    include set_local_settings
+    include users
+}

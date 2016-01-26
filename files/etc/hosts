@@ -1271,3 +1271,5 @@ ff02::2 ip6-allrouters
 2001:888:2001::133  staging01 staging01.ring.nlnog.net
 82.94.230.133   staging01 staging01.ring.nlnog.net
 
+2607:f758:1280:0:250:56ff:feb2:759b  peakten04 peakten04.ring.nlnog.net
+68.64.40.68    peakten04 peakten04.ring.nlnog.net
