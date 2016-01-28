@@ -249,6 +249,12 @@ class local_binaries {
         mode    => 0755,
         source  => "puppet:///files/usr/local/bin/ring-trace"
     }
+     file { "/usr/local/bin/ring-curl":
+        owner   => root,
+        group   => root,
+        mode    => 0755,
+        source  => "puppet:///files/usr/local/bin/ring-curl"
+    }
     
      file { "/usr/local/bin/generate-hosts.py":
         owner   => root,

@@ -112,6 +112,9 @@ class nettools {
     # for purgekernels
     package { ["libdpkg-perl", "libgetopt-simple-perl"]: ensure => latest }
 
+    # for ring-curl
+    package { ["libwww-curl-perl", "libjson-perl"]: ensure => latest }
+
     # packages we don't like
     package { ["dhcp3-client", "dhcp3-common"]:
         ensure  => $hostname ? {
