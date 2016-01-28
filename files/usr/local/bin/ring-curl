@@ -28,8 +28,8 @@ Options:
   --header <header>\t\tPrint specific header
   --body\t\t\tPrint page body
   --md5\t\t\t\tPrint md5sum of page body
-  --curlinfo\t\t\tPrint curl constants
-  --curl-constant <variable>\tPrint specific curl constant
+  --curlinfo\t\t\tPrint curl variable
+  --curl-param <variable>\tPrint specific curl variable
   --all\t\t\t\tPrint all data
 
   --output <txt|json|perl>\tOutput format
@@ -61,7 +61,7 @@ GetOptions ("user-agent=s"       => \$opt->{useragent},
             "body"               => \$opt->{body},
             "md5"                => \$opt->{md5},
             "curlinfo"           => \$opt->{curlinfo},
-            "curl-constant=s@"   => \$opt->{curlconstant},
+            "curl-param=s@"      => \$opt->{curlparam},
             "all"                => \$opt->{all},
 
             "output=s"           => \$opt->{output},
@@ -78,9 +78,9 @@ if (! $opt->{headers} and
     ! $opt->{body} and
     ! $opt->{md5} and
     ! $opt->{curlinfo} and
-    ! $opt->{curlconstant} and
+    ! $opt->{curlparam} and
     ! $opt->{all}) {
-    $opt->{curlconstant} = ['http_code'];
+    $opt->{curlparam} = ['http_code'];
 }
 if (! $opt->{ringopts}) {
     $opt->{ringopts} = '-n 50 -t 30';
@@ -251,10 +251,10 @@ sub filter_response {
     if ($opt->{curlinfo}) {
         $filtered->{info} = $response->{info};
     }
-    if ($opt->{curlconstant}) {
-	foreach my $constant (@{$opt->{curlconstant}}) {
-            if ($response->{info}->{$constant}) {
-                $filtered->{info}->{$constant} = $response->{info}->{$constant};
+    if ($opt->{curlparam}) {
+	foreach my $param (@{$opt->{curlparam}}) {
+            if ($response->{info}->{$param}) {
+                $filtered->{info}->{$param} = $response->{info}->{$param};
             }
         }
     }
@@ -277,8 +277,8 @@ sub print_txt {
         print $output->{md5}."\n";
     }
     if ($output->{info}) {
-        foreach my $constant (keys(%{$output->{info}})) {
-            print $constant.": ".$output->{info}->{$constant}."\n";
+        foreach my $param (keys(%{$output->{info}})) {
+            print $param.": ".$output->{info}->{$param}."\n";
         }
     }
 }
