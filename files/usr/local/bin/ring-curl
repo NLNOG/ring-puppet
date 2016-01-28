@@ -103,7 +103,8 @@ if ($opt->{local}) {
         print_help();
     }
 } else {
-    `$ringall." ".$opt->{ringopts}." '/usr/bin/env ".basename($0)." --local ".$command_line."'"`;
+    my $command = $ringall." ".$opt->{ringopts}." '/usr/bin/env ".basename($0)." --local ".$command_line."'";
+    print `$command`;
 }
 
 ## Subroutines ##
