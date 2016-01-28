@@ -83,7 +83,7 @@ if (! $opt->{headers} and
     $opt->{curlconstant} = ['http_code'];
 }
 if (! $opt->{ringopts}) {
-    $opt->{ringopts} = '-n 100 -t 60';
+    $opt->{ringopts} = '-n 50 -t 30';
 }
 
 # Run local or global
