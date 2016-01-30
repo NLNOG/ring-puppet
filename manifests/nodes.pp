@@ -3420,3 +3420,10 @@ node 'kit01' inherits ringnode {
     include users
 }
 
+node 'inxza01' inherits ringnode {
+    $owner = "inxza"
+    $location = "-26.146743,28.036484"
+    include set_local_settings
+    include users
+}
+
