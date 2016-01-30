@@ -114,7 +114,9 @@ class nettools {
 
     # for ring-curl
     package { ["libjson-perl"]: ensure => latest }
-    package { ["libwww-curl-perl"]: version => '4.15-1build2-ring' }
+    # Install home-built version for openssl support)
+    #package { ["libwww-curl-perl"]: version => '4.15-1build2-ring' }
+    package { ["libwww-curl-perl"]: ensure => latest }
 
     # packages we don't like
     package { ["dhcp3-client", "dhcp3-common"]:
