@@ -113,7 +113,7 @@ class nettools {
     package { ["libdpkg-perl", "libgetopt-simple-perl"]: ensure => latest }
 
     # for ring-curl
-    package { ["libwww-curl-perl"]: ensure => latest }
+    package { ["libjson-perl"]: ensure => latest }
     package { ["libwww-curl-perl"]: version => '4.15-1build2-ring' }
 
     # packages we don't like
