@@ -3412,3 +3412,11 @@ node 'peakten04' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'kit01' inherits ringnode {
+    $owner = "kit"
+    $location = "49.01222,8.40815"
+    include set_local_settings
+    include users
+}
+
