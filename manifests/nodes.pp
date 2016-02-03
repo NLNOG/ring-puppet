@@ -3427,3 +3427,10 @@ node 'inxza01' inherits ringnode {
     include users
 }
 
+node '23media01' inherits ringnode {
+    $owner = "23media"
+    $location = "50.096114,8.628441"
+    include set_local_settings
+    include users
+}
+
