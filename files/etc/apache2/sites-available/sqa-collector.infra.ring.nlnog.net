@@ -5,16 +5,32 @@ ServerAdmin ring-admins@ring.nlnog.net
 CustomLog /var/log/apache2/sqa_collector-access.log combined
 ErrorLog /var/log/apache2/sqa_collector-error.log
 
+Alias /.well-known /var/www/ring.nlnog.net/sqa_collector/well-known/.well-known
+
 WSGIDaemonProcess sqa_collector processes=2 threads=15
 WSGIProcessGroup sqa_collector
 WSGIScriptAlias / /var/www/ring.nlnog.net/sqa_collector/sqa.wsgi
 
+    <Directory /var/www/ring.nlnog.net/sqa_collector>
+        WSGIProcessGroup sqa_collector
+        WSGIApplicationGroup %{GLOBAL}
+        Order deny,allow
+        Allow from all
+    </Directory>
+
 </VirtualHost>
 
-<Directory /var/www/ring.nlnog.net/sqa_collector>
-    WSGIProcessGroup sqa_collector
-    WSGIApplicationGroup %{GLOBAL}
-    Order deny,allow
-    Allow from all
-</Directory>
+<VirtualHost *:443>
+ServerName sqa-collector.infra.ring.nlnog.net
+ServerAlias sqa.ring.nlnog.net
+ServerAdmin ring-admins@ring.nlnog.net
+CustomLog /var/log/apache2/sqa_collector-access.log combined
+ErrorLog /var/log/apache2/sqa_collector-error.log
 
+Redirect / http://sqa.ring.nlnog.net/
+
+SSLEngine On
+SSLCertificateFile /etc/letsencrypt/live/sqa.ring.nlnog.net/cert.pem
+SSLCACertificateFile /etc/letsencrypt/live/sqa.ring.nlnog.net/fullchain.pem
+SSLCertificateKeyFile /etc/letsencrypt/live/sqa.ring.nlnog.net/privkey.pem
+</VirtualHost>
