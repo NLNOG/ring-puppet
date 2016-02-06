@@ -398,6 +398,9 @@ node 'compute02.infra' inherits infranode {
     include users
     include backup::client
     include syslog_ng::client
+    include apache2
+    $graphite_servername = 'graphite02.infra.ring.nlnog.net'
+    include graphite
 }
 
 node 'storage01.infra' inherits infranode {
