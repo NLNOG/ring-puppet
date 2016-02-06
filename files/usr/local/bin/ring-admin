@@ -181,11 +181,32 @@ Kind regards,
 NLNOG RING Admins
 '''
 
+DOWNEMAIL = '''From: $adminemail
+To: $nocemail, $email
+Cc: $adminemail
+Subject: Problem with NLNOG RING node for $company
+
+Dear $company
+
+It appears the node you made available to the NLNOG RING project is no longer
+online. Can you please investigate and let us know whether you could remedy 
+this situation?
+
+This concerns the machine with hostname "$hostname"
+
+Kind regards,
+
+NLNOG RING Admins
+'''
+
 ANSIBLEREPORTEMAIL = '''From: $adminemail
 To: $adminemail
 Subject: NLNOG RING Ansible report
 
 $contents
+
+Please investigate new missing nodes and failed ansible runs.
+Use "ring-admin send downmail <node>" to request assistance from the node owner.
 
 Kind regards,
 
@@ -449,7 +470,7 @@ class commands(object):
         os.system("cd " + ANSIBLEDIR + " && git commit -am 'dbmaster commit by " + username + "'")
         os.system("cd " + ANSIBLEDIR + " && git push")
 
-    def ansible_report(self):
+    def ansible_process(self,send=None):
         q = "select machines.*, users.username,users.admin from machines,users where machines.owner = users.id"
         machines = self.dbget(q)
         for m in machines:
@@ -469,48 +490,68 @@ class commands(object):
         activate = []
         deactivate = []
         failed = []
+        # Hardcoded ignore list
+        exceptions = {}
+        exceptions['occaid01.ring.nlnog.net'] = 1
+
         for m in machines:
-            if m['failed'] == 1:
-                    failed.append(m['hostname'])
             if m['admin'] == 1:
                 continue
             total = total + 1
+            if m['failed'] == 1:
+                    failed.append(m['hostname'])
             if m['active'] != 1:
                 inactive = inactive + 1
-                if m['seen'] == 1:
+                if m['seen'] == 1 and m['failed'] != 1 and not m['hostname'] in exceptions:
                     activate.append(m['hostname'])
             if m['active'] == 1:
                 active = active + 1
-                if m['seen'] == 0:
+                if m['seen'] == 0 and m['failed'] != 1 and not m['hostname'] in exceptions:
                     deactivate.append(m['hostname'])
 
         report = ""
         report = report + "Nodes:\t\t%d\n" % (total)
-        report = report + "Active:\t\t%d (%d new)\n" % (active + len(activate),len(activate))
-        report = report + "Inactive:\t%d (%d new)\n" % (active - len(deactivate),len(deactivate))
-        report = report + "Failed:\t\t%d\n\n" % (len(failed))
+        report = report + "Active:\t\t%d (%d new)\n" % (active+len(activate)-len(deactivate),len(activate))
+        report = report + "Inactive:\t%d (%d new)\n" % (inactive+len(deactivate)-len(activate),len(deactivate))
+        report = report + "Failed:\t\t%d\n" % (len(failed))
+        report = report + "Ignored:\t%d\n\n" % (len(exceptions))
 
         report = report + "New nodes seen:\n"
         for a in activate:
           report = report + "  - %s\n" % (a)
         report = report + "\nNew missing nodes:\n"
-        for a in deactivate:
-          report = report + "  - %s\n" % (a)
-        report = report + "\nFailed nodes:\n"
+        for d in deactivate:
+          report = report + "  - %s\n" % (d)
+        report = report + "\nFailed ansible runs:\n"
         for f in failed:
           report = report + "  - %s\n" % (f)
         report = report + "\n"
 
+        for a in activate:
+            machid = self.hostname2mid(a)
+            if not machid:
+                sys.stderr.write('could not active machine %s: not found\n' % a)
+            self.dbupdate('machines', machid, **{'active': 1})
+            print 'machine %s marked as active' % (a)
+
         if len(deactivate) > 10:
-            report = report + "More than 10 missing nodes since last run. Skipping automatic deactivation.\n"
+            report = report + "More than 10 missing nodes since last run. Automatic deactivation skipped.\n"
+        else:
+            for d in deactivate:
+                machid = self.hostname2mid(d)
+                if not machid:
+                    sys.stderr.write('could not deactive machine %s: not found\n' % a)
+                self.dbupdate('machines', machid, **{'active': 0})
+                print 'machine %s marked as inactive' % (d)
    
         text = Template(ANSIBLEREPORTEMAIL)
         mailbody = text.substitute(adminemail=ADMINEMAIL,contents=report)
         print mailbody
 
-        print "Sending mail... "
-        self.sendmail(ADMINEMAIL,ADMINEMAIL,mailbody)
-        print "Done."
+        if send and (len(activate) > 0 or len(deactivate) > 0):
+            print "Sending mail... "
+            self.sendmail(ADMINEMAIL,ADMINEMAIL,mailbody)
+            print "Done."
     
     def generate_welcomemail(self, username, send=None):
         partid = self.username2pid(username)
@@ -583,6 +624,30 @@ class commands(object):
             self.sendmail(ADMINEMAIL,RINGUSERSEMAIL,mailbody)
             print "Done."
 
+    def generate_downmail(self, hostname, send=None):
+        uid = self.hostname2uid(hostname)
+        if not uid:
+            sys.exit('machine %s not found' % hostname)
+        partid = self.uid2pid(uid)
+        if not partid:
+            sys.exit('user %s not found' % uid)
+        p = self.dbselectone('participants', id=partid)
+        if not p:
+            sys.exit('participant %s not found' % partid)
+        text = Template(DOWNEMAIL)
+        mailbody = text.substitute(company=p['company'], nocemail=p['nocemail'],
+                                   email=p['email'],
+                                   hostname=hostname,
+                                   adminemail=ADMINEMAIL)
+        print mailbody
+
+        if send:
+            print "Sending mail... "
+            self.sendmail(ADMINEMAIL,
+                          [p['nocemail'],p['email'],ADMINEMAIL],
+                          mailbody)
+            print "Done."
+
     def username2uid(self, username):
         user = self.dbselectone('users', username=username)
         uid = None
@@ -597,12 +662,26 @@ class commands(object):
             pid = user['participant']
         return pid
 
+    def uid2pid(self, uid):
+        user = self.dbselectone('users', id=uid)
+        pid = None
+        if user:
+            pid = user['participant']
+        return pid
+
     def hostname2mid(self, hostname):
         machine = self.dbselectone('machines', hostname=hostname)
         mid = None
         if machine:
             mid = machine['id']
         return mid
+
+    def hostname2uid(self, hostname):
+        machine = self.dbselectone('machines', hostname=hostname)
+        owner = None
+        if machine:
+            owner = machine['owner']
+        return owner
 
     def countryname(self, country, state):
         cname = ''
@@ -971,9 +1050,13 @@ class commands(object):
         self.ansible_generate_userfile()
         self.ansible_push()
 
+    def cmd_ansible_process(self):
+        """process ansible run data"""
+        self.ansible_process()
+
     def cmd_ansible_report(self):
         """process ansible run data and send report"""
-        self.ansible_report()
+        self.ansible_process(1)
 
     def cmd_dnscommands(self, hostname):
         """generate dns commands"""
@@ -1034,6 +1117,18 @@ class commands(object):
     def cmd_send_announcemail(self, username):
         """send anounce email"""
         self.generate_announcemail(username,1)
+
+    def cmd_generate_downmail(self, hostname):
+        """generate text for anounce email"""
+        if not (re.match(r'.*%s$' % ZONE, hostname)):
+            hostname = hostname + "." + ZONE
+        self.generate_downmail(hostname)
+
+    def cmd_send_downmail(self, hostname):
+        """generate text for anounce email"""
+        if not (re.match(r'.*%s$' % ZONE, hostname)):
+            hostname = hostname + "." + ZONE
+        self.generate_downmail(hostname,1)
 
 def run(args):
     c = commands()
