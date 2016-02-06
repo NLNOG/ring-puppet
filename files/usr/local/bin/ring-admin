@@ -8,6 +8,7 @@ import os
 import pycountry
 import re
 import simplejson
+import smtplib
 import string
 import sys
 import time
@@ -105,10 +106,11 @@ $company - AS $autnum - joined the RING today.
 Users can connect to $hostname, which is located in $country.
 '''
 
-WELCOMEMAIL = '''
-From: ring-admins@nlnog.net
+ADMINEMAIL='ring-admins@nlnog.net'
+RINGUSERSEMAIL='ring-users@nlnog.net'
+WELCOMEMAIL = '''From: $adminemail
 To: $nocemail, $email
-Cc: ring-admins@nlnog.net
+Cc: $adminemail
 Subject: Welcome to the RING, $company
 
 Dear $company
@@ -158,9 +160,8 @@ Host *.ring.nlnog.net
     IdentitiesOnly yes
 '''
 
-ANNOUNCEMAIL = '''
-From: ring-admins@nlnog.net
-To: ring-users@nlnog.net
+ANNOUNCEMAIL = '''From: $adminemail
+To: $ringusers
 Subject: $company ($countrycode) joined the RING
 
 Dear All,
@@ -180,6 +181,18 @@ Kind regards,
 NLNOG RING Admins
 '''
 
+ANSIBLEREPORTEMAIL = '''From: $adminemail
+To: $adminemail
+Subject: NLNOG RING Ansible report
+
+$contents
+
+Kind regards,
+
+NLNOG RING dbmaster
+'''
+
+MAILHOST='localhost'
 
 class commands(object):
     def __init__(self):
@@ -282,6 +295,17 @@ class commands(object):
         for row in cur.fetchall():
             yield row
         conn.close()
+    
+    def dbget(self, q, v=None):
+        conn = mdb.connect(DBHOST, DBUSER, DBPASS, DB)
+        cur = conn.cursor(mdb.cursors.DictCursor)
+        if v:
+            cur.execute(q, v)
+        else:
+            cur.execute(q)
+        result = cur.fetchall()
+        conn.close()
+        return result
 
     def dbselect(self, table, **kwargs):
         cols, vals = zip(*kwargs.items())
@@ -340,6 +364,11 @@ class commands(object):
         result = self.dbquery(query)
         for row in result:
             print row
+
+    def sendmail(self,sender,recipients,message):
+        server = smtplib.SMTP(MAILHOST)
+        server.sendmail(sender, recipients, message)
+        server.quit()
 
     def ansible_checkout(self):
         os.system("cd " + ANSIBLEDIR + " && git checkout")
@@ -419,6 +448,140 @@ class commands(object):
         username=getpass.getuser()
         os.system("cd " + ANSIBLEDIR + " && git commit -am 'dbmaster commit by " + username + "'")
         os.system("cd " + ANSIBLEDIR + " && git push")
+
+    def ansible_report(self):
+        q = "select machines.*, users.username,users.admin from machines,users where machines.owner = users.id"
+        machines = self.dbget(q)
+        for m in machines:
+            hostname = re.sub('.' + ZONE, '', m['hostname'])
+            m['seen'] = 0
+            m['failed'] = 0
+            q = "select * from ansible where hostname='%s' and timestamp >= now() - INTERVAL 1 DAY order by timestamp desc limit 1" % (hostname)
+            ansible_run = self.dbquery(q)
+            for run in ansible_run:
+                m['seen'] = 1
+                if run['unreachable'] > 0 or run['failures'] > 0:
+                    m['failed'] = 1
+
+        total = 0
+        active = 0
+        inactive = 0
+        activate = []
+        deactivate = []
+        failed = []
+        for m in machines:
+            if m['failed'] == 1:
+                    failed.append(m['hostname'])
+            if m['admin'] == 1:
+                continue
+            total = total + 1
+            if m['active'] != 1:
+                inactive = inactive + 1
+                if m['seen'] == 1:
+                    activate.append(m['hostname'])
+            if m['active'] == 1:
+                active = active + 1
+                if m['seen'] == 0:
+                    deactivate.append(m['hostname'])
+
+        report = ""
+        report = report + "Nodes:\t\t%d\n" % (total)
+        report = report + "Active:\t\t%d (%d new)\n" % (active + len(activate),len(activate))
+        report = report + "Inactive:\t%d (%d new)\n" % (active - len(deactivate),len(deactivate))
+        report = report + "Failed:\t\t%d\n\n" % (len(failed))
+
+        report = report + "New nodes seen:\n"
+        for a in activate:
+          report = report + "  - %s\n" % (a)
+        report = report + "\nNew missing nodes:\n"
+        for a in deactivate:
+          report = report + "  - %s\n" % (a)
+        report = report + "\nFailed nodes:\n"
+        for f in failed:
+          report = report + "  - %s\n" % (f)
+        report = report + "\n"
+
+        if len(deactivate) > 10:
+            report = report + "More than 10 missing nodes since last run. Skipping automatic deactivation.\n"
+   
+        text = Template(ANSIBLEREPORTEMAIL)
+        mailbody = text.substitute(adminemail=ADMINEMAIL,contents=report)
+        print mailbody
+
+        print "Sending mail... "
+        self.sendmail(ADMINEMAIL,ADMINEMAIL,mailbody)
+        print "Done."
+    
+    def generate_welcomemail(self, username, send=None):
+        partid = self.username2pid(username)
+        if not partid:
+            sys.exit('user %s not found' % username)
+        p = self.dbselectone('participants', id=partid)
+        if not p:
+            sys.exit('participant %s not found' % partid)
+        u = self.dbselectone('users', participant=partid)
+        m = self.dbselect('machines', owner=u['id'])
+        if not m:
+            sys.exit('no machines found for %s' % username)
+        hostname = ''
+        try:
+            mfirst = m.next()
+            hostname = mfirst['hostname']
+        except StopIteration:
+            pass
+        text = Template(WELCOMEMAIL)
+        mailbody = text.substitute(company=p['company'], nocemail=p['nocemail'],
+                                   email=p['email'],
+                                   hostname=hostname, username=u['username'],
+                                   adminemail=ADMINEMAIL)
+        print mailbody
+
+        if send:
+            print "Sending mail... "
+            self.sendmail(ADMINEMAIL,
+                          [p['nocemail'],p['email'],ADMINEMAIL],
+                          mailbody)
+            print "Done."
+
+    def generate_announcemail(self, username, send=None):
+        partid = self.username2pid(username)
+        if not partid:
+            sys.exit('user %s not found' % username)
+        p = self.dbselectone('participants', id=partid)
+        if not p:
+            sys.exit('participant %s not found' % partid)
+        u = self.dbselectone('users', participant=partid)
+        m = self.dbselect('machines', owner=u['id'])
+        if not m:
+            sys.exit('no machines found for %s' % username)
+        hostname = ''
+        autnum = ''
+        dc = ''
+        state = ''
+        country = ''
+        try:
+            mfirst = m.next()
+            hostname = mfirst['hostname']
+            autnum = str(mfirst['autnum'])
+            dc = mfirst['dc']
+            state = mfirst['state']
+            countrycode = mfirst['country']
+        except StopIteration:
+            pass
+        country = self.countryname(countrycode, state)
+        text = Template(ANNOUNCEMAIL)
+        mailbody = text.substitute(company=p['company'],
+                                   companydesc=p['companydesc'],
+                                   hostname=hostname, autnum=autnum, dc=dc,
+                                   state=state, country=country,
+                                   countrycode=countrycode,
+                                   adminemail=ADMINEMAIL,ringusers=RINGUSERSEMAIL)
+        print mailbody
+        
+        if send:
+            print "Sending mail... "
+            self.sendmail(ADMINEMAIL,RINGUSERSEMAIL,mailbody)
+            print "Done."
 
     def username2uid(self, username):
         user = self.dbselectone('users', username=username)
@@ -808,6 +971,10 @@ class commands(object):
         self.ansible_generate_userfile()
         self.ansible_push()
 
+    def cmd_ansible_report(self):
+        """process ansible run data and send report"""
+        self.ansible_report()
+
     def cmd_dnscommands(self, hostname):
         """generate dns commands"""
         if not (re.match(r'.*%s$' % ZONE, hostname)):
@@ -851,64 +1018,22 @@ class commands(object):
                               companydesc=p['companydesc'], hostname=hostname,
                               autnum=autnum, dc=dc, country=country,
                               countrycode=countrycode)
-
+    
     def cmd_generate_welcomemail(self, username):
-        """generate text for welcome mail"""
-        partid = self.username2pid(username)
-        if not partid:
-            sys.exit('user %s not found' % username)
-        p = self.dbselectone('participants', id=partid)
-        if not p:
-            sys.exit('participant %s not found' % partid)
-        u = self.dbselectone('users', participant=partid)
-        m = self.dbselect('machines', owner=u['id'])
-        if not m:
-            sys.exit('no machines found for %s' % username)
-        hostname = ''
-        try:
-            mfirst = m.next()
-            hostname = mfirst['hostname']
-        except StopIteration:
-            pass
-        text = Template(WELCOMEMAIL)
-        print text.substitute(company=p['company'], nocemail=p['nocemail'],
-                              email=p['email'],
-                              hostname=hostname, username=u['username'])
-
+        """generate text for welcome email"""
+        self.generate_welcomemail(username)
+    
+    def cmd_send_welcomemail(self, username):
+        """send welcome email"""
+        self.generate_welcomemail(username,1)
+    
     def cmd_generate_announcemail(self, username):
-        """generate text for announcement mail"""
-        partid = self.username2pid(username)
-        if not partid:
-            sys.exit('user %s not found' % username)
-        p = self.dbselectone('participants', id=partid)
-        if not p:
-            sys.exit('participant %s not found' % partid)
-        u = self.dbselectone('users', participant=partid)
-        m = self.dbselect('machines', owner=u['id'])
-        if not m:
-            sys.exit('no machines found for %s' % username)
-        hostname = ''
-        autnum = ''
-        dc = ''
-        state = ''
-        country = ''
-        try:
-            mfirst = m.next()
-            hostname = mfirst['hostname']
-            autnum = str(mfirst['autnum'])
-            dc = mfirst['dc']
-            state = mfirst['state']
-            countrycode = mfirst['country']
-        except StopIteration:
-            pass
-        country = self.countryname(countrycode, state)
-        text = Template(ANNOUNCEMAIL)
-        print text.substitute(company=p['company'],
-                              companydesc=p['companydesc'],
-                              hostname=hostname, autnum=autnum, dc=dc,
-                              state=state, country=country,
-                              countrycode=countrycode)
-
+        """generate text for anounce email"""
+        self.generate_announcemail(username)
+    
+    def cmd_send_announcemail(self, username):
+        """send anounce email"""
+        self.generate_announcemail(username,1)
 
 def run(args):
     c = commands()
