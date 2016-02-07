@@ -13,6 +13,14 @@ class ansible::master {
         user    => ringforger,
         ensure  => present,
   }
+  
+  cron { ansible_report:
+        command => "/usr/local/bin/ring-admin ansible report >/dev/null",
+        hour    => "12",
+        minute  => "22",
+        user    => ringforger,
+        ensure  => present,
+  }
 
 }
 
