@@ -89,7 +89,7 @@ class postfix {
     include postfix::amavis
   }
 
-  package { ["postfix", "bsd-mailx"]:
+  package { ["postfix", "bsd-mailx", "postfix-pcre"]:
     ensure => installed
   }
 
@@ -154,12 +154,23 @@ class postfix {
     notify  => Service["postfix"],
     require => Package["postfix"],
   }
+  file { "/etc/postfix/smtp_reply_filter":
+    ensure  => present,
+    owner => "root",
+    group => "root",
+    mode => "0644",
+    source  => "puppet:///modules/postfix/smtp_reply_filter",
+    replace => true,
+    notify  => Service["postfix"],
+    require => Package["postfix"],
+  }
 
   # Default configuration parameters
   postfix::config {
     "myorigin":   value => "${postfix_myorigin}";
     "alias_maps": value => "hash:/etc/aliases";
     "inet_interfaces": value => "${postfix_inet_interfaces}";
+    "smtp_reply_filter": value => "pcre:/etc/postfix/smtp_reply_filter";
   }
 
   case $operatingsystem {
