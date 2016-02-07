@@ -124,6 +124,13 @@ class etcfiles {
         mode    => 644,
         source  => "puppet:///files/etc/sysctl.d/30-disable-accepting-ipv6-ra.conf",
     }
+     
+     file { "/etc/sysctl.d/10-ipv6-privacy.conf":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/sysctl.d/10-ipv6-privacy.conf",
+    }
 
     file { "/etc/apt/apt.conf.d/50unattended-upgrades":
         owner   => root,
