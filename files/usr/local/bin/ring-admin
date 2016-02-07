@@ -533,6 +533,7 @@ class commands(object):
                 sys.stderr.write('could not active machine %s: not found\n' % a)
             self.dbupdate('machines', machid, **{'active': 1})
             print 'machine %s marked as active' % (a)
+        report = report + "%d nodes activated.\n" % len(activate)
 
         if len(deactivate) > 10:
             report = report + "More than 10 missing nodes since last run. Automatic deactivation skipped.\n"
@@ -543,7 +544,8 @@ class commands(object):
                     sys.stderr.write('could not deactive machine %s: not found\n' % a)
                 self.dbupdate('machines', machid, **{'active': 0})
                 print 'machine %s marked as inactive' % (d)
-   
+            report = report + "%d nodes deactivated.\n" % len(deactivate)
+
         text = Template(ANSIBLEREPORTEMAIL)
         mailbody = text.substitute(adminemail=ADMINEMAIL,contents=report)
         print mailbody
@@ -1101,19 +1103,19 @@ class commands(object):
                               companydesc=p['companydesc'], hostname=hostname,
                               autnum=autnum, dc=dc, country=country,
                               countrycode=countrycode)
-    
+
     def cmd_generate_welcomemail(self, username):
         """generate text for welcome email"""
         self.generate_welcomemail(username)
-    
+
     def cmd_send_welcomemail(self, username):
         """send welcome email"""
         self.generate_welcomemail(username,1)
-    
+
     def cmd_generate_announcemail(self, username):
         """generate text for anounce email"""
         self.generate_announcemail(username)
-    
+
     def cmd_send_announcemail(self, username):
         """send anounce email"""
         self.generate_announcemail(username,1)
