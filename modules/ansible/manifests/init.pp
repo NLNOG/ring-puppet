@@ -16,7 +16,7 @@ class ansible::master {
   
   cron { ansible_report:
         command => "/usr/local/bin/ring-admin ansible report >/dev/null",
-        hour    => "12",
+        hour    => "11",
         minute  => "22",
         user    => ringforger,
         ensure  => present,
