@@ -20,6 +20,7 @@ declare -a commands=(
 "echo \"$IP $ID.ring.nlnog.net\" >> /etc/hosts"
 "echo \"95.211.149.24   master01 master01.infra.ring.nlnog.net puppet\" >> /etc/hosts"
 "echo \"2001:1AF8:4013::24 master01 master01.infra.ring.nlnog.net puppet\" >> /etc/hosts"
+"echo \"2001:728:1808::18 github.com\" >> /etc/hosts"
 "apt-get update"
 "apt-get -y install curl"
 "curl https://ring.nlnog.net/ring.key | apt-key add -"
