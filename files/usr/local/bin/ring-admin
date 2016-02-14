@@ -492,7 +492,7 @@ class commands(object):
         failed = []
         # Hardcoded ignore list
         exceptions = {}
-        exceptions['occaid01.ring.nlnog.net'] = 1
+        #exceptions['hostname'] = 1
 
         for m in machines:
             if m['admin'] == 1:
@@ -514,7 +514,8 @@ class commands(object):
         report = report + "Active:\t\t%d (%d new)\n" % (active+len(activate)-len(deactivate),len(activate))
         report = report + "Inactive:\t%d (%d new)\n" % (inactive+len(deactivate)-len(activate),len(deactivate))
         report = report + "Failed:\t\t%d\n" % (len(failed))
-        report = report + "Ignored:\t%d\n\n" % (len(exceptions))
+        if len(exceptions) > 0:
+            report = report + "Ignored:\t%d\n\n" % (len(exceptions))
 
         report = report + "New nodes seen:\n"
         for a in activate:
