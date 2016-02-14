@@ -135,7 +135,7 @@ class nettools {
 class nlnogrepokey {
 
     apt::key { 'nlnog_ring_repo':
-        key     => '853E2940',
+        key     => '37B0CA14',
         key_source  => "https://ring.nlnog.net/nlnogrepopublic.key",
     }
 
