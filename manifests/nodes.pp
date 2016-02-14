@@ -3437,3 +3437,32 @@ node '23media01' inherits ringnode {
     include users
 }
 
+node 'anuragbhatia01' {
+    include salt
+    include users::virtual::ring_admins
+    include cronjobs
+    include groups
+    include nettools
+    include etcfiles
+    include local_binaries
+    include nlnogrepokey
+    include lang
+
+    include timezone
+#   ipv6 and fail2ban are not ok
+#    include fail2ban-whitelist
+    $postfix_smtp_listen = "127.0.0.1"
+    $root_mail_recipient = "ring-admins@ring.nlnog.net"
+    $postfix_myorigin = ""
+    include postfix
+    include resolving
+    include no-apache2
+    include syslog_ng::client
+    include nodesonlycron
+
+    $owner = "anuragbhatia"
+    $location = "28.895515,76.606611"
+    include set_local_settings                                                  
+    include users
+    include ansible::client
+}
