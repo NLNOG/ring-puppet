@@ -3466,3 +3466,11 @@ node 'anuragbhatia01' {
     include users
     include ansible::client
 }
+
+node 'elite01' inherits ringnode {
+    $owner = "elite"
+    $location = "51.523418,-0.100464"
+    include set_local_settings
+    include users
+}
+
