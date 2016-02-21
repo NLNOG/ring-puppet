@@ -366,17 +366,6 @@ node 'worker01' inherits infranode {
     include backup::client
 }
 
-node 'worker02' inherits infranode {
-    $owner = "martin"
-    include backup::client
-    include syslog_ng::client
-    include nodesonlycron
-    include users
-    include apache2
-    $graphite_servername = 'graphite01.infra.ring.nlnog.net'
-    include graphite
-}
-
 node 'worker03.infra' inherits infranode {
     $owner = "job"
     include users
