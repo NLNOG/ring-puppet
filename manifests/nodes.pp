@@ -366,14 +366,6 @@ node 'worker01' inherits infranode {
     include backup::client
 }
 
-node 'worker03.infra' inherits infranode {
-    $owner = "job"
-    include users
-    include backup::client
-    include syslog_ng::client
-    include apache2
-}
-
 node 'compute01.infra' inherits infranode {
     $owner = "job"
     include users
