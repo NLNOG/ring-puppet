@@ -358,14 +358,6 @@ node 'auth.infra' inherits infranode {
     include ring_auth::landing
 }
 
-node 'worker01' inherits infranode {
-    $owner = "job"
-    include users
-    include syslog_ng::client
-    include apache2
-    include backup::client
-}
-
 node 'compute01.infra' inherits infranode {
     $owner = "job"
     include users
