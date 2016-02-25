@@ -38,6 +38,30 @@ class ring_auth::landing {
         source  => 'puppet:///modules/ring_auth/auth-copy-keys-to-opt-keys',
         require => [Package['members'], File['/opt/keys']],
     }
+
+    ## Graphite ##
+
+    file { '/opt/graphite':
+        ensure => 'directory',
+        mode   => '0750',
+        owner  => 'root',
+        group  => 'graphite',
+    }
+
+    cron { 'auth_sync_graphite_credentials':
+        user    => 'root',
+        minute  => '*/15',
+        command => '/usr/local/bin/auth-copy-graphite-credentials',
+        require => [Package['members'], File['/usr/local/bin/auth-copy-graphite-credentials']],
+    }
+
+    file { '/usr/local/bin/auth-copy-graphite-credentials':
+        owner   => 'root',
+        group   => 'root',
+        mode    => '0755',
+        source  => 'puppet:///modules/ring_auth/auth-copy-graphite-credentials',
+        require => [Package['members'], File['/opt/graphite']],
+    }
  
 }
 
