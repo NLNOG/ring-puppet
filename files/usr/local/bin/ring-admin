@@ -651,6 +651,31 @@ class commands(object):
                           mailbody)
             print "Done."
 
+    def generate_downreminders(self, send=None):
+        reminders = []
+        machines = self.dbselect('machines', active=0)
+        for m in machines:
+            hostname = m['hostname']
+            owner = self.dbselectone('users', id=m['owner'])
+            if owner['active'] == 0:
+                continue
+            if owner['admin'] == 1:
+                continue
+            reminders.append(hostname)
+        print "Inactive machines with active owners:"
+        for host in sorted(reminders):
+            print "- %s" % (host)
+        print ""
+        print "Total: %d" % (len(reminders))
+
+        if send:
+            print "Sending mail"
+            for host in sorted(reminders):
+                print "...%s" % (host)
+                self.generate_downmail(host,1)
+                time.sleep(1)
+            print "Done."
+
     def username2uid(self, username):
         user = self.dbselectone('users', username=username)
         uid = None
@@ -1132,6 +1157,14 @@ class commands(object):
         if not (re.match(r'.*%s$' % ZONE, hostname)):
             hostname = hostname + "." + ZONE
         self.generate_downmail(hostname,1)
+
+    def cmd_generate_downreminders(self):
+        """show node down reminders to be sent"""
+        self.generate_downreminders()
+
+    def cmd_send_downreminders(self):
+        """send node down reminders"""
+        self.generate_downreminders(1)
 
 def run(args):
     c = commands()
