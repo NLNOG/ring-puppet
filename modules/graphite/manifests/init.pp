@@ -161,7 +161,7 @@ class graphite {
 
     cron { 'import_graphite_users':
         user    => 'graphite',
-        minute  => '12'
+        minute  => '12',
         hour    => '*',
         command => 'ssh auth.infra.ring.nlnog.net cat /opt/graphite/users.list | /usr/local/bin/ring-graphite import users',
         require => File['/usr/local/bin/ring-graphite'],
