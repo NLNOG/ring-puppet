@@ -1097,6 +1097,21 @@ class commands(object):
         """process ansible run data and send report"""
         self.ansible_process(1)
 
+    def cmd_ansible_log(self,hostname=None):
+        """process ansible run data"""
+        runs = None
+        if hostname:
+            if (re.match(r'.*%s$' % ZONE, hostname)):
+                hostname = re.sub('.' + ZONE, '', hostname)
+            runs = self.dbselect('ansible', hostname=hostname)
+        else:
+            q = "select * from ansible where timestamp >= now() - INTERVAL 1 DAY"
+            runs = self.dbquery(q)
+        for run in runs:
+            print "%20s %s :\tok=%d\tchanged=%d\tunreachable=%d\tfailed=%d" % \
+                  (run['hostname'],run['timestamp'],run['ok'],run['changed'], \
+                   run['unreachable'],run['failures'])
+
     def cmd_dnscommands(self, hostname):
         """generate dns commands"""
         if not (re.match(r'.*%s$' % ZONE, hostname)):
