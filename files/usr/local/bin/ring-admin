@@ -1098,7 +1098,7 @@ class commands(object):
         self.ansible_process(1)
 
     def cmd_ansible_log(self,hostname=None):
-        """process ansible run data"""
+        """show completed ansible runs"""
         runs = None
         if hostname:
             if (re.match(r'.*%s$' % ZONE, hostname)):
