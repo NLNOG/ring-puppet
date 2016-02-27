@@ -67,6 +67,7 @@ CREATE TABLE machines
     owner INTEGER NOT NULL,
     tstamp INTEGER,
     active BOOLEAN,
+    last_active INTEGER,
     FOREIGN KEY(owner) REFERENCES users(id)
 );
 CREATE TABLE sshkeys
@@ -532,7 +533,7 @@ class commands(object):
             machid = self.hostname2mid(a)
             if not machid:
                 sys.stderr.write('could not active machine %s: not found\n' % a)
-            self.dbupdate('machines', machid, **{'active': 1})
+            self.activate_machine(machid)
             print 'machine %s marked as active' % (a)
         report = report + "%d nodes activated.\n" % len(activate)
 
@@ -543,7 +544,7 @@ class commands(object):
                 machid = self.hostname2mid(d)
                 if not machid:
                     sys.stderr.write('could not deactive machine %s: not found\n' % a)
-                self.dbupdate('machines', machid, **{'active': 0})
+                self.deactivate_machine(machid)
                 print 'machine %s marked as inactive' % (d)
             report = report + "%d nodes deactivated.\n" % len(deactivate)
 
@@ -675,6 +676,16 @@ class commands(object):
                 self.generate_downmail(host,1)
                 time.sleep(1)
             print "Done."
+
+    def activate_machine(self, machid):
+        tstamp = time.time()
+        self.dbupdate('machines', machid, **{'active': 1})
+        self.dbupdate('machines', machid, **{'last_active': tstamp})
+
+    def deactivate_machine(self, machid):
+        tstamp = time.time()
+        self.dbupdate('machines', machid, **{'active': 0})
+        self.dbupdate('machines', machid, **{'last_active': tstamp})
 
     def username2uid(self, username):
         user = self.dbselectone('users', username=username)
@@ -903,7 +914,7 @@ class commands(object):
         machid = self.hostname2mid(hostname)
         if not machid:
             sys.exit('machine %s not found' % hostname)
-        self.dbupdate('machines', machid, **{'active': 1})
+        self.activate_machine(machid)
         print 'machine %s marked as active' % (hostname)
 
     def cmd_deactivate_machine(self, hostname):
@@ -913,7 +924,7 @@ class commands(object):
         machid = self.hostname2mid(hostname)
         if not machid:
             sys.exit('machine %s not found' % hostname)
-        self.dbupdate('machines', machid, **{'active': 0})
+        self.deactivate_machine(machid)
         print 'machine %s marked as inactive' % (hostname)
 
     def cmd_list_machines(self, username=None):
