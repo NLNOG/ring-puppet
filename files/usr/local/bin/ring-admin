@@ -821,15 +821,16 @@ class commands(object):
         self.dbdelete('participants', id=pid)
         print 'participant %s deleted' % (pid)
 
-    def cmd_list_participants(self, username=None):
+    def cmd_list_participants(self):
         """list participants"""
-        if username:
-            partid = self.username2pid(username)
-            if not partid:
-                sys.exit('user %s not found' % username)
-            print self.dbselectone('participants', participant=partid)
-        else:
-            self.dblist('participants')
+        self.dblist('participants')
+
+    def cmd_list_participant(self,username):
+        """list participant info"""
+        partid = self.username2pid(username)
+        if not partid:
+            sys.exit('user %s not found' % username)
+        print self.dbselectone('participants', id=partid)
 
     def cmd_add_user(self, pid, username, userid):
         """add a user"""
