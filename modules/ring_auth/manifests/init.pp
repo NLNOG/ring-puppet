@@ -41,6 +41,10 @@ class ring_auth::landing {
 
     ## Graphite ##
 
+    group { "graphite":
+        ensure => present,
+    }
+
     file { '/opt/graphite':
         ensure => 'directory',
         mode   => '0750',
