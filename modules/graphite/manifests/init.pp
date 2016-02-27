@@ -159,6 +159,14 @@ class graphite {
         source  => "puppet:///graphite/ring-graphite"
     }
 
+    cron { 'import_graphite_users':
+        user    => 'graphite',
+        minute  => '12'
+        hour    => '*',
+        command => 'ssh auth.infra.ring.nlnog.net cat /opt/graphite/users.list | /usr/local/bin/ring-graphite import users',
+        require => File['/usr/local/bin/ring-graphite'],
+    }
+
     # Install packages
     package { "ring-python-ceres": ensure => latest }
     package { "ring-python-whisper": ensure => latest }
