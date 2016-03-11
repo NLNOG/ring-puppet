@@ -3443,3 +3443,17 @@ node 'elite01' inherits ringnode {
     include users
 }
 
+node 'lbl01' inherits ringnode {
+    $owner = "lbl"
+    $location = "37.8768,-122.2527"
+    include set_local_settings
+    include users
+}
+
+node 'keklolwtf01' inherits ringnode {
+    $owner = "keklolwtf"
+    $location = "60.274066,5.236390"
+    include set_local_settings
+    include users
+}
+
