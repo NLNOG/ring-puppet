@@ -3457,3 +3457,10 @@ node 'keklolwtf01' inherits ringnode {
     include users
 }
 
+node 'cadence01' inherits ringnode {
+    $owner = "cadence"
+    $location = "51.494693919764615,-0.01836619339883"
+    include set_local_settings
+    include users
+}
+
