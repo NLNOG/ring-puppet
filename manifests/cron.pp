@@ -45,6 +45,17 @@ class pdnscronjobs {
     }
 }
 
+class dbmastercronjobs {
+    cron { 'node_down_reminders':
+        user    => 'root',
+        minute  => '28',
+        hour  => '14',
+        monthday => '27',
+        command => '/usr/local/bin/ring-admin send downreminders >/dev/null',
+        require => File['/usr/local/bin/ring-admin'],
+    }
+}
+
 class nodesonlycron {
 }
 

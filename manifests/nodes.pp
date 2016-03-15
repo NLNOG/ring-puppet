@@ -282,6 +282,7 @@ node 'dbmaster.infra' inherits infranode {
     include local_binaries_dbmaster
     include backup::client
     include ansible::master
+    include dbmastercronjobs
 }
 
 # website, dns, mailing-list etc
@@ -3438,6 +3439,27 @@ node 'anuragbhatia01' {
 node 'elite01' inherits ringnode {
     $owner = "elite"
     $location = "51.523418,-0.100464"
+    include set_local_settings
+    include users
+}
+
+node 'lbl01' inherits ringnode {
+    $owner = "lbl"
+    $location = "37.8768,-122.2527"
+    include set_local_settings
+    include users
+}
+
+node 'keklolwtf01' inherits ringnode {
+    $owner = "keklolwtf"
+    $location = "60.274066,5.236390"
+    include set_local_settings
+    include users
+}
+
+node 'cadence01' inherits ringnode {
+    $owner = "cadence"
+    $location = "51.494693919764615,-0.01836619339883"
     include set_local_settings
     include users
 }

@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import os, sys, inspect, string
+import os, sys, inspect, re, string
 import MySQLdb as mdb
 sys.path.append('/opt/graphite/webapp')
 os.environ["DJANGO_SETTINGS_MODULE"] = "graphite.settings"
@@ -104,11 +104,13 @@ class commands(object):
         conn.close()
 
     def getparticipant(self,username):
-        query = "select participant from users where username='%s'" % (username)
+        query = "select active, participant from users where username='%s'" % (username)
         users = list(self.dbquery(query))
         if (len(users)<1):
             return
         for u in users:
+            if u['active'] == 0:
+                return
             query = "select * from participants where id=%s" % (u['participant'])
             participants = list(self.dbquery(query))
             if (len(participants)<1):
@@ -145,17 +147,21 @@ class commands(object):
         except User.DoesNotExist:
             sys.exit('user %s does not exist' % (username))
             pass
-    
-    def django_list_users(self):
-        users = list(User.objects.all())
-        for u in users:
-            print "%-20s\t%s" % (u.username,u.email)
+
+    def django_get_user(self,username):
+        try:
+            return User.objects.get(username__exact=username)
+        except User.DoesNotExist:
+            return None
+
+    def django_get_users(self):
+        return list(User.objects.all())
 
     def cmd_add_user(self,username,pwfile=None):
         """add a graphite user"""
 
         p=self.getparticipant(username)
-        if not p['id']:
+        if not p:
             sys.exit('user %s not found in ring database' % username)
         email=p['nocemail']
 
@@ -176,7 +182,7 @@ class commands(object):
         """update a graphite user"""
 
         p=self.getparticipant(username)
-        if not p['id']:
+        if not p:
             sys.exit('user %s not found in ring database' % username)
         email=p['nocemail']
 
@@ -200,9 +206,60 @@ class commands(object):
         self.django_del_user(username)
         print "Deleted graphite user entry for %s" % (username)
     
+    def cmd_import_users(self,pwfile=None):
+        """import graphite users from file"""
+
+        # Retrieve new users
+        file = None
+        newusers = dict()
+        if pwfile:
+            file = open(pwfile, "r")
+        else:
+            file = sys.stdin
+        for line in file:
+            if (re.search(r'^#', line)):
+                continue
+            vals = line.split(':')
+            if len(vals) < 2:
+                print >> sys.stderr, "Skipping invalid entry"
+                continue
+            newusers[vals[0]] = vals[1].rstrip()
+        file.close()
+
+        # Retrieve existing users
+        oldusers = self.django_get_users()
+
+        # Delete removed users
+        for u in oldusers:
+            old = u.username
+            p=self.getparticipant(old)
+            if not p:
+                continue
+            elif not old in newusers:
+                print "Deleting %s" % (old)
+                self.django_del_user(old)
+
+        # Add new users or update data
+        for new in newusers:
+            p=self.getparticipant(new)
+            if not p:
+                print >> sys.stderr, "user %s not found in ring database" % (new)
+            email=p['nocemail']
+            password=newusers[new]
+
+            if self.django_get_user(new):
+                print "Updating %s" % (new)
+                self.django_update_user(new,'email',email)
+                self.django_update_user(new,'password',password)
+            else:
+                print "Adding %s" % (new)
+                self.django_add_user(new,email,password)
+
     def cmd_list_users(self):
         """list graphite users"""
-        self.django_list_users()
+        users = self.django_get_users()
+        for u in users:
+            print "%-20s\t%s" % (u.username,u.email)
 
 def run(args):
     c = commands()
