@@ -1815,7 +1815,7 @@ node 'poppr01' inherits ringnode {
 
 node 'kaiaglobal01' inherits ringnode {
     $owner = "kaiaglobal"
-    $location = "53.551004,10.047029"
+    $location = "53.55108,9.99368"
     include set_local_settings
     include users
 }
@@ -2908,13 +2908,6 @@ node 'peakten01' inherits ringnode {
 node 'vshn02' inherits ringnode {
     $owner = "vshn"
     $location = "47.432913,8.557448"
-    include set_local_settings
-    include users
-}
-
-node 'kaiaglobal02' inherits ringnode {
-    $owner = "kaiaglobal"
-    $location = "40.717787,-74.008773"
     include set_local_settings
     include users
 }
