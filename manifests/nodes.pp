@@ -3255,20 +3255,6 @@ node 'communityrack01' inherits ringnode {
     include users
 }
 
-node 'netflix02' inherits ringnode {
-    $owner = "netflix"
-    $location = "-77.4874416,39.0437567"
-    include set_local_settings
-    include users
-}
-
-node 'netflix03' inherits ringnode {
-    $owner = "netflix"
-    $location = "-121.888826,37.329731"
-    include set_local_settings
-    include users
-}
-
 node 'surfnet02' inherits ringnode {
     $owner = "surfnet"
     $location = "52.087963,5.167554"
