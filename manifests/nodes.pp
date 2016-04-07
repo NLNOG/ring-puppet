@@ -3436,3 +3436,9 @@ node 'cadence01' inherits ringnode {
     include users
 }
 
+node 'sigtelecom01' inherits ringnode {
+    $owner = "sigtelecom"
+    $location = "46.20701984544142,6.1044421792030334"
+    include set_local_settings
+    include users
+}
