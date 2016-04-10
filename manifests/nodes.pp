@@ -3442,3 +3442,18 @@ node 'sigtelecom01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'linode02' inherits ringnode {
+    $owner = "linode"
+    $location = "50.096751,8.644020"
+    include set_local_settings
+    include users
+}
+
+node 'linode03' inherits ringnode {
+    $owner = "linode"
+    $location = "40.831821,-74.448794"
+    include set_local_settings
+    include users
+}
+
