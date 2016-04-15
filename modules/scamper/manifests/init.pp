@@ -8,7 +8,7 @@ class scamper {
 
     cron { "clean_scamper":
         user => "scamper",
-        command => "find /home/scamper/collected/* -mtime +8 -exec rm {} \;",
+        command => "find /home/scamper/collected/* -mtime +8 -exec rm {} \\;",
         ensure => absent,
     }
 
