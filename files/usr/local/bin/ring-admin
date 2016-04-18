@@ -299,9 +299,10 @@ class commands(object):
         conn = mdb.connect(DBHOST, DBUSER, DBPASS, DB)
         cur = conn.cursor()
         if v:
+            v = tuple(s.encode('utf8') for s in v)
             cur.execute(q, v)
         else:
-            cur.execute(q)
+            cur.execute(q.encode('utf8'))
         if not script:
             conn.commit()
             conn.close()
@@ -910,6 +911,10 @@ class commands(object):
             sys.exit('machine %s not found' % hostname)
         self.dbupdate('machines', machid, **{attribute: value})
         print 'attribute %s for machine %s updated' % (attribute, hostname)
+        if (attribute == "geo"):
+            city = self.cityname(value)
+            self.dbupdate('machines', machid, **{'city': city})
+            print 'attribute city for machine %s updated' % (hostname)
 
     def cmd_activate_machine(self, hostname):
         """mark machine as active"""
