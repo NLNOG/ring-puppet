@@ -299,7 +299,11 @@ class commands(object):
         conn = mdb.connect(DBHOST, DBUSER, DBPASS, DB)
         cur = conn.cursor()
         if v:
-            v = tuple(s.encode('utf8') for s in v)
+            vlist = list(v)
+            for index, s in enumerate(vlist):
+                if isinstance(s, basestring):
+                    vlist[index] = s.encode('utf8')
+            v = tuple(vlist)
             cur.execute(q, v)
         else:
             cur.execute(q.encode('utf8'))
