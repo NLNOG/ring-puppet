@@ -81,6 +81,9 @@ for p in participants:
     for u in users:
         if not logo:
             logo=u['username'] + '.png'
+            if not os.path.isfile(BASEDIR+'/'+logo):
+                sys.stderr.write("%s: logo %s does not exist." % (__file__,logo) +
+                                 " please upload or add symlink to nologo.png\n")
             #try:
             #    with open(BASEDIR+'/'+logo) as f: pass
             #except IOError as e:
