@@ -8,7 +8,7 @@ class ansible::master {
   }
     
   cron { ansible_deploy:
-        command => "/usr/local/bin/ring-admin ansible deploy >/dev/null 2>/dev/null",
+        command => "chronic /usr/local/bin/ring-admin ansible deploy >/dev/null 2>/dev/null",
         minute  => "42",
         user    => ringforger,
         ensure  => present,
