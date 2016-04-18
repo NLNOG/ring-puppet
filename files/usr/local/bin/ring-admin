@@ -398,12 +398,20 @@ class commands(object):
         server.quit()
 
     def ansible_checkout(self):
-        os.system("cd " + ANSIBLEDIR + " && git checkout")
-        os.system("cd " + ANSIBLEDIR + " && git pull")
+        ret = os.system("cd " + ANSIBLEDIR + " && git checkout")
+        if ret > 0:
+           sys.exit("subprocess returned error: %d" % (ret))
+        ret = os.system("cd " + ANSIBLEDIR + " && git pull")
+        if ret > 0:
+           sys.exit("subprocess returned error: %d" % (ret))
 
     def ansible_getsshkeys(self):
-        os.system("rsync -r --delete --chmod=g+w " + ANSIBLE_KEYORIGIN + " " + ANSIBLEDIR + "/" + ANSIBLE_KEYBASE)
-        os.system("cd " + ANSIBLEDIR + " && git add " + ANSIBLEDIR + "/" + ANSIBLE_KEYDIR)
+        ret = os.system("rsync -r --delete --chmod=g+w " + ANSIBLE_KEYORIGIN + " " + ANSIBLEDIR + "/" + ANSIBLE_KEYBASE)
+        if ret > 0:
+           sys.exit("subprocess returned error: %d" % (ret))
+        ret = os.system("cd " + ANSIBLEDIR + " && git add " + ANSIBLEDIR + "/" + ANSIBLE_KEYDIR)
+        if ret > 0:
+           sys.exit("subprocess returned error: %d" % (ret))
 
     def ansible_generate_hostfile(self):
         f = open(ANSIBLEDIR + '/' + ANSIBLE_HOSTFILE,'w')
@@ -476,8 +484,10 @@ class commands(object):
 
     def ansible_push(self):
         username=getpass.getuser()
-        os.system("cd " + ANSIBLEDIR + " && git commit -am 'dbmaster commit by " + username + "'")
-        os.system("cd " + ANSIBLEDIR + " && git push")
+        ret = os.system("cd " + ANSIBLEDIR + " && git commit -am 'dbmaster commit by " + username + "'")
+        ret = os.system("cd " + ANSIBLEDIR + " && git push")
+        if ret > 0:
+           sys.exit("subprocess returned error: %d" % (ret))
 
     def ansible_process(self,send=None):
         q = "select machines.*, users.username,users.admin from machines,users where machines.owner = users.id"
