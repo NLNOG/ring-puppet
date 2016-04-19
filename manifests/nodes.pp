@@ -3457,3 +3457,10 @@ node 'linode03' inherits ringnode {
     include users
 }
 
+node 'datapath01' inherits ringnode {
+    $owner = "datapath"
+    $location = "50.128587,8.580335"
+    include set_local_settings
+    include users
+}
+
