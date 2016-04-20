@@ -317,7 +317,7 @@ node 'public02.infra' inherits infranode {
     include powerdns
     include backup::client
     $postfix_smtp_listen = "0.0.0.0"
-    include postfix-mta
+    include postfix::mta
 }
 
 node 'backup.infra' inherits infranode {
