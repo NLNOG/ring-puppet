@@ -70,6 +70,9 @@ class postfix {
   case $postfix_myorigin {
     "": { $postfix_myorigin = $fqdn }
   }
+  case $postfix_home_mailbox {
+    "": { $postfix_home_mailbox = "" }
+  }
 
   # Bootstrap moduledir
   include common::moduledir
@@ -171,6 +174,7 @@ class postfix {
     "alias_maps": value => "hash:/etc/aliases";
     "inet_interfaces": value => "${postfix_inet_interfaces}";
     "smtp_reply_filter": value => "pcre:/etc/postfix/smtp_reply_filter";
+    "home_mailbox": value => "${postfix_home_mailbox}";
   }
 
   case $operatingsystem {
