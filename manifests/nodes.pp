@@ -338,7 +338,7 @@ node 'public02.infra' inherits inframailnode {
     file { "/usr/local/bin/ring-aptsummary":
         owner   => root,
         group   => root,
-        mode    => 744,
+        mode    => 755,
         source  => "puppet:///files/usr/local/bin/ring-aptsummary"
     }
     cron {
