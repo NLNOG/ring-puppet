@@ -59,6 +59,7 @@ node inframailnode inherits basenode {
     include etcfiles_infra
     $postfix_smtp_listen = "0.0.0.0"
     $root_mail_recipient = "ring-admins@ring.nlnog.net"
+    $postfix_home_mailbox = "Maildir/"
     $postfix_myorigin = ""
     include postfix
     file { "/etc/puppet/puppet.conf":
