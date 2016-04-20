@@ -325,7 +325,7 @@ node 'public01.infra' inherits infranode {
     include backup::client
 }
 
-node 'public02.infra' inherits infranode {
+node 'public02.infra' inherits inframailnode {
     $owner = "job"
     include set_local_settings
     include syslog_ng::client
