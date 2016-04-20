@@ -12,10 +12,6 @@ node basenode {
     include nlnogrepokey
     include lang
     include timezone
-    $postfix_smtp_listen = "127.0.0.1"
-    $root_mail_recipient = "ring-admins@ring.nlnog.net"
-    $postfix_myorigin = ""
-    include postfix
     include resolving
     class { 'apt':
         purge_sources_list => true,
@@ -31,6 +27,10 @@ node ringnode inherits basenode {
     include syslog_ng::client
     include nodesonlycron
     include etcfiles_ring
+    $postfix_smtp_listen = "127.0.0.1"
+    $root_mail_recipient = "ring-admins@ring.nlnog.net"
+    $postfix_myorigin = ""
+    include postfix
     file { "/etc/puppet/puppet.conf":
         owner   => root,
         group   => root,
@@ -43,6 +43,24 @@ node ringnode inherits basenode {
 
 node infranode inherits basenode {
     include etcfiles_infra
+    $postfix_smtp_listen = "127.0.0.1"
+    $root_mail_recipient = "ring-admins@ring.nlnog.net"
+    $postfix_myorigin = ""
+    include postfix
+    file { "/etc/puppet/puppet.conf":
+        owner   => root,
+        group   => root,
+        mode    => 644,
+        source  => "puppet:///files/etc/puppet/puppet.conf"
+    }
+}
+
+node inframailnode inherits basenode {
+    include etcfiles_infra
+    $postfix_smtp_listen = "0.0.0.0"
+    $root_mail_recipient = "ring-admins@ring.nlnog.net"
+    $postfix_myorigin = ""
+    include postfix
     file { "/etc/puppet/puppet.conf":
         owner   => root,
         group   => root,
