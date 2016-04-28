@@ -3497,3 +3497,10 @@ node 'datapath01' inherits ringnode {
     include users
 }
 
+node 'zerofail01' inherits ringnode {
+    $owner = "zerofail"
+    $location = "45.467049,-73.541176"
+    include set_local_settings
+    include users
+}
+
