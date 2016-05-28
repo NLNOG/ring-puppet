@@ -3497,3 +3497,17 @@ node 'zerofail01' inherits ringnode {
     include users
 }
 
+node 'fiberby01' inherits ringnode {
+    $owner = "fiberby"
+    $location = "55.66943,12.53909"
+    include set_local_settings
+    include users
+}
+
+node 'serversaustralia01' inherits ringnode {
+    $owner = "serversaustralia"
+    $location = "-33.921638,151.188263"
+    include set_local_settings
+    include users
+}
+
