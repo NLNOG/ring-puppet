@@ -594,13 +594,6 @@ node 'in2ip01' inherits ringnode {
 	include users
 }
 
-node 'netground01' inherits ringnode {
-    $owner = "netground"
-    $location = "52.343983,4.828710"
-    include set_local_settings
-	include users
-}
-
 node 'totaalnet01' inherits ringnode {
     $owner = "totaalnet"
     $location = "51.987831,5.933394"
