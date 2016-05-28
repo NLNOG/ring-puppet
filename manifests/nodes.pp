@@ -482,13 +482,6 @@ node 'coloclue01' inherits ringnode {
 	include users
 }
 
-node 'widexs01' inherits ringnode {
-    $owner = "widexs"
-    $location = "52.399982,4.842305"
-    include set_local_settings
-	include users
-}
-
 node 'interconnect01' inherits ringnode {
     $owner = "interconnect"
     $location = "51.686672,5.359043"
