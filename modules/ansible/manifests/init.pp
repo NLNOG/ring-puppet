@@ -33,7 +33,7 @@ class ansible::client {
     }
 
     cron { ansible_pull:
-        command => "ansible-pull -d /etc/ansible/ring -U https://github.com/NLNOG/ring-ansible.git -i nodes -l $fqdn -c local playbook.yml >/dev/null 2>/dev/null",
+        command => "ansible-pull --full -d /etc/ansible/ring -U https://github.com/NLNOG/ring-ansible.git -i nodes -l $fqdn -c local playbook.yml >/dev/null 2>/dev/null",
         minute  => "$minute",
         hour    => "*/2",
         user    => root,
