@@ -3532,3 +3532,10 @@ node 'midcore01' inherits ringnode {
     include users
 }
 
+node 'clouddk01' inherits ringnode {
+    $owner = "clouddk"
+    $location = "55.662101,12.30134499999997"
+    include set_local_settings
+    include users
+}
+
