@@ -3518,3 +3518,10 @@ node 'plurimedia01' inherits ringnode {
     include users
 }
 
+node 'digitalocean05' inherits ringnode {
+    $owner = "digitalocean"
+    $location = "12.843064,77.656476"
+    include set_local_settings
+    include users
+}
+
