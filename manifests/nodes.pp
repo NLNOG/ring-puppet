@@ -3511,3 +3511,10 @@ node 'chaosdarmstadt01' inherits ringnode {
     include users
 }
 
+node 'plurimedia01' inherits ringnode {
+    $owner = "plurimedia"
+    $location = "48.5839200,7.7455300"
+    include set_local_settings
+    include users
+}
+
