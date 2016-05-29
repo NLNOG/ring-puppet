@@ -3504,3 +3504,10 @@ node 'serversaustralia01' inherits ringnode {
     include users
 }
 
+node 'chaosdarmstadt01' inherits ringnode {
+    $owner = "chaosdarmstadt"
+    $location = "49.877636,8.654469"
+    include set_local_settings
+    include users
+}
+
