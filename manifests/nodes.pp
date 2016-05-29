@@ -3525,3 +3525,10 @@ node 'digitalocean05' inherits ringnode {
     include users
 }
 
+node 'midcore01' inherits ringnode {
+    $owner = "midcore"
+    $location = "52.278519,-1.895536"
+    include set_local_settings
+    include users
+}
+
