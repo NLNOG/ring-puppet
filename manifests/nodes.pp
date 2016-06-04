@@ -3553,3 +3553,10 @@ node 'netcup01' inherits ringnode {
     include users
 }
 
+node 'hostwayde01' inherits ringnode {
+    $owner = "hostwayde"
+    $location = "52.328409,9.783299"
+    include set_local_settings
+    include users
+}
+
