@@ -3539,3 +3539,10 @@ node 'clouddk01' inherits ringnode {
     include users
 }
 
+node 'netcup01' inherits ringnode {
+    $owner = "netcup"
+    $location = "49.456373,11.078364"
+    include set_local_settings
+    include users
+}
+
