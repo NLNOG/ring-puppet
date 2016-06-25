@@ -2987,13 +2987,6 @@ node 'cloudcenter01' inherits ringnode {
     include users
 }
 
-node 'worldstream01' inherits ringnode {
-    $owner = "worldstream"
-    $location = "52.001225,4.210819"
-    include set_local_settings
-    include users
-}
-
 node 'cloudvps01' inherits ringnode {
     $owner = "cloudvps"
     $location = "52.332912,4.919461"
