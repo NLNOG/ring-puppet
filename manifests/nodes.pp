@@ -3553,3 +3553,16 @@ node 'hostwayde01' inherits ringnode {
     include users
 }
 
+node 'dreamhack01' inherits ringnode {
+    $owner = "dreamhack"
+    $location = "59.407410,17.835249"
+    include set_local_settings
+    include users
+}
+
+node 'memset01' inherits ringnode {
+    $owner = "memset"
+    $location = "51.427652,-0.978997"
+    include set_local_settings
+    include users
+}
