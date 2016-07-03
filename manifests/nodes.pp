@@ -3566,3 +3566,11 @@ node 'memset01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'hkserverworks01' inherits ringnode {
+    $owner = "hkserverworks"
+    $location = "22.373888888888888,114.1083888888888"
+    include set_local_settings
+    include users
+}
+
