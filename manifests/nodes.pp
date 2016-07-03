@@ -3574,3 +3574,10 @@ node 'hkserverworks01' inherits ringnode {
     include users
 }
 
+node 'plutex01' inherits ringnode {
+    $owner = "plutex"
+    $location = "53.0761418,8.7716442"
+    include set_local_settings
+    include users
+}
+
