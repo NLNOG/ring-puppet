@@ -3581,3 +3581,38 @@ node 'plutex01' inherits ringnode {
     include users
 }
 
+node 'pcextreme02' inherits ringnode {
+    $owner = "pcextreme"
+    $location = "52.4007,4.8433"
+    include set_local_settings
+    include users
+}
+
+node 'pcextreme03' inherits ringnode {
+    $owner = "pcextreme"
+    $location = "52.303823,4.939355"
+    include set_local_settings
+    include users
+}
+
+node 'pcextreme04' inherits ringnode {
+    $owner = "pcextreme"
+    $location = "35.6638546,139.81218279999996"
+    include set_local_settings
+    include users
+}
+
+node 'pcextreme05' inherits ringnode {
+    $owner = "pcextreme"
+    $location = "25.7758255,-80.1928077"
+    include set_local_settings
+    include users
+}
+
+node 'pcextreme06' inherits ringnode {
+    $owner = "pcextreme"
+    $location = "34.0276254,-118.23907750000001"
+    include set_local_settings
+    include users
+}
+
