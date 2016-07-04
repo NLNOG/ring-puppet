@@ -3616,3 +3616,10 @@ node 'pcextreme06' inherits ringnode {
     include users
 }
 
+node 'metapeer01' inherits ringnode {
+    $owner = "metapeer"
+    $location = "47.4923372,-122.2923814"
+    include set_local_settings
+    include users
+}
+
