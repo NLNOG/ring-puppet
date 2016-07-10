@@ -3623,3 +3623,10 @@ node 'metapeer01' inherits ringnode {
     include users
 }
 
+node 'hextet01' inherits ringnode {
+    $owner = "hextet"
+    $location = "49.8936072,-97.1451288"
+    include set_local_settings
+    include users
+}
+
