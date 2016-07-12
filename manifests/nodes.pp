@@ -3630,3 +3630,9 @@ node 'hextet01' inherits ringnode {
     include users
 }
 
+node 'amazon12' inherits ringnode {
+    $owner = "amazon"
+    $location = "19.07598,72.87766"
+    include set_local_settings
+    include users
+}
