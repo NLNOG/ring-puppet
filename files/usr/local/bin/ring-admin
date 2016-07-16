@@ -480,7 +480,7 @@ class commands(object):
             f.write('    email: \'' + p['nocemail'] + '\'\n')
             f.write('    uid: ' + str(u['userid']) + '\n')
             if u['shell']:
-            f.write('    shell: \'' + p['shell'] + '\'\n')
+                f.write('    shell: \'' + p['shell'] + '\'\n')
             f.write('    groups:\n')
             f.write('      - ring-users\n\n')
         f.close()
