@@ -359,3 +359,13 @@ class local_binaries_dbmaster {
         ensure => present,
     }
 }
+
+class local_binaries_ring {
+     file { "/usr/local/bin/geotrshell":
+        owner   => root,
+        group   => root,
+        mode    => 0755,
+        source  => "puppet:///files/usr/local/bin/geotrshell"
+    }
+}
+
