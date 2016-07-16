@@ -48,6 +48,7 @@ CREATE TABLE users
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(255) UNIQUE,
     userid INTEGER,
+    shell VARCHAR(255),
     active INTEGER,
     participant INTEGER NOT NULL,
     admin INTEGER,
@@ -478,6 +479,8 @@ class commands(object):
             f.write('    company: \'' + p['company'] + '\'\n')
             f.write('    email: \'' + p['nocemail'] + '\'\n')
             f.write('    uid: ' + str(u['userid']) + '\n')
+            if u['shell']:
+            f.write('    shell: \'' + p['shell'] + '\'\n')
             f.write('    groups:\n')
             f.write('      - ring-users\n\n')
         f.close()
