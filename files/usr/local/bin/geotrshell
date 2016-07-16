@@ -4,7 +4,7 @@
 # Contact salim@sdv.fr for details
 #
 
-target=$1
+read target
 mtr=/usr/bin/mtr
 
 if [[ $target =~ ^[0-9\.]+$ ]]; then

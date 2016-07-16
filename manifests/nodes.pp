@@ -137,7 +137,7 @@ node 'container01.infra' inherits infranode {
         rootsize    => '19968',
         bridge      => 'virbr1',
         container   => "${hostname}",
-        ensure      => present,
+        ensure      => absent,
     }
 }
 
