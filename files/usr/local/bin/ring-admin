@@ -183,7 +183,7 @@ Kind regards,
 NLNOG RING Admins
 '''
 
-DOWNEMAIL = '''From: $adminemail
+DOWNMAIL = '''From: $adminemail
 To: $nocemail, $email
 Cc: $adminemail
 Subject: Problem with NLNOG RING node for $company
@@ -195,6 +195,25 @@ online. Can you please investigate and let us know whether you could remedy
 this situation?
 
 This concerns the machine with hostname "$hostname"
+
+Kind regards,
+
+NLNOG RING Admins
+'''
+
+REMOVEMAIL = '''From: $adminemail
+To: $nocemail, $email
+Cc: $adminemail
+Subject: NLNOG RING node for $company removed
+
+Dear $company
+
+Please be informed that the node with hostname "$hostname" is no longer
+part of the NLNOG RING. The machine can be shut down or used for other purposes.
+
+All references to the machine have been removed from our database. If you
+have no additional nodes that are part of the RING your user account(s) will
+be deactivated.
 
 Kind regards,
 
@@ -216,6 +235,7 @@ NLNOG RING dbmaster
 '''
 
 MAILHOST='localhost'
+INACTIVE_DAYS=90
 
 class commands(object):
     def __init__(self):
@@ -659,7 +679,31 @@ class commands(object):
         p = self.dbselectone('participants', id=partid)
         if not p:
             sys.exit('participant %s not found' % partid)
-        text = Template(DOWNEMAIL)
+        text = Template(DOWNMAIL)
+        mailbody = text.substitute(company=p['company'], nocemail=p['nocemail'],
+                                   email=p['email'],
+                                   hostname=hostname,
+                                   adminemail=ADMINEMAIL)
+        print mailbody
+
+        if send:
+            print "Sending mail... "
+            self.sendmail(ADMINEMAIL,
+                          [p['nocemail'],p['email'],ADMINEMAIL],
+                          mailbody)
+            print "Done."
+
+def generate_removemail(self, hostname, send=None):
+        uid = self.hostname2uid(hostname)
+        if not uid:
+            sys.exit('machine %s not found' % hostname)
+        partid = self.uid2pid(uid)
+        if not partid:
+            sys.exit('user %s not found' % uid)
+        p = self.dbselectone('participants', id=partid)
+        if not p:
+            sys.exit('participant %s not found' % partid)
+        text = Template(REMOVEMAIL)
         mailbody = text.substitute(company=p['company'], nocemail=p['nocemail'],
                                    email=p['email'],
                                    hostname=hostname,
@@ -698,6 +742,49 @@ class commands(object):
                 time.sleep(1)
             print "Done."
 
+    def purge_inactive_machines(self):
+        tstamp = time.time()
+        machine_delete = []
+        participant_deactivate = []
+        q = "select machines.*, users.username,users.admin as admin " + \
+            "from machines,users where machines.active = 0 and " + \
+            "machines.owner = users.id"
+        machines = self.dbget(q)
+        for m in machines:
+            if m['admin'] == 1:
+                continue
+            if m['last_active']:
+                if (tstamp - m['last_active']) < (INACTIVE_DAYS * 86400):
+                    print "Not yet deleting %s" % (m['hostname'])
+                    continue
+            else:
+                print "Not deleting %s (no last_active date)" % (m['hostname'])
+                continue
+
+            machine_delete.append(m['hostname'])
+            print "Deleting machine %s" % (m['hostname'])
+            self.generate_removemail(m['hostname'],1)
+            self.dbdelete('mremarks', machine=m['id'])
+            print 'remarks for machine %s deleted' % (m['hostname'])
+            self.dbdelete('machines', hostname=m['hostname'])
+            print 'machine %s deleted' % (m['hostname'])
+
+            q = "select participants.id as id, participants.company as " + \
+                "company from participants left join " + \
+                "users on participants.id = users.participant " + \
+                "where users.id = %s" % (m['owner'])
+            participant = self.dbget(q)
+            for p in participant:
+                q = "select users.participant,count(machines.id) as count " + \
+                    "from machines left join users on machines.owner = " + \
+                    "users.id group by users.participant having " + \
+                    "users.participant = %s" % (p['id'])
+                machines = self.dbget(q)
+                if not machines:
+                    participant_deactivate.append(p['company'])
+                    print "Deactivating users for participant %s" % (p['company'])
+                    self.deactivate_participant(p['id'])
+
     def activate_machine(self, machid):
         tstamp = time.time()
         self.dbupdate('machines', machid, **{'active': 1})
@@ -707,6 +794,18 @@ class commands(object):
         tstamp = time.time()
         self.dbupdate('machines', machid, **{'active': 0})
         self.dbupdate('machines', machid, **{'last_active': tstamp})
+
+    def activate_participant(self, partid):
+        users = self.dbselect('users', participant=partid)
+        for u in users:
+            self.dbupdate('users', u['id'], **{'active': 1})
+            print "Activated user %s" % (u['username'])
+
+    def deactivate_participant(self, partid):
+        users = self.dbselect('users', participant=partid)
+        for u in users:
+            self.dbupdate('users', u['id'], **{'active': 0})
+            print "Deactivated user %s" % (u['username'])
 
     def username2uid(self, username):
         user = self.dbselectone('users', username=username)
@@ -849,6 +948,20 @@ class commands(object):
         if not partid:
             sys.exit('user %s not found' % username)
         print self.dbselectone('participants', id=partid)
+
+    def cmd_activate_participant(self,username):
+        """activate all user for participant"""
+        partid = self.username2pid(username)
+        if not partid:
+            sys.exit('user %s not found' % username)
+        self.activate_participant(partid)
+
+    def cmd_deactivate_participant(self,username):
+        """deactivate all user for participant"""
+        partid = self.username2pid(username)
+        if not partid:
+            sys.exit('user %s not found' % username)
+        self.deactivate_participant(partid)
 
     def cmd_add_user(self, pid, username, userid):
         """add a user"""
@@ -1177,13 +1290,13 @@ class commands(object):
         self.generate_announcemail(username,1)
 
     def cmd_generate_downmail(self, hostname):
-        """generate text for anounce email"""
+        """generate text for node down notification"""
         if not (re.match(r'.*%s$' % ZONE, hostname)):
             hostname = hostname + "." + ZONE
         self.generate_downmail(hostname)
 
     def cmd_send_downmail(self, hostname):
-        """generate text for anounce email"""
+        """send node down notification"""
         if not (re.match(r'.*%s$' % ZONE, hostname)):
             hostname = hostname + "." + ZONE
         self.generate_downmail(hostname,1)
@@ -1195,6 +1308,22 @@ class commands(object):
     def cmd_send_downreminders(self):
         """send node down reminders"""
         self.generate_downreminders(1)
+
+    def cmd_generate_removemail(self, hostname):
+        """generate text for node removal email"""
+        if not (re.match(r'.*%s$' % ZONE, hostname)):
+            hostname = hostname + "." + ZONE
+        self.generate_removemail(hostname)
+
+    def cmd_send_removemail(self, hostname):
+        """send text for node removal email"""
+        if not (re.match(r'.*%s$' % ZONE, hostname)):
+            hostname = hostname + "." + ZONE
+        self.generate_removemail(hostname,1)
+
+    def cmd_purge_machines(self):
+        """purge machines inactive for a long time"""
+        self.purge_inactive_machines()
 
 def run(args):
     c = commands()

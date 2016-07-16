@@ -49,9 +49,17 @@ class dbmastercronjobs {
     cron { 'node_down_reminders':
         user    => 'root',
         minute  => '28',
-        hour  => '14',
-        monthday => '27',
+        hour  => '11',
+        weekday => '1',
         command => '/usr/local/bin/ring-admin send downreminders >/dev/null',
+        require => File['/usr/local/bin/ring-admin'],
+    }
+    cron { 'node_down_deactivation':
+        user    => 'root',
+        minute  => '28',
+        hour  => '6',
+        monthday => '27',
+        command => '/usr/local/bin/ring-admin purge machine',
         require => File['/usr/local/bin/ring-admin'],
     }
 }
