@@ -916,7 +916,7 @@ class commands(object):
             userid = 5000
         userid = userid + 1
         uid = self.dbinsert('users', username=username,
-                            participant=partid, userid=userid)
+                            participant=partid, userid=userid, active=1)
         print 'user %s added for participant %s' % (uid, partid)
 
     def cmd_update_participant(self, username, attribute, value):
@@ -969,7 +969,7 @@ class commands(object):
         if not participant:
             sys.exit('participant %s not found' % pid)
         uid = self.dbinsert('users', username=username,
-                            userid=userid, participant=pid)
+                            userid=userid, participant=pid, active=1)
         print 'user %s added' % (uid)
 
     def cmd_update_user(self, username, attribute, value):
