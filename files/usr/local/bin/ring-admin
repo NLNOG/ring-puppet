@@ -1331,8 +1331,11 @@ def run(args):
 
 if __name__ == "__main__":
     c = commands()
+    lctype = None
+    if len(os.environ.get('LC_CTYPE', '.').split('.', 1)) > 1:
+        lctype = os.environ.get('LC_CTYPE', '.').split('.', 1)[1]
     sys.exit(
         c.run(
-            [s.decode(sys.stdout.encoding or
-                      os.environ.get('LC_CTYPE', '.').split('.', 1)[1] or
-                      'utf-8') for s in sys.argv[1:]]))
+            [s.decode(sys.stdout.encoding or lctype or 'utf-8')
+                      for s in sys.argv[1:]]))
+
