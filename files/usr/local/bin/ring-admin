@@ -693,7 +693,7 @@ class commands(object):
                           mailbody)
             print "Done."
 
-def generate_removemail(self, hostname, send=None):
+    def generate_removemail(self, hostname, send=None):
         uid = self.hostname2uid(hostname)
         if not uid:
             sys.exit('machine %s not found' % hostname)
