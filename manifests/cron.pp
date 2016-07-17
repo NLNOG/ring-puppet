@@ -50,7 +50,7 @@ class dbmastercronjobs {
         user    => 'root',
         minute  => '28',
         hour  => '6',
-        monthday => ['5,19'],
+        monthday => [5,19],
         command => '/usr/local/bin/ring-admin send downreminders >/dev/null',
         require => File['/usr/local/bin/ring-admin'],
     }
