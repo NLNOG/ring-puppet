@@ -215,6 +215,12 @@ All references to the machine have been removed from our database. If you
 have no additional nodes that are part of the RING your user account(s) will
 be deactivated.
 
+This email notification is part of an automated cleanup process to remove
+RING nodes which have been unreachable for an extended period of time.
+
+If you'd like a machine to rejoin the NLNOG RING please contact the ring-admins
+or fill in the form at https://ring.nlnog.net/contact/application-form/
+
 Kind regards,
 
 NLNOG RING Admins
