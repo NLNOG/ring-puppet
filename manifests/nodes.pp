@@ -3637,3 +3637,11 @@ node 'amazon12' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'ekmedia01' inherits ringnode {
+    $owner = "ekmedia"
+    $location = "51.988367,4.382284"
+    include set_local_settings
+    include users
+}
+
