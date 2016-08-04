@@ -3645,3 +3645,10 @@ node 'ekmedia01' inherits ringnode {
     include users
 }
 
+node 'fundaments01' inherits ringnode {
+    $owner = "fundaments"
+    $location = "52.281142,4.765655"
+    include set_local_settings
+    include users
+}
+
