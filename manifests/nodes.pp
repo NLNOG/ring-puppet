@@ -221,19 +221,19 @@ node 'container03.infra' inherits infranode {
         container   => "${hostname}",
         ensure      => present,
     }
-    kvm::virtual_machine { 'master01.infra':
-        fqdn        => 'master01.infra.ring.nlnog.net',
-        ip          => '78.152.42.69', # ipv6 address is 2a02:d28:666::69
-        netmask     => '255.255.255.240',
-        dns         => '8.8.8.8',
-        gateway     => '78.152.42.65',
-        memory      => '8192',
-        disksize    => '40',
-        rootsize    => '39936',
-        bridge      => 'virbr1',
-        container   => "${hostname}",
-        ensure      => present,
-    }
+    #kvm::virtual_machine { 'master01.infra':
+    #    fqdn        => 'master01.infra.ring.nlnog.net',
+    #    ip          => '78.152.42.69', # ipv6 address is 2a02:d28:666::69
+    #    netmask     => '255.255.255.240',
+    #    dns         => '8.8.8.8',
+    #    gateway     => '78.152.42.65',
+    #    memory      => '8192',
+    #    disksize    => '40',
+    #    rootsize    => '39936',
+    #    bridge      => 'virbr1',
+    #    container   => "${hostname}",
+    #    ensure      => present,
+    #}
 }
 
 # container04 is hosted at Bit in Ede
