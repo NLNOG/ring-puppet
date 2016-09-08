@@ -2330,8 +2330,8 @@ node 'fullsave01' inherits ringnode {
     include users
 }
 
-node 'telecityfi01' inherits ringnode {
-    $owner = "telecityfi"
+node 'equinixfi01' inherits ringnode {
+    $owner = "equinixfi"
     $location = "60.169,24.959"
     include set_local_settings
     include users
