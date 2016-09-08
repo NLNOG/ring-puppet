@@ -3659,3 +3659,10 @@ node 'patientsky01' inherits ringnode {
     include users
 }
 
+node 'xantaro01' inherits ringnode {
+    $owner = "xantaro"
+    $location = "50.083242,8.633570"
+    include set_local_settings
+    include users
+}
+
