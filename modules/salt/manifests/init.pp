@@ -9,6 +9,11 @@ class salt {
 ",
         notify => Service["salt-minion"],
     }
+    
+    file {"/etc/salt/minion_id":
+        content => "{$fqdn}",
+        notify => Service["salt-minion"],
+    }
 
     service { 'salt-minion':
         ensure  => running,
