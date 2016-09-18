@@ -3666,3 +3666,31 @@ node 'xantaro01' inherits ringnode {
     include users
 }
 
+node 'linode04' inherits ringnode {
+    $owner = "linode"
+    $location = "32.791539,-96.815154"
+    include set_local_settings
+    include users
+}
+
+node 'linode05' inherits ringnode {
+    $owner = "linode"
+    $location = "37.471628,-121.919837"
+    include set_local_settings
+    include users
+}
+
+node 'linode06' inherits ringnode {
+    $owner = "linode"
+    $location = "33.733902,-84.425719"
+    include set_local_settings
+    include users
+}
+
+node 'linode07' inherits ringnode {
+    $owner = "linode"
+    $location = "51.531654,-0.257503"
+    include set_local_settings
+    include users
+}
+
