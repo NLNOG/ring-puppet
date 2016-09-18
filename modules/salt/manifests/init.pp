@@ -11,7 +11,7 @@ class salt {
     }
     
     file {"/etc/salt/minion_id":
-        content => "{$fqdn}",
+        content => "$fqdn",
         notify => Service["salt-minion"],
     }
 
