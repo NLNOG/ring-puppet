@@ -352,6 +352,19 @@ node 'public02.infra' inherits inframailnode {
     }
 }
 
+node 'public03.infra' inherits infranode {
+    $owner = "job"
+    include syslog_ng::client
+    include nodesonlycron
+    include users
+    include apache2
+    include powerdns
+    include map
+    include local_binaries_pdnsmaster
+    include pdnscronjobs
+    include backup::client
+}
+
 node 'backup.infra' inherits infranode {
     $owner = "job"
     include syslog_ng::client
