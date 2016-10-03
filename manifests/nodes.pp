@@ -3713,3 +3713,11 @@ node 'novoserve01' inherits ringnode {
     include set_local_settings
     include users
 }
+
+node 'cvo01' inherits ringnode {
+    $owner = "cvo"
+    $location = "51.8459434,4.679178399999955"
+    include set_local_settings
+    include users
+}
+
