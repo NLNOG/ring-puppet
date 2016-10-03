@@ -3728,3 +3728,10 @@ node 'plusline01' inherits ringnode {
     include users
 }
 
+node 'kviknet01' inherits ringnode {
+    $owner = "kviknet"
+    $location = "55.662101,12.2991563"
+    include set_local_settings
+    include users
+}
+
