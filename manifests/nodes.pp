@@ -3721,3 +3721,10 @@ node 'cvo01' inherits ringnode {
     include users
 }
 
+node 'plusline01' inherits ringnode {
+    $owner = "plusline"
+    $location = "50.119871,8.735244"
+    include set_local_settings
+    include users
+}
+
