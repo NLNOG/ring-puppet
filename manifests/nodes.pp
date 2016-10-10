@@ -3747,3 +3747,9 @@ node 'liquidtelecom02' inherits ringnode {
     include set_local_settings
     include users
 }
+node 'carnet01' inherits ringnode {
+    $owner = "carnet"
+    $location = "45.6517742,15.6600504"
+    include set_local_settings
+    include users
+}
