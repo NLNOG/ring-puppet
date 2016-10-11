@@ -33,7 +33,7 @@ class ansible::client {
         require  => Exec['apt-get update'],
     }
 
-    apt::pin {
+    apt::pin 'ansible' {
         packages    => 'ansible',
         priority    => '1001',
         version     => '2.1.1.0-1ppa~precise',
