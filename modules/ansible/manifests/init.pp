@@ -30,6 +30,19 @@ class ansible::client {
 
     package {["ansible","git"]:
         ensure  => latest,
+        require  => Exec['apt-get update'],
+    }
+
+    exec { "apt-get update":
+        command => "/usr/bin/apt-get update",
+        onlyif => "/bin/sh -c '[ ! -f /var/cache/apt/pkgcache.bin ] || /usr/bin/find /etc/apt/* -cnewer /var/cache/apt/pkgcache.bin | /bin/grep . > /dev/null'",
+    }
+
+    apt::pin { ansible:
+        packages    => 'ansible',
+        priority    => '1001',
+        version     => '2.1.1.0-1ppa~precise',
+        before      => Package['ansible'],
     }
 
     cron { ansible_pull:
