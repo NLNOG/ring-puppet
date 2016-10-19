@@ -43,13 +43,17 @@ class nettools {
  
     package { "openntpd": ensure => purged }
     package { "ntp": ensure => latest }
-    file { "/etc/ntp.conf":
-        require => Package["ntp"],
-        mode   => 644,
-        owner  => root,
-        group  => root,
-        source => "puppet:///files/etc/ntp.conf",
-      }
+
+    # kelolwtf manages their own ntp
+    if ($fqdn != "keklolwtf01.ring.nlnog.net") {
+        file { "/etc/ntp.conf":
+            require => Package["ntp"],
+            mode   => 644,
+            owner  => root,
+            group  => root,
+            source => "puppet:///files/etc/ntp.conf",
+          }
+    }
     service { "ntp":
         ensure => running,
         subscribe => File["/etc/ntp.conf"],
