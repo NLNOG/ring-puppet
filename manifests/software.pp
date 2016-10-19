@@ -53,10 +53,10 @@ class nettools {
             group  => root,
             source => "puppet:///files/etc/ntp.conf",
           }
-    }
-    service { "ntp":
-        ensure => running,
-        subscribe => File["/etc/ntp.conf"],
+        service { "ntp":
+            ensure => running,
+            subscribe => File["/etc/ntp.conf"],
+        }
     }
     package { "sl": ensure => purged }
     package { "mtr": ensure => purged}
