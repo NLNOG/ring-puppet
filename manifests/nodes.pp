@@ -3777,3 +3777,9 @@ node 'hibernia02' inherits ringnode {
     include set_local_settings
     include users
 }
+node 'franceix01' inherits ringnode {
+    $owner = "franceix"
+    $location = "48.914245,2.362260"
+    include set_local_settings
+    include users
+}
