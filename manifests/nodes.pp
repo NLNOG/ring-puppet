@@ -3782,3 +3782,9 @@ node 'netrouting01' inherits ringnode {
     include set_local_settings
     include users
 }
+node 'liteserver01' inherits ringnode {
+    $owner = "liteserver"
+    $location = "52.543863,5.705141"
+    include set_local_settings
+    include users
+}
