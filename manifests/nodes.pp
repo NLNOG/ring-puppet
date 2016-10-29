@@ -1881,13 +1881,6 @@ node 'msu01' inherits ringnode {
     include users
 }
 
-node 'robtex01' inherits ringnode {
-    $owner = "robtex"
-    $location = "38.96350,-77.38076"
-    include set_local_settings
-    include users
-}
-
 node 'dyn01' inherits ringnode {
     $owner = "dyn"
     $location = "35.617481,139.749775"
