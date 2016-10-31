@@ -3788,3 +3788,9 @@ node 'liteserver01' inherits ringnode {
     include set_local_settings
     include users
 }
+node '20c01' inherits ringnode {
+    $owner = "20c"
+    $location = "41.875998,-88.248779"
+    include set_local_settings
+    include users
+}
