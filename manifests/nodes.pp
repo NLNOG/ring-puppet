@@ -3806,3 +3806,9 @@ node 'connectria01' inherits ringnode {
     include set_local_settings
     include users
 }
+node 'syseleven02' inherits ringnode {
+    $owner = "syseleven"
+    $location = "50.120542,8.736711"
+    include set_local_settings
+    include users
+}
