@@ -3800,3 +3800,9 @@ node 'netrouting02' inherits ringnode {
     include set_local_settings
     include users
 }
+node 'connectria01' inherits ringnode {
+    $owner = "connectria"
+    $location = "38.629332,-90.197304"
+    include set_local_settings
+    include users
+}
