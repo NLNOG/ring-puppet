@@ -5,7 +5,7 @@ class salt {
     }
     
     file {"/etc/salt/minion":
-        content => "master_finger: '54:8b:81:be:b3:b8:39:df:e0:de:bf:55:03:b1:9b:f3'
+        content => "master_finger: '39:ea:41:f1:3d:d5:4b:32:bb:1a:a1:ff:27:0e:08:7e:89:cd:8c:75:c5:f7:0e:f3:cd:19:53:98:e6:01:55:fe'
 ",
         notify => Service["salt-minion"],
     }
