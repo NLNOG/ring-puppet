@@ -482,7 +482,27 @@ class commands(object):
                 f.write(line + "\n")
                 if m['active'] != 0:
                     f2.write(line + "\n")
+
+        users = self.dbquery(q)
+        for u in users:
+            if u['admin'] == 1:
+                continue
+            f.write("\n[" + u['username'] + "]\n")
+            f2.write("\n[" + u['username'] + "]\n")
+            q2 = 'SELECT * from machines WHERE owner=' + str(u['id'])
+            machines = self.dbquery(q2)
+            for m in machines:
+                line = m['hostname'] + ' OWNER=' + u['username']
+                if m['v4']:
+                    line = line + ' V4=' + m['v4']
+                if m['v6']:
+                    line = line + ' V6=' + m['v6']
+                f.write(line + "\n")
+                if m['active'] != 0:
+                    f2.write(line + "\n")
+
         f.close()
+        f2.close()
 
     def ansible_generate_userfile(self):
         f = open(ANSIBLEDIR + '/' + ANSIBLE_USERFILE,'w')
