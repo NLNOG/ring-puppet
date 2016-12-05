@@ -16,7 +16,6 @@ class master_software {
 class nettools {
     package { "puppet": ensure => latest }
     package { "puppet-common": ensure => latest }
-    package { "update-motd": ensure => latest }
     package { "ruby1.9.3": ensure => latest }
     package { "ruby": ensure => latest }
     package { "members": ensure => latest }

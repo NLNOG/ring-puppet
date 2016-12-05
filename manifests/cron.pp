@@ -79,6 +79,7 @@ class cronjobs {
         hour => "7",
         minute => "15",
         user => "root",
+        ensure => absent,
     }
 
     cron { aptupdate:
