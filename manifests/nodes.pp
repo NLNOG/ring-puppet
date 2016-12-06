@@ -8,7 +8,6 @@ node basenode {
     include nettools
     include etcfiles
     include local_binaries
-    include lang
     include resolving
     include salt
 }
@@ -1094,8 +1093,6 @@ node 'occaid01' {
     include nettools
     include etcfiles
     include local_binaries
-    include nlnogrepokey
-    include lang
 
     $postfix_smtp_listen = "127.0.0.1"
     $root_mail_recipient = "ring-admins@ring.nlnog.net"
@@ -2689,8 +2686,6 @@ node 'anuragbhatia01' {
     include nettools
     include etcfiles
     include local_binaries
-    include nlnogrepokey
-    include lang
 
     $postfix_smtp_listen = "127.0.0.1"
     $root_mail_recipient = "ring-admins@ring.nlnog.net"
