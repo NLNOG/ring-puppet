@@ -108,17 +108,6 @@ class etcfiles_infra {
     }
 }
 
-class timezone {
-    file { 
-        "/etc/localtime": 
-            ensure => "/usr/share/zoneinfo/UTC",
-    } 
-    file { 
-        "/etc/timezone": 
-            content => "Etc/UTC\n",
-    } 
-}
-
 class local_binaries {
     
     file { "/usr/local/bin/ring-convert-ssh-keys":

@@ -10,7 +10,6 @@ node basenode {
     include etcfiles
     include local_binaries
     include lang
-    include timezone
     include resolving
     class { 'apt':
         purge_sources_list => true,
@@ -1246,7 +1245,6 @@ node 'occaid01' {
     include nlnogrepokey
     include lang
 
-    include timezone
     $postfix_smtp_listen = "127.0.0.1"
     $root_mail_recipient = "ring-admins@ring.nlnog.net"
     $postfix_myorigin = ""
@@ -3408,7 +3406,6 @@ node 'anuragbhatia01' {
     include nlnogrepokey
     include lang
 
-    include timezone
     $postfix_smtp_listen = "127.0.0.1"
     $root_mail_recipient = "ring-admins@ring.nlnog.net"
     $postfix_myorigin = ""
