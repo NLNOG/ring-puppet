@@ -14,16 +14,6 @@ class etcfiles {
 #        source  => "puppet:///files/home/job/.ssh/authorized_keys"
 #    } 
 
-    file { "/etc/dpkg/dpkg.cfg.d/multiarch":
-        ensure  => absent,
-    }
-    file { "/etc/bash.bashrc":
-        owner   => root,
-        group   => root,
-        mode    => 644,
-        source  => "puppet:///files/etc/bash.bashrc"
-    }
-
     file { "/etc/sudoers":
         owner   => root,
         group   => root,
@@ -43,41 +33,6 @@ class etcfiles {
         group   => root,
         mode    => 644,
         source  => "puppet:///files/etc/ssh/ssh_config"
-    } 
-
-     file { "/etc/pam.d/atd":
-        owner   => root,
-        group   => root,
-        mode    => 644,
-        source  => "puppet:///files/etc/pam.d/atd",
-    }
-
-     file { "/etc/pam.d/cron":
-        owner   => root,
-        group   => root,
-        mode    => 644,
-        source  => "puppet:///files/etc/pam.d/cron",
-    }
-
-     file { "/etc/pam.d/login":
-        owner   => root,
-        group   => root,
-        mode    => 644,
-        source  => "puppet:///files/etc/pam.d/login",
-    }
-
-     file { "/etc/pam.d/sshd":
-        owner   => root,
-        group   => root,
-        mode    => 644,
-        source  => "puppet:///files/etc/pam.d/sshd",
-    }
-
-     file { "/etc/pam.d/su":
-        owner   => root,
-        group   => root,
-        mode    => 644,
-        source  => "puppet:///files/etc/pam.d/su",
     } 
 
     file { "/etc/apt/apt.conf.d/10periodic":
