@@ -20,10 +20,4 @@ class set_local_settings {
     user { 'ubuntu':
         ensure => absent,
     }
-
-    file { "/etc/rc.local":
-        mode => 755,
-        content => template("rc.local.erb"),
-    }
-
 } 
