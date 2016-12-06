@@ -11,11 +11,6 @@ node basenode {
     include local_binaries
     include lang
     include resolving
-    class { 'apt':
-        purge_sources_list => true,
-        purge_sources_list_d => true,
-    }
-    include ring::apt
     include salt
 }
 
