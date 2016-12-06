@@ -4,8 +4,6 @@ $logServerList = ['master01.infra.ring.nlnog.net']
 import "modules.pp"
 import "nodes"
 import "classes/*.pp"
-import "ring-users"
-import "ring-admins"
 import "software"
 import "cron"
 import "various_files"
