@@ -18,7 +18,6 @@ node basenode {
     }
     include ring::apt
     include salt
-    include ansible::client
 }
 
 node ringnode inherits basenode {
@@ -1260,7 +1259,6 @@ node 'occaid01' {
     $location = "47.619428,-122.348535"
     include set_local_settings                                                  
     include users
-    include ansible::client
 }
 
 node 'as250net01' inherits ringnode {
@@ -3422,7 +3420,6 @@ node 'anuragbhatia01' {
     $location = "28.895515,76.606611"
     include set_local_settings                                                  
     include users
-    include ansible::client
 }
 
 node 'elite01' inherits ringnode {
