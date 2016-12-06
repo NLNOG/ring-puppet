@@ -531,7 +531,8 @@ class commands(object):
                 q3 = 'SELECT * from sshhostkeys WHERE machine=' + str(m['id'])
                 hostkeys = self.dbquery(q3)
                 for k in hostkeys:
-                    f.write('%s %s %s %s\n' % (namestr,keytype,sshkey,keyid))
+                    f.write('%s %s %s %s\n' % (namestr,k['keytype'],k['sshkey'],
+                                                                    k['keyid']))
         f.close()
 
     def ansible_generate_userfile(self):
