@@ -295,7 +295,6 @@ node 'dbmaster.infra' inherits infranode {
 #            'server-id'     => '666',
 #        }
 #    }
-    include local_binaries_dbmaster
     include backup::client
     include ansible::master
     include dbmastercronjobs
@@ -318,7 +317,6 @@ node 'public01.infra' inherits infranode {
 #            'root_password' => trocla("mysql_${fqdn}",'plain'),
 #        }
 #    }
-    include local_binaries_pdnsmaster
     include pdnscronjobs
     include backup::client
 }
@@ -356,7 +354,6 @@ node 'public03.infra' inherits infranode {
     include apache2
     include powerdns
     include map
-    include local_binaries_pdnsmaster
     include pdnscronjobs
     include backup::client
 }

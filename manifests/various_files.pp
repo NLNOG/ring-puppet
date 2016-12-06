@@ -133,23 +133,3 @@ class local_binaries {
 
 }
 
-class local_binaries_pdnsmaster {
-    file { "/usr/local/bin/ring-pdns":
-        owner   => root,
-        group   => root,
-        mode    => 0755,
-        source  => "puppet:///files/usr/local/bin/ring-pdns",
-        ensure => present,
-    }
-}
-
-class local_binaries_dbmaster {
-    file { "/usr/local/bin/ring-admin":
-        owner   => root,
-        group   => root,
-        mode    => 0755,
-        source  => "puppet:///files/usr/local/bin/ring-admin",
-        ensure => present,
-    }
-}
-
