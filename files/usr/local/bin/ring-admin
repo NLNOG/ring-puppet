@@ -80,6 +80,16 @@ CREATE TABLE sshkeys
     user INTEGER NOT NULL,
     FOREIGN KEY(user) REFERENCES users(id)
 );
+CREATE TABLE sshhostkeys
+(
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    keytype VARCHAR(255) NOT NULL,
+    sshkey VARCHAR(16384) NOT NULL,
+    keyid VARCHAR(255),
+    user INTEGER NOT NULL,
+    machine INTEGER NOT NULL,
+    FOREIGN KEY(machine) REFERENCES machines(id)
+);
 CREATE TABLE premarks
 (
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
@@ -1129,6 +1139,69 @@ class commands(object):
         if not uid:
             sys.exit('user %s not found' % username)
         result = self.dbselect('sshkeys', user=uid)
+        for row in result:
+            print row
+
+    def cmd_add_hostkeys(self, hostname, filename=None):
+        """add ssh hostkeys"""
+        if not (re.match(r'.*%s$' % ZONE, hostname)):
+            hostname = hostname + "." + ZONE
+        machid = self.hostname2mid(hostname)
+        if not machid:
+            sys.exit('machine %s not found' % hostname)
+
+        file = None
+        if filename:
+            file = open(filename, "r")
+        else:
+            file = sys.stdin
+        cols = ['keytype', 'sshkey', 'keyid', 'machine']
+        for line in file:
+            if (re.search(r'^#', line)):
+                continue
+            vals = line.split()
+            insert = []
+            if len(vals) < 2:
+                print >> sys.stderr, "Skipping invalid entry"
+                continue
+            insert.append(vals[0])
+            insert.append(vals[1])
+            if len(vals) == 2:
+                insert.append(None)
+            elif len(vals) > 3:
+                keyid = "\"" + string.join(vals[2:]) + "\""
+                insert.append(keyid)
+            else:
+                insert.append(vals[2])
+            insert.append(machid)
+            kid = self.dbinsertlist('sshhostkeys', cols, insert)
+            print "Added key %s for machine %s" % (kid, hostname)
+        file.close()
+
+    def cmd_replace_hostkeys(self, hostname, filename=None):
+        """replace ssh hostkeys"""
+        if not (re.match(r'.*%s$' % ZONE, hostname)):
+            hostname = hostname + "." + ZONE
+        machid = self.hostname2mid(hostname)
+        if not machid:
+            sys.exit('machine %s not found' % hostname)
+        self.dbdelete('sshhostkeys', machine=machid)
+        print 'sshkeys for machine %s deleted' % (hostname)
+        self.cmd_add_sshhostkeys(hostname, filename)
+
+    def cmd_delete_hostkey(self, id):
+        """delete an ssh hostkey"""
+        self.dbdelete('sshhostkeys', id=id)
+        print 'key %s deleted' % (id)
+
+    def cmd_list_hostkeys(self, hostname):
+        """list ssh hostkeys"""
+        if not (re.match(r'.*%s$' % ZONE, hostname)):
+            hostname = hostname + "." + ZONE
+        machid = self.hostname2mid(hostname)
+        if not machid:
+            sys.exit('machine %s not found' % hostname)
+        result = self.dbselect('sshhostkeys', machine=machid)
         for row in result:
             print row
 
