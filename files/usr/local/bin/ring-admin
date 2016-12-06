@@ -86,7 +86,6 @@ CREATE TABLE sshhostkeys
     keytype VARCHAR(255) NOT NULL,
     sshkey VARCHAR(16384) NOT NULL,
     keyid VARCHAR(255),
-    user INTEGER NOT NULL,
     machine INTEGER NOT NULL,
     FOREIGN KEY(machine) REFERENCES machines(id)
 );
@@ -1063,6 +1062,8 @@ class commands(object):
         machid = self.hostname2mid(hostname)
         if not machid:
             sys.exit('machine %s not found' % hostname)
+        self.dbdelete('sshhostkeys', machine=machid)
+        print 'ssh hostkeys for machine %s deleted' % (hostname)
         self.dbdelete('mremarks', machine=machid)
         print 'remarks for machine %s deleted' % (hostname)
         self.dbdelete('machines', hostname=hostname)
