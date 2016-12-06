@@ -1,9 +1,9 @@
 class salt {
     package {["salt-minion"]:
-        ensure  => absent,
+        ensure  => purged,
     }
     package {["salt-common"]:
-        ensure  => absent,
+        ensure  => purged,
     }
     
     file {"/etc/salt":
