@@ -9,7 +9,6 @@ node basenode {
     include nettools
     include etcfiles
     include local_binaries
-    include nlnogrepokey
     include lang
     include timezone
     include resolving
@@ -27,7 +26,6 @@ node ringnode inherits basenode {
     include syslog_ng::client
     include nodesonlycron
     include etcfiles_ring
-    include local_binaries_ring
     $postfix_smtp_listen = "127.0.0.1"
     $root_mail_recipient = "ring-admins@ring.nlnog.net"
     $postfix_myorigin = ""

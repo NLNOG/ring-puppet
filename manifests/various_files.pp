@@ -2,27 +2,6 @@
 #
 class etcfiles {
 
-    apt::source { 'nlnog_ring_repo':
-        location    => 'http://apt.ring.nlnog.net/deb/',
-        release     => 'maverick',
-        repos       => 'main',
-        include_src => false,
-    }
-
-    apt::source { 'salt_repo':
-        location    => 'http://repo.saltstack.com/apt/ubuntu/12.04/amd64/latest',
-        release     => 'precise',
-        repos       => 'main',
-        include_src => false,
-    }
-    
-    apt::source { 'ansible_repo':
-        location    => 'http://ppa.launchpad.net/ansible/ansible/ubuntu',
-        release     => 'precise',
-        repos       => 'main',
-        include_src => false,
-    }
-
     file { ['/etc/apt/sources.list.d/master.ring.nlnog.net.list', '/etc/apt/sources.list.d/amp.list']:
         ensure  => absent,
     }
@@ -34,16 +13,6 @@ class etcfiles {
 #        mode    => 600,
 #        source  => "puppet:///files/home/job/.ssh/authorized_keys"
 #    } 
-
-    file { "/lib/init/upstart-job":
-        owner   => root,
-        group   => root,
-        mode    => 0755,
-        source  => $lsbdistcodename ? {
-            maverick    => "puppet:///files/lib/init/upstart-job.maverick",
-            precise     => "puppet:///files/lib/init/upstart-job.precise",
-        }
-    }
 
     file { "/etc/dpkg/dpkg.cfg.d/multiarch":
         ensure  => absent,
@@ -210,69 +179,6 @@ class timezone {
 }
 
 class local_binaries {
-    file { "/usr/local/lib/site_ruby/ring.rb":
-        owner   => root,
-        group   => root,
-        mode    => 0755,
-        source  => "puppet:///files/usr/local/lib/site_ruby/ring.rb"
-    }
-    file { "/usr/local/bin/ring-uping":
-        owner   => root,
-        group   => root,
-        mode    => 0755,
-        source  => "puppet:///files/usr/local/bin/ring-uping"
-    }
-    file { "/usr/local/bin/ring-ping":
-        owner   => root,
-        group   => root,
-        mode    => 0755,
-        source  => "puppet:///files/usr/local/bin/ring-ping"
-    }
-     file { "/usr/local/bin/ring-http":
-        owner   => root,
-        group   => root,
-        mode    => 0755,
-        source  => "puppet:///files/usr/local/bin/ring-http"
-    }
-     file { "/usr/local/bin/ring-all-serial":
-        owner   => root,
-        group   => root,
-        mode    => 0755,
-        source  => "puppet:///files/usr/local/bin/ring-all-serial"
-    }
-     file { "/usr/local/bin/ring-all.old":
-        ensure => absent,
-    }
- 
-    file { "/usr/local/bin/ring-all":
-        owner   => root,
-        group   => root,
-        mode    => 0755,
-        source  => "puppet:///files/usr/local/bin/ring-all"
-    }
-     file { "/usr/local/bin/ring-trace":
-        owner   => root,
-        group   => root,
-        mode    => 0755,
-        source  => "puppet:///files/usr/local/bin/ring-trace"
-    }
-     file { "/usr/local/bin/ring-curl":
-        owner   => root,
-        group   => root,
-        mode    => 0755,
-        source  => "puppet:///files/usr/local/bin/ring-curl"
-    }
-    
-     file { "/usr/local/bin/generate-hosts.py":
-        owner   => root,
-        group   => root,
-        mode    => 0755,
-        source  => "puppet:///files/usr/local/bin/generate-hosts.py"
-    }
- 
-     file { "/usr/local/bin/ring-rsync-ssh-keys":
-        ensure  => absent,
-    }
     
     file { "/usr/local/bin/ring-convert-ssh-keys":
         owner   => root,
@@ -292,49 +198,6 @@ class local_binaries {
         group   => root,
         mode    => 0755,
         source  => "puppet:///files/usr/local/bin/puppet_zombiecleanup",
-        ensure => present,
-    }
-        file { "/usr/local/bin/ring-fetch-nodes-json":
-        owner   => root,
-        group   => root,
-        mode    => 0755,
-        source  => "puppet:///files/usr/local/bin/ring-fetch-nodes-json",
-        ensure => present,
-    }
-
-    package { "purgekernels":
-        ensure => latest,
-    }
-
-    file { "/etc/apt/apt.conf.d/88purgekernels":
-        owner   => root,
-        group   => root,
-        mode    => 0755,
-        source  => "puppet:///files/etc/apt/apt.conf.d/88purgekernels",
-        ensure => present,
-        require => Package["purgekernels"],
-    }
-
-    file { "/etc/dhcp":
-        ensure => directory,
-        mode   => "755";
-    }
-    file { "/etc/dhcp/dhclient.conf":
-        owner   => root,
-        group   => root,
-        mode    => 0644,
-        source  => "puppet:///files/etc/dhcp/dhclient.conf",
-        ensure => present,
-    }
-    file { "/etc/dhcp3":
-        ensure => directory,
-        mode   => "755";
-    }
-    file { "/etc/dhcp3/dhclient.conf":
-        owner   => root,
-        group   => root,
-        mode    => 0644,
-        source  => "puppet:///files/etc/dhcp/dhclient.conf",
         ensure => present,
     }
 
@@ -357,15 +220,6 @@ class local_binaries_dbmaster {
         mode    => 0755,
         source  => "puppet:///files/usr/local/bin/ring-admin",
         ensure => present,
-    }
-}
-
-class local_binaries_ring {
-     file { "/usr/local/bin/geotrshell":
-        owner   => root,
-        group   => root,
-        mode    => 0755,
-        source  => "puppet:///files/usr/local/bin/geotrshell"
     }
 }
 
