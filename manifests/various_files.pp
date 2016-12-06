@@ -35,13 +35,6 @@ class etcfiles {
         source  => "puppet:///files/etc/ssh/ssh_config"
     } 
 
-    file { "/etc/apt/apt.conf.d/10periodic":
-        owner   => root,
-        group   => root,
-        mode    => 644,
-        source  => "puppet:///files/etc/apt/apt.conf.d/10periodic"
-    }
-
      file { "/etc/sysctl.d/30-disable-accepting-ipv6-ra.conf":
         owner   => root,
         group   => root,
@@ -54,13 +47,6 @@ class etcfiles {
         group   => root,
         mode    => 644,
         source  => "puppet:///files/etc/sysctl.d/10-ipv6-privacy.conf",
-    }
-
-    file { "/etc/apt/apt.conf.d/50unattended-upgrades":
-        owner   => root,
-        group   => root,
-        mode    => 644,
-        source  => "puppet:///files/etc/apt/apt.conf.d/50unattended-upgrades"
     }
 
     file { ["/var/log/syslog", "/var/log/messages", "/var/log/user.log", "/var/log/secure", "/var/log/mail.log", "/var/log/mail.err", "/var/log/mail.info", "/var/log/kern.log", "/var/log/error", "/var/log/dmesg", "/var/log/debug.log", "/var/log/daemon.log", "/var/log/cron", "/var/log/auth.log"]:
