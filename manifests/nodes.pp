@@ -32,7 +32,6 @@ node ringnode inherits basenode {
 }
 
 node infranode inherits basenode {
-    include etcfiles_infra
     $postfix_smtp_listen = "127.0.0.1"
     $root_mail_recipient = "ring-admins@ring.nlnog.net"
     $postfix_myorigin = ""
@@ -46,7 +45,6 @@ node infranode inherits basenode {
 }
 
 node inframailnode inherits basenode {
-    include etcfiles_infra
     $postfix_smtp_listen = "0.0.0.0"
     $root_mail_recipient = "ring-admins@ring.nlnog.net"
     $postfix_home_mailbox = "Maildir/"
@@ -61,7 +59,6 @@ node inframailnode inherits basenode {
 }
 
 node 'master01.infra' inherits basenode {
-    include etcfiles_infra
     include master_software
     include syslog_ng::server
     include apache2

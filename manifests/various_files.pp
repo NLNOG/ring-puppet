@@ -14,25 +14,11 @@ class etcfiles {
 #        source  => "puppet:///files/home/job/.ssh/authorized_keys"
 #    } 
 
-    file { "/etc/sudoers":
-        owner   => root,
-        group   => root,
-        mode    => 440,
-        source  => "puppet:///files/etc/sudoers"
-    }
-
     file { "/etc/default/puppet":
         owner   => root,
         group   => root,
         mode    => 644,
         source  => "puppet:///files/etc/default/puppet"
-    } 
-
-    file { "/etc/ssh/ssh_config":
-        owner   => root,
-        group   => root,
-        mode    => 644,
-        source  => "puppet:///files/etc/ssh/ssh_config"
     } 
 
      file { "/etc/sysctl.d/30-disable-accepting-ipv6-ra.conf":
@@ -63,39 +49,11 @@ class etcfiles {
 }
 
 class etcfiles_ring {
-    file { "/etc/ssh/sshd_config":
-        owner   => root,
-        group   => root,
-        mode    => 644,
-        source  => "puppet:///files/etc/ssh/sshd_config"
-    }
- 
-    service { ssh:
-        ensure => running,
-        subscribe => File["/etc/ssh/sshd_config"],
-        hasrestart => true,
-    }
-
     file { "/etc/network/if-up.d/syslog-ng":
         owner   => root,
         group   => root,
         mode    => 755,
         source  => "puppet:///files/etc/if-up.d/syslog-ng"
-    }
-}
-
-class etcfiles_infra {
-    file { "/etc/ssh/sshd_config":
-        owner   => root,
-        group   => root,
-        mode    => 644,
-        source  => "puppet:///files/etc/ssh/sshd_config.infra"
-    } 
-    
-    service { ssh:
-        ensure => running,
-        subscribe => File["/etc/ssh/sshd_config"],
-        hasrestart => true,
     }
 }
 
