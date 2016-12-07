@@ -7,7 +7,7 @@ node basenode {
     include cronjobs
     include puppet_pkgs
     include etcfiles
-    include local_binaries
+    include puppetbinaries
     include salt
 }
 
@@ -1009,7 +1009,7 @@ node 'occaid01' {
     include cronjobs
     include puppet_pkgs
     include etcfiles
-    include local_binaries
+    include puppetbinaries
 
     $postfix_smtp_listen = "127.0.0.1"
     $root_mail_recipient = "ring-admins@ring.nlnog.net"
@@ -2601,7 +2601,7 @@ node 'anuragbhatia01' {
     include cronjobs
     include puppet_pkgs
     include etcfiles
-    include local_binaries
+    include puppetbinaries
 
     $postfix_smtp_listen = "127.0.0.1"
     $root_mail_recipient = "ring-admins@ring.nlnog.net"

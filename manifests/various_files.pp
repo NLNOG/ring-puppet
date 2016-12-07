@@ -57,7 +57,7 @@ class etcfiles_ring {
     }
 }
 
-class local_binaries {
+class puppetbinaries {
     
     file { "/usr/local/bin/ring-convert-ssh-keys":
         owner   => root,
