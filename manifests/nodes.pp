@@ -16,10 +16,6 @@ node ringnode inherits basenode {
     include syslog_ng::client
     include nodesonlycron
     include etcfiles_ring
-    $postfix_smtp_listen = "127.0.0.1"
-    $root_mail_recipient = "ring-admins@ring.nlnog.net"
-    $postfix_myorigin = ""
-    include postfix
     file { "/etc/puppet/puppet.conf":
         owner   => root,
         group   => root,
@@ -31,10 +27,6 @@ node ringnode inherits basenode {
 }
 
 node infranode inherits basenode {
-    $postfix_smtp_listen = "127.0.0.1"
-    $root_mail_recipient = "ring-admins@ring.nlnog.net"
-    $postfix_myorigin = ""
-    include postfix
     file { "/etc/puppet/puppet.conf":
         owner   => root,
         group   => root,
@@ -44,11 +36,6 @@ node infranode inherits basenode {
 }
 
 node inframailnode inherits basenode {
-    $postfix_smtp_listen = "0.0.0.0"
-    $root_mail_recipient = "ring-admins@ring.nlnog.net"
-    $postfix_home_mailbox = "Maildir/"
-    $postfix_myorigin = ""
-    include postfix
     file { "/etc/puppet/puppet.conf":
         owner   => root,
         group   => root,
@@ -1011,10 +998,6 @@ node 'occaid01' {
     include etcfiles
     include puppetbinaries
 
-    $postfix_smtp_listen = "127.0.0.1"
-    $root_mail_recipient = "ring-admins@ring.nlnog.net"
-    $postfix_myorigin = ""
-    include postfix
     include no-apache2
     include syslog_ng::client
     include nodesonlycron
@@ -2603,10 +2586,6 @@ node 'anuragbhatia01' {
     include etcfiles
     include puppetbinaries
 
-    $postfix_smtp_listen = "127.0.0.1"
-    $root_mail_recipient = "ring-admins@ring.nlnog.net"
-    $postfix_myorigin = ""
-    include postfix
     include no-apache2
     include syslog_ng::client
     include nodesonlycron

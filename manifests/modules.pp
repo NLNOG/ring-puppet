@@ -1,6 +1,5 @@
 import "common"
 import "syslog_ng"
-import "postfix"
 import "bird-lg"
 import "augeas"
 import "backup"
