@@ -8,7 +8,6 @@ node basenode {
     include puppet_pkgs
     include etcfiles
     include local_binaries
-    include resolving
     include salt
 }
 
@@ -1016,7 +1015,6 @@ node 'occaid01' {
     $root_mail_recipient = "ring-admins@ring.nlnog.net"
     $postfix_myorigin = ""
     include postfix
-    include resolving
     include no-apache2
     include syslog_ng::client
     include nodesonlycron
@@ -2609,7 +2607,6 @@ node 'anuragbhatia01' {
     $root_mail_recipient = "ring-admins@ring.nlnog.net"
     $postfix_myorigin = ""
     include postfix
-    include resolving
     include no-apache2
     include syslog_ng::client
     include nodesonlycron
