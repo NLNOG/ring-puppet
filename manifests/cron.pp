@@ -26,44 +26,6 @@ class containercronjobs {
     }
 }
 
-class pdnscronjobs {
-    cron {
-        "update-sshfp":
-        command => "cat /etc/ssh/ssh_known_hosts | perl -pe 's/,[^ ]+//' | sed 's/.ring.nlnog.net//' > /tmp/sshfp.$$ && sshfp -k /tmp/sshfp.$$ -a | chronic ring-pdns update sshfp && rm /tmp/sshfp.$$",
-        user => root,
-        minute => "04",
-        hour => "04",
-        ensure => present,
-    }
-    cron {
-        "regenerate-txt":
-        command => "/usr/local/bin/ring-pdns regenerate txt 3>&1 1>/dev/null 2>&3 | grep -v NSEC 3>&1 1>&2 2>&3",
-        user => root,
-        minute => "04",
-        hour => "04",
-        ensure => present,
-    }
-}
-
-class dbmastercronjobs {
-    cron { 'node_down_reminders':
-        user    => 'root',
-        minute  => '28',
-        hour  => '6',
-        monthday => [5,19],
-        command => '/usr/local/bin/ring-admin send downreminders >/dev/null',
-        require => File['/usr/local/bin/ring-admin'],
-    }
-    cron { 'node_down_deactivation':
-        user    => 'root',
-        minute  => '28',
-        hour  => '6',
-        monthday => '27',
-        command => '/usr/local/bin/ring-admin purge machines',
-        require => File['/usr/local/bin/ring-admin'],
-    }
-}
-
 # this class is executed on all ring-nodes including the master 
 class cronjobs {
     $first = fqdn_rand(30)

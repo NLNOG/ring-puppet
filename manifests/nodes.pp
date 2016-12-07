@@ -263,7 +263,6 @@ node 'dbmaster.infra' inherits infranode {
 #    }
     include backup::client
     include ansible::master
-    include dbmastercronjobs
 }
 
 # website, dns, mailing-list etc
@@ -281,7 +280,6 @@ node 'public01.infra' inherits infranode {
 #            'root_password' => trocla("mysql_${fqdn}",'plain'),
 #        }
 #    }
-    include pdnscronjobs
     include backup::client
 }
 
