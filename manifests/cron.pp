@@ -71,22 +71,6 @@ class cronjobs {
     $minute = fqdn_rand(60)
     $cron1 = (fqdn_rand(50) + 1)
 
-    cron { update_motd:
-        command => "run-parts --lsbsysinit /etc/update-motd.d > /var/run/motd",
-        hour => "7",
-        minute => "15",
-        user => "root",
-        ensure => absent,
-    }
-
-    cron { aptupdate:
-        command => "apt-get update > /dev/null 2>&1",
-        hour => "3",
-        user => "root",
-        minute => $cron1,
-        environment => ["PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"],
-    }
-
     if str2bool(fqdn_rand(2)) {
         $agent_hour = "*/2"
     } else {
@@ -106,25 +90,5 @@ class cronjobs {
         command => "/usr/local/bin/puppet_zombiecleanup > /dev/null 2>&1",
         user => root,
         minute => "42",
-    }
-
-    file { "/etc/ring/":
-        ensure => directory,
-    }
-
-    cron {
-        "nodesjsonfetcher":
-        command => "/usr/local/bin/ring-fetch-nodes-json",
-        user    => root,
-        minute  => $second,
-        require => File["/etc/ring"],
-    }
-
-    cron {
-        "list_of_nodes":
-        command => "grep ring.nlnog /etc/hosts | grep -v infra.ring.nlnog | cut -d' ' -f1 | sort -V > /etc/ring/node-list.txt",
-        user => root,
-        minute => $second,
-        require => File["/etc/ring/"],
     }
 }
