@@ -424,397 +424,331 @@ class no-apache2 {
 node 'intouch01' inherits ringnode {
     $owner = "intouch"
     $location = "52.355930,4.951873"
-	include users
 }
 
 node 'bit01' inherits ringnode {
     $owner = "bit"
     $location = "52.027596,5.624528"
-	include users
 }
 
 node 'coloclue01' inherits ringnode {
     $owner = "coloclue"
     $location = "52.332901,4.919525"
-	include users
 }
 
 node 'interconnect01' inherits ringnode {
     $owner = "interconnect"
     $location = "51.686672,5.359043"
-	include users
 }
 
 node 'cambrium01' inherits ringnode {
     $owner = "cambrium"
     $location = "52.340988,5.227518"
-	include users
 }
 
 node 'cyso01' inherits ringnode {
     $owner = "cyso"
     $location = "52.343983,4.828710"
-	include users
 }
 
 node 'zylon01' inherits ringnode {
     $owner = "zylon"
     $location = "52.396420,4.851092"
-	include users
 }
 
 node 'duocast01' inherits ringnode {
     $owner = "duocast"
     $location = "53.246086,6.528518"
-	include users
 }
 
 node 'easyhosting01' inherits ringnode {
     $owner = "easyhosting"
     $location = "52.391132,4.665263"
-	include users
 }
 
 node 'previder01' inherits ringnode {
     $owner = "previder"
     $location = "52.243954,6.767229"
-	include users
 }
 
 node 'leaseweb01' inherits ringnode {
     $owner = "leaseweb"
     $location = "52.391224,4.665155"
-	include users
 }
 
 node 'xs4all01' inherits ringnode {
     $owner = "xs4all"
     $location = "52.336353,4.886652"
-	include users
 }
 
 node 'nedzone01' inherits ringnode {
     $owner = "nedzone"
     $location = "51.587601,4.305047"
-	include users
 }
 
 node 'oxilion01' inherits ringnode {
     $owner = "oxilion"
     $location = "52.243969,6.767278"
-	include users
 }
 
 node 'ebayclassifiedsgroup01' inherits ringnode {
     $owner = "ebayclassifiedsgroup"
     $location = "52.280964,4.754237"
-	include users
 }
 
 node 'is01' inherits ringnode {
     $owner = "is"
     $location = "52.396759,4.838742"
-	include users
 }
 
 node 'surfnet01' inherits ringnode {
     $owner = "surfnet"
     $location = "52.090767,5.112371"
-	include users
 }
 
 node 'prolocation01' inherits ringnode {
     $owner = "prolocation"
     $location = "52.343983,4.828710"
-	include users
 }
 
 node 'in2ip01' inherits ringnode {
     $owner = "in2ip"
     $location = "52.395855,4.841133"
-	include users
 }
 
 node 'totaalnet01' inherits ringnode {
     $owner = "totaalnet"
     $location = "51.987831,5.933394"
-	include users
 }
 
 node 'signet01' inherits ringnode {
     $owner = "signet"
     $location = "51.501537,5.460406"
-	include users
 }
 
 node 'tripleit01' inherits ringnode {
     $owner = "tripleit"
     $location = "52.303066,4.937898"
-	include users
 }
 
 node 'jaguarnetwork01' inherits ringnode {
     $owner = "jaguarnetwork"
     $location = "43.310226,5.373356"
-	include users
 }
 
 node 'tuxis01' inherits ringnode {
     $owner = "tuxis"
     $location = "52.027649,5.624506"
-	include users
 }
 
 node 'tenet01' inherits ringnode {
     $owner = "tenet"
     $location = "-26.204103,28.047304"
-	include users
 }
 
 node 'netability01' inherits ringnode {
     $owner = "netability"
     $location = "53.405754,-6.372293"
-	include users
 }
 
 node 'unilogicnetworks01' inherits ringnode {
     $owner = "unilogicnetworks"
     $location = "50.996090,5.845644"
-	include users
 }
 
 node 'maverick01' inherits ringnode {
     $owner = "maverick"
     $location = "52.393036,16.947895"
-	include users
 }
 
 node 'acsystemy01' inherits ringnode {
     $owner = "acsystemy"
     $location = "53.910034,14.247578"
-	include users
 }
 
 node 'netsign01' inherits ringnode {
     $owner = "netsign"
     $location = "52.465530,13.368666"
-	include users
 }
 
 node 'rrbone01' inherits ringnode {
     $owner = "rrbone"
     $location = "51.188271,6.867769"
-	include users
 }
 
 node 'hosteam01' inherits ringnode {
     $owner = "hosteam"
     $location = "52.227661,21.004250"
-	include users
 }
 
 node 'inotel01' inherits ringnode {
     $owner = "inotel"
     $location = "52.391102,16.897284"
-	include users
 }
 
 node 'fremaks01' inherits ringnode {
     $owner = "fremaks"
     $location = "53.077320,8.772950"
-	include users
 }
 
 node 'blix01' inherits ringnode {
     $owner = "blix"
     $location = "59.924725,10.810183"
-	include users
 }
 
 node 'portlane01' inherits ringnode {
     $owner = "portlane"
     $location = "59.306946,18.130274"
-	include users
 }
 
 node 'solido01' inherits ringnode {
     $owner = "solido"
     $location = "55.728542,12.376454"
-	include users
 }
 
 node 'solido02' inherits ringnode {
     $owner = "solido"
     $location = "49.50481,6.11237"
-	include users
 }
 
 node 'digmia01' inherits ringnode {
     $owner = "digmia"
     $location = "48.119209,17.095844"
-	include users
 }
 
 node 'rootlu01' inherits ringnode {
     $owner = "rootlu"
     $location = "49.671227,6.125205"
-	include users
 }
 
 node 'nebula01' inherits ringnode {
     $owner = "nebula"
     $location = "60.218018,24.879240"
-	include users
 }
 
 node 'tilaa01' inherits ringnode {
     $owner = "tilaa"
     $location = "52.391090,4.665314"
-	include users
 }
 
 node 'nautile01' inherits ringnode {
     $owner = "nautile"
     $location = "-22.267935,166.462219"
-	include users
 }
 
 node 'voxel01' inherits ringnode {
     $owner = "voxel"
     $location = "37.241619,-121.783218"
-	include users
 }
 
 node 'voxel02' inherits ringnode {
     $owner = "voxel"
     $location = "1.295461,103.789787"
-	include users
 }
 
 node 'apnic01' inherits ringnode {
     $owner = "apnic"
     $location = "-27.458248,153.031067"
-	include users
 }
 
 node 'hibernia01' inherits ringnode {
     $owner = "hibernia"
     $location = "41.87811,-87.62980"
-	include users
 }
 
 node 'man-da01' inherits ringnode {
     $owner = "man-da"
     $location = "49.86170,8.68210"
-	include users
 }
 
 node 'webair01' inherits ringnode {
     $owner = "webair"
     $location = "40.722529,-73.632961"
-	include users
 }
 
 node 'concepts-ict01' inherits ringnode {
     $owner = "concepts-ict"
     $location = "51.592992,4.802703"
-	include users
 }
 
 node 'dataoppdrag01' inherits ringnode {
     $owner = "dataoppdrag"
     $location = "60.295349,5.255753"
-	include users
 }
 
 node 'tetaneutral01' inherits ringnode {
     $owner = "tetaneutral"
     $location = "43.61847,1.42075"
-	include users
 }
 
 node 'jump01' inherits ringnode {
     $owner = "jump"
     $location = "51.5120776,-0.0020345"
-	include users
 }
 
 node 'iway01' inherits ringnode {
     $owner = "iway"
     $location = "47.387639,8.519944"
-	include users
 }
 
 node 'rezopole01' inherits ringnode {
     $owner = "rezopole"
     $location = "45.72289,4.861422"
-	include users
 }
 
 node 'solnet01' inherits ringnode {
     $owner = "solnet"
     $location = "47.20182,7.52878"
-	include users
 }
 
 node 'boxed-it01' inherits ringnode {
     $owner = "boxed-it"
     $location = "50.875425,4.499401"
-	include users
 }
 
 node 'spacenet01' inherits ringnode {
     $owner = "spacenet"
     $location = "48.133333,11.566667"
-	include users
 }
 
 node 'mironet01' inherits ringnode {
     $owner = "mironet"
     $location = "47.5143,7.616726"
-	include users
 }
 
 node 'seeweb01' inherits ringnode {
     $owner = "seeweb"
     $location = "45.478696,9.105091"
-	include users
 }
 
 node 'zensystems01' inherits ringnode {
     $owner = "zensystems"
     $location = "55.7284634,12.376985"
-	include users
 }
 
 node 'westnet01' inherits ringnode {
     $owner = "westnet"
     $location = "53.858024,-9.279904"
-	include users
 }
 
 node 'kantonsschulezug01' inherits ringnode {
     $owner = "kantonsschulezug"
     $location = "47.1744,8.5233"
-	include users
 }
 
 node 'filoo01' inherits ringnode {
     $owner = "filoo"
     $location = "50.09676,8.628393"
-	include users
 }
 
 node 'nessus01' inherits ringnode {
     $owner = "nessus"
     $location = "48.179737,16.364007"
-	include users
 }
 
 node 'amazon01' inherits ringnode {
     $owner = "amazon"
     $location = "38.944444,-77.455833"
-	include users
 
     # hopefully a temp fix because of:
     # https://bugs.launchpad.net/ubuntu/+source/linux/+bug/613273
@@ -830,7 +764,6 @@ node 'amazon01' inherits ringnode {
 node 'amazon02' inherits ringnode {
     $owner = "amazon"
     $location = "53.43333,-6.25000"
-	include users
 
     # hopefully a temp fix because of:
     # https://bugs.launchpad.net/ubuntu/+source/linux/+bug/613273
@@ -847,7 +780,6 @@ node 'amazon02' inherits ringnode {
 node 'amazon03' inherits ringnode {
     $owner = "amazon"
     $location = "1.358816,103.9891"
-	include users
 
     # hopefully a temp fix because of:
     # https://bugs.launchpad.net/ubuntu/+source/linux/+bug/613273
@@ -863,7 +795,6 @@ node 'amazon03' inherits ringnode {
 node 'amazon04' inherits ringnode {
     $owner = "amazon"
     $location = "35.765278,140.385556"
-	include users
 
     # hopefully a temp fix because of:
     # https://bugs.launchpad.net/ubuntu/+source/linux/+bug/613273
@@ -879,7 +810,6 @@ node 'amazon04' inherits ringnode {
 node 'amazon05' inherits ringnode {
     $owner = "amazon"
     $location = "45.588611,-122.5975"
-	include users
 
     # hopefully a temp fix because of:
     # https://bugs.launchpad.net/ubuntu/+source/linux/+bug/613273
@@ -895,7 +825,6 @@ node 'amazon05' inherits ringnode {
 node 'amazon06' inherits ringnode {
     $owner = "amazon"
     $location = "37.618889,-122.375"
-	include users
 
     # hopefully a temp fix because of:
     # https://bugs.launchpad.net/ubuntu/+source/linux/+bug/613273
@@ -911,7 +840,6 @@ node 'amazon06' inherits ringnode {
 node 'amazon07' inherits ringnode {
     $owner = "amazon"
     $location = "-23.54894,-46.63882"
-	include users
 
     # hopefully a temp fix because of:
     # https://bugs.launchpad.net/ubuntu/+source/linux/+bug/613273
@@ -927,7 +855,6 @@ node 'amazon07' inherits ringnode {
 node 'amazon08' inherits ringnode {
     $owner = "amazon"
     $location = "-33.86749,151.20699"
-	include users
 
     # hopefully a temp fix because of:
     # https://bugs.launchpad.net/ubuntu/+source/linux/+bug/613273
@@ -945,37 +872,31 @@ node 'amazon08' inherits ringnode {
 node 'equinixnl01' inherits ringnode {
     $owner = "equinixnl"
     $location = "52.2373,6.8496"
-	include users
 }
 
 node 'lchost01' inherits ringnode {
     $owner = "lchost"
     $location = "51.496716,-0.017987"
-	include users
 }
 
 node 'hostway01' inherits ringnode {
     $owner = "hostway"
     $location = "49.288462,-123.118197"
-	include users
 }
 
 node 'pcextreme01' inherits ringnode {
     $owner = "pcextreme"
     $location = "52.400483,4.842865"
-	include users
 }
 
 node 'antagonist01' inherits ringnode {
     $owner = "antagonist"
     $location = "52.244396,6.767321"
-	include users
 }
 
 node 'nts01' inherits ringnode {
     $owner = "nts"
     $location = "46.936647,7.429907"
-	include users
 }
 
 node 'multiplay01' inherits ringnode {
