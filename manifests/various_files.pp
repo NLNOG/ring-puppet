@@ -24,14 +24,9 @@ class etcfiles {
     file { ["/var/log/syslog", "/var/log/messages", "/var/log/user.log", "/var/log/secure", "/var/log/mail.log", "/var/log/mail.err", "/var/log/mail.info", "/var/log/kern.log", "/var/log/error", "/var/log/dmesg", "/var/log/debug.log", "/var/log/daemon.log", "/var/log/cron", "/var/log/auth.log"]:
         owner   => root,
         group   => adm,
+
     }
 
-    file { "/opt/root-anchor":
-        owner   => root,
-        group   => root,
-        mode    => 0644,
-        source  => "puppet:///files//opt/root-anchor",
-    }
 }
 
 class etcfiles_ring {
