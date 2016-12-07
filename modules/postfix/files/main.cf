@@ -1,2 +1,0 @@
-# file managed by puppet
-smtp_address_preference = ipv4
