@@ -13,7 +13,7 @@ class master_software {
     package { "puppetmaster-common": ensure => latest }
 }
 
-class nettools {
+class puppet_pkgs {
     package { "puppet": ensure => latest }
     package { "puppet-common": ensure => latest }
 }

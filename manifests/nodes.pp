@@ -5,7 +5,7 @@
 node basenode {
     #include users::virtual::ring_admins
     include cronjobs
-    include nettools
+    include puppet_pkgs
     include etcfiles
     include local_binaries
     include resolving
@@ -1008,7 +1008,7 @@ node 'occaid01' {
     include salt
     include users::virtual::ring_admins
     include cronjobs
-    include nettools
+    include puppet_pkgs
     include etcfiles
     include local_binaries
 
@@ -2601,7 +2601,7 @@ node 'anuragbhatia01' {
     include salt
     include users::virtual::ring_admins
     include cronjobs
-    include nettools
+    include puppet_pkgs
     include etcfiles
     include local_binaries
 
