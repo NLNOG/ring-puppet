@@ -14,7 +14,6 @@ node basenode {
 node ringnode inherits basenode {
 #    include no-apache2
     include syslog_ng::client
-    include etcfiles_ring
     file { "/etc/puppet/puppet.conf":
         owner   => root,
         group   => root,
