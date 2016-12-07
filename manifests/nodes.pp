@@ -295,20 +295,6 @@ node 'public02.infra' inherits inframailnode {
     include apache2
     include powerdns
     include backup::client
-    file { "/usr/local/bin/ring-aptsummary":
-        owner   => root,
-        group   => root,
-        mode    => 755,
-        source  => "puppet:///files/usr/local/bin/ring-aptsummary"
-    }
-    cron {
-        "ring-aptsummary":
-        command => "/usr/local/bin/ring-aptsummary",
-        user => apt,
-        minute => "01",
-        hour => "10",
-        ensure => present,
-    }
 }
 
 node 'public03.infra' inherits infranode {
