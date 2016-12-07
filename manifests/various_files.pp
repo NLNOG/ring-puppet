@@ -76,15 +76,6 @@ class etcfiles_ring {
         hasrestart => true,
     }
 
-    file { "/etc/ringfpingd.conf":
-        content => template("ringfpingd.conf.erb");
-    }
-    service { "ringfpingd":
-        ensure => running,
-        subscribe => File["/etc/ringfpingd.conf"],
-        hasrestart => true,
-    }
-
     file { "/etc/network/if-up.d/syslog-ng":
         owner   => root,
         group   => root,
