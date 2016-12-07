@@ -14,7 +14,6 @@ node basenode {
 node ringnode inherits basenode {
 #    include no-apache2
     include syslog_ng::client
-    include nodesonlycron
     include etcfiles_ring
     $postfix_smtp_listen = "127.0.0.1"
     $root_mail_recipient = "ring-admins@ring.nlnog.net"
@@ -269,7 +268,6 @@ node dbslaves inherits infranode {
 node 'dbmaster.infra' inherits infranode {
     $owner = "job"
     include syslog_ng::client
-    include nodesonlycron
 #    class { "mysql::server": 
 #        config_hash => {
 #            'root_password' => trocla("mysql_${fqdn}",'plain'),
@@ -285,7 +283,6 @@ node 'dbmaster.infra' inherits infranode {
 node 'public01.infra' inherits infranode {
     $owner = "job"
     include syslog_ng::client
-    include nodesonlycron
     include apache2
     include powerdns
     include map
@@ -304,7 +301,6 @@ node 'public01.infra' inherits infranode {
 node 'public02.infra' inherits inframailnode {
     $owner = "job"
     include syslog_ng::client
-    include nodesonlycron
     include apache2
     include powerdns
     include backup::client
@@ -327,7 +323,6 @@ node 'public02.infra' inherits inframailnode {
 node 'public03.infra' inherits infranode {
     $owner = "job"
     include syslog_ng::client
-    include nodesonlycron
     include apache2
     include powerdns
     include map
@@ -338,7 +333,6 @@ node 'public03.infra' inherits infranode {
 node 'backup.infra' inherits infranode {
     $owner = "job"
     include syslog_ng::client
-    include nodesonlycron
     include backup::server
 }
 
@@ -346,7 +340,6 @@ node 'backup.infra' inherits infranode {
 node 'lg01.infra' inherits infranode {
     $owner = "job"
     include syslog_ng::client
-    include nodesonlycron
     include backup::client
     include bird
     include bird-lg-proxy
@@ -366,7 +359,6 @@ node 'lg01.infra' inherits infranode {
 node 'auth.infra' inherits infranode {
     $owner = "job"
     include syslog_ng::client
-    include nodesonlycron
     include backup::client
     include ring_auth::landing
 }
@@ -1017,7 +1009,6 @@ node 'occaid01' {
     include postfix
     include no-apache2
     include syslog_ng::client
-    include nodesonlycron
 
     $owner = "occaid"
     $location = "47.619428,-122.348535"
@@ -2609,7 +2600,6 @@ node 'anuragbhatia01' {
     include postfix
     include no-apache2
     include syslog_ng::client
-    include nodesonlycron
 
     $owner = "anuragbhatia"
     $location = "28.895515,76.606611"
