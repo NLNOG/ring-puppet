@@ -4,9 +4,10 @@ class backup::server {
         ensure  => latest,
     }
 
-    apt::ppa { 'ppa:zfs-native/stable': 
-        before  => Package["ubuntu-zfs"],
-    }
+# broken due to puppet -> ansible migration
+#    apt::ppa { 'ppa:zfs-native/stable': 
+#        before  => Package["ubuntu-zfs"],
+#    }
 
     package { 'ubuntu-zfs':
         ensure  => latest,
