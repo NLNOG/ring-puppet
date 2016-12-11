@@ -221,10 +221,10 @@ class bird {
         timeout => 3600,
         command => "add-apt-repository -y ppa:cz.nic-labs/bird; apt-get update",
         unless  => "/usr/bin/test -f /etc/apt/sources.list.d/cz_nic-labs-bird-precise.list",
-        before  => Package["bird", "bird6"],
+        before  => Package["bird"],
     }
 
-    package { ["bird", "bird6", "dialog"]:
+    package { ["bird", "dialog"]:
         ensure => latest,
     }
     
