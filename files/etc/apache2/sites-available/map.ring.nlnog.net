@@ -3,7 +3,7 @@
 	ServerName map.ring.nlnog.net
 
 	DocumentRoot /var/www/map.ring.nlnog.net/HTML
-	<Directory />
+	<Directory /var/www/map.ring.nlnog.net/HTML>
 		Options FollowSymLinks ExecCGI
 		AllowOverride None
         AddHandler cgi-script .cgi
