@@ -286,7 +286,7 @@ node 'public02.infra' inherits inframailnode {
     $owner = "job"
     include syslog_ng::client
     include apache2
-    include powerdns
+    #include powerdns
     include backup::client
 }
 
