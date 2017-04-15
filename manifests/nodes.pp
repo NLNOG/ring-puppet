@@ -52,7 +52,6 @@ node 'master01.infra' inherits basenode {
     include website
     include ring_auth::deployer
     Exec <<| tag == "destroy_virtual_machines" |>>
-    include backup::client
 }
 
 # container01 is hosted at XS4ALL
@@ -65,7 +64,6 @@ node 'container01.infra' inherits infranode {
     include containercronjobs
     include syslog_ng::client
     include kvm
-    include backup::client
     
     kvm::virtual_machine { 'lg01':
         fqdn        => 'lg01.infra.ring.nlnog.net',
@@ -119,7 +117,6 @@ node 'container02.infra' inherits infranode {
     include containercronjobs
     include syslog_ng::client
     include kvm
-    include backup::client
 
     kvm::virtual_machine { 'public02':
         fqdn        => 'public02.infra.ring.nlnog.net',
@@ -172,7 +169,6 @@ node 'container03.infra' inherits infranode {
     include containercronjobs
     include syslog_ng::client
     include kvm
-    include backup::client
 
     kvm::virtual_machine { 'dbmaster':
         fqdn        => 'dbmaster.infra.ring.nlnog.net',
@@ -251,42 +247,11 @@ node 'container06.infra' inherits infranode {
 node dbslaves inherits infranode {
 }
 
-node 'dbmaster.infra' inherits infranode {
-    $owner = "job"
-    include syslog_ng::client
-#    class { "mysql::server": 
-#        config_hash => {
-#            'root_password' => trocla("mysql_${fqdn}",'plain'),
-#            'server-id'     => '666',
-#        }
-#    }
-    include backup::client
-}
-
-# website, dns, mailing-list etc
-node 'public01.infra' inherits infranode {
-    $owner = "job"
-    include syslog_ng::client
-    include apache2
-    include powerdns
-    include map
-# FIXME
-# we moved to new puppet mysql module, but I can't predict what happens
-# if we just use it here, especially with passwords. 
-#    class { 'mysql::server':
-#        config_hash => {
-#            'root_password' => trocla("mysql_${fqdn}",'plain'),
-#        }
-#    }
-    include backup::client
-}
-
 node 'public02.infra' inherits inframailnode {
     $owner = "job"
     include syslog_ng::client
     include apache2
     #include powerdns
-    include backup::client
 }
 
 node 'public03.infra' inherits infranode {
@@ -296,7 +261,6 @@ node 'public03.infra' inherits infranode {
     include powerdns
     include map
     include pdnscronjobs
-    include backup::client
 }
 
 node 'backup.infra' inherits infranode {
@@ -309,7 +273,6 @@ node 'backup.infra' inherits infranode {
 node 'lg01.infra' inherits infranode {
     $owner = "job"
     include syslog_ng::client
-    include backup::client
     include bird
     include bird-lg-proxy
 #    add_user { 'dave':                                                                                                                                                                                                 
@@ -328,19 +291,16 @@ node 'lg01.infra' inherits infranode {
 node 'auth.infra' inherits infranode {
     $owner = "job"
     include syslog_ng::client
-    include backup::client
     include ring_auth::landing
 }
 
 node 'compute01.infra' inherits infranode {
     $owner = "job"
-    include backup::client
     include syslog_ng::client
 }
 
 node 'compute02.infra' inherits infranode {
     $owner = "job"
-    include backup::client
     include syslog_ng::client
     include apache2
     $graphite_servername = 'graphite02.infra.ring.nlnog.net'
