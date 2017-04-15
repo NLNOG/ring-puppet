@@ -261,7 +261,6 @@ node 'dbmaster.infra' inherits infranode {
 #        }
 #    }
     include backup::client
-    include ansible::master
 }
 
 # website, dns, mailing-list etc
