@@ -266,7 +266,6 @@ node 'public03.infra' inherits infranode {
 node 'backup.infra' inherits infranode {
     $owner = "job"
     include syslog_ng::client
-    include backup::server
 }
 
 # looking glass 1
@@ -310,7 +309,6 @@ node 'compute02.infra' inherits infranode {
 node 'storage01.infra' inherits infranode {
     $owner = "job"
     include syslog_ng::client
-    include backup::server
 }
 
 # we don't want apache running on regular ringnodes. smokeping installs 
