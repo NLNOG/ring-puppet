@@ -69,19 +69,3 @@ class ring_auth::landing {
  
 }
 
-class ring_auth::deployer {
-
-    file { '/opt/keys':
-        ensure => 'directory',
-        mode   => '0555',
-        owner  => 'root',
-        group  => 'ring-admins',
-    }
-   
-    # sync keys every 13 minutes from auth.infra.ring.nlnog.net to master
-    cron { 'sync_user_sshkeys':
-        command => "chronic rsync -v -e 'ssh -v -v -v' -4 -r --delete auth.infra.ring.nlnog.net:/opt/keys/ /opt/keys/ && chmod +r /opt/keys/* && chmod +rx /opt/keys",
-        user    => 'root',
-        minute  => '*/13',
-    }
-}

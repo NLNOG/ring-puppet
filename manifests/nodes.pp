@@ -50,7 +50,6 @@ node 'master01.infra' inherits basenode {
     include trocla::config
     include usage_statistics
     include website
-    include ring_auth::deployer
     Exec <<| tag == "destroy_virtual_machines" |>>
 }
 
