@@ -289,7 +289,6 @@ node 'lg01.infra' inherits infranode {
 node 'auth.infra' inherits infranode {
     $owner = "job"
     include syslog_ng::client
-    include ring_auth::landing
 }
 
 node 'compute01.infra' inherits infranode {
