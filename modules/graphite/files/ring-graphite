@@ -244,6 +244,7 @@ class commands(object):
             p=self.getparticipant(new)
             if not p:
                 print >> sys.stderr, "user %s not found in ring database" % (new)
+                continue
             email=p['nocemail']
             password=newusers[new]
 
