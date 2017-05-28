@@ -11,29 +11,7 @@ node basenode {
     include salt
 }
 
-node ringnode inherits basenode {
-#    include no-apache2
-    include syslog_ng::client
-    file { "/etc/puppet/puppet.conf":
-        owner   => root,
-        group   => root,
-        mode    => 644,
-        source  => "puppet:///files/etc/puppet/puppet.conf"
-    }
-    include scamper
-    include uninstall_amp
-}
-
 node infranode inherits basenode {
-    file { "/etc/puppet/puppet.conf":
-        owner   => root,
-        group   => root,
-        mode    => 644,
-        source  => "puppet:///files/etc/puppet/puppet.conf"
-    }
-}
-
-node inframailnode inherits basenode {
     file { "/etc/puppet/puppet.conf":
         owner   => root,
         group   => root,
@@ -45,7 +23,6 @@ node inframailnode inherits basenode {
 node 'master01.infra' inherits basenode {
     include master_software
     include syslog_ng::server
-    include apache2
     include mastercronjobs
     include trocla::config
     include usage_statistics
@@ -61,7 +38,6 @@ node 'master01.infra' inherits basenode {
 #   IPv6 prefix: 2001:888:2001::/48
 node 'container01.infra' inherits infranode {
     include containercronjobs
-    include syslog_ng::client
     include kvm
     
     kvm::virtual_machine { 'lg01':
@@ -114,7 +90,6 @@ node 'container01.infra' inherits infranode {
 #   IPv6 prefix: 2001:1AF8:4013::/48
 node 'container02.infra' inherits infranode {
     include containercronjobs
-    include syslog_ng::client
     include kvm
 
     kvm::virtual_machine { 'public02':
@@ -166,7 +141,6 @@ node 'container02.infra' inherits infranode {
 #   IPv6 prefix: 2a02:d28:666:0:0:0:0:0/48
 node 'container03.infra' inherits infranode {
     include containercronjobs
-    include syslog_ng::client
     include kvm
 
     kvm::virtual_machine { 'dbmaster':
@@ -223,7 +197,6 @@ node 'container03.infra' inherits infranode {
 #   IPv6 prefix: 2a00:0f10:0122::/48
 node 'container06.infra' inherits infranode {
     include containercronjobs
-    include syslog_ng::client
     include kvm
     
     kvm::virtual_machine { 'backup':
@@ -246,17 +219,8 @@ node 'container06.infra' inherits infranode {
 node dbslaves inherits infranode {
 }
 
-node 'public02.infra' inherits inframailnode {
-    $owner = "job"
-    include syslog_ng::client
-    include apache2
-    #include powerdns
-}
-
 node 'public03.infra' inherits infranode {
     $owner = "job"
-    include syslog_ng::client
-    include apache2
     include powerdns
     include map
     include pdnscronjobs
@@ -264,8 +228,6 @@ node 'public03.infra' inherits infranode {
 
 node 'compute02.infra' inherits infranode {
     $owner = "job"
-    include syslog_ng::client
-    include apache2
     $graphite_servername = 'graphite02.infra.ring.nlnog.net'
     include graphite
 }
