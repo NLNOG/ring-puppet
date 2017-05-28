@@ -222,8 +222,6 @@ node dbslaves inherits infranode {
 node 'public03.infra' inherits infranode {
     $owner = "job"
     include powerdns
-    include map
-    include pdnscronjobs
 }
 
 # we don't want apache running on regular ringnodes. smokeping installs 
