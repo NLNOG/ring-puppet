@@ -226,12 +226,6 @@ node 'public03.infra' inherits infranode {
     include pdnscronjobs
 }
 
-node 'compute02.infra' inherits infranode {
-    $owner = "job"
-    $graphite_servername = 'graphite02.infra.ring.nlnog.net'
-    include graphite
-}
-
 # we don't want apache running on regular ringnodes. smokeping installs 
 # apache, so we just force it down here. 
 class apache2 {
