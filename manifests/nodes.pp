@@ -219,11 +219,6 @@ node 'container06.infra' inherits infranode {
 node dbslaves inherits infranode {
 }
 
-node 'public03.infra' inherits infranode {
-    $owner = "job"
-    include powerdns
-}
-
 # we don't want apache running on regular ringnodes. smokeping installs 
 # apache, so we just force it down here. 
 class apache2 {
