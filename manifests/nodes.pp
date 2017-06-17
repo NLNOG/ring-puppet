@@ -22,7 +22,6 @@ node infranode inherits basenode {
 
 node 'master01.infra' inherits basenode {
     include master_software
-    include syslog_ng::server
     include mastercronjobs
     include trocla::config
     include usage_statistics
